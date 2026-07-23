@@ -4,4 +4,3 @@ __pycache__/
 .done
 .running
 .failed
-logs/

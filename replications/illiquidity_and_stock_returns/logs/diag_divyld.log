@@ -1,0 +1,49 @@
+========================================================================
+Setup: annual characteristics + admission (canonical machinery)
+========================================================================
+chars rows: 60624; admitted stock-years: 46886 (y 1963..1996)
+
+========================================================================
+TASK B: DIVYLD split-adjustment (B1 current vs B2 cfacpr-aligned)
+========================================================================
+distribution rows 1963-1996: 350436
+[B1 cross-check] max |div_sum(canonical) - sum(divamt, B2 SQL)| over shared (permno,y) = 1.776e-15 (44624 pairs; non-payer rows excluded)
+cfacpr match: 347781/350436 rows matched (99.24%); carry-forward fallback triggered on 27040 rows (7.716% of all; 7.775% of matched); no cfacpr found (dividend dropped in B2): 2655 rows (0.7576%)
+  [flag] rows with no cfacpr found at all (sample):
+ permno    y    attr_dt
+  10020 1992 1992-01-01
+  10020 1993 1993-01-01
+  10074 1989 1989-01-01
+  10074 1993 1993-01-01
+  10074 1995 1995-01-02
+  10121 1992 1992-01-03
+  10180 1989 1989-01-02
+  10188 1965 1965-01-02
+  10217 1965 1965-01-02
+  10217 1968 1968-01-01
+adjustment factor cf_ratio: n_valid=347781; mean (all valid) = 0.979502; rows with |ratio-1|>1e-9: 28127 (8.09%); mean among adjusted = 0.746551 (min 0.0250, max 50.0000)
+
+Table 1 DIVYLD stats, admitted sample 1963-1996:
+  B1 (current): meanMeans=3.407  meanSDs=5.085  median=3.456  meanSkew=6.008  min=1.686  max=6.501  (n_years=34)
+  B2 (cfacpr) : meanMeans=3.266  meanSDs=4.728  median=3.247  meanSkew=6.795  min=1.614  max=6.387  (n_years=34)
+  paper       : meanMeans=4.140  meanSDs=5.480  median=4.160  meanSkew=5.385  min=2.430  max=6.680
+  B2 - B1 shift: meanMeans -0.1408 (-4.13%); gap to paper 4.14: B1 -17.7%, B2 -21.1%
+
+admitted stock-years with a within-year cfacpr change (split/stock-dividend event): 8031/46886 = 17.13% (no cfacpr days in universe table: 0)
+mean split-year adjustment cf_end/cf_start = 0.7671 (median 0.6667, min 0.0990)
+split fraction by decade: 1960s 22.5%, 1970s 14.8%, 1980s 18.6%, 1990s 13.9%
+admitted dividend rows: 151956; rows with |cf_ratio-1|>1e-9: 12741 (8.46%); mean cf_ratio (all valid) = 0.974426, divamt-weighted = 0.961426
+
+========================================================================
+TASK C: dividend coverage, admitted stocks 1990-1996
+========================================================================
+   y  n_stocks  payers  frac_payers  mean_count_payers
+1990      1279    1010        0.790              3.947
+1991      1378    1014        0.736              3.887
+1992      1514    1058        0.699              3.882
+1993      1632    1104        0.676              3.871
+1994      1677    1124        0.670              3.889
+1995      1729    1147        0.663              3.901
+1996      1771    1148        0.648              3.902
+1990-1996 pooled: payer fraction = 0.693 (7605/10980); mean dividend count among payers = 3.897
+paper-era expectation: ~65-75% payers, ~4 payments/yr among payers.

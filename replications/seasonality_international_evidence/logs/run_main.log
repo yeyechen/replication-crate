@@ -1,0 +1,24 @@
+Step 1/2: materializing month-end price panel (large daily scan)...
+  [stage] write_yeye.hs_month_end: 1,955,687 rows in 9.8s
+Step 2/2: materializing FX conversion factors...
+  [stage] write_yeye.hs_fx: 35,315 rows in 0.3s
+Computing stage diagnostics...
+Assembling final panel (FX join, ret_usd, me_usd)...
+  pulled 1,955,687 rows x 7 cols in 3.5s
+  wrote replications/seasonality_international_evidence/data/panel.parquet  (1,955,687 rows x 7 cols)
+Computing report diagnostics...
+  wrote results/diagnostics.md
+
+DONE in 15.9s
+{
+  "n_rows": 1955687,
+  "n_gvkey": 19685,
+  "months": [
+    "1983-12-31",
+    "2006-06-30"
+  ],
+  "xs_mean": 7464.8,
+  "ret_usd_mean": 0.01308,
+  "me_usd_median": 120827971.33240338,
+  "ntt_me_usd_2000_06": 211025085887.87494
+}

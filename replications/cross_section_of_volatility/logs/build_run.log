@@ -1,0 +1,26 @@
+Pulling monthly returns (monthly_returns.sql)…
+  2,159,548 rows in 4.4s
+Applying delisting-return adjustment…
+  Applied delisting adjustment to 14,537 last-month rows (12,368 with non-zero dlret_eff)
+Pulling monthly FF factors (ff_monthly.sql)…
+Pulling Compustat controls (compustat_controls.sql)…
+  merged bm/leverage in 4.2s
+Pulling daily sufficient statistics (daily_stats.sql)… [heavy]
+  2,194,780 (permno, month) groups in 21.5s
+Solving per-stock FF3 regressions (closed form)…
+  computed ivol/tvol/coskew/volume/turnover in 1.9s
+  Wrote 2,159,548 rows x 16 cols -> replications/cross_section_of_volatility/data/panel.parquet
+  Wrote summary -> replications/cross_section_of_volatility/results/panel_summary.md
+
+Quick stats:
+  rows=2,159,548  permnos=20,623  months=451
+  ivol     : mean=0.02964 median=0.02234 std=0.02827 null=1,804
+  tvol     : mean=0.03330 median=0.02560 std=0.03064 null=1,804
+  size     : mean=3.97282 median=3.80142 std=2.02428 null=93
+  bm       : mean=0.92950 median=0.70309 std=1.00186 null=502,283
+  mom      : mean=0.14020 median=0.04348 std=0.69322 null=37,265
+  volume   : mean=2.92815 median=0.09606 std=32.65801 null=283,075
+  turnover : mean=0.00325 median=0.00158 std=0.00744 null=282,982
+  leverage : mean=6.04481 median=2.07245 std=518.98948 null=407,157
+  coskew   : mean=-0.03514 median=-0.03388 std=0.36156 null=33,979
+  n_obs    : mean=21.01067 median=21.00000 std=1.22829 null=46
