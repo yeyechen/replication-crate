@@ -1,0 +1,1350 @@
+{
+  "tables": [
+    {
+      "id": "table_1",
+      "table_ref": "Table 1 (Panels A and B)",
+      "description": "Financial and return characteristics of the 14,043 high-BM firm-years, 1976-1996: Panel A means/medians/std of MVE, ASSETS, BM and the nine raw signals plus the proportion with a positive (good) signal; Panel B distribution of 1-yr and 2-yr raw and market-adjusted buy-and-hold returns.",
+      "replication_meaning": "Validates the ENTIRE sample-construction chain in one table: the Compustat universe, prior-year BM-quintile classification (final n = 14,043), every signal definition (mean, median and signal-proportion columns each pin down a different definition choice — e.g. CFO proportion 0.755 pins down oancf usage; ΔTURN proportion 0.534 pins down the turnover denominator; ΔLEVER proportion 0.498 pins down the leverage-decrease sign convention), the fiscal-year-end ME/BM measurement, the fifth-month BHR window, the zero-delisting-return rule, and the value-weighted market adjustment. If this table replicates, the pipeline inputs to Tables 2-4 and Appendix A are trustworthy.",
+      "paper_quote": "Table 1 provides descriptive statistics about the financial characteristics of the high book-to-market portfolio of firms... the average (median) firm in the highest book-to-market quintile of all firms has a mean (median) BM ratio of 2.444 (1.721)... (14,043 Firm-Year Observations between 1976 and 1996)",
+      "exercises_preprocessing_rules": [
+        "universe_compustat_all_firms",
+        "sample_high_bm_quintile_prior_year",
+        "sample_prior_year_grouping",
+        "sample_sufficient_signal_data",
+        "variable_me_bm_fiscal_year_end",
+        "variable_roa_cfo_beginning_assets",
+        "variable_droa",
+        "variable_accrual",
+        "variable_dlever",
+        "variable_dliquid",
+        "variable_eq_offer",
+        "variable_dmargin",
+        "variable_dturn",
+        "variable_fscore_composite",
+        "variable_returns_fifth_month_bhr",
+        "delisting_return_zero",
+        "factor_market_adjustment_only",
+        "winsorize_none_paper_silent"
+      ],
+      "metrics": [
+        {
+          "name": "PanelA_n_firm_years",
+          "value": 14043,
+          "unit": "count",
+          "tolerance_pct": 15,
+          "paper_location": "L362"
+        },
+        {
+          "name": "PanelA_MVE_mean_millions",
+          "value": 188.5,
+          "unit": "millions_usd",
+          "tolerance_pct": 50,
+          "paper_location": "L379"
+        },
+        {
+          "name": "PanelA_MVE_median_millions",
+          "value": 14.365,
+          "unit": "millions_usd",
+          "tolerance_pct": 30,
+          "paper_location": "L380"
+        },
+        {
+          "name": "PanelA_ASSETS_mean_millions",
+          "value": 1043.99,
+          "unit": "millions_usd",
+          "tolerance_pct": 50,
+          "paper_location": "L386"
+        },
+        {
+          "name": "PanelA_BM_mean",
+          "value": 2.444,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L393"
+        },
+        {
+          "name": "PanelA_BM_median",
+          "value": 1.721,
+          "unit": "ratio",
+          "tolerance_pct": 25,
+          "paper_location": "L394"
+        },
+        {
+          "name": "PanelA_ROA_mean",
+          "value": -0.0054,
+          "unit": "ratio",
+          "tolerance_pct": 100,
+          "paper_location": "L400"
+        },
+        {
+          "name": "PanelA_ROA_prop_positive",
+          "value": 0.632,
+          "unit": "proportion",
+          "tolerance_pct": 10,
+          "paper_location": "L403"
+        },
+        {
+          "name": "PanelA_dROA_mean",
+          "value": -0.0096,
+          "unit": "ratio",
+          "tolerance_pct": 100,
+          "paper_location": "L407"
+        },
+        {
+          "name": "PanelA_dROA_prop_positive",
+          "value": 0.432,
+          "unit": "proportion",
+          "tolerance_pct": 10,
+          "paper_location": "L410"
+        },
+        {
+          "name": "PanelA_dMARGIN_mean",
+          "value": -0.0324,
+          "unit": "ratio",
+          "tolerance_pct": 100,
+          "paper_location": "L414"
+        },
+        {
+          "name": "PanelA_dMARGIN_prop_positive",
+          "value": 0.454,
+          "unit": "proportion",
+          "tolerance_pct": 10,
+          "paper_location": "L417"
+        },
+        {
+          "name": "PanelA_CFO_mean",
+          "value": 0.0498,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L421"
+        },
+        {
+          "name": "PanelA_CFO_prop_positive",
+          "value": 0.755,
+          "unit": "proportion",
+          "tolerance_pct": 10,
+          "paper_location": "L424"
+        },
+        {
+          "name": "PanelA_dLIQUID_mean",
+          "value": -0.0078,
+          "unit": "ratio",
+          "tolerance_pct": 100,
+          "paper_location": "L428"
+        },
+        {
+          "name": "PanelA_dLIQUID_prop_positive",
+          "value": 0.384,
+          "unit": "proportion",
+          "tolerance_pct": 10,
+          "paper_location": "L431"
+        },
+        {
+          "name": "PanelA_dLEVER_mean",
+          "value": 0.0024,
+          "unit": "ratio",
+          "tolerance_pct": 150,
+          "paper_location": "L435"
+        },
+        {
+          "name": "PanelA_dLEVER_prop_positive_signal",
+          "value": 0.498,
+          "unit": "proportion",
+          "tolerance_pct": 10,
+          "paper_location": "L438"
+        },
+        {
+          "name": "PanelA_dTURN_mean",
+          "value": 0.0119,
+          "unit": "ratio",
+          "tolerance_pct": 100,
+          "paper_location": "L442"
+        },
+        {
+          "name": "PanelA_dTURN_prop_positive",
+          "value": 0.534,
+          "unit": "proportion",
+          "tolerance_pct": 10,
+          "paper_location": "L445"
+        },
+        {
+          "name": "PanelA_ACCRUAL_mean",
+          "value": -0.0552,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L449"
+        },
+        {
+          "name": "PanelA_ACCRUAL_prop_positive_signal",
+          "value": 0.78,
+          "unit": "proportion",
+          "tolerance_pct": 10,
+          "paper_location": "L452"
+        },
+        {
+          "name": "PanelB_1yr_raw_mean",
+          "value": 0.239,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L485"
+        },
+        {
+          "name": "PanelB_1yr_raw_median",
+          "value": 0.105,
+          "unit": "ratio",
+          "tolerance_pct": 40,
+          "paper_location": "L488"
+        },
+        {
+          "name": "PanelB_1yr_raw_pct_positive",
+          "value": 0.61,
+          "unit": "proportion",
+          "tolerance_pct": 10,
+          "paper_location": "L491"
+        },
+        {
+          "name": "PanelB_1yr_mktadj_mean",
+          "value": 0.059,
+          "unit": "ratio",
+          "tolerance_pct": 100,
+          "paper_location": "L495"
+        },
+        {
+          "name": "PanelB_1yr_mktadj_median",
+          "value": -0.061,
+          "unit": "ratio",
+          "tolerance_pct": 100,
+          "paper_location": "L498"
+        },
+        {
+          "name": "PanelB_1yr_mktadj_pct_positive",
+          "value": 0.437,
+          "unit": "proportion",
+          "tolerance_pct": 10,
+          "paper_location": "L501"
+        },
+        {
+          "name": "PanelB_2yr_raw_mean",
+          "value": 0.479,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L515"
+        },
+        {
+          "name": "PanelB_2yr_mktadj_mean",
+          "value": 0.127,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L525"
+        },
+        {
+          "name": "PanelB_2yr_mktadj_pct_positive",
+          "value": 0.432,
+          "unit": "proportion",
+          "tolerance_pct": 10,
+          "paper_location": "L531"
+        }
+      ],
+      "notes": "Paper vintages Compustat as of the late 1990s; the 2026 vintage contains restated and backfilled fundamentals, so exact count (14,043) and skewed means (MVE, ASSETS, BM) may drift — hence wider tolerances on means, tighter on robust statistics (medians, proportions, counts). SAMPLE SCOPE (user-approved, assumptions.md A1): restricted to formation years 1988-1996 (FY1987-FY1995) because oancf is missing for FY<1987 in the 2026 Compustat vintage. Full-sample paper values (1976-1996) are retained as Tier-2 references: counts and full-period means cannot match numerically by construction; signs, magnitudes, and cross-sectional patterns are the pass criteria."
+    },
+    {
+      "id": "table_3",
+      "table_ref": "Table 3 (Panels A, B, C, D)",
+      "description": "Buy-and-hold returns to the F_SCORE strategy within the high-BM universe: Panel A one-year raw, Panel B one-year market-adjusted (focus), Panel C two-year market-adjusted, Panel D RANK_SCORE quintiles. Per-score (0-9) means and n, plus Low {0,1}/High {8,9} portfolios and High-minus-All / High-minus-Low differences with t-stats and bootstrap p-values.",
+      "replication_meaning": "THE central result of the paper: a monotonic positive relation between F_SCORE and subsequent returns, High-Low one-year market-adjusted spread of 0.230 (t=5.590) and High-minus-All of 0.075 (t=3.140) — the abstract's '7.5% annually' and '23% annual return' claims. Per-score counts (57/339/.../333) and means jointly validate the F_SCORE aggregation, the portfolio definitions, and the return machinery. Panel C validates the 2-year window; Panel D validates the ranked-signal alternative.",
+      "paper_quote": "high F_SCORE firms significantly outperform low F_SCORE firms in the year following portfolio formation (mean market-adjusted returns of 0.134 versus -0.096, respectively). The mean return difference of 0.230 is significant at the 1% level... the high F_SCORE firms earn a mean market-adjusted return of 0.134 versus 0.059 for the entire BM quintile. This difference of 0.075 is also statistically significant at the 1% level.",
+      "exercises_preprocessing_rules": [
+        "universe_compustat_all_firms",
+        "sample_high_bm_quintile_prior_year",
+        "sample_prior_year_grouping",
+        "sample_sufficient_signal_data",
+        "variable_me_bm_fiscal_year_end",
+        "variable_roa_cfo_beginning_assets",
+        "variable_droa",
+        "variable_accrual",
+        "variable_dlever",
+        "variable_dliquid",
+        "variable_eq_offer",
+        "variable_dmargin",
+        "variable_dturn",
+        "variable_fscore_composite",
+        "variable_returns_fifth_month_bhr",
+        "delisting_return_zero",
+        "factor_market_adjustment_only",
+        "winsorize_none_paper_silent",
+        "sort_fscore_low_high",
+        "sort_rank_score_quintiles"
+      ],
+      "metrics": [
+        {
+          "name": "PanelB_All_mean",
+          "value": 0.059,
+          "unit": "ratio",
+          "tolerance_pct": 100,
+          "paper_location": "L1085"
+        },
+        {
+          "name": "PanelB_All_median",
+          "value": -0.061,
+          "unit": "ratio",
+          "tolerance_pct": 100,
+          "paper_location": "L1088"
+        },
+        {
+          "name": "PanelB_All_pct_positive",
+          "value": 0.437,
+          "unit": "proportion",
+          "tolerance_pct": 10,
+          "paper_location": "L1091"
+        },
+        {
+          "name": "PanelB_All_n",
+          "value": 14043,
+          "unit": "count",
+          "tolerance_pct": 15,
+          "paper_location": "L1092"
+        },
+        {
+          "name": "PanelB_score0_mean",
+          "value": -0.061,
+          "unit": "ratio",
+          "tolerance_pct": 80,
+          "paper_location": "L1107"
+        },
+        {
+          "name": "PanelB_score0_n",
+          "value": 57,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1114"
+        },
+        {
+          "name": "PanelB_score1_mean",
+          "value": -0.102,
+          "unit": "ratio",
+          "tolerance_pct": 80,
+          "paper_location": "L1118"
+        },
+        {
+          "name": "PanelB_score1_n",
+          "value": 339,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1125"
+        },
+        {
+          "name": "PanelB_score2_mean",
+          "value": -0.02,
+          "unit": "ratio",
+          "tolerance_pct": 80,
+          "paper_location": "L1129"
+        },
+        {
+          "name": "PanelB_score2_n",
+          "value": 859,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1136"
+        },
+        {
+          "name": "PanelB_score3_mean",
+          "value": -0.015,
+          "unit": "ratio",
+          "tolerance_pct": 80,
+          "paper_location": "L1140"
+        },
+        {
+          "name": "PanelB_score3_n",
+          "value": 1618,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1147"
+        },
+        {
+          "name": "PanelB_score4_mean",
+          "value": 0.026,
+          "unit": "ratio",
+          "tolerance_pct": 80,
+          "paper_location": "L1151"
+        },
+        {
+          "name": "PanelB_score4_n",
+          "value": 2462,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1158"
+        },
+        {
+          "name": "PanelB_score5_mean",
+          "value": 0.053,
+          "unit": "ratio",
+          "tolerance_pct": 80,
+          "paper_location": "L1162"
+        },
+        {
+          "name": "PanelB_score5_n",
+          "value": 2787,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1169"
+        },
+        {
+          "name": "PanelB_score6_mean",
+          "value": 0.112,
+          "unit": "ratio",
+          "tolerance_pct": 80,
+          "paper_location": "L1173"
+        },
+        {
+          "name": "PanelB_score6_n",
+          "value": 2579,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1180"
+        },
+        {
+          "name": "PanelB_score7_mean",
+          "value": 0.116,
+          "unit": "ratio",
+          "tolerance_pct": 80,
+          "paper_location": "L1184"
+        },
+        {
+          "name": "PanelB_score7_n",
+          "value": 1894,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1191"
+        },
+        {
+          "name": "PanelB_score8_mean",
+          "value": 0.127,
+          "unit": "ratio",
+          "tolerance_pct": 80,
+          "paper_location": "L1195"
+        },
+        {
+          "name": "PanelB_score8_n",
+          "value": 1115,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1202"
+        },
+        {
+          "name": "PanelB_score9_mean",
+          "value": 0.159,
+          "unit": "ratio",
+          "tolerance_pct": 80,
+          "paper_location": "L1236"
+        },
+        {
+          "name": "PanelB_score9_n",
+          "value": 333,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1243"
+        },
+        {
+          "name": "PanelB_Low_mean",
+          "value": -0.096,
+          "unit": "ratio",
+          "tolerance_pct": 60,
+          "paper_location": "L1247"
+        },
+        {
+          "name": "PanelB_Low_median",
+          "value": -0.2,
+          "unit": "ratio",
+          "tolerance_pct": 60,
+          "paper_location": "L1250"
+        },
+        {
+          "name": "PanelB_Low_n",
+          "value": 396,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1254"
+        },
+        {
+          "name": "PanelB_High_mean",
+          "value": 0.134,
+          "unit": "ratio",
+          "tolerance_pct": 60,
+          "paper_location": "L1258"
+        },
+        {
+          "name": "PanelB_High_median",
+          "value": 0.0,
+          "unit": "ratio",
+          "tolerance_pct": 100,
+          "paper_location": "L1261"
+        },
+        {
+          "name": "PanelB_High_n",
+          "value": 1448,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1265"
+        },
+        {
+          "name": "PanelB_High_minus_All_mean",
+          "value": 0.075,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L1275"
+        },
+        {
+          "name": "PanelB_High_minus_All_tstat",
+          "value": 3.14,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1288"
+        },
+        {
+          "name": "PanelB_High_minus_Low_mean",
+          "value": 0.23,
+          "unit": "ratio",
+          "tolerance_pct": 35,
+          "paper_location": "L1349"
+        },
+        {
+          "name": "PanelB_High_minus_Low_tstat",
+          "value": 5.59,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1362"
+        },
+        {
+          "name": "PanelA_All_mean",
+          "value": 0.239,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L822"
+        },
+        {
+          "name": "PanelA_Low_mean",
+          "value": 0.078,
+          "unit": "ratio",
+          "tolerance_pct": 60,
+          "paper_location": "L954"
+        },
+        {
+          "name": "PanelA_High_mean",
+          "value": 0.313,
+          "unit": "ratio",
+          "tolerance_pct": 60,
+          "paper_location": "L965"
+        },
+        {
+          "name": "PanelA_High_minus_All_mean",
+          "value": 0.074,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L976"
+        },
+        {
+          "name": "PanelA_High_minus_All_tstat",
+          "value": 3.279,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L987"
+        },
+        {
+          "name": "PanelA_High_minus_Low_mean",
+          "value": 0.235,
+          "unit": "ratio",
+          "tolerance_pct": 35,
+          "paper_location": "L1020"
+        },
+        {
+          "name": "PanelA_High_minus_Low_tstat",
+          "value": 5.594,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1031"
+        },
+        {
+          "name": "PanelC_All_mean",
+          "value": 0.127,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L1425"
+        },
+        {
+          "name": "PanelC_Low_mean",
+          "value": -0.145,
+          "unit": "ratio",
+          "tolerance_pct": 60,
+          "paper_location": "L1559"
+        },
+        {
+          "name": "PanelC_High_mean",
+          "value": 0.287,
+          "unit": "ratio",
+          "tolerance_pct": 60,
+          "paper_location": "L1570"
+        },
+        {
+          "name": "PanelC_High_minus_All_mean",
+          "value": 0.16,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L1587"
+        },
+        {
+          "name": "PanelC_High_minus_All_tstat",
+          "value": 2.639,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1600"
+        },
+        {
+          "name": "PanelC_High_minus_Low_mean",
+          "value": 0.432,
+          "unit": "ratio",
+          "tolerance_pct": 35,
+          "paper_location": "L1661"
+        },
+        {
+          "name": "PanelC_High_minus_Low_tstat",
+          "value": 5.749,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1674"
+        },
+        {
+          "name": "PanelD_1yr_High_minus_Low_mean",
+          "value": 0.092,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L1802"
+        },
+        {
+          "name": "PanelD_1yr_High_minus_Low_tstat",
+          "value": 4.488,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1813"
+        },
+        {
+          "name": "PanelD_1yr_High_minus_All_mean",
+          "value": 0.038,
+          "unit": "ratio",
+          "tolerance_pct": 80,
+          "paper_location": "L1769"
+        }
+      ],
+      "notes": "Bootstrap p-values (1,000 iterations) are reported in the paper but excluded as targets: they are resampling artifacts of the same means we already target. Headline spreads (High-Low 0.230/0.235/0.432) get the tightened ±35% tolerance per TOLERANCE_RULES (central claim; SE ~0.041 = 36% of 0.230 at 2SE). SAMPLE SCOPE (user-approved, assumptions.md A1): restricted to formation years 1988-1996 (FY1987-FY1995) because oancf is missing for FY<1987 in the 2026 Compustat vintage. Full-sample paper values (1976-1996) are retained as Tier-2 references: counts and full-period means cannot match numerically by construction; signs, magnitudes, and cross-sectional patterns are the pass criteria."
+    },
+    {
+      "id": "table_2",
+      "table_ref": "Table 2",
+      "description": "Spearman correlations among the nine binary signals, F_SCORE, and 1-yr/2-yr market-adjusted returns for the 14,043 high-BM observations.",
+      "replication_meaning": "Validates signal construction independently of the return machinery: the F_SCORE-vs-signal correlations (0.35-0.58) depend ONLY on the nine binaries and pin down each signal's definition and sign convention; the F_SCORE-vs-return correlations (0.124/0.121) confirm the aggregate signal has the paper's predictive content. Cross-checks the text claim (L346) that ROA and CFO are the strongest individual signals (0.106/0.104 with 1-yr returns).",
+      "paper_quote": "F_SCORE has a significant positive correlation with both one-year and two-year future returns (0.121 and 0.130, respectively). For comparison, the two strongest individual explanatory variables are ROA and CFO; however, these variables only have a correlation of 0.086 and 0.096, respectively, with one-year ahead market-adjusted returns.",
+      "exercises_preprocessing_rules": [
+        "universe_compustat_all_firms",
+        "sample_high_bm_quintile_prior_year",
+        "sample_prior_year_grouping",
+        "sample_sufficient_signal_data",
+        "variable_me_bm_fiscal_year_end",
+        "variable_roa_cfo_beginning_assets",
+        "variable_droa",
+        "variable_accrual",
+        "variable_dlever",
+        "variable_dliquid",
+        "variable_eq_offer",
+        "variable_dmargin",
+        "variable_dturn",
+        "variable_fscore_composite",
+        "variable_returns_fifth_month_bhr",
+        "delisting_return_zero",
+        "factor_market_adjustment_only",
+        "winsorize_none_paper_silent"
+      ],
+      "metrics": [
+        {
+          "name": "corr_FSCORE_MA_RET_1yr",
+          "value": 0.124,
+          "unit": "spearman_corr",
+          "tolerance_pct": 40,
+          "paper_location": "L608"
+        },
+        {
+          "name": "corr_FSCORE_MA_RET2_2yr",
+          "value": 0.121,
+          "unit": "spearman_corr",
+          "tolerance_pct": 40,
+          "paper_location": "L621"
+        },
+        {
+          "name": "corr_F_ROA_MA_RET",
+          "value": 0.106,
+          "unit": "spearman_corr",
+          "tolerance_pct": 50,
+          "paper_location": "L599"
+        },
+        {
+          "name": "corr_F_CFO_MA_RET",
+          "value": 0.104,
+          "unit": "spearman_corr",
+          "tolerance_pct": 50,
+          "paper_location": "L602"
+        },
+        {
+          "name": "corr_FSCORE_F_ROA",
+          "value": 0.512,
+          "unit": "spearman_corr",
+          "tolerance_pct": 20,
+          "paper_location": "L647"
+        },
+        {
+          "name": "corr_FSCORE_F_dROA",
+          "value": 0.578,
+          "unit": "spearman_corr",
+          "tolerance_pct": 20,
+          "paper_location": "L660"
+        },
+        {
+          "name": "corr_FSCORE_F_CFO",
+          "value": 0.556,
+          "unit": "spearman_corr",
+          "tolerance_pct": 20,
+          "paper_location": "L686"
+        },
+        {
+          "name": "corr_FSCORE_F_dMARGIN",
+          "value": 0.483,
+          "unit": "spearman_corr",
+          "tolerance_pct": 20,
+          "paper_location": "L673"
+        },
+        {
+          "name": "corr_FSCORE_F_dLIQUID",
+          "value": 0.395,
+          "unit": "spearman_corr",
+          "tolerance_pct": 25,
+          "paper_location": "L699"
+        },
+        {
+          "name": "corr_FSCORE_F_dLEVER",
+          "value": 0.4,
+          "unit": "spearman_corr",
+          "tolerance_pct": 25,
+          "paper_location": "L712"
+        },
+        {
+          "name": "corr_FSCORE_F_ACCRUAL",
+          "value": 0.351,
+          "unit": "spearman_corr",
+          "tolerance_pct": 25,
+          "paper_location": "L725"
+        },
+        {
+          "name": "corr_FSCORE_EQ_OFFER",
+          "value": 0.366,
+          "unit": "spearman_corr",
+          "tolerance_pct": 25,
+          "paper_location": "L738"
+        },
+        {
+          "name": "corr_F_dLIQUID_F_ACCRUAL",
+          "value": 0.573,
+          "unit": "spearman_corr",
+          "tolerance_pct": 20,
+          "paper_location": "L684"
+        }
+      ],
+      "notes": "OCR note: the printed table's lower-triangular layout has one row-label offset in the parse; values above are read against the header row (RETURN | ROA ΔROA ΔMARGIN CFO ΔLIQUID ΔLEVER ΔTURN ACCRUAL EQ_OFFER F_SCORE) and cross-checked against the text at L346. Signal-only correlations carry tight tolerances because they are computable exactly from the same binaries and are insensitive to data vintage drift in returns. SAMPLE SCOPE (user-approved, assumptions.md A1): restricted to formation years 1988-1996 (FY1987-FY1995) because oancf is missing for FY<1987 in the 2026 Compustat vintage. Full-sample paper values (1976-1996) are retained as Tier-2 references: counts and full-period means cannot match numerically by construction; signs, magnitudes, and cross-sectional patterns are the pass criteria."
+    },
+    {
+      "id": "table_4",
+      "table_ref": "Table 4",
+      "description": "One-year market-adjusted buy-and-hold returns by F_SCORE within small/medium/large size partitions (terciles from the full Compustat MVE distribution, prior-year cutoffs). Mean, median, n per score and per partition; High-All and High-Low differences with t-stats.",
+      "replication_meaning": "Validates the size-partition methodology (full-Compustat terciles, prior-year cutoffs — distinct from the BM quintile universe) and the paper's key cross-sectional claim that the strategy works in small/medium firms but not large: counts 8,302/3,906/1,835 pin down the tercile construction; High-Low spreads 0.270 (t=4.709)/0.173 (t=2.870)/0.152 (t=1.884, insignificant) pin down the interaction with size.",
+      "paper_quote": "a preponderance of the firms (8,302) are in the bottom third of market capitalization (59.12%), while 3,906 (27.81%) and 1,835 (13.07%) are assigned to the middle and top size portfolio respectively... the strongest benefit from financial statement analysis is also garnered in the small-firm portfolio (return difference between high and low F_SCORE firms is 0.270, significant at the 1% level)... differentiation is weak among the largest firms.",
+      "exercises_preprocessing_rules": [
+        "universe_compustat_all_firms",
+        "sample_high_bm_quintile_prior_year",
+        "sample_prior_year_grouping",
+        "sample_sufficient_signal_data",
+        "variable_me_bm_fiscal_year_end",
+        "variable_roa_cfo_beginning_assets",
+        "variable_droa",
+        "variable_accrual",
+        "variable_dlever",
+        "variable_dliquid",
+        "variable_eq_offer",
+        "variable_dmargin",
+        "variable_dturn",
+        "variable_fscore_composite",
+        "variable_returns_fifth_month_bhr",
+        "delisting_return_zero",
+        "factor_market_adjustment_only",
+        "winsorize_none_paper_silent",
+        "sort_fscore_low_high",
+        "sort_size_terciles_compustat_wide"
+      ],
+      "metrics": [
+        {
+          "name": "n_small",
+          "value": 8302,
+          "unit": "count",
+          "tolerance_pct": 15,
+          "paper_location": "L2086"
+        },
+        {
+          "name": "n_medium",
+          "value": 3906,
+          "unit": "count",
+          "tolerance_pct": 15,
+          "paper_location": "L2089"
+        },
+        {
+          "name": "n_large",
+          "value": 1835,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L2092"
+        },
+        {
+          "name": "All_mean_small",
+          "value": 0.091,
+          "unit": "ratio",
+          "tolerance_pct": 80,
+          "paper_location": "L2084"
+        },
+        {
+          "name": "All_mean_medium",
+          "value": 0.008,
+          "unit": "ratio",
+          "tolerance_pct": 150,
+          "paper_location": "L2087"
+        },
+        {
+          "name": "All_mean_large",
+          "value": 0.003,
+          "unit": "ratio",
+          "tolerance_pct": 150,
+          "paper_location": "L2090"
+        },
+        {
+          "name": "Low_mean_small",
+          "value": -0.091,
+          "unit": "ratio",
+          "tolerance_pct": 60,
+          "paper_location": "L2216"
+        },
+        {
+          "name": "Low_mean_medium",
+          "value": -0.094,
+          "unit": "ratio",
+          "tolerance_pct": 60,
+          "paper_location": "L2219"
+        },
+        {
+          "name": "Low_mean_large",
+          "value": -0.132,
+          "unit": "ratio",
+          "tolerance_pct": 60,
+          "paper_location": "L2222"
+        },
+        {
+          "name": "High_mean_small",
+          "value": 0.179,
+          "unit": "ratio",
+          "tolerance_pct": 60,
+          "paper_location": "L2228"
+        },
+        {
+          "name": "High_mean_medium",
+          "value": 0.079,
+          "unit": "ratio",
+          "tolerance_pct": 60,
+          "paper_location": "L2231"
+        },
+        {
+          "name": "High_mean_large",
+          "value": 0.02,
+          "unit": "ratio",
+          "tolerance_pct": 150,
+          "paper_location": "L2234"
+        },
+        {
+          "name": "High_minus_Low_mean_small",
+          "value": 0.27,
+          "unit": "ratio",
+          "tolerance_pct": 40,
+          "paper_location": "L2264"
+        },
+        {
+          "name": "High_minus_Low_tstat_small",
+          "value": 4.709,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2276"
+        },
+        {
+          "name": "High_minus_Low_mean_medium",
+          "value": 0.173,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L2267"
+        },
+        {
+          "name": "High_minus_Low_tstat_medium",
+          "value": 2.87,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2279"
+        },
+        {
+          "name": "High_minus_Low_mean_large",
+          "value": 0.152,
+          "unit": "ratio",
+          "tolerance_pct": 60,
+          "paper_location": "L2270"
+        },
+        {
+          "name": "High_minus_Low_tstat_large",
+          "value": 1.884,
+          "unit": "t_stat",
+          "tolerance_pct": 50,
+          "paper_location": "L2282"
+        }
+      ],
+      "notes": "Size tercile breakpoints come from the full Compustat population (not the high-BM subset) using the prior fiscal year's MVE distribution — a distinct cutoff machinery from the BM quintiles. Table 4 prints per-score rows per partition too; we target the aggregate rows (All/Low/High + counts + differences) which are the rows discussed in §4.3. SAMPLE SCOPE (user-approved, assumptions.md A1): restricted to formation years 1988-1996 (FY1987-FY1995) because oancf is missing for FY<1987 in the 2026 Compustat vintage. Full-sample paper values (1976-1996) are retained as Tier-2 references: counts and full-period means cannot match numerically by construction; signs, magnitudes, and cross-sectional patterns are the pass criteria."
+    },
+    {
+      "id": "appendix_a",
+      "table_ref": "Appendix A",
+      "description": "One-year market-adjusted returns by calendar year (1976-1996) to a hedge portfolio long strong F_SCORE (>=5) and short weak F_SCORE (<5) firms within the high-BM universe; with average returns and t-statistics.",
+      "replication_meaning": "Validates the time-series robustness of the strategy ('robust across time'): 21 annual spread observations, average strong 0.106 (t=3.360) vs weak 0.009 (t=0.243), average spread 0.097 (t=5.059). Year-by-year n and spreads are an independent check on the formation-year mapping and the F>=5 vs F<5 partition definition (different from Table 3's 8-9 vs 0-1). Positive spread in 17 of 21 years is the robustness claim.",
+      "paper_quote": "This appendix documents one-year market-adjusted returns by calendar year to a hedge portfolio taking a long position in firms with a strong F_SCORE (F_SCORE greater than or equal to 5) and a short position in firms with a poor F_SCORE (F_SCORE less than 5). Returns are cumulated over a one-year period starting four months after fiscal year-end... Average 0.106 0.009 0.097; (t-Statistic) (3.360) (0.243) (5.059).",
+      "exercises_preprocessing_rules": [
+        "universe_compustat_all_firms",
+        "sample_high_bm_quintile_prior_year",
+        "sample_prior_year_grouping",
+        "sample_sufficient_signal_data",
+        "variable_me_bm_fiscal_year_end",
+        "variable_roa_cfo_beginning_assets",
+        "variable_droa",
+        "variable_accrual",
+        "variable_dlever",
+        "variable_dliquid",
+        "variable_eq_offer",
+        "variable_dmargin",
+        "variable_dturn",
+        "variable_fscore_composite",
+        "variable_returns_fifth_month_bhr",
+        "delisting_return_zero",
+        "factor_market_adjustment_only",
+        "winsorize_none_paper_silent",
+        "sort_fscore_low_high"
+      ],
+      "metrics": [
+        {
+          "name": "avg_strong_mean",
+          "value": 0.106,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L3973"
+        },
+        {
+          "name": "avg_strong_tstat",
+          "value": 3.36,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L3974"
+        },
+        {
+          "name": "avg_weak_mean",
+          "value": 0.009,
+          "unit": "ratio",
+          "tolerance_pct": 150,
+          "paper_location": "L3973"
+        },
+        {
+          "name": "avg_spread_mean",
+          "value": 0.097,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L3973"
+        },
+        {
+          "name": "avg_spread_tstat",
+          "value": 5.059,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L3974"
+        },
+        {
+          "name": "spread_1976",
+          "value": -0.004,
+          "unit": "ratio",
+          "tolerance_pct": 150,
+          "paper_location": "L3952"
+        },
+        {
+          "name": "spread_1983",
+          "value": 0.349,
+          "unit": "ratio",
+          "tolerance_pct": 80,
+          "paper_location": "L3959"
+        },
+        {
+          "name": "spread_1990",
+          "value": 0.157,
+          "unit": "ratio",
+          "tolerance_pct": 80,
+          "paper_location": "L3966"
+        },
+        {
+          "name": "spread_1996",
+          "value": 0.147,
+          "unit": "ratio",
+          "tolerance_pct": 80,
+          "paper_location": "L3972"
+        },
+        {
+          "name": "n_1976",
+          "value": 383,
+          "unit": "count",
+          "tolerance_pct": 25,
+          "paper_location": "L3952"
+        },
+        {
+          "name": "n_1990",
+          "value": 1256,
+          "unit": "count",
+          "tolerance_pct": 25,
+          "paper_location": "L3966"
+        }
+      ],
+      "notes": "Appendix A uses a DIFFERENT partition than Table 3: strong = F_SCORE >= 5, weak = F_SCORE < 5 (not 8-9 vs 0-1). The per-year spreads are noisy single-year statistics (±80-150% tolerances); the averages and t-stats are the real targets. 'Starting four months after fiscal year-end' (L3935) = beginning of the fifth month, same convention as §3.2. SAMPLE SCOPE (user-approved, assumptions.md A1): restricted to formation years 1988-1996 (FY1987-FY1995) because oancf is missing for FY<1987 in the 2026 Compustat vintage. Full-sample paper values (1976-1996) are retained as Tier-2 references: counts and full-period means cannot match numerically by construction; signs, magnitudes, and cross-sectional patterns are the pass criteria."
+    },
+    {
+      "id": "table_7",
+      "table_ref": "Table 7 (Panels A and B)",
+      "description": "Cross-sectional regressions of one-year market-adjusted returns on log(MVE), log(BM), MOMENT decile, ACCRUAL decile, EQ_OFFER and F_SCORE within the high-BM universe. Panel A: pooled OLS (4 model specifications); Panel B: time-series average of 21 annual regressions (1976-96) with t-stats from the coefficient distribution.",
+      "replication_meaning": "Validates that F_SCORE subsumes size, book-to-market, momentum, accrual and equity-offer effects: the F_SCORE coefficient stays 0.025-0.031 (t=6.8-8.2) across specifications — 'a one-point improvement in the aggregate score is associated with an approximate 2.5% to 3% increase in the one-year market-adjusted return'. Exercises the MOMENT variable (6-month pre-formation market-adjusted return, decile-ranked on all-Compustat prior-year cutoffs) and the FM-style annual-averaging machinery.",
+      "paper_quote": "the coefficients on F_SCORE indicate that, after controlling for size and book-to-market differences, a one-point improvement in the aggregate score (i.e., one additional positive signal) is associated with an approximate 2.5% to 3% increase in the one-year market-adjusted return... the addition of variables designed to capture momentum, accrual reversal, and a prior equity issuance has no impact on the robustness of F_SCORE to predict future returns.",
+      "exercises_preprocessing_rules": [
+        "universe_compustat_all_firms",
+        "sample_high_bm_quintile_prior_year",
+        "sample_prior_year_grouping",
+        "sample_sufficient_signal_data",
+        "variable_me_bm_fiscal_year_end",
+        "variable_roa_cfo_beginning_assets",
+        "variable_droa",
+        "variable_accrual",
+        "variable_dlever",
+        "variable_dliquid",
+        "variable_eq_offer",
+        "variable_dmargin",
+        "variable_dturn",
+        "variable_fscore_composite",
+        "variable_returns_fifth_month_bhr",
+        "delisting_return_zero",
+        "factor_market_adjustment_only",
+        "winsorize_none_paper_silent",
+        "sort_fscore_low_high",
+        "fm_annual_cross_sectional_regressions"
+      ],
+      "metrics": [
+        {
+          "name": "PanelA_m1_intercept",
+          "value": 0.101,
+          "unit": "coef",
+          "tolerance_pct": 60,
+          "paper_location": "L2786"
+        },
+        {
+          "name": "PanelA_m1_logMVE",
+          "value": -0.03,
+          "unit": "coef",
+          "tolerance_pct": 50,
+          "paper_location": "L2787"
+        },
+        {
+          "name": "PanelA_m1_logBM",
+          "value": 0.085,
+          "unit": "coef",
+          "tolerance_pct": 50,
+          "paper_location": "L2788"
+        },
+        {
+          "name": "PanelA_m2_FSCORE",
+          "value": 0.031,
+          "unit": "coef",
+          "tolerance_pct": 40,
+          "paper_location": "L2814"
+        },
+        {
+          "name": "PanelA_m2_FSCORE_tstat",
+          "value": 8.175,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2825"
+        },
+        {
+          "name": "PanelA_m2_logMVE",
+          "value": -0.028,
+          "unit": "coef",
+          "tolerance_pct": 50,
+          "paper_location": "L2809"
+        },
+        {
+          "name": "PanelA_m2_logBM",
+          "value": 0.103,
+          "unit": "coef",
+          "tolerance_pct": 50,
+          "paper_location": "L2810"
+        },
+        {
+          "name": "PanelA_m4_FSCORE",
+          "value": 0.027,
+          "unit": "coef",
+          "tolerance_pct": 50,
+          "paper_location": "L2858"
+        },
+        {
+          "name": "PanelA_m4_FSCORE_tstat",
+          "value": 6.75,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2869"
+        },
+        {
+          "name": "PanelA_m4_MOMENT",
+          "value": 0.006,
+          "unit": "coef",
+          "tolerance_pct": 80,
+          "paper_location": "L2855"
+        },
+        {
+          "name": "PanelA_m4_ACCRUAL",
+          "value": -0.003,
+          "unit": "coef",
+          "tolerance_pct": 150,
+          "paper_location": "L2856"
+        },
+        {
+          "name": "PanelA_m4_EQ_OFFER",
+          "value": -0.007,
+          "unit": "coef",
+          "tolerance_pct": 150,
+          "paper_location": "L2857"
+        },
+        {
+          "name": "PanelA_m4_adjR2",
+          "value": 0.0149,
+          "unit": "r_squared",
+          "tolerance_pct": 40,
+          "paper_location": "L2859"
+        },
+        {
+          "name": "PanelB_m2_FSCORE_avg",
+          "value": 0.028,
+          "unit": "coef",
+          "tolerance_pct": 50,
+          "paper_location": "L2875"
+        }
+      ],
+      "notes": "Panel B row values in the parse are truncated after model (1) first row; the Panel B F_SCORE target uses the text's stated range (2.5-3%, midpoint 0.028). MOMENT = 6-month market-adjusted return prior to portfolio formation; both MOMENT and ACCRUAL enter as decile ranks 1-10 based on prior-year all-Compustat distributions (L2739). In this table EQ_OFFER = 1 if the firm ISSUED equity (the issuance dummy, opposite sign of the F-score signal component). Lowest-priority table of the six. SAMPLE SCOPE (user-approved, assumptions.md A1): restricted to formation years 1988-1996 (FY1987-FY1995) because oancf is missing for FY<1987 in the 2026 Compustat vintage. Full-sample paper values (1976-1996) are retained as Tier-2 references: counts and full-period means cannot match numerically by construction; signs, magnitudes, and cross-sectional patterns are the pass criteria."
+    },
+    {
+      "id": "table_5",
+      "table_ref": "Table 5 (Panels A, B, C)",
+      "description": "One-year market-adjusted returns to the F_SCORE strategy within share-price terciles (Panel A), trading-volume terciles (Panel B), and analyst-coverage groups (Panel C). Per bucket: All/Low{0,1}/High{8,9} mean, median, n; High-Low spread with t-stat.",
+      "replication_meaning": "Validates the abstract-level robustness claim that the strategy 'is not dependent on purchasing firms with low share prices': the paper finds significant positive High-Low spreads in ALL three price buckets (0.246/0.258/0.132) and ALL three volume buckets (0.239/0.175/0.203), and that gains concentrate in no-analyst-coverage firms (0.277 vs 0.114 covered). Exercises the price/volume/analyst partition machinery (prior-year full-Compustat cutoffs, like Table 4).",
+      "paper_quote": "the low and medium share price portfolios yield positive mean return differences of 0.246 and 0.258, respectively... the high share price portfolio also yields a significant positive difference of 0.132... the return difference in the high volume partition is 0.203 (both differences are significant at the 1% level)... the average return difference between high and low F_SCORE firms is 0.277 for the firms without analyst following, compared to 0.114 for the firms with analyst coverage.",
+      "exercises_preprocessing_rules": [
+        "universe_compustat_all_firms",
+        "sample_high_bm_quintile_prior_year",
+        "sample_prior_year_grouping",
+        "sample_sufficient_signal_data",
+        "variable_fscore_composite",
+        "variable_returns_fifth_month_bhr",
+        "delisting_return_zero",
+        "factor_market_adjustment_only",
+        "sort_fscore_low_high",
+        "sort_price_terciles",
+        "sort_volume_terciles",
+        "sort_analyst_following",
+        "winsorize_none_paper_silent"
+      ],
+      "metrics": [
+        {
+          "name": "PanelA_All_mean_small_price",
+          "value": 0.092,
+          "unit": "ratio",
+          "tolerance_pct": 100,
+          "paper_location": "L2353"
+        },
+        {
+          "name": "PanelA_n_small_price",
+          "value": 7250,
+          "unit": "count",
+          "tolerance_pct": 25,
+          "paper_location": "L2365"
+        },
+        {
+          "name": "PanelA_Low_mean_small_price",
+          "value": -0.092,
+          "unit": "ratio",
+          "tolerance_pct": 100,
+          "paper_location": "L2371"
+        },
+        {
+          "name": "PanelA_High_mean_small_price",
+          "value": 0.154,
+          "unit": "ratio",
+          "tolerance_pct": 60,
+          "paper_location": "L2383"
+        },
+        {
+          "name": "PanelA_HighLow_small_price",
+          "value": 0.246,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L2389"
+        },
+        {
+          "name": "PanelA_HighLow_tstat_small_price",
+          "value": 4.533,
+          "unit": "t_stat",
+          "tolerance_pct": 50,
+          "paper_location": "L2395"
+        },
+        {
+          "name": "PanelA_All_mean_medium_price",
+          "value": 0.018,
+          "unit": "ratio",
+          "tolerance_pct": 150,
+          "paper_location": "L2354"
+        },
+        {
+          "name": "PanelA_HighLow_medium_price",
+          "value": 0.258,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L2390"
+        },
+        {
+          "name": "PanelA_HighLow_tstat_medium_price",
+          "value": 3.573,
+          "unit": "t_stat",
+          "tolerance_pct": 50,
+          "paper_location": "L2396"
+        },
+        {
+          "name": "PanelA_HighLow_large_price",
+          "value": 0.132,
+          "unit": "ratio",
+          "tolerance_pct": 60,
+          "paper_location": "L2391"
+        },
+        {
+          "name": "PanelA_HighLow_tstat_large_price",
+          "value": 1.852,
+          "unit": "t_stat",
+          "tolerance_pct": 60,
+          "paper_location": "L2397"
+        },
+        {
+          "name": "PanelB_All_mean_low_volume",
+          "value": 0.101,
+          "unit": "ratio",
+          "tolerance_pct": 100,
+          "paper_location": "L2417"
+        },
+        {
+          "name": "PanelB_Low_mean_low_volume",
+          "value": -0.072,
+          "unit": "ratio",
+          "tolerance_pct": 100,
+          "paper_location": "L2435"
+        },
+        {
+          "name": "PanelB_High_mean_low_volume",
+          "value": 0.167,
+          "unit": "ratio",
+          "tolerance_pct": 60,
+          "paper_location": "L2447"
+        },
+        {
+          "name": "PanelB_HighLow_low_volume",
+          "value": 0.239,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L2453"
+        },
+        {
+          "name": "PanelB_HighLow_tstat_low_volume",
+          "value": 4.417,
+          "unit": "t_stat",
+          "tolerance_pct": 50,
+          "paper_location": "L2459"
+        },
+        {
+          "name": "PanelB_HighLow_medium_volume",
+          "value": 0.175,
+          "unit": "ratio",
+          "tolerance_pct": 60,
+          "paper_location": "L2454"
+        },
+        {
+          "name": "PanelB_HighLow_high_volume",
+          "value": 0.203,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L2455"
+        },
+        {
+          "name": "PanelB_HighLow_tstat_high_volume",
+          "value": 2.863,
+          "unit": "t_stat",
+          "tolerance_pct": 50,
+          "paper_location": "L2461"
+        },
+        {
+          "name": "PanelC_coverage_share",
+          "value": 0.378,
+          "unit": "proportion",
+          "tolerance_pct": 30,
+          "paper_location": "L2550"
+        },
+        {
+          "name": "PanelC_All_mean_uncovered",
+          "value": 0.101,
+          "unit": "ratio",
+          "tolerance_pct": 100,
+          "paper_location": "L2481"
+        },
+        {
+          "name": "PanelC_HighLow_uncovered",
+          "value": 0.277,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L2511"
+        },
+        {
+          "name": "PanelC_HighLow_tstat_uncovered",
+          "value": 5.298,
+          "unit": "t_stat",
+          "tolerance_pct": 50,
+          "paper_location": "L2516"
+        },
+        {
+          "name": "PanelC_HighLow_covered",
+          "value": 0.114,
+          "unit": "ratio",
+          "tolerance_pct": 60,
+          "paper_location": "L2510"
+        }
+      ],
+      "notes": "Added in outer iteration 2 per auditor M1/M2 (audit1.md). Panel C (analyst) metrics are conditional on IBES feasibility (auditor M2): if the ClickHouse ibes tables do not cover FY1986-1995 adequately (>= 60% classifiable), Panel C cells are SKIP with evidence. SAMPLE SCOPE (A1): paper values are full-period 1976-1996 references; our 1988-1996 cells evaluated on sign + magnitude plausibility, counts at Tier 2 (A1 gap). OCR note: paper rows read with a one-row label offset, resolved by arithmetic (High minus Low identities: 0.154-(-0.092)=0.246, 0.167-(-0.072)=0.239, 0.180-(-0.097)=0.277)."
+    }
+  ]
+}

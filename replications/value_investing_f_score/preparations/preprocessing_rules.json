@@ -1,0 +1,227 @@
+[
+  {
+    "rule_id": "universe_compustat_all_firms",
+    "category": "universe",
+    "section": "3.1 Sample Selection / 4.3 Returns Conditional on Firm Size",
+    "paper_location": "L290-L300",
+    "paper_quote": "Each year between 1976 and 1996, I identify firms with sufficient stock price and book value data on Compustat.",
+    "description": "Universe is the full Compustat population (all firms with sufficient price and book value data), NOT a CRSP exchange-filtered universe. The paper never mentions NYSE/AMEX/NASDAQ filters; §4.3 corroborates: 'Compustat yields a total of approximately 75,000 observations between 1976 to 1996' (L2035). The standard shrcd/exchcd convention from PAPER_CONVENTIONS.md does NOT apply here — the paper defines its universe on Compustat, and CRSP enters only for returns.",
+    "implementation": "comp_202601.funda, fiscal years 1987-1995 (portfolio formation years 1988-1996). SAMPLE-SCOPE DEVIATION (user-approved, see assumptions.md A1): the paper uses FY1975-FY1995, but oancf (operating cash flow) is missing for all FY<1987 in the 2026 Compustat vintage, so the sample is restricted to FY1987-FY1995 where oancf exists. No exchange/share-code filter (paper defines its universe on Compustat). Firms need non-missing prcc_f and csho (market equity) and book equity inputs. CRSP returns attached via ccmxpf_linktable (primary links only)."
+  },
+  {
+    "rule_id": "sample_high_bm_quintile_prior_year",
+    "category": "sample",
+    "section": "3.1 Sample Selection",
+    "paper_location": "L290",
+    "paper_quote": "Each fiscal year (i.e., financial report year), I rank all firms with sufficient data to identify book-to-market quintile and size tercile cutoffs. The prior fiscal year's BM distribution is used to classify firms into BM quintiles... After the BM quintiles are formed, I retain firms in the highest BM quintile with sufficient financial statement data to calculate the various performance signals. This approach yields the final sample of 14,043 high BM firms across the 21 years.",
+    "description": "High-BM sample = firms whose prior-fiscal-year BM ratio falls in the top quintile (Q5) of the prior year's cross-sectional BM distribution. Grouping is by financial report year (fyear); a firm with fyear t is classified using the fyear t-1 BM cutoffs. Target count: 14,043 firm-years over FY1976-FY1996 (formation years 1976-1996 map to FY1975-FY1995 financials; returns accrue from month +5 after FY end).",
+    "implementation": "BM_t = BE_t / ME_t where ME = prcc_f * csho at fiscal year-end (L296, L536). Cutoffs: quintile breakpoints of BM computed within fyear t-1 over all Compustat firms with data; assign fyear-t firms. Keep Q5. Applied scope: FY1987-FY1995 (user-approved restriction, A1); the FY1987 cohort is classified against FY1986 BM cutoffs (BM does not require oancf, so the prior-year cutoff machinery is unaffected). Paper's full-sample target of 14,043 firm-years becomes a documented Tier-2 reference; the restricted-sample analog is ~7,000 firm-years (paper Appendix A years 1988-1996 sum to 7,205 obs)."
+  },
+  {
+    "rule_id": "sample_prior_year_grouping",
+    "category": "sample",
+    "section": "3.1 Sample Selection, footnote 8",
+    "paper_location": "L298",
+    "paper_quote": "all observations related to fiscal year 1986 are grouped together to determine the FY86 size and book-to-market cutoffs. Any observation related to fiscal year 1987 (regardless of month and date of its fiscal year-end) is then assigned to a size and BM portfolio based on the distribution of those FY86 observations. This approach guarantees that the prior year's ratios and cutoff points are known prior to any current-year portfolio assignments.",
+    "description": "No-lookahead construction: cutoffs always come from the previous financial report year; firms with non-December fiscal year-ends are grouped strictly by fyear.",
+    "implementation": "GROUP BY fyear when computing quintile/tercile breakpoints; join breakpoints to firms on fyear+1."
+  },
+  {
+    "rule_id": "sample_sufficient_signal_data",
+    "category": "sample",
+    "section": "3.1 Sample Selection",
+    "paper_location": "L290",
+    "paper_quote": "I retain firms in the highest BM quintile with sufficient financial statement data to calculate the various performance signals.",
+    "description": "Within high-BM Q5, keep only firms with data sufficient to compute all nine signals (current and prior year): at, ib, oancf, dltt, dlc, act, lct, sale, cogs, and equity-issuance information. Firms missing any signal input are dropped (not imputed).",
+    "implementation": "Require non-null at(t), at(t-1) [beginning-of-year assets and prior-year ROA], ib(t), oancf(t), dltt/dlc(t) and (t-1), act/lct(t) and (t-1), sale/cogs(t) and (t-1), sstk(t) or share-count change for EQ_OFFER."
+  },
+  {
+    "rule_id": "delisting_return_zero",
+    "category": "delisting",
+    "section": "3.2 Calculation of Returns",
+    "paper_location": "L312-L314",
+    "paper_quote": "one-year (two-year) buy-and-hold returns earned from the beginning of the fifth month after the firm's fiscal year-end through the earliest subsequent date: one year (two years) after return compounding began or the last day of CRSP traded returns. If a firm delists, I assume the delisting return is zero.",
+    "description": "Delisting treatment: when a firm stops trading mid-window, the delisting return is set to ZERO (not dlret, not -30%). Compounding simply stops at the last CRSP trading day. The standard PAPER_CONVENTIONS.md delisting adjustment (dlret with -0.30 fallback) is overridden by the paper's explicit rule. Market-adjusted return continues to subtract the full-window market BHR, so delisted firms mechanically earn strongly negative market-adjusted returns.",
+    "implementation": "BHR = prod(1+ret) over available monthly returns in the window (missing months after delisting treated as ret=0, i.e., factor 1). MA_RET = BHR_firm - BHR_market(vwretd) over the SAME full window."
+  },
+  {
+    "rule_id": "sort_fscore_low_high",
+    "category": "sort",
+    "section": "3.3 Description of the Empirical Tests",
+    "paper_location": "L318",
+    "paper_quote": "I classify firms with the lowest aggregate signals (F_SCORE equals 0 or 1) as low F_SCORE firms... firms receiving the highest score (i.e., F_SCORE equals 8 or 9) have the strongest fundamental signals and are classified as high F_SCORE firms.",
+    "description": "Portfolio definitions: Low F_SCORE = scores {0,1} (paper: 396 obs, L772); High F_SCORE = scores {8,9} (paper: 1,448 obs, L772). Table 3 also reports every individual score 0-9.",
+    "implementation": "Group by integer F_SCORE for the per-score rows; aggregate {0,1} and {8,9} for Low/High rows; 'All Firms' = the full 14,043 high-BM sample."
+  },
+  {
+    "rule_id": "sort_size_terciles_compustat_wide",
+    "category": "sort",
+    "section": "4.3 / Table 4 footnote a",
+    "paper_location": "L2289",
+    "paper_quote": "Each year, all firms on Compustat with sufficient size and BM data are ranked on the basis of the most recent fiscal year-end market capitalization. The 33.3 and 66.7 percentile cutoffs from the prior year's distribution of firm size (MVE) are used to classify the high BM firms into small, medium, and large firms each year.",
+    "description": "Size partition computed over the FULL Compustat population (independent of BM quintile), using the PRIOR year's 33.3/66.7 MVE percentiles. Paper counts (L2035): small 8,302 (59.12%), medium 3,906 (27.81%), large 1,835 (13.07%) of the 14,043 high-BM firms.",
+    "implementation": "Tercile breakpoints of MVE (= prcc_f*csho at FY-end, prior fyear) computed over all Compustat firms with MVE data; apply to high-BM firms."
+  },
+  {
+    "rule_id": "sort_rank_score_quintiles",
+    "category": "sort",
+    "section": "4.2 / Table 3 Panel D footnote d",
+    "paper_location": "L2007",
+    "paper_quote": "Each year, the individual signal realizations (e.g., ROA, CFO, etc.) are independently ranked between zero and one. RANK_SCORE equals the sum of the firm's ranked realizations. Firms are assigned to quintile portfolios by RANK_SCORE; the quintile cutoffs are determined by the prior fiscal year's RANK_SCORE distribution.",
+    "description": "Alternative continuous-signal aggregation: percentile-rank each of the nine raw signal realizations cross-sectionally each year to [0,1], sum to RANK_SCORE, form quintiles with prior-year cutoffs. High (Low) RANK_SCORE = quintile 5 (1) (L2009).",
+    "implementation": "rank(pct=True) of each raw signal within fyear; sum 9 ranks; quintile breakpoints from prior fyear distribution."
+  },
+  {
+    "rule_id": "winsorize_none_paper_silent",
+    "category": "winsorize",
+    "section": "3. Research Design (entire section)",
+    "paper_location": "L286-L334",
+    "paper_quote": "paper silent",
+    "description": "The paper never mentions winsorization or trimming of any variable (neither signals nor returns). Given the binary-signal design, extreme raw values cannot affect F_SCORE; they do affect the Table 1 mean statistics (e.g., BM std = 34.66, ΔMARGIN std = 1.93 — very wide distributions consistent with NO winsorization). Decision: apply no winsorization. The Table 1 means/medians themselves serve as the check on this choice.",
+    "implementation": "No winsorization anywhere. Table 1 medians (robust to outliers) are compared first; means compared with awareness that a few extreme BM firms move the BM mean."
+  },
+  {
+    "rule_id": "factor_market_adjustment_only",
+    "category": "factor",
+    "section": "3.2 Calculation of Returns / Table 1 footnote l",
+    "paper_location": "L314",
+    "paper_quote": "I define market-adjusted returns as the buy-and-hold return less the value-weighted market return over the corresponding time period.",
+    "description": "No Fama-French factor model is used in the main analysis. Risk adjustment = simple market adjustment: MA_RET = firm 12/24-month BHR minus the value-weighted market index BHR over the identical window. CRSP value-weighted index (vwretd, crsp_202601.msi) is the market proxy.",
+    "implementation": "Market BHR over each firm's exact [month+5 .. month+16] (or +28) window from msi.vwretd. No SMB/HML/MOM. (Table 7 regressions are raw cross-sectional OLS, not factor regressions.)"
+  },
+  {
+    "rule_id": "fm_annual_cross_sectional_regressions",
+    "category": "fm",
+    "section": "5. Other Sources of Cross-Sectional Variation in Returns / Table 7",
+    "paper_location": "L2739",
+    "paper_quote": "I estimate the following cross-sectional regression within the population of high book-to-market firms: MA_RET_i = alpha + beta_1 log(MVE_i) + beta_2 log(BM_i) + beta_3 MOMENT_i + beta_4 ACCRUAL_i + beta_5 EQ_OFFER + beta_6 F_SCORE_i ... I assign MOMENT and ACCRUAL into a decile portfolio based on the prior annual distribution of each variable for all Compustat firms, and I use this portfolio rank (1 to 10) for model estimation.",
+    "description": "Table 7: Panel A = pooled OLS over all 14,043 obs; Panel B = time-series average of coefficients from 21 annual (1976-96) cross-sectional regressions (Fama-MacBeth style) with t-stats from the empirical distribution of annual coefficients (L2875). MOMENT = six-month market-adjusted return prior to portfolio formation; both MOMENT and ACCRUAL enter as decile ranks (1-10) based on prior-year all-Compustat distributions.",
+    "implementation": "log(MVE), log(BM) in levels; MOMENT decile and ACCRUAL decile from prior-fyear all-Compustat breakpoints; EQ_OFFER binary (1 = issued); F_SCORE integer 0-9. Annual OLS per formation year; average coefficients; t = mean/(std/sqrt(21))."
+  },
+  {
+    "rule_id": "variable_me_bm_fiscal_year_end",
+    "category": "variable",
+    "section": "3.1 + Table 1 footnotes a, c",
+    "paper_location": "L536-L540",
+    "paper_quote": "MVE = market value of equity at the end of fiscal year t. Market value is calculated as the number of shares outstanding at fiscal year-end times closing share price... BM = book value of equity at the end of fiscal year t, scaled by MVE.",
+    "description": "MVE and BM are measured at fiscal year-end using Compustat data: MVE = prcc_f * csho (footnote 7, L296: 'Fiscal year-end prices are used to create consistency between the BM ratio used for portfolio assignments and the ratio used to determine BM and size cutoffs'). This deviates from the PAPER_CONVENTIONS.md default of CRSP-based ME — the paper's own definition is Compustat fiscal year-end ME, and it is cited here. Book equity = Compustat BE (ceq + txdb - pstkrv with standard fallbacks; paper says 'book value of equity').",
+    "implementation": "ME = prcc_f * csho (Compustat, millions of dollars since csho is in millions). BE = ceq + txdb - pstkrv; fallback ceq; fallback seq - ps; require BE > 0 and ME > 0 for BM formation. BM = BE/ME."
+  },
+  {
+    "rule_id": "variable_returns_fifth_month_bhr",
+    "category": "variable",
+    "section": "3.2 Calculation of Returns",
+    "paper_location": "L312-L314",
+    "paper_quote": "I measure firm-specific returns as one-year (two-year) buy-and-hold returns earned from the beginning of the fifth month after the firm's fiscal year-end... I chose the fifth month to ensure that the necessary annual financial information is available to investors at the time of portfolio formation.",
+    "description": "Return window: begins at the start of the 5th month after fiscal year-end (datadate + 4 months + 1 day). For a Dec-31 FYE firm: months [May t+1 .. April t+2] for the 1-year return, [May t+1 .. April t+3] for the 2-year return. Appendix A labels portfolios by the calendar year in which the window starts and says 'starting four months after fiscal year-end' (L3935) — same convention.",
+    "implementation": "window_start = first trading day of (fiscal_year_end_month + 5); 12 monthly CRSP returns for 1-yr, 24 for 2-yr; delisted months contribute 0 (see delisting rule)."
+  },
+  {
+    "rule_id": "variable_roa_cfo_beginning_assets",
+    "category": "variable",
+    "section": "2.3.1 Profitability signals",
+    "paper_location": "L194",
+    "paper_quote": "I define ROA and CFO as net income before extraordinary items and cash flow from operations, respectively, scaled by beginning-of-the-year total assets. If the firm's ROA (CFO) is positive, I define the indicator variable F_ROA (F_CFO) equal to one, zero otherwise.",
+    "description": "ROA = ib / lag(at); CFO = oancf / lag(at). 'beginning-of-the-year total assets' = total assets at end of prior fiscal year = at(t-1). Footnotes 3-4 (L222, L224): zero-profit/zero-CFO benchmarks; depreciation included as negative accrual (i.e., oancf as-is, no depreciation adjustment).",
+    "implementation": "ib = Compustat 'net income before extraordinary items' (item ib). oancf = operating cash flow (item oancf; fallback: ib + dp if oancf missing? NO — paper drops missing-signal firms; do not impute, log drop count). F_ROA = 1{ib > 0}, F_CFO = 1{oancf > 0}."
+  },
+  {
+    "rule_id": "variable_droa",
+    "category": "variable",
+    "section": "2.3.1 Profitability signals",
+    "paper_location": "L210",
+    "paper_quote": "I define ΔROA as the current year's ROA less the prior year's ROA. If ΔROA > 0, the indicator variable F_ΔROA equals one, zero otherwise.",
+    "description": "ΔROA = ROA(t) - ROA(t-1), where both ROAs use their own beginning-of-year assets: ib(t)/at(t-1) - ib(t-1)/at(t-2). Requires three years of at (t, t-1, t-2).",
+    "implementation": "Compute ROA for fyear t and t-1 each with their own lagged at; F_DROA = 1{ΔROA > 0}."
+  },
+  {
+    "rule_id": "variable_accrual",
+    "category": "variable",
+    "section": "2.3.1 Profitability signals",
+    "paper_location": "L212",
+    "paper_quote": "I define the variable ACCRUAL as the current year's net income before extraordinary items less cash flow from operations, scaled by beginning-of-the-year total assets. The indicator variable F_ACCRUAL equals one if CFO > ROA, zero otherwise.",
+    "description": "ACCRUAL = (ib - oancf) / at(t-1). Signal compares levels: F_ACCRUAL = 1{oancf > ib} (equivalently CFO > ROA since same scaling denominator).",
+    "implementation": "F_ACCRUAL = 1{oancf > ib}."
+  },
+  {
+    "rule_id": "variable_dlever",
+    "category": "variable",
+    "section": "2.3.2 Leverage signals + Table 1 footnote i",
+    "paper_location": "L216-L217",
+    "paper_quote": "I measure ΔLEVER as the historical change in the ratio of total long-term debt to average total assets, and view an increase (decrease) in financial leverage as a negative (positive) signal... I define the indicator variable F_ΔLEVER as equal to one (zero) if the firm's leverage ratio fell (rose) in the year preceding portfolio formation.",
+    "description": "Leverage ratio = total long-term debt INCLUDING current portion (Table 1 footnote i, L552: 'total long-term debt (including the portion of long-term debt classified as current) scaled by average total assets') = (dltt + dlc) / avg(at), where avg(at) = (at(t)+at(t-1))/2. ΔLEVER = LEVER(t) - LEVER(t-1). F_DLEVER = 1{ΔLEVER < 0}.",
+    "implementation": "LEVER_t = (dltt+dlc)_t / ((at_t + at_{t-1})/2); ΔLEVER = LEVER_t - LEVER_{t-1} (the t-1 ratio uses avg(at_{t-1}, at_{t-2})); F_DLEVER = 1{ΔLEVER < 0}. Missing dlc treated as 0 (standard Compustat convention for 'not reported' current LTD)."
+  },
+  {
+    "rule_id": "variable_dliquid",
+    "category": "variable",
+    "section": "2.3.2 Liquidity signals + Table 1 footnote h",
+    "paper_location": "L218",
+    "paper_quote": "The variable ΔLIQUID measures the historical change in the firm's current ratio between the current and prior year, where I define the current ratio as the ratio of current assets to current liabilities at fiscal year-end.",
+    "description": "Current ratio = act / lct at FY-end (L550). ΔLIQUID = CR(t) - CR(t-1). F_DLIQUID = 1{ΔLIQUID > 0}.",
+    "implementation": "CR_t = act_t / lct_t; F_DLIQUID = 1{CR_t - CR_{t-1} > 0}."
+  },
+  {
+    "rule_id": "variable_eq_offer",
+    "category": "variable",
+    "section": "2.3.2 Source of funds + footnote 16",
+    "paper_location": "L240",
+    "paper_quote": "I define the indicator variable EQ_OFFER as equal to one if the firm did not issue common equity in the year preceding portfolio formation, zero otherwise.",
+    "description": "EQ_OFFER = 1 if NO common equity issuance in the fiscal year preceding portfolio formation. Footnote 16 (L2745) on how offerings were identified: 'Equity offerings were identified through the firm's statement of cash flows or statement of sources and uses of funds (through Compustat)' — i.e., Compustat item sstk (sale of common and preferred stock). The exact Compustat item is paper-silent; sstk is the cash-flow-statement item and the standard choice. Assumption to log: EQ_OFFER = 1{sstk missing or 0} — see assumptions.md.",
+    "implementation": "EQ_OFFER = 1 if sstk(t) is null/zero; 0 if sstk(t) > 0. Secondary check: increase in csho. (In Table 7, EQ_OFFER = 1 if the firm ISSUED — the regression variable is the issuance dummy, the opposite sign of the F-score signal.)"
+  },
+  {
+    "rule_id": "variable_dmargin",
+    "category": "variable",
+    "section": "2.3.3 Operating efficiency + Table 1 footnote f",
+    "paper_location": "L244",
+    "paper_quote": "I define ΔMARGIN as the firm's current gross margin ratio (gross margin scaled by total sales) less the prior year's gross margin ratio... The indicator variable F_ΔMARGIN equals one if ΔMARGIN is positive, zero otherwise.",
+    "description": "Gross margin = (net sales less cost of goods sold) / net sales (L546: '(net sales less cost of good sold) for the year preceding portfolio formation, scaled by net sales'). ΔMARGIN = GM(t) - GM(t-1). F_DMARGIN = 1{ΔMARGIN > 0}.",
+    "implementation": "GM_t = (sale_t - cogs_t) / sale_t; F_DMARGIN = 1{GM_t - GM_{t-1} > 0}."
+  },
+  {
+    "rule_id": "variable_dturn",
+    "category": "variable",
+    "section": "2.3.3 Operating efficiency + Table 1 footnote j",
+    "paper_location": "L246",
+    "paper_quote": "I define ΔTURN as the firm's current year asset turnover ratio (total sales scaled by beginning-of-the-year total assets) less the prior year asset turnover ratio... The indicator variable F_ΔTURN equals one if ΔTURN is positive, zero otherwise.",
+    "description": "Asset turnover = sales / assets. DISCREPANCY between text (L246: 'beginning-of-the-year total assets') and Table 1 footnote j (L554: 'net sales scaled by average total assets for the year'). Decision: use the Table 1 footnote definition (average total assets), since the footnote is the paper's formal variable-definition table and is consistent with the ΔLEVER denominator. Log the discrepancy in assumptions.md; the binary signal is largely insensitive to this choice (Table 1 ΔTURN mean 0.0119 / median 0.0068 will discriminate).",
+    "implementation": "TURN_t = sale_t / ((at_t + at_{t-1})/2); F_DTURN = 1{TURN_t - TURN_{t-1} > 0}. Alternative (text definition, beginning assets): TURN_t = sale_t / at_{t-1} — to be tried if Table 1 stats don't match."
+  },
+  {
+    "rule_id": "variable_fscore_composite",
+    "category": "variable",
+    "section": "2.3.4 Composite Score",
+    "paper_location": "L266",
+    "paper_quote": "I define F_SCORE as the sum of the individual binary signals, or F_SCORE = F_ROA + F_ΔROA + F_CFO + F_ACCRUAL + F_ΔMARGIN + F_ΔTURN + F_ΔLEVER + F_ΔLIQUID + EQ_OFFER. Given the nine underlying signals, F_SCORE can range from a low of 0 to a high of 9.",
+    "description": "Composite score = unweighted sum of the nine binaries, 0-9.",
+    "implementation": "F_SCORE = sum of the 9 indicator columns (all defined on the same firm-year; observations with any missing signal are already dropped by sample_sufficient_signal_data)."
+  },
+  {
+    "rule_id": "sort_price_terciles",
+    "category": "sort",
+    "section": "4.4 Alternative Partitions / Table 5 footnotes",
+    "paper_location": "L2524",
+    "paper_quote": "Share price equals the firm's price per share at the end of the fiscal year preceding portfolio formation... Firms are classified into share price and trading volume portfolios in a manner similar to firm size (see table 4).",
+    "description": "Share-price terciles: price = prcc_f at the fiscal year-end preceding formation (the FY whose statements feed the signals); tercile cutoffs from the PRIOR year's full-Compustat price distribution (same machinery as the Table 4 size terciles, L2295). Buckets: small/medium/large price.",
+    "implementation": "Tercile breakpoints of prcc_f within fyear s over all standard-filter Compustat firms with prcc_f > 0; assign fyear t+1 firms. Applied to the existing panel (no panel rebuild)."
+  },
+  {
+    "rule_id": "sort_volume_terciles",
+    "category": "sort",
+    "section": "4.4 Alternative Partitions / Table 5 footnotes",
+    "paper_location": "L2526",
+    "paper_quote": "Trading volume represents share turnover, defined as the total number of shares traded during the prior fiscal year scaled by the average number of shares outstanding during the year.",
+    "description": "Trading-volume (turnover) terciles: turnover = total shares traded over the firm's fiscal year (sum of CRSP monthly volume) divided by average monthly shares outstanding over the same fiscal year; prior-year full-Compustat cutoffs as for size/price.",
+    "implementation": "From crsp_202601.msf: sum(vol) over the 12 month-ends ending at the FYE month, divided by mean(shrout*1000) over the same months (shrout in thousands -> shares). Tercile breakpoints within fyear over all linked Compustat firms with turnover available; assign next-fyear firms. Buckets: low/medium/high volume."
+  },
+  {
+    "rule_id": "sort_analyst_following",
+    "category": "sort",
+    "section": "4.4.2 / Table 5 Panel C footnotes",
+    "paper_location": "L2528",
+    "paper_quote": "Analyst following equals the number of forecasts reported on I/B/E/S during the last statistical period of the year preceding portfolio formation.",
+    "description": "Binary analyst-coverage partition: covered = firm has >= 1 analyst forecast in the last I/B/E/S statistical period of the fiscal year preceding formation; uncovered otherwise. Paper: 37.8% of high-BM firms covered (5,317/14,043), mean 3.15 analysts when covered.",
+    "implementation": "From the ClickHouse ibes database (summary statistics): number of analysts (numest/number of forecasts) at the last statistical period on or before the FY-end preceding formation. Feasibility gated on coverage of >= 60% classifiable panel firm-years (auditor M2); otherwise documented SKIP."
+  }
+]

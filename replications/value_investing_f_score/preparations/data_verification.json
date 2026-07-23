@@ -1,0 +1,51 @@
+{
+  "verdict": "ready",
+  "requirements": [
+    {
+      "id": "req_compustat_fundamentals",
+      "description": "Compustat annual fundamentals for the nine F_SCORE signals, book equity, and fiscal-year-end market equity, FY1974-FY1996 (FY1974-FY1986 needed only for BM cutoffs and prior-year signal inputs; signal computation itself scoped to FY1987-FY1995 per assumptions.md A1). Verified coverage under standard filter (indfmt=INDL, datafmt=STD, consol=C, popsrc=D): ~6,700 firms/yr in FY1975 growing to ~12,600 in FY1996; at>0 ~6,400-11,300/yr; prcc_f*csho available ~3,900-10,200/yr. CAVEAT: oancf is NULL for ALL firm-years with fyear<1987 in this vintage (1,312 non-null in FY1987, ~6,500-9,700/yr FY1988-FY1995) — this is the data limitation that drove the user-approved sample restriction A1; sstk coverage 5,700-10,200/yr; fopt and dp available pre-1987 (documented, unused).",
+      "needed_columns": ["gvkey", "datadate", "fyear", "indfmt", "datafmt", "consol", "popsrc", "at", "ib", "oancf", "dltt", "dlc", "act", "lct", "sale", "cogs", "sstk", "prcc_f", "csho", "ceq", "seq", "txdb", "pstkrv", "lt"],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": ["gvkey", "datadate", "fyear", "indfmt", "datafmt", "consol", "popsrc", "at", "ib", "oancf", "dltt", "dlc", "act", "lct", "sale", "cogs", "sstk", "prcc_f", "csho", "ceq", "seq", "txdb", "pstkrv", "lt"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "req_crsp_compustat_link",
+      "description": "CRSP-Compustat link (CCM) to attach gvkey fiscal-year fundamentals to CRSP permnos for return computation. Primary links (linkprim='P'): 43,593 rows in crsp_202601.ccmxpf_linktable (92,711 total). Standard usage: linkprim='P' and valid link dates (linkdt <= datadate <= coalesce(linkenddt, today)), linktype in ('LU','LC').",
+      "needed_columns": ["gvkey", "lpermno", "lpermco", "liid", "linkprim", "linktype", "linkdt", "linkenddt"],
+      "matched_table": "crsp_202601.ccmxpf_linktable",
+      "matched_columns": ["gvkey", "lpermno", "lpermco", "liid", "linkprim", "linktype", "linkdt", "linkenddt"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "req_crsp_monthly_returns",
+      "description": "CRSP monthly stock returns for 12/24-month buy-and-hold windows starting in the 5th month after fiscal year-end (windows run May 1988 - April 2000 for the restricted sample). Verified coverage: crsp_202601.msf spans 1925-12-31 to 2024-12-31 (5,153,763 rows) — fully covers all windows. ret/prc/shrout/vol present; cfacpr/cfacshr present for split verification.",
+      "needed_columns": ["permno", "date", "ret", "prc", "shrout", "vol", "cfacpr", "cfacshr"],
+      "matched_table": "crsp_202601.msf",
+      "matched_columns": ["permno", "date", "ret", "prc", "shrout", "vol", "cfacpr", "cfacshr"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "req_crsp_market_index",
+      "description": "CRSP value-weighted market index (with dividends) for market adjustment over each firm's exact window (preprocessing rule factor_market_adjustment_only; assumption A6). Verified: crsp_202601.msi.vwretd spans 1926-01-30 to 2024-12-31.",
+      "needed_columns": ["date", "vwretd"],
+      "matched_table": "crsp_202601.msi",
+      "matched_columns": ["date", "vwretd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "req_crsp_delisting",
+      "description": "CRSP monthly delisting records to detect when a firm stops trading mid-window (the paper sets the delisting return to ZERO — rule delisting_return_zero — so dlret itself is unused, but delisting dates are needed to stop compounding at the last traded month; equivalently detectable as the last msf row per permno). Verified: crsp_202601.msedelist has permno/dlstdt/dlstcd/dlret for 38,843 delistings.",
+      "needed_columns": ["permno", "dlstdt", "dlstcd", "dlret"],
+      "matched_table": "crsp_202601.msedelist",
+      "matched_columns": ["permno", "dlstdt", "dlstcd", "dlret"],
+      "missing_columns": [],
+      "status": "full"
+    }
+  ],
+  "blocking_issues": []
+}

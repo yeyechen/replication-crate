@@ -1,0 +1,21 @@
+cell,paper,ours,tolerance_pct,tier
+corr_within_tsmom_com,0.07,0.08554751853059878,200,Tier 1
+corr_within_tsmom_eq,0.37,0.48810096889710486,40,Tier 1
+corr_within_tsmom_fi,0.38,0.29600084854867437,40,Tier 1
+corr_within_tsmom_fx,0.1,0.2283853616710611,200,Tier 1
+corr_within_passive_com,0.19,0.1458880393754173,40,Tier 1
+corr_within_passive_eq,0.6,0.6661088514463883,40,Tier 1
+corr_within_passive_fi,0.63,0.5383459491037043,40,Tier 1
+corr_within_passive_fx,-0.04,0.4401199296175955,200,FAIL
+corr_across_tsmom_eq_com,0.2,0.19241924727368603,40,Tier 1
+corr_across_tsmom_fi_com,0.07,0.08019189995963716,200,Tier 1
+corr_across_tsmom_fi_eq,0.21,0.11435301502010145,40,Tier 2
+corr_across_tsmom_fx_com,0.13,0.1368746262225338,200,Tier 1
+corr_across_tsmom_fx_eq,0.2,0.12108954396647943,40,Tier 1
+corr_across_tsmom_fx_fi,0.05,0.08810369145948059,200,Tier 1
+corr_across_passive_eq_com,0.17,0.13414588132694097,40,Tier 1
+corr_across_passive_fi_com,-0.12,-0.15183814094432313,200,Tier 1
+corr_across_passive_fi_eq,-0.03,0.023515958021933393,200,FAIL
+corr_across_passive_fx_com,-0.12,0.3115939407710084,200,FAIL
+corr_across_passive_fx_eq,-0.2,-0.06450570803508539,40,Tier 2
+corr_across_passive_fx_fi,0.02,0.13431823002384496,200,Tier 2

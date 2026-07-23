@@ -1,0 +1,345 @@
+[
+  {
+    "rule_id": "universe_exchanges_sic",
+    "category": "universe",
+    "section": "§I Data",
+    "paper_location": "L73",
+    "paper_quote": "We use all NYSE, Amex, and NASDAQ nonfinancial firms (excluding firms with four-digit SIC codes between 6000 and 6999) listed on the CRSP monthly stock return files and the Compustat annual industrial files from 1963 through 2003."
+  },
+  {
+    "rule_id": "sample_data_range",
+    "category": "sample",
+    "section": "§I Data",
+    "paper_location": "L73",
+    "paper_quote": "We use all NYSE, Amex, and NASDAQ nonfinancial firms (excluding firms with four-digit SIC codes between 6000 and 6999) listed on the CRSP monthly stock return files and the Compustat annual industrial files from 1963 through 2003."
+  },
+  {
+    "rule_id": "delisting_paper_silent",
+    "category": "delisting",
+    "section": "§I Data",
+    "paper_location": "L73",
+    "paper_quote": "We use all NYSE, Amex, and NASDAQ nonfinancial firms (excluding firms with four-digit SIC codes between 6000 and 6999) listed on the CRSP monthly stock return files and the Compustat annual industrial files from 1963 through 2003. [PAPER SILENT: content.md contains no 'delist' passage. The paper uses CRSP monthly returns but does not specify any delisting-return adjustment. Agent applies the standard CRSP delisting-return convention as a paper-silent default, logged in preparations/assumptions.md.]"
+  },
+  {
+    "rule_id": "sample_start_1968",
+    "category": "sample",
+    "section": "§I Data",
+    "paper_location": "L87",
+    "paper_quote": "To ensure that we have a reasonable number of firms, especially in the earlier part of the sample, we start all of our portfolio tests and regression analysis in the end of June 1968."
+  },
+  {
+    "rule_id": "sample_backfill_2yr",
+    "category": "sample",
+    "section": "§I Data",
+    "paper_location": "L87",
+    "paper_quote": "To mitigate backfilling biases, a firm must be listed on Compustat for 2 years before it is included in the data set (Fama and French (1993))."
+  },
+  {
+    "rule_id": "sample_accounting_timing",
+    "category": "sample",
+    "section": "§I Data",
+    "paper_location": "L87",
+    "paper_quote": "In accordance with Fama and French (1992), we form all of our accounting variables at the end of June in year $t$ , using accounting information from fiscal year-end $t-1$ from Compustat."
+  },
+  {
+    "rule_id": "sample_bm_price_timing",
+    "category": "sample",
+    "section": "§I Data",
+    "paper_location": "L87",
+    "paper_quote": "For price-scaled or market value-scaled accounting ratios, such as BM, we use price or market value from December of year $t-1$ ."
+  },
+  {
+    "rule_id": "sample_me_timing",
+    "category": "sample",
+    "section": "§I Data",
+    "paper_location": "L87",
+    "paper_quote": "For firm capitalization, we use the market value of the firm's equity from CRSP at the end of June of year $t$ ."
+  },
+  {
+    "rule_id": "sample_lagged_return_window",
+    "category": "sample",
+    "section": "§I Data",
+    "paper_location": "L87",
+    "paper_quote": "When our tests include lagged return measures (for example, 6-month lagged returns) we estimate a holding period return from the beginning of January of year $t$ to the end of June of year $t$ ."
+  },
+  {
+    "rule_id": "sample_annual_update",
+    "category": "sample",
+    "section": "§I Data",
+    "paper_location": "L87",
+    "paper_quote": "All of the variables are updated annually, at the end of June each year."
+  },
+  {
+    "rule_id": "var_assetg_definition",
+    "category": "variable",
+    "section": "§I Data",
+    "paper_location": "L89",
+    "paper_quote": "Our main variable of concern, the annual firm asset growth rate ( $ASSETG$ ), is calculated using the year-on-year percentage change in total assets (Compustat data item 6)."
+  },
+  {
+    "rule_id": "var_assetg_formula",
+    "category": "variable",
+    "section": "§I Data, equation (1)",
+    "paper_location": "L92",
+    "paper_quote": "ASSETG(t) = \\frac{Data6(t-1) - Data6(t-2)}{Data6(t-2)}"
+  },
+  {
+    "rule_id": "sample_assetg_nonzero_assets",
+    "category": "sample",
+    "section": "§I Data",
+    "paper_location": "L96",
+    "paper_quote": "To compute this measure, a firm must have nonzero total assets in both years $t-1$ and $t-2$ ."
+  },
+  {
+    "rule_id": "sort_decile_annual",
+    "category": "sort",
+    "section": "§I Data",
+    "paper_location": "L116",
+    "paper_quote": "At the end of June of each year $t$ stocks are allocated into deciles based on annual asset growth rates (defined in equation (1)) and portfolios are formed from July of year $t$ to June of year $t+1$ . The portfolios are held for 1 year and then rebalanced."
+  },
+  {
+    "rule_id": "sort_nyse_breakpoints",
+    "category": "sort",
+    "section": "§I Data (footnote 7)",
+    "paper_location": "L124",
+    "paper_quote": "We use NYSE breakpoints to perform the market capitalization decile sorts. The decile classifications are defined at the end of June of each year and are maintained until the end of June of the subsequent year."
+  },
+  {
+    "rule_id": "sample_stats_convention",
+    "category": "sample",
+    "section": "Table I description",
+    "paper_location": "L140",
+    "paper_quote": "The numbers in each cell are time-series averages of yearly cross-sectional medians, with the exception of average market value ($MV$-AVG), in millions of $, which is the time-series average of yearly cross-sectional mean capitalization."
+  },
+  {
+    "rule_id": "var_issuance_tableI",
+    "category": "variable",
+    "section": "Table I description",
+    "paper_location": "L140",
+    "paper_quote": "ISSUANCE is a 5-year change in the number of equity shares outstanding."
+  },
+  {
+    "rule_id": "factor_three_factor",
+    "category": "factor",
+    "section": "Table II description",
+    "paper_location": "L401",
+    "paper_quote": "Panel C.1 reports three-factor alphas of the equal-weighted portfolios and Panel C.2 reports three-factor alphas of the value-weighted portfolios for all firms and for three size-sorted groups."
+  },
+  {
+    "rule_id": "sort_size_groups",
+    "category": "sort",
+    "section": "Table II description",
+    "paper_location": "L401",
+    "paper_quote": "The size groups are defined by ranking firms into one of three groups (small, medium, and large) using the 30th and 70th NYSE market equity percentiles in June of year $t$."
+  },
+  {
+    "rule_id": "factor_carhart_four_robustness",
+    "category": "factor",
+    "section": "§II (robustness)",
+    "paper_location": "L1570",
+    "paper_quote": "First, we risk adjust the monthly returns using the Carhart (1997) four-factor model, which includes a momentum factor (obtained from Ken French's web page)."
+  },
+  {
+    "rule_id": "sample_price_screen_robustness",
+    "category": "sample",
+    "section": "§II (robustness)",
+    "paper_location": "L1570",
+    "paper_quote": "We also perform various screens using June price per share (excluding stocks priced below \\ $3 or \\$ 5 per share), screens on fiscal year-end total assets (excluding firm years with less than \\ $10M in assets), and sorts based on the end of March, and find that our inferences are unchanged: High growth firms earn lower future returns than do low growth firms."
+  },
+  {
+    "rule_id": "fm_dependent_annual",
+    "category": "fm",
+    "section": "§II (Table III)",
+    "paper_location": "L1622",
+    "paper_quote": "To mitigate the potential effects of possible microstructure biases emanating from the use of CRSP monthly closing prices, we use geometrically compounded annual firm returns (instead of the typical monthly returns) as the dependent variable in the cross-sectional regressions."
+  },
+  {
+    "rule_id": "fm_inclusion_rule",
+    "category": "fm",
+    "section": "§II (Table III)",
+    "paper_location": "L1622",
+    "paper_quote": "To be included in any regression, firms must have nonmissing data for the following variables in our base model: BM equity, capitalization, 6-month lagged returns, and asset growth. We exclude all firms with negative book value in year $t-1$ ."
+  },
+  {
+    "rule_id": "fm_autocorrelation_se",
+    "category": "fm",
+    "section": "§II (Table III, footnote 13)",
+    "paper_location": "L1628",
+    "paper_quote": "The autocorrelation adjustment is made by adjusting the standard errors for first-order autocorrelation by multiplying the standard errors of the average parameters by $\\sqrt{\\frac{(1+\\rho)}{(1-\\rho)}}$ , where $\\rho$ is the first-order autocorrelation in yearly parameter estimates."
+  },
+  {
+    "rule_id": "fm_timeseries_average",
+    "category": "fm",
+    "section": "Table III description",
+    "paper_location": "L1642",
+    "paper_quote": "Beta estimates are time-series averages of cross-sectional regression betas obtained from annual cross-sectional regressions. The $t$-statistics, in parentheses, are adjusted for autocorrelation in the beta estimates."
+  },
+  {
+    "rule_id": "winsorize_assetg_robustness",
+    "category": "winsorize",
+    "section": "§II (robustness)",
+    "paper_location": "L2592",
+    "paper_quote": "To examine the effects of outliers in the asset growth distribution, we winsorize the asset growth distribution at the 1% and 99% points of the distribution. Winsorizing the data has the effect of making the asset growth relationship stronger."
+  },
+  {
+    "rule_id": "fm_tableIV_decomposition",
+    "category": "fm",
+    "section": "§II (Table IV)",
+    "paper_location": "L2658",
+    "paper_quote": "We use Fama and MacBeth (1973) regressions of annual firm stock returns on the lagged components of asset growth. We perform the regressions for all firms as well as for the size subgroups."
+  },
+  {
+    "rule_id": "var_decomp_investment",
+    "category": "variable",
+    "section": "Table IV description",
+    "paper_location": "L2678",
+    "paper_quote": "The investment decomposition defines total assets as the sum of: (1) Cash ( $\\Delta Cash$ : Compustat #1), (2) Noncash current assets ( $\\Delta CurAsst$ : Compustat #4 – Compustat #1), (3) Property, plant and equipment ( $\\Delta PPE$ : Compustat #8), and (4) Other assets ( $\\Delta OthAssets$ : $\\Delta Total\\ assets - \\Delta Cash - \\Delta CurAsst - \\Delta PPE$ )."
+  },
+  {
+    "rule_id": "var_decomp_financing",
+    "category": "variable",
+    "section": "Table IV description",
+    "paper_location": "L2678",
+    "paper_quote": "The financing decomposition defines total assets as the sum of: (1) Retained earnings ( $\\Delta RE$ : Compustat #36), (2) Stock ( $\\Delta Stock$ : Compustat #130 + Compustat #60 + Compustat #38 – Compustat #36), (3) Debt ( $\\Delta Debt$ : Compustat #9 + Compustat #34), and (4) Operating liabilities ( $\\Delta OpLiab$ : $\\Delta Total\\ assets - \\Delta RE - \\Delta Stock - \\Delta Debt$ )."
+  },
+  {
+    "rule_id": "var_decomp_scaling",
+    "category": "variable",
+    "section": "Table IV description",
+    "paper_location": "L2678",
+    "paper_quote": "Variables used in the cross-sectional regressions are changes in these variables from the fiscal year ending in calendar year $t-2$ to the fiscal year ending in calendar year $t-1$ scaled by total assets in the fiscal year ending in calendar year $t-2$ ."
+  },
+  {
+    "rule_id": "var_mv",
+    "category": "variable",
+    "section": "Appendix",
+    "paper_location": "L4366",
+    "paper_quote": "Market value ( $MV$ ) is the price per share times shares outstanding at the end of June of calendar year $t$ ."
+  },
+  {
+    "rule_id": "var_bm",
+    "category": "variable",
+    "section": "Appendix",
+    "paper_location": "L4368",
+    "paper_quote": "Book-to-market equity, ( $BM$ ), for the fiscal year ending in calendar year $t$ , is as defined as in Davis, Fama, and French (2000), where book equity ( $BE$ ) is the stockholders' equity (data216), plus balance sheet deferred taxes and investment tax credit (data35), minus book value of preferred stock (in the following order: data56 or data10 or data130) and $ME$ is the price times shares outstanding at the end of December of calendar year $t$ ."
+  },
+  {
+    "rule_id": "var_a_mv",
+    "category": "variable",
+    "section": "Appendix",
+    "paper_location": "L4370",
+    "paper_quote": "Assets-to-market equity ( $A/MV$ ), for the fiscal year ending in calendar year $t$ , is defined as total firm assets (data6) scaled by the market value of equity ( $MV$ ), where $MV$ is the price times shares outstanding at the end of December of calendar year $t$ ."
+  },
+  {
+    "rule_id": "var_ep",
+    "category": "variable",
+    "section": "Appendix",
+    "paper_location": "L4372",
+    "paper_quote": "$EP$ is earnings-to-price ratio [ $EPS$ (data53)/ Price (data24)]."
+  },
+  {
+    "rule_id": "var_roa",
+    "category": "variable",
+    "section": "Appendix",
+    "paper_location": "L4374",
+    "paper_quote": "$ROA$ is the operating income before depreciation (data13) scaled by total assets (data6)."
+  },
+  {
+    "rule_id": "var_leverage",
+    "category": "variable",
+    "section": "Appendix",
+    "paper_location": "L4376",
+    "paper_quote": "$LEVERAGE$ is the sum of long-term debt and debt in current liabilities, scaled by total assets [(data9 + data34)/data6]."
+  },
+  {
+    "rule_id": "var_salesg",
+    "category": "variable",
+    "section": "Appendix",
+    "paper_location": "L4378",
+    "paper_quote": "$SALESG$ is the yearly growth rate in sales (data12)."
+  },
+  {
+    "rule_id": "var_bhret6",
+    "category": "variable",
+    "section": "Appendix",
+    "paper_location": "L4380",
+    "paper_quote": "$BHRET6$ is the 6-month buy-and-hold return over January ( $t$ ) to June ( $t$ ) $[(1+r_1) \\times \\cdots \\times (1+r_6)-1]$ where $r_i$ is the return in month $i$ ."
+  },
+  {
+    "rule_id": "var_bhret36",
+    "category": "variable",
+    "section": "Appendix",
+    "paper_location": "L4382",
+    "paper_quote": "$BHRET36$ is the 3-year buy-and-hold return over July ( $t-3$ ) to June ( $t$ ) $[(1+r_1) \\times \\cdots \\times (1+r_{36}) -1]$ where $r_i$ is the return in month $i$ ."
+  },
+  {
+    "rule_id": "var_assetg",
+    "category": "variable",
+    "section": "Appendix",
+    "paper_location": "L4384",
+    "paper_quote": "Asset growth ( $ASSETG$ ) is the 1-year percentage change in total firm assets $[(assets_t - assets_{t-1})/ assets_{t-1}]$ , where assets are Compustat data item 6. To compute $ASSETG$ , a firm must have nonzero total assets in both year $t-1$ and $t-2$ ."
+  },
+  {
+    "rule_id": "var_5yassetg",
+    "category": "variable",
+    "section": "Appendix",
+    "paper_location": "L4392",
+    "paper_quote": "$5YASSETG$ is a weighted average of asset growth rates from the 5 years prior to portfolio formation. We omit year $t-1$ growth rates to avoid serial correlation between this variable and the 1-year asset growth variable (ASSETG)."
+  },
+  {
+    "rule_id": "var_5ysalesg",
+    "category": "variable",
+    "section": "Appendix",
+    "paper_location": "L4394",
+    "paper_quote": "$5YSALESG$ is the weighted average rank of growth rate in sales, calculated the same way as $5YASSETG$ ."
+  },
+  {
+    "rule_id": "var_l2assetg",
+    "category": "variable",
+    "section": "Appendix",
+    "paper_location": "L4396",
+    "paper_quote": "$L2ASSETG$ is the 1-year lagged value of ASSETG."
+  },
+  {
+    "rule_id": "var_ci",
+    "category": "variable",
+    "section": "Appendix",
+    "paper_location": "L4398",
+    "paper_quote": "$CI$ is the abnormal capital investment measure used in Titman, Wei, and Xie (2004). $[CE_t / (CE_{t-1} + CE_{t-2} + CE_{t-3}) / 3 - 1]$ , where $CE_t$ is capital expenditures (data128) in fiscal year $t$ and each capital expenditure term is scaled by that year's net sales (data12)."
+  },
+  {
+    "rule_id": "var_cashflow",
+    "category": "variable",
+    "section": "Appendix",
+    "paper_location": "L4400",
+    "paper_quote": "$CASH\\ FLOW$ , as used in Titman, Wei, and Xie (2004). It is defined as (Operating income before depreciation – interest expenses – taxes – preferred dividends – common dividends)/total assets [data13-(data15+data16+data19+data21)]/data6."
+  },
+  {
+    "rule_id": "var_leverage_twx",
+    "category": "variable",
+    "section": "Appendix",
+    "paper_location": "L4402",
+    "paper_quote": "Leverage, as used in Titman, Wei, and Xie (2004). It is defined as long-term debt/(long-term debt+market value of equity) [data9/(data9+data199 * data25)]."
+  },
+  {
+    "rule_id": "var_noa",
+    "category": "variable",
+    "section": "Appendix",
+    "paper_location": "L4404",
+    "paper_quote": "$NOA$ , as used in Hirshleifer et al. (2004), is net operating assets scaled by lagged total assets. Net operating assets is the difference between operating assets (OA) and operating liabilities (OL)"
+  },
+  {
+    "rule_id": "var_accruals",
+    "category": "variable",
+    "section": "Appendix",
+    "paper_location": "L4412",
+    "paper_quote": "$ACCRUALS = [(\\text{change in current assets} - \\text{change in cash}) - (\\text{change in current liabilities} - \\text{change in short-term debt} - \\text{change in taxes payable}) - \\text{depreciation expense}] / \\text{average total assets}$ . $[(\\Delta data4 - \\Delta data1) - (\\Delta data5 - \\Delta data34 - \\Delta data71) - data14] / [(data6_t + data6_{t-1}) / 2]$ ."
+  },
+  {
+    "rule_id": "var_issuance",
+    "category": "variable",
+    "section": "Appendix",
+    "paper_location": "L4414",
+    "paper_quote": "$ISSUANCE$ , as used in Daniel and Titman (2006), is $\\log[ME_t / ME_{t-3}] - r_{t,t-3}$ , where $ME$ is total market equity = data199 * data25 and $r_{t,t-3}$ is the 3-year log return."
+  }
+]

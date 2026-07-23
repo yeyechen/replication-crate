@@ -1,0 +1,51 @@
+{
+  "verdict": "ready",
+  "requirements": [
+    {
+      "id": "futures_daily_series",
+      "description": "Daily prices for continuous futures calc series (settlement, OHLC, volume, open interest) used to compound daily excess returns into instrument return indexes. This requirement also backs the in-sample equal-weighted passive asset-class proxies that replace MSCI World / Barclays Aggregate / S&P GSCI (those external index series are not in ClickHouse; the paper's own futures within each asset class stand in, per the Table 2/Table 3 notes).",
+      "needed_columns": ["calcseriescode", "date_", "settlement", "open_", "high", "low", "volume", "openinterest"],
+      "matched_table": "tr_ds_fut_202606.wrds_fut_series",
+      "matched_columns": ["calcseriescode", "date_", "open_", "high", "low", "volume", "settlement", "openinterest", "_name_", "_label_", "cmonth", "life", "ca", "yd", "up"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "futures_series_info",
+      "description": "Continuous-series metadata for mapping the paper's 58 instruments (Appendix A) to Datastream calc series: exchange-prefixed series name, roll method (volume-based / first-of-month roll implements the paper's 'most liquid, nearest or next-nearest contract'), and front-contract position flag.",
+      "needed_columns": ["calcseriescode", "dsmnem", "calcseriesname", "rollmethoddesc", "positionfwddesc", "isocurrcode"],
+      "matched_table": "tr_ds_fut_202606.wrds_cseries_info",
+      "matched_columns": ["calcseriescode", "clscode", "dsmnem", "calcseriesname", "isocurrcode", "isocurrdesc", "rollmethodcode", "rollmethoddesc", "positionfwdcode", "positionfwddesc", "calcmthcode", "trdmonths"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "futures_contract_info",
+      "description": "Contract-level metadata (contract names, listing start dates, currency units) used to verify instrument start dates against Table 1 column 1 and to pick the correct exchange contract per Appendix A.",
+      "needed_columns": ["futcode", "contrcode", "clscode", "dsmnem", "contrname", "startdate"],
+      "matched_table": "tr_ds_fut_202606.wrds_contract_info",
+      "matched_columns": ["futcode", "contrcode", "clscode", "dsmnem", "contrname", "ldb", "contrdate", "contrdatefmt", "isocurrcode", "isocurrdesc", "currunitcode", "unitcode", "unitdesc", "trdstatcode", "startdate"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_factors",
+      "description": "Fama-French factors for the alpha regressions (Eq. 4, Table 2, Table 3, Table 5 Panel C): SMB, HML, UMD (momentum, column 'mom') and the risk-free rate. The rf column also supplies the T-bill rate for excess returns.",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "mom", "rf"],
+      "matched_table": "ff.four_factor_monthly",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "rf", "mom"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "cftc_positions",
+      "description": "CFTC Commitments of Traders positions (speculator long vs short by reporter type, open interest) for the Net speculator position variable. Available in ClickHouse via Datastream's COT table; NOT exercised by the currently selected targets (Table 1 speculator columns and Table 6 are deferred to a future iteration — see T1 notes).",
+      "needed_columns": ["contrcode", "repmnemcode", "date_", "openinterest"],
+      "matched_table": "tr_ds_fut_202606.dsfutcotrepval",
+      "matched_columns": ["contrcode", "repmnemcode", "date_", "dsmnem", "numtrades", "openinterest"],
+      "missing_columns": [],
+      "status": "full"
+    }
+  ],
+  "blocking_issues": []
+}

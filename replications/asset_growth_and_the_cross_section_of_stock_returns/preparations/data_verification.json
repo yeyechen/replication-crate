@@ -1,0 +1,69 @@
+{
+  "verdict": "ready",
+  "requirements": [
+    {
+      "id": "crsp_monthly_returns",
+      "description": "CRSP monthly stock returns, price, and shares outstanding for portfolio returns (ret), market equity (|prc| x shrout), and buy-and-hold lagged returns (BHRET6, BHRET36).",
+      "needed_columns": ["permno", "date", "ret", "prc", "shrout", "vol"],
+      "matched_table": "crsp_202601.msf",
+      "matched_columns": ["permno", "date", "ret", "prc", "shrout", "vol"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_monthly_universe_pit",
+      "description": "CRSP monthly header records with point-in-time validity windows for the universe filter: ordinary common shares (hshrcd 10/11), major exchanges (hexcd 1/2/3), and the nonfinancial exclusion (hsiccd outside 6000-6999).",
+      "needed_columns": ["permno", "hshrcd", "hexcd", "hsiccd", "begdat", "enddat"],
+      "matched_table": "crsp_202601.msfhdr",
+      "matched_columns": ["permno", "hshrcd", "hexcd", "hsiccd", "begdat", "enddat"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_delisting_returns",
+      "description": "CRSP monthly delisting returns and codes so portfolio returns incorporate delisting events (dlret with dlstcd to identify performance-driven delistings; dlstdt is the delisting date).",
+      "needed_columns": ["permno", "dlret", "dlstcd", "dlstdt"],
+      "matched_table": "crsp_202601.msedelist",
+      "matched_columns": ["permno", "dlret", "dlstcd", "dlstdt"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_comp_link",
+      "description": "CRSP-Compustat (CCM) link table joining CRSP permno to Compustat gvkey with link validity windows and primary-link flags (lpermno -> gvkey; filter linkprim='P', linktype in ('LU','LC'), usedflag=1, linkdt <= date <= linkenddt).",
+      "needed_columns": ["lpermno", "gvkey", "linkdt", "linkenddt", "linkprim", "linktype", "usedflag"],
+      "matched_table": "crsp_202601.ccmxpf_linktable",
+      "matched_columns": ["lpermno", "gvkey", "linkdt", "linkenddt", "linkprim", "linktype", "usedflag"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "comp_annual_fundamentals",
+      "description": "Compustat annual industrial fundamentals for every accounting variable: total assets (at, data6) for ASSETG and the balance-sheet decomposition; book equity inputs (ceq, seq, txdb, pstkrv/pstkl/pstk); BM/EP/ROA/Leverage inputs (sale, oibdp, dltt, dlc, prcc_f, csho); ACCRUALS inputs (act, ch, lct, dlc, txp, dp); NOA inputs (at, ch, dlc, dltt, mib[minority interest=data38], pstk, ceq); CI inputs (capx, sale); decomposition components (ch=#1, act=#4, ppegt=#8, re=#36, dltt=#9, dlc=#34, ceq=#60, pstk=#130, mib=#38). sich provides the four-digit SIC for the financial-firm exclusion.",
+      "needed_columns": ["gvkey", "datadate", "fyear", "sich", "at", "sale", "ceq", "seq", "txdb", "pstkrv", "pstkl", "pstk", "act", "ch", "lct", "dlc", "dltt", "dp", "txp", "capx", "oibdp", "csho", "prcc_f", "ppegt", "ppent", "re", "mib", "recta", "ivao", "che"],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": ["gvkey", "datadate", "fyear", "sich", "at", "sale", "ceq", "seq", "txdb", "pstkrv", "pstkl", "pstk", "act", "ch", "lct", "dlc", "dltt", "dp", "txp", "capx", "oibdp", "csho", "prcc_f", "ppegt", "ppent", "re", "mib", "recta", "ivao", "che"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_three_factor_monthly",
+      "description": "Monthly Fama-French three-factor model factors (Mkt-RF, SMB, HML) plus the risk-free rate for the Table II Panel C/D three-factor alphas. There is no dedicated three_factor_monthly table in the ff database (ff.three_factor is daily, 26110 rows); the monthly FF3 factors are taken as the Mkt-RF/SMB/HML/RF subset of the four-factor monthly table (MOM dropped).",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "rf"],
+      "matched_table": "ff.four_factor_monthly",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_four_factor_monthly",
+      "description": "Monthly Carhart four-factor model factors (Mkt-RF, SMB, HML, MOM) plus the risk-free rate for the four-factor robustness alphas reported in the paper (Section II).",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "mom", "rf"],
+      "matched_table": "ff.four_factor_monthly",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "mom", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    }
+  ],
+  "blocking_issues": []
+}

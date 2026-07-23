@@ -1,0 +1,6 @@
+{
+  "replicable": true,
+  "paper_type": "empirical_cross_sectional",
+  "rationale": "Cooper, Gulen, and Schill (2008), 'Asset Growth and the Cross-Section of Stock Returns', Journal of Finance. A canonical empirical cross-sectional equity paper. (1) Data section present (Section I 'Data', page 4-5): all NYSE/AMEX/NASDAQ nonfinancial firms (exclude SIC 6000-6999) from CRSP monthly and Compustat annual industrial files, 1963-2003, tests start end of June 1968. (2) Methodology is empirical: annual decile portfolio sorts on asset growth (ASSETG = % change in Compustat total assets, data item 6), EW and VW portfolio returns, Fama-French three-factor alphas by size group, and Fama-MacBeth cross-sectional regressions of annual returns on lagged accounting/return variables. (3) Tables I-V report extensive numerical results (formation-period characteristics, event-time returns and alphas, FM regression coefficients with t-stats, balance-sheet decomposition). (4) Sample period and data sources fully specified. (5) Variables fully operationalized in the Appendix with Compustat data-item numbers (ASSETG, BM, MV, EP, ROA, LEVERAGE, SALESG, BHRET6, BHRET36, 5YASSETG, 5YSALESG, L2ASSETG, CI, CASH FLOW, NOA, ACCRUALS, ISSUANCE). All inputs (CRSP, Compustat, Fama-French factors) are standard and available in the ClickHouse catalog.",
+  "block_reasons": []
+}

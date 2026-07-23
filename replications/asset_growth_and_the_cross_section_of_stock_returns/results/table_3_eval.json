@@ -1,0 +1,1106 @@
+{
+  "results": {
+    "panelA": {
+      "M1": {
+        "stats": {
+          "const": {
+            "coef": 0.13858222136518128,
+            "t": 4.546408369418782,
+            "rho": -0.27460762836928243,
+            "n_periods": 35
+          },
+          "ASSETG": {
+            "coef": -0.06494454763946572,
+            "t": -5.343652554758778,
+            "rho": 0.2513666391440792,
+            "n_periods": 35
+          },
+          "BM": {
+            "coef": 0.02840163822271789,
+            "t": 3.1117342475138416,
+            "rho": 0.035485437921565666,
+            "n_periods": 35
+          },
+          "MV": {
+            "coef": -3.644245897573218e-06,
+            "t": -1.3945140058764958,
+            "rho": 0.06500619353904705,
+            "n_periods": 35
+          },
+          "BHRET6": {
+            "coef": 0.02781388924181144,
+            "t": 1.4845737562723054,
+            "rho": -0.353456740464994,
+            "n_periods": 35
+          },
+          "BHRET36": {
+            "coef": 0.0027579493627190566,
+            "t": 0.2744312165826434,
+            "rho": 0.23988649572024953,
+            "n_periods": 35
+          }
+        },
+        "nobs": 81333,
+        "avg_obs_yr": 2323.8,
+        "n_years": 35
+      },
+      "M2": {
+        "stats": {
+          "const": {
+            "coef": 0.14422277616215814,
+            "t": 4.730198258687945,
+            "rho": -0.2774693656829955,
+            "n_periods": 35
+          },
+          "ASSETG": {
+            "coef": -0.05990733651190791,
+            "t": -5.620511588411538,
+            "rho": 0.2214196646371237,
+            "n_periods": 35
+          },
+          "BM": {
+            "coef": 0.02691970596608449,
+            "t": 3.028864350259074,
+            "rho": 0.022602546555972422,
+            "n_periods": 35
+          },
+          "MV": {
+            "coef": -3.692872456223597e-06,
+            "t": -1.4157333380961312,
+            "rho": 0.061132182900048675,
+            "n_periods": 35
+          },
+          "BHRET6": {
+            "coef": 0.022974981624896935,
+            "t": 1.2238467007704956,
+            "rho": -0.3498100185738413,
+            "n_periods": 35
+          },
+          "BHRET36": {
+            "coef": 0.003827939434500931,
+            "t": 0.3769596928119285,
+            "rho": 0.2416213145969592,
+            "n_periods": 35
+          },
+          "L2ASSETG": {
+            "coef": -0.035967306560987615,
+            "t": -3.461712640541981,
+            "rho": 0.12236672263556625,
+            "n_periods": 35
+          }
+        },
+        "nobs": 81251,
+        "avg_obs_yr": 2321.457142857143,
+        "n_years": 35
+      },
+      "M3": {
+        "stats": {
+          "const": {
+            "coef": 0.1370882344651142,
+            "t": 4.745994166466789,
+            "rho": -0.23464628914810065,
+            "n_periods": 35
+          },
+          "ASSETG": {
+            "coef": -0.0788890890568469,
+            "t": -8.858987031516838,
+            "rho": -0.10016590326640872,
+            "n_periods": 35
+          },
+          "BM": {
+            "coef": 0.028013121968303148,
+            "t": 4.131949042926418,
+            "rho": -0.06505795700549129,
+            "n_periods": 35
+          },
+          "MV": {
+            "coef": -3.4572161880954373e-06,
+            "t": -1.4671004682988777,
+            "rho": 0.02733809296371074,
+            "n_periods": 35
+          },
+          "BHRET6": {
+            "coef": 0.02453878619024611,
+            "t": 1.2479854388309695,
+            "rho": -0.3367608431258681,
+            "n_periods": 35
+          },
+          "BHRET36": {
+            "coef": 0.00407128906006223,
+            "t": 0.45794862228403044,
+            "rho": 0.2420924750574105,
+            "n_periods": 35
+          },
+          "5YSALESG": {
+            "coef": 0.0025674841554517982,
+            "t": 0.07774366899640377,
+            "rho": 0.1547205009203891,
+            "n_periods": 35
+          }
+        },
+        "nobs": 63953,
+        "avg_obs_yr": 1827.2285714285715,
+        "n_years": 35
+      },
+      "M4": {
+        "stats": {
+          "const": {
+            "coef": 0.14426644177316547,
+            "t": 4.822098995545732,
+            "rho": -0.28148747713416056,
+            "n_periods": 35
+          },
+          "ASSETG": {
+            "coef": -0.06995285115802358,
+            "t": -6.048007079279646,
+            "rho": 0.25253362164374443,
+            "n_periods": 35
+          },
+          "BM": {
+            "coef": 0.02633492315032058,
+            "t": 2.8052610652325165,
+            "rho": 0.04611483646995004,
+            "n_periods": 35
+          },
+          "MV": {
+            "coef": -3.944296019527921e-06,
+            "t": -1.553369507879605,
+            "rho": 0.04806768376151488,
+            "n_periods": 35
+          },
+          "BHRET6": {
+            "coef": 0.031463748422411494,
+            "t": 1.5580053142904948,
+            "rho": -0.30773566744812786,
+            "n_periods": 35
+          },
+          "BHRET36": {
+            "coef": 0.0030747047929340623,
+            "t": 0.28523215673910207,
+            "rho": 0.3259134080386402,
+            "n_periods": 35
+          },
+          "CI": {
+            "coef": -0.004088077177723432,
+            "t": -2.7186584719977183,
+            "rho": -0.012657157776674637,
+            "n_periods": 35
+          }
+        },
+        "nobs": 76574,
+        "avg_obs_yr": 2187.8285714285716,
+        "n_years": 35
+      },
+      "M5": {
+        "stats": {
+          "const": {
+            "coef": 0.20838875572203744,
+            "t": 3.6195417590840275,
+            "rho": -0.13752488495219703,
+            "n_periods": 35
+          },
+          "ASSETG": {
+            "coef": -0.06508200054165332,
+            "t": -5.05531619221993,
+            "rho": 0.2759664959893173,
+            "n_periods": 35
+          },
+          "BM": {
+            "coef": 0.03152319359890097,
+            "t": 3.775007420572683,
+            "rho": 0.040573640960267075,
+            "n_periods": 35
+          },
+          "MV": {
+            "coef": -3.908198502087371e-06,
+            "t": -1.5046071375418633,
+            "rho": 0.04925991927833174,
+            "n_periods": 35
+          },
+          "BHRET6": {
+            "coef": 0.026030796318273236,
+            "t": 1.3931368553482462,
+            "rho": -0.35240706125282345,
+            "n_periods": 35
+          },
+          "BHRET36": {
+            "coef": 0.002384617101185292,
+            "t": 0.23713971620242721,
+            "rho": 0.25249479030273947,
+            "n_periods": 35
+          },
+          "NOA_A": {
+            "coef": -0.1056641397743806,
+            "t": -2.2752269578554047,
+            "rho": 0.01924014210967635,
+            "n_periods": 35
+          }
+        },
+        "nobs": 81333,
+        "avg_obs_yr": 2323.8,
+        "n_years": 35
+      },
+      "M6": {
+        "stats": {
+          "const": {
+            "coef": 0.0836950210668625,
+            "t": 1.4344673198629145,
+            "rho": 0.1359020216556163,
+            "n_periods": 35
+          },
+          "ASSETG": {
+            "coef": -0.11031741077395668,
+            "t": -2.2268184626714786,
+            "rho": 0.2635477450311579,
+            "n_periods": 35
+          },
+          "BM": {
+            "coef": 0.037808998999713114,
+            "t": 3.5844552593408863,
+            "rho": -0.31518110587278275,
+            "n_periods": 35
+          },
+          "MV": {
+            "coef": -4.642591102498953e-06,
+            "t": -1.614206784083188,
+            "rho": 0.07361408674068236,
+            "n_periods": 35
+          },
+          "BHRET6": {
+            "coef": -0.1252382169756669,
+            "t": -0.7751185795686942,
+            "rho": 0.43162914774549876,
+            "n_periods": 35
+          },
+          "BHRET36": {
+            "coef": -0.0022452409110600216,
+            "t": -0.11203987034043734,
+            "rho": -0.340780427450222,
+            "n_periods": 35
+          },
+          "ACCRUALS": {
+            "coef": -0.19768948280995288,
+            "t": -1.071458822265698,
+            "rho": 0.5980700936301563,
+            "n_periods": 35
+          }
+        },
+        "nobs": 65576,
+        "avg_obs_yr": 1873.6,
+        "n_years": 35
+      },
+      "M7": {
+        "stats": {
+          "const": {
+            "coef": 0.17273048202860006,
+            "t": 6.377275371406464,
+            "rho": -0.2817735916679019,
+            "n_periods": 35
+          },
+          "ASSETG": {
+            "coef": -0.06901379492266972,
+            "t": -7.749884680340016,
+            "rho": -0.10508390316261372,
+            "n_periods": 35
+          },
+          "BM": {
+            "coef": 0.025003197610546042,
+            "t": 3.504313617446276,
+            "rho": -0.02102487271542589,
+            "n_periods": 35
+          },
+          "MV": {
+            "coef": -3.2922039133133125e-06,
+            "t": -1.3944004555791438,
+            "rho": 0.030694334452256625,
+            "n_periods": 35
+          },
+          "BHRET6": {
+            "coef": 0.024368953964154227,
+            "t": 1.216369075365296,
+            "rho": -0.3361707341154214,
+            "n_periods": 35
+          },
+          "BHRET36": {
+            "coef": 0.0019369947077611908,
+            "t": 0.21154497064080843,
+            "rho": 0.272092339581739,
+            "n_periods": 35
+          },
+          "5YASSETG": {
+            "coef": -0.06050250517207993,
+            "t": -2.1582611569197017,
+            "rho": 0.13266121524077926,
+            "n_periods": 35
+          }
+        },
+        "nobs": 64558,
+        "avg_obs_yr": 1844.5142857142857,
+        "n_years": 35
+      }
+    },
+    "m1_logMV": {
+      "const": {
+        "coef": 0.1998174455503129,
+        "t": 3.4088921828047387,
+        "rho": -0.1806519948710585,
+        "n_periods": 35
+      },
+      "ASSETG": {
+        "coef": -0.06408028973198518,
+        "t": -5.443741051716909,
+        "rho": 0.19556891299268767,
+        "n_periods": 35
+      },
+      "BM": {
+        "coef": 0.02163488918907469,
+        "t": 1.9981271955812303,
+        "rho": -0.0829424023111564,
+        "n_periods": 35
+      },
+      "log_MV": {
+        "coef": -0.012606944450069851,
+        "t": -1.8410255970734852,
+        "rho": -0.034616417690053386,
+        "n_periods": 35
+      },
+      "BHRET6": {
+        "coef": 0.023138374715526034,
+        "t": 1.1428454132389025,
+        "rho": -0.24210870833686274,
+        "n_periods": 35
+      },
+      "BHRET36": {
+        "coef": 0.004026188160733404,
+        "t": 0.47190947922541365,
+        "rho": 0.1610301228853266,
+        "n_periods": 35
+      }
+    },
+    "m1_MV_billions": {
+      "const": {
+        "coef": 0.13858222136518214,
+        "t": 4.54640836941896,
+        "rho": -0.2746076283692872,
+        "n_periods": 35
+      },
+      "ASSETG": {
+        "coef": -0.06494454763946575,
+        "t": -5.3436525547586795,
+        "rho": 0.2513666391440876,
+        "n_periods": 35
+      },
+      "BM": {
+        "coef": 0.028401638222718077,
+        "t": 3.111734247513885,
+        "rho": 0.03548543792155604,
+        "n_periods": 35
+      },
+      "MV_B": {
+        "coef": -0.003644245897482968,
+        "t": -1.3945140058439716,
+        "rho": 0.06500619355786624,
+        "n_periods": 35
+      },
+      "BHRET6": {
+        "coef": 0.027813889241811413,
+        "t": 1.484573756272304,
+        "rho": -0.3534567404649941,
+        "n_periods": 35
+      },
+      "BHRET36": {
+        "coef": 0.00275794936271905,
+        "t": 0.27443121658264313,
+        "rho": 0.2398864957202489,
+        "n_periods": 35
+      }
+    },
+    "winsorized_M1": {
+      "const": {
+        "coef": 0.13750244382187038,
+        "t": 4.150983860070113,
+        "rho": -0.2598211562388235,
+        "n_periods": 35
+      },
+      "ASSETG": {
+        "coef": -0.09468532278127192,
+        "t": -6.637544924666527,
+        "rho": 0.3234913480733626,
+        "n_periods": 35
+      },
+      "BM": {
+        "coef": 0.03463278465721818,
+        "t": 2.4243423030314206,
+        "rho": 0.12663265856925845,
+        "n_periods": 35
+      },
+      "MV": {
+        "coef": -1.4755418095694943e-05,
+        "t": -1.3864086057394678,
+        "rho": 0.08954508632256508,
+        "n_periods": 35
+      },
+      "BHRET6": {
+        "coef": 0.03562448987555151,
+        "t": 1.632097796266055,
+        "rho": -0.340162040835507,
+        "n_periods": 35
+      },
+      "BHRET36": {
+        "coef": 0.0041431672761084405,
+        "t": 0.3478115645928642,
+        "rho": 0.26719465897677375,
+        "n_periods": 35
+      }
+    },
+    "size_groups": {
+      "small": {
+        "stats": {
+          "const": {
+            "coef": 0.18474549826758943,
+            "t": 3.8910148416393975,
+            "rho": -0.22612778969749747,
+            "n_periods": 35
+          },
+          "ASSETG": {
+            "coef": -0.06701735067327926,
+            "t": -4.903454432773941,
+            "rho": 0.08367648530814653,
+            "n_periods": 35
+          },
+          "BM": {
+            "coef": 0.023988805431613316,
+            "t": 2.1722255050910344,
+            "rho": -0.09855824922002651,
+            "n_periods": 35
+          },
+          "MV": {
+            "coef": -0.0006230382639892196,
+            "t": -1.2654559258432758,
+            "rho": 0.10868450325306364,
+            "n_periods": 35
+          },
+          "BHRET6": {
+            "coef": 0.036690874444315534,
+            "t": 2.207753712444293,
+            "rho": -0.11868598357213324,
+            "n_periods": 35
+          },
+          "BHRET36": {
+            "coef": -0.008630123662091217,
+            "t": -0.7166437697433343,
+            "rho": 0.16126212994870273,
+            "n_periods": 35
+          }
+        },
+        "nobs": 43161,
+        "n_years": 35
+      },
+      "medium": {
+        "stats": {
+          "const": {
+            "coef": 0.1350248935094299,
+            "t": 3.6878202384199286,
+            "rho": -0.19747628694112845,
+            "n_periods": 35
+          },
+          "ASSETG": {
+            "coef": -0.06754177128386482,
+            "t": -3.2566903364973765,
+            "rho": 0.19021038410038707,
+            "n_periods": 35
+          },
+          "BM": {
+            "coef": 0.017753438253254136,
+            "t": 0.9727298494481835,
+            "rho": 0.011860793736730605,
+            "n_periods": 35
+          },
+          "MV": {
+            "coef": -6.420167157189065e-05,
+            "t": -0.8676949782918268,
+            "rho": 0.12039348795890907,
+            "n_periods": 35
+          },
+          "BHRET6": {
+            "coef": 0.039112003420734155,
+            "t": 1.1364240877789005,
+            "rho": -0.2615040807978802,
+            "n_periods": 35
+          },
+          "BHRET36": {
+            "coef": 0.009388964180212131,
+            "t": 0.7921676735319952,
+            "rho": 0.1442691269444166,
+            "n_periods": 35
+          }
+        },
+        "nobs": 22361,
+        "n_years": 35
+      },
+      "large": {
+        "stats": {
+          "const": {
+            "coef": 0.10743866544995194,
+            "t": 4.808561518416353,
+            "rho": -0.1879643143968564,
+            "n_periods": 35
+          },
+          "ASSETG": {
+            "coef": -0.05407116484823227,
+            "t": -2.354559192757982,
+            "rho": -0.09906228390163116,
+            "n_periods": 35
+          },
+          "BM": {
+            "coef": 0.0028312606578687134,
+            "t": 0.16082469904452112,
+            "rho": -0.13556332606213406,
+            "n_periods": 35
+          },
+          "MV": {
+            "coef": -6.41123776918621e-07,
+            "t": -0.7396387200241179,
+            "rho": -0.02129961063938736,
+            "n_periods": 35
+          },
+          "BHRET6": {
+            "coef": 0.02450694724135992,
+            "t": 0.7065286290056443,
+            "rho": -0.17045173003443578,
+            "n_periods": 35
+          },
+          "BHRET36": {
+            "coef": 0.010773343840534341,
+            "t": 2.0060703551524863,
+            "rho": -0.3092723236434944,
+            "n_periods": 35
+          }
+        },
+        "nobs": 15811,
+        "n_years": 35
+      }
+    },
+    "monthly_M1": {
+      "const": {
+        "coef": 0.01166033788891632,
+        "t": 3.5119583541150914,
+        "rho": 0.17910226347154615,
+        "n_periods": 420
+      },
+      "ASSETG": {
+        "coef": -0.005708530727545948,
+        "t": -5.944929711124157,
+        "rho": 0.14007100506109088,
+        "n_periods": 420
+      },
+      "BM": {
+        "coef": 0.002617333764437154,
+        "t": 3.9150647055342276,
+        "rho": 0.07924626301590908,
+        "n_periods": 420
+      },
+      "MV": {
+        "coef": -2.388352368627743e-07,
+        "t": -1.7681998077497478,
+        "rho": 0.18697313999135726,
+        "n_periods": 420
+      },
+      "BHRET6": {
+        "coef": 0.0018473459201351825,
+        "t": 0.932007422523869,
+        "rho": -0.0021841311772711845,
+        "n_periods": 420
+      },
+      "BHRET36": {
+        "coef": -0.000580276414597195,
+        "t": -0.740964477870087,
+        "rho": 0.03559667705193367,
+        "n_periods": 420
+      }
+    },
+    "subperiod_monthly_M1": {
+      "1968-1980": {
+        "const": {
+          "coef": 0.007738298862657131,
+          "t": 1.4425925829470583,
+          "rho": 0.15839366350165082,
+          "n_periods": 144
+        },
+        "ASSETG": {
+          "coef": -0.007803872352372547,
+          "t": -3.096141271730164,
+          "rho": 0.17851198151752776,
+          "n_periods": 144
+        },
+        "BM": {
+          "coef": 0.002582067498881057,
+          "t": 2.0986426330233563,
+          "rho": 0.2246027663481018,
+          "n_periods": 144
+        },
+        "MV": {
+          "coef": -4.110116847085063e-07,
+          "t": -1.3265423247455854,
+          "rho": 0.18141289903622831,
+          "n_periods": 144
+        },
+        "BHRET6": {
+          "coef": 0.0017364379657592755,
+          "t": 0.34891934365820737,
+          "rho": -0.012218888976561735,
+          "n_periods": 144
+        },
+        "BHRET36": {
+          "coef": -0.0009013015868093543,
+          "t": -0.43747131423727725,
+          "rho": 0.008746632975401172,
+          "n_periods": 144
+        }
+      },
+      "1981-1990": {
+        "const": {
+          "coef": 0.01197749911591214,
+          "t": 2.0425275500592726,
+          "rho": 0.184393392528953,
+          "n_periods": 120
+        },
+        "ASSETG": {
+          "coef": -0.005669286346577165,
+          "t": -5.262651437780215,
+          "rho": -0.060859843329431895,
+          "n_periods": 120
+        },
+        "BM": {
+          "coef": 0.0034225028169487127,
+          "t": 3.3076309079597026,
+          "rho": -0.007030882469160579,
+          "n_periods": 120
+        },
+        "MV": {
+          "coef": -2.2107536447168942e-07,
+          "t": -0.8667736930861674,
+          "rho": 0.17219851181145288,
+          "n_periods": 120
+        },
+        "BHRET6": {
+          "coef": 0.0024371247583505986,
+          "t": 0.9923104611831934,
+          "rho": 0.0273647448966026,
+          "n_periods": 120
+        },
+        "BHRET36": {
+          "coef": 0.0016658087939690894,
+          "t": 2.029798249921445,
+          "rho": 0.24485318256176516,
+          "n_periods": 120
+        }
+      },
+      "1991-2003": {
+        "const": {
+          "coef": 0.0150367114308511,
+          "t": 2.5551068864952153,
+          "rho": 0.18331921074764287,
+          "n_periods": 156
+        },
+        "ASSETG": {
+          "coef": -0.003804557213066616,
+          "t": -5.275442511417504,
+          "rho": 0.05416852089783177,
+          "n_periods": 156
+        },
+        "BM": {
+          "coef": 0.0020305264307108146,
+          "t": 1.7251530468806051,
+          "rho": 0.02716543356957857,
+          "n_periods": 156
+        },
+        "MV": {
+          "coef": -9.35645714598562e-08,
+          "t": -0.8703148593134935,
+          "rho": 0.25513617734538563,
+          "n_periods": 156
+        },
+        "BHRET6": {
+          "coef": 0.001496046464008776,
+          "t": 0.743828166836798,
+          "rho": 0.040558109906195704,
+          "n_periods": 156
+        },
+        "BHRET36": {
+          "coef": -0.0020117033391446513,
+          "t": -3.333824087829337,
+          "rho": 0.05760453168451147,
+          "n_periods": 156
+        }
+      }
+    },
+    "m6_diagnostic": {
+      "sparse_years": {
+        "1968": 13,
+        "1969": 15,
+        "1970": 19
+      },
+      "dense_only_stats": {
+        "const": {
+          "coef": 0.14171589341317498,
+          "t": 4.438457163785005,
+          "rho": -0.286198504060373,
+          "n_periods": 32
+        },
+        "ASSETG": {
+          "coef": -0.05541690448306573,
+          "t": -3.2753210536343373,
+          "rho": 0.27667899828430087,
+          "n_periods": 32
+        },
+        "BM": {
+          "coef": 0.034288876051844636,
+          "t": 3.1687774265841497,
+          "rho": 0.08542460922578136,
+          "n_periods": 32
+        },
+        "MV": {
+          "coef": -5.055233236280131e-06,
+          "t": -1.6226194252903527,
+          "rho": 0.06871775324609447,
+          "n_periods": 32
+        },
+        "BHRET6": {
+          "coef": 0.038145082187784535,
+          "t": 2.972226023777718,
+          "rho": -0.3570472468477486,
+          "n_periods": 32
+        },
+        "BHRET36": {
+          "coef": 0.0018127864578045797,
+          "t": 0.1814743234384329,
+          "rho": 0.3317916295740679,
+          "n_periods": 32
+        },
+        "ACCRUALS": {
+          "coef": -0.06370210556083143,
+          "t": -1.2748246198198934,
+          "rho": 0.08470824499984837,
+          "n_periods": 32
+        }
+      }
+    },
+    "inference": "annual cross-sectional OLS; mean of slopes; SE = std(ddof=1)/sqrt(N) x sqrt((1+rho)/(1-rho)), rho = AR(1) of slope series (footnote 13); main spec unwinsorized"
+  },
+  "evaluation": [
+    {
+      "metric": "M1_Constant",
+      "paper": 0.1373,
+      "ours": 0.13858222136518128,
+      "status": "Tier 1",
+      "reason": "within 40% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 1.0093388300450201,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "M1_Constant_t",
+      "paper": 4.55,
+      "ours": 4.546408369418782,
+      "status": "Tier 1",
+      "reason": "within 40% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.9992106306414906,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "M1_ASSETG",
+      "paper": -0.0922,
+      "ours": -0.06494454763946572,
+      "status": "Tier 1",
+      "reason": "within 40% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.704387718432383,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "M1_ASSETG_t",
+      "paper": -6.52,
+      "ours": -5.343652554758778,
+      "status": "Tier 1",
+      "reason": "within 40% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.8195786126930642,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "M1_BM",
+      "paper": 0.029,
+      "ours": 0.02840163822271789,
+      "status": "Tier 1",
+      "reason": "within 40% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.9793668352661341,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "M1_BM_t",
+      "paper": 3.4,
+      "ours": 3.1117342475138416,
+      "status": "Tier 1",
+      "reason": "within 40% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.91521595515113,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "M1_MV",
+      "paper": -0.0044,
+      "ours": -3.644245897573218e-06,
+      "status": "Tier 2",
+      "reason": "sign ok, outside 50% tol (  99.9%)  [MV in $billions = -0.0036, 18% off paper -0.0044 and t matches; units note in table_3.md]",
+      "tier_tolerance": "Tier 2",
+      "ratio_ours_paper": 0.0008282377039939131,
+      "subtype": "units",
+      "within_2x": true,
+      "ratio_in_paper_units": 0.8282377039734018,
+      "tier": "Tier 2 (units)",
+      "cause": "unit-dependent slope: ours is raw-$millions (\u22123.644e-06) vs the paper's $billions (\u22120.0044); in $B the coefficient is \u22120.003644 = 0.83x the paper (within 2x) and the scale-invariant t matches (\u22121.39 vs \u22121.57, Tier 1). A scaling note, not an economics gap."
+    },
+    {
+      "metric": "M1_MV_t",
+      "paper": -1.57,
+      "ours": -1.3945140058764958,
+      "status": "Tier 1",
+      "reason": "within 50% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.8882254814499972,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "M1_BHRET6",
+      "paper": 0.0248,
+      "ours": 0.02781388924181144,
+      "status": "Tier 1",
+      "reason": "within 50% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 1.1215277920085258,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "M1_BHRET6_t",
+      "paper": 1.09,
+      "ours": 1.4845737562723054,
+      "status": "Tier 1",
+      "reason": "within 50% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 1.3619942718094544,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "M1_BHRET36",
+      "paper": 0.0056,
+      "ours": 0.0027579493627190566,
+      "status": "Tier 1",
+      "reason": "within 60% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.49249095762840295,
+      "tier": "Tier 1",
+      "within_2x": false
+    },
+    {
+      "metric": "M1_BHRET36_t",
+      "paper": 0.57,
+      "ours": 0.2744312165826434,
+      "status": "Tier 1",
+      "reason": "within 60% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.48145827470639196,
+      "tier": "Tier 1",
+      "within_2x": false
+    },
+    {
+      "metric": "M3_5YSALESG_ASSETG_t",
+      "paper": -7.41,
+      "ours": -8.858987031516838,
+      "status": "Tier 1",
+      "reason": "within 40% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 1.195544808571773,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "M3_5YSALESG_t",
+      "paper": -0.27,
+      "ours": 0.07774366899640377,
+      "status": "FAIL",
+      "reason": "opposite sign (paper -0.27, ours 0.0777)",
+      "tier_tolerance": "FAIL",
+      "ratio_ours_paper": 0.28793951480149543,
+      "tier": "FAIL",
+      "within_2x": false,
+      "cause": "noise-level null \u2014 sign flip on a statistically zero coefficient/spread"
+    },
+    {
+      "metric": "M4_CI_ASSETG_t",
+      "paper": -6.05,
+      "ours": -6.048007079279646,
+      "status": "Tier 1",
+      "reason": "within 40% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.9996705916164704,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "M4_CI_t",
+      "paper": -3.32,
+      "ours": -2.7186584719977183,
+      "status": "Tier 1",
+      "reason": "within 45% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.8188730337342526,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "M5_NOA_ASSETG_t",
+      "paper": -6.1,
+      "ours": -5.05531619221993,
+      "status": "Tier 1",
+      "reason": "within 40% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.8287403593803164,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "M5_NOA_t",
+      "paper": -2.43,
+      "ours": -2.2752269578554047,
+      "status": "Tier 1",
+      "reason": "within 45% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.9363073900639525,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "M6_ACCRUALS_ASSETG_t",
+      "paper": -5.65,
+      "ours": -2.2268184626714786,
+      "status": "Tier 2",
+      "reason": "sign ok, outside 40% tol (  60.6%)",
+      "tier_tolerance": "Tier 2",
+      "ratio_ours_paper": 0.39412716153477495,
+      "tier": "FAIL",
+      "within_2x": false,
+      "cause": "data coverage \u2014 pre-1971 Compustat missingness (auditor-verified ch ~93% / txp ~53\u201356% null FY1966\u201368)",
+      "cause_detail": "M6 includes ACCRUALS; pre-1971 ch/txp missingness attenuates the ASSETG t from \u22125.65 to \u22122.23 (0.39x). Dense-only (1971+) M6 improves but does not close the gap (table_3.md m6_diagnostic)."
+    },
+    {
+      "metric": "M6_ACCRUALS_t",
+      "paper": -4.0,
+      "ours": -1.071458822265698,
+      "status": "Tier 2",
+      "reason": "sign ok, outside 45% tol (  73.2%)",
+      "tier_tolerance": "Tier 2",
+      "ratio_ours_paper": 0.2678647055664245,
+      "tier": "FAIL",
+      "within_2x": false,
+      "cause": "data coverage \u2014 pre-1971 Compustat missingness (auditor-verified ch ~93% / txp ~53\u201356% null FY1966\u201368)",
+      "cause_detail": "ACCRUALS slope t attenuated 0.27x; accruals (act\u2212ch) rest on 13/15/19 firms in 1968\u20131970 in the 2026 funda vintage."
+    },
+    {
+      "metric": "monthly_ASSETG_t",
+      "paper": -7.36,
+      "ours": -5.944929711124157,
+      "status": "Tier 1",
+      "reason": "within 40% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.8077350150983909,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "winsorized_ASSETG_t",
+      "paper": -9.47,
+      "ours": -6.637544924666527,
+      "status": "Tier 1",
+      "reason": "within 40% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.7009023151706997,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "large_firms_ASSETG_t",
+      "paper": -3.6,
+      "ours": -2.354559192757982,
+      "status": "Tier 1",
+      "reason": "within 45% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.6540442202105505,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "subperiod_1968_1980_ASSETG_t",
+      "paper": -3.98,
+      "ours": -3.096141271730164,
+      "status": "Tier 1",
+      "reason": "within 45% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.7779249426457698,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "subperiod_1981_1990_ASSETG_t",
+      "paper": -4.46,
+      "ours": -5.262651437780215,
+      "status": "Tier 1",
+      "reason": "within 45% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 1.17996669008525,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "subperiod_1991_2003_ASSETG_t",
+      "paper": -6.14,
+      "ours": -5.275442511417504,
+      "status": "Tier 1",
+      "reason": "within 45% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.8591925914360756,
+      "tier": "Tier 1",
+      "within_2x": true
+    }
+  ],
+  "tally": {
+    "Tier 1": 22,
+    "Tier 2": 3,
+    "FAIL": 1,
+    "SKIP": 0
+  },
+  "strict_tally": {
+    "Tier 1": 22,
+    "Tier 2": 1,
+    "Tier 2_pattern": 0,
+    "Tier 2_near_zero_target": 0,
+    "Tier 2_near_zero_spread": 0,
+    "Tier 2_units": 1,
+    "FAIL": 3,
+    "FAIL_data_coverage": 2,
+    "FAIL_noise_level_null": 1,
+    "SKIP": 0,
+    "convention": "strict audit convention (audit1.md \u00a72 M2): Tier 2 requires within-2x magnitude OR a documented subtype (near-zero target/spread, units); FAIL cells carry exactly one documented cause"
+  }
+}

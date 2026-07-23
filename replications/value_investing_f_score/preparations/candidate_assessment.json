@@ -1,0 +1,6 @@
+{
+  "replicable": true,
+  "paper_type": "empirical_cross_sectional",
+  "rationale": "Piotroski (2000, JAR) is the canonical F_SCORE paper: a cross-sectional accounting-based fundamental analysis strategy applied to high book-to-market firms. Data section (§3.1 Sample Selection, L288-L300) defines the Compustat sample 1976-1996 (14,043 high-BM firm-years); §3.2 (L292-L314) defines one- and two-year buy-and-hold returns from CRSP starting in the fifth month after fiscal year-end, with market adjustment against the value-weighted market index. §2.3 (L174-L266) operationalizes nine binary fundamental signals (ROA, ΔROA, CFO, ACCRUAL, ΔLEVER, ΔLIQUID, EQ_OFFER, ΔMARGIN, ΔTURN) and their composite F_SCORE with exact formulas. Tables 1-8 and Appendix A report means, percentiles, counts, Spearman correlations, cross-sectional regression coefficients, and t-statistics — all quantitative and reproducible with Compustat funda + CRSP monthly returns + CRSP-Compustat link, all available in ClickHouse (comp_202601.funda, crsp_202601.msf/msi, crsp_202601.ccmxpf_linktable).",
+  "block_reasons": []
+}

@@ -1,0 +1,900 @@
+{
+  "results": {
+    "section_A": {
+      "EW": {
+        "deciles": {
+          "D1": 2.024222853182698,
+          "D2": 1.7859965694307762,
+          "D3": 1.5861772858097176,
+          "D4": 1.4602176420810815,
+          "D5": 1.33930421043527,
+          "D6": 1.3298636549651572,
+          "D7": 1.2872963813967484,
+          "D8": 1.1577777839072885,
+          "D9": 0.9172638597558722,
+          "D10": 0.3113762288962026
+        },
+        "spread_10_1": -1.7128466242864935,
+        "spread_t_nw": -7.960497766992901,
+        "spread_t_iid": -8.646012687582923
+      },
+      "VW": {
+        "deciles": {
+          "D1": 1.4742443970513899,
+          "D2": 1.1898289790777998,
+          "D3": 1.2724178084342108,
+          "D4": 1.0294653091748405,
+          "D5": 1.006746198479241,
+          "D6": 1.0389507265510067,
+          "D7": 1.0050166598536647,
+          "D8": 0.8752266996875013,
+          "D9": 0.7756874013037083,
+          "D10": 0.44142225422390535
+        },
+        "spread_10_1": -1.0328221428274866,
+        "spread_t_nw": -4.305119217414663,
+        "spread_t_iid": -4.421964283493776
+      }
+    },
+    "section_B": {
+      "n_years": 35,
+      "EW_pct_years_low_beats_high": 97.14285714285714,
+      "VW_pct_years_low_beats_high": 77.14285714285715,
+      "VW_spread_Sharpe_annual": 0.7025041072517058,
+      "EW_spread_Sharpe_annual": 1.1452336513337646,
+      "EW_D1_annual_mean": 27.10005561831433,
+      "EW_D10_annual_mean": 4.283984721757202,
+      "VW_D1_annual_mean": 18.87684982883475,
+      "VW_D10_annual_mean": 6.520764999278901,
+      "EW_D1_annualized": 27.186068768976757,
+      "EW_D10_annualized": 3.8011739957570345,
+      "VW_D1_annualized": 19.198259393496443,
+      "VW_D10_annualized": 5.427581638342738
+    },
+    "section_C": {
+      "EW_all": {
+        "D1": 0.9094340324826774,
+        "D2": 0.6864200954601768,
+        "D3": 0.44745645841787024,
+        "D4": 0.35004468638564024,
+        "D5": 0.24057084048530053,
+        "D6": 0.2612245850562727,
+        "D7": 0.24945533437735415,
+        "D8": 0.14217585408617778,
+        "D9": -0.045685893971449426,
+        "D10": -0.5779553138934512,
+        "spread_10_1": -1.4873893463761283,
+        "spread_t_nw": -6.813192208699052,
+        "spread_t_iid": -8.587118007736443,
+        "n_obs": 420
+      },
+      "VW_all": {
+        "D1": 0.24877197085119424,
+        "D2": 0.07914906045356508,
+        "D3": 0.12983496927127328,
+        "D4": 0.056677010294758544,
+        "D5": -0.029810914959297177,
+        "D6": 0.12271328177311024,
+        "D7": 0.16812828751895784,
+        "D8": 0.1322973528250564,
+        "D9": 0.050068434647483194,
+        "D10": -0.30779096704281794,
+        "spread_10_1": -0.556562937894012,
+        "spread_t_nw": -3.14246124698843,
+        "spread_t_iid": -2.91437789735433,
+        "n_obs": 420
+      },
+      "size_groups": {
+        "small": {
+          "EW": {
+            "D1": 1.0310170136689414,
+            "D2": 0.8341016484091196,
+            "D3": 0.6373440609497998,
+            "D4": 0.48857815989320774,
+            "D5": 0.3956859773932885,
+            "D6": 0.3614673888260135,
+            "D7": 0.34028677046042727,
+            "D8": 0.17308615331168783,
+            "D9": -0.010061290045529359,
+            "D10": -0.5913916594767257,
+            "spread_10_1": -1.6224086731456673,
+            "spread_t_nw": -6.913434093586208,
+            "spread_t_iid": -8.977794122073924,
+            "n_obs": 420
+          },
+          "VW": {
+            "D1": 0.5545003571078594,
+            "D2": 0.4731845535078889,
+            "D3": 0.370723794518746,
+            "D4": 0.2412972600743004,
+            "D5": 0.26809742782541585,
+            "D6": 0.3397145238501686,
+            "D7": 0.1713609755723851,
+            "D8": 0.03340426451871447,
+            "D9": -0.20953756047917463,
+            "D10": -0.7746958877656345,
+            "spread_10_1": -1.3291962448734944,
+            "spread_t_nw": -6.3486135294936545,
+            "spread_t_iid": -7.689758922854351,
+            "n_obs": 420
+          }
+        },
+        "medium": {
+          "EW": {
+            "D1": 0.16696833161111366,
+            "D2": 0.18764910318143446,
+            "D3": 0.2081006509250474,
+            "D4": 0.17945008498864418,
+            "D5": 0.15534261917471692,
+            "D6": 0.17417699383695834,
+            "D7": 0.19500300918300975,
+            "D8": 0.1533275404329746,
+            "D9": -0.0833939559777226,
+            "D10": -0.5414138032285867,
+            "spread_10_1": -0.7083821348397003,
+            "spread_t_nw": -3.798959814548881,
+            "spread_t_iid": -3.6456185145293847,
+            "n_obs": 420
+          },
+          "VW": {
+            "D1": 0.07470251029760286,
+            "D2": 0.14767717297287764,
+            "D3": 0.15888178439695966,
+            "D4": 0.13712847352131757,
+            "D5": 0.10432935988468,
+            "D6": 0.1285910082863208,
+            "D7": 0.18933916554275687,
+            "D8": 0.15377552000450703,
+            "D9": -0.08815768043174413,
+            "D10": -0.4882333791157903,
+            "spread_10_1": -0.5629358894133932,
+            "spread_t_nw": -2.7968784270745424,
+            "spread_t_iid": -2.704117216674321,
+            "n_obs": 420
+          }
+        },
+        "large": {
+          "EW": {
+            "D1": 0.27309043148885054,
+            "D2": 0.019348616910017602,
+            "D3": -0.004214902373106486,
+            "D4": 0.09128549829612088,
+            "D5": -0.035875110914078856,
+            "D6": 0.039221073687007356,
+            "D7": 0.11129931053774919,
+            "D8": 0.08548590689750539,
+            "D9": -0.08318800597651212,
+            "D10": -0.30424136178911315,
+            "spread_10_1": -0.5773317932779637,
+            "spread_t_nw": -2.408846018619997,
+            "spread_t_iid": -2.3284959064228166,
+            "n_obs": 420
+          },
+          "VW": {
+            "D1": 0.2968608497021795,
+            "D2": 0.011544493848711888,
+            "D3": 0.1040853140692194,
+            "D4": 0.051206486110520484,
+            "D5": -0.03092024223326354,
+            "D6": 0.11943918370160583,
+            "D7": 0.1772360397210077,
+            "D8": 0.1393316294904099,
+            "D9": 0.14226823293052368,
+            "D10": -0.14110491769043684,
+            "spread_10_1": -0.4379657673926161,
+            "spread_t_nw": -1.9634760601856611,
+            "spread_t_iid": -1.776427485577799,
+            "n_obs": 420
+          }
+        }
+      }
+    },
+    "section_D": {
+      "EW": {
+        "spread_10_1": -1.287325482092528,
+        "spread_t_nw": -6.20697471983016,
+        "spread_t_iid": -7.406130761643965,
+        "n_obs": 420
+      },
+      "VW": {
+        "spread_10_1": -0.41878866978074614,
+        "spread_t_nw": -1.795536851956749,
+        "spread_t_iid": -2.149012179621718,
+        "n_obs": 420
+      }
+    },
+    "section_F": {
+      "1968-1980": {
+        "n_months": 144,
+        "EW": {
+          "spread_10_1": -0.6566507238882301,
+          "spread_t_nw": -3.5202459407495357,
+          "spread_t_iid": -3.218312849536547
+        },
+        "VW": {
+          "spread_10_1": -0.2879983048525406,
+          "spread_t_nw": -1.4932178898249349,
+          "spread_t_iid": -1.3755708947050445
+        }
+      },
+      "1981-1990": {
+        "n_months": 120,
+        "EW": {
+          "spread_10_1": -1.1298886106904444,
+          "spread_t_nw": -4.0129420436514085,
+          "spread_t_iid": -4.733279553587788
+        },
+        "VW": {
+          "spread_10_1": -0.5251476953221259,
+          "spread_t_nw": -2.356565034539564,
+          "spread_t_iid": -2.0487103305616996
+        }
+      },
+      "1991-2003": {
+        "n_months": 156,
+        "EW": {
+          "spread_10_1": -2.4463012905273906,
+          "spread_t_nw": -6.0821745725957586,
+          "spread_t_iid": -6.599698520160444
+        },
+        "VW": {
+          "spread_10_1": -0.8604627149817152,
+          "spread_t_nw": -2.2727740264138405,
+          "spread_t_iid": -2.021220942324879
+        }
+      }
+    },
+    "panel_A": {
+      "ASSETG_year1_spread": 1.3226843982440435,
+      "ASSETG_year1_t": 7.953736627103548,
+      "D1": -0.181749415068647,
+      "D10": 1.1409349831753965
+    },
+    "section_E": {
+      "status": "computed",
+      "window": "1968-07 .. 2007-06 (extended; same universe filter + Assumption-1 delisting adjustment as the foundation, code imported from main.py)",
+      "overlap_check": {
+        "n_panel_pairs": 1203865,
+        "n_matched": 1203865,
+        "n_missing": 0,
+        "max_abs_diff": 0.0,
+        "n_mismatch_gt_1e_12": 0
+      },
+      "convention": "fixed formation-year decile membership (buy-and-hold cohort, NOT re-sorted). PRIMARY = monthly-portfolio event time (paper's Figure 2 method, L1552): within-month EW mean / VW with fixed June-t formation ME (Assumption 9) over surviving members, averaged across the 35 cohorts at each of the 60 event-month offsets; cumulative[1,5] = product of the 60 event-month means - 1; spread = D10-D1. The committed metric uses this convention.",
+      "EW_annual_pct": {
+        "Y1": {
+          "D1": 26.372846437309995,
+          "D2": 23.303792866391547,
+          "D3": 20.59105733244513,
+          "D4": 18.876067645252093,
+          "D5": 17.18164047672184,
+          "D6": 17.064501210564508,
+          "D7": 16.462390822931216,
+          "D8": 14.677605518787228,
+          "D9": 11.385586525570046,
+          "D10": 3.5287108968507397
+        },
+        "Y2": {
+          "D1": 22.938817405696167,
+          "D2": 22.849580891520517,
+          "D3": 21.095614934076835,
+          "D4": 19.044670804262665,
+          "D5": 18.746397625161435,
+          "D6": 18.473100528081975,
+          "D7": 18.28155515822969,
+          "D8": 17.333522703090388,
+          "D9": 15.768222188646043,
+          "D10": 11.597713336620853
+        },
+        "Y3": {
+          "D1": 24.34844932570104,
+          "D2": 23.567631424627166,
+          "D3": 20.688738353136227,
+          "D4": 20.38787942104978,
+          "D5": 19.38621578166597,
+          "D6": 19.90515481919626,
+          "D7": 19.656260944209535,
+          "D8": 20.13673657870889,
+          "D9": 19.50997037703179,
+          "D10": 17.542736220854827
+        },
+        "Y4": {
+          "D1": 23.78603235043373,
+          "D2": 23.26491034780853,
+          "D3": 19.77926761950808,
+          "D4": 19.197267272555596,
+          "D5": 19.363056846569606,
+          "D6": 18.670280880848388,
+          "D7": 18.00042296111628,
+          "D8": 19.201012373358317,
+          "D9": 17.818324854184155,
+          "D10": 17.269652911730347
+        },
+        "Y5": {
+          "D1": 23.716098516019812,
+          "D2": 22.40440216055677,
+          "D3": 21.568546454590187,
+          "D4": 20.037888635010148,
+          "D5": 19.25196545462995,
+          "D6": 19.311194543795175,
+          "D7": 18.560431571080805,
+          "D8": 18.296248278791793,
+          "D9": 18.50044468496954,
+          "D10": 18.917898137353383
+        }
+      },
+      "VW_annual_pct": {
+        "Y1": {
+          "D1": 19.012361904909824,
+          "D2": 15.178408799196363,
+          "D3": 16.333741770494157,
+          "D4": 13.037799866671662,
+          "D5": 12.725674842261414,
+          "D6": 13.166667445465642,
+          "D7": 12.699164612498093,
+          "D8": 10.960248327655965,
+          "D9": 9.666111440076609,
+          "D10": 5.3174092665216
+        },
+        "Y2": {
+          "D1": 16.940861018406018,
+          "D2": 17.537601023197436,
+          "D3": 16.641561667575555,
+          "D4": 13.296492396128002,
+          "D5": 13.475790156789259,
+          "D6": 13.066008044539167,
+          "D7": 12.79933853348969,
+          "D8": 12.122994414693334,
+          "D9": 12.260919806923143,
+          "D10": 9.033611484595427
+        },
+        "Y3": {
+          "D1": 20.558288425255245,
+          "D2": 17.559193909663897,
+          "D3": 16.397823180742765,
+          "D4": 15.460714236611818,
+          "D5": 14.611877387432703,
+          "D6": 13.647429142981405,
+          "D7": 13.987522105059846,
+          "D8": 14.806852261841374,
+          "D9": 14.904282629936283,
+          "D10": 13.7064989624482
+        },
+        "Y4": {
+          "D1": 17.720913948899298,
+          "D2": 16.33226776279919,
+          "D3": 14.569337264677063,
+          "D4": 13.487670653091598,
+          "D5": 14.699893749387872,
+          "D6": 11.697915470957865,
+          "D7": 14.755688474614349,
+          "D8": 15.612805931253405,
+          "D9": 12.83517300230117,
+          "D10": 15.052304119146154
+        },
+        "Y5": {
+          "D1": 19.24449050328729,
+          "D2": 15.261384896421015,
+          "D3": 16.357375805994124,
+          "D4": 15.673272410637583,
+          "D5": 13.294737723548256,
+          "D6": 13.8639221157006,
+          "D7": 14.260077379370362,
+          "D8": 13.717404596787208,
+          "D9": 16.626901351710764,
+          "D10": 15.570784297878394
+        }
+      },
+      "EW_spread_year_pct": {
+        "Y1": -22.844135540459256,
+        "Y2": -11.341104069075314,
+        "Y3": -6.805713104846212,
+        "Y4": -6.516379438703379,
+        "Y5": -4.7982003786664285
+      },
+      "VW_spread_year_pct": {
+        "Y1": -13.694952638388225,
+        "Y2": -7.90724953381059,
+        "Y3": -6.851789462807045,
+        "Y4": -2.6686098297531435,
+        "Y5": -3.6737062054089
+      },
+      "EW_cumulative_pct": {
+        "D1": 195.85644287307593,
+        "D2": 182.41732710677306,
+        "D3": 156.6333804417273,
+        "D4": 143.76525307046552,
+        "D5": 136.46653167762364,
+        "D6": 135.45395605823964,
+        "D7": 130.60116158486187,
+        "D8": 127.94363606073209,
+        "D9": 115.15692192865944,
+        "D10": 89.38464435686362,
+        "spread_10_1": -106.47179851621232
+      },
+      "VW_cumulative_pct": {
+        "D1": 135.5306239132333,
+        "D2": 113.3971053024701,
+        "D3": 110.55531079334978,
+        "D4": 94.11366271577045,
+        "D5": 90.51467749670583,
+        "D6": 84.9444952589642,
+        "D7": 89.99986805966493,
+        "D8": 87.78582145934561,
+        "D9": 86.15748055505917,
+        "D10": 73.61579503509408,
+        "spread_10_1": -61.91482887813924
+      },
+      "EW_cohort_level": {
+        "mean_spread_pct": -99.41533098479829,
+        "t_stat": -10.143504000453314,
+        "n_cohorts": 35
+      },
+      "VW_cohort_level": {
+        "mean_spread_pct": -54.48172754150489,
+        "t_stat": -4.710702530105851,
+        "n_cohorts": 35
+      },
+      "alternative_conventions": {
+        "cohort_annual_compounding": {
+          "EW_spread_pct": -112.20509963661627,
+          "VW_spread_pct": -57.41078299331086
+        },
+        "spec_literal_per_stock_BHR": {
+          "EW_spread_pct": -17236639.641958844,
+          "VW_spread_pct": -2356.9014348311625,
+          "flag": "outlier-dominated on 2026 CRSP vintage (sub-penny shells); not used for the committed metric"
+        }
+      },
+      "avg_surviving_members_by_year": {
+        "Y1": {
+          "surviving": 285.3888095238095,
+          "at_formation": 297.16
+        },
+        "Y2": {
+          "surviving": 264.8352380952381,
+          "at_formation": 297.16
+        },
+        "Y3": {
+          "surviving": 245.9504761904762,
+          "at_formation": 297.16
+        },
+        "Y4": {
+          "surviving": 228.9845238095238,
+          "at_formation": 297.16
+        },
+        "Y5": {
+          "surviving": 213.61761904761906,
+          "at_formation": 297.16
+        }
+      },
+      "n_cohorts": 35,
+      "evaluation": {
+        "paper": -87.99,
+        "tolerance_pct": 50.0,
+        "status": "Tier 1",
+        "reason": "within 50% tol (21.0%)"
+      }
+    }
+  },
+  "evaluation": [
+    {
+      "metric": "PanelA_ASSETG_year1_spread",
+      "paper": 1.0471,
+      "ours": 1.3226843982440435,
+      "status": "Tier 2",
+      "reason": "sign ok, outside 5% tol (  26.3%)",
+      "tier_tolerance": "Tier 2",
+      "ratio_ours_paper": 1.2631882324935952,
+      "tier": "Tier 2 (pattern)",
+      "subtype": "pattern",
+      "within_2x": true
+    },
+    {
+      "metric": "PanelA_ASSETG_year1_t",
+      "paper": 15.6,
+      "ours": 7.953736627103548,
+      "status": "Tier 2",
+      "reason": "sign ok, outside 30% tol (  49.0%)",
+      "tier_tolerance": "Tier 2",
+      "ratio_ours_paper": 0.5098549119938172,
+      "tier": "Tier 2 (pattern)",
+      "subtype": "pattern",
+      "within_2x": true
+    },
+    {
+      "metric": "EW_Y1_D1_ret",
+      "paper": 1.99,
+      "ours": 2.024222853182698,
+      "status": "Tier 1",
+      "reason": "within 30% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 1.017197413659647,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "EW_Y1_D10_ret",
+      "paper": 0.26,
+      "ours": 0.3113762288962026,
+      "status": "Tier 1",
+      "reason": "within 40% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 1.19760088037001,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "EW_Y1_spread_10_1",
+      "paper": -1.73,
+      "ours": -1.7128466242864935,
+      "status": "Tier 1",
+      "reason": "within 30% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.9900847539228286,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "EW_Y1_spread_t",
+      "paper": -8.45,
+      "ours": -7.960497766992901,
+      "status": "Tier 1",
+      "reason": "within 35% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.9420707416559647,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "VW_Y1_D1_ret",
+      "paper": 1.48,
+      "ours": 1.4742443970513899,
+      "status": "Tier 1",
+      "reason": "within 30% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.9961110790887769,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "VW_Y1_D10_ret",
+      "paper": 0.43,
+      "ours": 0.44142225422390535,
+      "status": "Tier 1",
+      "reason": "within 40% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 1.026563381916059,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "VW_Y1_spread_10_1",
+      "paper": -1.05,
+      "ours": -1.0328221428274866,
+      "status": "Tier 1",
+      "reason": "within 30% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.9836401360261777,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "VW_Y1_spread_t",
+      "paper": -5.04,
+      "ours": -4.305119217414663,
+      "status": "Tier 1",
+      "reason": "within 35% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.8541903209156076,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "EW_alpha_all_low",
+      "paper": 0.76,
+      "ours": 0.9094340324826774,
+      "status": "Tier 1",
+      "reason": "within 50% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 1.1966237269508913,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "EW_alpha_all_high",
+      "paper": -0.87,
+      "ours": -0.5779553138934512,
+      "status": "Tier 1",
+      "reason": "within 50% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.6643164527510934,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "EW_alpha_all_spread",
+      "paper": -1.63,
+      "ours": -1.4873893463761283,
+      "status": "Tier 1",
+      "reason": "within 40% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.9125088014577475,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "EW_alpha_all_spread_t",
+      "paper": -8.33,
+      "ours": -6.813192208699052,
+      "status": "Tier 1",
+      "reason": "within 35% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.8179102291355405,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "VW_alpha_all_low",
+      "paper": 0.24,
+      "ours": 0.24877197085119424,
+      "status": "Tier 1",
+      "reason": "within 60% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 1.0365498785466427,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "VW_alpha_all_high",
+      "paper": -0.46,
+      "ours": -0.30779096704281794,
+      "status": "Tier 1",
+      "reason": "within 50% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.6691107979191694,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "VW_alpha_all_spread",
+      "paper": -0.7,
+      "ours": -0.556562937894012,
+      "status": "Tier 1",
+      "reason": "within 40% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.7950899112771601,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "VW_alpha_all_spread_t",
+      "paper": -3.84,
+      "ours": -3.14246124698843,
+      "status": "Tier 1",
+      "reason": "within 40% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.8183492830699037,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "EW_alpha_small_spread",
+      "paper": -1.77,
+      "ours": -1.6224086731456673,
+      "status": "Tier 1",
+      "reason": "within 40% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.9166150695738233,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "EW_alpha_medium_spread",
+      "paper": -0.6,
+      "ours": -0.7083821348397003,
+      "status": "Tier 1",
+      "reason": "within 50% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 1.1806368913995005,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "EW_alpha_large_spread",
+      "paper": -0.86,
+      "ours": -0.5773317932779637,
+      "status": "Tier 1",
+      "reason": "within 50% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.6713160386953066,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "VW_alpha_small_spread",
+      "paper": -1.14,
+      "ours": -1.3291962448734944,
+      "status": "Tier 1",
+      "reason": "within 40% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 1.165961618310083,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "VW_alpha_medium_spread",
+      "paper": -0.55,
+      "ours": -0.5629358894133932,
+      "status": "Tier 1",
+      "reason": "within 50% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 1.0235197989334421,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "VW_alpha_large_spread",
+      "paper": -0.81,
+      "ours": -0.4379657673926161,
+      "status": "Tier 1",
+      "reason": "within 50% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.540698478262489,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "EW_4factor_Y1_spread",
+      "paper": -1.48,
+      "ours": -1.287325482092528,
+      "status": "Tier 1",
+      "reason": "within 40% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.8698145149273837,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "EW_4factor_Y1_spread_t",
+      "paper": -7.45,
+      "ours": -6.20697471983016,
+      "status": "Tier 1",
+      "reason": "within 40% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.8331509691047194,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "VW_4factor_Y1_spread",
+      "paper": -0.6,
+      "ours": -0.41878866978074614,
+      "status": "Tier 1",
+      "reason": "within 45% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.6979811163012436,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "VW_4factor_Y1_spread_t",
+      "paper": -2.84,
+      "ours": -1.795536851956749,
+      "status": "Tier 1",
+      "reason": "within 45% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.6322312859002638,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "VW_spread_Sharpe_annual",
+      "paper": 1.07,
+      "ours": 0.7025041072517058,
+      "status": "Tier 2",
+      "reason": "sign ok, outside 30% tol (  34.3%)",
+      "tier_tolerance": "Tier 2",
+      "ratio_ours_paper": 0.6565458946277624,
+      "tier": "Tier 2 (pattern)",
+      "subtype": "pattern",
+      "within_2x": true
+    },
+    {
+      "metric": "VW_high_growth_annualized_ret",
+      "paper": 5.2,
+      "ours": 5.427581638342738,
+      "status": "Tier 1",
+      "reason": "within 50% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 1.0437656996812956,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "EW_high_growth_annualized_ret",
+      "paper": 3.1,
+      "ours": 3.8011739957570345,
+      "status": "Tier 1",
+      "reason": "within 50% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 1.226185159921624,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "EW_cumulative_Y1_5_spread",
+      "paper": -87.99,
+      "ours": -106.47179851621232,
+      "status": "Tier 1",
+      "reason": "within 50% tol (21.0%)",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 1.2100443063554076,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "EW_pct_years_low_beats_high",
+      "paper": 91.0,
+      "ours": 97.14285714285714,
+      "status": "Tier 1",
+      "reason": "within 15% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 1.0675039246467817,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "VW_pct_years_low_beats_high",
+      "paper": 71.0,
+      "ours": 77.14285714285715,
+      "status": "Tier 1",
+      "reason": "within 15% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 1.086519114688129,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "VW_alpha_1968_1980_spread",
+      "paper": -0.35,
+      "ours": -0.2879983048525406,
+      "status": "Tier 1",
+      "reason": "within 60% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.8228522995786874,
+      "tier": "Tier 1",
+      "within_2x": true
+    },
+    {
+      "metric": "VW_alpha_1968_1980_spread_t",
+      "paper": -1.69,
+      "ours": -1.4932178898249349,
+      "status": "Tier 1",
+      "reason": "within 50% tol",
+      "tier_tolerance": "Tier 1",
+      "ratio_ours_paper": 0.8835608815532159,
+      "tier": "Tier 1",
+      "within_2x": true
+    }
+  ],
+  "tally": {
+    "Tier 1": 33,
+    "Tier 2": 3,
+    "FAIL": 0,
+    "SKIP": 0
+  },
+  "n_months": 420,
+  "n_years": 35,
+  "strict_tally": {
+    "Tier 1": 33,
+    "Tier 2": 3,
+    "Tier 2_pattern": 3,
+    "Tier 2_near_zero_target": 0,
+    "Tier 2_near_zero_spread": 0,
+    "Tier 2_units": 0,
+    "FAIL": 0,
+    "SKIP": 0,
+    "convention": "strict audit convention (audit1.md \u00a72 M2): Tier 2 requires within-2x magnitude OR a documented subtype (near-zero target/spread, units); FAIL cells carry exactly one documented cause"
+  }
+}
