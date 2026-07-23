@@ -1,0 +1,6449 @@
+{
+  "tables": [
+    {
+      "id": "T1",
+      "table_ref": "Table I",
+      "description": "Average monthly returns of winner, loser, and W-L portfolios for the JT, MG, and 52-week high (6,6) strategies, July 1963 - December 2001, all months, equally weighted.",
+      "replication_meaning": "Proves correct universe construction (all CRSP stocks 1963-2001), correct construction of all three ranking signals (JT cumulative 6-month return, MG value-weighted 20-industry return, 52-week-high price ratio), EW 30/30 portfolio formation, and the overlapping six-portfolio (6,6) holding-period averaging.",
+      "paper_quote": "This table reports the average monthly portfolio returns from July 1963 through December 2001 for three different momentum investing strategies. ... The sample includes all stocks on CRSP; $t$-statistics are in parentheses. (L81)",
+      "exercises_preprocessing_rules": [
+        "universe_all_crsp",
+        "sample_period",
+        "sort_6_6_strategies",
+        "sort_30_30_40",
+        "sort_overlap_average",
+        "sort_equal_weighted",
+        "var_jt_past_return",
+        "var_mg_signal",
+        "var_52wh_measure",
+        "var_mg_20_industries",
+        "var_mg_industry_vw_return"
+      ],
+      "metrics": [
+        {
+          "name": "jt_winner",
+          "value": 1.53,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L95"
+        },
+        {
+          "name": "jt_loser",
+          "value": 1.05,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L96"
+        },
+        {
+          "name": "jt_w_minus_l",
+          "value": 0.48,
+          "unit": "percent_per_month",
+          "tolerance_pct": 85.1,
+          "paper_location": "L97"
+        },
+        {
+          "name": "jt_w_minus_l_tstat",
+          "value": 2.35,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L97"
+        },
+        {
+          "name": "mg_winner",
+          "value": 1.48,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L101"
+        },
+        {
+          "name": "mg_loser",
+          "value": 1.03,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L102"
+        },
+        {
+          "name": "mg_w_minus_l",
+          "value": 0.45,
+          "unit": "percent_per_month",
+          "tolerance_pct": 58.3,
+          "paper_location": "L103"
+        },
+        {
+          "name": "mg_w_minus_l_tstat",
+          "value": 3.43,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L103"
+        },
+        {
+          "name": "wh_winner",
+          "value": 1.51,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L107"
+        },
+        {
+          "name": "wh_loser",
+          "value": 1.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L108"
+        },
+        {
+          "name": "wh_w_minus_l",
+          "value": 0.45,
+          "unit": "percent_per_month",
+          "tolerance_pct": 100.0,
+          "paper_location": "L109"
+        },
+        {
+          "name": "wh_w_minus_l_tstat",
+          "value": 2.0,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L109"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "T2",
+      "table_ref": "Table II",
+      "description": "Same three (6,6) strategies as Table I split into non-January months (Panel A) and January only (Panel B).",
+      "replication_meaning": "Proves the monthly return series is correctly date-aligned at the calendar-month level: the January-effect decomposition (tax-loss-selling rebound in losers) is a sharp, nonlinear function of the monthly return data, so matching both panels validates the time alignment and the loser-portfolio composition that Table I averages over.",
+      "paper_quote": "This table reports the average monthly portfolio returns from July 1963 through December 2001, excluding Januaries (Panel A) or Januaries only (Panel B), for three different momentum investing strategies. (L150)",
+      "exercises_preprocessing_rules": [
+        "sample_period",
+        "sort_overlap_average",
+        "var_jt_past_return",
+        "var_52wh_measure",
+        "var_mg_signal"
+      ],
+      "metrics": [
+        {
+          "name": "pA_jt_winner",
+          "value": 1.23,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L167"
+        },
+        {
+          "name": "pA_jt_loser",
+          "value": 0.16,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L168"
+        },
+        {
+          "name": "pA_jt_w_minus_l",
+          "value": 1.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L169"
+        },
+        {
+          "name": "pA_jt_tstat",
+          "value": 6.97,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L169"
+        },
+        {
+          "name": "pA_mg_winner",
+          "value": 0.99,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L173"
+        },
+        {
+          "name": "pA_mg_loser",
+          "value": 0.5,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L174"
+        },
+        {
+          "name": "pA_mg_w_minus_l",
+          "value": 0.5,
+          "unit": "percent_per_month",
+          "tolerance_pct": 51.0,
+          "paper_location": "L175"
+        },
+        {
+          "name": "pA_mg_tstat",
+          "value": 3.92,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L175"
+        },
+        {
+          "name": "pA_wh_winner",
+          "value": 1.3,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L179"
+        },
+        {
+          "name": "pA_wh_loser",
+          "value": 0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L180"
+        },
+        {
+          "name": "pA_wh_w_minus_l",
+          "value": 1.23,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L181"
+        },
+        {
+          "name": "pA_wh_tstat",
+          "value": 7.06,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L181"
+        },
+        {
+          "name": "pB_jt_winner",
+          "value": 4.96,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L188"
+        },
+        {
+          "name": "pB_jt_loser",
+          "value": 11.2,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L189"
+        },
+        {
+          "name": "pB_jt_w_minus_l",
+          "value": -6.29,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L190"
+        },
+        {
+          "name": "pB_jt_tstat",
+          "value": -4.48,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L190"
+        },
+        {
+          "name": "pB_mg_winner",
+          "value": 7.0,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L194"
+        },
+        {
+          "name": "pB_mg_loser",
+          "value": 7.09,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L195"
+        },
+        {
+          "name": "pB_mg_w_minus_l",
+          "value": -0.09,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L196"
+        },
+        {
+          "name": "pB_mg_tstat",
+          "value": -0.12,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L196"
+        },
+        {
+          "name": "pB_wh_winner",
+          "value": 3.84,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L200"
+        },
+        {
+          "name": "pB_wh_loser",
+          "value": 12.11,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L201"
+        },
+        {
+          "name": "pB_wh_w_minus_l",
+          "value": -8.27,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L202"
+        },
+        {
+          "name": "pB_wh_tstat",
+          "value": -5.49,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L202"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "T3",
+      "table_ref": "Table III",
+      "description": "Pairwise nested comparison: 52-week-high W-L returns within JT winner/middle/loser groups (Panel A) and JT W-L returns within 52-week-high groups (Panel B), all months and excluding January.",
+      "replication_meaning": "Proves the independent double-sort mechanics: two signals applied sequentially with 30/30 cutoffs, equally weighted nested portfolios, and the nonempty-cell rule for W-L averages. Since Panels A and B share cells by construction, internal consistency (e.g. the shared winner-winner cell 1.63%) is itself a check on cell assignment.",
+      "paper_quote": "Panel A reports the average monthly returns from July 1963 through December 2001 for equally weighted portfolios that are long 52-week winners and short 52-week losers within winner, middle, and loser categories identified by JT's strategy. Panel B reports returns for equally weighted portfolios formed using JT's strategy within groups identified as winner, middle, and loser by the 52-week high strategy. (L251)",
+      "exercises_preprocessing_rules": [
+        "sort_30_30_40",
+        "sort_nonempty_cells",
+        "sort_overlap_average",
+        "var_jt_past_return",
+        "var_52wh_measure"
+      ],
+      "metrics": [
+        {
+          "name": "pa_winner_winner_all",
+          "value": 1.63,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L268"
+        },
+        {
+          "name": "pa_winner_winner_exjan",
+          "value": 1.41,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L269"
+        },
+        {
+          "name": "pa_winner_loser_all",
+          "value": 1.17,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L274"
+        },
+        {
+          "name": "pa_winner_loser_exjan",
+          "value": 0.31,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L275"
+        },
+        {
+          "name": "pa_winner_w_minus_l_all",
+          "value": 0.46,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L280"
+        },
+        {
+          "name": "pa_winner_w_minus_l_exjan",
+          "value": 1.11,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L281"
+        },
+        {
+          "name": "pa_winner_w_minus_l_all_tstat",
+          "value": 2.15,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L280"
+        },
+        {
+          "name": "pa_winner_w_minus_l_exjan_tstat",
+          "value": 6.11,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L281"
+        },
+        {
+          "name": "pa_middle_winner_all",
+          "value": 1.3,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L286"
+        },
+        {
+          "name": "pa_middle_winner_exjan",
+          "value": 1.1,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L287"
+        },
+        {
+          "name": "pa_middle_loser_all",
+          "value": 1.04,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L292"
+        },
+        {
+          "name": "pa_middle_loser_exjan",
+          "value": 0.24,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L293"
+        },
+        {
+          "name": "pa_middle_w_minus_l_all",
+          "value": 0.26,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L298"
+        },
+        {
+          "name": "pa_middle_w_minus_l_exjan",
+          "value": 0.86,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L299"
+        },
+        {
+          "name": "pa_middle_w_minus_l_all_tstat",
+          "value": 1.33,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L298"
+        },
+        {
+          "name": "pa_middle_w_minus_l_exjan_tstat",
+          "value": 6.28,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L299"
+        },
+        {
+          "name": "pa_loser_winner_all",
+          "value": 1.27,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L304"
+        },
+        {
+          "name": "pa_loser_winner_exjan",
+          "value": 1.04,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L305"
+        },
+        {
+          "name": "pa_loser_loser_all",
+          "value": 1.05,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L310"
+        },
+        {
+          "name": "pa_loser_loser_exjan",
+          "value": 0.01,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L311"
+        },
+        {
+          "name": "pa_loser_w_minus_l_all",
+          "value": 0.56,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L316"
+        },
+        {
+          "name": "pa_loser_w_minus_l_exjan",
+          "value": 0.98,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L317"
+        },
+        {
+          "name": "pa_loser_w_minus_l_all_tstat",
+          "value": 1.62,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L316"
+        },
+        {
+          "name": "pa_loser_w_minus_l_exjan_tstat",
+          "value": 3.13,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L317"
+        },
+        {
+          "name": "pb_winner_winner_all",
+          "value": 1.63,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L338"
+        },
+        {
+          "name": "pb_winner_winner_exjan",
+          "value": 1.41,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L339"
+        },
+        {
+          "name": "pb_winner_loser_all",
+          "value": 1.27,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L344"
+        },
+        {
+          "name": "pb_winner_loser_exjan",
+          "value": 1.04,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L345"
+        },
+        {
+          "name": "pb_winner_w_minus_l_all",
+          "value": 0.22,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L349"
+        },
+        {
+          "name": "pb_winner_w_minus_l_exjan",
+          "value": 0.24,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L350"
+        },
+        {
+          "name": "pb_winner_w_minus_l_all_tstat",
+          "value": 0.68,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L349"
+        },
+        {
+          "name": "pb_winner_w_minus_l_exjan_tstat",
+          "value": 0.74,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L350"
+        },
+        {
+          "name": "pb_middle_winner_all",
+          "value": 1.48,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L356"
+        },
+        {
+          "name": "pb_middle_winner_exjan",
+          "value": 1.03,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L357"
+        },
+        {
+          "name": "pb_middle_loser_all",
+          "value": 1.21,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L362"
+        },
+        {
+          "name": "pb_middle_loser_exjan",
+          "value": 0.73,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L363"
+        },
+        {
+          "name": "pb_middle_w_minus_l_all",
+          "value": 0.27,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L367"
+        },
+        {
+          "name": "pb_middle_w_minus_l_exjan",
+          "value": 0.3,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L368"
+        },
+        {
+          "name": "pb_middle_w_minus_l_all_tstat",
+          "value": 2.12,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L367"
+        },
+        {
+          "name": "pb_middle_w_minus_l_exjan_tstat",
+          "value": 2.35,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L368"
+        },
+        {
+          "name": "pb_loser_winner_all",
+          "value": 1.17,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L374"
+        },
+        {
+          "name": "pb_loser_winner_exjan",
+          "value": 0.31,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L375"
+        },
+        {
+          "name": "pb_loser_loser_all",
+          "value": 1.05,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L380"
+        },
+        {
+          "name": "pb_loser_loser_exjan",
+          "value": 0.01,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L381"
+        },
+        {
+          "name": "pb_loser_w_minus_l_all",
+          "value": 0.12,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L385"
+        },
+        {
+          "name": "pb_loser_w_minus_l_exjan",
+          "value": 0.29,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L386"
+        },
+        {
+          "name": "pb_loser_w_minus_l_all_tstat",
+          "value": 0.76,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L385"
+        },
+        {
+          "name": "pb_loser_w_minus_l_exjan_tstat",
+          "value": 1.96,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L386"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "T5",
+      "table_ref": "Table V",
+      "description": "Fama-MacBeth cross-sectional regressions with strategy dummy variables (JT, MG, 52-week high), controls R_{i,t-1} and size, one-month skip; (6,6) and (6,12) strategies, raw and Fama-French risk-adjusted returns, January included and excluded.",
+      "replication_meaning": "Proves the Fama-MacBeth dummy-variable regression design: month-by-month cross-sectional regressions for each formation lag j=2..7 (6,6) and j=2..13 (6,12) with the one-month skip, correct dummy construction from all three rankings at t-j, size and lagged-return controls, coefficient averaging across j, time-series averaging with t-stats from the time series, and the FF (1996) risk-adjustment intercepts.",
+      "paper_quote": "Each month between July 1963 and December 2001, 6 ($j = 2, \\ldots, 7$) or 12 ($j = 2, \\ldots, 13$) cross-sectional regressions of the following form are estimated for (6, 6) and (6, 12) strategies, respectively ... The numbers reported for the raw return in the tables are the time-series averages of these averages. They are in percent per month. (L625, L631)",
+      "exercises_preprocessing_rules": [
+        "fm_skip_month",
+        "fm_regression_controls",
+        "fm_j2_7_averaging",
+        "fm_dummy_definitions",
+        "fm_averaging_j",
+        "fm_percent_units",
+        "var_size",
+        "factor_risk_adjustment",
+        "var_52wh_measure",
+        "var_jt_past_return",
+        "var_mg_signal"
+      ],
+      "metrics": [
+        {
+          "name": "s66_raw_janincl_intercept",
+          "value": 3.62,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L670"
+        },
+        {
+          "name": "s66_raw_janincl_intercept_tstat",
+          "value": 6.09,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L681"
+        },
+        {
+          "name": "s66_raw_janexcl_intercept",
+          "value": 1.87,
+          "unit": "percent_per_month",
+          "tolerance_pct": 56.0,
+          "paper_location": "L670"
+        },
+        {
+          "name": "s66_raw_janexcl_intercept_tstat",
+          "value": 3.57,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L681"
+        },
+        {
+          "name": "s66_ra_janincl_intercept",
+          "value": 2.58,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L670"
+        },
+        {
+          "name": "s66_ra_janincl_intercept_tstat",
+          "value": 5.99,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L681"
+        },
+        {
+          "name": "s66_ra_janexcl_intercept",
+          "value": 1.55,
+          "unit": "percent_per_month",
+          "tolerance_pct": 49.8,
+          "paper_location": "L670"
+        },
+        {
+          "name": "s66_ra_janexcl_intercept_tstat",
+          "value": 4.02,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L681"
+        },
+        {
+          "name": "s612_raw_janincl_intercept",
+          "value": 3.42,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L670"
+        },
+        {
+          "name": "s612_raw_janincl_intercept_tstat",
+          "value": 5.73,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L681"
+        },
+        {
+          "name": "s612_raw_janexcl_intercept",
+          "value": 1.66,
+          "unit": "percent_per_month",
+          "tolerance_pct": 63.1,
+          "paper_location": "L670"
+        },
+        {
+          "name": "s612_raw_janexcl_intercept_tstat",
+          "value": 3.17,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L681"
+        },
+        {
+          "name": "s612_ra_janincl_intercept",
+          "value": 2.38,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L670"
+        },
+        {
+          "name": "s612_ra_janincl_intercept_tstat",
+          "value": 5.56,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L681"
+        },
+        {
+          "name": "s612_ra_janexcl_intercept",
+          "value": 1.34,
+          "unit": "percent_per_month",
+          "tolerance_pct": 57.0,
+          "paper_location": "L670"
+        },
+        {
+          "name": "s612_ra_janexcl_intercept_tstat",
+          "value": 3.51,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L681"
+        },
+        {
+          "name": "s66_raw_janincl_r_lag1",
+          "value": -6.5,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L692"
+        },
+        {
+          "name": "s66_raw_janincl_r_lag1_tstat",
+          "value": -14.9,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L703"
+        },
+        {
+          "name": "s66_raw_janexcl_r_lag1",
+          "value": -5.53,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L692"
+        },
+        {
+          "name": "s66_raw_janexcl_r_lag1_tstat",
+          "value": -14.89,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L703"
+        },
+        {
+          "name": "s66_ra_janincl_r_lag1",
+          "value": -5.94,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L692"
+        },
+        {
+          "name": "s66_ra_janincl_r_lag1_tstat",
+          "value": -14.17,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L703"
+        },
+        {
+          "name": "s66_ra_janexcl_r_lag1",
+          "value": -5.36,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L692"
+        },
+        {
+          "name": "s66_ra_janexcl_r_lag1_tstat",
+          "value": -14.78,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L703"
+        },
+        {
+          "name": "s612_raw_janincl_r_lag1",
+          "value": -6.56,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L692"
+        },
+        {
+          "name": "s612_raw_janincl_r_lag1_tstat",
+          "value": -14.88,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L703"
+        },
+        {
+          "name": "s612_raw_janexcl_r_lag1",
+          "value": -5.58,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L692"
+        },
+        {
+          "name": "s612_raw_janexcl_r_lag1_tstat",
+          "value": -14.96,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L703"
+        },
+        {
+          "name": "s612_ra_janincl_r_lag1",
+          "value": -5.99,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L692"
+        },
+        {
+          "name": "s612_ra_janincl_r_lag1_tstat",
+          "value": -14.14,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L703"
+        },
+        {
+          "name": "s612_ra_janexcl_r_lag1",
+          "value": -5.41,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L692"
+        },
+        {
+          "name": "s612_ra_janexcl_r_lag1_tstat",
+          "value": -14.82,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L703"
+        },
+        {
+          "name": "s66_raw_janincl_size",
+          "value": -0.2,
+          "unit": "percent_per_month",
+          "tolerance_pct": 42.6,
+          "paper_location": "L714"
+        },
+        {
+          "name": "s66_raw_janincl_size_tstat",
+          "value": -4.7,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L724"
+        },
+        {
+          "name": "s66_raw_janexcl_size",
+          "value": -0.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 93.9,
+          "paper_location": "L714"
+        },
+        {
+          "name": "s66_raw_janexcl_size_tstat",
+          "value": -2.13,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L724"
+        },
+        {
+          "name": "s66_ra_janincl_size",
+          "value": -0.17,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L714"
+        },
+        {
+          "name": "s66_ra_janincl_size_tstat",
+          "value": -5.11,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L724"
+        },
+        {
+          "name": "s66_ra_janexcl_size",
+          "value": -0.09,
+          "unit": "percent_per_month",
+          "tolerance_pct": 64.7,
+          "paper_location": "L714"
+        },
+        {
+          "name": "s66_ra_janexcl_size_tstat",
+          "value": -3.09,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L724"
+        },
+        {
+          "name": "s612_raw_janincl_size",
+          "value": -0.19,
+          "unit": "percent_per_month",
+          "tolerance_pct": 46.8,
+          "paper_location": "L714"
+        },
+        {
+          "name": "s612_raw_janincl_size_tstat",
+          "value": -4.27,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L724"
+        },
+        {
+          "name": "s612_raw_janexcl_size",
+          "value": -0.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 124.2,
+          "paper_location": "L714"
+        },
+        {
+          "name": "s612_raw_janexcl_size_tstat",
+          "value": -1.61,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L724"
+        },
+        {
+          "name": "s612_ra_janincl_size",
+          "value": -0.16,
+          "unit": "percent_per_month",
+          "tolerance_pct": 43.7,
+          "paper_location": "L714"
+        },
+        {
+          "name": "s612_ra_janincl_size_tstat",
+          "value": -4.58,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L724"
+        },
+        {
+          "name": "s612_ra_janexcl_size",
+          "value": -0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 82.0,
+          "paper_location": "L714"
+        },
+        {
+          "name": "s612_ra_janexcl_size_tstat",
+          "value": -2.44,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L724"
+        },
+        {
+          "name": "s66_raw_janincl_jt_winner",
+          "value": 0.17,
+          "unit": "percent_per_month",
+          "tolerance_pct": 96.6,
+          "paper_location": "L736"
+        },
+        {
+          "name": "s66_raw_janincl_jt_winner_tstat",
+          "value": 2.07,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L746"
+        },
+        {
+          "name": "s66_raw_janexcl_jt_winner",
+          "value": 0.15,
+          "unit": "percent_per_month",
+          "tolerance_pct": 118.3,
+          "paper_location": "L736"
+        },
+        {
+          "name": "s66_raw_janexcl_jt_winner_tstat",
+          "value": 1.69,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L746"
+        },
+        {
+          "name": "s66_ra_janincl_jt_winner",
+          "value": 0.16,
+          "unit": "percent_per_month",
+          "tolerance_pct": 71.4,
+          "paper_location": "L736"
+        },
+        {
+          "name": "s66_ra_janincl_jt_winner_tstat",
+          "value": 2.8,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L746"
+        },
+        {
+          "name": "s66_ra_janexcl_jt_winner",
+          "value": 0.16,
+          "unit": "percent_per_month",
+          "tolerance_pct": 74.3,
+          "paper_location": "L736"
+        },
+        {
+          "name": "s66_ra_janexcl_jt_winner_tstat",
+          "value": 2.69,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L746"
+        },
+        {
+          "name": "s612_raw_janincl_jt_winner",
+          "value": 0.05,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L736"
+        },
+        {
+          "name": "s612_raw_janincl_jt_winner_tstat",
+          "value": 0.6,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L746"
+        },
+        {
+          "name": "s612_raw_janexcl_jt_winner",
+          "value": 0.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L736"
+        },
+        {
+          "name": "s612_raw_janexcl_jt_winner_tstat",
+          "value": 0.22,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L746"
+        },
+        {
+          "name": "s612_ra_janincl_jt_winner",
+          "value": 0.05,
+          "unit": "percent_per_month",
+          "tolerance_pct": 181.8,
+          "paper_location": "L736"
+        },
+        {
+          "name": "s612_ra_janincl_jt_winner_tstat",
+          "value": 1.1,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L746"
+        },
+        {
+          "name": "s612_ra_janexcl_jt_winner",
+          "value": 0.04,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L736"
+        },
+        {
+          "name": "s612_ra_janexcl_jt_winner_tstat",
+          "value": 0.79,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L746"
+        },
+        {
+          "name": "s66_raw_janincl_jt_loser",
+          "value": -0.21,
+          "unit": "percent_per_month",
+          "tolerance_pct": 55.6,
+          "paper_location": "L783"
+        },
+        {
+          "name": "s66_raw_janincl_jt_loser_tstat",
+          "value": -3.6,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L793"
+        },
+        {
+          "name": "s66_raw_janexcl_jt_loser",
+          "value": -0.31,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L783"
+        },
+        {
+          "name": "s66_raw_janexcl_jt_loser_tstat",
+          "value": -6.29,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L793"
+        },
+        {
+          "name": "s66_ra_janincl_jt_loser",
+          "value": -0.22,
+          "unit": "percent_per_month",
+          "tolerance_pct": 51.9,
+          "paper_location": "L783"
+        },
+        {
+          "name": "s66_ra_janincl_jt_loser_tstat",
+          "value": -3.85,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L793"
+        },
+        {
+          "name": "s66_ra_janexcl_jt_loser",
+          "value": -0.3,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L783"
+        },
+        {
+          "name": "s66_ra_janexcl_jt_loser_tstat",
+          "value": -6.28,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L793"
+        },
+        {
+          "name": "s612_raw_janincl_jt_loser",
+          "value": -0.19,
+          "unit": "percent_per_month",
+          "tolerance_pct": 43.1,
+          "paper_location": "L783"
+        },
+        {
+          "name": "s612_raw_janincl_jt_loser_tstat",
+          "value": -4.64,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L793"
+        },
+        {
+          "name": "s612_raw_janexcl_jt_loser",
+          "value": -0.27,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L783"
+        },
+        {
+          "name": "s612_raw_janexcl_jt_loser_tstat",
+          "value": -7.58,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L793"
+        },
+        {
+          "name": "s612_ra_janincl_jt_loser",
+          "value": -0.21,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L783"
+        },
+        {
+          "name": "s612_ra_janincl_jt_loser_tstat",
+          "value": -5.22,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L793"
+        },
+        {
+          "name": "s612_ra_janexcl_jt_loser",
+          "value": -0.28,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L783"
+        },
+        {
+          "name": "s612_ra_janexcl_jt_loser_tstat",
+          "value": -7.82,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L793"
+        },
+        {
+          "name": "s66_raw_janincl_mg_winner",
+          "value": 0.18,
+          "unit": "percent_per_month",
+          "tolerance_pct": 71.4,
+          "paper_location": "L805"
+        },
+        {
+          "name": "s66_raw_janincl_mg_winner_tstat",
+          "value": 2.8,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L815"
+        },
+        {
+          "name": "s66_raw_janexcl_mg_winner",
+          "value": 0.17,
+          "unit": "percent_per_month",
+          "tolerance_pct": 78.7,
+          "paper_location": "L805"
+        },
+        {
+          "name": "s66_raw_janexcl_mg_winner_tstat",
+          "value": 2.54,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L815"
+        },
+        {
+          "name": "s66_ra_janincl_mg_winner",
+          "value": 0.19,
+          "unit": "percent_per_month",
+          "tolerance_pct": 70.2,
+          "paper_location": "L805"
+        },
+        {
+          "name": "s66_ra_janincl_mg_winner_tstat",
+          "value": 2.85,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L815"
+        },
+        {
+          "name": "s66_ra_janexcl_mg_winner",
+          "value": 0.19,
+          "unit": "percent_per_month",
+          "tolerance_pct": 72.5,
+          "paper_location": "L805"
+        },
+        {
+          "name": "s66_ra_janexcl_mg_winner_tstat",
+          "value": 2.76,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L815"
+        },
+        {
+          "name": "s612_raw_janincl_mg_winner",
+          "value": 0.1,
+          "unit": "percent_per_month",
+          "tolerance_pct": 110.5,
+          "paper_location": "L805"
+        },
+        {
+          "name": "s612_raw_janincl_mg_winner_tstat",
+          "value": 1.81,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L815"
+        },
+        {
+          "name": "s612_raw_janexcl_mg_winner",
+          "value": 0.09,
+          "unit": "percent_per_month",
+          "tolerance_pct": 128.2,
+          "paper_location": "L805"
+        },
+        {
+          "name": "s612_raw_janexcl_mg_winner_tstat",
+          "value": 1.56,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L815"
+        },
+        {
+          "name": "s612_ra_janincl_mg_winner",
+          "value": 0.14,
+          "unit": "percent_per_month",
+          "tolerance_pct": 82.0,
+          "paper_location": "L805"
+        },
+        {
+          "name": "s612_ra_janincl_mg_winner_tstat",
+          "value": 2.44,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L815"
+        },
+        {
+          "name": "s612_ra_janexcl_mg_winner",
+          "value": 0.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 92.2,
+          "paper_location": "L805"
+        },
+        {
+          "name": "s612_ra_janexcl_mg_winner_tstat",
+          "value": 2.17,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L815"
+        },
+        {
+          "name": "s66_raw_janincl_mg_loser",
+          "value": -0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 175.4,
+          "paper_location": "L827"
+        },
+        {
+          "name": "s66_raw_janincl_mg_loser_tstat",
+          "value": -1.14,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L837"
+        },
+        {
+          "name": "s66_raw_janexcl_mg_loser",
+          "value": -0.05,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L827"
+        },
+        {
+          "name": "s66_raw_janexcl_mg_loser_tstat",
+          "value": -0.84,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L837"
+        },
+        {
+          "name": "s66_ra_janincl_mg_loser",
+          "value": -0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 183.5,
+          "paper_location": "L827"
+        },
+        {
+          "name": "s66_ra_janincl_mg_loser_tstat",
+          "value": -1.09,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L837"
+        },
+        {
+          "name": "s66_ra_janexcl_mg_loser",
+          "value": -0.05,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L827"
+        },
+        {
+          "name": "s66_ra_janexcl_mg_loser_tstat",
+          "value": -0.85,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L837"
+        },
+        {
+          "name": "s612_raw_janincl_mg_loser",
+          "value": -0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 130.7,
+          "paper_location": "L827"
+        },
+        {
+          "name": "s612_raw_janincl_mg_loser_tstat",
+          "value": -1.53,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L837"
+        },
+        {
+          "name": "s612_raw_janexcl_mg_loser",
+          "value": -0.05,
+          "unit": "percent_per_month",
+          "tolerance_pct": 172.4,
+          "paper_location": "L827"
+        },
+        {
+          "name": "s612_raw_janexcl_mg_loser_tstat",
+          "value": -1.16,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L837"
+        },
+        {
+          "name": "s612_ra_janincl_mg_loser",
+          "value": -0.09,
+          "unit": "percent_per_month",
+          "tolerance_pct": 101.0,
+          "paper_location": "L827"
+        },
+        {
+          "name": "s612_ra_janincl_mg_loser_tstat",
+          "value": -1.98,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L837"
+        },
+        {
+          "name": "s612_ra_janexcl_mg_loser",
+          "value": -0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 121.2,
+          "paper_location": "L827"
+        },
+        {
+          "name": "s612_ra_janexcl_mg_loser_tstat",
+          "value": -1.65,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L837"
+        },
+        {
+          "name": "s66_raw_janincl_wh_winner",
+          "value": 0.16,
+          "unit": "percent_per_month",
+          "tolerance_pct": 65.4,
+          "paper_location": "L850"
+        },
+        {
+          "name": "s66_raw_janincl_wh_winner_tstat",
+          "value": 3.06,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L859"
+        },
+        {
+          "name": "s66_raw_janexcl_wh_winner",
+          "value": 0.27,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L850"
+        },
+        {
+          "name": "s66_raw_janexcl_wh_winner_tstat",
+          "value": 5.25,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L859"
+        },
+        {
+          "name": "s66_ra_janincl_wh_winner",
+          "value": 0.27,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L850"
+        },
+        {
+          "name": "s66_ra_janincl_wh_winner_tstat",
+          "value": 6.49,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L859"
+        },
+        {
+          "name": "s66_ra_janexcl_wh_winner",
+          "value": 0.32,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L850"
+        },
+        {
+          "name": "s66_ra_janexcl_wh_winner_tstat",
+          "value": 7.66,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L859"
+        },
+        {
+          "name": "s612_raw_janincl_wh_winner",
+          "value": 0.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 70.7,
+          "paper_location": "L850"
+        },
+        {
+          "name": "s612_raw_janincl_wh_winner_tstat",
+          "value": 2.83,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L859"
+        },
+        {
+          "name": "s612_raw_janexcl_wh_winner",
+          "value": 0.22,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L850"
+        },
+        {
+          "name": "s612_raw_janexcl_wh_winner_tstat",
+          "value": 5.19,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L859"
+        },
+        {
+          "name": "s612_ra_janincl_wh_winner",
+          "value": 0.23,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L850"
+        },
+        {
+          "name": "s612_ra_janincl_wh_winner_tstat",
+          "value": 6.89,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L859"
+        },
+        {
+          "name": "s612_ra_janexcl_wh_winner",
+          "value": 0.27,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L850"
+        },
+        {
+          "name": "s612_ra_janexcl_wh_winner_tstat",
+          "value": 8.39,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L859"
+        },
+        {
+          "name": "s66_raw_janincl_wh_loser",
+          "value": -0.48,
+          "unit": "percent_per_month",
+          "tolerance_pct": 49.1,
+          "paper_location": "L871"
+        },
+        {
+          "name": "s66_raw_janincl_wh_loser_tstat",
+          "value": -4.07,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L881"
+        },
+        {
+          "name": "s66_raw_janexcl_wh_loser",
+          "value": -0.79,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L871"
+        },
+        {
+          "name": "s66_raw_janexcl_wh_loser_tstat",
+          "value": -7.76,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L881"
+        },
+        {
+          "name": "s66_ra_janincl_wh_loser",
+          "value": -0.59,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L871"
+        },
+        {
+          "name": "s66_ra_janincl_wh_loser_tstat",
+          "value": -6.3,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L881"
+        },
+        {
+          "name": "s66_ra_janexcl_wh_loser",
+          "value": -0.81,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L871"
+        },
+        {
+          "name": "s66_ra_janexcl_wh_loser_tstat",
+          "value": -10.65,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L881"
+        },
+        {
+          "name": "s612_raw_janincl_wh_loser",
+          "value": -0.26,
+          "unit": "percent_per_month",
+          "tolerance_pct": 87.3,
+          "paper_location": "L871"
+        },
+        {
+          "name": "s612_raw_janincl_wh_loser_tstat",
+          "value": -2.29,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L881"
+        },
+        {
+          "name": "s612_raw_janexcl_wh_loser",
+          "value": -0.56,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L871"
+        },
+        {
+          "name": "s612_raw_janexcl_wh_loser_tstat",
+          "value": -5.87,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L881"
+        },
+        {
+          "name": "s612_ra_janincl_wh_loser",
+          "value": -0.37,
+          "unit": "percent_per_month",
+          "tolerance_pct": 47.4,
+          "paper_location": "L871"
+        },
+        {
+          "name": "s612_ra_janincl_wh_loser_tstat",
+          "value": -4.22,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L881"
+        },
+        {
+          "name": "s612_ra_janexcl_wh_loser",
+          "value": -0.58,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L871"
+        },
+        {
+          "name": "s612_ra_janexcl_wh_loser_tstat",
+          "value": -8.33,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L881"
+        },
+        {
+          "name": "s66_raw_janincl_wh_spread",
+          "value": 0.65,
+          "unit": "percent_per_month",
+          "tolerance_pct": 49.0,
+          "paper_location": "L893"
+        },
+        {
+          "name": "s66_raw_janincl_wh_spread_tstat",
+          "value": 4.08,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L903"
+        },
+        {
+          "name": "s66_raw_janexcl_wh_spread",
+          "value": 1.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L893"
+        },
+        {
+          "name": "s66_raw_janexcl_wh_spread_tstat",
+          "value": 7.64,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L903"
+        },
+        {
+          "name": "s66_ra_janincl_wh_spread",
+          "value": 0.86,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L893"
+        },
+        {
+          "name": "s66_ra_janincl_wh_spread_tstat",
+          "value": 7.29,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L903"
+        },
+        {
+          "name": "s66_ra_janexcl_wh_spread",
+          "value": 1.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L893"
+        },
+        {
+          "name": "s66_ra_janexcl_wh_spread_tstat",
+          "value": 11.35,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L903"
+        },
+        {
+          "name": "s612_raw_janincl_wh_spread",
+          "value": 0.39,
+          "unit": "percent_per_month",
+          "tolerance_pct": 76.0,
+          "paper_location": "L893"
+        },
+        {
+          "name": "s612_raw_janincl_wh_spread_tstat",
+          "value": 2.63,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L903"
+        },
+        {
+          "name": "s612_raw_janexcl_wh_spread",
+          "value": 0.78,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L893"
+        },
+        {
+          "name": "s612_raw_janexcl_wh_spread_tstat",
+          "value": 6.14,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L903"
+        },
+        {
+          "name": "s612_ra_janincl_wh_spread",
+          "value": 0.6,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L893"
+        },
+        {
+          "name": "s612_ra_janincl_wh_spread_tstat",
+          "value": 5.61,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L903"
+        },
+        {
+          "name": "s612_ra_janexcl_wh_spread",
+          "value": 0.85,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L893"
+        },
+        {
+          "name": "s612_ra_janexcl_wh_spread_tstat",
+          "value": 9.73,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L903"
+        },
+        {
+          "name": "s66_raw_janincl_jt_spread",
+          "value": 0.38,
+          "unit": "percent_per_month",
+          "tolerance_pct": 53.9,
+          "paper_location": "L915"
+        },
+        {
+          "name": "s66_raw_janincl_jt_spread_tstat",
+          "value": 3.71,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L925"
+        },
+        {
+          "name": "s66_raw_janexcl_jt_spread",
+          "value": 0.46,
+          "unit": "percent_per_month",
+          "tolerance_pct": 45.6,
+          "paper_location": "L915"
+        },
+        {
+          "name": "s66_raw_janexcl_jt_spread_tstat",
+          "value": 4.39,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L925"
+        },
+        {
+          "name": "s66_ra_janincl_jt_spread",
+          "value": 0.38,
+          "unit": "percent_per_month",
+          "tolerance_pct": 49.8,
+          "paper_location": "L915"
+        },
+        {
+          "name": "s66_ra_janincl_jt_spread_tstat",
+          "value": 4.02,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L925"
+        },
+        {
+          "name": "s66_ra_janexcl_jt_spread",
+          "value": 0.46,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L915"
+        },
+        {
+          "name": "s66_ra_janexcl_jt_spread_tstat",
+          "value": 5.13,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L925"
+        },
+        {
+          "name": "s612_raw_janincl_jt_spread",
+          "value": 0.24,
+          "unit": "percent_per_month",
+          "tolerance_pct": 73.0,
+          "paper_location": "L915"
+        },
+        {
+          "name": "s612_raw_janincl_jt_spread_tstat",
+          "value": 2.74,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L925"
+        },
+        {
+          "name": "s612_raw_janexcl_jt_spread",
+          "value": 0.29,
+          "unit": "percent_per_month",
+          "tolerance_pct": 61.5,
+          "paper_location": "L915"
+        },
+        {
+          "name": "s612_raw_janexcl_jt_spread_tstat",
+          "value": 3.25,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L925"
+        },
+        {
+          "name": "s612_ra_janincl_jt_spread",
+          "value": 0.27,
+          "unit": "percent_per_month",
+          "tolerance_pct": 53.1,
+          "paper_location": "L915"
+        },
+        {
+          "name": "s612_ra_janincl_jt_spread_tstat",
+          "value": 3.77,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L925"
+        },
+        {
+          "name": "s612_ra_janexcl_jt_spread",
+          "value": 0.32,
+          "unit": "percent_per_month",
+          "tolerance_pct": 43.0,
+          "paper_location": "L915"
+        },
+        {
+          "name": "s612_ra_janexcl_jt_spread_tstat",
+          "value": 4.65,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L925"
+        },
+        {
+          "name": "s66_raw_janincl_mg_spread",
+          "value": 0.25,
+          "unit": "percent_per_month",
+          "tolerance_pct": 70.7,
+          "paper_location": "L937"
+        },
+        {
+          "name": "s66_raw_janincl_mg_spread_tstat",
+          "value": 2.83,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L947"
+        },
+        {
+          "name": "s66_raw_janexcl_mg_spread",
+          "value": 0.22,
+          "unit": "percent_per_month",
+          "tolerance_pct": 81.6,
+          "paper_location": "L937"
+        },
+        {
+          "name": "s66_raw_janexcl_mg_spread_tstat",
+          "value": 2.45,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L947"
+        },
+        {
+          "name": "s66_ra_janincl_mg_spread",
+          "value": 0.25,
+          "unit": "percent_per_month",
+          "tolerance_pct": 68.5,
+          "paper_location": "L937"
+        },
+        {
+          "name": "s66_ra_janincl_mg_spread_tstat",
+          "value": 2.92,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L947"
+        },
+        {
+          "name": "s66_ra_janexcl_mg_spread",
+          "value": 0.24,
+          "unit": "percent_per_month",
+          "tolerance_pct": 73.5,
+          "paper_location": "L937"
+        },
+        {
+          "name": "s66_ra_janexcl_mg_spread_tstat",
+          "value": 2.72,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L947"
+        },
+        {
+          "name": "s612_raw_janincl_mg_spread",
+          "value": 0.17,
+          "unit": "percent_per_month",
+          "tolerance_pct": 89.7,
+          "paper_location": "L937"
+        },
+        {
+          "name": "s612_raw_janincl_mg_spread_tstat",
+          "value": 2.23,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L947"
+        },
+        {
+          "name": "s612_raw_janexcl_mg_spread",
+          "value": 0.15,
+          "unit": "percent_per_month",
+          "tolerance_pct": 110.5,
+          "paper_location": "L937"
+        },
+        {
+          "name": "s612_raw_janexcl_mg_spread_tstat",
+          "value": 1.81,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L947"
+        },
+        {
+          "name": "s612_ra_janincl_mg_spread",
+          "value": 0.22,
+          "unit": "percent_per_month",
+          "tolerance_pct": 64.3,
+          "paper_location": "L937"
+        },
+        {
+          "name": "s612_ra_janincl_mg_spread_tstat",
+          "value": 3.11,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L947"
+        },
+        {
+          "name": "s612_ra_janexcl_mg_spread",
+          "value": 0.2,
+          "unit": "percent_per_month",
+          "tolerance_pct": 75.2,
+          "paper_location": "L937"
+        },
+        {
+          "name": "s612_ra_janexcl_mg_spread_tstat",
+          "value": 2.66,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L947"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "T7",
+      "table_ref": "Table VII",
+      "description": "Table V extended with Grinblatt-Han (2002) embedded-capital-gain winner/loser dummies; same (6,6)/(6,12) raw and risk-adjusted layout.",
+      "replication_meaning": "Proves the GH embedded capital gain construction: 60-month turnover-weighted reference price from monthly volume and shares outstanding (V_t = volume/shares), g_t = (P_t - R_t)/P_t, top/bottom-30% GH dummies included alongside the other six dummies, and that the 52-week-high strategy still dominates GH after controlling for the disposition effect.",
+      "paper_quote": "Table VII is identical to Table V, except that the GH winner and loser dummies are added as explanatory variables. (L1327)",
+      "exercises_preprocessing_rules": [
+        "var_gh_embedded_gain",
+        "var_gh_turnover",
+        "var_gh_dummies",
+        "fm_dummy_definitions",
+        "fm_skip_month",
+        "fm_averaging_j",
+        "factor_risk_adjustment"
+      ],
+      "metrics": [
+        {
+          "name": "s66_raw_janincl_intercept",
+          "value": 3.27,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1376"
+        },
+        {
+          "name": "s66_raw_janincl_intercept_tstat",
+          "value": 5.75,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1386"
+        },
+        {
+          "name": "s66_raw_janexcl_intercept",
+          "value": 1.72,
+          "unit": "percent_per_month",
+          "tolerance_pct": 59.9,
+          "paper_location": "L1376"
+        },
+        {
+          "name": "s66_raw_janexcl_intercept_tstat",
+          "value": 3.34,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1386"
+        },
+        {
+          "name": "s66_ra_janincl_intercept",
+          "value": 2.23,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1376"
+        },
+        {
+          "name": "s66_ra_janincl_intercept_tstat",
+          "value": 5.89,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1386"
+        },
+        {
+          "name": "s66_ra_janexcl_intercept",
+          "value": 1.4,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.3,
+          "paper_location": "L1376"
+        },
+        {
+          "name": "s66_ra_janexcl_intercept_tstat",
+          "value": 3.98,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1386"
+        },
+        {
+          "name": "s612_raw_janincl_intercept",
+          "value": 3.0,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1376"
+        },
+        {
+          "name": "s612_raw_janincl_intercept_tstat",
+          "value": 5.23,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1386"
+        },
+        {
+          "name": "s612_raw_janexcl_intercept",
+          "value": 1.41,
+          "unit": "percent_per_month",
+          "tolerance_pct": 73.5,
+          "paper_location": "L1376"
+        },
+        {
+          "name": "s612_raw_janexcl_intercept_tstat",
+          "value": 2.72,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1386"
+        },
+        {
+          "name": "s612_ra_janincl_intercept",
+          "value": 1.84,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.7,
+          "paper_location": "L1376"
+        },
+        {
+          "name": "s612_ra_janincl_intercept_tstat",
+          "value": 4.92,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1386"
+        },
+        {
+          "name": "s612_ra_janexcl_intercept",
+          "value": 1.01,
+          "unit": "percent_per_month",
+          "tolerance_pct": 69.0,
+          "paper_location": "L1376"
+        },
+        {
+          "name": "s612_ra_janexcl_intercept_tstat",
+          "value": 2.9,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1386"
+        },
+        {
+          "name": "s66_raw_janincl_r_lag1",
+          "value": -7.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1398"
+        },
+        {
+          "name": "s66_raw_janincl_r_lag1_tstat",
+          "value": -16.04,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1407"
+        },
+        {
+          "name": "s66_raw_janexcl_r_lag1",
+          "value": -6.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1398"
+        },
+        {
+          "name": "s66_raw_janexcl_r_lag1_tstat",
+          "value": -15.59,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1407"
+        },
+        {
+          "name": "s66_ra_janincl_r_lag1",
+          "value": -6.46,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1398"
+        },
+        {
+          "name": "s66_ra_janincl_r_lag1_tstat",
+          "value": -15.23,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1407"
+        },
+        {
+          "name": "s66_ra_janexcl_r_lag1",
+          "value": -5.82,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1398"
+        },
+        {
+          "name": "s66_ra_janexcl_r_lag1_tstat",
+          "value": -15.24,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1407"
+        },
+        {
+          "name": "s612_raw_janincl_r_lag1",
+          "value": -7.11,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1398"
+        },
+        {
+          "name": "s612_raw_janincl_r_lag1_tstat",
+          "value": -16.04,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1407"
+        },
+        {
+          "name": "s612_raw_janexcl_r_lag1",
+          "value": -6.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1398"
+        },
+        {
+          "name": "s612_raw_janexcl_r_lag1_tstat",
+          "value": -15.63,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1407"
+        },
+        {
+          "name": "s612_ra_janincl_r_lag1",
+          "value": -6.53,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1398"
+        },
+        {
+          "name": "s612_ra_janincl_r_lag1_tstat",
+          "value": -15.2,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1407"
+        },
+        {
+          "name": "s612_ra_janexcl_r_lag1",
+          "value": -5.88,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1398"
+        },
+        {
+          "name": "s612_ra_janexcl_r_lag1_tstat",
+          "value": -15.22,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1407"
+        },
+        {
+          "name": "s66_raw_janincl_size",
+          "value": -0.17,
+          "unit": "percent_per_month",
+          "tolerance_pct": 48.1,
+          "paper_location": "L1420"
+        },
+        {
+          "name": "s66_raw_janincl_size_tstat",
+          "value": -4.16,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1429"
+        },
+        {
+          "name": "s66_raw_janexcl_size",
+          "value": -0.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 119.8,
+          "paper_location": "L1420"
+        },
+        {
+          "name": "s66_raw_janexcl_size_tstat",
+          "value": -1.67,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1429"
+        },
+        {
+          "name": "s66_ra_janincl_size",
+          "value": -0.14,
+          "unit": "percent_per_month",
+          "tolerance_pct": 44.3,
+          "paper_location": "L1420"
+        },
+        {
+          "name": "s66_ra_janincl_size_tstat",
+          "value": -4.51,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1429"
+        },
+        {
+          "name": "s66_ra_janexcl_size",
+          "value": -0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 79.4,
+          "paper_location": "L1420"
+        },
+        {
+          "name": "s66_ra_janexcl_size_tstat",
+          "value": -2.52,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1429"
+        },
+        {
+          "name": "s612_raw_janincl_size",
+          "value": -0.14,
+          "unit": "percent_per_month",
+          "tolerance_pct": 56.0,
+          "paper_location": "L1420"
+        },
+        {
+          "name": "s612_raw_janincl_size_tstat",
+          "value": -3.57,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1429"
+        },
+        {
+          "name": "s612_raw_janexcl_size",
+          "value": -0.03,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1420"
+        },
+        {
+          "name": "s612_raw_janexcl_size_tstat",
+          "value": -0.95,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1429"
+        },
+        {
+          "name": "s612_ra_janincl_size",
+          "value": -0.1,
+          "unit": "percent_per_month",
+          "tolerance_pct": 57.6,
+          "paper_location": "L1420"
+        },
+        {
+          "name": "s612_ra_janincl_size_tstat",
+          "value": -3.47,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1429"
+        },
+        {
+          "name": "s612_ra_janexcl_size",
+          "value": -0.04,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1420"
+        },
+        {
+          "name": "s612_ra_janexcl_size_tstat",
+          "value": -1.36,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1429"
+        },
+        {
+          "name": "s66_raw_janincl_jt_winner",
+          "value": 0.11,
+          "unit": "percent_per_month",
+          "tolerance_pct": 147.1,
+          "paper_location": "L1466"
+        },
+        {
+          "name": "s66_raw_janincl_jt_winner_tstat",
+          "value": 1.36,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1475"
+        },
+        {
+          "name": "s66_raw_janexcl_jt_winner",
+          "value": 0.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1466"
+        },
+        {
+          "name": "s66_raw_janexcl_jt_winner_tstat",
+          "value": 0.69,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1475"
+        },
+        {
+          "name": "s66_ra_janincl_jt_winner",
+          "value": 0.1,
+          "unit": "percent_per_month",
+          "tolerance_pct": 117.0,
+          "paper_location": "L1466"
+        },
+        {
+          "name": "s66_ra_janincl_jt_winner_tstat",
+          "value": 1.71,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1475"
+        },
+        {
+          "name": "s66_ra_janexcl_jt_winner",
+          "value": 0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 158.7,
+          "paper_location": "L1466"
+        },
+        {
+          "name": "s66_ra_janexcl_jt_winner_tstat",
+          "value": 1.26,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1475"
+        },
+        {
+          "name": "s612_raw_janincl_jt_winner",
+          "value": 0.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1466"
+        },
+        {
+          "name": "s612_raw_janincl_jt_winner_tstat",
+          "value": 0.21,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1475"
+        },
+        {
+          "name": "s612_raw_janexcl_jt_winner",
+          "value": -0.04,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1466"
+        },
+        {
+          "name": "s612_raw_janexcl_jt_winner_tstat",
+          "value": -0.49,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1475"
+        },
+        {
+          "name": "s612_ra_janincl_jt_winner",
+          "value": 0.04,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1466"
+        },
+        {
+          "name": "s612_ra_janincl_jt_winner_tstat",
+          "value": 0.75,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1475"
+        },
+        {
+          "name": "s612_ra_janexcl_jt_winner",
+          "value": 0.0,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1466"
+        },
+        {
+          "name": "s612_ra_janexcl_jt_winner_tstat",
+          "value": 0.0,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1475"
+        },
+        {
+          "name": "s66_raw_janincl_jt_loser",
+          "value": -0.19,
+          "unit": "percent_per_month",
+          "tolerance_pct": 54.1,
+          "paper_location": "L1488"
+        },
+        {
+          "name": "s66_raw_janincl_jt_loser_tstat",
+          "value": -3.7,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1497"
+        },
+        {
+          "name": "s66_raw_janexcl_jt_loser",
+          "value": -0.24,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1488"
+        },
+        {
+          "name": "s66_raw_janexcl_jt_loser_tstat",
+          "value": -5.02,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1497"
+        },
+        {
+          "name": "s66_ra_janincl_jt_loser",
+          "value": -0.18,
+          "unit": "percent_per_month",
+          "tolerance_pct": 58.5,
+          "paper_location": "L1488"
+        },
+        {
+          "name": "s66_ra_janincl_jt_loser_tstat",
+          "value": -3.42,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1497"
+        },
+        {
+          "name": "s66_ra_janexcl_jt_loser",
+          "value": -0.23,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.5,
+          "paper_location": "L1488"
+        },
+        {
+          "name": "s66_ra_janexcl_jt_loser_tstat",
+          "value": -4.94,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1497"
+        },
+        {
+          "name": "s612_raw_janincl_jt_loser",
+          "value": -0.17,
+          "unit": "percent_per_month",
+          "tolerance_pct": 43.2,
+          "paper_location": "L1488"
+        },
+        {
+          "name": "s612_raw_janincl_jt_loser_tstat",
+          "value": -4.63,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1497"
+        },
+        {
+          "name": "s612_raw_janexcl_jt_loser",
+          "value": -0.21,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1488"
+        },
+        {
+          "name": "s612_raw_janexcl_jt_loser_tstat",
+          "value": -6.0,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1497"
+        },
+        {
+          "name": "s612_ra_janincl_jt_loser",
+          "value": -0.18,
+          "unit": "percent_per_month",
+          "tolerance_pct": 41.9,
+          "paper_location": "L1488"
+        },
+        {
+          "name": "s612_ra_janincl_jt_loser_tstat",
+          "value": -4.77,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1497"
+        },
+        {
+          "name": "s612_ra_janexcl_jt_loser",
+          "value": -0.22,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1488"
+        },
+        {
+          "name": "s612_ra_janexcl_jt_loser_tstat",
+          "value": -6.17,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1497"
+        },
+        {
+          "name": "s66_raw_janincl_mg_winner",
+          "value": 0.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 93.9,
+          "paper_location": "L1510"
+        },
+        {
+          "name": "s66_raw_janincl_mg_winner_tstat",
+          "value": 2.13,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1519"
+        },
+        {
+          "name": "s66_raw_janexcl_mg_winner",
+          "value": 0.1,
+          "unit": "percent_per_month",
+          "tolerance_pct": 122.0,
+          "paper_location": "L1510"
+        },
+        {
+          "name": "s66_raw_janexcl_mg_winner_tstat",
+          "value": 1.64,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1519"
+        },
+        {
+          "name": "s66_ra_janincl_mg_winner",
+          "value": 0.12,
+          "unit": "percent_per_month",
+          "tolerance_pct": 106.4,
+          "paper_location": "L1510"
+        },
+        {
+          "name": "s66_ra_janincl_mg_winner_tstat",
+          "value": 1.88,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1519"
+        },
+        {
+          "name": "s66_ra_janexcl_mg_winner",
+          "value": 0.11,
+          "unit": "percent_per_month",
+          "tolerance_pct": 117.0,
+          "paper_location": "L1510"
+        },
+        {
+          "name": "s66_ra_janexcl_mg_winner_tstat",
+          "value": 1.71,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1519"
+        },
+        {
+          "name": "s612_raw_janincl_mg_winner",
+          "value": 0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 138.9,
+          "paper_location": "L1510"
+        },
+        {
+          "name": "s612_raw_janincl_mg_winner_tstat",
+          "value": 1.44,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1519"
+        },
+        {
+          "name": "s612_raw_janexcl_mg_winner",
+          "value": 0.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 178.6,
+          "paper_location": "L1510"
+        },
+        {
+          "name": "s612_raw_janexcl_mg_winner_tstat",
+          "value": 1.12,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1519"
+        },
+        {
+          "name": "s612_ra_janincl_mg_winner",
+          "value": 0.09,
+          "unit": "percent_per_month",
+          "tolerance_pct": 109.3,
+          "paper_location": "L1510"
+        },
+        {
+          "name": "s612_ra_janincl_mg_winner_tstat",
+          "value": 1.83,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1519"
+        },
+        {
+          "name": "s612_ra_janexcl_mg_winner",
+          "value": 0.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 128.2,
+          "paper_location": "L1510"
+        },
+        {
+          "name": "s612_ra_janexcl_mg_winner_tstat",
+          "value": 1.56,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1519"
+        },
+        {
+          "name": "s66_raw_janincl_mg_loser",
+          "value": -0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 168.1,
+          "paper_location": "L1532"
+        },
+        {
+          "name": "s66_raw_janincl_mg_loser_tstat",
+          "value": -1.19,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1541"
+        },
+        {
+          "name": "s66_raw_janexcl_mg_loser",
+          "value": -0.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1532"
+        },
+        {
+          "name": "s66_raw_janexcl_mg_loser_tstat",
+          "value": -0.96,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1541"
+        },
+        {
+          "name": "s66_ra_janincl_mg_loser",
+          "value": -0.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 141.8,
+          "paper_location": "L1532"
+        },
+        {
+          "name": "s66_ra_janincl_mg_loser_tstat",
+          "value": -1.41,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1541"
+        },
+        {
+          "name": "s66_ra_janexcl_mg_loser",
+          "value": -0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 178.6,
+          "paper_location": "L1532"
+        },
+        {
+          "name": "s66_ra_janexcl_mg_loser_tstat",
+          "value": -1.12,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1541"
+        },
+        {
+          "name": "s612_raw_janincl_mg_loser",
+          "value": -0.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 147.1,
+          "paper_location": "L1532"
+        },
+        {
+          "name": "s612_raw_janincl_mg_loser_tstat",
+          "value": -1.36,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1541"
+        },
+        {
+          "name": "s612_raw_janexcl_mg_loser",
+          "value": -0.04,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1532"
+        },
+        {
+          "name": "s612_raw_janexcl_mg_loser_tstat",
+          "value": -0.94,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1541"
+        },
+        {
+          "name": "s612_ra_janincl_mg_loser",
+          "value": -0.09,
+          "unit": "percent_per_month",
+          "tolerance_pct": 97.1,
+          "paper_location": "L1532"
+        },
+        {
+          "name": "s612_ra_janincl_mg_loser_tstat",
+          "value": -2.06,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1541"
+        },
+        {
+          "name": "s612_ra_janexcl_mg_loser",
+          "value": -0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 123.5,
+          "paper_location": "L1532"
+        },
+        {
+          "name": "s612_ra_janexcl_mg_loser_tstat",
+          "value": -1.62,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1541"
+        },
+        {
+          "name": "s66_raw_janincl_gh_winner",
+          "value": 0.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 85.1,
+          "paper_location": "L1554"
+        },
+        {
+          "name": "s66_raw_janincl_gh_winner_tstat",
+          "value": 2.35,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1563"
+        },
+        {
+          "name": "s66_raw_janexcl_gh_winner",
+          "value": 0.25,
+          "unit": "percent_per_month",
+          "tolerance_pct": 42.3,
+          "paper_location": "L1554"
+        },
+        {
+          "name": "s66_raw_janexcl_gh_winner_tstat",
+          "value": 4.73,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1563"
+        },
+        {
+          "name": "s66_ra_janincl_gh_winner",
+          "value": 0.23,
+          "unit": "percent_per_month",
+          "tolerance_pct": 47.4,
+          "paper_location": "L1554"
+        },
+        {
+          "name": "s66_ra_janincl_gh_winner_tstat",
+          "value": 4.22,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1563"
+        },
+        {
+          "name": "s66_ra_janexcl_gh_winner",
+          "value": 0.29,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1554"
+        },
+        {
+          "name": "s66_ra_janexcl_gh_winner_tstat",
+          "value": 5.71,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1563"
+        },
+        {
+          "name": "s612_raw_janincl_gh_winner",
+          "value": 0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 165.3,
+          "paper_location": "L1554"
+        },
+        {
+          "name": "s612_raw_janincl_gh_winner_tstat",
+          "value": 1.21,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1563"
+        },
+        {
+          "name": "s612_raw_janexcl_gh_winner",
+          "value": 0.16,
+          "unit": "percent_per_month",
+          "tolerance_pct": 62.1,
+          "paper_location": "L1554"
+        },
+        {
+          "name": "s612_raw_janexcl_gh_winner_tstat",
+          "value": 3.22,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1563"
+        },
+        {
+          "name": "s612_ra_janincl_gh_winner",
+          "value": 0.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 75.8,
+          "paper_location": "L1554"
+        },
+        {
+          "name": "s612_ra_janincl_gh_winner_tstat",
+          "value": 2.64,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1563"
+        },
+        {
+          "name": "s612_ra_janexcl_gh_winner",
+          "value": 0.19,
+          "unit": "percent_per_month",
+          "tolerance_pct": 51.7,
+          "paper_location": "L1554"
+        },
+        {
+          "name": "s612_ra_janexcl_gh_winner_tstat",
+          "value": 3.87,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1563"
+        },
+        {
+          "name": "s66_raw_janincl_gh_loser",
+          "value": 0.1,
+          "unit": "percent_per_month",
+          "tolerance_pct": 188.7,
+          "paper_location": "L1576"
+        },
+        {
+          "name": "s66_raw_janincl_gh_loser_tstat",
+          "value": 1.06,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1585"
+        },
+        {
+          "name": "s66_raw_janexcl_gh_loser",
+          "value": -0.19,
+          "unit": "percent_per_month",
+          "tolerance_pct": 85.1,
+          "paper_location": "L1576"
+        },
+        {
+          "name": "s66_raw_janexcl_gh_loser_tstat",
+          "value": -2.35,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1585"
+        },
+        {
+          "name": "s66_ra_janincl_gh_loser",
+          "value": -0.09,
+          "unit": "percent_per_month",
+          "tolerance_pct": 186.9,
+          "paper_location": "L1576"
+        },
+        {
+          "name": "s66_ra_janincl_gh_loser_tstat",
+          "value": -1.07,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1585"
+        },
+        {
+          "name": "s66_ra_janexcl_gh_loser",
+          "value": -0.26,
+          "unit": "percent_per_month",
+          "tolerance_pct": 57.8,
+          "paper_location": "L1576"
+        },
+        {
+          "name": "s66_ra_janexcl_gh_loser_tstat",
+          "value": -3.46,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1585"
+        },
+        {
+          "name": "s612_raw_janincl_gh_loser",
+          "value": 0.18,
+          "unit": "percent_per_month",
+          "tolerance_pct": 100.0,
+          "paper_location": "L1576"
+        },
+        {
+          "name": "s612_raw_janincl_gh_loser_tstat",
+          "value": 2.0,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1585"
+        },
+        {
+          "name": "s612_raw_janexcl_gh_loser",
+          "value": -0.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 198.0,
+          "paper_location": "L1576"
+        },
+        {
+          "name": "s612_raw_janexcl_gh_loser_tstat",
+          "value": -1.01,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1585"
+        },
+        {
+          "name": "s612_ra_janincl_gh_loser",
+          "value": 0.01,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1576"
+        },
+        {
+          "name": "s612_ra_janincl_gh_loser_tstat",
+          "value": 0.09,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1585"
+        },
+        {
+          "name": "s612_ra_janexcl_gh_loser",
+          "value": -0.14,
+          "unit": "percent_per_month",
+          "tolerance_pct": 101.5,
+          "paper_location": "L1576"
+        },
+        {
+          "name": "s612_ra_janexcl_gh_loser_tstat",
+          "value": -1.97,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1585"
+        },
+        {
+          "name": "s66_raw_janincl_wh_winner",
+          "value": 0.09,
+          "unit": "percent_per_month",
+          "tolerance_pct": 104.2,
+          "paper_location": "L1598"
+        },
+        {
+          "name": "s66_raw_janincl_wh_winner_tstat",
+          "value": 1.92,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1607"
+        },
+        {
+          "name": "s66_raw_janexcl_wh_winner",
+          "value": 0.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 75.5,
+          "paper_location": "L1598"
+        },
+        {
+          "name": "s66_raw_janexcl_wh_winner_tstat",
+          "value": 2.65,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1607"
+        },
+        {
+          "name": "s66_ra_janincl_wh_winner",
+          "value": 0.14,
+          "unit": "percent_per_month",
+          "tolerance_pct": 56.0,
+          "paper_location": "L1598"
+        },
+        {
+          "name": "s66_ra_janincl_wh_winner_tstat",
+          "value": 3.57,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1607"
+        },
+        {
+          "name": "s66_ra_janexcl_wh_winner",
+          "value": 0.16,
+          "unit": "percent_per_month",
+          "tolerance_pct": 51.7,
+          "paper_location": "L1598"
+        },
+        {
+          "name": "s66_ra_janexcl_wh_winner_tstat",
+          "value": 3.87,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1607"
+        },
+        {
+          "name": "s612_raw_janincl_wh_winner",
+          "value": 0.11,
+          "unit": "percent_per_month",
+          "tolerance_pct": 79.7,
+          "paper_location": "L1598"
+        },
+        {
+          "name": "s612_raw_janincl_wh_winner_tstat",
+          "value": 2.51,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1607"
+        },
+        {
+          "name": "s612_raw_janexcl_wh_winner",
+          "value": 0.14,
+          "unit": "percent_per_month",
+          "tolerance_pct": 59.0,
+          "paper_location": "L1598"
+        },
+        {
+          "name": "s612_raw_janexcl_wh_winner_tstat",
+          "value": 3.39,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1607"
+        },
+        {
+          "name": "s612_ra_janincl_wh_winner",
+          "value": 0.15,
+          "unit": "percent_per_month",
+          "tolerance_pct": 42.3,
+          "paper_location": "L1598"
+        },
+        {
+          "name": "s612_ra_janincl_wh_winner_tstat",
+          "value": 4.73,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1607"
+        },
+        {
+          "name": "s612_ra_janexcl_wh_winner",
+          "value": 0.17,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1598"
+        },
+        {
+          "name": "s612_ra_janexcl_wh_winner_tstat",
+          "value": 5.21,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1607"
+        },
+        {
+          "name": "s66_raw_janincl_wh_loser",
+          "value": -0.41,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50.0,
+          "paper_location": "L1620"
+        },
+        {
+          "name": "s66_raw_janincl_wh_loser_tstat",
+          "value": -4.0,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1629"
+        },
+        {
+          "name": "s66_raw_janexcl_wh_loser",
+          "value": -0.62,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1620"
+        },
+        {
+          "name": "s66_raw_janexcl_wh_loser_tstat",
+          "value": -6.85,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1629"
+        },
+        {
+          "name": "s66_ra_janincl_wh_loser",
+          "value": -0.44,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1620"
+        },
+        {
+          "name": "s66_ra_janincl_wh_loser_tstat",
+          "value": -5.47,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1629"
+        },
+        {
+          "name": "s66_ra_janexcl_wh_loser",
+          "value": -0.6,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1620"
+        },
+        {
+          "name": "s66_ra_janexcl_wh_loser_tstat",
+          "value": -9.35,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1629"
+        },
+        {
+          "name": "s612_raw_janincl_wh_loser",
+          "value": -0.26,
+          "unit": "percent_per_month",
+          "tolerance_pct": 73.5,
+          "paper_location": "L1620"
+        },
+        {
+          "name": "s612_raw_janincl_wh_loser_tstat",
+          "value": -2.72,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1629"
+        },
+        {
+          "name": "s612_raw_janexcl_wh_loser",
+          "value": -0.47,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1620"
+        },
+        {
+          "name": "s612_raw_janexcl_wh_loser_tstat",
+          "value": -5.68,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1629"
+        },
+        {
+          "name": "s612_ra_janincl_wh_loser",
+          "value": -0.29,
+          "unit": "percent_per_month",
+          "tolerance_pct": 49.9,
+          "paper_location": "L1620"
+        },
+        {
+          "name": "s612_ra_janincl_wh_loser_tstat",
+          "value": -4.01,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1629"
+        },
+        {
+          "name": "s612_ra_janexcl_wh_loser",
+          "value": -0.45,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1620"
+        },
+        {
+          "name": "s612_ra_janexcl_wh_loser_tstat",
+          "value": -7.82,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1629"
+        },
+        {
+          "name": "s66_raw_janincl_wh_spread",
+          "value": 0.51,
+          "unit": "percent_per_month",
+          "tolerance_pct": 53.8,
+          "paper_location": "L1642"
+        },
+        {
+          "name": "s66_raw_janincl_wh_spread_tstat",
+          "value": 3.72,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1651"
+        },
+        {
+          "name": "s66_raw_janexcl_wh_spread",
+          "value": 0.75,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1642"
+        },
+        {
+          "name": "s66_raw_janexcl_wh_spread_tstat",
+          "value": 6.05,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1651"
+        },
+        {
+          "name": "s66_ra_janincl_wh_spread",
+          "value": 0.58,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1642"
+        },
+        {
+          "name": "s66_ra_janincl_wh_spread_tstat",
+          "value": 5.9,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1651"
+        },
+        {
+          "name": "s66_ra_janexcl_wh_spread",
+          "value": 0.76,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1642"
+        },
+        {
+          "name": "s66_ra_janexcl_wh_spread_tstat",
+          "value": 9.09,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1651"
+        },
+        {
+          "name": "s612_raw_janincl_wh_spread",
+          "value": 0.36,
+          "unit": "percent_per_month",
+          "tolerance_pct": 68.3,
+          "paper_location": "L1642"
+        },
+        {
+          "name": "s612_raw_janincl_wh_spread_tstat",
+          "value": 2.93,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1651"
+        },
+        {
+          "name": "s612_raw_janexcl_wh_spread",
+          "value": 0.61,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1642"
+        },
+        {
+          "name": "s612_raw_janexcl_wh_spread_tstat",
+          "value": 5.47,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1651"
+        },
+        {
+          "name": "s612_ra_janincl_wh_spread",
+          "value": 0.44,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1642"
+        },
+        {
+          "name": "s612_ra_janincl_wh_spread_tstat",
+          "value": 5.09,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1651"
+        },
+        {
+          "name": "s612_ra_janexcl_wh_spread",
+          "value": 0.62,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1642"
+        },
+        {
+          "name": "s612_ra_janexcl_wh_spread_tstat",
+          "value": 8.62,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1651"
+        },
+        {
+          "name": "s66_raw_janincl_jt_spread",
+          "value": 0.3,
+          "unit": "percent_per_month",
+          "tolerance_pct": 63.7,
+          "paper_location": "L1664"
+        },
+        {
+          "name": "s66_raw_janincl_jt_spread_tstat",
+          "value": 3.14,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1673"
+        },
+        {
+          "name": "s66_raw_janexcl_jt_spread",
+          "value": 0.29,
+          "unit": "percent_per_month",
+          "tolerance_pct": 67.3,
+          "paper_location": "L1664"
+        },
+        {
+          "name": "s66_raw_janexcl_jt_spread_tstat",
+          "value": 2.97,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1673"
+        },
+        {
+          "name": "s66_ra_janincl_jt_spread",
+          "value": 0.27,
+          "unit": "percent_per_month",
+          "tolerance_pct": 64.5,
+          "paper_location": "L1664"
+        },
+        {
+          "name": "s66_ra_janincl_jt_spread_tstat",
+          "value": 3.1,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1673"
+        },
+        {
+          "name": "s66_ra_janexcl_jt_spread",
+          "value": 0.3,
+          "unit": "percent_per_month",
+          "tolerance_pct": 58.0,
+          "paper_location": "L1664"
+        },
+        {
+          "name": "s66_ra_janexcl_jt_spread_tstat",
+          "value": 3.45,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1673"
+        },
+        {
+          "name": "s612_raw_janincl_jt_spread",
+          "value": 0.19,
+          "unit": "percent_per_month",
+          "tolerance_pct": 84.4,
+          "paper_location": "L1664"
+        },
+        {
+          "name": "s612_raw_janincl_jt_spread_tstat",
+          "value": 2.37,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1673"
+        },
+        {
+          "name": "s612_raw_janexcl_jt_spread",
+          "value": 0.18,
+          "unit": "percent_per_month",
+          "tolerance_pct": 94.3,
+          "paper_location": "L1664"
+        },
+        {
+          "name": "s612_raw_janexcl_jt_spread_tstat",
+          "value": 2.12,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1673"
+        },
+        {
+          "name": "s612_ra_janincl_jt_spread",
+          "value": 0.21,
+          "unit": "percent_per_month",
+          "tolerance_pct": 63.1,
+          "paper_location": "L1664"
+        },
+        {
+          "name": "s612_ra_janincl_jt_spread_tstat",
+          "value": 3.17,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1673"
+        },
+        {
+          "name": "s612_ra_janexcl_jt_spread",
+          "value": 0.22,
+          "unit": "percent_per_month",
+          "tolerance_pct": 62.9,
+          "paper_location": "L1664"
+        },
+        {
+          "name": "s612_ra_janexcl_jt_spread_tstat",
+          "value": 3.18,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1673"
+        },
+        {
+          "name": "s66_raw_janincl_mg_spread",
+          "value": 0.2,
+          "unit": "percent_per_month",
+          "tolerance_pct": 80.0,
+          "paper_location": "L1686"
+        },
+        {
+          "name": "s66_raw_janincl_mg_spread_tstat",
+          "value": 2.5,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1695"
+        },
+        {
+          "name": "s66_raw_janexcl_mg_spread",
+          "value": 0.16,
+          "unit": "percent_per_month",
+          "tolerance_pct": 102.6,
+          "paper_location": "L1686"
+        },
+        {
+          "name": "s66_raw_janexcl_mg_spread_tstat",
+          "value": 1.95,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1695"
+        },
+        {
+          "name": "s66_ra_janincl_mg_spread",
+          "value": 0.2,
+          "unit": "percent_per_month",
+          "tolerance_pct": 79.4,
+          "paper_location": "L1686"
+        },
+        {
+          "name": "s66_ra_janincl_mg_spread_tstat",
+          "value": 2.52,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1695"
+        },
+        {
+          "name": "s66_ra_janexcl_mg_spread",
+          "value": 0.18,
+          "unit": "percent_per_month",
+          "tolerance_pct": 91.7,
+          "paper_location": "L1686"
+        },
+        {
+          "name": "s66_ra_janexcl_mg_spread_tstat",
+          "value": 2.18,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1695"
+        },
+        {
+          "name": "s612_raw_janincl_mg_spread",
+          "value": 0.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 104.7,
+          "paper_location": "L1686"
+        },
+        {
+          "name": "s612_raw_janincl_mg_spread_tstat",
+          "value": 1.91,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1695"
+        },
+        {
+          "name": "s612_raw_janexcl_mg_spread",
+          "value": 0.1,
+          "unit": "percent_per_month",
+          "tolerance_pct": 142.9,
+          "paper_location": "L1686"
+        },
+        {
+          "name": "s612_raw_janexcl_mg_spread_tstat",
+          "value": 1.4,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1695"
+        },
+        {
+          "name": "s612_ra_janincl_mg_spread",
+          "value": 0.18,
+          "unit": "percent_per_month",
+          "tolerance_pct": 73.0,
+          "paper_location": "L1686"
+        },
+        {
+          "name": "s612_ra_janincl_mg_spread_tstat",
+          "value": 2.74,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1695"
+        },
+        {
+          "name": "s612_ra_janexcl_mg_spread",
+          "value": 0.15,
+          "unit": "percent_per_month",
+          "tolerance_pct": 89.7,
+          "paper_location": "L1686"
+        },
+        {
+          "name": "s612_ra_janexcl_mg_spread_tstat",
+          "value": 2.23,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1695"
+        },
+        {
+          "name": "s66_raw_janincl_gh_spread",
+          "value": 0.03,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1708"
+        },
+        {
+          "name": "s66_raw_janincl_gh_spread_tstat",
+          "value": 0.27,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1717"
+        },
+        {
+          "name": "s66_raw_janexcl_gh_spread",
+          "value": 0.44,
+          "unit": "percent_per_month",
+          "tolerance_pct": 48.9,
+          "paper_location": "L1708"
+        },
+        {
+          "name": "s66_raw_janexcl_gh_spread_tstat",
+          "value": 4.09,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1717"
+        },
+        {
+          "name": "s66_ra_janincl_gh_spread",
+          "value": 0.32,
+          "unit": "percent_per_month",
+          "tolerance_pct": 69.4,
+          "paper_location": "L1708"
+        },
+        {
+          "name": "s66_ra_janincl_gh_spread_tstat",
+          "value": 2.88,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1717"
+        },
+        {
+          "name": "s66_ra_janexcl_gh_spread",
+          "value": 0.55,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1708"
+        },
+        {
+          "name": "s66_ra_janexcl_gh_spread_tstat",
+          "value": 5.62,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1717"
+        },
+        {
+          "name": "s612_raw_janincl_gh_spread",
+          "value": -0.11,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1708"
+        },
+        {
+          "name": "s612_raw_janincl_gh_spread_tstat",
+          "value": -0.94,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1717"
+        },
+        {
+          "name": "s612_raw_janexcl_gh_spread",
+          "value": 0.24,
+          "unit": "percent_per_month",
+          "tolerance_pct": 83.7,
+          "paper_location": "L1708"
+        },
+        {
+          "name": "s612_raw_janexcl_gh_spread_tstat",
+          "value": 2.39,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1717"
+        },
+        {
+          "name": "s612_ra_janincl_gh_spread",
+          "value": 0.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 160.0,
+          "paper_location": "L1708"
+        },
+        {
+          "name": "s612_ra_janincl_gh_spread_tstat",
+          "value": 1.25,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1717"
+        },
+        {
+          "name": "s612_ra_janexcl_gh_spread",
+          "value": 0.33,
+          "unit": "percent_per_month",
+          "tolerance_pct": 56.2,
+          "paper_location": "L1708"
+        },
+        {
+          "name": "s612_ra_janexcl_gh_spread_tstat",
+          "value": 3.56,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1717"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "T6",
+      "table_ref": "Table VI",
+      "description": "Persistence of profits from JT, MG, and 52-week high strategies - risk-adjusted returns, (6,k,12) strategies k=12,24,36,48.",
+      "replication_meaning": "Tests the paper's 3rd abstract claim: JT/MG momentum reverses at long horizons while 52-week-high profits do not.",
+      "paper_quote": "Table VI presents regression results for risk-adjusted returns... (L985)",
+      "metrics": [
+        {
+          "name": "k12_janincl_intercept",
+          "value": 1.73,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janincl_intercept_tstat",
+          "value": 3.96,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janincl_r_lag1",
+          "value": -6.05,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janincl_r_lag1_tstat",
+          "value": -13.85,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janincl_size",
+          "value": -0.09,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janincl_size_tstat",
+          "value": -2.63,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janincl_jt_winner",
+          "value": -0.15,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janincl_jt_winner_tstat",
+          "value": -3.8,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janincl_jt_loser",
+          "value": -0.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janincl_jt_loser_tstat",
+          "value": -0.86,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janincl_mg_winner",
+          "value": -0.11,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janincl_mg_winner_tstat",
+          "value": -2.42,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janincl_mg_loser",
+          "value": -0.03,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janincl_mg_loser_tstat",
+          "value": -0.72,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janincl_wh_winner",
+          "value": 0.03,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janincl_wh_winner_tstat",
+          "value": 1.0,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janincl_wh_loser",
+          "value": 0.05,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janincl_wh_loser_tstat",
+          "value": 0.67,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janincl_wh_spread",
+          "value": -0.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janincl_wh_spread_tstat",
+          "value": -0.23,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janincl_jt_spread",
+          "value": -0.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janincl_jt_spread_tstat",
+          "value": -2.65,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janincl_mg_spread",
+          "value": -0.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janincl_mg_spread_tstat",
+          "value": -1.33,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janexcl_intercept",
+          "value": 0.62,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janexcl_intercept_tstat",
+          "value": 1.62,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janexcl_r_lag1",
+          "value": -5.41,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janexcl_r_lag1_tstat",
+          "value": -14.56,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janexcl_size",
+          "value": -0.01,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janexcl_size_tstat",
+          "value": -0.17,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janexcl_jt_winner",
+          "value": -0.18,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janexcl_jt_winner_tstat",
+          "value": -4.76,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janexcl_jt_loser",
+          "value": -0.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janexcl_jt_loser_tstat",
+          "value": -2.26,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janexcl_mg_winner",
+          "value": -0.12,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janexcl_mg_winner_tstat",
+          "value": -2.76,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janexcl_mg_loser",
+          "value": -0.01,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janexcl_mg_loser_tstat",
+          "value": -0.21,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janexcl_wh_winner",
+          "value": 0.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janexcl_wh_winner_tstat",
+          "value": 2.15,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janexcl_wh_loser",
+          "value": -0.1,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janexcl_wh_loser_tstat",
+          "value": -1.51,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janexcl_wh_spread",
+          "value": 0.16,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janexcl_wh_spread_tstat",
+          "value": 1.93,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janexcl_jt_spread",
+          "value": -0.12,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janexcl_jt_spread_tstat",
+          "value": -2.66,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janexcl_mg_spread",
+          "value": -0.11,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k12_janexcl_mg_spread_tstat",
+          "value": -1.91,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janincl_intercept",
+          "value": 1.6,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janincl_intercept_tstat",
+          "value": 3.59,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janincl_r_lag1",
+          "value": -6.1,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janincl_r_lag1_tstat",
+          "value": -13.86,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janincl_size",
+          "value": -0.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janincl_size_tstat",
+          "value": -2.27,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janincl_jt_winner",
+          "value": -0.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janincl_jt_winner_tstat",
+          "value": -2.06,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janincl_jt_loser",
+          "value": -0.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janincl_jt_loser_tstat",
+          "value": -0.72,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janincl_mg_winner",
+          "value": -0.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janincl_mg_winner_tstat",
+          "value": -2.04,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janincl_mg_loser",
+          "value": -0.11,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janincl_mg_loser_tstat",
+          "value": -2.67,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janincl_wh_winner",
+          "value": 0.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janincl_wh_winner_tstat",
+          "value": 0.74,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janincl_wh_loser",
+          "value": 0.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janincl_wh_loser_tstat",
+          "value": 1.19,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janincl_wh_spread",
+          "value": -0.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janincl_wh_spread_tstat",
+          "value": -0.7,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janincl_jt_spread",
+          "value": -0.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janincl_jt_spread_tstat",
+          "value": -1.24,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janincl_mg_spread",
+          "value": 0.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janincl_mg_spread_tstat",
+          "value": 0.45,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janexcl_intercept",
+          "value": 0.5,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janexcl_intercept_tstat",
+          "value": 1.29,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janexcl_r_lag1",
+          "value": -5.43,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janexcl_r_lag1_tstat",
+          "value": -14.45,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janexcl_size",
+          "value": 0.0,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janexcl_size_tstat",
+          "value": 0.16,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janexcl_jt_winner",
+          "value": -0.11,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janexcl_jt_winner_tstat",
+          "value": -2.9,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janexcl_jt_loser",
+          "value": -0.03,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janexcl_jt_loser_tstat",
+          "value": -1.27,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janexcl_mg_winner",
+          "value": -0.09,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janexcl_mg_winner_tstat",
+          "value": -2.43,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janexcl_mg_loser",
+          "value": -0.1,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janexcl_mg_loser_tstat",
+          "value": -2.5,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janexcl_wh_winner",
+          "value": 0.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janexcl_wh_winner_tstat",
+          "value": 1.91,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janexcl_wh_loser",
+          "value": -0.03,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janexcl_wh_loser_tstat",
+          "value": -0.42,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janexcl_wh_spread",
+          "value": 0.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janexcl_wh_spread_tstat",
+          "value": 1.0,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janexcl_jt_spread",
+          "value": -0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janexcl_jt_spread_tstat",
+          "value": -1.62,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janexcl_mg_spread",
+          "value": 0.01,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k24_janexcl_mg_spread_tstat",
+          "value": 0.16,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janincl_intercept",
+          "value": 1.41,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janincl_intercept_tstat",
+          "value": 3.17,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janincl_r_lag1",
+          "value": -6.16,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janincl_r_lag1_tstat",
+          "value": -13.98,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janincl_size",
+          "value": -0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janincl_size_tstat",
+          "value": -2.0,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janincl_jt_winner",
+          "value": -0.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janincl_jt_winner_tstat",
+          "value": -1.54,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janincl_jt_loser",
+          "value": 0.0,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janincl_jt_loser_tstat",
+          "value": -0.08,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janincl_mg_winner",
+          "value": 0.05,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janincl_mg_winner_tstat",
+          "value": 1.16,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janincl_mg_loser",
+          "value": 0.0,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janincl_mg_loser_tstat",
+          "value": 0.04,
+          "unit": "t_stat",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janincl_wh_winner",
+          "value": 0.0,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janincl_wh_winner_tstat",
+          "value": -0.07,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janincl_wh_loser",
+          "value": 0.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janincl_wh_loser_tstat",
+          "value": 0.99,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janincl_wh_spread",
+          "value": -0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janincl_wh_spread_tstat",
+          "value": -0.82,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janincl_jt_spread",
+          "value": -0.05,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janincl_jt_spread_tstat",
+          "value": -1.29,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janincl_mg_spread",
+          "value": 0.04,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janincl_mg_spread_tstat",
+          "value": 0.91,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janexcl_intercept",
+          "value": 0.3,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janexcl_intercept_tstat",
+          "value": 0.77,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janexcl_r_lag1",
+          "value": -5.47,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janexcl_r_lag1_tstat",
+          "value": -14.27,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janexcl_size",
+          "value": 0.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janexcl_size_tstat",
+          "value": 0.58,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janexcl_jt_winner",
+          "value": -0.1,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janexcl_jt_winner_tstat",
+          "value": -2.73,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janexcl_jt_loser",
+          "value": -0.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janexcl_jt_loser_tstat",
+          "value": -0.76,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janexcl_mg_winner",
+          "value": 0.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janexcl_mg_winner_tstat",
+          "value": 0.49,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janexcl_mg_loser",
+          "value": 0.0,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janexcl_mg_loser_tstat",
+          "value": 0.01,
+          "unit": "t_stat",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janexcl_wh_winner",
+          "value": 0.01,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janexcl_wh_winner_tstat",
+          "value": 0.51,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janexcl_wh_loser",
+          "value": -0.03,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janexcl_wh_loser_tstat",
+          "value": -0.51,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janexcl_wh_spread",
+          "value": 0.04,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janexcl_wh_spread_tstat",
+          "value": 0.6,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janexcl_jt_spread",
+          "value": -0.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janexcl_jt_spread_tstat",
+          "value": -1.85,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janexcl_mg_spread",
+          "value": 0.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k36_janexcl_mg_spread_tstat",
+          "value": 0.39,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janincl_intercept",
+          "value": 1.28,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janincl_intercept_tstat",
+          "value": 2.96,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janincl_r_lag1",
+          "value": -6.25,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janincl_r_lag1_tstat",
+          "value": -13.93,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janincl_size",
+          "value": -0.05,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janincl_size_tstat",
+          "value": -1.56,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janincl_jt_winner",
+          "value": -0.09,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janincl_jt_winner_tstat",
+          "value": -2.23,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janincl_jt_loser",
+          "value": 0.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janincl_jt_loser_tstat",
+          "value": 0.68,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janincl_mg_winner",
+          "value": 0.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janincl_mg_winner_tstat",
+          "value": 1.37,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janincl_mg_loser",
+          "value": -0.03,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janincl_mg_loser_tstat",
+          "value": -0.75,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janincl_wh_winner",
+          "value": -0.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janincl_wh_winner_tstat",
+          "value": -0.7,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janincl_wh_loser",
+          "value": -0.01,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janincl_wh_loser_tstat",
+          "value": -0.16,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janincl_wh_spread",
+          "value": -0.01,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janincl_wh_spread_tstat",
+          "value": -0.15,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janincl_jt_spread",
+          "value": -0.1,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janincl_jt_spread_tstat",
+          "value": -2.2,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janincl_mg_spread",
+          "value": 0.09,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janincl_mg_spread_tstat",
+          "value": 1.76,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janexcl_intercept",
+          "value": 0.14,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janexcl_intercept_tstat",
+          "value": 0.37,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janexcl_r_lag1",
+          "value": -5.57,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janexcl_r_lag1_tstat",
+          "value": -14.01,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janexcl_size",
+          "value": 0.03,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janexcl_size_tstat",
+          "value": 1.2,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janexcl_jt_winner",
+          "value": -0.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janexcl_jt_winner_tstat",
+          "value": -3.36,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janexcl_jt_loser",
+          "value": 0.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janexcl_jt_loser_tstat",
+          "value": 0.77,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janexcl_mg_winner",
+          "value": 0.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janexcl_mg_winner_tstat",
+          "value": 1.42,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janexcl_mg_loser",
+          "value": -0.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janexcl_mg_loser_tstat",
+          "value": -0.43,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janexcl_wh_winner",
+          "value": -0.01,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janexcl_wh_winner_tstat",
+          "value": -0.34,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janexcl_wh_loser",
+          "value": -0.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janexcl_wh_loser_tstat",
+          "value": -1.62,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janexcl_wh_spread",
+          "value": 0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janexcl_wh_spread_tstat",
+          "value": 1.11,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janexcl_jt_spread",
+          "value": -0.14,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janexcl_jt_spread_tstat",
+          "value": -3.16,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janexcl_mg_spread",
+          "value": 0.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        },
+        {
+          "name": "k48_janexcl_mg_spread_tstat",
+          "value": 1.54,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L1007-1268"
+        }
+      ],
+      "notes": null,
+      "exercises_preprocessing_rules": [
+        "fm_persistence_k",
+        "fm_skip_month",
+        "fm_regression_controls",
+        "fm_averaging_j",
+        "fm_dummy_definitions",
+        "fm_percent_units",
+        "factor_risk_adjustment",
+        "var_52wh_measure",
+        "var_jt_past_return",
+        "var_mg_signal",
+        "var_size"
+      ]
+    },
+    {
+      "id": "T9",
+      "table_ref": "Table IX",
+      "description": "Table V with a 52-week-LOW strategy (wh_lo_sig) replacing the 52-week high; (6,6) and (6,12), raw and risk-adjusted.",
+      "replication_meaning": "Robustness/cross-sectional corollary: the 52-week-low spread is insignificant while JT spreads grow, arguing against the symmetric GH proposition.",
+      "paper_quote": "Table IX is identical to Table V except that a strategy based on the 52-week low is used instead of the 52-week high. (L2176)",
+      "metrics": [
+        {
+          "name": "s66_raw_janincl_intercept",
+          "value": 3.27,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janincl_intercept_tstat",
+          "value": 5.18,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janincl_r_lag1",
+          "value": -6.5,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janincl_r_lag1_tstat",
+          "value": -14.82,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janincl_size",
+          "value": -0.18,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janincl_size_tstat",
+          "value": -3.86,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janincl_jt_winner",
+          "value": 0.25,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janincl_jt_winner_tstat",
+          "value": 5.18,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janincl_jt_loser",
+          "value": -0.46,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janincl_jt_loser_tstat",
+          "value": -3.63,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janincl_mg_winner",
+          "value": 0.17,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janincl_mg_winner_tstat",
+          "value": 2.69,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janincl_mg_loser",
+          "value": -0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janincl_mg_loser_tstat",
+          "value": -1.08,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janincl_wl_winner",
+          "value": 0.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janincl_wl_winner_tstat",
+          "value": 0.61,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janincl_wl_loser",
+          "value": -0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janincl_wl_loser_tstat",
+          "value": -1.37,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janincl_wl_spread",
+          "value": 0.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janincl_wl_spread_tstat",
+          "value": 0.95,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janincl_jt_spread",
+          "value": 0.71,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janincl_jt_spread_tstat",
+          "value": 4.61,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janincl_mg_spread",
+          "value": 0.24,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janincl_mg_spread_tstat",
+          "value": 2.74,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janexcl_intercept",
+          "value": 1.36,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janexcl_intercept_tstat",
+          "value": 2.48,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janexcl_r_lag1",
+          "value": -5.5,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janexcl_r_lag1_tstat",
+          "value": -14.96,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janexcl_size",
+          "value": -0.04,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janexcl_size_tstat",
+          "value": -1.0,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janexcl_jt_winner",
+          "value": 0.3,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janexcl_jt_winner_tstat",
+          "value": 6.38,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janexcl_jt_loser",
+          "value": -0.75,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janexcl_jt_loser_tstat",
+          "value": -6.92,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janexcl_mg_winner",
+          "value": 0.16,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janexcl_mg_winner_tstat",
+          "value": 2.44,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janexcl_mg_loser",
+          "value": -0.05,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janexcl_mg_loser_tstat",
+          "value": -0.82,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janexcl_wl_winner",
+          "value": 0.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janexcl_wl_winner_tstat",
+          "value": 0.21,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janexcl_wl_loser",
+          "value": -0.09,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janexcl_wl_loser_tstat",
+          "value": -1.98,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janexcl_wl_spread",
+          "value": 0.12,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janexcl_wl_spread_tstat",
+          "value": 0.84,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janexcl_jt_spread",
+          "value": 1.05,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janexcl_jt_spread_tstat",
+          "value": 7.91,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janexcl_mg_spread",
+          "value": 0.21,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_raw_janexcl_mg_spread_tstat",
+          "value": 2.4,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janincl_intercept",
+          "value": 2.16,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janincl_intercept_tstat",
+          "value": 4.76,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janincl_r_lag1",
+          "value": -5.93,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janincl_r_lag1_tstat",
+          "value": -14.09,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janincl_size",
+          "value": -0.14,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janincl_size_tstat",
+          "value": -3.9,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janincl_jt_winner",
+          "value": 0.3,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janincl_jt_winner_tstat",
+          "value": 6.35,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janincl_jt_loser",
+          "value": -0.57,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janincl_jt_loser_tstat",
+          "value": -5.75,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janincl_mg_winner",
+          "value": 0.17,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janincl_mg_winner_tstat",
+          "value": 2.75,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janincl_mg_loser",
+          "value": -0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janincl_mg_loser_tstat",
+          "value": -1.03,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janincl_wl_winner",
+          "value": 0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janincl_wl_winner_tstat",
+          "value": 1.3,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janincl_wl_loser",
+          "value": -0.01,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janincl_wl_loser_tstat",
+          "value": -0.32,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janincl_wl_spread",
+          "value": 0.09,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janincl_wl_spread_tstat",
+          "value": 1.05,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janincl_jt_spread",
+          "value": 0.87,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janincl_jt_spread_tstat",
+          "value": 6.84,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janincl_mg_spread",
+          "value": 0.24,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janincl_mg_spread_tstat",
+          "value": 2.8,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janexcl_intercept",
+          "value": 1.01,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janexcl_intercept_tstat",
+          "value": 2.55,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janexcl_r_lag1",
+          "value": -5.34,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janexcl_r_lag1_tstat",
+          "value": -14.86,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janexcl_size",
+          "value": -0.05,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janexcl_size_tstat",
+          "value": -1.6,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janexcl_jt_winner",
+          "value": 0.33,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janexcl_jt_winner_tstat",
+          "value": 6.82,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janexcl_jt_loser",
+          "value": -0.77,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janexcl_jt_loser_tstat",
+          "value": -9.75,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janexcl_mg_winner",
+          "value": 0.18,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janexcl_mg_winner_tstat",
+          "value": 2.67,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janexcl_mg_loser",
+          "value": -0.05,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janexcl_mg_loser_tstat",
+          "value": -0.79,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janexcl_wl_winner",
+          "value": 0.05,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janexcl_wl_winner_tstat",
+          "value": 0.95,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janexcl_wl_loser",
+          "value": -0.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janexcl_wl_loser_tstat",
+          "value": -1.64,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janexcl_wl_spread",
+          "value": 0.11,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janexcl_wl_spread_tstat",
+          "value": 1.47,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janexcl_jt_spread",
+          "value": 1.1,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janexcl_jt_spread_tstat",
+          "value": 10.06,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janexcl_mg_spread",
+          "value": 0.22,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s66_ra_janexcl_mg_spread_tstat",
+          "value": 2.63,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janincl_intercept",
+          "value": 3.26,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janincl_intercept_tstat",
+          "value": 5.14,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janincl_r_lag1",
+          "value": -6.56,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janincl_r_lag1_tstat",
+          "value": -14.86,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janincl_size",
+          "value": -0.17,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janincl_size_tstat",
+          "value": -3.68,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janincl_jt_winner",
+          "value": 0.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janincl_jt_winner_tstat",
+          "value": 3.5,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janincl_jt_loser",
+          "value": -0.32,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janincl_jt_loser_tstat",
+          "value": -2.91,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janincl_mg_winner",
+          "value": 0.1,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janincl_mg_winner_tstat",
+          "value": 1.73,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janincl_mg_loser",
+          "value": -0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janincl_mg_loser_tstat",
+          "value": -1.56,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janincl_wl_winner",
+          "value": -0.04,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janincl_wl_winner_tstat",
+          "value": -0.45,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janincl_wl_loser",
+          "value": -0.1,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janincl_wl_loser_tstat",
+          "value": -2.26,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janincl_wl_spread",
+          "value": 0.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janincl_wl_spread_tstat",
+          "value": 0.45,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janincl_jt_spread",
+          "value": 0.45,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janincl_jt_spread_tstat",
+          "value": 3.48,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janincl_mg_spread",
+          "value": 0.17,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janincl_mg_spread_tstat",
+          "value": 2.23,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janexcl_intercept",
+          "value": 1.34,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janexcl_intercept_tstat",
+          "value": 2.43,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janexcl_r_lag1",
+          "value": -5.57,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janexcl_r_lag1_tstat",
+          "value": -15.09,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janexcl_size",
+          "value": -0.03,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janexcl_size_tstat",
+          "value": -0.79,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janexcl_jt_winner",
+          "value": 0.2,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janexcl_jt_winner_tstat",
+          "value": 5.65,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janexcl_jt_loser",
+          "value": -0.59,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janexcl_jt_loser_tstat",
+          "value": -6.16,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janexcl_mg_winner",
+          "value": 0.09,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janexcl_mg_winner_tstat",
+          "value": 1.48,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janexcl_mg_loser",
+          "value": -0.05,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janexcl_mg_loser_tstat",
+          "value": -1.19,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janexcl_wl_winner",
+          "value": -0.1,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janexcl_wl_winner_tstat",
+          "value": -1.04,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janexcl_wl_loser",
+          "value": -0.11,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janexcl_wl_loser_tstat",
+          "value": -2.48,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janexcl_wl_spread",
+          "value": 0.01,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janexcl_wl_spread_tstat",
+          "value": 0.06,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janexcl_jt_spread",
+          "value": 0.79,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janexcl_jt_spread_tstat",
+          "value": 7.07,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janexcl_mg_spread",
+          "value": 0.14,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_raw_janexcl_mg_spread_tstat",
+          "value": 1.81,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janincl_intercept",
+          "value": 2.15,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janincl_intercept_tstat",
+          "value": 4.74,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janincl_r_lag1",
+          "value": -5.98,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janincl_r_lag1_tstat",
+          "value": -14.1,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janincl_size",
+          "value": -0.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janincl_size_tstat",
+          "value": -3.7,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janincl_jt_winner",
+          "value": 0.2,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janincl_jt_winner_tstat",
+          "value": 5.75,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janincl_jt_loser",
+          "value": -0.44,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janincl_jt_loser_tstat",
+          "value": -5.33,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janincl_mg_winner",
+          "value": 0.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janincl_mg_winner_tstat",
+          "value": 2.38,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janincl_mg_loser",
+          "value": -0.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janincl_mg_loser_tstat",
+          "value": -1.95,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janincl_wl_winner",
+          "value": -0.04,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janincl_wl_winner_tstat",
+          "value": -0.77,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janincl_wl_loser",
+          "value": -0.05,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janincl_wl_loser_tstat",
+          "value": -1.42,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janincl_wl_spread",
+          "value": 0.01,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janincl_wl_spread_tstat",
+          "value": 0.12,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janincl_jt_spread",
+          "value": 0.64,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janincl_jt_spread_tstat",
+          "value": 6.29,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janincl_mg_spread",
+          "value": 0.22,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janincl_mg_spread_tstat",
+          "value": 3.08,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janexcl_intercept",
+          "value": 0.99,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janexcl_intercept_tstat",
+          "value": 2.51,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janexcl_r_lag1",
+          "value": -5.39,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janexcl_r_lag1_tstat",
+          "value": -14.93,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janexcl_size",
+          "value": -0.04,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janexcl_size_tstat",
+          "value": -1.34,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janexcl_jt_winner",
+          "value": 0.23,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janexcl_jt_winner_tstat",
+          "value": 6.73,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janexcl_jt_loser",
+          "value": -0.63,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janexcl_jt_loser_tstat",
+          "value": -9.3,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janexcl_mg_winner",
+          "value": 0.12,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janexcl_mg_winner_tstat",
+          "value": 2.09,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janexcl_mg_loser",
+          "value": -0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janexcl_mg_loser_tstat",
+          "value": -1.59,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janexcl_wl_winner",
+          "value": -0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janexcl_wl_winner_tstat",
+          "value": -1.43,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janexcl_wl_loser",
+          "value": -0.08,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janexcl_wl_loser_tstat",
+          "value": -2.53,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janexcl_wl_spread",
+          "value": 0.01,
+          "unit": "percent_per_month",
+          "tolerance_pct": 200.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janexcl_wl_spread_tstat",
+          "value": 0.14,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janexcl_jt_spread",
+          "value": 0.86,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janexcl_jt_spread_tstat",
+          "value": 9.92,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janexcl_mg_spread",
+          "value": 0.19,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        },
+        {
+          "name": "s612_ra_janexcl_mg_spread_tstat",
+          "value": 2.6,
+          "unit": "t_stat",
+          "tolerance_pct": 40.0,
+          "paper_location": "L2178-2444"
+        }
+      ],
+      "notes": "size s612_raw_janincl t-stat OCR '(3.68)' corrected to -3.68 (dropped minus; coef -0.17, Table V analog -4.27).",
+      "exercises_preprocessing_rules": [
+        "var_52wl_measure",
+        "fm_skip_month",
+        "fm_regression_controls",
+        "fm_j2_7_averaging",
+        "fm_averaging_j",
+        "fm_dummy_definitions",
+        "fm_percent_units",
+        "factor_risk_adjustment",
+        "var_jt_past_return",
+        "var_mg_signal",
+        "var_size"
+      ]
+    }
+  ]
+}

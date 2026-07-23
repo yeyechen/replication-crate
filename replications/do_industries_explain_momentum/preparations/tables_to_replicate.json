@@ -1,0 +1,5784 @@
+{
+  "tables": [
+    {
+      "id": "T1",
+      "table_ref": "Table I",
+      "description": "Description and summary statistics of the 20 industry portfolios (SIC codes, stock counts, market-cap share, excess returns, size/BE/ME-adjusted abnormal returns, F-tests).",
+      "replication_meaning": "Demonstrates correct universe and industry construction: monthly formation of the 20 value-weighted industry portfolios from CRSP time-varying 2-digit SIC codes (July 1963-July 1995), NYSE/AMEX/NASDAQ coverage, market-capitalization computation (|prc| x shrout), excess returns over the 3-month T-bill, and the Daniel-Titman 5x5 size/BE/ME characteristic-matched abnormal returns (January 1973-July 1995 subperiod). Stock counts and cap shares jointly pin down the SIC grouping definitions in Table I rows.",
+      "paper_quote": "The average number of stocks assigned to each industry portfolio every month is reported, along with the minimum number of stocks appearing in each portfolio at any point in time (reported in parentheses). Also reported are the average percentage of total market capitalization, the average return in excess of the three-month Treasury bill rate, the return standard deviation, and the average abnormal return in excess of size and BE/ME matched benchmarks ( $t$ -statistics are in parentheses) of each industry over the sample period (L127)",
+      "exercises_preprocessing_rules": [
+        "universe_industry_portfolios",
+        "universe_sic_source_crsp",
+        "universe_20_industry_sic_groups",
+        "sample_industry_formation_period",
+        "var_excess_return",
+        "sample_sb_period",
+        "factor_sb_characteristic_match"
+      ],
+      "metrics": [
+        {
+          "name": "mining_avg_stocks",
+          "value": 279.86,
+          "unit": "count",
+          "tolerance_pct": 15,
+          "paper_location": "L142"
+        },
+        {
+          "name": "mining_min_stocks",
+          "value": 123,
+          "unit": "count",
+          "tolerance_pct": 25,
+          "paper_location": "L142"
+        },
+        {
+          "name": "mining_pct_mktcap",
+          "value": 4.5,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L142"
+        },
+        {
+          "name": "mining_excess_ret",
+          "value": 0.004,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 25,
+          "paper_location": "L142"
+        },
+        {
+          "name": "mining_abnormal_ret",
+          "value": 0.0002,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L142"
+        },
+        {
+          "name": "mining_abnormal_t",
+          "value": 0.07,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L142"
+        },
+        {
+          "name": "food_avg_stocks",
+          "value": 126.89,
+          "unit": "count",
+          "tolerance_pct": 15,
+          "paper_location": "L143"
+        },
+        {
+          "name": "food_min_stocks",
+          "value": 100,
+          "unit": "count",
+          "tolerance_pct": 25,
+          "paper_location": "L143"
+        },
+        {
+          "name": "food_pct_mktcap",
+          "value": 4.53,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L143"
+        },
+        {
+          "name": "food_excess_ret",
+          "value": 0.0065,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 25,
+          "paper_location": "L143"
+        },
+        {
+          "name": "food_abnormal_ret",
+          "value": 0.0036,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 74,
+          "paper_location": "L143"
+        },
+        {
+          "name": "food_abnormal_t",
+          "value": 2.7,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L143"
+        },
+        {
+          "name": "apparel_avg_stocks",
+          "value": 117.03,
+          "unit": "count",
+          "tolerance_pct": 15,
+          "paper_location": "L144"
+        },
+        {
+          "name": "apparel_min_stocks",
+          "value": 84,
+          "unit": "count",
+          "tolerance_pct": 25,
+          "paper_location": "L144"
+        },
+        {
+          "name": "apparel_pct_mktcap",
+          "value": 0.67,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L144"
+        },
+        {
+          "name": "apparel_excess_ret",
+          "value": 0.0046,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 25,
+          "paper_location": "L144"
+        },
+        {
+          "name": "apparel_abnormal_ret",
+          "value": 0.0004,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L144"
+        },
+        {
+          "name": "apparel_abnormal_t",
+          "value": 0.19,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L144"
+        },
+        {
+          "name": "paper_avg_stocks",
+          "value": 53.21,
+          "unit": "count",
+          "tolerance_pct": 15,
+          "paper_location": "L145"
+        },
+        {
+          "name": "paper_min_stocks",
+          "value": 41,
+          "unit": "count",
+          "tolerance_pct": 25,
+          "paper_location": "L145"
+        },
+        {
+          "name": "paper_pct_mktcap",
+          "value": 2.32,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L145"
+        },
+        {
+          "name": "paper_excess_ret",
+          "value": 0.0047,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 25,
+          "paper_location": "L145"
+        },
+        {
+          "name": "paper_abnormal_ret",
+          "value": 0.0015,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L145"
+        },
+        {
+          "name": "paper_abnormal_t",
+          "value": 0.87,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L145"
+        },
+        {
+          "name": "chemical_avg_stocks",
+          "value": 208.15,
+          "unit": "count",
+          "tolerance_pct": 15,
+          "paper_location": "L146"
+        },
+        {
+          "name": "chemical_min_stocks",
+          "value": 126,
+          "unit": "count",
+          "tolerance_pct": 25,
+          "paper_location": "L146"
+        },
+        {
+          "name": "chemical_pct_mktcap",
+          "value": 9.85,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L146"
+        },
+        {
+          "name": "chemical_excess_ret",
+          "value": 0.0047,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 25,
+          "paper_location": "L146"
+        },
+        {
+          "name": "chemical_abnormal_ret",
+          "value": 0.0016,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L146"
+        },
+        {
+          "name": "chemical_abnormal_t",
+          "value": 1.26,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L146"
+        },
+        {
+          "name": "petroleum_avg_stocks",
+          "value": 37.49,
+          "unit": "count",
+          "tolerance_pct": 15,
+          "paper_location": "L147"
+        },
+        {
+          "name": "petroleum_min_stocks",
+          "value": 26,
+          "unit": "count",
+          "tolerance_pct": 25,
+          "paper_location": "L147"
+        },
+        {
+          "name": "petroleum_pct_mktcap",
+          "value": 8.94,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L147"
+        },
+        {
+          "name": "petroleum_excess_ret",
+          "value": 0.0055,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 25,
+          "paper_location": "L147"
+        },
+        {
+          "name": "petroleum_abnormal_ret",
+          "value": 0.0025,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L147"
+        },
+        {
+          "name": "petroleum_abnormal_t",
+          "value": 1.52,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L147"
+        },
+        {
+          "name": "construction_avg_stocks",
+          "value": 56.44,
+          "unit": "count",
+          "tolerance_pct": 15,
+          "paper_location": "L148"
+        },
+        {
+          "name": "construction_min_stocks",
+          "value": 39,
+          "unit": "count",
+          "tolerance_pct": 25,
+          "paper_location": "L148"
+        },
+        {
+          "name": "construction_pct_mktcap",
+          "value": 0.96,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L148"
+        },
+        {
+          "name": "construction_excess_ret",
+          "value": 0.0047,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 25,
+          "paper_location": "L148"
+        },
+        {
+          "name": "construction_abnormal_ret",
+          "value": 0.0008,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L148"
+        },
+        {
+          "name": "construction_abnormal_t",
+          "value": 0.46,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L148"
+        },
+        {
+          "name": "prim_metals_avg_stocks",
+          "value": 85.11,
+          "unit": "count",
+          "tolerance_pct": 15,
+          "paper_location": "L149"
+        },
+        {
+          "name": "prim_metals_min_stocks",
+          "value": 66,
+          "unit": "count",
+          "tolerance_pct": 25,
+          "paper_location": "L149"
+        },
+        {
+          "name": "prim_metals_pct_mktcap",
+          "value": 1.95,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L149"
+        },
+        {
+          "name": "prim_metals_excess_ret",
+          "value": 0.002,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 25,
+          "paper_location": "L149"
+        },
+        {
+          "name": "prim_metals_abnormal_ret",
+          "value": -0.001,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L149"
+        },
+        {
+          "name": "prim_metals_abnormal_t",
+          "value": -0.42,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L149"
+        },
+        {
+          "name": "fab_metals_avg_stocks",
+          "value": 119.38,
+          "unit": "count",
+          "tolerance_pct": 15,
+          "paper_location": "L150"
+        },
+        {
+          "name": "fab_metals_min_stocks",
+          "value": 76,
+          "unit": "count",
+          "tolerance_pct": 25,
+          "paper_location": "L150"
+        },
+        {
+          "name": "fab_metals_pct_mktcap",
+          "value": 1.21,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L150"
+        },
+        {
+          "name": "fab_metals_excess_ret",
+          "value": 0.0054,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 25,
+          "paper_location": "L150"
+        },
+        {
+          "name": "fab_metals_abnormal_ret",
+          "value": 0.002,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L150"
+        },
+        {
+          "name": "fab_metals_abnormal_t",
+          "value": 1.6,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L150"
+        },
+        {
+          "name": "machinery_avg_stocks",
+          "value": 274.16,
+          "unit": "count",
+          "tolerance_pct": 15,
+          "paper_location": "L151"
+        },
+        {
+          "name": "machinery_min_stocks",
+          "value": 143,
+          "unit": "count",
+          "tolerance_pct": 25,
+          "paper_location": "L151"
+        },
+        {
+          "name": "machinery_pct_mktcap",
+          "value": 7.38,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L151"
+        },
+        {
+          "name": "machinery_excess_ret",
+          "value": 0.003,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 25,
+          "paper_location": "L151"
+        },
+        {
+          "name": "machinery_abnormal_ret",
+          "value": -0.0008,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L151"
+        },
+        {
+          "name": "machinery_abnormal_t",
+          "value": -0.56,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L151"
+        },
+        {
+          "name": "electrical_eq_avg_stocks",
+          "value": 311.6,
+          "unit": "count",
+          "tolerance_pct": 15,
+          "paper_location": "L152"
+        },
+        {
+          "name": "electrical_eq_min_stocks",
+          "value": 165,
+          "unit": "count",
+          "tolerance_pct": 25,
+          "paper_location": "L152"
+        },
+        {
+          "name": "electrical_eq_pct_mktcap",
+          "value": 5.57,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L152"
+        },
+        {
+          "name": "electrical_eq_excess_ret",
+          "value": 0.0049,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 25,
+          "paper_location": "L152"
+        },
+        {
+          "name": "electrical_eq_abnormal_ret",
+          "value": 0.0023,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L152"
+        },
+        {
+          "name": "electrical_eq_abnormal_t",
+          "value": 1.38,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L152"
+        },
+        {
+          "name": "transport_eq_avg_stocks",
+          "value": 105.35,
+          "unit": "count",
+          "tolerance_pct": 15,
+          "paper_location": "L153"
+        },
+        {
+          "name": "transport_eq_min_stocks",
+          "value": 91,
+          "unit": "count",
+          "tolerance_pct": 25,
+          "paper_location": "L153"
+        },
+        {
+          "name": "transport_eq_pct_mktcap",
+          "value": 5.01,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L153"
+        },
+        {
+          "name": "transport_eq_excess_ret",
+          "value": 0.0043,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 25,
+          "paper_location": "L153"
+        },
+        {
+          "name": "transport_eq_abnormal_ret",
+          "value": 0.0019,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L153"
+        },
+        {
+          "name": "transport_eq_abnormal_t",
+          "value": 1.05,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L153"
+        },
+        {
+          "name": "manufacturing_avg_stocks",
+          "value": 235.21,
+          "unit": "count",
+          "tolerance_pct": 15,
+          "paper_location": "L154"
+        },
+        {
+          "name": "manufacturing_min_stocks",
+          "value": 70,
+          "unit": "count",
+          "tolerance_pct": 25,
+          "paper_location": "L154"
+        },
+        {
+          "name": "manufacturing_pct_mktcap",
+          "value": 4.05,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L154"
+        },
+        {
+          "name": "manufacturing_excess_ret",
+          "value": 0.0055,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 25,
+          "paper_location": "L154"
+        },
+        {
+          "name": "manufacturing_abnormal_ret",
+          "value": -0.0006,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L154"
+        },
+        {
+          "name": "manufacturing_abnormal_t",
+          "value": -0.43,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L154"
+        },
+        {
+          "name": "railroads_avg_stocks",
+          "value": 20.11,
+          "unit": "count",
+          "tolerance_pct": 15,
+          "paper_location": "L155"
+        },
+        {
+          "name": "railroads_min_stocks",
+          "value": 9,
+          "unit": "count",
+          "tolerance_pct": 25,
+          "paper_location": "L155"
+        },
+        {
+          "name": "railroads_pct_mktcap",
+          "value": 0.81,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L155"
+        },
+        {
+          "name": "railroads_excess_ret",
+          "value": 0.0055,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 25,
+          "paper_location": "L155"
+        },
+        {
+          "name": "railroads_abnormal_ret",
+          "value": 0.0035,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L155"
+        },
+        {
+          "name": "railroads_abnormal_t",
+          "value": 1.38,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L155"
+        },
+        {
+          "name": "other_transport_avg_stocks",
+          "value": 88.03,
+          "unit": "count",
+          "tolerance_pct": 15,
+          "paper_location": "L156"
+        },
+        {
+          "name": "other_transport_min_stocks",
+          "value": 51,
+          "unit": "count",
+          "tolerance_pct": 25,
+          "paper_location": "L156"
+        },
+        {
+          "name": "other_transport_pct_mktcap",
+          "value": 1.19,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L156"
+        },
+        {
+          "name": "other_transport_excess_ret",
+          "value": 0.004,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 25,
+          "paper_location": "L156"
+        },
+        {
+          "name": "other_transport_abnormal_ret",
+          "value": -0.0011,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L156"
+        },
+        {
+          "name": "other_transport_abnormal_t",
+          "value": -0.47,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L156"
+        },
+        {
+          "name": "utilities_avg_stocks",
+          "value": 187.08,
+          "unit": "count",
+          "tolerance_pct": 15,
+          "paper_location": "L157"
+        },
+        {
+          "name": "utilities_min_stocks",
+          "value": 114,
+          "unit": "count",
+          "tolerance_pct": 25,
+          "paper_location": "L157"
+        },
+        {
+          "name": "utilities_pct_mktcap",
+          "value": 7.52,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L157"
+        },
+        {
+          "name": "utilities_excess_ret",
+          "value": 0.0027,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 25,
+          "paper_location": "L157"
+        },
+        {
+          "name": "utilities_abnormal_ret",
+          "value": -0.0,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L157"
+        },
+        {
+          "name": "utilities_abnormal_t",
+          "value": -0.03,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L157"
+        },
+        {
+          "name": "dept_stores_avg_stocks",
+          "value": 54.79,
+          "unit": "count",
+          "tolerance_pct": 15,
+          "paper_location": "L158"
+        },
+        {
+          "name": "dept_stores_min_stocks",
+          "value": 36,
+          "unit": "count",
+          "tolerance_pct": 25,
+          "paper_location": "L158"
+        },
+        {
+          "name": "dept_stores_pct_mktcap",
+          "value": 2.89,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L158"
+        },
+        {
+          "name": "dept_stores_excess_ret",
+          "value": 0.0051,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 25,
+          "paper_location": "L158"
+        },
+        {
+          "name": "dept_stores_abnormal_ret",
+          "value": 0.0014,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L158"
+        },
+        {
+          "name": "dept_stores_abnormal_t",
+          "value": 0.64,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L158"
+        },
+        {
+          "name": "retail_avg_stocks",
+          "value": 377.06,
+          "unit": "count",
+          "tolerance_pct": 15,
+          "paper_location": "L159"
+        },
+        {
+          "name": "retail_min_stocks",
+          "value": 143,
+          "unit": "count",
+          "tolerance_pct": 25,
+          "paper_location": "L159"
+        },
+        {
+          "name": "retail_pct_mktcap",
+          "value": 3.34,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L159"
+        },
+        {
+          "name": "retail_excess_ret",
+          "value": 0.0055,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 25,
+          "paper_location": "L159"
+        },
+        {
+          "name": "retail_abnormal_ret",
+          "value": 0.0021,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L159"
+        },
+        {
+          "name": "retail_abnormal_t",
+          "value": 1.41,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L159"
+        },
+        {
+          "name": "financial_avg_stocks",
+          "value": 891.56,
+          "unit": "count",
+          "tolerance_pct": 15,
+          "paper_location": "L160"
+        },
+        {
+          "name": "financial_min_stocks",
+          "value": 152,
+          "unit": "count",
+          "tolerance_pct": 25,
+          "paper_location": "L160"
+        },
+        {
+          "name": "financial_pct_mktcap",
+          "value": 12.42,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L160"
+        },
+        {
+          "name": "financial_excess_ret",
+          "value": 0.0045,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 25,
+          "paper_location": "L160"
+        },
+        {
+          "name": "financial_abnormal_ret",
+          "value": 0.0007,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L160"
+        },
+        {
+          "name": "financial_abnormal_t",
+          "value": 0.54,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L160"
+        },
+        {
+          "name": "other_avg_stocks",
+          "value": 981.18,
+          "unit": "count",
+          "tolerance_pct": 15,
+          "paper_location": "L161"
+        },
+        {
+          "name": "other_min_stocks",
+          "value": 221,
+          "unit": "count",
+          "tolerance_pct": 25,
+          "paper_location": "L161"
+        },
+        {
+          "name": "other_pct_mktcap",
+          "value": 14.9,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L161"
+        },
+        {
+          "name": "other_excess_ret",
+          "value": 0.0046,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 25,
+          "paper_location": "L161"
+        },
+        {
+          "name": "other_abnormal_ret",
+          "value": 0.0019,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L161"
+        },
+        {
+          "name": "other_abnormal_t",
+          "value": 1.96,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L161"
+        },
+        {
+          "name": "average_avg_stocks",
+          "value": 230.48,
+          "unit": "count",
+          "tolerance_pct": 15,
+          "paper_location": "L162"
+        },
+        {
+          "name": "average_min_stocks",
+          "value": 93.8,
+          "unit": "count",
+          "tolerance_pct": 25,
+          "paper_location": "L162"
+        },
+        {
+          "name": "average_pct_mktcap",
+          "value": 5.0,
+          "unit": "percent",
+          "tolerance_pct": 20,
+          "paper_location": "L162"
+        },
+        {
+          "name": "average_excess_ret",
+          "value": 0.0043,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 25,
+          "paper_location": "L162"
+        },
+        {
+          "name": "average_abnormal_ret",
+          "value": 0.0011,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L162"
+        },
+        {
+          "name": "average_abnormal_t",
+          "value": 1.35,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L162"
+        },
+        {
+          "name": "f_all_zero_excess",
+          "value": 2.92,
+          "unit": "f_statistic",
+          "tolerance_pct": 40,
+          "paper_location": "L163"
+        },
+        {
+          "name": "p_all_zero_excess",
+          "value": 0.0,
+          "unit": "p_value",
+          "tolerance_pct": 100,
+          "paper_location": "L164"
+        },
+        {
+          "name": "f_all_zero_abnormal",
+          "value": 1.686,
+          "unit": "f_statistic",
+          "tolerance_pct": 40,
+          "paper_location": "L163"
+        },
+        {
+          "name": "p_all_zero_abnormal",
+          "value": 0.034,
+          "unit": "p_value",
+          "tolerance_pct": 60,
+          "paper_location": "L164"
+        },
+        {
+          "name": "f_all_same_excess",
+          "value": 0.825,
+          "unit": "f_statistic",
+          "tolerance_pct": 40,
+          "paper_location": "L165"
+        },
+        {
+          "name": "p_all_same_excess",
+          "value": 0.677,
+          "unit": "p_value",
+          "tolerance_pct": 60,
+          "paper_location": "L166"
+        },
+        {
+          "name": "f_all_same_abnormal",
+          "value": 1.38,
+          "unit": "f_statistic",
+          "tolerance_pct": 40,
+          "paper_location": "L165"
+        },
+        {
+          "name": "p_all_same_abnormal",
+          "value": 0.136,
+          "unit": "p_value",
+          "tolerance_pct": 60,
+          "paper_location": "L166"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "T2",
+      "table_ref": "Table II",
+      "description": "Momentum profits for individual equities, industries, and random industries (6,6 strategy), Panels A-C.",
+      "replication_meaning": "Demonstrates correct construction of the (6,6) momentum strategies and the paper's central decomposition: 30%-breakpoint value-weighted individual stock momentum with overlapping-portfolio averaging, industry momentum (long top-3 / short bottom-3 of the 20 industries, equal-weighted across industries, VW within), the DGTW 125-portfolio characteristic adjustment, random-industry return replacement, and the industry-neutral, excess-industry, and high-industry-loser alternative portfolios.",
+      "paper_quote": "Panel B reports average monthly profits of momentum strategies of industries, where industries are sorted on their past six-month raw returns and a zero investment strategy is formed that is long the three highest past return industries and short the three lowest, holding the positions constant for six months, and recomputing the strategy monthly. (L368)",
+      "exercises_preprocessing_rules": [
+        "sort_momentum_6_6_rank_hold",
+        "sort_30pct_breakpoints_vw",
+        "sort_overlapping_average",
+        "sort_industry_momentum_6_6",
+        "factor_dgtw_125_portfolios",
+        "var_random_industry",
+        "sort_industry_neutral",
+        "sort_excess_industry",
+        "sort_high_ind_losers_low_ind_winners",
+        "var_raw_minus_industry",
+        "var_sb_minus_industry",
+        "sample_T383",
+        "sample_dgtw_sb_period"
+      ],
+      "metrics": [
+        {
+          "name": "pA_raw_mean",
+          "value": 0.0043,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 43,
+          "paper_location": "L411"
+        },
+        {
+          "name": "pA_raw_t",
+          "value": 4.65,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L412"
+        },
+        {
+          "name": "pA_dgtw_mean",
+          "value": 0.0009,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L413"
+        },
+        {
+          "name": "pA_dgtw_t",
+          "value": 1.56,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L414"
+        },
+        {
+          "name": "pA_sb_mean",
+          "value": 0.0029,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 60,
+          "paper_location": "L415"
+        },
+        {
+          "name": "pA_sb_t",
+          "value": 3.34,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L416"
+        },
+        {
+          "name": "pA_raw_minus_ind_mean",
+          "value": 0.0013,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 98,
+          "paper_location": "L417"
+        },
+        {
+          "name": "pA_raw_minus_ind_t",
+          "value": 2.04,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L418"
+        },
+        {
+          "name": "pA_sb_minus_ind_mean",
+          "value": 0.0008,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L419"
+        },
+        {
+          "name": "pA_sb_minus_ind_t",
+          "value": 0.91,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L420"
+        },
+        {
+          "name": "pA_sb_minus_randind_mean",
+          "value": 0.0027,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 72,
+          "paper_location": "L421"
+        },
+        {
+          "name": "pA_sb_minus_randind_t",
+          "value": 2.77,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L422"
+        },
+        {
+          "name": "pB_raw_industry_mean",
+          "value": 0.0043,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 47,
+          "paper_location": "L451"
+        },
+        {
+          "name": "pB_raw_industry_t",
+          "value": 4.24,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L452"
+        },
+        {
+          "name": "pB_dgtw_industry_mean",
+          "value": 0.002,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 88,
+          "paper_location": "L453"
+        },
+        {
+          "name": "pB_dgtw_industry_t",
+          "value": 2.27,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L454"
+        },
+        {
+          "name": "pB_raw_random_industry_mean",
+          "value": -0.0005,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L455"
+        },
+        {
+          "name": "pB_raw_random_industry_t",
+          "value": -1.09,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L456"
+        },
+        {
+          "name": "pC_industry_neutral_mean",
+          "value": 0.0011,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L485"
+        },
+        {
+          "name": "pC_industry_neutral_t",
+          "value": 1.01,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L486"
+        },
+        {
+          "name": "pC_excess_industry_mean",
+          "value": -0.0007,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L487"
+        },
+        {
+          "name": "pC_excess_industry_t",
+          "value": -0.83,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L488"
+        },
+        {
+          "name": "pC_high_ind_losers_low_ind_winners_mean",
+          "value": 0.003,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 75,
+          "paper_location": "L489"
+        },
+        {
+          "name": "pC_high_ind_losers_low_ind_winners_t",
+          "value": 2.66,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L490"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "T3",
+      "table_ref": "Table III",
+      "description": "Industry momentum trading profits IM(L,H) for L in {1,6,12}, H in {1,6,12,24,36}, with (Panel A) and without (Panel B) a skipped month; Wi, Lo, Wi-Lo, Wi-Mid, Mid-Lo, and DGTW rows.",
+      "replication_meaning": "Demonstrates temporal robustness of industry momentum across the full IM(L,H) horizon grid with and without a skipped month, including the buy-side (Wi-Mid) vs sell-side (Mid-Lo) decomposition and DGTW-adjusted profits - validating the overlapping-hold / monthly-rebalance mechanics and the industry momentum ranking at every horizon.",
+      "paper_quote": "Ranking the 20 industries based on their $L$-month lagged returns, we form portfolios of the highest and lowest past performing industries, hold them for $H$ months, and rebalance monthly. Again, our strategy is long the highest three past performing industries and short the lowest three. (L704)",
+      "exercises_preprocessing_rules": [
+        "sort_im_lh_grid",
+        "sort_skip_one_month",
+        "sort_industry_momentum_6_6",
+        "factor_dgtw_125_portfolios"
+      ],
+      "metrics": [
+        {
+          "name": "pA_L1_H1_wi",
+          "value": 0.0193,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H6_wi",
+          "value": 0.014,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H12_wi",
+          "value": 0.0143,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H24_wi",
+          "value": 0.0137,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H36_wi",
+          "value": 0.0138,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H1_lo",
+          "value": 0.0088,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H6_lo",
+          "value": 0.0118,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H12_lo",
+          "value": 0.0112,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H24_lo",
+          "value": 0.0122,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H36_lo",
+          "value": 0.013,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H1_wilo",
+          "value": 0.0105,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 36,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H1_wilo_t",
+          "value": 5.63,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H6_wilo",
+          "value": 0.0022,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 81,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H6_wilo_t",
+          "value": 2.48,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H12_wilo",
+          "value": 0.0032,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 45,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H12_wilo_t",
+          "value": 4.4,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H24_wilo",
+          "value": 0.0015,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 81,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H24_wilo_t",
+          "value": 2.46,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H36_wilo",
+          "value": 0.0008,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H36_wilo_t",
+          "value": 1.59,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H1_wimid",
+          "value": 0.004,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 78,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H1_wimid_t",
+          "value": 2.55,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H6_wimid",
+          "value": 0.0003,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H6_wimid_t",
+          "value": 0.43,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H12_wimid",
+          "value": 0.0008,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H12_wimid_t",
+          "value": 1.39,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H24_wimid",
+          "value": -0.0005,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H24_wimid_t",
+          "value": -1.08,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H36_wimid",
+          "value": -0.0013,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 69,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H36_wimid_t",
+          "value": -2.88,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H1_midlo",
+          "value": 0.0065,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 41,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H1_midlo_t",
+          "value": 4.88,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H6_midlo",
+          "value": 0.0019,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 70,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H6_midlo_t",
+          "value": 2.87,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H12_midlo",
+          "value": 0.0023,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 44,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H12_midlo_t",
+          "value": 4.5,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H24_midlo",
+          "value": 0.002,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 46,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H24_midlo_t",
+          "value": 4.37,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H36_midlo",
+          "value": 0.0021,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 42,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H36_midlo_t",
+          "value": 4.81,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H1_dgtw",
+          "value": 0.0065,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 50,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H1_dgtw_t",
+          "value": 3.99,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H6_dgtw",
+          "value": 0.0003,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H6_dgtw_t",
+          "value": 0.44,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H12_dgtw",
+          "value": 0.0016,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 67,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H12_dgtw_t",
+          "value": 2.99,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H24_dgtw",
+          "value": 0.0007,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H24_dgtw_t",
+          "value": 1.72,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H36_dgtw",
+          "value": 0.0003,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L1_H36_dgtw_t",
+          "value": 0.91,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H1_wi",
+          "value": 0.0138,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H6_wi",
+          "value": 0.0135,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H12_wi",
+          "value": 0.0142,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H24_wi",
+          "value": 0.0134,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H36_wi",
+          "value": 0.0137,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H1_lo",
+          "value": 0.0137,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H6_lo",
+          "value": 0.0116,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H12_lo",
+          "value": 0.011,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H24_lo",
+          "value": 0.0125,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H36_lo",
+          "value": 0.0131,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H1_wilo",
+          "value": 0.0001,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H1_wilo_t",
+          "value": 0.03,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H6_wilo",
+          "value": 0.002,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 93,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H6_wilo_t",
+          "value": 2.14,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H12_wilo",
+          "value": 0.0032,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 45,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H12_wilo_t",
+          "value": 4.46,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H24_wilo",
+          "value": 0.0009,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H24_wilo_t",
+          "value": 1.51,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H36_wilo",
+          "value": 0.0006,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H36_wilo_t",
+          "value": 1.06,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H1_wimid",
+          "value": -0.0019,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H1_wimid_t",
+          "value": -1.32,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H6_wimid",
+          "value": 0.0006,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H6_wimid_t",
+          "value": 0.82,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H12_wimid",
+          "value": 0.0012,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 96,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H12_wimid_t",
+          "value": 2.08,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H24_wimid",
+          "value": -0.0002,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H24_wimid_t",
+          "value": -0.49,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H36_wimid",
+          "value": -0.0012,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 71,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H36_wimid_t",
+          "value": -2.8,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H1_midlo",
+          "value": -0.002,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H1_midlo_t",
+          "value": -1.39,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H6_midlo",
+          "value": 0.0014,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H6_midlo_t",
+          "value": 2.01,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H12_midlo",
+          "value": 0.002,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 51,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H12_midlo_t",
+          "value": 3.9,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H24_midlo",
+          "value": 0.0012,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 86,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H24_midlo_t",
+          "value": 2.33,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H36_midlo",
+          "value": 0.0018,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 52,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H36_midlo_t",
+          "value": 3.84,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H1_dgtw",
+          "value": -0.0005,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H1_dgtw_t",
+          "value": -0.33,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H6_dgtw",
+          "value": 0.0003,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H6_dgtw_t",
+          "value": 0.36,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H12_dgtw",
+          "value": 0.0019,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 58,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H12_dgtw_t",
+          "value": 3.47,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H24_dgtw",
+          "value": 0.0006,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H24_dgtw_t",
+          "value": 1.42,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H36_dgtw",
+          "value": 0.0004,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pB_L1_H36_dgtw_t",
+          "value": 1.1,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L759-898"
+        },
+        {
+          "name": "pA_L6_H1_wi",
+          "value": 0.0176,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H6_wi",
+          "value": 0.0161,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H12_wi",
+          "value": 0.0156,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H24_wi",
+          "value": 0.0136,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H36_wi",
+          "value": 0.0143,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H1_lo",
+          "value": 0.0127,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H6_lo",
+          "value": 0.0118,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H12_lo",
+          "value": 0.0116,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H24_lo",
+          "value": 0.0132,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H36_lo",
+          "value": 0.014,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H1_wilo",
+          "value": 0.0049,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H6_wilo",
+          "value": 0.0043,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H12_wilo",
+          "value": 0.004,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H24_wilo",
+          "value": 0.0004,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H36_wilo",
+          "value": 0.0003,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H1_wimid",
+          "value": 0.0039,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H6_wimid",
+          "value": 0.0036,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H12_wimid",
+          "value": 0.0029,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H24_wimid",
+          "value": -0.0001,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H36_wimid",
+          "value": -0.0004,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H1_midlo",
+          "value": 0.001,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H6_midlo",
+          "value": 0.0007,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H12_midlo",
+          "value": 0.001,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H24_midlo",
+          "value": 0.0005,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H36_midlo",
+          "value": 0.0007,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H1_dgtw",
+          "value": 0.0012,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H1_dgtw_t",
+          "value": 0.63,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H6_dgtw",
+          "value": 0.002,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 88,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H6_dgtw_t",
+          "value": 2.27,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H12_dgtw",
+          "value": 0.0024,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 46,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H12_dgtw_t",
+          "value": 4.33,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H24_dgtw",
+          "value": 0.0002,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H24_dgtw_t",
+          "value": 0.55,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H36_dgtw",
+          "value": 0.0002,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L6_H36_dgtw_t",
+          "value": 0.74,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H1_wi",
+          "value": 0.0159,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H6_wi",
+          "value": 0.0155,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H12_wi",
+          "value": 0.0148,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H24_wi",
+          "value": 0.0134,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H36_wi",
+          "value": 0.0142,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H1_lo",
+          "value": 0.0151,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H6_lo",
+          "value": 0.0115,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H12_lo",
+          "value": 0.0116,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H24_lo",
+          "value": 0.0131,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H36_lo",
+          "value": 0.0137,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H1_wilo",
+          "value": 0.0008,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H6_wilo",
+          "value": 0.004,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H12_wilo",
+          "value": 0.0032,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H24_wilo",
+          "value": 0.0003,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H36_wilo",
+          "value": 0.0005,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H1_wimid",
+          "value": 0.0014,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H6_wimid",
+          "value": 0.0034,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H12_wimid",
+          "value": 0.0021,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H24_wimid",
+          "value": -0.0002,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H36_wimid",
+          "value": -0.0002,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H1_midlo",
+          "value": -0.0006,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H6_midlo",
+          "value": 0.0005,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H12_midlo",
+          "value": 0.0011,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H24_midlo",
+          "value": 0.0005,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H36_midlo",
+          "value": 0.0007,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H1_dgtw",
+          "value": -0.002,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H1_dgtw_t",
+          "value": -1.08,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H6_dgtw",
+          "value": 0.0021,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 76,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H6_dgtw_t",
+          "value": 2.64,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H12_dgtw",
+          "value": 0.002,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 55,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H12_dgtw_t",
+          "value": 3.61,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H24_dgtw",
+          "value": 0.0001,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H24_dgtw_t",
+          "value": 0.15,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H36_dgtw",
+          "value": 0.0003,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pB_L6_H36_dgtw_t",
+          "value": 0.91,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L913-1007"
+        },
+        {
+          "name": "pA_L12_H1_wi",
+          "value": 0.0202,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H6_wi",
+          "value": 0.0164,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H12_wi",
+          "value": 0.0143,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H24_wi",
+          "value": 0.013,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H36_wi",
+          "value": 0.0138,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H1_lo",
+          "value": 0.0117,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H6_lo",
+          "value": 0.0111,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H12_lo",
+          "value": 0.0116,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H24_lo",
+          "value": 0.0132,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H36_lo",
+          "value": 0.0139,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H1_wilo",
+          "value": 0.0085,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H6_wilo",
+          "value": 0.0053,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H12_wilo",
+          "value": 0.0026,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H24_wilo",
+          "value": -0.0002,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H36_wilo",
+          "value": -0.0001,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H1_wimid",
+          "value": 0.0052,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H6_wimid",
+          "value": 0.0038,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H12_wimid",
+          "value": 0.0014,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H24_wimid",
+          "value": -0.0008,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H36_wimid",
+          "value": -0.0009,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H1_midlo",
+          "value": 0.0032,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H6_midlo",
+          "value": 0.0015,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H12_midlo",
+          "value": 0.0012,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H24_midlo",
+          "value": 0.0006,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H36_midlo",
+          "value": 0.0008,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H1_dgtw",
+          "value": 0.0043,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 87,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H1_dgtw_t",
+          "value": 2.3,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H6_dgtw",
+          "value": 0.003,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 51,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H6_dgtw_t",
+          "value": 3.89,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H12_dgtw",
+          "value": 0.0018,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 64,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H12_dgtw_t",
+          "value": 3.11,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H24_dgtw",
+          "value": 0.0,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H24_dgtw_t",
+          "value": 0.01,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H36_dgtw",
+          "value": 0.0001,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pA_L12_H36_dgtw_t",
+          "value": 0.33,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H1_wi",
+          "value": 0.0194,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H6_wi",
+          "value": 0.0164,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H12_wi",
+          "value": 0.0141,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H24_wi",
+          "value": 0.0128,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H36_wi",
+          "value": 0.0139,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H1_lo",
+          "value": 0.0128,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H6_lo",
+          "value": 0.011,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H12_lo",
+          "value": 0.0118,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H24_lo",
+          "value": 0.0131,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H36_lo",
+          "value": 0.0138,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 15,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H1_wilo",
+          "value": 0.0066,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H6_wilo",
+          "value": 0.0054,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H12_wilo",
+          "value": 0.0023,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H24_wilo",
+          "value": -0.0002,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H36_wilo",
+          "value": 0.0001,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H1_wimid",
+          "value": 0.0044,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H6_wimid",
+          "value": 0.0035,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H12_wimid",
+          "value": 0.001,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H24_wimid",
+          "value": -0.0013,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H36_wimid",
+          "value": -0.001,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H1_midlo",
+          "value": 0.0022,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H6_midlo",
+          "value": 0.0019,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H12_midlo",
+          "value": 0.0013,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H24_midlo",
+          "value": 0.0011,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H36_midlo",
+          "value": 0.0011,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H1_dgtw",
+          "value": 0.0023,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H1_dgtw_t",
+          "value": 1.26,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H6_dgtw",
+          "value": 0.0031,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 49,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H6_dgtw_t",
+          "value": 4.11,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H12_dgtw",
+          "value": 0.0015,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 76,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H12_dgtw_t",
+          "value": 2.64,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H24_dgtw",
+          "value": -0.0,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 30,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H24_dgtw_t",
+          "value": -0.06,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H36_dgtw",
+          "value": 0.0002,
+          "unit": "decimal_monthly_return",
+          "tolerance_pct": 100,
+          "paper_location": "L1008-1101"
+        },
+        {
+          "name": "pB_L12_H36_dgtw_t",
+          "value": 0.56,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1008-1101"
+        }
+      ],
+      "notes": "All 180 mean cells across Panels A-B are replicated; t-stat cells are included wherever the parsed paper preserves them (all rows at L=1; DGTW rows at L=6 and L=12) - the parse dropped the other t-stat rows of Table III, so those t-stats are not contracted."
+    },
+    {
+      "id": "T6",
+      "table_ref": "Table VI",
+      "description": "Fama-MacBeth cross-sectional regressions of size/BE/ME-adjusted returns on beta, log size, BE/ME, and individual (ret) and industry (ind) past-return variables across (6,1)/(6,6)/(12,1)/(12,12) horizons, Panels A-D (January 1973-July 1995).",
+      "replication_meaning": "Demonstrates correct Fama-MacBeth cross-sectional regression methodology on Daniel-Titman characteristic-adjusted returns: pre-ranking beta smoothing (36-month rolling regression on the CRSP value-weighted index, 100 equal-weighted beta groups), log size and log BE/ME regressors, individual and industry past-return variables at four horizons, time-series averaged coefficients with FM t-stats, and the paper's key interaction result that 6-month industry momentum subsumes 6-month individual stock momentum (Panels C-D).",
+      "paper_quote": "Fama and MacBeth (1973) cross-sectional regressions are run every month on the universe of securities from January 1973\u2013July 1995. (L1496)",
+      "exercises_preprocessing_rules": [
+        "fm_cross_section_dt_adjusted",
+        "fm_time_series_averaging",
+        "fm_sample_period_both_sides",
+        "var_size_log_me",
+        "var_be_me",
+        "var_ret_1_1",
+        "var_ret_6_6_average",
+        "var_beta_36m_prerank",
+        "var_ind_l_h",
+        "factor_sb_characteristic_match"
+      ],
+      "metrics": [
+        {
+          "name": "pA_6_1_s1_beta",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1534-1545"
+        },
+        {
+          "name": "pA_6_1_s1_beta_t",
+          "value": 0.02,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1534-1545"
+        },
+        {
+          "name": "pA_6_1_s1_ln_size",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1534-1545"
+        },
+        {
+          "name": "pA_6_1_s1_ln_size_t",
+          "value": 0.46,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1534-1545"
+        },
+        {
+          "name": "pA_6_1_s1_be_me",
+          "value": 0.0011,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1534-1545"
+        },
+        {
+          "name": "pA_6_1_s1_be_me_t",
+          "value": 1.62,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1534-1545"
+        },
+        {
+          "name": "pA_6_1_s1_ret",
+          "value": -0.0193,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1534-1545"
+        },
+        {
+          "name": "pA_6_1_s1_ret_t",
+          "value": -1.16,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1534-1545"
+        },
+        {
+          "name": "pA_6_1_s2_beta",
+          "value": -0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1546-1557"
+        },
+        {
+          "name": "pA_6_1_s2_beta_t",
+          "value": -0.07,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1546-1557"
+        },
+        {
+          "name": "pA_6_1_s2_ln_size",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1546-1557"
+        },
+        {
+          "name": "pA_6_1_s2_ln_size_t",
+          "value": 0.87,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1546-1557"
+        },
+        {
+          "name": "pA_6_1_s2_be_me",
+          "value": 0.0012,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1546-1557"
+        },
+        {
+          "name": "pA_6_1_s2_be_me_t",
+          "value": 1.64,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1546-1557"
+        },
+        {
+          "name": "pA_6_1_s2_ret",
+          "value": 0.0355,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1546-1557"
+        },
+        {
+          "name": "pA_6_1_s2_ret_t",
+          "value": 1.9,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1546-1557"
+        },
+        {
+          "name": "pA_6_1_s2_ret_1_1",
+          "value": -0.0489,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1546-1557"
+        },
+        {
+          "name": "pA_6_1_s2_ret_1_1_t",
+          "value": -15.52,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1546-1557"
+        },
+        {
+          "name": "pA_6_1_s2_ret_36_13",
+          "value": -0.001,
+          "unit": "coefficient",
+          "tolerance_pct": 64,
+          "paper_location": "L1546-1557"
+        },
+        {
+          "name": "pA_6_1_s2_ret_36_13_t",
+          "value": -3.12,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1546-1557"
+        },
+        {
+          "name": "pA_6_6_s1_beta",
+          "value": -0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1558-1569"
+        },
+        {
+          "name": "pA_6_6_s1_beta_t",
+          "value": -0.08,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1558-1569"
+        },
+        {
+          "name": "pA_6_6_s1_ln_size",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1558-1569"
+        },
+        {
+          "name": "pA_6_6_s1_ln_size_t",
+          "value": 0.06,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1558-1569"
+        },
+        {
+          "name": "pA_6_6_s1_be_me",
+          "value": 0.0013,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1558-1569"
+        },
+        {
+          "name": "pA_6_6_s1_be_me_t",
+          "value": 1.84,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1558-1569"
+        },
+        {
+          "name": "pA_6_6_s1_ret",
+          "value": 0.0586,
+          "unit": "coefficient",
+          "tolerance_pct": 85,
+          "paper_location": "L1558-1569"
+        },
+        {
+          "name": "pA_6_6_s1_ret_t",
+          "value": 2.36,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1558-1569"
+        },
+        {
+          "name": "pA_6_6_s2_beta",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1570-1581"
+        },
+        {
+          "name": "pA_6_6_s2_beta_t",
+          "value": 0.13,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1570-1581"
+        },
+        {
+          "name": "pA_6_6_s2_ln_size",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1570-1581"
+        },
+        {
+          "name": "pA_6_6_s2_ln_size_t",
+          "value": 0.49,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1570-1581"
+        },
+        {
+          "name": "pA_6_6_s2_be_me",
+          "value": 0.0014,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1570-1581"
+        },
+        {
+          "name": "pA_6_6_s2_be_me_t",
+          "value": 1.87,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1570-1581"
+        },
+        {
+          "name": "pA_6_6_s2_ret",
+          "value": 0.0724,
+          "unit": "coefficient",
+          "tolerance_pct": 69,
+          "paper_location": "L1570-1581"
+        },
+        {
+          "name": "pA_6_6_s2_ret_t",
+          "value": 2.91,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1570-1581"
+        },
+        {
+          "name": "pA_6_6_s2_ret_1_1",
+          "value": -0.0457,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1570-1581"
+        },
+        {
+          "name": "pA_6_6_s2_ret_1_1_t",
+          "value": -17.8,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1570-1581"
+        },
+        {
+          "name": "pA_6_6_s2_ret_36_13",
+          "value": -0.0011,
+          "unit": "coefficient",
+          "tolerance_pct": 63,
+          "paper_location": "L1570-1581"
+        },
+        {
+          "name": "pA_6_6_s2_ret_36_13_t",
+          "value": -3.19,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1570-1581"
+        },
+        {
+          "name": "pA_12_1_s1_beta",
+          "value": -0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1582-1593"
+        },
+        {
+          "name": "pA_12_1_s1_beta_t",
+          "value": -0.12,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1582-1593"
+        },
+        {
+          "name": "pA_12_1_s1_ln_size",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1582-1593"
+        },
+        {
+          "name": "pA_12_1_s1_ln_size_t",
+          "value": 0.24,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1582-1593"
+        },
+        {
+          "name": "pA_12_1_s1_be_me",
+          "value": 0.0013,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1582-1593"
+        },
+        {
+          "name": "pA_12_1_s1_be_me_t",
+          "value": 1.79,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1582-1593"
+        },
+        {
+          "name": "pA_12_1_s1_ret",
+          "value": 0.0379,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1582-1593"
+        },
+        {
+          "name": "pA_12_1_s1_ret_t",
+          "value": 1.29,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1582-1593"
+        },
+        {
+          "name": "pA_12_1_s2_beta",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1594-1605"
+        },
+        {
+          "name": "pA_12_1_s2_beta_t",
+          "value": 0.19,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1594-1605"
+        },
+        {
+          "name": "pA_12_1_s2_ln_size",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1594-1605"
+        },
+        {
+          "name": "pA_12_1_s2_ln_size_t",
+          "value": 0.19,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1594-1605"
+        },
+        {
+          "name": "pA_12_1_s2_be_me",
+          "value": 0.0014,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1594-1605"
+        },
+        {
+          "name": "pA_12_1_s2_be_me_t",
+          "value": 1.92,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1594-1605"
+        },
+        {
+          "name": "pA_12_1_s2_ret",
+          "value": 0.0988,
+          "unit": "coefficient",
+          "tolerance_pct": 64,
+          "paper_location": "L1594-1605"
+        },
+        {
+          "name": "pA_12_1_s2_ret_t",
+          "value": 3.11,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1594-1605"
+        },
+        {
+          "name": "pA_12_1_s2_ret_1_1",
+          "value": -0.0521,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1594-1605"
+        },
+        {
+          "name": "pA_12_1_s2_ret_1_1_t",
+          "value": -16.87,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1594-1605"
+        },
+        {
+          "name": "pA_12_1_s2_ret_36_13",
+          "value": -0.001,
+          "unit": "coefficient",
+          "tolerance_pct": 66,
+          "paper_location": "L1594-1605"
+        },
+        {
+          "name": "pA_12_1_s2_ret_36_13_t",
+          "value": -3.05,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1594-1605"
+        },
+        {
+          "name": "pA_12_12_s1_beta",
+          "value": -0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1606-1617"
+        },
+        {
+          "name": "pA_12_12_s1_beta_t",
+          "value": -0.05,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1606-1617"
+        },
+        {
+          "name": "pA_12_12_s1_ln_size",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1606-1617"
+        },
+        {
+          "name": "pA_12_12_s1_ln_size_t",
+          "value": 0.04,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1606-1617"
+        },
+        {
+          "name": "pA_12_12_s1_be_me",
+          "value": 0.0011,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1606-1617"
+        },
+        {
+          "name": "pA_12_12_s1_be_me_t",
+          "value": 1.72,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1606-1617"
+        },
+        {
+          "name": "pA_12_12_s1_ret",
+          "value": 0.0444,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1606-1617"
+        },
+        {
+          "name": "pA_12_12_s1_ret_t",
+          "value": 1.57,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1606-1617"
+        },
+        {
+          "name": "pA_12_12_s2_beta",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1618-1629"
+        },
+        {
+          "name": "pA_12_12_s2_beta_t",
+          "value": 0.18,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1618-1629"
+        },
+        {
+          "name": "pA_12_12_s2_ln_size",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1618-1629"
+        },
+        {
+          "name": "pA_12_12_s2_ln_size_t",
+          "value": 0.55,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1618-1629"
+        },
+        {
+          "name": "pA_12_12_s2_be_me",
+          "value": 0.0011,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1618-1629"
+        },
+        {
+          "name": "pA_12_12_s2_be_me_t",
+          "value": 1.77,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1618-1629"
+        },
+        {
+          "name": "pA_12_12_s2_ret",
+          "value": 0.0666,
+          "unit": "coefficient",
+          "tolerance_pct": 92,
+          "paper_location": "L1618-1629"
+        },
+        {
+          "name": "pA_12_12_s2_ret_t",
+          "value": 2.17,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1618-1629"
+        },
+        {
+          "name": "pA_12_12_s2_ret_1_1",
+          "value": -0.0437,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1618-1629"
+        },
+        {
+          "name": "pA_12_12_s2_ret_1_1_t",
+          "value": -16.16,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1618-1629"
+        },
+        {
+          "name": "pA_12_12_s2_ret_36_13",
+          "value": -0.0017,
+          "unit": "coefficient",
+          "tolerance_pct": 50,
+          "paper_location": "L1618-1629"
+        },
+        {
+          "name": "pA_12_12_s2_ret_36_13_t",
+          "value": -4.03,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1618-1629"
+        },
+        {
+          "name": "pB_6_1_s1_beta",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1633-1644"
+        },
+        {
+          "name": "pB_6_1_s1_beta_t",
+          "value": 0.11,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1633-1644"
+        },
+        {
+          "name": "pB_6_1_s1_ln_size",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1633-1644"
+        },
+        {
+          "name": "pB_6_1_s1_ln_size_t",
+          "value": 0.35,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1633-1644"
+        },
+        {
+          "name": "pB_6_1_s1_be_me",
+          "value": 0.001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1633-1644"
+        },
+        {
+          "name": "pB_6_1_s1_be_me_t",
+          "value": 1.55,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1633-1644"
+        },
+        {
+          "name": "pB_6_1_s1_ind",
+          "value": 0.0334,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1633-1644"
+        },
+        {
+          "name": "pB_6_1_s1_ind_t",
+          "value": 5.48,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1633-1644"
+        },
+        {
+          "name": "pB_6_1_s2_beta",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1645-1656"
+        },
+        {
+          "name": "pB_6_1_s2_beta_t",
+          "value": 0.13,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1645-1656"
+        },
+        {
+          "name": "pB_6_1_s2_ln_size",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1645-1656"
+        },
+        {
+          "name": "pB_6_1_s2_ln_size_t",
+          "value": 0.29,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1645-1656"
+        },
+        {
+          "name": "pB_6_1_s2_be_me",
+          "value": 0.001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1645-1656"
+        },
+        {
+          "name": "pB_6_1_s2_be_me_t",
+          "value": 1.53,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1645-1656"
+        },
+        {
+          "name": "pB_6_1_s2_ind",
+          "value": 0.0138,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1645-1656"
+        },
+        {
+          "name": "pB_6_1_s2_ind_t",
+          "value": 1.95,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1645-1656"
+        },
+        {
+          "name": "pB_6_1_s2_ind_1_1",
+          "value": 0.1275,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1645-1656"
+        },
+        {
+          "name": "pB_6_1_s2_ind_1_1_t",
+          "value": 7.5,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1645-1656"
+        },
+        {
+          "name": "pB_6_1_s2_ind_36_13",
+          "value": -0.003,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1645-1656"
+        },
+        {
+          "name": "pB_6_1_s2_ind_36_13_t",
+          "value": -1.78,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1645-1656"
+        },
+        {
+          "name": "pB_6_6_s1_beta",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1657-1668"
+        },
+        {
+          "name": "pB_6_6_s1_beta_t",
+          "value": 0.11,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1657-1668"
+        },
+        {
+          "name": "pB_6_6_s1_ln_size",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1657-1668"
+        },
+        {
+          "name": "pB_6_6_s1_ln_size_t",
+          "value": 0.2,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1657-1668"
+        },
+        {
+          "name": "pB_6_6_s1_be_me",
+          "value": 0.001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1657-1668"
+        },
+        {
+          "name": "pB_6_6_s1_be_me_t",
+          "value": 1.55,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1657-1668"
+        },
+        {
+          "name": "pB_6_6_s1_ind",
+          "value": 0.0283,
+          "unit": "coefficient",
+          "tolerance_pct": 55,
+          "paper_location": "L1657-1668"
+        },
+        {
+          "name": "pB_6_6_s1_ind_t",
+          "value": 3.61,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1657-1668"
+        },
+        {
+          "name": "pB_6_6_s2_beta",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1669-1680"
+        },
+        {
+          "name": "pB_6_6_s2_beta_t",
+          "value": 0.15,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1669-1680"
+        },
+        {
+          "name": "pB_6_6_s2_ln_size",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1669-1680"
+        },
+        {
+          "name": "pB_6_6_s2_ln_size_t",
+          "value": 0.23,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1669-1680"
+        },
+        {
+          "name": "pB_6_6_s2_be_me",
+          "value": 0.0009,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1669-1680"
+        },
+        {
+          "name": "pB_6_6_s2_be_me_t",
+          "value": 1.5,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1669-1680"
+        },
+        {
+          "name": "pB_6_6_s2_ind",
+          "value": 0.0215,
+          "unit": "coefficient",
+          "tolerance_pct": 70,
+          "paper_location": "L1669-1680"
+        },
+        {
+          "name": "pB_6_6_s2_ind_t",
+          "value": 2.84,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1669-1680"
+        },
+        {
+          "name": "pB_6_6_s2_ind_1_1",
+          "value": 0.1457,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1669-1680"
+        },
+        {
+          "name": "pB_6_6_s2_ind_1_1_t",
+          "value": 9.11,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1669-1680"
+        },
+        {
+          "name": "pB_6_6_s2_ind_36_13",
+          "value": -0.0011,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1669-1680"
+        },
+        {
+          "name": "pB_6_6_s2_ind_36_13_t",
+          "value": -1.24,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1669-1680"
+        },
+        {
+          "name": "pB_12_1_s1_beta",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1721-1732"
+        },
+        {
+          "name": "pB_12_1_s1_beta_t",
+          "value": 0.08,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1721-1732"
+        },
+        {
+          "name": "pB_12_1_s1_ln_size",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1721-1732"
+        },
+        {
+          "name": "pB_12_1_s1_ln_size_t",
+          "value": 0.29,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1721-1732"
+        },
+        {
+          "name": "pB_12_1_s1_be_me",
+          "value": 0.0009,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1721-1732"
+        },
+        {
+          "name": "pB_12_1_s1_be_me_t",
+          "value": 1.51,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1721-1732"
+        },
+        {
+          "name": "pB_12_1_s1_ind",
+          "value": 0.0234,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1721-1732"
+        },
+        {
+          "name": "pB_12_1_s1_ind_t",
+          "value": 5.8,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1721-1732"
+        },
+        {
+          "name": "pB_12_1_s2_beta",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1733-1744"
+        },
+        {
+          "name": "pB_12_1_s2_beta_t",
+          "value": 0.12,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1733-1744"
+        },
+        {
+          "name": "pB_12_1_s2_ln_size",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1733-1744"
+        },
+        {
+          "name": "pB_12_1_s2_ln_size_t",
+          "value": 0.26,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1733-1744"
+        },
+        {
+          "name": "pB_12_1_s2_be_me",
+          "value": 0.0009,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1733-1744"
+        },
+        {
+          "name": "pB_12_1_s2_be_me_t",
+          "value": 1.46,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1733-1744"
+        },
+        {
+          "name": "pB_12_1_s2_ind",
+          "value": 0.0148,
+          "unit": "coefficient",
+          "tolerance_pct": 57,
+          "paper_location": "L1733-1744"
+        },
+        {
+          "name": "pB_12_1_s2_ind_t",
+          "value": 3.48,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1733-1744"
+        },
+        {
+          "name": "pB_12_1_s2_ind_1_1",
+          "value": 0.1227,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1733-1744"
+        },
+        {
+          "name": "pB_12_1_s2_ind_1_1_t",
+          "value": 7.97,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1733-1744"
+        },
+        {
+          "name": "pB_12_1_s2_ind_36_13",
+          "value": -0.0014,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1733-1744"
+        },
+        {
+          "name": "pB_12_1_s2_ind_36_13_t",
+          "value": -0.91,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1733-1744"
+        },
+        {
+          "name": "pB_12_12_s1_beta",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1745-1756"
+        },
+        {
+          "name": "pB_12_12_s1_beta_t",
+          "value": 0.09,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1745-1756"
+        },
+        {
+          "name": "pB_12_12_s1_ln_size",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1745-1756"
+        },
+        {
+          "name": "pB_12_12_s1_ln_size_t",
+          "value": 0.33,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1745-1756"
+        },
+        {
+          "name": "pB_12_12_s1_be_me",
+          "value": 0.0009,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1745-1756"
+        },
+        {
+          "name": "pB_12_12_s1_be_me_t",
+          "value": 1.42,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1745-1756"
+        },
+        {
+          "name": "pB_12_12_s1_ind",
+          "value": 0.0092,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1745-1756"
+        },
+        {
+          "name": "pB_12_12_s1_ind_t",
+          "value": 1.81,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1745-1756"
+        },
+        {
+          "name": "pB_12_12_s2_beta",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1757-1768"
+        },
+        {
+          "name": "pB_12_12_s2_beta_t",
+          "value": 0.15,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1757-1768"
+        },
+        {
+          "name": "pB_12_12_s2_ln_size",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1757-1768"
+        },
+        {
+          "name": "pB_12_12_s2_ln_size_t",
+          "value": 0.21,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1757-1768"
+        },
+        {
+          "name": "pB_12_12_s2_be_me",
+          "value": 0.0008,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1757-1768"
+        },
+        {
+          "name": "pB_12_12_s2_be_me_t",
+          "value": 1.36,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1757-1768"
+        },
+        {
+          "name": "pB_12_12_s2_ind",
+          "value": 0.0113,
+          "unit": "coefficient",
+          "tolerance_pct": 95,
+          "paper_location": "L1757-1768"
+        },
+        {
+          "name": "pB_12_12_s2_ind_t",
+          "value": 2.1,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1757-1768"
+        },
+        {
+          "name": "pB_12_12_s2_ind_1_1",
+          "value": 0.141,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1757-1768"
+        },
+        {
+          "name": "pB_12_12_s2_ind_1_1_t",
+          "value": 9.15,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1757-1768"
+        },
+        {
+          "name": "pB_12_12_s2_ind_36_13",
+          "value": -0.0044,
+          "unit": "coefficient",
+          "tolerance_pct": 82,
+          "paper_location": "L1757-1768"
+        },
+        {
+          "name": "pB_12_12_s2_ind_36_13_t",
+          "value": -2.43,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1757-1768"
+        },
+        {
+          "name": "pC_6_1_s1_beta",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1772-1783"
+        },
+        {
+          "name": "pC_6_1_s1_beta_t",
+          "value": 0.02,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1772-1783"
+        },
+        {
+          "name": "pC_6_1_s1_ln_size",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1772-1783"
+        },
+        {
+          "name": "pC_6_1_s1_ln_size_t",
+          "value": 0.94,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1772-1783"
+        },
+        {
+          "name": "pC_6_1_s1_be_me",
+          "value": 0.0013,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1772-1783"
+        },
+        {
+          "name": "pC_6_1_s1_be_me_t",
+          "value": 1.75,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1772-1783"
+        },
+        {
+          "name": "pC_6_1_s1_ret",
+          "value": 0.028,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1772-1783"
+        },
+        {
+          "name": "pC_6_1_s1_ret_t",
+          "value": 1.55,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1772-1783"
+        },
+        {
+          "name": "pC_6_1_s1_ret_1_1",
+          "value": -0.0491,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1772-1783"
+        },
+        {
+          "name": "pC_6_1_s1_ret_1_1_t",
+          "value": -15.61,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1772-1783"
+        },
+        {
+          "name": "pC_6_1_s1_ret_36_13",
+          "value": -0.0011,
+          "unit": "coefficient",
+          "tolerance_pct": 62,
+          "paper_location": "L1772-1783"
+        },
+        {
+          "name": "pC_6_1_s1_ret_36_13_t",
+          "value": -3.24,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1772-1783"
+        },
+        {
+          "name": "pC_6_1_s1_ind",
+          "value": 0.0366,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1772-1783"
+        },
+        {
+          "name": "pC_6_1_s1_ind_t",
+          "value": 7.1,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1772-1783"
+        },
+        {
+          "name": "pC_6_1_s2_beta",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1784-1795"
+        },
+        {
+          "name": "pC_6_1_s2_beta_t",
+          "value": 0.03,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1784-1795"
+        },
+        {
+          "name": "pC_6_1_s2_ln_size",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1784-1795"
+        },
+        {
+          "name": "pC_6_1_s2_ln_size_t",
+          "value": 0.86,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1784-1795"
+        },
+        {
+          "name": "pC_6_1_s2_be_me",
+          "value": 0.0013,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1784-1795"
+        },
+        {
+          "name": "pC_6_1_s2_be_me_t",
+          "value": 1.78,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1784-1795"
+        },
+        {
+          "name": "pC_6_1_s2_ret",
+          "value": 0.0302,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1784-1795"
+        },
+        {
+          "name": "pC_6_1_s2_ret_t",
+          "value": 1.68,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1784-1795"
+        },
+        {
+          "name": "pC_6_1_s2_ret_1_1",
+          "value": -0.0511,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1784-1795"
+        },
+        {
+          "name": "pC_6_1_s2_ret_1_1_t",
+          "value": -16.35,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1784-1795"
+        },
+        {
+          "name": "pC_6_1_s2_ret_36_13",
+          "value": -0.001,
+          "unit": "coefficient",
+          "tolerance_pct": 63,
+          "paper_location": "L1784-1795"
+        },
+        {
+          "name": "pC_6_1_s2_ret_36_13_t",
+          "value": -3.16,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1784-1795"
+        },
+        {
+          "name": "pC_6_1_s2_ind",
+          "value": 0.0127,
+          "unit": "coefficient",
+          "tolerance_pct": 96,
+          "paper_location": "L1784-1795"
+        },
+        {
+          "name": "pC_6_1_s2_ind_t",
+          "value": 2.08,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1784-1795"
+        },
+        {
+          "name": "pC_6_1_s2_ind_1_1",
+          "value": 0.1487,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1784-1795"
+        },
+        {
+          "name": "pC_6_1_s2_ind_1_1_t",
+          "value": 8.86,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1784-1795"
+        },
+        {
+          "name": "pC_6_1_s2_ind_36_13",
+          "value": -0.0025,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1784-1795"
+        },
+        {
+          "name": "pC_6_1_s2_ind_36_13_t",
+          "value": -1.53,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1784-1795"
+        },
+        {
+          "name": "pC_6_6_s1_beta",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1796-1807"
+        },
+        {
+          "name": "pC_6_6_s1_beta_t",
+          "value": 0.17,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1796-1807"
+        },
+        {
+          "name": "pC_6_6_s1_ln_size",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1796-1807"
+        },
+        {
+          "name": "pC_6_6_s1_ln_size_t",
+          "value": 0.41,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1796-1807"
+        },
+        {
+          "name": "pC_6_6_s1_be_me",
+          "value": 0.0015,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1796-1807"
+        },
+        {
+          "name": "pC_6_6_s1_be_me_t",
+          "value": 1.9,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1796-1807"
+        },
+        {
+          "name": "pC_6_6_s1_ret",
+          "value": 0.0207,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1796-1807"
+        },
+        {
+          "name": "pC_6_6_s1_ret_t",
+          "value": 1.25,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1796-1807"
+        },
+        {
+          "name": "pC_6_6_s1_ret_1_1",
+          "value": -0.0463,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1796-1807"
+        },
+        {
+          "name": "pC_6_6_s1_ret_1_1_t",
+          "value": -18.0,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1796-1807"
+        },
+        {
+          "name": "pC_6_6_s1_ret_36_13",
+          "value": -0.0011,
+          "unit": "coefficient",
+          "tolerance_pct": 60,
+          "paper_location": "L1796-1807"
+        },
+        {
+          "name": "pC_6_6_s1_ret_36_13_t",
+          "value": -3.33,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1796-1807"
+        },
+        {
+          "name": "pC_6_6_s1_ind",
+          "value": 0.0237,
+          "unit": "coefficient",
+          "tolerance_pct": 54,
+          "paper_location": "L1796-1807"
+        },
+        {
+          "name": "pC_6_6_s1_ind_t",
+          "value": 3.67,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1796-1807"
+        },
+        {
+          "name": "pC_6_6_s2_beta",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1808-1819"
+        },
+        {
+          "name": "pC_6_6_s2_beta_t",
+          "value": 0.23,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1808-1819"
+        },
+        {
+          "name": "pC_6_6_s2_ln_size",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1808-1819"
+        },
+        {
+          "name": "pC_6_6_s2_ln_size_t",
+          "value": 0.44,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1808-1819"
+        },
+        {
+          "name": "pC_6_6_s2_be_me",
+          "value": 0.0014,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1808-1819"
+        },
+        {
+          "name": "pC_6_6_s2_be_me_t",
+          "value": 1.92,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1808-1819"
+        },
+        {
+          "name": "pC_6_6_s2_ret",
+          "value": 0.0309,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1808-1819"
+        },
+        {
+          "name": "pC_6_6_s2_ret_t",
+          "value": 1.49,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1808-1819"
+        },
+        {
+          "name": "pC_6_6_s2_ret_1_1",
+          "value": -0.0484,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1808-1819"
+        },
+        {
+          "name": "pC_6_6_s2_ret_1_1_t",
+          "value": -18.85,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1808-1819"
+        },
+        {
+          "name": "pC_6_6_s2_ret_36_13",
+          "value": -0.001,
+          "unit": "coefficient",
+          "tolerance_pct": 62,
+          "paper_location": "L1808-1819"
+        },
+        {
+          "name": "pC_6_6_s2_ret_36_13_t",
+          "value": -3.24,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1808-1819"
+        },
+        {
+          "name": "pC_6_6_s2_ind",
+          "value": 0.0154,
+          "unit": "coefficient",
+          "tolerance_pct": 79,
+          "paper_location": "L1808-1819"
+        },
+        {
+          "name": "pC_6_6_s2_ind_t",
+          "value": 2.53,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1808-1819"
+        },
+        {
+          "name": "pC_6_6_s2_ind_1_1",
+          "value": 0.1542,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1808-1819"
+        },
+        {
+          "name": "pC_6_6_s2_ind_1_1_t",
+          "value": 10.44,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1808-1819"
+        },
+        {
+          "name": "pC_6_6_s2_ind_36_13",
+          "value": -0.0015,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1808-1819"
+        },
+        {
+          "name": "pC_6_6_s2_ind_36_13_t",
+          "value": -1.02,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1808-1819"
+        },
+        {
+          "name": "pC_12_1_s1_beta",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1820-1831"
+        },
+        {
+          "name": "pC_12_1_s1_beta_t",
+          "value": 0.23,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1820-1831"
+        },
+        {
+          "name": "pC_12_1_s1_ln_size",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1820-1831"
+        },
+        {
+          "name": "pC_12_1_s1_ln_size_t",
+          "value": 0.27,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1820-1831"
+        },
+        {
+          "name": "pC_12_1_s1_be_me",
+          "value": 0.0014,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1820-1831"
+        },
+        {
+          "name": "pC_12_1_s1_be_me_t",
+          "value": 1.94,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1820-1831"
+        },
+        {
+          "name": "pC_12_1_s1_ret",
+          "value": 0.0873,
+          "unit": "coefficient",
+          "tolerance_pct": 70,
+          "paper_location": "L1820-1831"
+        },
+        {
+          "name": "pC_12_1_s1_ret_t",
+          "value": 2.84,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1820-1831"
+        },
+        {
+          "name": "pC_12_1_s1_ret_1_1",
+          "value": -0.0522,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1820-1831"
+        },
+        {
+          "name": "pC_12_1_s1_ret_1_1_t",
+          "value": -16.95,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1820-1831"
+        },
+        {
+          "name": "pC_12_1_s1_ret_36_13",
+          "value": -0.001,
+          "unit": "coefficient",
+          "tolerance_pct": 64,
+          "paper_location": "L1820-1831"
+        },
+        {
+          "name": "pC_12_1_s1_ret_36_13_t",
+          "value": -3.11,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1820-1831"
+        },
+        {
+          "name": "pC_12_1_s1_ind",
+          "value": 0.0221,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1820-1831"
+        },
+        {
+          "name": "pC_12_1_s1_ind_t",
+          "value": 6.87,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1820-1831"
+        },
+        {
+          "name": "pC_12_1_s2_beta",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1832-1843"
+        },
+        {
+          "name": "pC_12_1_s2_beta_t",
+          "value": 0.28,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1832-1843"
+        },
+        {
+          "name": "pC_12_1_s2_ln_size",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1832-1843"
+        },
+        {
+          "name": "pC_12_1_s2_ln_size_t",
+          "value": 0.24,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1832-1843"
+        },
+        {
+          "name": "pC_12_1_s2_be_me",
+          "value": 0.0014,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1832-1843"
+        },
+        {
+          "name": "pC_12_1_s2_be_me_t",
+          "value": 1.95,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1832-1843"
+        },
+        {
+          "name": "pC_12_1_s2_ret",
+          "value": 0.088,
+          "unit": "coefficient",
+          "tolerance_pct": 70,
+          "paper_location": "L1832-1843"
+        },
+        {
+          "name": "pC_12_1_s2_ret_t",
+          "value": 2.87,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1832-1843"
+        },
+        {
+          "name": "pC_12_1_s2_ret_1_1",
+          "value": -0.0542,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1832-1843"
+        },
+        {
+          "name": "pC_12_1_s2_ret_1_1_t",
+          "value": -17.59,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1832-1843"
+        },
+        {
+          "name": "pC_12_1_s2_ret_36_13",
+          "value": -0.001,
+          "unit": "coefficient",
+          "tolerance_pct": 63,
+          "paper_location": "L1832-1843"
+        },
+        {
+          "name": "pC_12_1_s2_ret_36_13_t",
+          "value": -3.19,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1832-1843"
+        },
+        {
+          "name": "pC_12_1_s2_ind",
+          "value": 0.0116,
+          "unit": "coefficient",
+          "tolerance_pct": 57,
+          "paper_location": "L1832-1843"
+        },
+        {
+          "name": "pC_12_1_s2_ind_t",
+          "value": 3.52,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1832-1843"
+        },
+        {
+          "name": "pC_12_1_s2_ind_1_1",
+          "value": 0.1453,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1832-1843"
+        },
+        {
+          "name": "pC_12_1_s2_ind_1_1_t",
+          "value": 9.62,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1832-1843"
+        },
+        {
+          "name": "pC_12_1_s2_ind_36_13",
+          "value": -0.0006,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1832-1843"
+        },
+        {
+          "name": "pC_12_1_s2_ind_36_13_t",
+          "value": -0.42,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1832-1843"
+        },
+        {
+          "name": "pC_12_12_s1_beta",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1844-1855"
+        },
+        {
+          "name": "pC_12_12_s1_beta_t",
+          "value": 0.23,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1844-1855"
+        },
+        {
+          "name": "pC_12_12_s1_ln_size",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1844-1855"
+        },
+        {
+          "name": "pC_12_12_s1_ln_size_t",
+          "value": 0.6,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1844-1855"
+        },
+        {
+          "name": "pC_12_12_s1_be_me",
+          "value": 0.0011,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1844-1855"
+        },
+        {
+          "name": "pC_12_12_s1_be_me_t",
+          "value": 1.8,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1844-1855"
+        },
+        {
+          "name": "pC_12_12_s1_ret",
+          "value": 0.0597,
+          "unit": "coefficient",
+          "tolerance_pct": 98,
+          "paper_location": "L1844-1855"
+        },
+        {
+          "name": "pC_12_12_s1_ret_t",
+          "value": 2.04,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1844-1855"
+        },
+        {
+          "name": "pC_12_12_s1_ret_1_1",
+          "value": -0.0444,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1844-1855"
+        },
+        {
+          "name": "pC_12_12_s1_ret_1_1_t",
+          "value": -16.5,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1844-1855"
+        },
+        {
+          "name": "pC_12_12_s1_ret_36_13",
+          "value": -0.0017,
+          "unit": "coefficient",
+          "tolerance_pct": 50,
+          "paper_location": "L1844-1855"
+        },
+        {
+          "name": "pC_12_12_s1_ret_36_13_t",
+          "value": -4.0,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1844-1855"
+        },
+        {
+          "name": "pC_12_12_s1_ind",
+          "value": 0.0089,
+          "unit": "coefficient",
+          "tolerance_pct": 96,
+          "paper_location": "L1844-1855"
+        },
+        {
+          "name": "pC_12_12_s1_ind_t",
+          "value": 2.08,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1844-1855"
+        },
+        {
+          "name": "pC_12_12_s2_beta",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1856-1867"
+        },
+        {
+          "name": "pC_12_12_s2_beta_t",
+          "value": 0.3,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1856-1867"
+        },
+        {
+          "name": "pC_12_12_s2_ln_size",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1856-1867"
+        },
+        {
+          "name": "pC_12_12_s2_ln_size_t",
+          "value": 0.49,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1856-1867"
+        },
+        {
+          "name": "pC_12_12_s2_be_me",
+          "value": 0.0011,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1856-1867"
+        },
+        {
+          "name": "pC_12_12_s2_be_me_t",
+          "value": 1.8,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1856-1867"
+        },
+        {
+          "name": "pC_12_12_s2_ret",
+          "value": 0.0571,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1856-1867"
+        },
+        {
+          "name": "pC_12_12_s2_ret_t",
+          "value": 1.98,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1856-1867"
+        },
+        {
+          "name": "pC_12_12_s2_ret_1_1",
+          "value": -0.0468,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1856-1867"
+        },
+        {
+          "name": "pC_12_12_s2_ret_1_1_t",
+          "value": -17.36,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1856-1867"
+        },
+        {
+          "name": "pC_12_12_s2_ret_36_13",
+          "value": -0.0016,
+          "unit": "coefficient",
+          "tolerance_pct": 49,
+          "paper_location": "L1856-1867"
+        },
+        {
+          "name": "pC_12_12_s2_ret_36_13_t",
+          "value": -4.06,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1856-1867"
+        },
+        {
+          "name": "pC_12_12_s2_ind",
+          "value": 0.0096,
+          "unit": "coefficient",
+          "tolerance_pct": 94,
+          "paper_location": "L1856-1867"
+        },
+        {
+          "name": "pC_12_12_s2_ind_t",
+          "value": 2.13,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1856-1867"
+        },
+        {
+          "name": "pC_12_12_s2_ind_1_1",
+          "value": 0.1603,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1856-1867"
+        },
+        {
+          "name": "pC_12_12_s2_ind_1_1_t",
+          "value": 10.55,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1856-1867"
+        },
+        {
+          "name": "pC_12_12_s2_ind_36_13",
+          "value": -0.0032,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1856-1867"
+        },
+        {
+          "name": "pC_12_12_s2_ind_36_13_t",
+          "value": -1.84,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1856-1867"
+        },
+        {
+          "name": "pD_7_2_s1_beta",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1899-1910"
+        },
+        {
+          "name": "pD_7_2_s1_beta_t",
+          "value": 0.02,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1899-1910"
+        },
+        {
+          "name": "pD_7_2_s1_ln_size",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1899-1910"
+        },
+        {
+          "name": "pD_7_2_s1_ln_size_t",
+          "value": 0.81,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1899-1910"
+        },
+        {
+          "name": "pD_7_2_s1_be_me",
+          "value": 0.0014,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1899-1910"
+        },
+        {
+          "name": "pD_7_2_s1_be_me_t",
+          "value": 1.8,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1899-1910"
+        },
+        {
+          "name": "pD_7_2_s1_ret",
+          "value": 0.0326,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1899-1910"
+        },
+        {
+          "name": "pD_7_2_s1_ret_t",
+          "value": 1.87,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1899-1910"
+        },
+        {
+          "name": "pD_7_2_s1_ret_1_1",
+          "value": -0.044,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1899-1910"
+        },
+        {
+          "name": "pD_7_2_s1_ret_1_1_t",
+          "value": -15.58,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1899-1910"
+        },
+        {
+          "name": "pD_7_2_s1_ret_36_13",
+          "value": -0.0011,
+          "unit": "coefficient",
+          "tolerance_pct": 60,
+          "paper_location": "L1899-1910"
+        },
+        {
+          "name": "pD_7_2_s1_ret_36_13_t",
+          "value": -3.33,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1899-1910"
+        },
+        {
+          "name": "pD_7_2_s1_ind",
+          "value": 0.0218,
+          "unit": "coefficient",
+          "tolerance_pct": 51,
+          "paper_location": "L1899-1910"
+        },
+        {
+          "name": "pD_7_2_s1_ind_t",
+          "value": 3.92,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1899-1910"
+        },
+        {
+          "name": "pD_7_2_s2_beta",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1911-1922"
+        },
+        {
+          "name": "pD_7_2_s2_beta_t",
+          "value": 0.01,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1911-1922"
+        },
+        {
+          "name": "pD_7_2_s2_ln_size",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1911-1922"
+        },
+        {
+          "name": "pD_7_2_s2_ln_size_t",
+          "value": 0.8,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1911-1922"
+        },
+        {
+          "name": "pD_7_2_s2_be_me",
+          "value": 0.0013,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1911-1922"
+        },
+        {
+          "name": "pD_7_2_s2_be_me_t",
+          "value": 1.8,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1911-1922"
+        },
+        {
+          "name": "pD_7_2_s2_ret",
+          "value": 0.0321,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1911-1922"
+        },
+        {
+          "name": "pD_7_2_s2_ret_t",
+          "value": 1.84,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1911-1922"
+        },
+        {
+          "name": "pD_7_2_s2_ret_1_1",
+          "value": -0.0461,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1911-1922"
+        },
+        {
+          "name": "pD_7_2_s2_ret_1_1_t",
+          "value": -16.48,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1911-1922"
+        },
+        {
+          "name": "pD_7_2_s2_ret_36_13",
+          "value": -0.001,
+          "unit": "coefficient",
+          "tolerance_pct": 63,
+          "paper_location": "L1911-1922"
+        },
+        {
+          "name": "pD_7_2_s2_ret_36_13_t",
+          "value": -3.18,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1911-1922"
+        },
+        {
+          "name": "pD_7_2_s2_ind",
+          "value": 0.0142,
+          "unit": "coefficient",
+          "tolerance_pct": 78,
+          "paper_location": "L1911-1922"
+        },
+        {
+          "name": "pD_7_2_s2_ind_t",
+          "value": 2.55,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1911-1922"
+        },
+        {
+          "name": "pD_7_2_s2_ind_1_1",
+          "value": 0.1575,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1911-1922"
+        },
+        {
+          "name": "pD_7_2_s2_ind_1_1_t",
+          "value": 10.22,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1911-1922"
+        },
+        {
+          "name": "pD_7_2_s2_ind_36_13",
+          "value": -0.0016,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1911-1922"
+        },
+        {
+          "name": "pD_7_2_s2_ind_36_13_t",
+          "value": -1.0,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1911-1922"
+        },
+        {
+          "name": "pD_6_6s_s1_beta",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1923-1934"
+        },
+        {
+          "name": "pD_6_6s_s1_beta_t",
+          "value": 0.27,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1923-1934"
+        },
+        {
+          "name": "pD_6_6s_s1_ln_size",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1923-1934"
+        },
+        {
+          "name": "pD_6_6s_s1_ln_size_t",
+          "value": 0.26,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1923-1934"
+        },
+        {
+          "name": "pD_6_6s_s1_be_me",
+          "value": 0.0015,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1923-1934"
+        },
+        {
+          "name": "pD_6_6s_s1_be_me_t",
+          "value": 1.93,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1923-1934"
+        },
+        {
+          "name": "pD_6_6s_s1_ret",
+          "value": 0.0533,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1923-1934"
+        },
+        {
+          "name": "pD_6_6s_s1_ret_t",
+          "value": 1.98,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1923-1934"
+        },
+        {
+          "name": "pD_6_6s_s1_ret_1_1",
+          "value": -0.0445,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1923-1934"
+        },
+        {
+          "name": "pD_6_6s_s1_ret_1_1_t",
+          "value": -16.31,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1923-1934"
+        },
+        {
+          "name": "pD_6_6s_s1_ret_36_13",
+          "value": -0.0011,
+          "unit": "coefficient",
+          "tolerance_pct": 60,
+          "paper_location": "L1923-1934"
+        },
+        {
+          "name": "pD_6_6s_s1_ret_36_13_t",
+          "value": -3.32,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1923-1934"
+        },
+        {
+          "name": "pD_6_6s_s1_ind",
+          "value": 0.0174,
+          "unit": "coefficient",
+          "tolerance_pct": 71,
+          "paper_location": "L1923-1934"
+        },
+        {
+          "name": "pD_6_6s_s1_ind_t",
+          "value": 2.8,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1923-1934"
+        },
+        {
+          "name": "pD_6_6s_s2_beta",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1935-1946"
+        },
+        {
+          "name": "pD_6_6s_s2_beta_t",
+          "value": 0.33,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1935-1946"
+        },
+        {
+          "name": "pD_6_6s_s2_ln_size",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1935-1946"
+        },
+        {
+          "name": "pD_6_6s_s2_ln_size_t",
+          "value": 0.33,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1935-1946"
+        },
+        {
+          "name": "pD_6_6s_s2_be_me",
+          "value": 0.0014,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1935-1946"
+        },
+        {
+          "name": "pD_6_6s_s2_be_me_t",
+          "value": 1.93,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1935-1946"
+        },
+        {
+          "name": "pD_6_6s_s2_ret",
+          "value": 0.0542,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1935-1946"
+        },
+        {
+          "name": "pD_6_6s_s2_ret_t",
+          "value": 1.79,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1935-1946"
+        },
+        {
+          "name": "pD_6_6s_s2_ret_1_1",
+          "value": -0.0467,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1935-1946"
+        },
+        {
+          "name": "pD_6_6s_s2_ret_1_1_t",
+          "value": -17.21,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1935-1946"
+        },
+        {
+          "name": "pD_6_6s_s2_ret_36_13",
+          "value": -0.001,
+          "unit": "coefficient",
+          "tolerance_pct": 62,
+          "paper_location": "L1935-1946"
+        },
+        {
+          "name": "pD_6_6s_s2_ret_36_13_t",
+          "value": -3.25,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1935-1946"
+        },
+        {
+          "name": "pD_6_6s_s2_ind",
+          "value": 0.0142,
+          "unit": "coefficient",
+          "tolerance_pct": 83,
+          "paper_location": "L1935-1946"
+        },
+        {
+          "name": "pD_6_6s_s2_ind_t",
+          "value": 2.41,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1935-1946"
+        },
+        {
+          "name": "pD_6_6s_s2_ind_1_1",
+          "value": 0.1587,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1935-1946"
+        },
+        {
+          "name": "pD_6_6s_s2_ind_1_1_t",
+          "value": 10.74,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1935-1946"
+        },
+        {
+          "name": "pD_6_6s_s2_ind_36_13",
+          "value": -0.0016,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1935-1946"
+        },
+        {
+          "name": "pD_6_6s_s2_ind_36_13_t",
+          "value": -1.03,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1935-1946"
+        },
+        {
+          "name": "pD_12_2_s1_beta",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1947-1958"
+        },
+        {
+          "name": "pD_12_2_s1_beta_t",
+          "value": 0.26,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1947-1958"
+        },
+        {
+          "name": "pD_12_2_s1_ln_size",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1947-1958"
+        },
+        {
+          "name": "pD_12_2_s1_ln_size_t",
+          "value": 0.29,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1947-1958"
+        },
+        {
+          "name": "pD_12_2_s1_be_me",
+          "value": 0.0014,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1947-1958"
+        },
+        {
+          "name": "pD_12_2_s1_be_me_t",
+          "value": 1.92,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1947-1958"
+        },
+        {
+          "name": "pD_12_2_s1_ret",
+          "value": 0.0775,
+          "unit": "coefficient",
+          "tolerance_pct": 73,
+          "paper_location": "L1947-1958"
+        },
+        {
+          "name": "pD_12_2_s1_ret_t",
+          "value": 2.75,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1947-1958"
+        },
+        {
+          "name": "pD_12_2_s1_ret_1_1",
+          "value": -0.0445,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1947-1958"
+        },
+        {
+          "name": "pD_12_2_s1_ret_1_1_t",
+          "value": -16.46,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1947-1958"
+        },
+        {
+          "name": "pD_12_2_s1_ret_36_13",
+          "value": -0.0012,
+          "unit": "coefficient",
+          "tolerance_pct": 54,
+          "paper_location": "L1947-1958"
+        },
+        {
+          "name": "pD_12_2_s1_ret_36_13_t",
+          "value": -3.71,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1947-1958"
+        },
+        {
+          "name": "pD_12_2_s1_ind",
+          "value": 0.0156,
+          "unit": "coefficient",
+          "tolerance_pct": 42,
+          "paper_location": "L1947-1958"
+        },
+        {
+          "name": "pD_12_2_s1_ind_t",
+          "value": 4.72,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1947-1958"
+        },
+        {
+          "name": "pD_12_2_s2_beta",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1959-1970"
+        },
+        {
+          "name": "pD_12_2_s2_beta_t",
+          "value": 0.35,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1959-1970"
+        },
+        {
+          "name": "pD_12_2_s2_ln_size",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1959-1970"
+        },
+        {
+          "name": "pD_12_2_s2_ln_size_t",
+          "value": 0.3,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1959-1970"
+        },
+        {
+          "name": "pD_12_2_s2_be_me",
+          "value": 0.0014,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1959-1970"
+        },
+        {
+          "name": "pD_12_2_s2_be_me_t",
+          "value": 1.93,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1959-1970"
+        },
+        {
+          "name": "pD_12_2_s2_ret",
+          "value": 0.0757,
+          "unit": "coefficient",
+          "tolerance_pct": 74,
+          "paper_location": "L1959-1970"
+        },
+        {
+          "name": "pD_12_2_s2_ret_t",
+          "value": 2.7,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1959-1970"
+        },
+        {
+          "name": "pD_12_2_s2_ret_1_1",
+          "value": -0.0467,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1959-1970"
+        },
+        {
+          "name": "pD_12_2_s2_ret_1_1_t",
+          "value": -17.26,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1959-1970"
+        },
+        {
+          "name": "pD_12_2_s2_ret_36_13",
+          "value": -0.0011,
+          "unit": "coefficient",
+          "tolerance_pct": 54,
+          "paper_location": "L1959-1970"
+        },
+        {
+          "name": "pD_12_2_s2_ret_36_13_t",
+          "value": -3.73,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1959-1970"
+        },
+        {
+          "name": "pD_12_2_s2_ind",
+          "value": 0.0114,
+          "unit": "coefficient",
+          "tolerance_pct": 57,
+          "paper_location": "L1959-1970"
+        },
+        {
+          "name": "pD_12_2_s2_ind_t",
+          "value": 3.51,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1959-1970"
+        },
+        {
+          "name": "pD_12_2_s2_ind_1_1",
+          "value": 0.1566,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1959-1970"
+        },
+        {
+          "name": "pD_12_2_s2_ind_1_1_t",
+          "value": 10.72,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1959-1970"
+        },
+        {
+          "name": "pD_12_2_s2_ind_36_13",
+          "value": -0.001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1959-1970"
+        },
+        {
+          "name": "pD_12_2_s2_ind_36_13_t",
+          "value": -0.7,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1959-1970"
+        },
+        {
+          "name": "pD_12_12s_s1_beta",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1971-1982"
+        },
+        {
+          "name": "pD_12_12s_s1_beta_t",
+          "value": 0.24,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1971-1982"
+        },
+        {
+          "name": "pD_12_12s_s1_ln_size",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1971-1982"
+        },
+        {
+          "name": "pD_12_12s_s1_ln_size_t",
+          "value": 0.65,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1971-1982"
+        },
+        {
+          "name": "pD_12_12s_s1_be_me",
+          "value": 0.0011,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1971-1982"
+        },
+        {
+          "name": "pD_12_12s_s1_be_me_t",
+          "value": 1.74,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1971-1982"
+        },
+        {
+          "name": "pD_12_12s_s1_ret",
+          "value": 0.0519,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1971-1982"
+        },
+        {
+          "name": "pD_12_12s_s1_ret_t",
+          "value": 1.92,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1971-1982"
+        },
+        {
+          "name": "pD_12_12s_s1_ret_1_1",
+          "value": -0.0439,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1971-1982"
+        },
+        {
+          "name": "pD_12_12s_s1_ret_1_1_t",
+          "value": -15.95,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1971-1982"
+        },
+        {
+          "name": "pD_12_12s_s1_ret_36_13",
+          "value": -0.0017,
+          "unit": "coefficient",
+          "tolerance_pct": 52,
+          "paper_location": "L1971-1982"
+        },
+        {
+          "name": "pD_12_12s_s1_ret_36_13_t",
+          "value": -3.88,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1971-1982"
+        },
+        {
+          "name": "pD_12_12s_s1_ind",
+          "value": 0.0073,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1971-1982"
+        },
+        {
+          "name": "pD_12_12s_s1_ind_t",
+          "value": 1.69,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1971-1982"
+        },
+        {
+          "name": "pD_12_12s_s2_beta",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1983-1994"
+        },
+        {
+          "name": "pD_12_12s_s2_beta_t",
+          "value": 0.3,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1983-1994"
+        },
+        {
+          "name": "pD_12_12s_s2_ln_size",
+          "value": 0.0001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1983-1994"
+        },
+        {
+          "name": "pD_12_12s_s2_ln_size_t",
+          "value": 0.55,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1983-1994"
+        },
+        {
+          "name": "pD_12_12s_s2_be_me",
+          "value": 0.001,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1983-1994"
+        },
+        {
+          "name": "pD_12_12s_s2_be_me_t",
+          "value": 1.73,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1983-1994"
+        },
+        {
+          "name": "pD_12_12s_s2_ret",
+          "value": 0.0491,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1983-1994"
+        },
+        {
+          "name": "pD_12_12s_s2_ret_t",
+          "value": 1.83,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1983-1994"
+        },
+        {
+          "name": "pD_12_12s_s2_ret_1_1",
+          "value": -0.0463,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1983-1994"
+        },
+        {
+          "name": "pD_12_12s_s2_ret_1_1_t",
+          "value": -16.83,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1983-1994"
+        },
+        {
+          "name": "pD_12_12s_s2_ret_36_13",
+          "value": -0.0016,
+          "unit": "coefficient",
+          "tolerance_pct": 51,
+          "paper_location": "L1983-1994"
+        },
+        {
+          "name": "pD_12_12s_s2_ret_36_13_t",
+          "value": -3.93,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1983-1994"
+        },
+        {
+          "name": "pD_12_12s_s2_ind",
+          "value": 0.0088,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1983-1994"
+        },
+        {
+          "name": "pD_12_12s_s2_ind_t",
+          "value": 1.94,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1983-1994"
+        },
+        {
+          "name": "pD_12_12s_s2_ind_1_1",
+          "value": 0.1628,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1983-1994"
+        },
+        {
+          "name": "pD_12_12s_s2_ind_1_1_t",
+          "value": 10.71,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1983-1994"
+        },
+        {
+          "name": "pD_12_12s_s2_ind_36_13",
+          "value": -0.0033,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L1983-1994"
+        },
+        {
+          "name": "pD_12_12s_s2_ind_36_13_t",
+          "value": -1.88,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1983-1994"
+        }
+      ],
+      "notes": null
+    }
+  ]
+}

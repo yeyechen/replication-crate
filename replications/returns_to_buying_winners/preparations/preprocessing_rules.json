@@ -1,0 +1,247 @@
+[
+  {
+    "rule_id": "universe_exchanges",
+    "category": "universe",
+    "section": "§I Introduction",
+    "paper_location": "L85",
+    "paper_quote": "Our analysis of NYSE and AMEX stocks documents significant profits in the 1965 to 1989 sample period for each of the relative strength strategies examined."
+  },
+  {
+    "rule_id": "sort_skip_week_panel_b",
+    "category": "sort",
+    "section": "§I Trading Strategies",
+    "paper_location": "L109",
+    "paper_quote": "In addition, we examine a second set of 16 strategies that skip a week between the portfolio formation period and the holding period."
+  },
+  {
+    "rule_id": "sort_formation_rank",
+    "category": "sort",
+    "section": "§I Trading Strategies",
+    "paper_location": "L111",
+    "paper_quote": "At the beginning of each month $t$ the securities are ranked in ascending order on the basis of their returns in the past $J$ months."
+  },
+  {
+    "rule_id": "var_decile_ew_portfolios",
+    "category": "variable",
+    "section": "§I Trading Strategies",
+    "paper_location": "L111",
+    "paper_quote": "Based on these rankings, ten decile portfolios are formed that equally weight the stocks contained in the top decile, the second decile, and so on."
+  },
+  {
+    "rule_id": "var_losers_winners_deciles",
+    "category": "variable",
+    "section": "§I Trading Strategies",
+    "paper_location": "L111",
+    "paper_quote": "The top decile portfolio is called the “losers” decile and the bottom decile is called the “winners” decile."
+  },
+  {
+    "rule_id": "sort_overlapping_holding",
+    "category": "sort",
+    "section": "§I Trading Strategies",
+    "paper_location": "L111",
+    "paper_quote": "Therefore, in any given month $t$ , the strategies hold a series of portfolios that are selected in the current month as well as in the previous $K - 1$ months, where $K$ is the holding period."
+  },
+  {
+    "rule_id": "sort_rebalance_fraction",
+    "category": "sort",
+    "section": "§I Trading Strategies",
+    "paper_location": "L111",
+    "paper_quote": "Hence, under this trading strategy we revise the weights on $\\frac{1}{K}$ of the securities in the entire portfolio in any given month and carry over the rest from the previous month."
+  },
+  {
+    "rule_id": "sort_monthly_rebalanced_ew",
+    "category": "sort",
+    "section": "§I Trading Strategies",
+    "paper_location": "L113",
+    "paper_quote": "Since the returns for these two strategies were very similar (the buy and hold strategies yielded slightly higher returns) we present only the rebalanced returns which are also used in the event study presented in Section VI."
+  },
+  {
+    "rule_id": "winsorize_none_paper_silent",
+    "category": "winsorize",
+    "section": "§II The Returns of Relative Strength Portfolios",
+    "paper_location": "L125",
+    "paper_quote": "All stocks with available returns data in the $J$ months preceding the portfolio formation date are included in the sample from which the buy and sell portfolios are constructed."
+  },
+  {
+    "rule_id": "delisting_paper_silent",
+    "category": "delisting",
+    "section": "§II (footnote 4)",
+    "paper_location": "L139",
+    "paper_quote": "The latest version of the CRSP daily returns file at the time this study was initiated covers the July 1962 to December 1989 period."
+  },
+  {
+    "rule_id": "sample_data_source",
+    "category": "sample",
+    "section": "§II (footnote 4)",
+    "paper_location": "L139",
+    "paper_quote": "The latest version of the CRSP daily returns file at the time this study was initiated covers the July 1962 to December 1989 period."
+  },
+  {
+    "rule_id": "var_monthly_from_daily_compounding",
+    "category": "variable",
+    "section": "§II (footnote 4)",
+    "paper_location": "L139",
+    "paper_quote": "Monthly returns were obtained by compounding the daily returns recorded in this data set."
+  },
+  {
+    "rule_id": "sample_first_full_year_1965",
+    "category": "sample",
+    "section": "§II (footnote 4)",
+    "paper_location": "L139",
+    "paper_quote": "Since the 12-month/12-month strategy considered here requires lagged returns data over 23 months the first full calendar year for which we could examine portfolio returns is 1965."
+  },
+  {
+    "rule_id": "var_buy_sell_portfolios",
+    "category": "variable",
+    "section": "Table I description",
+    "paper_location": "L157",
+    "paper_quote": "The stocks are ranked in ascending order on the basis of $J$ -month lagged returns and an equally weighted portfolio of stocks in the lowest past return decile is the *sell* portfolio and an equally weighted portfolio of the stocks in the highest return decile is the *buy* portfolio."
+  },
+  {
+    "rule_id": "sample_period_1965_1989",
+    "category": "sample",
+    "section": "Table I description",
+    "paper_location": "L157",
+    "paper_quote": "The $t$ -statistics are reported in parentheses. The sample period is January 1965 to December 1989."
+  },
+  {
+    "rule_id": "factor_one_factor_model",
+    "category": "factor",
+    "section": "§III.A A Simple One-Factor Model",
+    "paper_location": "L326",
+    "paper_quote": "r_{it} = \\mu_i + b_i f_t + e_{it},"
+  },
+  {
+    "rule_id": "fm_wrss_cross_sectional_weights",
+    "category": "fm",
+    "section": "§III.A",
+    "paper_location": "L367",
+    "paper_quote": "The above cross-sectional covariance equals the expected profits from the zero-cost contrarian trading strategy examined by Lehmann (1990) and Lo and MacKinlay (1990) that weights stocks by their past returns less the past equally weighted index returns."
+  },
+  {
+    "rule_id": "var_post_ranking_beta_and_mcap",
+    "category": "variable",
+    "section": "§III.B",
+    "paper_location": "L396",
+    "paper_quote": "Table II reports estimates of the two most common indicators of systematic risk, the post-ranking betas of the ten 6-month/6-month relative strength portfolios and the average capitalizations of the stocks in these portfolios."
+  },
+  {
+    "rule_id": "var_beta_vw_index_table_ii",
+    "category": "variable",
+    "section": "Table II description",
+    "paper_location": "L408",
+    "paper_quote": "The betas with respect to the value-weighted index and the average market capitalizations of the stocks included in these portfolios are reported here."
+  },
+  {
+    "rule_id": "var_serial_cov_ew_index",
+    "category": "variable",
+    "section": "§III.C",
+    "paper_location": "L444",
+    "paper_quote": "However, we find that the serial covariance of 6-month returns of the equally weighted index is negative (−0.0028) which, from the decomposition in expression (3), reduces the relative strength profits."
+  },
+  {
+    "rule_id": "var_serial_cov_market_model_residuals",
+    "category": "variable",
+    "section": "§III.C",
+    "paper_location": "L458",
+    "paper_quote": "The estimates of the serial covariance of market model residuals for individual stocks are on average positive (0.0012)."
+  },
+  {
+    "rule_id": "factor_vw_index_proxy",
+    "category": "factor",
+    "section": "§III.D",
+    "paper_location": "L526",
+    "paper_quote": "To examine which of these predictions best explains the time-series variation in relative strength profits we estimate the following regression using the value-weighted index as a proxy for the factor portfolio:"
+  },
+  {
+    "rule_id": "sample_size_and_beta_subsamples",
+    "category": "sample",
+    "section": "§IV",
+    "paper_location": "L542",
+    "paper_quote": "Specifically, we implement this strategy on three size-based subsamples (small, medium, and large), and three beta-based subsamples (low-beta, medium-beta, and high-beta stocks)."
+  },
+  {
+    "rule_id": "fm_market_model_alpha",
+    "category": "fm",
+    "section": "§IV",
+    "paper_location": "L564",
+    "paper_quote": "The risk-adjusted returns are estimated as the intercepts from the following market model regression:"
+  },
+  {
+    "rule_id": "var_turnover_semiannual",
+    "category": "variable",
+    "section": "§IV",
+    "paper_location": "L575",
+    "paper_quote": "On average, the relative strength trading rule results in a turnover of 84.8% semiannually."
+  },
+  {
+    "rule_id": "var_return_net_of_costs",
+    "category": "variable",
+    "section": "§IV",
+    "paper_location": "L575",
+    "paper_quote": "The risk-adjusted return of the relative strength trading rule after considering a 0.5% one-way transaction cost $^{13}$ is 9.29% per year, which is reliably different from zero."
+  },
+  {
+    "rule_id": "var_size_terciles_s1_s2_s3",
+    "category": "variable",
+    "section": "Table III description",
+    "paper_location": "L603",
+    "paper_quote": "The subsample S1 contains the smallest firms, S2 contains the medium-sized firms, and S3 contains the largest firms."
+  },
+  {
+    "rule_id": "var_scholes_williams_beta_prior_year",
+    "category": "variable",
+    "section": "Table III description",
+    "paper_location": "L603",
+    "paper_quote": "The subsamples $\\beta_1$ , $\\beta_2$ , and $\\beta_3$ contain the firms with the smallest, medium, and the largest Scholes-Williams betas estimated from the returns data in the calendar year prior to portfolio formation."
+  },
+  {
+    "rule_id": "sample_calendar_month_tabulation",
+    "category": "sample",
+    "section": "Table IV description",
+    "paper_location": "L925",
+    "paper_quote": "This table reports the average monthly returns of the zero-cost, buy minus sell, portfolio in each calendar month."
+  },
+  {
+    "rule_id": "var_event_time_cumulative",
+    "category": "variable",
+    "section": "§VI",
+    "paper_location": "L1258",
+    "paper_quote": "Table VII presents the average monthly and cumulative returns of the zero-cost portfolio in event time in the 36 months after the formation date."
+  },
+  {
+    "rule_id": "var_newey_west_cumulative_tstats",
+    "category": "variable",
+    "section": "§VI (footnote 16)",
+    "paper_location": "L1264",
+    "paper_quote": "Since overlapping returns are used to calculate the cumulative returns in event time, the autocorrelation-consistent Newey-West standard errors are used to compute the $t$-statistics for the cumulative returns (see Newey and West (1987))."
+  },
+  {
+    "rule_id": "sample_backtest_periods",
+    "category": "sample",
+    "section": "§VII",
+    "paper_location": "L1579",
+    "paper_quote": "Specifically, we replicate the test in Table VII, which tracks the performance of the 6-month relative strength portfolio in event time for both the 1927 to 1940 time period and the 1941 to 1964 time period."
+  },
+  {
+    "rule_id": "var_earnings_announcement_dates",
+    "category": "variable",
+    "section": "§VIII",
+    "paper_location": "L2058",
+    "paper_quote": "The quarterly earnings announcement dates used in this analysis are obtained from the COMPUSTAT quarterly industrial database."
+  },
+  {
+    "rule_id": "sample_earnings_period_1980_1989",
+    "category": "sample",
+    "section": "§VIII",
+    "paper_location": "L2058",
+    "paper_quote": "The sample period for this part of the study is 1980 to 1989, the period covered by the 1990 COMPUSTAT quarterly file."
+  },
+  {
+    "rule_id": "var_3day_announcement_return",
+    "category": "variable",
+    "section": "§VIII",
+    "paper_location": "L2060",
+    "paper_quote": "The 3-day returns (days −2 to 0) of the individual stocks in these groups are then calculated around each of their quarterly earnings announcements that occur within 36 months of the date at which the stocks are ranked according to their past returns."
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "replicable": true,
+  "paper_type": "empirical_cross_sectional",
+  "rationale": "Novy-Marx (2013) is a landmark cross-sectional asset pricing paper using CRSP/Compustat data (July 1963–December 2010). The methodology includes Fama-MacBeth regressions (Table 1), univariate and double-sorted portfolio sorts on gross profits-to-assets and book-to-market (Tables 2–7), conditional factor construction (Table 8), industry-adjusted factor models (Tables 9–10). All variables are operationalized with explicit Compustat item codes (GP, REVT, COGS, AT, IB, etc.), the sample period and universe filters are clearly stated, and Tables 1–10 report extensive numerical results with coefficients, t-statistics, and portfolio characteristics.",
+  "block_reasons": []
+}

@@ -1,0 +1,72 @@
+{
+  "verdict": "ready",
+  "coverage_pct": 100,
+  "catalog_generated_at": "2026-07-22T05:05:09.139809",
+  "requirements": [
+    {
+      "id": "crsp_monthly_returns",
+      "description": "Monthly stock returns, end-of-month price, and shares outstanding for NYSE/AMEX common stocks, May 1962 - April 1995 (formation-date market equity, annual buy-and-hold Year +1..+5 returns, size deciles).",
+      "needed_columns": ["permno", "date", "ret", "prc", "shrout", "vol"],
+      "matched_table": "crsp_202601.msf",
+      "matched_columns": ["permno", "date", "ret", "prc", "shrout", "vol"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_pit_security_info",
+      "description": "Point-in-time share code (10/11 ordinary common) and exchange code (1 NYSE, 2 AMEX) intervals per permno for the NYSE/AMEX universe filter, active at each end-of-April formation date.",
+      "needed_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd"],
+      "matched_table": "crsp_202601.dsenames",
+      "matched_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_delisting_returns",
+      "description": "Delisting dates, codes, and delisting returns to implement the paper's treatment of stocks that disappear from CRSP mid-year (replaced with the corresponding size-decile return through year end).",
+      "needed_columns": ["permno", "dlstdt", "dlstcd", "dlret"],
+      "matched_table": "crsp_202601.dsedelist",
+      "matched_columns": ["permno", "dlstdt", "dlstcd", "dlret"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_market_indices",
+      "description": "CRSP monthly market indices: value-weighted (vwretd) for Table VIII CAPM betas, equal-weighted (ewretd) for the size-decile benchmarks' cross-check and the Table VII W25/N88/P122/B25 market-state months.",
+      "needed_columns": ["date", "vwretd", "ewretd"],
+      "matched_table": "crsp_202601.msi",
+      "matched_columns": ["date", "vwretd", "ewretd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "compustat_annual_fundamentals",
+      "description": "Annual industrial fundamentals for the accounting variables: earnings before extraordinary items (ib), depreciation (dp), sales (sale), book-equity components (ceq, seq, che, at, lt, dlc, dltt, txdb, pstkrv), dividends (dvc), fiscal-year timing (fyear, datadate, fyr), and filters (indfmt, consol, popsrc, datafmt). Fiscal years 1957-1989 cover the 5-year pre-formation windows back to April 1968 formations and the +5 post-formation windows through April 1995.",
+      "needed_columns": ["gvkey", "datadate", "fyear", "fyr", "ib", "dp", "sale", "ceq", "seq", "che", "at", "lt", "dlc", "dltt", "txdb", "pstkrv", "dvc", "indfmt", "consol", "popsrc", "datafmt"],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": ["gvkey", "datadate", "fyear", "fyr", "ib", "dp", "sale", "ceq", "seq", "che", "at", "lt", "dlc", "dltt", "txdb", "pstkrv", "dvc", "indfmt", "consol", "popsrc", "datafmt"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_compustat_link",
+      "description": "CRSP-Compustat linking table to join gvkey fundamentals to CRSP permnos point-in-time (primary links, linkprim='P', linktype in LU/LC/LS as per standard CCM usage).",
+      "needed_columns": ["gvkey", "lpermno", "linkdt", "linkenddt", "linkprim", "linktype"],
+      "matched_table": "crsp_202601.ccmxpf_lnkhist",
+      "matched_columns": ["gvkey", "lpermno", "linkdt", "linkenddt", "linkprim", "linktype"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "riskfree_rate",
+      "description": "Monthly risk-free rate for excess-return CAPM betas in Table VIII (paper: 'corresponding returns on the value-weighted CRSP index and the risk-free asset', L2342).",
+      "needed_columns": ["dt", "rf"],
+      "matched_table": "ff.four_factor_monthly",
+      "matched_columns": ["dt", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    }
+  ],
+  "blocking_issues": [],
+  "notes": "All seven data requirements are fully covered by the catalog (crsp_202601, comp_202601, ff). Known scope limitation (not a data blocker): Table VII Panels 2A/2B require quarterly real GNP growth data (BEA), which is not present in ClickHouse; those panels were excluded at Stage 4 (see tables_to_replicate.json table_VII notes) while Panel 1 (market-month states, fully covered by CRSP monthly data) is replicated. Coverage risk flagged for Stage 7: Compustat funda coverage of NYSE/AMEX firms is thin before the 1978 database expansion the paper itself discusses (L118); early formation years (1968-1972) may have fewer firms than the paper's original vintage. This affects sample size, not column availability."
+}

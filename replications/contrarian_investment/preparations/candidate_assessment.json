@@ -1,0 +1,6 @@
+{
+  "replicable": true,
+  "paper_type": "empirical_cross_sectional",
+  "rationale": "Lakonishok, Shleifer, and Vishny (1994, Journal of Finance) is a canonical empirical cross-sectional study of value vs. glamour strategies. It reports 8 tables and 2 figures of quantitative results built entirely from CRSP returns and Compustat accounting data: annual decile and 3x3 portfolio sorts on B/M, C/P, E/P, and past sales growth (GS) over April 1968-April 1989 formation dates (22 periods), equal-weighted 5-year buy-and-hold returns, size-adjusted returns, Fama-MacBeth regressions, year-by-year value-minus-glamour spreads with Hansen-Hodrick t-statistics, portfolio performance across market states, and beta/standard-deviation risk measures. Every input (NYSE/AMEX monthly returns, delisting information, market indices, Compustat fundamentals: ib, dp, sale, book-equity items, dividends) is available in ClickHouse (crsp_202601, comp_202601.funda). The methodology section (paper lines 114-162) fully operationalizes the sample construction, making the paper highly replicable.",
+  "block_reasons": []
+}

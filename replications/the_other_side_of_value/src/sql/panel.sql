@@ -1,0 +1,142 @@
+-- panel.sql
+-- Purpose: DOCUMENTATION of the final panel assembly logic for
+--          Novy-Marx (2013). NOT executed by main.py — the same logic
+--          is implemented in pandas in src/main.py (steps M1-M6 below),
+--          where the fiscal-year mapping and dedup are easier to audit
+--          and debug. The CTE sketch at the bottom is the equivalent
+--          single-query form (reference only).
+-- Tables: outputs of compustat_funda.sql, crsp_monthly.sql,
+--         ccm_link.sql (+ crsp_202601.dsedelist for delisting returns)
+-- Output columns (final panel, one row per permno x month):
+--         permno, month, ret, me_crsp, prc, hexcd, hsiccd, r_1_0,
+--         r_12_2, fyear, gvkey, sich, at, gp_a, book_equity,
+--         earnings_be, fcf_be, me_dec, bm, log_bm, me_june, log_me
+-- Depends on: compustat_funda.sql, crsp_monthly.sql, ccm_link.sql
+--
+-- =====================================================================
+-- Merge logic (implemented in main.py)
+-- =====================================================================
+--
+-- M1. Compustat <-> CRSP link (temporal).
+--     inner join funda x link on gvkey,
+--     keep rows with linkdt <= datadate <= linkenddt.
+--
+-- M2. One firm-year per (permno, calyear).
+--     A permno can inherit several gvkeys (mergers) with overlapping
+--     link windows. Keep the record with the LARGEST total assets (at).
+--
+-- M3. Book-to-market with 6-month-lagged ME.
+--     me_dec = CRSP market equity (abs(prc)*shrout*1000, $) at the end
+--     of DECEMBER of the fiscal-year-end calendar year:
+--         join annual x monthly ON permno AND
+--              monthly.month = makeDate32(calyear, 12, 1).
+--     bm = book_equity / (me_dec / 1e6)   -- BE in $M (Compustat units),
+--     set bm = NULL when book_equity <= 0 (negative book equity excluded
+--     from B/M) or me_dec missing. log_bm = log(bm).
+--
+-- M4. Fiscal-year -> holding-period mapping (FF 1992 convention:
+--     accounting data for fiscal year y used from end of June y+1).
+--     For panel month t (month-start date, year Y, month M):
+--         calyear_used = Y - 1  if M >= 7      (portfolio formed Jun Y)
+--                        Y - 2  if M <= 6      (portfolio formed Jun Y-1)
+--     left join monthly x annual ON permno AND calyear = calyear_used.
+--     NOTE: the June row carries the PRIOR portfolio year's accounting
+--     data; the July cross-section is the one where variables measured
+--     at the June formation (gp_a from fiscal year Y-1, r_1_0 = ret of
+--     June, r_12_2 = cum ret [Jul Y-1 .. May Y]) line up exactly.
+--
+-- M5. Formation size (log_me).
+--     me_june = CRSP ME at the end of the formation June:
+--         formation year FY = Y      if M >= 7
+--                             Y - 1  if M <= 6
+--         join monthly x june_me ON permno AND june_year = FY.
+--     log_me = log(me_june / 1e6)  (log of ME in $ millions, per the
+--     paper's "market equity is lagged six months").
+--
+-- M6. Delisting adjustment (paper silent; assumptions.md #1: use dlret
+--     when available, NO imputation for missing dlret).
+--     On each permno's LAST monthly row within the sample, when the
+--     delisting month (dsedelist.dlstdt, in-sample only) equals that
+--     last month or the month after it:
+--         ret <- (1 + ret) * (1 + dlret) - 1   (or dlret alone if ret
+--         is missing), where dlret is dsedelist.dlret (sentinels < -1
+--     dropped; -1 "worthless" kept; missing dlret -> no adjustment).
+--     Stocks still trading at the sample end (Dec 2010) get NO
+--     adjustment — their post-2010 delisting returns are out of sample.
+--
+-- Finally: restrict to sample months 1963-07 .. 2010-12 and save
+-- data/panel.parquet. r_1_0 / r_12_2 are precomputed in
+-- crsp_monthly.sql (SQL window functions) BEFORE the delisting
+-- adjustment (they reference only past months of the stock).
+--
+-- =====================================================================
+-- Reference single-query form (NOT executed — documentation only)
+-- =====================================================================
+-- WITH
+--   monthly AS (
+--       <body of crsp_monthly.sql>                  -- ~2.5M rows
+--   ),
+--   funda AS (
+--       <body of compustat_funda.sql>               -- ~380k firm-years
+--   ),
+--   link AS (
+--       <body of ccm_link.sql>
+--   ),
+--   linked AS (                                     -- M1
+--       SELECT f.*, l.permno
+--       FROM funda AS f
+--       INNER JOIN link AS l
+--         ON f.gvkey = l.gvkey
+--        AND toDate32(f.datadate) >= toDate32(l.linkdt)
+--        AND toDate32(f.datadate) <= toDate32(l.linkenddt)
+--   ),
+--   annual AS (                                     -- M2
+--       SELECT permno, calyear,
+--              argMax(fyear, at)        AS fyear,
+--              argMax(gvkey, at)        AS gvkey,
+--              argMax(sich, at)         AS sich,
+--              argMax(at, at)           AS at,
+--              argMax(gp_a, at)         AS gp_a,
+--              argMax(book_equity, at)  AS book_equity,
+--              argMax(earnings_be, at)  AS earnings_be,
+--              argMax(fcf_be, at)       AS fcf_be
+--       FROM linked
+--       GROUP BY permno, calyear
+--   ),
+--   dec_me AS (                                     -- M3 (ME source)
+--       SELECT permno, toYear(month) AS calyear, me
+--       FROM monthly WHERE toMonth(month) = 12
+--   ),
+--   bm AS (                                         -- M3
+--       SELECT a.*,
+--              d.me AS me_dec,
+--              if(a.book_equity > 0 AND d.me > 0,
+--                 a.book_equity / (d.me / 1000000), NULL) AS bm,
+--              if(a.book_equity > 0 AND d.me > 0,
+--                 log(a.book_equity / (d.me / 1000000)), NULL) AS log_bm
+--       FROM annual AS a
+--       LEFT JOIN dec_me AS d
+--         ON a.permno = d.permno AND a.calyear = d.calyear
+--   ),
+--   june_me AS (                                    -- M5 (ME source)
+--       SELECT permno, toYear(month) AS fyr, me AS me_june
+--       FROM monthly WHERE toMonth(month) = 6
+--   )
+-- SELECT                                            -- M4 + M5
+--     m.permno, m.month, m.ret, m.me AS me_crsp, m.prc, m.hexcd,
+--     m.hsiccd, m.r_1_0, m.r_12_2,
+--     b.fyear, b.gvkey, b.sich, b.at, b.gp_a, b.book_equity,
+--     b.earnings_be, b.fcf_be, b.me_dec, b.bm, b.log_bm,
+--     j.me_june,
+--     if(j.me_june > 0, log(j.me_june / 1000000), NULL) AS log_me
+-- FROM monthly AS m
+-- LEFT JOIN bm AS b
+--   ON m.permno = b.permno
+--  AND b.calyear = if(toMonth(m.month) >= 7,
+--                     toYear(m.month) - 1, toYear(m.month) - 2)
+-- LEFT JOIN june_me AS j
+--   ON m.permno = j.permno
+--  AND j.fyr = if(toMonth(m.month) >= 7,
+--                 toYear(m.month), toYear(m.month) - 1)
+-- WHERE m.month >= toDate32('1963-07-01') AND m.month <= toDate32('2010-12-01')
+-- (M6, the delisting adjustment, is applied in pandas afterwards.)

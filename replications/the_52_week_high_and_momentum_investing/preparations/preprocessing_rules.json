@@ -1,0 +1,191 @@
+[
+  {
+    "rule_id": "universe_all_crsp",
+    "category": "universe",
+    "section": "§I Data and Method",
+    "paper_location": "L73",
+    "paper_quote": "We use all stocks on CRSP from 1963 to 2001."
+  },
+  {
+    "rule_id": "var_mg_20_industries",
+    "category": "variable",
+    "section": "§I Data and Method",
+    "paper_location": "L73",
+    "paper_quote": "Two-digit SIC codes are used to form the 20 industries shown in Table I of MG."
+  },
+  {
+    "rule_id": "var_mg_industry_vw_return",
+    "category": "variable",
+    "section": "§I Data and Method",
+    "paper_location": "L73",
+    "paper_quote": "For every month from 1963 to 2001, a value-weighted average return is created for each of these industries."
+  },
+  {
+    "rule_id": "delisting_paper_silent",
+    "category": "delisting",
+    "section": "§I Data and Method",
+    "paper_location": "L73",
+    "paper_quote": "The data are collected exactly as described in MG."
+  },
+  {
+    "rule_id": "sort_6_6_strategies",
+    "category": "sort",
+    "section": "§I Data and Method",
+    "paper_location": "L75",
+    "paper_quote": "Both JT and MG focus on (6, 6) strategies: Each month investors form a portfolio based on past 6-month returns, and hold the position for 6 months."
+  },
+  {
+    "rule_id": "sample_period",
+    "category": "sample",
+    "section": "Table I description",
+    "paper_location": "L81",
+    "paper_quote": "This table reports the average monthly portfolio returns from July 1963 through December 2001 for three different momentum investing strategies."
+  },
+  {
+    "rule_id": "var_mg_signal",
+    "category": "variable",
+    "section": "§I Data and Method",
+    "paper_location": "L120",
+    "paper_quote": "For each stock, MG measures past performance as the value-weighted industry return, over the past 6 months, of the industry to which the stock belongs."
+  },
+  {
+    "rule_id": "sort_30_30_40",
+    "category": "sort",
+    "section": "§I Data and Method",
+    "paper_location": "L120",
+    "paper_quote": "Stocks ranked in the top 30% of industries constitute the winner portfolio, stocks in bottom 30% constitute the loser portfolio, and the remaining stocks constitute the middle portfolio."
+  },
+  {
+    "rule_id": "sort_overlap_average",
+    "category": "sort",
+    "section": "§I Data and Method",
+    "paper_location": "L120",
+    "paper_quote": "In any particular month $ t $ of a (6, 6) strategy, the return to winners is calculated as the equally weighted average of the month $ t $ returns from six separate winner portfolios, each formed in one of the 6 consecutive prior months $ t - 6 $ to $ t - 1 $ ."
+  },
+  {
+    "rule_id": "winsorize_none_paper_silent",
+    "category": "winsorize",
+    "section": "§I Data and Method",
+    "paper_location": "L120",
+    "paper_quote": "At the beginning of each month $ t $ , stocks are ranked in ascending order according to their industries' past performance."
+  },
+  {
+    "rule_id": "var_jt_past_return",
+    "category": "variable",
+    "section": "§I Data and Method",
+    "paper_location": "L122",
+    "paper_quote": "For JT's strategy, stocks are ranked based on their own individual returns over months $ t - 6 $ to $ t - 1 $ ."
+  },
+  {
+    "rule_id": "var_52wh_measure",
+    "category": "variable",
+    "section": "§I Data and Method",
+    "paper_location": "L122",
+    "paper_quote": "For the 52-week high strategy, stocks are ranked based on $ \\frac{P_{i,t-1}}{high_{i,t-1}} $ , where $ P_{i,t-1} $ is the price of stock $ i $ at the end of month $ t - 1 $ and $ high_{i,t-1} $ is the highest price of stock $ i $ during the 12-month period that ends on the last day of month $ t - 1 $ ."
+  },
+  {
+    "rule_id": "sort_equal_weighted",
+    "category": "sort",
+    "section": "§I (footnote 2)",
+    "paper_location": "L134",
+    "paper_quote": "Our use of equally weighted portfolios follows JT."
+  },
+  {
+    "rule_id": "fm_skip_month",
+    "category": "fm",
+    "section": "§I (footnote 3)",
+    "paper_location": "L136",
+    "paper_quote": "To abstract from bid-ask bounce, we skip a month between ranking and holding periods in our regression tests."
+  },
+  {
+    "rule_id": "var_size",
+    "category": "variable",
+    "section": "§II.B",
+    "paper_location": "L561",
+    "paper_quote": "We control for market capitalization ( $size_{i,t-1}$ )."
+  },
+  {
+    "rule_id": "fm_regression_controls",
+    "category": "fm",
+    "section": "§II.B",
+    "paper_location": "L561",
+    "paper_quote": "We also follow MG by skipping a month between ranking and holding periods, and by including the month $t-1$ return $R_{i,t-1}$ as an independent variable to mitigate the impact of bid-ask bounce on the coefficient estimates."
+  },
+  {
+    "rule_id": "fm_j2_7_averaging",
+    "category": "fm",
+    "section": "§II.B",
+    "paper_location": "L563",
+    "paper_quote": "the profit from a winner or loser portfolio in month $t$ for a (6, 6) strategy can be calculated as the sum of returns to six portfolios, each formed in one of the six past successive months $t-j$ (for $j=2$ to $j=7$ to skip a month between formation and holding periods)."
+  },
+  {
+    "rule_id": "fm_dummy_definitions",
+    "category": "fm",
+    "section": "§II.B (equation 1)",
+    "paper_location": "L570",
+    "paper_quote": "where $JH_{i,t-j}$ equals one if stock $i$ 's past performance over the 6-month period $(t-j-6, t-j)$ is in the top 30% when measured by JT's performance criterion, and is zero otherwise"
+  },
+  {
+    "rule_id": "sort_nonempty_cells",
+    "category": "sort",
+    "section": "§II.B (footnote 6)",
+    "paper_location": "L574",
+    "paper_quote": "Both winner and loser portfolios must be nonempty for a month to be included in the winner minus loser cell."
+  },
+  {
+    "rule_id": "factor_risk_adjustment",
+    "category": "factor",
+    "section": "§II.B (footnote 8)",
+    "paper_location": "L596",
+    "paper_quote": "Our risk adjustment is equivalent to hedging out the strategy's Fama–French (1996) factor exposure."
+  },
+  {
+    "rule_id": "fm_averaging_j",
+    "category": "fm",
+    "section": "Table V description",
+    "paper_location": "L631",
+    "paper_quote": "The coefficient estimates of a given independent variable are averaged over $j = 2, \\ldots, 7$ for (6, 6) strategies, and $j = 2, \\ldots, 13$ for (6, 12) strategies."
+  },
+  {
+    "rule_id": "fm_percent_units",
+    "category": "fm",
+    "section": "Table V description",
+    "paper_location": "L631",
+    "paper_quote": "The numbers reported for the raw return in the tables are the time-series averages of these averages."
+  },
+  {
+    "rule_id": "fm_persistence_k",
+    "category": "fm",
+    "section": "Table VI description",
+    "paper_location": "L1005",
+    "paper_quote": "In the table, $k = 12, 24, 36, 48$ ."
+  },
+  {
+    "rule_id": "var_gh_embedded_gain",
+    "category": "variable",
+    "section": "§II.D",
+    "paper_location": "L1309",
+    "paper_quote": "The GH measure of embedded capital gain is defined as $g_t = \\frac{P_t - R_t}{P_t}$ , where $R_t$ is the reference price expressed as"
+  },
+  {
+    "rule_id": "var_gh_turnover",
+    "category": "variable",
+    "section": "§II.D",
+    "paper_location": "L1315",
+    "paper_quote": "where $P_t$ is the price at the end of month $t$ , and $V_t$ is turnover in month $t$ , defined as trading volume in shares divided by the number of shares outstanding."
+  },
+  {
+    "rule_id": "var_gh_dummies",
+    "category": "variable",
+    "section": "§II.D",
+    "paper_location": "L1325",
+    "paper_quote": "The variable $ GH_{i,t-j} $ takes the value of one if stock $ i $ 's embedded capital gain $ g_{t-j} $ is in the top 30\\% and is zero otherwise."
+  },
+  {
+    "rule_id": "var_52wl_measure",
+    "category": "variable",
+    "section": "Table IX description",
+    "paper_location": "L2176",
+    "paper_quote": "The 52-week low measure in month $t-j$ is the ratio of price level in month $t-j$ to the minimum price achieved in months $t-j-12$ to $t-j$ ."
+  }
+]

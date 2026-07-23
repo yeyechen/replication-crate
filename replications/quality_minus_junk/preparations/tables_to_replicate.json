@@ -1,0 +1,407 @@
+{
+  "tables": [
+    {
+      "id": "T3",
+      "table_ref": "Table 3, Panel A",
+      "description": "Quality-sorted decile portfolio returns and factor alphas, US Long Sample 7/1957-12/2016",
+      "replication_meaning": "Demonstrates that the composite quality score (Profitability + Growth + Safety, each from multiple sub-variables via rank z-scores) is correctly constructed from Compustat annual/quarterly fundamentals and CRSP daily/monthly data, that decile-sort portfolio construction with NYSE breakpoints and value-weighting is correctly implemented, and that the 4-factor alpha regression is correctly specified. A match on the H-L excess return (0.42%) and H-L 4-factor alpha (1.05%) validates the entire signal pipeline end-to-end.",
+      "paper_quote": "Each calendar month, stocks in each country in are ranked in ascending order on the basis of their quality score. The ranked stocks are assigned to one of 10 portfolios. U.S. sorts are based on NYSE breakpoints. Portfolios are value-weighted, refreshed every calendar month, and rebalanced every calendar month to maintain value weights. (L1878)",
+      "exercises_preprocessing_rules": [
+        "universe_common_stock",
+        "universe_otc_exclusion",
+        "sample_long_period",
+        "sample_end_date",
+        "sample_fiscal_alignment",
+        "delisting_returns",
+        "sort_deciles",
+        "sort_weighting_vw",
+        "winsorize_rank_zscore",
+        "factor_four_factor",
+        "var_gpoa",
+        "var_roe",
+        "var_roa",
+        "var_cfoa",
+        "var_gmar",
+        "var_acc",
+        "var_book_equity",
+        "var_profitability_composite",
+        "var_growth_composite",
+        "var_bab_beta",
+        "var_leverage",
+        "var_oscore",
+        "var_zscore_altman",
+        "var_evol",
+        "var_safety_composite",
+        "var_quality_composite",
+        "var_missing_data_averaging"
+      ],
+      "metrics": [
+        {
+          "name": "P1_excess_ret",
+          "value": 0.28,
+          "unit": "percent_per_month",
+          "tolerance_pct": 30,
+          "paper_location": "L1573"
+        },
+        {
+          "name": "P2_excess_ret",
+          "value": 0.43,
+          "unit": "percent_per_month",
+          "tolerance_pct": 30,
+          "paper_location": "L1573"
+        },
+        {
+          "name": "P3_excess_ret",
+          "value": 0.43,
+          "unit": "percent_per_month",
+          "tolerance_pct": 30,
+          "paper_location": "L1573"
+        },
+        {
+          "name": "P4_excess_ret",
+          "value": 0.51,
+          "unit": "percent_per_month",
+          "tolerance_pct": 30,
+          "paper_location": "L1573"
+        },
+        {
+          "name": "P5_excess_ret",
+          "value": 0.55,
+          "unit": "percent_per_month",
+          "tolerance_pct": 30,
+          "paper_location": "L1573"
+        },
+        {
+          "name": "P6_excess_ret",
+          "value": 0.53,
+          "unit": "percent_per_month",
+          "tolerance_pct": 30,
+          "paper_location": "L1573"
+        },
+        {
+          "name": "P7_excess_ret",
+          "value": 0.48,
+          "unit": "percent_per_month",
+          "tolerance_pct": 30,
+          "paper_location": "L1573"
+        },
+        {
+          "name": "P8_excess_ret",
+          "value": 0.62,
+          "unit": "percent_per_month",
+          "tolerance_pct": 30,
+          "paper_location": "L1573"
+        },
+        {
+          "name": "P9_excess_ret",
+          "value": 0.52,
+          "unit": "percent_per_month",
+          "tolerance_pct": 30,
+          "paper_location": "L1573"
+        },
+        {
+          "name": "P10_excess_ret",
+          "value": 0.7,
+          "unit": "percent_per_month",
+          "tolerance_pct": 30,
+          "paper_location": "L1573"
+        },
+        {
+          "name": "HL_excess_ret",
+          "value": 0.42,
+          "unit": "percent_per_month",
+          "tolerance_pct": 30,
+          "paper_location": "L1573"
+        },
+        {
+          "name": "P1_4f_alpha",
+          "value": -0.59,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L1597"
+        },
+        {
+          "name": "P2_4f_alpha",
+          "value": -0.39,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L1597"
+        },
+        {
+          "name": "P3_4f_alpha",
+          "value": -0.28,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L1597"
+        },
+        {
+          "name": "P4_4f_alpha",
+          "value": -0.19,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L1597"
+        },
+        {
+          "name": "P5_4f_alpha",
+          "value": -0.11,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L1597"
+        },
+        {
+          "name": "P6_4f_alpha",
+          "value": -0.12,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L1597"
+        },
+        {
+          "name": "P7_4f_alpha",
+          "value": -0.1,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L1597"
+        },
+        {
+          "name": "P8_4f_alpha",
+          "value": 0.11,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L1597"
+        },
+        {
+          "name": "P9_4f_alpha",
+          "value": 0.07,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L1597"
+        },
+        {
+          "name": "P10_4f_alpha",
+          "value": 0.46,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L1597"
+        },
+        {
+          "name": "HL_4f_alpha",
+          "value": 1.05,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L1597"
+        },
+        {
+          "name": "P1_beta",
+          "value": 1.28,
+          "unit": "beta",
+          "tolerance_pct": 10,
+          "paper_location": "L1605"
+        },
+        {
+          "name": "P10_beta",
+          "value": 0.92,
+          "unit": "beta",
+          "tolerance_pct": 10,
+          "paper_location": "L1605"
+        },
+        {
+          "name": "HL_beta",
+          "value": -0.36,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L1605"
+        }
+      ],
+      "notes": "Replicating Panel A (US Long Sample) only. Panel B (Global Broad Sample) requires Compustat Global data across 24 countries, which is out of scope for this run. US sample uses CRSP + Compustat North America."
+    },
+    {
+      "id": "T4",
+      "table_ref": "Table 4, Panel A",
+      "description": "QMJ factor returns and factor loadings, US Long Sample 7/1957-12/2016",
+      "replication_meaning": "Demonstrates correct QMJ factor construction via 2x3 conditional sorts (size then quality), with median NYSE market equity as the size breakpoint and top/bottom 30% quality cutoffs within each size group. Validates that the QMJ = 1/2(Small Quality + Big Quality) - 1/2(Small Junk + Big Junk) formula produces a factor with significant 4-factor alpha (0.60%, t=9.95) and negative MKT/SMB/HML loadings, confirming the paper's central claim that high-quality stocks earn high risk-adjusted returns despite being safer.",
+      "paper_quote": "QMJ factors are constructed as the intersection of six value-weighted portfolios formed on size and quality. At the end of each calendar month, stocks are assigned to two size-sorted portfolios based on their market capitalization. For U.S. securities, the size breakpoint is the median NYSE market equity. We use conditional sorts, first sorting on size and then on quality. (L2057)",
+      "exercises_preprocessing_rules": [
+        "universe_common_stock",
+        "sample_long_period",
+        "sort_qmj_construction",
+        "sort_qmj_top_bottom_30",
+        "sort_qmj_formula",
+        "sort_weighting_vw",
+        "factor_four_factor",
+        "var_quality_composite"
+      ],
+      "metrics": [
+        {
+          "name": "QMJ_excess_ret",
+          "value": 0.29,
+          "unit": "percent_per_month",
+          "tolerance_pct": 30,
+          "paper_location": "L1936"
+        },
+        {
+          "name": "QMJ_capm_alpha",
+          "value": 0.39,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L1944"
+        },
+        {
+          "name": "QMJ_3f_alpha",
+          "value": 0.51,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L1952"
+        },
+        {
+          "name": "QMJ_4f_alpha",
+          "value": 0.6,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L1960"
+        },
+        {
+          "name": "QMJ_mkt_loading",
+          "value": -0.2,
+          "unit": "loading",
+          "tolerance_pct": 15,
+          "paper_location": "L1968"
+        },
+        {
+          "name": "QMJ_smb_loading",
+          "value": -0.26,
+          "unit": "loading",
+          "tolerance_pct": 15,
+          "paper_location": "L1976"
+        },
+        {
+          "name": "QMJ_hml_loading",
+          "value": -0.37,
+          "unit": "loading",
+          "tolerance_pct": 15,
+          "paper_location": "L1984"
+        },
+        {
+          "name": "QMJ_umd_loading",
+          "value": -0.09,
+          "unit": "loading",
+          "tolerance_pct": 25,
+          "paper_location": "L1992"
+        },
+        {
+          "name": "QMJ_sharpe",
+          "value": 0.47,
+          "unit": "ratio_annualized",
+          "tolerance_pct": 30,
+          "paper_location": "L2000"
+        },
+        {
+          "name": "QMJ_info_ratio",
+          "value": 1.4,
+          "unit": "ratio_annualized",
+          "tolerance_pct": 30,
+          "paper_location": "L2008"
+        },
+        {
+          "name": "QMJ_adj_r2",
+          "value": 0.5,
+          "unit": "r_squared",
+          "tolerance_pct": 25,
+          "paper_location": "L2016"
+        },
+        {
+          "name": "Profit_4f_alpha",
+          "value": 0.5,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L1960"
+        },
+        {
+          "name": "Safety_4f_alpha",
+          "value": 0.51,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L1960"
+        },
+        {
+          "name": "Growth_4f_alpha",
+          "value": 0.46,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L1960"
+        }
+      ],
+      "notes": "Replicating Panel A (US Long Sample) only. Panel B requires global data across 24 countries. Sub-component factor returns (Profitability, Safety, Growth) use the same 2x3 sort methodology applied to each quality sub-score."
+    },
+    {
+      "id": "T9",
+      "table_ref": "Table 9, Panel A",
+      "description": "Asset pricing spanning tests: SMB, HML, UMD regressed on standard factors with and without QMJ, US Long Sample 7/1957-12/2016",
+      "replication_meaning": "Demonstrates that QMJ is a distinct risk factor not subsumed by existing factors. Shows that SMB alpha becomes large and highly significant when QMJ is included as a control (revealing the hidden size effect), and that HML alpha also increases. This validates QMJ construction by showing the factor adds explanatory power to the standard factor zoo, confirming the paper's claim that quality is a distinct source of returns.",
+      "paper_quote": "We run a regression of each of SMB, HML, and UMD on the remaining factors excluding and including the QMJ factor as explanatory variable. (L3731)",
+      "exercises_preprocessing_rules": [
+        "factor_four_factor",
+        "sort_qmj_formula",
+        "sort_qmj_construction"
+      ],
+      "metrics": [
+        {
+          "name": "SMB_alpha_no_qmj",
+          "value": 0.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L3460"
+        },
+        {
+          "name": "SMB_alpha_with_qmj",
+          "value": 0.49,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L3460"
+        },
+        {
+          "name": "HML_alpha_no_qmj",
+          "value": 0.79,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L3460"
+        },
+        {
+          "name": "HML_alpha_with_qmj",
+          "value": 1.01,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L3460"
+        },
+        {
+          "name": "UMD_alpha_no_qmj",
+          "value": 1.22,
+          "unit": "percent_per_month",
+          "tolerance_pct": 50,
+          "paper_location": "L3460"
+        },
+        {
+          "name": "SMB_excess_ret",
+          "value": 0.15,
+          "unit": "percent_per_month",
+          "tolerance_pct": 30,
+          "paper_location": "L3460"
+        },
+        {
+          "name": "HML_excess_ret",
+          "value": 0.3,
+          "unit": "percent_per_month",
+          "tolerance_pct": 30,
+          "paper_location": "L3460"
+        },
+        {
+          "name": "UMD_excess_ret",
+          "value": 0.71,
+          "unit": "percent_per_month",
+          "tolerance_pct": 30,
+          "paper_location": "L3460"
+        }
+      ],
+      "notes": "Replicating Panel A (US Long Sample) only. Exact values from Table 9 will be verified against parsed content. The table demonstrates factor spanning properties of QMJ."
+    }
+  ]
+}

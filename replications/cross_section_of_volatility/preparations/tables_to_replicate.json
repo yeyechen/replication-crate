@@ -1,0 +1,148 @@
+{
+  "tables": [
+    {
+      "id": "T6A",
+      "table_ref": "Table VI Panel A",
+      "description": "Value-weighted quintile portfolios sorted by total volatility (Jul 1963–Dec 2000)",
+      "replication_meaning": "Demonstrates correct computation of firm-level total volatility from daily CRSP returns, correct quintile portfolio sorting with value-weighting, and correct CAPM/FF-3 alpha estimation with Newey-West t-statistics. Validates the full data pipeline from daily returns through monthly portfolio returns.",
+      "paper_quote": "We form value-weighted quintile portfolios every month by sorting stocks based on total volatility and idiosyncratic volatility relative to the Fama–French (1993) model. Portfolios are formed every month, based on volatility computed using daily data over the previous month. (L1167)",
+      "exercises_preprocessing_rules": ["universe_exchanges", "sample_period_ivol", "var_total_vol", "sort_ivol_quintiles", "value_weight", "monthly_rebalance", "report_total_returns", "newey_west_tstats"],
+      "metrics": [
+        {"name": "Q1_mean", "value": 1.06, "unit": "pct_monthly", "tolerance_pct": 20, "paper_location": "L1189"},
+        {"name": "Q1_std", "value": 3.71, "unit": "pct_monthly", "tolerance_pct": 20, "paper_location": "L1189"},
+        {"name": "Q1_capm_alpha", "value": 0.14, "unit": "pct_monthly", "tolerance_pct": 50, "paper_location": "L1194"},
+        {"name": "Q1_ff3_alpha", "value": 0.03, "unit": "pct_monthly", "tolerance_pct": 50, "paper_location": "L1194"},
+        {"name": "Q2_mean", "value": 1.15, "unit": "pct_monthly", "tolerance_pct": 20, "paper_location": "L1198"},
+        {"name": "Q2_ff3_alpha", "value": 0.08, "unit": "pct_monthly", "tolerance_pct": 50, "paper_location": "L1204"},
+        {"name": "Q3_mean", "value": 1.22, "unit": "pct_monthly", "tolerance_pct": 20, "paper_location": "L1208"},
+        {"name": "Q3_ff3_alpha", "value": 0.12, "unit": "pct_monthly", "tolerance_pct": 50, "paper_location": "L1214"},
+        {"name": "Q4_mean", "value": 0.99, "unit": "pct_monthly", "tolerance_pct": 20, "paper_location": "L1218"},
+        {"name": "Q4_ff3_alpha", "value": -0.17, "unit": "pct_monthly", "tolerance_pct": 50, "paper_location": "L1224"},
+        {"name": "Q5_mean", "value": 0.09, "unit": "pct_monthly", "tolerance_pct": 50, "paper_location": "L1228"},
+        {"name": "Q5_ff3_alpha", "value": -1.16, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L1234"},
+        {"name": "Q5_minus_Q1_mean", "value": -0.97, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L1238"},
+        {"name": "Q5_minus_Q1_ff3_alpha", "value": -1.19, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L1244"}
+      ],
+      "notes": null
+    },
+    {
+      "id": "T6B",
+      "table_ref": "Table VI Panel B",
+      "description": "Value-weighted quintile portfolios sorted by idiosyncratic volatility relative to FF-3 (Jul 1963–Dec 2000)",
+      "replication_meaning": "Demonstrates correct computation of idiosyncratic volatility as the standard deviation of FF-3 regression residuals from daily data, correct quintile sorting, and validates the paper's headline anomaly: stocks with high idiosyncratic volatility earn abysmally low returns. This is THE central result of the paper.",
+      "paper_quote": "We form value-weighted quintile portfolios every month by sorting stocks based on total volatility and idiosyncratic volatility relative to the Fama–French (1993) model. (L1167)",
+      "exercises_preprocessing_rules": ["universe_exchanges", "sample_period_ivol", "var_ivol_ff3", "var_ff3_regression", "ivol_daily_data", "sort_ivol_quintiles", "value_weight", "monthly_rebalance", "report_total_returns", "newey_west_tstats"],
+      "metrics": [
+        {"name": "Q1_mean", "value": 1.04, "unit": "pct_monthly", "tolerance_pct": 20, "paper_location": "L1251"},
+        {"name": "Q1_std", "value": 3.83, "unit": "pct_monthly", "tolerance_pct": 20, "paper_location": "L1251"},
+        {"name": "Q1_capm_alpha", "value": 0.11, "unit": "pct_monthly", "tolerance_pct": 50, "paper_location": "L1256"},
+        {"name": "Q1_ff3_alpha", "value": 0.04, "unit": "pct_monthly", "tolerance_pct": 50, "paper_location": "L1256"},
+        {"name": "Q2_mean", "value": 1.16, "unit": "pct_monthly", "tolerance_pct": 20, "paper_location": "L1261"},
+        {"name": "Q2_ff3_alpha", "value": 0.09, "unit": "pct_monthly", "tolerance_pct": 50, "paper_location": "L1266"},
+        {"name": "Q3_mean", "value": 1.20, "unit": "pct_monthly", "tolerance_pct": 20, "paper_location": "L1271"},
+        {"name": "Q3_ff3_alpha", "value": 0.08, "unit": "pct_monthly", "tolerance_pct": 50, "paper_location": "L1276"},
+        {"name": "Q4_mean", "value": 0.87, "unit": "pct_monthly", "tolerance_pct": 20, "paper_location": "L1281"},
+        {"name": "Q4_ff3_alpha", "value": -0.32, "unit": "pct_monthly", "tolerance_pct": 50, "paper_location": "L1286"},
+        {"name": "Q5_mean", "value": -0.02, "unit": "pct_monthly", "tolerance_pct": 50, "paper_location": "L1291"},
+        {"name": "Q5_ff3_alpha", "value": -1.27, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L1296"},
+        {"name": "Q5_minus_Q1_mean", "value": -1.06, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L1301"},
+        {"name": "Q5_minus_Q1_ff3_alpha", "value": -1.31, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L1307"}
+      ],
+      "notes": null
+    },
+    {
+      "id": "T7",
+      "table_ref": "Table VII",
+      "description": "FF-3 alphas of idiosyncratic volatility quintile portfolios controlling for size, B/M, leverage, volume, turnover, coskewness, NYSE only (Jul 1963–Dec 2000)",
+      "replication_meaning": "Demonstrates correct implementation of dependent double-sort methodology (first sort on characteristic, then on idiosyncratic volatility, average across characteristic quintiles). Validates that the idiosyncratic volatility puzzle survives controls for size, book-to-market, leverage, volume, and turnover — the core robustness claim.",
+      "paper_quote": "each month we first sort stocks based on the first characteristic (size, book-to-market, leverage, liquidity, volume, turnover, bid–ask spreads, or dispersion of analysts' forecasts) and then, within each quintile we sort stocks based on idiosyncratic volatility relative to the FF-3 model. (L1330)",
+      "exercises_preprocessing_rules": ["double_sort_control", "var_ivol_ff3", "var_size_log_mcap", "var_bm_ratio", "var_leverage", "var_volume", "var_turnover", "var_nyse_only", "value_weight", "newey_west_tstats"],
+      "metrics": [
+        {"name": "nyse_Q1_alpha", "value": 0.06, "unit": "pct_monthly", "tolerance_pct": 50, "paper_location": "L1355"},
+        {"name": "nyse_Q5_alpha", "value": -0.60, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L1359"},
+        {"name": "nyse_5minus1", "value": -0.66, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L1360"},
+        {"name": "ctrl_size_Q1_alpha", "value": 0.11, "unit": "pct_monthly", "tolerance_pct": 50, "paper_location": "L1473"},
+        {"name": "ctrl_size_Q5_alpha", "value": -0.93, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L1477"},
+        {"name": "ctrl_size_5minus1", "value": -1.04, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L1478"},
+        {"name": "ctrl_bm_Q5_alpha", "value": -0.19, "unit": "pct_monthly", "tolerance_pct": 50, "paper_location": "L1495"},
+        {"name": "ctrl_bm_5minus1", "value": -0.80, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L1496"},
+        {"name": "ctrl_lev_Q5_alpha", "value": -1.12, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L1513"},
+        {"name": "ctrl_lev_5minus1", "value": -1.23, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L1514"},
+        {"name": "ctrl_vol_Q5_alpha", "value": -1.25, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L1549"},
+        {"name": "ctrl_vol_5minus1", "value": -1.22, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L1550"},
+        {"name": "ctrl_turn_Q5_alpha", "value": -1.34, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L1567"},
+        {"name": "ctrl_turn_5minus1", "value": -1.46, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L1568"},
+        {"name": "ctrl_coskew_Q5_alpha", "value": -1.40, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L1603"},
+        {"name": "ctrl_coskew_5minus1", "value": -1.38, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L1604"}
+      ],
+      "notes": "Liquidity beta control (Pastor-Stambaugh), bid-ask spread control, and analyst dispersion control omitted — require Pastor-Stambaugh liquidity data and IBES data not fully available. Size quintile detail panel also included via summary metrics."
+    },
+    {
+      "id": "T8",
+      "table_ref": "Table VIII",
+      "description": "FF-3 alphas of idiosyncratic volatility portfolios controlling for past returns (momentum), plus 5x5 detail (Jul 1963–Dec 2000)",
+      "replication_meaning": "Demonstrates correct momentum control via double-sort on past 1/6/12-month returns and idiosyncratic volatility. Validates that the IVOL anomaly is not subsumed by momentum, and reveals the asymmetric interaction between momentum and idiosyncratic volatility.",
+      "paper_quote": "we control for momentum over the previous 1 month, 6 months, and 12 months. (L1732)",
+      "exercises_preprocessing_rules": ["double_sort_control", "var_ivol_ff3", "value_weight", "newey_west_tstats"],
+      "metrics": [
+        {"name": "past1m_Q5_alpha", "value": -0.59, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L1777"},
+        {"name": "past1m_5minus1", "value": -0.66, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L1778"},
+        {"name": "past6m_Q5_alpha", "value": -1.11, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L1786"},
+        {"name": "past6m_5minus1", "value": -1.10, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L1787"},
+        {"name": "past12m_Q5_alpha", "value": -1.21, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L1795"},
+        {"name": "past12m_5minus1", "value": -1.22, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L1796"},
+        {"name": "losers_Q5_alpha", "value": -2.66, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L1807"},
+        {"name": "losers_5minus1", "value": -2.25, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L1808"},
+        {"name": "winners_Q5_alpha", "value": -0.03, "unit": "pct_monthly", "tolerance_pct": 50, "paper_location": "L1843"},
+        {"name": "winners_5minus1", "value": -0.48, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L1844"}
+      ],
+      "notes": null
+    },
+    {
+      "id": "T10",
+      "table_ref": "Table X",
+      "description": "FF-3 alphas of idiosyncratic volatility quintiles for different L/M/N formation and holding strategies (Jul 1963–Dec 2000)",
+      "replication_meaning": "Demonstrates correct implementation of multi-month formation/holding period strategies following Jegadeesh-Titman (1993) overlapping portfolio methodology. Validates that the IVOL anomaly persists across different horizons (1/1/1, 1/1/12, 12/1/1, 12/1/12).",
+      "paper_quote": "We rank stocks into quintile portfolios of idiosyncratic volatility, relative to FF-3, using L/M/N strategies described in Section II.A. (L1995)",
+      "exercises_preprocessing_rules": ["lmn_strategy", "var_ivol_ff3", "var_ff3_regression", "value_weight", "newey_west_tstats"],
+      "metrics": [
+        {"name": "s111_Q5_alpha", "value": -0.82, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L2019"},
+        {"name": "s111_5minus1", "value": -0.88, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L2020"},
+        {"name": "s1112_Q5_alpha", "value": -0.64, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L2028"},
+        {"name": "s1112_5minus1", "value": -0.67, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L2029"},
+        {"name": "s1211_Q5_alpha", "value": -1.08, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L2037"},
+        {"name": "s1211_5minus1", "value": -1.12, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L2038"},
+        {"name": "s12112_Q5_alpha", "value": -0.73, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L2046"},
+        {"name": "s12112_5minus1", "value": -0.77, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L2047"}
+      ],
+      "notes": "1/0/1 strategy is Table VI Panel B (already covered). Table X covers the other L/M/N variants."
+    },
+    {
+      "id": "T11",
+      "table_ref": "Table XI",
+      "description": "FF-3 alphas of idiosyncratic volatility quintiles across subperiods: decades, NBER cycles, stable/volatile periods (Jul 1963–Dec 2000)",
+      "replication_meaning": "Demonstrates temporal stability of the idiosyncratic volatility anomaly across four decades, NBER expansions/recessions, and stable/volatile market periods. Validates that the result is not driven by a single subperiod or market regime.",
+      "paper_quote": "We rank stocks into quintile portfolios of idiosyncratic volatility, relative to FF-3, using the 1/0/1 strategy described in Section II.A and examine robustness over different sample periods. (L2074)",
+      "exercises_preprocessing_rules": ["var_ivol_ff3", "sort_ivol_quintiles", "value_weight", "newey_west_tstats"],
+      "metrics": [
+        {"name": "1963_1970_Q5_alpha", "value": -0.94, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L2098"},
+        {"name": "1963_1970_5minus1", "value": -1.00, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L2099"},
+        {"name": "1971_1980_Q5_alpha", "value": -1.02, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L2107"},
+        {"name": "1971_1980_5minus1", "value": -0.77, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L2108"},
+        {"name": "1981_1990_Q5_alpha", "value": -2.08, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L2116"},
+        {"name": "1981_1990_5minus1", "value": -2.23, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L2117"},
+        {"name": "1991_2000_Q5_alpha", "value": -1.39, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L2125"},
+        {"name": "1991_2000_5minus1", "value": -1.55, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L2126"},
+        {"name": "expansion_Q5_alpha", "value": -1.19, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L2134"},
+        {"name": "expansion_5minus1", "value": -1.25, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L2135"},
+        {"name": "recession_Q5_alpha", "value": -1.88, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L2143"},
+        {"name": "recession_5minus1", "value": -1.79, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L2144"},
+        {"name": "stable_Q5_alpha", "value": -1.66, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L2152"},
+        {"name": "stable_5minus1", "value": -1.71, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L2153"},
+        {"name": "volatile_Q5_alpha", "value": -0.93, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L2161"},
+        {"name": "volatile_5minus1", "value": -0.89, "unit": "pct_monthly", "tolerance_pct": 30, "paper_location": "L2162"}
+      ],
+      "notes": "NBER recession/expansion dates and stable/volatile period classification (lowest/highest 20% absolute market return months) will need to be implemented."
+    }
+  ]
+}

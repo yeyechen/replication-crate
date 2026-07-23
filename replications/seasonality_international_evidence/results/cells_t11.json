@@ -1,0 +1,13 @@
+{
+  "t11_panela_y1_bel_aut": 0.0010433013826749524,
+  "t11_panela_y1_can_aut": 0.009713630626084309,
+  "t11_panela_y1_can_bel": -0.024855136545863344,
+  "t11_panela_y1_fin_can": -0.03251534610421097,
+  "t11_panela_y1_fra_can": 0.16545161510852655,
+  "t11_panela_y1_ger_can": 0.1905896007899693,
+  "t11_panela_y1_ger_fra": 0.3871716652329171,
+  "t11_text_y1_fra_uk": 0.3901021072059896,
+  "t11_text_y23_swe_fra_max": 0.12220881672445481,
+  "t11_text_y45_che_aut_min": -0.03800436341501585,
+  "t11_text_sig_threshold": 0.12
+}

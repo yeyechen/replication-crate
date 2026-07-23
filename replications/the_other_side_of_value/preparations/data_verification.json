@@ -1,0 +1,60 @@
+{
+  "verdict": "ready",
+  "requirements": [
+    {
+      "id": "compustat_annual_fundamentals",
+      "description": "Annual Compustat data for GP/A signal, book equity, earnings, FCF, and SIC-based financial exclusion",
+      "needed_columns": ["gvkey", "datadate", "fyear", "revt", "cogs", "at", "gp", "ib", "ni", "dp", "wcapch", "capx", "seq", "ceq", "lt", "txditc", "txdb", "itcb", "pstkr", "pstk", "sich", "indfmt"],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": ["gvkey", "datadate", "fyear", "revt", "cogs", "at", "gp", "ib", "ni", "dp", "wcapch", "capx", "seq", "ceq", "lt", "txditc", "txdb", "itcb", "pstkr", "pstk", "sich", "indfmt"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_monthly_returns",
+      "description": "Monthly stock returns, prices, and shares outstanding for market equity computation and portfolio returns",
+      "needed_columns": ["permno", "date", "prc", "ret", "vol", "shrout", "hexcd", "hsiccd"],
+      "matched_table": "crsp_202601.msf",
+      "matched_columns": ["permno", "date", "prc", "ret", "vol", "shrout", "hexcd", "hsiccd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_pit_universe",
+      "description": "Point-in-time security metadata for universe filtering (share code, exchange code, SIC)",
+      "needed_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "siccd"],
+      "matched_table": "crsp_202601.dsenames",
+      "matched_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "siccd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_delisting",
+      "description": "Delisting returns for proper treatment of delisted stocks",
+      "needed_columns": ["permno", "dlstdt", "dlstcd", "dlret"],
+      "matched_table": "crsp_202601.dsedelist",
+      "matched_columns": ["permno", "dlstdt", "dlstcd", "dlret"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_compustat_link",
+      "description": "GVKEY-to-PERMNO link table for merging Compustat fundamentals with CRSP returns",
+      "needed_columns": ["gvkey", "lpermno", "linkdt", "linkenddt", "linkprim", "linktype", "usedflag"],
+      "matched_table": "crsp_202601.ccmxpf_linktable",
+      "matched_columns": ["gvkey", "lpermno", "linkdt", "linkenddt", "linkprim", "linktype", "usedflag"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_factors_monthly",
+      "description": "Fama-French 3 factors (MKT-RF, SMB, HML), momentum (MOM), and risk-free rate for time-series regressions",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "rf", "mom"],
+      "matched_table": "ff.four_factor_monthly",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "rf", "mom"],
+      "missing_columns": [],
+      "status": "full"
+    }
+  ],
+  "blocking_issues": []
+}

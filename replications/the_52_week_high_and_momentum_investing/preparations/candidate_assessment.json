@@ -1,0 +1,6 @@
+{
+  "replicable": true,
+  "paper_type": "empirical_cross_sectional",
+  "rationale": "George and Hwang (2004, Journal of Finance) is an empirical cross-sectional equity paper. Section I (Data and Method, L69-124) specifies the sample (all stocks on CRSP, 1963-2001), three fully operationalized momentum strategies (JT past-return, MG industry, 52-week high price ratio), EW 30/30 portfolio formation, and (6,6)/(6,12) overlapping holding-period mechanics. Tables I-IX report monthly portfolio returns with t-statistics (Tables I-IV), Fama-MacBeth dummy-variable regression coefficients with raw and Fama-French risk-adjusted returns (Tables V, VII, IX), and long-horizon persistence regressions (Tables VI, VIII). Every variable is defined in the text: the 52-week high measure P_{i,t-1}/high_{i,t-1} (L122), the Grinblatt-Han embedded capital gain with its 60-month turnover-weighted reference price (L1309-1323), and the regression specification equation (1) (L565-570). Data needs are CRSP monthly/daily returns, share codes and SIC codes, and Fama-French factors — all standard and available.",
+  "block_reasons": []
+}

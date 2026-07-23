@@ -1,0 +1,198 @@
+[
+  {
+    "rule_id": "universe_share_code",
+    "category": "universe",
+    "section": "Table 1 description",
+    "paper_location": "L297",
+    "paper_quote": "The sample includes all common stocks on the Center for Research in Security Prices daily stock files (shrcd equal to 10 or 11) and Xpressfeed Global security files (tcpi equal to zero)."
+  },
+  {
+    "rule_id": "universe_crsp_us",
+    "category": "universe",
+    "section": "§3 Data and methodology",
+    "paper_location": "L351",
+    "paper_quote": "Our US equity data include all available common stocks on CRSP between January 1926 and March 2012, and betas are computed with respect to the CRSP value-weighted market index."
+  },
+  {
+    "rule_id": "sample_period_us",
+    "category": "sample",
+    "section": "Table 3 description",
+    "paper_location": "L1075",
+    "paper_quote": "This table includes all available common stocks on the Center for Research in Security Prices database between January 1926 and March 2012."
+  },
+  {
+    "rule_id": "sample_excess_returns",
+    "category": "sample",
+    "section": "§3 Data and methodology",
+    "paper_location": "L351",
+    "paper_quote": "Excess returns are above the US Treasury bill rate."
+  },
+  {
+    "rule_id": "sample_returns_units",
+    "category": "sample",
+    "section": "Table 3 description",
+    "paper_location": "L1075",
+    "paper_quote": "Returns and alphas are in monthly percent, t-statistics are shown below the coefficient estimates, and 5% statistical significance is indicated in bold."
+  },
+  {
+    "rule_id": "delisting_treatment",
+    "category": "delisting",
+    "section": "§3 Data and methodology",
+    "paper_location": "L351",
+    "paper_quote": "Our US equity data include all available common stocks on CRSP between January 1926 and March 2012, and betas are computed with respect to the CRSP value-weighted market index. paper silent on delisting return treatment — the paper does not discuss how delisted stock returns are handled."
+  },
+  {
+    "rule_id": "sort_decile_nyse_ew",
+    "category": "sort",
+    "section": "Table 3 description",
+    "paper_location": "L1075",
+    "paper_quote": "At the beginning of each calendar month, stocks are ranked in ascending order on the basis of their estimated beta at the end of the previous month. The ranked stocks are assigned to one of ten deciles portfolios based on NYSE breakpoints. All stocks are equally weighted within a given portfolio, and the portfolios are rebalanced every month to maintain equal weights."
+  },
+  {
+    "rule_id": "sort_bab_median_split",
+    "category": "sort",
+    "section": "§3.2 Constructing betting against beta factors",
+    "paper_location": "L941",
+    "paper_quote": "portfolio is composed of all stocks with a beta below (above) its asset class median (or country median for international equities). In each portfolio, securities are weighted by the ranked betas (i.e., lower-beta securities have larger weights in the low-beta portfolio and higher-beta securities have larger weights in the high-beta portfolio). The portfolios are rebalanced every calendar month."
+  },
+  {
+    "rule_id": "sort_bab_rank_weights",
+    "category": "sort",
+    "section": "§3.2 Constructing betting against beta factors",
+    "paper_location": "L943-954",
+    "paper_quote": "let $z$ be the $n \\times 1$ vector of beta ranks $z_i = rank(\\beta_{it})$ at portfolio formation... where $k$ is a normalizing constant $k = 2 / 1_n |z - \\bar{z}|$ and $x^+$ and $x^-$ indicate the positive and negative elements of a vector $x$."
+  },
+  {
+    "rule_id": "sort_bab_rescale_beta_one",
+    "category": "sort",
+    "section": "§3.2 Constructing betting against beta factors",
+    "paper_location": "L954",
+    "paper_quote": "To construct the BAB factor, both portfolios are rescaled to have a beta of one at portfolio formation. The BAB is the self-financing zero-beta portfolio (8) that is long the low-beta portfolio and that shortsells the high-beta portfolio."
+  },
+  {
+    "rule_id": "sort_bab_formula",
+    "category": "sort",
+    "section": "§3.2 Constructing betting against beta factors",
+    "paper_location": "L956-961",
+    "paper_quote": "$r_{t+1}^{BAB} = \\frac{1}{\\beta_t^L} (r_{t+1}^L - r^f) - \\frac{1}{\\beta_t^H} (r_{t+1}^H - r^f)$, where $r_{t+1}^L = r_{t+1}^+ w_L$, $r_{t+1}^H = r_{t+1}^+ w_H$, $\\beta_t^L = \\beta_t^+ w_L$, and $\\beta_t^H = \\beta_t^+ w_H$."
+  },
+  {
+    "rule_id": "winsorize_treatment",
+    "category": "winsorize",
+    "section": "§3.1 Estimating ex ante betas",
+    "paper_location": "L894",
+    "paper_quote": "Finally, to reduce the influence of outliers, we follow Vasicek (1973) and Elton, Gruber, Brown, and Goetzmann (2003) and shrink the time series estimate of beta. paper silent on winsorization of individual stock returns or other variables — outlier control is achieved through beta shrinkage, not winsorization."
+  },
+  {
+    "rule_id": "factor_ff_source",
+    "category": "factor",
+    "section": "§3 Data and methodology (footnote 7)",
+    "paper_location": "L361",
+    "paper_quote": "SMB, HML, and UMD are from Ken French's data library, and the liquidity risk factor is from Wharton Research Data Service (WRDS)."
+  },
+  {
+    "rule_id": "factor_models_used",
+    "category": "factor",
+    "section": "Table 3 description",
+    "paper_location": "L1075",
+    "paper_quote": "Alpha is the intercept in a regression of monthly excess return. The explanatory variables are the monthly returns from Fama and French (1993) mimicking portfolios, Carhart (1997) momentum factor and Pastor and Stambaugh (2003) liquidity factor."
+  },
+  {
+    "rule_id": "factor_ps_liquidity_period",
+    "category": "factor",
+    "section": "Table 3 description",
+    "paper_location": "L1075",
+    "paper_quote": "Regarding the five-factor alphas the Pastor and Stambaugh (2003) liquidity factor is available only between 1968 and 2011."
+  },
+  {
+    "rule_id": "fm_alpha_regression",
+    "category": "fm",
+    "section": "§4.1 Stocks",
+    "paper_location": "L997-999",
+    "paper_quote": "The alphas decline when estimated relative to a one-, three-, four-, and five-factor model. Moreover, Sharpe ratios decline monotonically from low-beta to high-beta portfolios."
+  },
+  {
+    "rule_id": "fm_realized_beta",
+    "category": "fm",
+    "section": "Table 3 description",
+    "paper_location": "L1075",
+    "paper_quote": "Beta (ex ante) is the average estimated beta at portfolio formation. Beta (realized) is the realized loading on the market portfolio."
+  },
+  {
+    "rule_id": "fm_volatility_sharpe_annualized",
+    "category": "fm",
+    "section": "Table 3 description",
+    "paper_location": "L1075",
+    "paper_quote": "Volatilities and Sharpe ratios are annualized."
+  },
+  {
+    "rule_id": "var_beta_rolling",
+    "category": "variable",
+    "section": "§3.1 Estimating ex ante betas",
+    "paper_location": "L885",
+    "paper_quote": "We estimate pre-ranking betas from rolling regressions of excess returns on market excess returns. Whenever possible, we use daily data, rather than monthly data, as the accuracy of covariance estimation improves with the sample frequency (Merton, 1980)."
+  },
+  {
+    "rule_id": "var_beta_formula",
+    "category": "variable",
+    "section": "§3.1 Estimating ex ante betas",
+    "paper_location": "L888-892",
+    "paper_quote": "Our estimated beta for security $i$ is given by $\\hat{\\beta}_i^{ts} = \\hat{\\rho} \\frac{\\hat{\\sigma}_i}{\\hat{\\sigma}_m}$"
+  },
+  {
+    "rule_id": "var_beta_vol_window",
+    "category": "variable",
+    "section": "§3.1 Estimating ex ante betas",
+    "paper_location": "L892",
+    "paper_quote": "we use a one-year rolling standard deviation for volatilities and a five-year horizon for the correlation to account for the fact that correlations appear to move more slowly than volatilities."
+  },
+  {
+    "rule_id": "var_beta_3day_returns",
+    "category": "variable",
+    "section": "§3.1 Estimating ex ante betas",
+    "paper_location": "L892",
+    "paper_quote": "we use one-day log returns to estimate volatilities and overlapping three-day log returns, $r_{i,t}^{3d} = \\sum_{k=0}^{2} \\ln(1 + r_{t+k}^i)$ , for correlation to control for nonsynchronous trading (which affects only correlations)."
+  },
+  {
+    "rule_id": "var_beta_min_data",
+    "category": "variable",
+    "section": "§3.1 Estimating ex ante betas",
+    "paper_location": "L892",
+    "paper_quote": "We require at least six months (120 trading days) of non-missing data to estimate volatilities and at least three years (750 trading days) of non-missing return data for correlations."
+  },
+  {
+    "rule_id": "var_beta_shrinkage",
+    "category": "variable",
+    "section": "§3.1 Estimating ex ante betas",
+    "paper_location": "L921",
+    "paper_quote": "for simplicity, instead of having asset-specific and time-varying shrinkage factors as in Vasicek (1973), we set $w = 0.6$ and $\\beta^{XS} = 1$ for all periods and across all assets."
+  },
+  {
+    "rule_id": "var_beta_shrinkage_formula",
+    "category": "variable",
+    "section": "§3.1 Estimating ex ante betas",
+    "paper_location": "L917-918",
+    "paper_quote": "$\\hat{\\beta}_i = w_i \\hat{\\beta}_i^{TS} + (1 - w_i) \\hat{\\beta}^{XS}$"
+  },
+  {
+    "rule_id": "var_beta_market_index",
+    "category": "variable",
+    "section": "§3 Data and methodology",
+    "paper_location": "L351",
+    "paper_quote": "betas are computed with respect to the CRSP value-weighted market index."
+  },
+  {
+    "rule_id": "var_bab_long_short_dollars",
+    "category": "variable",
+    "section": "§4.1 Stocks",
+    "paper_location": "L1009",
+    "paper_quote": "On average, the US BAB factor goes long $1.40 ($1.40 for international BAB) and shortsells $0.70 ($0.89 for international BAB)."
+  },
+  {
+    "rule_id": "var_bab_sharpe_ratio",
+    "category": "variable",
+    "section": "§4.1 Stocks",
+    "paper_location": "L99",
+    "paper_quote": "The US BAB factor realizes a Sharpe ratio of 0.78 between 1926 and March 2012."
+  }
+]

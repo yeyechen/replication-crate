@@ -1,0 +1,60 @@
+{
+  "verdict": "ready",
+  "requirements": [
+    {
+      "id": "compustat_quarterly_earnings",
+      "description": "Compustat quarterly earnings series Q_{i,t} for the Foster (1977) time-series models: quarterly EPS (primary, excl. extraordinary items) with income-before-extraordinary-items as fallback, fiscal year/quarter keys and report date, 1970Q2-1981Q4 (pre-1974 used for model estimation). Filters consol='CSTD', indfmt='INDL', popsrc='D' applied at query time.",
+      "needed_columns": ["gvkey", "fyearq", "fqtr", "datadate", "epspxq", "ibq", "consol", "indfmt", "popsrc"],
+      "matched_table": "comp_202601.fundq",
+      "matched_columns": ["gvkey", "fyearq", "fqtr", "datadate", "epspxq", "ibq", "consol", "indfmt", "popsrc"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "compustat_announcement_dates",
+      "description": "Actual earnings announcement dates (day 0 of the event study) — the paper uses 'actual earnings announcement dates (as reported by Standard and Poor's)'. Compustat's fundq field rdq (report/quarterly release date) is the S&P-reported release date. Coverage is sparser in the early 1970s — the paper itself notes observations are lost 'due to the Compustat tape not having a complete set of earnings announcement dates for each company' — so rdq coverage for 1970-1981 must be sanity-checked with a live query at Stage 7 entry.",
+      "needed_columns": ["gvkey", "fyearq", "fqtr", "rdq"],
+      "matched_table": "comp_202601.fundq",
+      "matched_columns": ["gvkey", "fyearq", "fqtr", "rdq"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_daily_returns",
+      "description": "CRSP daily security returns, prices and shares outstanding for (a) event-time daily returns R_{i,t} around each announcement (windows [-310, +60] trading days relative to day 0), (b) NYSE size-decile companion portfolio mean daily returns, (c) market capitalization at the start of each year (|prc| x shrout), and (d) 250-trading-day residual sigma estimation for Models 3-4. Needed from ~1968 through 1982.",
+      "needed_columns": ["permno", "date", "ret", "prc", "shrout", "vol"],
+      "matched_table": "crsp_202601.dsf",
+      "matched_columns": ["permno", "date", "ret", "prc", "shrout", "vol"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_pit_identifiers",
+      "description": "Point-in-time CRSP security identifiers for the universe filter and NYSE classification: share code 10/11 (ordinary common) and exchange code 1 (NYSE) for the size-decile benchmark universe, with validity intervals for PIT joins against dsf.",
+      "needed_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd"],
+      "matched_table": "crsp_202601.dsenames",
+      "matched_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_compustat_link",
+      "description": "CRSP-Compustat merged link table to map Compustat gvkey (quarterly earnings and announcement dates) to CRSP lpermno (daily returns), using link dates for point-in-time matching and the standard primary/locally-complete link filters (linkprim in ('P','C'), linktype in ('LU','LC'), liid match where available).",
+      "needed_columns": ["gvkey", "lpermno", "linkdt", "linkenddt", "linkprim", "linktype", "liid"],
+      "matched_table": "crsp_202601.ccmxpf_lnkhist",
+      "matched_columns": ["gvkey", "lpermno", "linkdt", "linkenddt", "linkprim", "linktype", "liid"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_ew_market_index",
+      "description": "Equally-weighted CRSP daily market index (NYSE and AMEX firms) — the R_{M,t} benchmark of eq. (17), used only for the Appendix robustness (Tables 8-9, not in the selected replication set) and as an optional cross-check on the size-decile benchmark. dsi.ewretd is the equally weighted return including distributions.",
+      "needed_columns": ["date", "ewretd"],
+      "matched_table": "crsp_202601.dsi",
+      "matched_columns": ["date", "ewretd"],
+      "missing_columns": [],
+      "status": "full"
+    }
+  ],
+  "blocking_issues": []
+}

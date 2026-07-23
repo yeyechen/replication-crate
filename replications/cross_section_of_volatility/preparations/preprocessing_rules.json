@@ -1,0 +1,198 @@
+[
+  {
+    "rule_id": "universe_exchanges",
+    "category": "universe",
+    "section": "§I.B.2 The Pre-Formation Regression",
+    "paper_location": "L177",
+    "paper_quote": "We run the regression for all stocks on AMEX, NASDAQ, and the NYSE, with more than 17 daily observations."
+  },
+  {
+    "rule_id": "min_daily_obs",
+    "category": "sample",
+    "section": "§I.B.2 The Pre-Formation Regression",
+    "paper_location": "L177",
+    "paper_quote": "We run the regression for all stocks on AMEX, NASDAQ, and the NYSE, with more than 17 daily observations."
+  },
+  {
+    "rule_id": "sample_period_beta_vix",
+    "category": "sample",
+    "section": "Table I description",
+    "paper_location": "L207",
+    "paper_quote": "The sample period is from January 1986 to December 2000."
+  },
+  {
+    "rule_id": "sample_period_ivol",
+    "category": "sample",
+    "section": "Table VI description",
+    "paper_location": "L1167",
+    "paper_quote": "The sample period is July 1963 to December 2000."
+  },
+  {
+    "rule_id": "sort_beta_vix_quintiles",
+    "category": "sort",
+    "section": "§I.B.2 The Pre-Formation Regression",
+    "paper_location": "L185",
+    "paper_quote": "At the end of each month, we sort stocks into quintiles, based on the value of the realized $\\beta_{\\Delta VIX}$ coefficients over the past month."
+  },
+  {
+    "rule_id": "value_weight",
+    "category": "sort",
+    "section": "§I.B.2 The Pre-Formation Regression",
+    "paper_location": "L185",
+    "paper_quote": "Within each quintile portfolio, we value weight the stocks."
+  },
+  {
+    "rule_id": "var_beta_vix",
+    "category": "variable",
+    "section": "§I.B.2, equation (3)",
+    "paper_location": "L170",
+    "paper_quote": "$r_{t}^{i}=\\beta_{0}+\\beta_{M K T}^{i} M K T_{t}+\\beta_{\\Delta V I X}^{i} \\Delta V I X_{t}+\\varepsilon_{t}^{i}$"
+  },
+  {
+    "rule_id": "var_delta_vix",
+    "category": "variable",
+    "section": "§I.B.1 Innovations in the VIX Index",
+    "paper_location": "L129",
+    "paper_quote": "we measure daily innovations in aggregate volatility by using daily changes in VIX, which we denote as $\\Delta$ VIX."
+  },
+  {
+    "rule_id": "var_ivol_ff3",
+    "category": "variable",
+    "section": "§II.A.1 Definition of Idiosyncratic Volatility",
+    "paper_location": "L1128",
+    "paper_quote": "We define idiosyncratic risk as $\\sqrt{\\text{var}(\\varepsilon_t^i)}$ in equation (8). When we refer to idiosyncratic volatility, we mean idiosyncratic volatility relative to the FF-3 model."
+  },
+  {
+    "rule_id": "var_ff3_regression",
+    "category": "factor",
+    "section": "§II.A.1, equation (8)",
+    "paper_location": "L1124",
+    "paper_quote": "$r_t^i = \\alpha^i + \\beta_{MKT}^i MKT_t + \\beta_{SMB}^i SMB_t + \\beta_{HML}^i HML_t + \\varepsilon_t^i.$"
+  },
+  {
+    "rule_id": "ivol_daily_data",
+    "category": "variable",
+    "section": "§II.A.2 A Trading Strategy",
+    "paper_location": "L1132",
+    "paper_quote": "we simply sort stocks into quintile portfolios based on their level of idiosyncratic volatility computed using daily returns over the past month, and we hold these value-weighted portfolios for 1 month."
+  },
+  {
+    "rule_id": "sort_ivol_quintiles",
+    "category": "sort",
+    "section": "§II.A.2 A Trading Strategy",
+    "paper_location": "L1132",
+    "paper_quote": "we simply sort stocks into quintile portfolios based on their level of idiosyncratic volatility computed using daily returns over the past month, and we hold these value-weighted portfolios for 1 month."
+  },
+  {
+    "rule_id": "monthly_rebalance",
+    "category": "sort",
+    "section": "§II.A.2 A Trading Strategy",
+    "paper_location": "L1132",
+    "paper_quote": "The portfolios are rebalanced each month."
+  },
+  {
+    "rule_id": "var_total_vol",
+    "category": "variable",
+    "section": "§II.A.1 Definition of Idiosyncratic Volatility",
+    "paper_location": "L1128",
+    "paper_quote": "We also consider sorting portfolios on total volatility, without using any control for systematic risk."
+  },
+  {
+    "rule_id": "var_fvix_mimicking",
+    "category": "factor",
+    "section": "§I.B.4, equation (4)",
+    "paper_location": "L368",
+    "paper_quote": "We use the quintile portfolios sorted on past $\\beta_{\\Delta VIX}$ in Table I as the base assets $X_t$."
+  },
+  {
+    "rule_id": "var_excess_returns",
+    "category": "variable",
+    "section": "§I.B.2, equation (3)",
+    "paper_location": "L173",
+    "paper_quote": "where $M K T$ is the market excess return"
+  },
+  {
+    "rule_id": "report_total_returns",
+    "category": "variable",
+    "section": "Table I description",
+    "paper_location": "L207",
+    "paper_quote": "The statistics in the columns labeled Mean and Std. Dev. are measured in monthly percentage terms and apply to total, not excess, simple returns."
+  },
+  {
+    "rule_id": "var_size_log_mcap",
+    "category": "variable",
+    "section": "Table I description",
+    "paper_location": "L207",
+    "paper_quote": "Size reports the average log market capitalization for firms within the portfolio"
+  },
+  {
+    "rule_id": "var_bm_ratio",
+    "category": "variable",
+    "section": "Table I description",
+    "paper_location": "L207",
+    "paper_quote": "B/M reports the average book-to-market ratio"
+  },
+  {
+    "rule_id": "newey_west_tstats",
+    "category": "fm",
+    "section": "Table I description",
+    "paper_location": "L207",
+    "paper_quote": "Robust Newey–West (1987) $t$-statistics are reported in square brackets."
+  },
+  {
+    "rule_id": "double_sort_control",
+    "category": "sort",
+    "section": "Table VII description",
+    "paper_location": "L1330",
+    "paper_quote": "each month we first sort stocks based on the first characteristic (size, book-to-market, leverage, liquidity, volume, turnover, bid–ask spreads, or dispersion of analysts' forecasts) and then, within each quintile we sort stocks based on idiosyncratic volatility relative to the FF-3 model."
+  },
+  {
+    "rule_id": "lmn_strategy",
+    "category": "sort",
+    "section": "§II.A.2 A Trading Strategy",
+    "paper_location": "L1132",
+    "paper_quote": "At month $t$, we compute idiosyncratic volatilities from the regression (8) on daily data over an $L$-month period from month $t - L - M$ to month $t - M$."
+  },
+  {
+    "rule_id": "var_leverage",
+    "category": "variable",
+    "section": "Table VII description",
+    "paper_location": "L1330",
+    "paper_quote": "leverage is defined as the ratio of total book value of assets to book value of equity"
+  },
+  {
+    "rule_id": "var_volume",
+    "category": "variable",
+    "section": "Table VII description",
+    "paper_location": "L1330",
+    "paper_quote": "volume represents average dollar volume over the previous month"
+  },
+  {
+    "rule_id": "var_turnover",
+    "category": "variable",
+    "section": "Table VII description",
+    "paper_location": "L1330",
+    "paper_quote": "turnover represents volume divided by the total number of shares outstanding over the past month"
+  },
+  {
+    "rule_id": "var_nyse_only",
+    "category": "universe",
+    "section": "Table VII description",
+    "paper_location": "L1330",
+    "paper_quote": "In the panel labeled \"NYSE Stocks Only,\" we sort stocks into quintile portfolios based on their idiosyncratic volatility, relative to the FF-3 model, using only NYSE stocks."
+  },
+  {
+    "rule_id": "delisting_treatment",
+    "category": "delisting",
+    "section": "paper silent",
+    "paper_location": "L177",
+    "paper_quote": "We run the regression for all stocks on AMEX, NASDAQ, and the NYSE, with more than 17 daily observations."
+  },
+  {
+    "rule_id": "winsorization",
+    "category": "winsorize",
+    "section": "paper silent",
+    "paper_location": "L1132",
+    "paper_quote": "we simply sort stocks into quintile portfolios based on their level of idiosyncratic volatility computed using daily returns over the past month, and we hold these value-weighted portfolios for 1 month."
+  }
+]

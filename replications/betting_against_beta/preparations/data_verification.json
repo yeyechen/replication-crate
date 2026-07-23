@@ -1,0 +1,69 @@
+{
+  "verdict": "ready",
+  "requirements": [
+    {
+      "id": "crsp_daily_returns",
+      "description": "CRSP daily stock returns for beta estimation (1-year vol, 5-year correlation windows)",
+      "needed_columns": ["permno", "date", "ret", "prc", "vol", "shrout"],
+      "matched_table": "crsp_202601.dsf",
+      "matched_columns": ["permno", "date", "ret", "prc", "vol", "shrout"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_monthly_returns",
+      "description": "CRSP monthly stock returns for portfolio return computation",
+      "needed_columns": ["permno", "date", "ret", "prc", "shrout"],
+      "matched_table": "crsp_202601.msf",
+      "matched_columns": ["permno", "date", "ret", "prc", "shrout"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_universe_filter",
+      "description": "CRSP point-in-time names/descriptors for share code and exchange code filtering",
+      "needed_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd"],
+      "matched_table": "crsp_202601.dsenames",
+      "matched_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_market_index",
+      "description": "CRSP value-weighted market index for beta computation and CAPM regression",
+      "needed_columns": ["date", "vwretd"],
+      "matched_table": "crsp_202601.dsi",
+      "matched_columns": ["date", "vwretd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_monthly_market_index",
+      "description": "CRSP monthly value-weighted market index for monthly factor regressions",
+      "needed_columns": ["date", "vwretd"],
+      "matched_table": "crsp_202601.msi",
+      "matched_columns": ["date", "vwretd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_four_factor",
+      "description": "Fama-French 4-factor monthly (Mkt-RF, SMB, HML, UMD/MOM, RF) for alpha regressions",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "mom", "rf"],
+      "matched_table": "ff.four_factor_monthly",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "mom", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_delisting",
+      "description": "CRSP delisting returns for handling delisted stocks",
+      "needed_columns": ["permno", "date", "dlret", "dlstcd"],
+      "matched_table": "crsp_202601.dsedelist",
+      "matched_columns": ["permno", "date", "dlret", "dlstcd"],
+      "missing_columns": [],
+      "status": "full"
+    }
+  ],
+  "blocking_issues": []
+}

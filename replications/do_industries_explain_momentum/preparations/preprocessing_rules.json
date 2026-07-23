@@ -1,0 +1,268 @@
+[
+  {
+    "rule_id": "delisting_paper_silent",
+    "category": "delisting",
+    "section": "\u00a7I. Data Description and Industry Returns",
+    "paper_location": "L72-74",
+    "paper_quote": "paper silent: Section I describes the CRSP and COMPUSTAT data files and the formation of the 20 industry portfolios but states no rule for delisted securities; returns are used as reported by CRSP (delisting returns included where CRSP assigns them in the monthly return series)."
+  },
+  {
+    "rule_id": "sample_missing_data_paper_silent",
+    "category": "sample",
+    "section": "\u00a7I. Data Description and Industry Returns",
+    "paper_location": "L72-74",
+    "paper_quote": "paper silent: the paper states no explicit treatment for missing monthly returns or missing Compustat book equity; the only stated sample restrictions are the CRSP/COMPUSTAT coverage and the July 1963\u2013July 1995 formation window."
+  },
+  {
+    "rule_id": "winsorize_paper_silent",
+    "category": "winsorize",
+    "section": "\u00a7I. Data Description and Industry Returns",
+    "paper_location": "L72-74",
+    "paper_quote": "paper silent: the paper reports no winsorization or trimming of returns, size, or BE/ME anywhere in the data or methodology sections; variables are used untransformed except for the log transforms in \u00a7V."
+  },
+  {
+    "rule_id": "universe_industry_portfolios",
+    "category": "universe",
+    "section": "\u00a7I. Data Description and Industry Returns",
+    "paper_location": "L74",
+    "paper_quote": "Using the CRSP and COMPUSTAT data files, 20 value-weighted industry portfolios are formed for every month from July 1963 to July 1995. Two-digit Standard Industrial Classification (SIC) codes\u00b3 are used to form industry portfolios in order to maximize coverage of NYSE, AMEX, and Nasdaq stocks, while maintaining a manageable number of industries and ensuring that each industry contains a large number of stocks for diversification."
+  },
+  {
+    "rule_id": "universe_adjustment_for_size_beme",
+    "category": "universe",
+    "section": "\u00a7I. Data Description and Industry Returns",
+    "paper_location": "L76",
+    "paper_quote": "Table I reports the size and BE/ME-adjusted industry returns, where stocks within the industry are matched with well-diversified portfolios of similar size and BE/ME, and the value-weighted average of stock returns in excess of these size and BE/ME benchmarks represents the industry abnormal return."
+  },
+  {
+    "rule_id": "universe_sic_source_crsp",
+    "category": "universe",
+    "section": "\u00a7I (footnote 3)",
+    "paper_location": "L80",
+    "paper_quote": "The SIC codes are obtained from CRSP, which reports the time-series of industry classification codes. COMPUSTAT only reports the most recent SIC codes. Employing the COMPUSTAT codes does not alter our conclusions, however."
+  },
+  {
+    "rule_id": "factor_sb_characteristic_match",
+    "category": "factor",
+    "section": "\u00a7II (footnote 5)",
+    "paper_location": "L111",
+    "paper_quote": "Our control adjusts returns for the effects of size and BE/ME by first sorting stocks into size quintiles and then, within each size quintile, sorting stocks into BE/ME quintiles, where stocks are value weighted within these groups. Stock $j$ is then matched with one of the 25 portfolios based on its size and BE/ME characteristic at time $t - 1$ , and the return of the matched portfolio is subtracted from stock $j$ \u2019s return at time $t$ ."
+  },
+  {
+    "rule_id": "sample_industry_formation_period",
+    "category": "sample",
+    "section": "Table I description",
+    "paper_location": "L127",
+    "paper_quote": "The industries are formed monthly, from July 1963\u2013July 1995 using CRSP SIC codes, which allow for time-variation in industrial classification."
+  },
+  {
+    "rule_id": "sample_sb_period",
+    "category": "sample",
+    "section": "Table I description",
+    "paper_location": "L127",
+    "paper_quote": "The size- and BE/ME-adjusted returns correspond to the January 1973 to July 1995 time period."
+  },
+  {
+    "rule_id": "var_excess_return",
+    "category": "variable",
+    "section": "Table I description",
+    "paper_location": "L127",
+    "paper_quote": "Also reported are the average percentage of total market capitalization, the average return in excess of the three-month Treasury bill rate, the return standard deviation, and the average abnormal return in excess of size and BE/ME matched benchmarks ( $t$ -statistics are in parentheses) of each industry over the sample period"
+  },
+  {
+    "rule_id": "universe_20_industry_sic_groups",
+    "category": "universe",
+    "section": "Table I (industry rows L142-161)",
+    "paper_location": "L142-161",
+    "paper_quote": "1. Mining 10-14 ... 2. Food 20 ... 3. Apparel 22-23 ... 4. Paper 26 ... 5. Chemical 28 ... 6. Petroleum 29 ... 7. Construction 32 ... 8. Prim. Metals 33 ... 9. Fab. Metals 34 ... 10. Machinery 35 ... 11. Electrical Eq. 36 ... 12. Transport Eq. 37 ... 13. Manufacturing 38-39 ... 14. Railroads 40 ... 15. Other Transport. 41-47 ... 16. Utilities 49 ... 17. Dept. Stores 53 ... 18. Retail 50-52, 54-59 ... 19. Financial 60-69 ... 20. Other other"
+  },
+  {
+    "rule_id": "sort_momentum_6_6_rank_hold",
+    "category": "sort",
+    "section": "\u00a7III.A Momentum Investment Strategies",
+    "paper_location": "L322",
+    "paper_quote": "In our analysis, the six-month, six-month strategy at time $t$ entails ranking stocks based on their $t-6$ to $t-1$ returns, and computing the value-weighted return of the highest 30 percent of stocks every month from $t$ to $t+5$ minus the value-weighted return of the lowest 30 percent of stocks every month from $t$ to $t+5$ . This procedure is then repeated at time $t+1$ , and so forth."
+  },
+  {
+    "rule_id": "sort_overlapping_average",
+    "category": "sort",
+    "section": "\u00a7III.A Momentum Investment Strategies",
+    "paper_location": "L324",
+    "paper_quote": "This technique makes use of the fact that ranking on the past six months and holding for the next six months produces a time series of monthly returns where each month\u2019s return is a combination of six ranking strategies."
+  },
+  {
+    "rule_id": "sort_30pct_breakpoints_vw",
+    "category": "sort",
+    "section": "\u00a7III.A.1 Raw Profits",
+    "paper_location": "L336",
+    "paper_quote": "We employ 30 percent breakpoints to determine winners and losers, and we value weight the returns of stocks with momentum rankings in the top 30 percent and bottom 30 percent to compute the returns of the winning and losing portfolios."
+  },
+  {
+    "rule_id": "sample_T383",
+    "category": "sample",
+    "section": "Table II description",
+    "paper_location": "L366",
+    "paper_quote": "Panel A reports average monthly profits of winners minus losers, $W_i - L_o$ (the highest 30 percent minus the lowest 30 percent), momentum portfolios of individual equities for July 1963 through July 1995 (i.e., $T = 383$ )."
+  },
+  {
+    "rule_id": "sample_dgtw_sb_period",
+    "category": "sample",
+    "section": "Table II description",
+    "paper_location": "L366",
+    "paper_quote": "Portfolios using size- and BE/ME-adjusted or DGTW-adjusted returns pertain to the January 1973 through July 1995 time period."
+  },
+  {
+    "rule_id": "sort_industry_momentum_6_6",
+    "category": "sort",
+    "section": "\u00a7III.B Industry Momentum Profits",
+    "paper_location": "L519",
+    "paper_quote": "Sorting industry portfolios (which value weight stocks within the industry) based on their past six-month returns, and investing equally in the top three industries while shorting equally the bottom three industries (holding this position for six months) produces average monthly profits (shown in Table II, Panel B) of 0.43 percent\u2014identical in magnitude to those obtained from the momentum strategy for individual equities."
+  },
+  {
+    "rule_id": "factor_dgtw_125_portfolios",
+    "category": "factor",
+    "section": "\u00a7III.B.2 (footnote 17)",
+    "paper_location": "L592",
+    "paper_quote": "DGTW assign stocks to one of five categories based on the prior period\u2019s market capitalization, then within each of these groups they divide stocks into five BE/ME categories, and then into five 12-month prior return groups. The breakpoints used for each of the three characteristics are based on NYSE stocks only. Value-weighted returns are then computed for each group of stocks at time $t$ , creating 125 portfolio returns."
+  },
+  {
+    "rule_id": "var_raw_minus_industry",
+    "category": "variable",
+    "section": "\u00a7III.B.3 Industry-Adjusted Profits",
+    "paper_location": "L636",
+    "paper_quote": "If we subtract each stock\u2019s contemporaneous industry return from the stock\u2019s own return, and analyze the industry-adjusted return of an individual stock momentum strategy, we obtain profits of sufficiently smaller magnitude."
+  },
+  {
+    "rule_id": "var_sb_minus_industry",
+    "category": "variable",
+    "section": "\u00a7III.B.3 Industry-Adjusted Profits",
+    "paper_location": "L639",
+    "paper_quote": "\\tilde{r}_{j t}^{s b, I} \\equiv \\tilde{r}_{j t}^{s b}-\\tilde{R}_{I t}^{s b}, \\quad \\text { for } j \\in I,"
+  },
+  {
+    "rule_id": "var_random_industry",
+    "category": "variable",
+    "section": "\u00a7III.B.4 (footnote 18)",
+    "paper_location": "L672",
+    "paper_quote": "The numbers reported in the table replace stock $j$ \u2019s return with an equal-weighted return of the stocks ranked above and below it (i.e., replace $\\tilde{r}_{j,t}$ with $(\\tilde{r}_{j+1,t} + \\tilde{r}_{j-1,t})/2$ ). To avoid endpoint problems, we replace stock $N$ with stock $N-1$ and stock 1 with stock 2."
+  },
+  {
+    "rule_id": "sort_industry_neutral",
+    "category": "sort",
+    "section": "\u00a7III.B.5 Industry-Neutral Portfolios",
+    "paper_location": "L686",
+    "paper_quote": "For each industry, stocks are first sorted on past six-month returns, and the value-weighted average return of the top 30 percent of stocks minus the bottom 30 percent of stocks *within the industry* is computed at time $t$ and held for six months."
+  },
+  {
+    "rule_id": "sort_excess_industry",
+    "category": "sort",
+    "section": "\u00a7III.B.5 Industry-Neutral Portfolios",
+    "paper_location": "L688",
+    "paper_quote": "For the second portfolio, stocks are ranked globally based on their past six-month return in excess of their industry average over the same time period. The equal-weighted average return of the top 30 percent of stocks minus the bottom 30 percent based on the excess return ranking is computed at time $t$ (and held for six months)."
+  },
+  {
+    "rule_id": "sort_high_ind_losers_low_ind_winners",
+    "category": "sort",
+    "section": "\u00a7III.B.5 Industry-Neutral Portfolios",
+    "paper_location": "L690",
+    "paper_quote": "The third portfolio is long the losing stocks from the winning industries, and short the winners from the losing industries. Conditional on being in the three industries that performed the best over the last six months, we rank stocks within each of these industries based on their prior six-month returns and form a value-weighted portfolio of the *bottom* 30 percent of stocks within each of these three high past performing industries."
+  },
+  {
+    "rule_id": "sort_im_lh_grid",
+    "category": "sort",
+    "section": "\u00a7IV. Robustness of Industry Momentum Strategies",
+    "paper_location": "L704",
+    "paper_quote": "Ranking the 20 industries based on their $L$-month lagged returns, we form portfolios of the highest and lowest past performing industries, hold them for $H$ months, and rebalance monthly. Again, our strategy is long the highest three past performing industries and short the lowest three."
+  },
+  {
+    "rule_id": "sort_skip_one_month",
+    "category": "sort",
+    "section": "\u00a7IV.A Trading Frictions and Lead-Lag Effects",
+    "paper_location": "L1135",
+    "paper_quote": "However, for robustness, we skip a month between the ranking period and holding period in Table III, Panel B."
+  },
+  {
+    "rule_id": "sample_im11_period",
+    "category": "sample",
+    "section": "Table IV description",
+    "paper_location": "L1175",
+    "paper_quote": "The results pertain to the July 1966 to July 1995 time period (347 months)."
+  },
+  {
+    "rule_id": "sort_panel_b_no_rebalance",
+    "category": "sort",
+    "section": "Table V description",
+    "paper_location": "L1254",
+    "paper_quote": "Panel B decomposes the profits from IM(1,1) into size and $Vol quintiles as described above, but the weights on the securities are not rebalanced within each quintile to sum to one, so that we can capture the contribution of each size and $Vol category to total profits."
+  },
+  {
+    "rule_id": "sort_size_vol_quintiles_within_industry",
+    "category": "sort",
+    "section": "Table V description",
+    "paper_location": "L1254",
+    "paper_quote": "Panel A reports the IM(1,1) profits for the largest and smallest 20 percent of stocks based on market capitalization (size) and dollar trading volume ($Vol). Specifically, the three industries that performed the best and the three that performed the worst at time $t - 1$ are selected, and, within each industry, stocks are sorted into quintiles based on their market capitalization ($Vol) at time $t - 1$."
+  },
+  {
+    "rule_id": "fm_cross_section_dt_adjusted",
+    "category": "fm",
+    "section": "\u00a7V. The Cross Section of Expected Returns",
+    "paper_location": "L1438",
+    "paper_quote": "Specifically, we regress the cross section of stock returns at time $t$ , adjusted for the return effects of size and BE/ME characteristics (with the Daniel and Titman (1997) procedure described earlier in the paper), on a constant and a host of firm characteristics."
+  },
+  {
+    "rule_id": "fm_time_series_averaging",
+    "category": "fm",
+    "section": "\u00a7V (regressor definitions)",
+    "paper_location": "L1454",
+    "paper_quote": "The coefficients from these regressions are then averaged over time and reported in Table VI, along with their time-series $t$ -statistics, computed in the same manner as Fama and MacBeth (1973)."
+  },
+  {
+    "rule_id": "var_be_me",
+    "category": "variable",
+    "section": "\u00a7V (regressor definitions)",
+    "paper_location": "L1454",
+    "paper_quote": "BE/ME (log of book value plus deferred taxes and investment tax credits divided by market capitalization, from the previous period)"
+  },
+  {
+    "rule_id": "var_ret_1_1",
+    "category": "variable",
+    "section": "\u00a7V (regressor definitions)",
+    "paper_location": "L1454",
+    "paper_quote": "The next regression simply adds the past one-month return, $ret_{-1:-1}$ , and the return from $t-36$ to $t-13$ , $ret_{-36:-13}$ , of each individual stock."
+  },
+  {
+    "rule_id": "var_size_log_me",
+    "category": "variable",
+    "section": "\u00a7V (regressor definitions)",
+    "paper_location": "L1454",
+    "paper_quote": "The first set of independent variables include: market $\\beta,^{25}$ size (log of market capitalization at $t-1$ ), BE/ME (log of book value plus deferred taxes and investment tax credits divided by market capitalization, from the previous period), and the prior six-month return of the stock $ret_{-6:-1}$ (the average return from $t-6$ to $t-1$ )."
+  },
+  {
+    "rule_id": "var_ret_6_6_average",
+    "category": "variable",
+    "section": "\u00a7V (regressor definitions)",
+    "paper_location": "L1456",
+    "paper_quote": "we replace $ret_{-6:-1}$ with $ret_{-6:+6}$ , which is simply the equal-weighted average of the returns from $t-11$ to $t-6, \\ldots, t-6$ to $t-1$"
+  },
+  {
+    "rule_id": "var_beta_36m_prerank",
+    "category": "variable",
+    "section": "\u00a7V (footnote 25)",
+    "paper_location": "L1466",
+    "paper_quote": "Market $\\beta$ s are estimated by regressing the prior 36 months of excess returns for each stock on a constant and the past 36 months of excess returns of the CRSP value-weighted index. Stocks are then ranked based on their coefficient estimates from this regression (pre-ranking betas) and assigned to one of 100 groups based on this ranking. Stocks within a particular beta group are assigned the (equal-weighted) average beta for that group."
+  },
+  {
+    "rule_id": "var_ind_l_h",
+    "category": "variable",
+    "section": "\u00a7V (industry momentum regressors)",
+    "paper_location": "L1476",
+    "paper_quote": "We also run the same cross-sectional regressions using industry momentum variables by replacing $ret_{-L:-H}$ with $ind_{-L:-H}$, which is the industry return over the $(L,H)$ time period to which each stock belongs."
+  },
+  {
+    "rule_id": "fm_sample_period_both_sides",
+    "category": "fm",
+    "section": "Table VI description",
+    "paper_location": "L1496",
+    "paper_quote": "Fama and MacBeth (1973) cross-sectional regressions are run every month on the universe of securities from January 1973\u2013July 1995."
+  }
+]

@@ -1,0 +1,331 @@
+[
+  {
+    "rule_id": "universe_common_stock",
+    "category": "universe",
+    "section": "3.1 Data sources",
+    "paper_location": "L332",
+    "paper_quote": "Common stocks are identified by a CRSP share code (SHRCD) of 10 or 11 or by a Compustat issue code (TPCI) of 0. We also drop stocks traded on over-the-counter (OTC) exchanges."
+  },
+  {
+    "rule_id": "universe_otc_exclusion",
+    "category": "universe",
+    "section": "3.1 Data sources",
+    "paper_location": "L332",
+    "paper_quote": "We also drop stocks traded on over-the-counter (OTC) exchanges."
+  },
+  {
+    "rule_id": "universe_crsp_compustat_merge",
+    "category": "universe",
+    "section": "3.1 Data sources",
+    "paper_location": "L316",
+    "paper_quote": "Our long sample of U.S. data includes all available common stocks on the merged CRSP/Compustat North America data."
+  },
+  {
+    "rule_id": "sample_long_period",
+    "category": "sample",
+    "section": "3.1 Data sources",
+    "paper_location": "L316",
+    "paper_quote": "The first available date for our regressions and return tests is June 1957."
+  },
+  {
+    "rule_id": "sample_end_date",
+    "category": "sample",
+    "section": "Table 3 caption",
+    "paper_location": "L1878",
+    "paper_quote": "Panel A reports results from our Long Sample of domestic stocks. The sample period runs from June 1957 to December 2016."
+  },
+  {
+    "rule_id": "sample_five_year_history",
+    "category": "sample",
+    "section": "3.1 Data sources",
+    "paper_location": "L334",
+    "paper_quote": "Our tests require at least a five-year history as some of our variables are five-year growth measures."
+  },
+  {
+    "rule_id": "sample_fiscal_alignment",
+    "category": "sample",
+    "section": "3.1 Data sources",
+    "paper_location": "L314",
+    "paper_quote": "We follow the standard convention (Fama and French (1992)) and align accounting variables at the end of the firm's fiscal year ending anywhere in calendar year t-1 to June of calendar year t."
+  },
+  {
+    "rule_id": "sample_returns_currency",
+    "category": "sample",
+    "section": "3.1 Data sources",
+    "paper_location": "L314",
+    "paper_quote": "All returns are in U.S. dollars. They do not include any currency hedging, and they are measured as excess returns above the U.S. Treasury bill rate."
+  },
+  {
+    "rule_id": "delisting_returns",
+    "category": "delisting",
+    "section": "3.1 Data sources",
+    "paper_location": "L330",
+    "paper_quote": "We include delisting returns when available. If a firm is delisted but the delisting return is missing and the delisting is performance related, we follow Shumway (1997) and assume a -30% delisting return."
+  },
+  {
+    "rule_id": "sort_deciles",
+    "category": "sort",
+    "section": "3.3 Portfolios",
+    "paper_location": "L406",
+    "paper_quote": "To form quality-sorted portfolios, at the end of each calendar month, we assign stocks in each country to 10 quality-sorted portfolios. U.S. sorts are based on NYSE breakpoints. Portfolios are value-weighted, refreshed every calendar month, and rebalanced every calendar month to maintain value weights."
+  },
+  {
+    "rule_id": "sort_qmj_construction",
+    "category": "sort",
+    "section": "3.3 Portfolios",
+    "paper_location": "L408",
+    "paper_quote": "QMJ factors are constructed as the intersection of six value-weighted portfolios formed on size and quality. At the end of each calendar month, we assign stocks to two size-sorted portfolios, based on their market capitalization. For U.S. securities, the size breakpoint is the median NYSE market equity. We use conditional sorts, first sorting on size and then on quality."
+  },
+  {
+    "rule_id": "sort_qmj_top_bottom_30",
+    "category": "sort",
+    "section": "1 Introduction",
+    "paper_location": "L127",
+    "paper_quote": "The factor is long the top 30% high-quality stocks and short the bottom 30% junk stocks within the universe of large stocks and similarly within the universe of small stocks."
+  },
+  {
+    "rule_id": "sort_qmj_formula",
+    "category": "sort",
+    "section": "3.3 Portfolios",
+    "paper_location": "L408",
+    "paper_quote": "The QMJ factor return is the average return on the two high-quality portfolios minus the average return on the two low-quality (junk) portfolios: QMJ = 1/2 (Small Quality + Big Quality) - 1/2 (Small Junk + Big Junk)."
+  },
+  {
+    "rule_id": "sort_weighting_vw",
+    "category": "sort",
+    "section": "3.3 Portfolios",
+    "paper_location": "L406",
+    "paper_quote": "Portfolios are value-weighted, refreshed every calendar month, and rebalanced every calendar month to maintain value weights."
+  },
+  {
+    "rule_id": "winsorize_rank_zscore",
+    "category": "winsorize",
+    "section": "3.2 Quality score",
+    "paper_location": "L350",
+    "paper_quote": "To put each measure on equal footing and combine them, each month we convert each variable into ranks and standardize to obtain a z-score. More formally, let x be the variable of interest and r be the vector of ranks, r_i = rank(x_i). Then the z-score of the ranks of x is given by z(x) = z_x = (r - mu_r)/sigma_r, where mu_r and sigma_r are the cross-sectional mean and standard deviation of r."
+  },
+  {
+    "rule_id": "winsorize_no_explicit",
+    "category": "winsorize",
+    "section": "3.2 Quality score",
+    "paper_location": "L350",
+    "paper_quote": "Paper silent on explicit winsorization. Outlier control is achieved through rank-based z-scoring of all quality variables before combining. The rank transformation is monotone and bounded, providing implicit robustness to outliers."
+  },
+  {
+    "rule_id": "factor_four_factor",
+    "category": "factor",
+    "section": "3.3 Portfolios",
+    "paper_location": "L419",
+    "paper_quote": "We compute alphas with respect to a domestic and a global four-factor model. The explanatory variables are the market (MKT), size (small-minus-big, SMB), book-to-market (high-minus-low, HML), and momentum (up-minus-down, UMD) portfolios."
+  },
+  {
+    "rule_id": "factor_ff5",
+    "category": "factor",
+    "section": "3.3 Portfolios",
+    "paper_location": "L419",
+    "paper_quote": "In some of our tests, we also use the Fama and French (2015) five-factor model, based on the market factor (MKT), size (small-minus-big, SMB), book-to-market (high-minus-low, HML), profitability (robust-minus-weak, RMW), and an investment factor (conservative-minus-aggressive, CMA)."
+  },
+  {
+    "rule_id": "factor_construction_ff1993",
+    "category": "factor",
+    "section": "Appendix 1, Global factor returns",
+    "paper_location": "L3815",
+    "paper_quote": "The portfolio construction follows Fama and French (1993) and Asness and Frazzini (2013). The market factor MKT is the value-weighted return on all available stocks minus the one-month Treasury bill rate. The size, value, and momentum factors are constructed using six value-weighted portfolios formed on size and book-to-market and one-year return."
+  },
+  {
+    "rule_id": "fm_annual_regression",
+    "category": "fm",
+    "section": "4.1 The price of quality",
+    "paper_location": "L781",
+    "paper_quote": "Panel A of Table 2 reports results of Fama and MacBeth (1973) regressions of prices on quality. In June of each year, we regress scaled prices on quality measures, and we report time series averages of the cross-sectional slope estimates."
+  },
+  {
+    "rule_id": "fm_newey_west_5yr",
+    "category": "fm",
+    "section": "4.1 The price of quality",
+    "paper_location": "L781",
+    "paper_quote": "Standard errors are adjusted for heteroskedasticity and autocorrelation (Newey and West 1987) with a lag length of 5 yrs."
+  },
+  {
+    "rule_id": "var_zscore_methodology",
+    "category": "variable",
+    "section": "Appendix 1, Variable definitions",
+    "paper_location": "L3815",
+    "paper_quote": "To compute the z-score of a variable x at time t, we rank x cross-sectionally in ascending order r_x = rank(x). The cross-sectional ranks are rescaled to have a zero cross-sectional mean and a cross-sectional standard deviation of one: z(x) = z_x = [r_x - r_bar_x] / sigma(r_x)."
+  },
+  {
+    "rule_id": "var_gpoa",
+    "category": "variable",
+    "section": "Appendix 1, Profitability",
+    "paper_location": "L3854",
+    "paper_quote": "GPOA is equal to revenue minus costs of goods sold divided by total assets (REVT - COGS)/AT."
+  },
+  {
+    "rule_id": "var_roe",
+    "category": "variable",
+    "section": "Appendix 1, Profitability",
+    "paper_location": "L3854",
+    "paper_quote": "ROE is net income divided by book-equity IB/BE."
+  },
+  {
+    "rule_id": "var_roa",
+    "category": "variable",
+    "section": "Appendix 1, Profitability",
+    "paper_location": "L3854",
+    "paper_quote": "ROA is net income divided by total assets IB/AT."
+  },
+  {
+    "rule_id": "var_cfoa",
+    "category": "variable",
+    "section": "Appendix 1, Profitability",
+    "paper_location": "L3854",
+    "paper_quote": "CFOA is net income plus depreciation minus changes in working capital and capital expenditures divided by total assets: (IB + DP - delta WC - CAPX)/AT."
+  },
+  {
+    "rule_id": "var_gmar",
+    "category": "variable",
+    "section": "Appendix 1, Profitability",
+    "paper_location": "L3854",
+    "paper_quote": "GMAR is revenue minus costs of goods sold divided by total sales: (REVT - COGS)/SALE."
+  },
+  {
+    "rule_id": "var_acc",
+    "category": "variable",
+    "section": "Appendix 1, Profitability",
+    "paper_location": "L3854",
+    "paper_quote": "ACC is depreciation minus changes in working capital -(delta WC - DP)/AT."
+  },
+  {
+    "rule_id": "var_working_capital",
+    "category": "variable",
+    "section": "Appendix 1, Profitability",
+    "paper_location": "L3854",
+    "paper_quote": "Working capital WC is defined as current assets minus current liabilities minus cash and short-term instruments plus short-term debt and income taxes payable ACT - LCT - CHE + DLC + TXP."
+  },
+  {
+    "rule_id": "var_book_equity",
+    "category": "variable",
+    "section": "Appendix 1, Profitability",
+    "paper_location": "L3854",
+    "paper_quote": "Book equity BE is defined as shareholders' equity minus preferred stock. To obtain shareholders' equity, we use stockholders' equity (SEQ), but if it is not available, we use the sum of common equity (CEQ) and preferred stock (PSTK). If both SEQ and CEQ are unavailable, we proxy shareholders' equity by total assets (AT) minus the sum of total liability (LT) and minority interest (MIB). To obtain book equity (BE), we subtract from shareholders' equity the preferred stock value (PSTKRV, PSTKL, or PSTK depending on availability)."
+  },
+  {
+    "rule_id": "var_profitability_composite",
+    "category": "variable",
+    "section": "3.2 Quality score",
+    "paper_location": "L350",
+    "paper_quote": "Profitability = z(z_gpoa + z_roe + z_roa + z_cfoa + z_gmar + z_acc)."
+  },
+  {
+    "rule_id": "var_growth_residual_gpoa",
+    "category": "variable",
+    "section": "Appendix 1, Growth",
+    "paper_location": "L3866",
+    "paper_quote": "First, we compute growth in residual gross profits over assets [(gp_t - r^f at_{t-1}) - (gp_{t-5} - r^f at_{t-6})]/at_{t-5}, where GP = REVT - COGS and lowercase indicates quantities per share."
+  },
+  {
+    "rule_id": "var_growth_residual_roe",
+    "category": "variable",
+    "section": "Appendix 1, Growth",
+    "paper_location": "L3866",
+    "paper_quote": "Similarly, we compute five-year growth in residual return on equity [(ib_t - r^f be_{t-1}) - (ib_{t-5} - r^f be_{t-6})]/be_{t-5}."
+  },
+  {
+    "rule_id": "var_growth_residual_roa",
+    "category": "variable",
+    "section": "Appendix 1, Growth",
+    "paper_location": "L3866",
+    "paper_quote": "five-year growth in residual return over assets [(ib_t - r^f a_{t-1}) - (ib_{t-5} - r^f a_{t-6})]/a_{t-5}."
+  },
+  {
+    "rule_id": "var_growth_residual_cfoa",
+    "category": "variable",
+    "section": "Appendix 1, Growth",
+    "paper_location": "L3866",
+    "paper_quote": "five-year growth in residual cash flow over assets [(cf_t - r^f a_{t-1}) - (cf_{t-5} - r^f a_{t-6})]/at_{t-5} where CF = IB + DP - delta WC - CAPX."
+  },
+  {
+    "rule_id": "var_growth_gmar",
+    "category": "variable",
+    "section": "Appendix 1, Growth",
+    "paper_location": "L3866",
+    "paper_quote": "and five-year growth in gross margin (gp_t - gp_{t-5})/sale_{t-5}."
+  },
+  {
+    "rule_id": "var_growth_per_share",
+    "category": "variable",
+    "section": "3.2 Quality score",
+    "paper_location": "L348",
+    "paper_quote": "Further, to account for issuance, we consider all variables on a per-share basis. That is, we compute the value to a buy-and-hold investor who does not participate in issuances."
+  },
+  {
+    "rule_id": "var_growth_composite",
+    "category": "variable",
+    "section": "3.2 Quality score",
+    "paper_location": "L357",
+    "paper_quote": "Growth = z(z_delta_gpoa + z_delta_roe + z_delta_roa + z_delta_cfoa + z_delta_gmar)."
+  },
+  {
+    "rule_id": "var_bab_beta",
+    "category": "variable",
+    "section": "Appendix 1, Safety",
+    "paper_location": "L3873",
+    "paper_quote": "BAB is equal to minus market beta -beta. Betas are estimated as in Frazzini and Pedersen (2014) based on the product of the rolling one-year daily standard deviation and the rolling five-year three-day correlations."
+  },
+  {
+    "rule_id": "var_leverage",
+    "category": "variable",
+    "section": "Appendix 1, Safety",
+    "paper_location": "L3878",
+    "paper_quote": "LEV is minus total debt (the sum of long-term debt, short-term debt, minority interest, and preferred stock) over total assets -(DLTT + DLC + MIBT + PSTK)/AT."
+  },
+  {
+    "rule_id": "var_oscore",
+    "category": "variable",
+    "section": "Appendix 1, Safety",
+    "paper_location": "L3879",
+    "paper_quote": "O = -(-1.32 - 0.407*log(ADJASSET/CPI) + 6.03*TLTA - 1.43*WCTA + 0.076*CLCA - 1.72*OENEG - 2.37*NITA - 1.83*FUTL + 0.285*INTWO - 0.521*CHIN), where ADJASSET is adjusted total assets equal to total assets plus 10% of the difference between book equity and market equity AT + .1*(ME - BE). CPI is the consumer price index. TLTA is equal to book value of debt (DLC + DLTT) divided by ADJASSET. WCTA is current assets minus current liabilities scaled by adjusted assets (ACT - LCT)/ADJASSET. CLCA is current liabilities divided by current assets LCT/ACT. OENEG is a dummy equal to 1 if total liabilities exceed total assets 1(LT > AT). NITA is net income over assets IB/AT. FUTL is pre-tax income over total liabilities PT/LT. INTWO is a dummy equal to one if net income is negative for the current and prior fiscal year 1(MAX{IB_t, IB_{t-1}} < 0). CHIN is changes in net income, defined as (IB_t - IB_{t-1})/(|IB|_t + |IB|_{t-1})."
+  },
+  {
+    "rule_id": "var_zscore_altman",
+    "category": "variable",
+    "section": "Appendix 1, Safety",
+    "paper_location": "L3886",
+    "paper_quote": "Altman's Z-Score is a weighted average of working capital, retained earnings, earnings before interest and taxes, market equity, and sales, all over total assets: Z = (1.2*WC + 1.4*RE + 3.3*EBIT + 0.6*ME + SALE)/AT."
+  },
+  {
+    "rule_id": "var_evol",
+    "category": "variable",
+    "section": "Appendix 1, Safety",
+    "paper_location": "L3888",
+    "paper_quote": "EVOL is the standard deviation of quarterly ROE over the past 60 quarters. We require at least 12 nonmissing quarters. If quarterly data is unavailable we use the standard deviation of annual ROE over the past 5 yrs, and we require five nonmissing fiscal years."
+  },
+  {
+    "rule_id": "var_safety_composite",
+    "category": "variable",
+    "section": "3.2 Quality score",
+    "paper_location": "L364",
+    "paper_quote": "Safety = z(z_bab + z_lev + z_o + z_z + z_evol)."
+  },
+  {
+    "rule_id": "var_quality_composite",
+    "category": "variable",
+    "section": "3.2 Quality score",
+    "paper_location": "L370",
+    "paper_quote": "Quality = z(Profitability + Growth + Safety)."
+  },
+  {
+    "rule_id": "var_missing_data_averaging",
+    "category": "variable",
+    "section": "3.2 Quality score",
+    "paper_location": "L376",
+    "paper_quote": "To construct our composite quality measure as well as the individual subcomponents, we use all available information: if a particular measure is missing due lack of data availability, we simply average the remaining ones."
+  },
+  {
+    "rule_id": "var_market_to_book",
+    "category": "variable",
+    "section": "4.1 The price of quality",
+    "paper_location": "L460",
+    "paper_quote": "Market-to-book is defined as book equity divided by the current market equity of the firm in June of year t."
+  }
+]

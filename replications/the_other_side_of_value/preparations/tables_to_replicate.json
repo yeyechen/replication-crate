@@ -1,0 +1,141 @@
+{
+  "tables": [
+    {
+      "id": "table_2",
+      "table_ref": "Table 2",
+      "description": "Excess returns to portfolios sorted on gross profits-to-assets (Panel A) and book-to-market (Panel B), with FF3 alphas and portfolio characteristics.",
+      "replication_meaning": "Demonstrates correct GP/A signal construction ((REVT-COGS)/AT from Compustat funda), correct universe (non-financial SIC!=6, July 1963–Dec 2010), correct portfolio methodology (quintile sorts, NYSE breakpoints, value-weighted, annual June rebalancing), correct book equity construction (tiered SEQ→CEQ+PSTX→AT-LT), B/M with 6-month ME lag, and correct FF3 time-series regression setup. This is the paper's headline result — the gross profitability premium.",
+      "paper_quote": "This table shows monthly value-weighted average excess returns to portfolios sorted on gross profits-to-assets [(REVT – COGS)/AT], employing NYSE breakpoints, and results of time series regressions of these portfolios' returns on the Fama and French factors",
+      "paper_location": "L329",
+      "exercises_preprocessing_rules": [
+        "universe_exclude_financials",
+        "sample_period",
+        "sample_fiscal_year_mapping",
+        "sort_quintile_nyse_breaks",
+        "sort_value_weighted",
+        "factor_ff3",
+        "var_gp_a",
+        "var_bm",
+        "var_book_equity"
+      ],
+      "metrics": [
+        {"name": "panelA_low_re", "value": 0.31, "unit": "pct_month", "tolerance_pct": 30, "paper_location": "L356"},
+        {"name": "panelA_2_re", "value": 0.41, "unit": "pct_month", "tolerance_pct": 30, "paper_location": "L380"},
+        {"name": "panelA_3_re", "value": 0.52, "unit": "pct_month", "tolerance_pct": 30, "paper_location": "L404"},
+        {"name": "panelA_4_re", "value": 0.41, "unit": "pct_month", "tolerance_pct": 30, "paper_location": "L428"},
+        {"name": "panelA_high_re", "value": 0.62, "unit": "pct_month", "tolerance_pct": 30, "paper_location": "L452"},
+        {"name": "panelA_HL_re", "value": 0.31, "unit": "pct_month", "tolerance_pct": 30, "paper_location": "L476"},
+        {"name": "panelA_HL_tstat", "value": 2.49, "unit": "tstat", "tolerance_pct": 40, "paper_location": "L488"},
+        {"name": "panelA_low_alpha", "value": -0.18, "unit": "pct_month", "tolerance_pct": 50, "paper_location": "L357"},
+        {"name": "panelA_high_alpha", "value": 0.34, "unit": "pct_month", "tolerance_pct": 50, "paper_location": "L453"},
+        {"name": "panelA_HL_alpha", "value": 0.52, "unit": "pct_month", "tolerance_pct": 50, "paper_location": "L477"},
+        {"name": "panelA_HL_alpha_tstat", "value": 4.49, "unit": "tstat", "tolerance_pct": 40, "paper_location": "L489"},
+        {"name": "panelA_HL_hml", "value": -0.44, "unit": "loading", "tolerance_pct": 40, "paper_location": "L480"},
+        {"name": "panelA_low_gpa", "value": 0.10, "unit": "ratio", "tolerance_pct": 30, "paper_location": "L361"},
+        {"name": "panelA_high_gpa", "value": 0.68, "unit": "ratio", "tolerance_pct": 30, "paper_location": "L457"},
+        {"name": "panelA_low_bm", "value": 1.10, "unit": "ratio", "tolerance_pct": 30, "paper_location": "L362"},
+        {"name": "panelA_high_bm", "value": 0.33, "unit": "ratio", "tolerance_pct": 30, "paper_location": "L458"},
+        {"name": "panelA_low_n", "value": 748, "unit": "count", "tolerance_pct": 30, "paper_location": "L364"},
+        {"name": "panelA_high_n", "value": 938, "unit": "count", "tolerance_pct": 30, "paper_location": "L460"}
+      ],
+      "notes": null
+    },
+    {
+      "id": "table_1",
+      "table_ref": "Table 1",
+      "description": "Fama and MacBeth regressions of returns on measures of profitability, with controls for B/M, size, and past performance.",
+      "replication_meaning": "Demonstrates correct Fama-MacBeth cross-sectional regression methodology with Newey-West t-stats, correct variable construction (GP/A, earnings/BE, FCF/BE, log(B/M), log(ME), r_{1,0}, r_{12,2}), correct 1%/99% trimming, and correct industry-adjustment (FF49 demeaning) in Panel B. Validates that GP/A has roughly the same power as B/M predicting returns.",
+      "paper_quote": "Table 1 shows results of Fama and MacBeth regressions of firms' returns on gross profits-to-assets, earnings-to-book equity, and free cash flow-to-book equity. Regressions include controls for book-to-market (log(B/M)), size (log(ME)), and past performance measured at horizons of one month and 12 to two months.",
+      "paper_location": "L113",
+      "exercises_preprocessing_rules": [
+        "universe_exclude_financials",
+        "sample_period",
+        "winsorize_1pct_99pct",
+        "fm_regression_spec",
+        "var_gp_a",
+        "var_bm",
+        "var_book_equity",
+        "var_earnings",
+        "var_fcf",
+        "var_industry_ff49"
+      ],
+      "metrics": [
+        {"name": "panelA_spec1_gpa_coef", "value": 0.75, "unit": "coef_x100", "tolerance_pct": 40, "paper_location": "L165"},
+        {"name": "panelA_spec1_gpa_tstat", "value": 5.49, "unit": "tstat", "tolerance_pct": 40, "paper_location": "L166"},
+        {"name": "panelA_spec1_logbm_coef", "value": 0.35, "unit": "coef_x100", "tolerance_pct": 40, "paper_location": "L195"},
+        {"name": "panelA_spec1_logme_coef", "value": -0.09, "unit": "coef_x100", "tolerance_pct": 40, "paper_location": "L205"},
+        {"name": "panelA_spec1_r10_coef", "value": -5.57, "unit": "coef_x100", "tolerance_pct": 40, "paper_location": "L215"},
+        {"name": "panelA_spec1_r122_coef", "value": 0.76, "unit": "coef_x100", "tolerance_pct": 40, "paper_location": "L225"},
+        {"name": "panelB_spec1_gpa_coef", "value": 1.00, "unit": "coef_x100", "tolerance_pct": 40, "paper_location": "L238"},
+        {"name": "panelB_spec1_gpa_tstat", "value": 8.99, "unit": "tstat", "tolerance_pct": 40, "paper_location": "L239"}
+      ],
+      "notes": null
+    },
+    {
+      "id": "table_6",
+      "table_ref": "Table 6",
+      "description": "Double sorts on gross profits-to-assets and book-to-market, showing portfolio returns, FF3 regressions, and portfolio characteristics.",
+      "replication_meaning": "Demonstrates correct independent double-sort methodology on GP/A and B/M using NYSE breakpoints, correct interaction between profitability and value signals. Validates that controlling for B/M improves profitability strategies (avg spread 0.54% vs 0.31% unconditional) and vice versa — the paper's central contribution showing complementarity of value and profitability.",
+      "paper_quote": "Portfolios are formed by independently quintile sorting on the two variables, using NYSE breaks. The sample excludes financial firms and covers July 1963 to December 2010.",
+      "paper_location": "L797",
+      "exercises_preprocessing_rules": [
+        "universe_exclude_financials",
+        "sample_period",
+        "sort_double_independent",
+        "sort_value_weighted",
+        "factor_ff3",
+        "var_gp_a",
+        "var_bm",
+        "var_book_equity"
+      ],
+      "metrics": [
+        {"name": "prof_HL_lowBM_re", "value": 0.64, "unit": "pct_month", "tolerance_pct": 30, "paper_location": "L1473"},
+        {"name": "prof_HL_2BM_re", "value": 0.70, "unit": "pct_month", "tolerance_pct": 30, "paper_location": "L1499"},
+        {"name": "prof_HL_3BM_re", "value": 0.49, "unit": "pct_month", "tolerance_pct": 30, "paper_location": "L1525"},
+        {"name": "prof_HL_4BM_re", "value": 0.43, "unit": "pct_month", "tolerance_pct": 30, "paper_location": "L1551"},
+        {"name": "prof_HL_highBM_re", "value": 0.44, "unit": "pct_month", "tolerance_pct": 30, "paper_location": "L1577"},
+        {"name": "prof_HL_lowBM_alpha", "value": 0.83, "unit": "pct_month", "tolerance_pct": 50, "paper_location": "L1474"},
+        {"name": "prof_HL_highBM_alpha", "value": 0.34, "unit": "pct_month", "tolerance_pct": 50, "paper_location": "L1578"},
+        {"name": "val_HL_lowGPA_re", "value": 0.73, "unit": "pct_month", "tolerance_pct": 30, "paper_location": "L1611"},
+        {"name": "val_HL_highGPA_re", "value": 0.52, "unit": "pct_month", "tolerance_pct": 30, "paper_location": "L1615"},
+        {"name": "corner_HH_re", "value": 1.08, "unit": "pct_month", "tolerance_pct": 30, "paper_location": "L1576"},
+        {"name": "corner_LL_re", "value": -0.08, "unit": "pct_month", "tolerance_pct": 50, "paper_location": "L1468"}
+      ],
+      "notes": null
+    },
+    {
+      "id": "table_7",
+      "table_ref": "Table 7",
+      "description": "Performance of large stock profitability and value strategies: tertile sorts within the 500 largest nonfinancial stocks on GP/A, B/M, and combined ranks.",
+      "replication_meaning": "Demonstrates the practical trading strategy works in large liquid stocks: correct rank-based combined sorting on GP/A and B/M within the 500 largest firms, correct equal-dollar weighting within tertiles, and validates that the combined profitability+value strategy (Panel C) earns ~0.62%/mo with high Sharpe ratio — proving the complementarity result is economically exploitable.",
+      "paper_quote": "The strategy I consider is constructed within the 500 largest nonfinancial stocks for which gross profits-to-assets and book-to-market are both available. Each year I rank these stocks on both their gross profits-to-assets and book-to-market ratios, from 1 (lowest) to 500 (highest). At the end of each June the strategy buys one dollar of each of the 150 stocks with the highest combined profitability and value ranks, and it shorts one dollar of each of the 150 stocks with the lowest combined ranks.",
+      "paper_location": "L1412",
+      "exercises_preprocessing_rules": [
+        "universe_exclude_financials",
+        "sample_period",
+        "sort_table7_tertile_combined",
+        "sort_value_weighted",
+        "factor_ff3",
+        "var_gp_a",
+        "var_bm",
+        "var_book_equity"
+      ],
+      "metrics": [
+        {"name": "panelA_low_re", "value": 0.38, "unit": "pct_month", "tolerance_pct": 30, "paper_location": "L1891"},
+        {"name": "panelA_high_re", "value": 0.65, "unit": "pct_month", "tolerance_pct": 30, "paper_location": "L1939"},
+        {"name": "panelA_HL_re", "value": 0.27, "unit": "pct_month", "tolerance_pct": 30, "paper_location": "L1963"},
+        {"name": "panelA_HL_tstat", "value": 2.33, "unit": "tstat", "tolerance_pct": 40, "paper_location": "L1975"},
+        {"name": "panelB_low_re", "value": 0.38, "unit": "pct_month", "tolerance_pct": 30, "paper_location": "L1990"},
+        {"name": "panelB_high_re", "value": 0.70, "unit": "pct_month", "tolerance_pct": 30, "paper_location": "L2038"},
+        {"name": "panelB_HL_re", "value": 0.32, "unit": "pct_month", "tolerance_pct": 30, "paper_location": "L2062"},
+        {"name": "panelB_HL_tstat", "value": 2.16, "unit": "tstat", "tolerance_pct": 40, "paper_location": "L2074"},
+        {"name": "panelC_low_re", "value": 0.19, "unit": "pct_month", "tolerance_pct": 50, "paper_location": "L2089"},
+        {"name": "panelC_high_re", "value": 0.81, "unit": "pct_month", "tolerance_pct": 30, "paper_location": "L2137"},
+        {"name": "panelC_HL_re", "value": 0.62, "unit": "pct_month", "tolerance_pct": 30, "paper_location": "L2161"},
+        {"name": "panelC_HL_tstat", "value": 5.11, "unit": "tstat", "tolerance_pct": 40, "paper_location": "L2173"},
+        {"name": "panelC_HL_alpha", "value": 0.37, "unit": "pct_month", "tolerance_pct": 50, "paper_location": "L2162"}
+      ],
+      "notes": null
+    }
+  ]
+}

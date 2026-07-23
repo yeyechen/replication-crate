@@ -1,0 +1,62 @@
+{
+  "verdict": "ready",
+  "catalog_generated_at": "2026-07-22T05:05:09.139809",
+  "requirements": [
+    {
+      "id": "crsp_monthly_returns",
+      "description": "CRSP monthly stock returns, prices, and shares outstanding for portfolio returns, size (ME = |prc| x shrout x 1000), pre-ranking beta estimation (24-60 monthly returns), and December t-1 / June t price requirements. Sample 1962-12 through 1990-12 (returns July 1963-December 1990; pre-ranking betas need monthly returns back to July 1958).",
+      "needed_columns": ["permno", "date", "prc", "ret", "retx", "shrout", "vol", "hexcd", "hsiccd"],
+      "matched_table": "crsp_202601.msf",
+      "matched_columns": ["permno", "date", "prc", "ret", "retx", "shrout", "vol", "hexcd", "hsiccd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_universe_pit",
+      "description": "Point-in-time share code (shrcd 10/11 = ordinary common) and exchange code (exchcd 1/2/3 = NYSE/AMEX/NASDAQ) validity windows for the CRSP universe filter, plus SIC code for the financial-firm exclusion (paper excludes financials; funda has no SIC column, so CRSP's point-in-time siccd is used).",
+      "needed_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "siccd"],
+      "matched_table": "crsp_202601.dsenames",
+      "matched_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "siccd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_delisting",
+      "description": "Monthly delisting returns and codes so equal-weighted portfolio returns incorporate delisting distributions (paper uses CRSP return files without discussing delisting separately; standard CRSP holding returns include dlret).",
+      "needed_columns": ["permno", "dlstdt", "dlstcd", "dlret"],
+      "matched_table": "crsp_202601.msedelist",
+      "matched_columns": ["permno", "dlstdt", "dlstcd", "dlret"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_market_index",
+      "description": "Market proxy for post-ranking beta estimation: CRSP value-weighted return of NYSE, AMEX, and (after 1972) NASDAQ stocks, July 1963-December 1990 (330 months). msi.vwretd is exactly this index (NYSE from 1925, AMEX from 1962, NASDAQ from 1972).",
+      "needed_columns": ["date", "vwretd"],
+      "matched_table": "crsp_202601.msi",
+      "matched_columns": ["date", "vwretd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ccm_link",
+      "description": "Point-in-time CRSP-Compustat link (permno <-> gvkey) for merging Compustat accounting data onto CRSP securities. Standard filter linktype IN ('LC','LU'), linkprim IN ('P','C'), usedflag = 1.",
+      "needed_columns": ["gvkey", "lpermno", "linktype", "linkprim", "usedflag", "linkdt", "linkenddt"],
+      "matched_table": "crsp_202601.ccmxpf_linktable",
+      "matched_columns": ["gvkey", "lpermno", "linktype", "linkprim", "usedflag", "linkdt", "linkenddt"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "compustat_fundamentals",
+      "description": "Compustat annual industrial fundamentals for fiscal years 1962-1989: total assets (A = at), book equity (BE = ceq + txdb; item 60 = ceq per paper), earnings (E = ib + txdi - dvp), plus stockholders' equity (seq) and preferred (pstk, pstkrv) for fallbacks and the FF filter flags. NOTE: sample is 1962-1989, so a datafmt='STD' filter (which drops pre-1987 'HIST' rows) must NOT be applied blindly; use indfmt='INDL', consol='C', popsrc='D' and inspect datafmt coverage for 1962-1989.",
+      "needed_columns": ["gvkey", "datadate", "fyear", "at", "ceq", "seq", "txdb", "txdi", "pstkrv", "pstk", "dvp", "ib", "indfmt", "consol", "popsrc", "datafmt"],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": ["gvkey", "datadate", "fyear", "at", "ceq", "seq", "txdb", "txdi", "pstkrv", "pstk", "dvp", "ib", "indfmt", "consol", "popsrc", "datafmt"],
+      "missing_columns": [],
+      "status": "full"
+    }
+  ],
+  "blocking_issues": [],
+  "notes": "All six data requirements are fully covered by crsp_202601 (msf, dsenames, msedelist, msi, ccmxpf_linktable) and comp_202601 (funda). No Fama-French factor tables are needed — the paper uses no factor models; the only factor-like input is the CRSP VW market index (msi) for beta estimation, and the Table VI NYSE VW/EW benchmark series are computed from CRSP NYSE-listed stocks directly. Daily CRSP data (dsf) are not required: both pre-ranking and post-ranking betas use monthly returns. The financial-firm exclusion uses CRSP siccd (funda carries no SIC in this vintage)."
+}

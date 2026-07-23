@@ -1,0 +1,254 @@
+[
+  {
+    "rule_id": "universe_crsp_compustat_intersection",
+    "category": "universe",
+    "section": "I.A Data",
+    "paper_location": "L119",
+    "paper_quote": "We use all nonfinancial firms in the intersection of (a) the NYSE, AMEX, and NASDAQ return files from the Center for Research in Security Prices (CRSP) and (b) the merged COMPUSTAT annual industrial files of income-statement and balance-sheet data, also maintained by CRSP. We exclude financial firms because the high leverage that is normal for these firms probably does not have the same meaning as for nonfinancial firms, where high leverage more likely indicates distress."
+  },
+  {
+    "rule_id": "universe_exchanges_nyse_amex_nasdaq",
+    "category": "universe",
+    "section": "I.A Data",
+    "paper_location": "L119",
+    "paper_quote": "The CRSP returns cover NYSE and AMEX stocks until 1973 when NASDAQ returns also come on line. [...] Our goal is to evaluate the joint roles of market beta, size, E/P, leverage, and book-to-market equity in the cross-section of average returns on NYSE, AMEX, and NASDAQ stocks."
+  },
+  {
+    "rule_id": "sample_period",
+    "category": "sample",
+    "section": "I.A Data",
+    "paper_location": "L119",
+    "paper_quote": "The COMPUSTAT data are for 1962-1989. The 1962 start date reflects the fact that book value of common equity (COMPUSTAT item 60), is not generally available prior to 1962. More important, COMPUSTAT data for earlier years have a serious selection bias; the pre-1962 data are tilted toward big historically successful firms."
+  },
+  {
+    "rule_id": "sample_return_period",
+    "category": "sample",
+    "section": "I.B.1 beta Estimation: Details",
+    "paper_location": "L171",
+    "paper_quote": "After assigning firms to the size-beta portfolios in June, we calculate the equal-weighted monthly returns on the portfolios for the next 12 months, from July to June. In the end, we have post-ranking monthly returns for July 1963 to December 1990 on 100 portfolios formed on size and pre-ranking betas."
+  },
+  {
+    "rule_id": "sample_accounting_return_matching",
+    "category": "sample",
+    "section": "I.A Data",
+    "paper_location": "L121",
+    "paper_quote": "To ensure that the accounting variables are known before the returns they are used to explain, we match the accounting data for all fiscal yearends in calendar year t - 1 (1962-1989) with the returns for July of year t to June of t + 1. The 6-month (minimum) gap between fiscal yearend and the return tests is conservative."
+  },
+  {
+    "rule_id": "sample_dec_jun_price_requirement",
+    "category": "sample",
+    "section": "I.A Data",
+    "paper_location": "L123-L125",
+    "paper_quote": "We use a firm's market equity at the end of December of year t - 1 to compute its book-to-market, leverage, and earnings-price ratios for t - 1, and we use its market equity for June of year t to measure its size. Thus, to be included in the return tests for July of year t, a firm must have a CRSP stock price for December of year t - 1 and June of year t."
+  },
+  {
+    "rule_id": "sample_preranking_return_requirement",
+    "category": "sample",
+    "section": "I.A Data",
+    "paper_location": "L123-L137",
+    "paper_quote": "It must also have monthly returns for at least 24 of the 60 months preceding July of year t (for 'pre-ranking' beta estimates, discussed below)."
+  },
+  {
+    "rule_id": "sample_compustat_fields_required",
+    "category": "sample",
+    "section": "I.A Data",
+    "paper_location": "L137",
+    "paper_quote": "And the firm must have COMPUSTAT data on total book assets (A), book equity (BE), and earnings (E), for its fiscal year ending in (any month of) calendar year t - 1."
+  },
+  {
+    "rule_id": "sample_mixed_fiscal_yearends",
+    "category": "sample",
+    "section": "I.A Data",
+    "paper_location": "L141",
+    "paper_quote": "Finally, the tests mix firms with different fiscal yearends. Since we match accounting data for all fiscal yearends in calendar year t - 1 with returns for July of t to June of t + 1, the gap between the accounting data and the matching returns varies across firms. We have done the tests using the smaller sample of firms with December fiscal yearends with similar results."
+  },
+  {
+    "rule_id": "sample_negative_be_excluded",
+    "category": "sample",
+    "section": "III.A Average Returns",
+    "paper_location": "L1350",
+    "paper_quote": "On average, only about 50 (out of 2317) firms per year have negative book equity, BE. The negative BE firms are mostly concentrated in the last 14 years of the sample, 1976-1989, and we do not include them in the tests."
+  },
+  {
+    "rule_id": "sample_fm_regression_count",
+    "category": "sample",
+    "section": "Table III notes",
+    "paper_location": "L1189",
+    "paper_quote": "On average, there are 2267 stocks in the monthly regressions."
+  },
+  {
+    "rule_id": "delisting_treatment_paper_silent",
+    "category": "delisting",
+    "section": "paper silent",
+    "paper_location": "L119",
+    "paper_quote": "The paper does not discuss delisting-return treatment explicitly. It uses 'the NYSE, AMEX, and NASDAQ return files from the Center for Research in Security Prices (CRSP)'; CRSP monthly returns that incorporate delisting distributions (the standard CRSP holding-period return) are the natural reading, and equal-weighted portfolio returns are computed over July t to June t+1 with yearly reforming, so delisted firms drop out of the portfolio at reforming. Assumption logged: use CRSP returns inclusive of delisting returns (dlret); no special delisting filter beyond valid monthly returns."
+  },
+  {
+    "rule_id": "sort_size_nyse_breakpoints",
+    "category": "sort",
+    "section": "I.B.1 beta Estimation: Details",
+    "paper_location": "L151",
+    "paper_quote": "In June of each year, all NYSE stocks on CRSP are sorted by size (ME) to determine the NYSE decile breakpoints for ME. NYSE, AMEX, and NASDAQ stocks that have the required CRSP-COMPUSTAT data are then allocated to 10 size portfolios based on the NYSE breakpoints. (If we used stocks from all three exchanges to determine the ME breakpoints, most portfolios would include only small stocks after 1973, when NASDAQ stocks are added to the sample.)"
+  },
+  {
+    "rule_id": "sort_size_then_beta_100_portfolios",
+    "category": "sort",
+    "section": "I.B.1 beta Estimation: Details",
+    "paper_location": "L169",
+    "paper_quote": "To allow for variation in beta that is unrelated to size, we subdivide each size decile into 10 portfolios on the basis of pre-ranking betas for individual stocks. The pre-ranking betas are estimated on 24 to 60 monthly returns (as available) in the 5 years before July of year t. We set the beta breakpoints for each size decile using only NYSE stocks that satisfy our COMPUSTAT-CRSP data requirements for year t - 1. [...] Setting beta breakpoints with stocks that satisfy our COMPUSTAT-CRSP data requirements guarantees that there are firms in each of the 100 size-beta portfolios."
+  },
+  {
+    "rule_id": "sort_one_dimensional_12_portfolios",
+    "category": "sort",
+    "section": "II.A Informal Tests / Table II notes",
+    "paper_location": "L811",
+    "paper_quote": "At the end of June of each year t, 12 portfolios are formed on the basis of ranked values of size (ME) or pre-ranking beta. The pre-ranking betas use 2 to 5 years (as available) of monthly returns ending in June of t. Portfolios 2-9 cover deciles of the ranking variables. The bottom and top 2 portfolios (1A, 1B, 10A, and 10B) split the bottom and top deciles in half. The breakpoints for the ME portfolios are based on ranked values of ME for all NYSE stocks on CRSP. NYSE breakpoints for pre-ranking betas are also used to form the beta portfolios."
+  },
+  {
+    "rule_id": "sort_beme_ep_all_stock_breakpoints",
+    "category": "sort",
+    "section": "Table IV notes",
+    "paper_location": "L1382",
+    "paper_quote": "At the end of each year t - 1, 12 portfolios are formed on the basis of ranked values of BE/ME or E/P. Portfolios 2-9 cover deciles of the ranking variables. The bottom and top 2 portfolios (1A, 1B, 10A, and 10B) split the bottom and top deciles in half. For E/P, there are 13 portfolios; portfolio 0 is stocks with negative E/P. Since BE/ME and E/P are not strongly related to exchange listing, their portfolio breakpoints are determined on the basis of the ranked values of the variables for all stocks that satisfy the CRSP-COMPUSTAT data requirements."
+  },
+  {
+    "rule_id": "sort_size_beme_10x10",
+    "category": "sort",
+    "section": "Table V notes",
+    "paper_location": "L1818",
+    "paper_quote": "In June of each year t, the NYSE, AMEX, and NASDAQ stocks that meet the CRSP-COMPUSTAT data requirements are allocated to 10 size portfolios using the NYSE size (ME) breakpoints. The NYSE, AMEX, and NASDAQ stocks in each size decile are then sorted into 10 BE/ME portfolios using the book-to-market ratios for year t - 1. BE/ME is the book value of common equity plus balance-sheet deferred taxes for fiscal year t - 1, over market equity for December of year t - 1. The equal-weighted monthly portfolio returns are then calculated for July of year t to June of year t + 1."
+  },
+  {
+    "rule_id": "sort_beta_breakpoints_nyse_universe_note",
+    "category": "sort",
+    "section": "Table II notes (beta portfolios)",
+    "paper_location": "L811",
+    "paper_quote": "NYSE breakpoints for pre-ranking betas are also used to form the beta portfolios. NYSE, AMEX, and NASDAQ stocks are then allocated to the size or beta portfolios using the NYSE breakpoints. We calculate each portfolio's monthly equal-weighted return for July of year t to June of year t + 1, and then reform the portfolios in June of t + 1."
+  },
+  {
+    "rule_id": "winsorize_fm_regression_fractiles",
+    "category": "winsorize",
+    "section": "Table III notes",
+    "paper_location": "L1189",
+    "paper_quote": "To avoid giving extreme observations heavy weight in the regressions, the smallest and largest 0.5% of the observations on E(+)/P, BE/ME, A/ME, and A/BE are set equal to the next largest or smallest values of the ratios (the 0.005 and 0.995 fractiles). This has no effect on inferences."
+  },
+  {
+    "rule_id": "factor_market_proxy",
+    "category": "factor",
+    "section": "I.B.1 beta Estimation: Details",
+    "paper_location": "L171",
+    "paper_quote": "We then estimate betas using the full sample (330 months) of post-ranking returns on each of the 100 portfolios, with the CRSP value-weighted portfolio of NYSE, AMEX, and (after 1972) NASDAQ stocks used as the proxy for the market. We have also estimated betas using the value-weighted or the equal-weighted portfolio of NYSE stocks as the proxy for the market. These betas produce inferences on the role of beta in average returns like those reported below."
+  },
+  {
+    "rule_id": "factor_no_ff_factors_used",
+    "category": "factor",
+    "section": "paper silent",
+    "paper_location": "L145",
+    "paper_quote": "The paper uses no Fama-French-style factor models; the only 'factor' is the market proxy used to estimate portfolio betas. Asset-pricing tests are Fama-MacBeth cross-sectional regressions: 'Our asset-pricing tests use the cross-sectional regression approach of Fama and MacBeth (1973). Each month the cross-section of returns on stocks is regressed on variables hypothesized to explain expected returns.'"
+  },
+  {
+    "rule_id": "factor_market_index_for_table_vi",
+    "category": "factor",
+    "section": "Table VI notes",
+    "paper_location": "L2065",
+    "paper_quote": "NYSE Value-Weighted (VW) and Equal-Weighted (EW) Portfolio Returns — Table VI reports, for perspective, the mean, standard deviation and t-statistic of the monthly returns on the value-weighted and equal-weighted portfolios of NYSE stocks for the full period and two subperiods."
+  },
+  {
+    "rule_id": "fm_monthly_cross_sectional_regressions",
+    "category": "fm",
+    "section": "I.B Estimating Market betas",
+    "paper_location": "L145",
+    "paper_quote": "Our asset-pricing tests use the cross-sectional regression approach of Fama and MacBeth (1973). Each month the cross-section of returns on stocks is regressed on variables hypothesized to explain expected returns. The time-series means of the monthly regression slopes then provide standard tests of whether different explanatory variables are on average priced."
+  },
+  {
+    "rule_id": "fm_slope_average_and_tstat",
+    "category": "fm",
+    "section": "Table III notes",
+    "paper_location": "L1187",
+    "paper_quote": "The average slope is the time-series average of the monthly regression slopes for July 1963 to December 1990, and the t-statistic is the average slope divided by its time-series standard error."
+  },
+  {
+    "rule_id": "fm_individual_stocks_with_portfolio_betas",
+    "category": "fm",
+    "section": "I.B.1 / Table III notes",
+    "paper_location": "L197",
+    "paper_quote": "We allocate the full-period post-ranking beta of a size-beta portfolio to each stock in the portfolio. These are the betas that will be used in the Fama-MacBeth cross-sectional regressions for individual stocks."
+  },
+  {
+    "rule_id": "fm_explanatory_variable_timing",
+    "category": "fm",
+    "section": "Table III notes",
+    "paper_location": "L1185",
+    "paper_quote": "BE, A, and E are for each firm's latest fiscal year ending in calendar year t - 1. The accounting ratios are measured using market equity ME in December of year t - 1. Firm size ln(ME) is measured in June of year t. In the regressions, these values of the explanatory variables for individual stocks are matched with CRSP returns for the months from July of year t to June of year t + 1. The gap between the accounting data and the returns ensures that the accounting data are available prior to the returns."
+  },
+  {
+    "rule_id": "fm_beta_assigned_each_june",
+    "category": "fm",
+    "section": "Table II / IV notes",
+    "paper_location": "L1386",
+    "paper_quote": "beta is the time-series average of the monthly portfolio betas. Stocks are assigned the post-ranking beta of the size-beta portfolio they are in at the end of June of year t (Table I). These individual-firm betas are averaged to compute the monthly betas for each portfolio for July of year t to June of year t + 1."
+  },
+  {
+    "rule_id": "var_me_definition",
+    "category": "variable",
+    "section": "Table I notes",
+    "paper_location": "L251-L253",
+    "paper_quote": "The breakpoints for the size (ME, price times shares outstanding) deciles are determined in June of year t (t = 1963-1990) using all NYSE stocks on CRSP. [...] The average size of a portfolio is the time-series average of monthly averages of ln(ME) for stocks in the portfolio at the end of June of each year, with ME denominated in millions of dollars."
+  },
+  {
+    "rule_id": "var_be_definition",
+    "category": "variable",
+    "section": "Table II / III notes",
+    "paper_location": "L813",
+    "paper_quote": "BE is the book value of common equity plus balance-sheet deferred taxes, A is total book assets, and E is earnings (income before extraordinary items, plus income-statement deferred taxes, minus preferred dividends). BE, A, and E are for each firm's latest fiscal year ending in calendar year t - 1."
+  },
+  {
+    "rule_id": "var_be_compustat_item60",
+    "category": "variable",
+    "section": "I.A Data",
+    "paper_location": "L119",
+    "paper_quote": "The 1962 start date reflects the fact that book value of common equity (COMPUSTAT item 60), is not generally available prior to 1962."
+  },
+  {
+    "rule_id": "var_december_me_for_ratios",
+    "category": "variable",
+    "section": "I.A Data",
+    "paper_location": "L123",
+    "paper_quote": "We use a firm's market equity at the end of December of year t - 1 to compute its book-to-market, leverage, and earnings-price ratios for t - 1, and we use its market equity for June of year t to measure its size."
+  },
+  {
+    "rule_id": "var_ep_dummy_and_epos",
+    "category": "variable",
+    "section": "Table III notes",
+    "paper_location": "L1185",
+    "paper_quote": "If earnings are positive, E(+)/P is the ratio of total earnings to market equity and E/P dummy is 0. If earnings are negative, E(+)/P is 0 and E/P dummy is 1."
+  },
+  {
+    "rule_id": "var_preranking_beta_estimation",
+    "category": "variable",
+    "section": "I.B.1 beta Estimation: Details",
+    "paper_location": "L169",
+    "paper_quote": "The pre-ranking betas are estimated on 24 to 60 monthly returns (as available) in the 5 years before July of year t."
+  },
+  {
+    "rule_id": "var_postranking_sum_beta_dimson",
+    "category": "variable",
+    "section": "I.B.1 beta Estimation: Details",
+    "paper_location": "L173",
+    "paper_quote": "We estimate beta as the sum of the slopes in the regression of the return on a portfolio on the current and prior month's market return. [...] The sum betas are meant to adjust for nonsynchronous trading (Dimson (1979)). [...] We stick with the simpler sum betas."
+  },
+  {
+    "rule_id": "var_ln_transforms_leverage",
+    "category": "variable",
+    "section": "III.B.2 Leverage",
+    "paper_location": "L1756",
+    "paper_quote": "The regressions use the natural logs of the leverage ratios, ln(A/ME) and ln(A/BE), because preliminary tests indicated that logs are a good functional form for capturing leverage effects in average returns."
+  },
+  {
+    "rule_id": "var_table_characteristics_averaging",
+    "category": "variable",
+    "section": "Table II notes",
+    "paper_location": "L815",
+    "paper_quote": "The average return is the time-series average of the monthly equal-weighted portfolio returns, in percent. ln(ME), ln(BE/ME), ln(A/BE), E/P, and E/P dummy are the time-series averages of the monthly average values of these variables in each portfolio. Since the E/P dummy is 0 when earnings are positive, and 1 when earnings are negative, E/P dummy gives the average proportion of stocks with negative earnings in each portfolio."
+  }
+]

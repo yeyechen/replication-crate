@@ -1,0 +1,60 @@
+{
+  "verdict": "ready",
+  "requirements": [
+    {
+      "id": "intl_daily_prices_global_13",
+      "description": "Daily prices, split/dividend adjustment factors, shares outstanding, and data currency for primary-issue stocks domiciled in the 13 non-Canada sample countries (AUT, BEL, FIN, FRA, DEU, ITA, JPN, NLD, NOR, ESP, SWE, CHE, GBR), January 1985-June 2006. Monthly total returns are built from month-end-to-month-end adjusted prices (prccd/ajexdi). Coverage verified live: 2,460 firms in 1985 growing to ~9,800 in 2005 (paper's pooled universe averages ~9,500 firm-months/month; 18,117 unique firms total across all years).",
+      "needed_columns": ["gvkey", "iid", "datadate", "prccd", "ajexdi", "cshoc", "curcdd"],
+      "matched_table": "comp_202601.g_secd",
+      "matched_columns": ["gvkey", "iid", "datadate", "prccd", "ajexdi", "cshoc", "curcdd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "canada_daily_prices",
+      "description": "Daily prices for Canadian stocks 1985-2006. Compustat Global has essentially no Canadian coverage (loc=CAN primary issues: 0 firms through 1999); Canadian equities live in Compustat North America. Verified live via security.excntry='CAN': 448 firms with prices in 1985, 1,335 in 1995, 3,472 in 2005 (paper reports 2,714 unique Canadian firms total). North-American secd confirmed to carry prccd, ajexdi, cshoc, curcdd.",
+      "needed_columns": ["gvkey", "iid", "datadate", "prccd", "ajexdi", "cshoc", "curcdd"],
+      "matched_table": "comp_202601.secd",
+      "matched_columns": ["gvkey", "iid", "datadate", "prccd", "ajexdi", "cshoc", "curcdd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "country_assignment",
+      "description": "Country-of-domicile classification for global firms (g_company.loc, ISO3 codes) and exchange-country for the North-American file (security.excntry='CAN'). g_company.prirow identifies each firm's primary issue (iid), used to select one security per firm and avoid double-counting cross-listings. Verified live: all 14 target countries present with plausible firm counts.",
+      "needed_columns": ["gvkey", "loc", "prirow"],
+      "matched_table": "comp_202601.g_company",
+      "matched_columns": ["gvkey", "loc", "prirow"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "fx_usd_conversion",
+      "description": "Exchange rates to convert local-currency returns and market caps to U.S. dollars (paper measures returns in USD, page 3). g_exrt_dly stores GBP-base cross rates: each row is (fromcurd='GBP', tocurd=X, exratd = units of X per GBP). The USD price of currency X is exratd(GBP->X)/exratd(GBP->USD), so GBP cancels in monthly FX-change ratios. Verified live: GBP->X daily series exist for every currency appearing in the 1985-2006 universe (ATS, BEF, CAD, CHF, DEM, ESP, EUR, FIM, FRF, ITL, JPY, NLG, NOK, SEK, USD, plus minor CZK/EGP/ILS/XEU), all covering 1984-12-03 through 2006-06-30 (~7,768 obs each). EUR series starts 1985-12-31; eurozone securities carry legacy currencies in curcdd until 1999, EUR after.",
+      "needed_columns": ["fromcurd", "tocurd", "exratd", "datadate"],
+      "matched_table": "comp_202601.g_exrt_dly",
+      "matched_columns": ["fromcurd", "tocurd", "exratd", "datadate"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "market_cap_for_weighting",
+      "description": "Market capitalization for value-weighted deciles (Table 3 VW panel) and USD size sorts (Table 5, used in Table 1 diagnostics). Computed as prccd x cshoc in local currency at month-end, converted to USD with the month-end GBP-cross rate. No qunit rescaling: A3 verified cshoc is in actual shares (NTT anchor $211bn at 2000-06-30). cshoc can be stale on some days; the pipeline carries the last non-missing value within each security.",
+      "needed_columns": ["prccd", "cshoc", "curcdd"],
+      "matched_table": "comp_202601.g_secd",
+      "matched_columns": ["prccd", "cshoc", "curcdd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "security_type_filter",
+      "description": "Security-type and status fields to restrict the universe to ordinary common equities (paper is silent on security filters; this is the standard Compustat convention, logged in assumptions). g_security provides tpci and secstat per (gvkey, iid); g_company.costat gives company active/inactive status. Delisted firms remain in both masters, preserving survivorship-free coverage.",
+      "needed_columns": ["gvkey", "iid", "tpci", "secstat"],
+      "matched_table": "comp_202601.g_security",
+      "matched_columns": ["gvkey", "iid", "tpci", "secstat"],
+      "missing_columns": [],
+      "status": "full"
+    }
+  ],
+  "blocking_issues": []
+}

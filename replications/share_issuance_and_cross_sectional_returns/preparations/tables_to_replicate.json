@@ -1,0 +1,3051 @@
+{
+  "tables": [
+    {
+      "id": "T1",
+      "table_ref": "Table I, Panel A",
+      "description": "Descriptive statistics (mean, percentiles, std) for ISSUE, DT-ISSUE, BM, ME, MOM and the contemporaneous 1-year return, 1970-2003.",
+      "replication_meaning": "Demonstrates correct variable construction on the post-1970 sample: split-adjusted shares via the CRSP cumulative adjustment factor (eqs 1-2), annual and 5-year logged issuance, Compustat data60 book-to-market with December ME denominator, log market equity, and 6-month momentum \u2014 plus that the CRSP universe and nonmissing-return / 6-month-listing filters reproduce the paper's ~2.29-2.31M firm-month observation counts.",
+      "paper_quote": "Panel A: Simple Statistics. ... The sample observations range between 2,285,189 observations (for $MOM$ ) and 2,312,597 observations (for $ISSUE_{-11,0}$ ). (L156)",
+      "exercises_preprocessing_rules": [
+        "universe_crsp_all_firms",
+        "sample_nonmissing_return_6mo_listing",
+        "var_total_factor",
+        "var_adjusted_shares",
+        "var_issue_annual",
+        "var_issue_5year",
+        "var_shares_exclude_split_dividends",
+        "var_bm_source_data60",
+        "var_bm_fallback_2yr",
+        "var_bm_log_ratio_dec_me",
+        "var_bm_dummy",
+        "var_me_definition",
+        "var_mom_6mo",
+        "var_mom_lag_1mo",
+        "var_table1_december_measurement"
+      ],
+      "metrics": [
+        {
+          "name": "issue_mean",
+          "value": 0.04,
+          "unit": "log_share_change",
+          "tolerance_pct": 10,
+          "paper_location": "L175"
+        },
+        {
+          "name": "issue_p25",
+          "value": 0.0,
+          "unit": "log_share_change",
+          "tolerance_pct": 100,
+          "paper_location": "L176"
+        },
+        {
+          "name": "issue_median",
+          "value": 0.0,
+          "unit": "log_share_change",
+          "tolerance_pct": 100,
+          "paper_location": "L177"
+        },
+        {
+          "name": "issue_p75",
+          "value": 0.03,
+          "unit": "log_share_change",
+          "tolerance_pct": 20,
+          "paper_location": "L178"
+        },
+        {
+          "name": "issue_std",
+          "value": 0.15,
+          "unit": "log_share_change",
+          "tolerance_pct": 10,
+          "paper_location": "L179"
+        },
+        {
+          "name": "dt_issue_mean",
+          "value": 0.12,
+          "unit": "log_share_change",
+          "tolerance_pct": 10,
+          "paper_location": "L183"
+        },
+        {
+          "name": "dt_issue_p25",
+          "value": 0.0,
+          "unit": "log_share_change",
+          "tolerance_pct": 100,
+          "paper_location": "L184"
+        },
+        {
+          "name": "dt_issue_median",
+          "value": 0.0,
+          "unit": "log_share_change",
+          "tolerance_pct": 100,
+          "paper_location": "L185"
+        },
+        {
+          "name": "dt_issue_p75",
+          "value": 0.14,
+          "unit": "log_share_change",
+          "tolerance_pct": 20,
+          "paper_location": "L186"
+        },
+        {
+          "name": "dt_issue_std",
+          "value": 0.33,
+          "unit": "log_share_change",
+          "tolerance_pct": 10,
+          "paper_location": "L187"
+        },
+        {
+          "name": "bm_mean",
+          "value": -0.34,
+          "unit": "log_ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L191"
+        },
+        {
+          "name": "bm_p25",
+          "value": -0.79,
+          "unit": "log_ratio",
+          "tolerance_pct": 20,
+          "paper_location": "L192"
+        },
+        {
+          "name": "bm_median",
+          "value": -0.07,
+          "unit": "log_ratio",
+          "tolerance_pct": 20,
+          "paper_location": "L193"
+        },
+        {
+          "name": "bm_p75",
+          "value": 0.0,
+          "unit": "log_ratio",
+          "tolerance_pct": 100,
+          "paper_location": "L194"
+        },
+        {
+          "name": "bm_std",
+          "value": 0.94,
+          "unit": "log_ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L195"
+        },
+        {
+          "name": "me_mean",
+          "value": 11.11,
+          "unit": "log_dollars",
+          "tolerance_pct": 5,
+          "paper_location": "L199"
+        },
+        {
+          "name": "me_p25",
+          "value": 9.63,
+          "unit": "log_dollars",
+          "tolerance_pct": 5,
+          "paper_location": "L200"
+        },
+        {
+          "name": "me_median",
+          "value": 10.97,
+          "unit": "log_dollars",
+          "tolerance_pct": 5,
+          "paper_location": "L201"
+        },
+        {
+          "name": "me_p75",
+          "value": 12.46,
+          "unit": "log_dollars",
+          "tolerance_pct": 5,
+          "paper_location": "L202"
+        },
+        {
+          "name": "me_std",
+          "value": 2.02,
+          "unit": "log_dollars",
+          "tolerance_pct": 10,
+          "paper_location": "L203"
+        },
+        {
+          "name": "mom_mean",
+          "value": 0.06,
+          "unit": "decimal_return",
+          "tolerance_pct": 10,
+          "paper_location": "L207"
+        },
+        {
+          "name": "mom_p25",
+          "value": -0.16,
+          "unit": "decimal_return",
+          "tolerance_pct": 20,
+          "paper_location": "L208"
+        },
+        {
+          "name": "mom_median",
+          "value": 0.02,
+          "unit": "decimal_return",
+          "tolerance_pct": 20,
+          "paper_location": "L209"
+        },
+        {
+          "name": "mom_p75",
+          "value": 0.22,
+          "unit": "decimal_return",
+          "tolerance_pct": 20,
+          "paper_location": "L210"
+        },
+        {
+          "name": "mom_std",
+          "value": 0.41,
+          "unit": "decimal_return",
+          "tolerance_pct": 10,
+          "paper_location": "L211"
+        },
+        {
+          "name": "r_11_0_mean",
+          "value": 0.14,
+          "unit": "decimal_return",
+          "tolerance_pct": 10,
+          "paper_location": "L215"
+        },
+        {
+          "name": "r_11_0_p25",
+          "value": -0.23,
+          "unit": "decimal_return",
+          "tolerance_pct": 20,
+          "paper_location": "L216"
+        },
+        {
+          "name": "r_11_0_median",
+          "value": 0.05,
+          "unit": "decimal_return",
+          "tolerance_pct": 20,
+          "paper_location": "L217"
+        },
+        {
+          "name": "r_11_0_p75",
+          "value": 0.34,
+          "unit": "decimal_return",
+          "tolerance_pct": 20,
+          "paper_location": "L218"
+        },
+        {
+          "name": "r_11_0_std",
+          "value": 0.88,
+          "unit": "decimal_return",
+          "tolerance_pct": 10,
+          "paper_location": "L219"
+        },
+        {
+          "name": "pct_positive_issuance",
+          "value": 56.6,
+          "unit": "percent",
+          "tolerance_pct": 10,
+          "paper_location": "L138"
+        },
+        {
+          "name": "pct_zero_issuance",
+          "value": 24.2,
+          "unit": "percent",
+          "tolerance_pct": 10,
+          "paper_location": "L138"
+        },
+        {
+          "name": "pct_negative_issuance",
+          "value": 19.2,
+          "unit": "percent",
+          "tolerance_pct": 10,
+          "paper_location": "L138"
+        },
+        {
+          "name": "n_obs_mom",
+          "value": 2285189,
+          "unit": "count",
+          "tolerance_pct": 5,
+          "paper_location": "L156"
+        },
+        {
+          "name": "n_obs_issue",
+          "value": 2312597,
+          "unit": "count",
+          "tolerance_pct": 5,
+          "paper_location": "L156"
+        }
+      ],
+      "notes": "Zero-valued percentile cells (issue p25/median, dt_issue p25/median, bm p75) carry tolerance 100%: relative tolerance is undefined at a paper value of 0, so they pass when our value rounds to 0.00 at 2 decimals. The paper says Table I variables are 'measured at the end of December' (L156), but the reported observation counts (2.29-2.31M) only reconcile with the full monthly panel over 1970-2003 (~5,600 firms/month), not 34 December cross-sections; statistics are therefore computed on the pooled monthly panel. This interpretation is logged in assumptions.md."
+    },
+    {
+      "id": "T3",
+      "table_ref": "Table III, Panels A and B",
+      "description": "Fama-MacBeth cross-sectional regressions of 1-month (Panel A) and 6-month (Panel B) stock returns on BM, BM Dum, ME, MOM, ISSUE, DT-ISSUE and DT-Dum, January 1970 to December 2003, 396 months, 2,155,945 firm-observations.",
+      "replication_meaning": "Demonstrates the paper's headline methodology end-to-end: the 6-month-lagged ISSUE_{-17,-6} and DT-ISSUE_{-65,-6} predictors (eqs 2-3 with the DT dummy), the horse-race specification design (5 univariate rows, controls row, issuance-pair row, full row), monthly Fama-MacBeth averaging with adjusted R-squared reporting, 1% winsorization of all right-hand-side variables, the x100 (percent) scaling of regression dependent returns, and Pontiff (1996) overlap-consistent t-statistics for the 6-month panel. Reproducing the ISSUE slope of -2.23 (t = -7.08) and DT-ISSUE slope of -0.71 validates share-issuance construction, timing conventions, and the regression machinery simultaneously.",
+      "paper_quote": "These regressions are for the 396 months from January 1970 to December 2003, with a total of 2,155,945 firm-observations. (L1074)",
+      "exercises_preprocessing_rules": [
+        "var_issue_annual",
+        "var_issue_5year",
+        "var_dt_dummy",
+        "sample_issue_timing_6mo_lag",
+        "sample_shares_error_correction",
+        "var_bm_source_data60",
+        "var_bm_fallback_2yr",
+        "var_bm_log_ratio_dec_me",
+        "var_bm_timing_july_june",
+        "var_bm_dummy",
+        "var_me_definition",
+        "var_me_timing_june",
+        "var_mom_6mo",
+        "var_mom_lag_1mo",
+        "var_returns_holding_periods",
+        "delisting_ewretd_imputation",
+        "winsorize_rhs_1pct_both_tails",
+        "winsorize_returns_not_transformed",
+        "fm_monthly_cross_sectional",
+        "fm_report_averages_adjr2",
+        "fm_overlap_tstats_pontiff1996",
+        "fm_overlap_ar_order",
+        "fm_overlap_intercept_se",
+        "sort_fm_regression_horse_race",
+        "fm_sample_size_main_1970_2003"
+      ],
+      "metrics": [
+        {
+          "name": "n_obs_regressions",
+          "value": 2155945,
+          "unit": "count",
+          "tolerance_pct": 5,
+          "paper_location": "L1074"
+        },
+        {
+          "name": "n_months",
+          "value": 396,
+          "unit": "count",
+          "tolerance_pct": 1,
+          "paper_location": "L1074"
+        },
+        {
+          "name": "pA_r1_intercept",
+          "value": 0.8,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1094"
+        },
+        {
+          "name": "pA_r1_intercept_t",
+          "value": 3.04,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1105"
+        },
+        {
+          "name": "pA_r1_bm",
+          "value": 0.39,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1095"
+        },
+        {
+          "name": "pA_r1_bm_t",
+          "value": 5.86,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1106"
+        },
+        {
+          "name": "pA_r1_bm_dum",
+          "value": 0.73,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1096"
+        },
+        {
+          "name": "pA_r1_bm_dum_t",
+          "value": 8.86,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1107"
+        },
+        {
+          "name": "pA_r1_avg_r2",
+          "value": 0.66,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1102"
+        },
+        {
+          "name": "pA_r2_intercept",
+          "value": 2.69,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1116"
+        },
+        {
+          "name": "pA_r2_intercept_t",
+          "value": 3.67,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1127"
+        },
+        {
+          "name": "pA_r2_me",
+          "value": -0.13,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1119"
+        },
+        {
+          "name": "pA_r2_me_t",
+          "value": -2.5,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1130"
+        },
+        {
+          "name": "pA_r2_avg_r2",
+          "value": 1.23,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1124"
+        },
+        {
+          "name": "pA_r3_intercept",
+          "value": 1.19,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1138"
+        },
+        {
+          "name": "pA_r3_intercept_t",
+          "value": 4.56,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1149"
+        },
+        {
+          "name": "pA_r3_mom",
+          "value": 0.62,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1142"
+        },
+        {
+          "name": "pA_r3_mom_t",
+          "value": 1.84,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1153"
+        },
+        {
+          "name": "pA_r3_avg_r2",
+          "value": 1.23,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1146"
+        },
+        {
+          "name": "pA_r4_intercept",
+          "value": 2.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1160"
+        },
+        {
+          "name": "pA_r4_intercept_t",
+          "value": 2.97,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1171"
+        },
+        {
+          "name": "pA_r4_bm",
+          "value": 0.28,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1161"
+        },
+        {
+          "name": "pA_r4_bm_t",
+          "value": 4.28,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1172"
+        },
+        {
+          "name": "pA_r4_bm_dum",
+          "value": 0.74,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1162"
+        },
+        {
+          "name": "pA_r4_bm_dum_t",
+          "value": 9.72,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1173"
+        },
+        {
+          "name": "pA_r4_me",
+          "value": -0.12,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1163"
+        },
+        {
+          "name": "pA_r4_me_t",
+          "value": -2.42,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1174"
+        },
+        {
+          "name": "pA_r4_mom",
+          "value": 0.55,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1164"
+        },
+        {
+          "name": "pA_r4_mom_t",
+          "value": 1.77,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1175"
+        },
+        {
+          "name": "pA_r4_avg_r2",
+          "value": 2.84,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1168"
+        },
+        {
+          "name": "pA_r5_intercept",
+          "value": 1.36,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1182"
+        },
+        {
+          "name": "pA_r5_intercept_t",
+          "value": 4.88,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1193"
+        },
+        {
+          "name": "pA_r5_issue",
+          "value": -2.23,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1187"
+        },
+        {
+          "name": "pA_r5_issue_t",
+          "value": -7.08,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1198"
+        },
+        {
+          "name": "pA_r5_avg_r2",
+          "value": 0.22,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1190"
+        },
+        {
+          "name": "pA_r6_intercept",
+          "value": 1.48,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1204"
+        },
+        {
+          "name": "pA_r6_intercept_t",
+          "value": 5.74,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1215"
+        },
+        {
+          "name": "pA_r6_dt_issue",
+          "value": -0.71,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1210"
+        },
+        {
+          "name": "pA_r6_dt_issue_t",
+          "value": -4.92,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1221"
+        },
+        {
+          "name": "pA_r6_dt_dum",
+          "value": -0.41,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1211"
+        },
+        {
+          "name": "pA_r6_dt_dum_t",
+          "value": -3.19,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1222"
+        },
+        {
+          "name": "pA_r6_avg_r2",
+          "value": 0.53,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1212"
+        },
+        {
+          "name": "pA_r7_intercept",
+          "value": 1.48,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1226"
+        },
+        {
+          "name": "pA_r7_intercept_t",
+          "value": 5.75,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1237"
+        },
+        {
+          "name": "pA_r7_issue",
+          "value": -1.77,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1231"
+        },
+        {
+          "name": "pA_r7_issue_t",
+          "value": -6.9,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1242"
+        },
+        {
+          "name": "pA_r7_dt_issue",
+          "value": -0.38,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1232"
+        },
+        {
+          "name": "pA_r7_dt_issue_t",
+          "value": -3.03,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1243"
+        },
+        {
+          "name": "pA_r7_dt_dum",
+          "value": -0.31,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1233"
+        },
+        {
+          "name": "pA_r7_dt_dum_t",
+          "value": -2.61,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1244"
+        },
+        {
+          "name": "pA_r7_avg_r2",
+          "value": 0.63,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1234"
+        },
+        {
+          "name": "pA_r8_intercept",
+          "value": 2.48,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L1248"
+        },
+        {
+          "name": "pA_r8_intercept_t",
+          "value": 3.68,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1259"
+        },
+        {
+          "name": "pA_r8_bm",
+          "value": 0.21,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1249"
+        },
+        {
+          "name": "pA_r8_bm_t",
+          "value": 3.58,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1260"
+        },
+        {
+          "name": "pA_r8_bm_dum",
+          "value": 0.68,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1250"
+        },
+        {
+          "name": "pA_r8_bm_dum_t",
+          "value": 9.03,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1261"
+        },
+        {
+          "name": "pA_r8_me",
+          "value": -0.14,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1251"
+        },
+        {
+          "name": "pA_r8_me_t",
+          "value": -2.79,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1262"
+        },
+        {
+          "name": "pA_r8_mom",
+          "value": 0.47,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1252"
+        },
+        {
+          "name": "pA_r8_mom_t",
+          "value": 1.57,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1263"
+        },
+        {
+          "name": "pA_r8_issue",
+          "value": -1.43,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1253"
+        },
+        {
+          "name": "pA_r8_issue_t",
+          "value": -6.72,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1264"
+        },
+        {
+          "name": "pA_r8_dt_issue",
+          "value": -0.29,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1254"
+        },
+        {
+          "name": "pA_r8_dt_issue_t",
+          "value": -2.82,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1265"
+        },
+        {
+          "name": "pA_r8_dt_dum",
+          "value": -0.32,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1255"
+        },
+        {
+          "name": "pA_r8_dt_dum_t",
+          "value": -3.88,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1266"
+        },
+        {
+          "name": "pA_r8_avg_r2",
+          "value": 3.15,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1256"
+        },
+        {
+          "name": "pB_r1_intercept",
+          "value": 4.61,
+          "unit": "percent_per_6mo",
+          "tolerance_pct": 40,
+          "paper_location": "L1290"
+        },
+        {
+          "name": "pB_r1_intercept_t",
+          "value": 3.1,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1301"
+        },
+        {
+          "name": "pB_r1_bm",
+          "value": 2.39,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1291"
+        },
+        {
+          "name": "pB_r1_bm_t",
+          "value": 6.05,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1302"
+        },
+        {
+          "name": "pB_r1_bm_dum",
+          "value": 4.57,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1292"
+        },
+        {
+          "name": "pB_r1_bm_dum_t",
+          "value": 5.69,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1303"
+        },
+        {
+          "name": "pB_r1_avg_r2",
+          "value": 1.18,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1298"
+        },
+        {
+          "name": "pB_r2_intercept",
+          "value": 14.23,
+          "unit": "percent_per_6mo",
+          "tolerance_pct": 40,
+          "paper_location": "L1312"
+        },
+        {
+          "name": "pB_r2_intercept_t",
+          "value": 3.56,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1323"
+        },
+        {
+          "name": "pB_r2_me",
+          "value": -0.6,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1315"
+        },
+        {
+          "name": "pB_r2_me_t",
+          "value": -2.33,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1326"
+        },
+        {
+          "name": "pB_r2_avg_r2",
+          "value": 1.52,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1320"
+        },
+        {
+          "name": "pB_r3_intercept",
+          "value": 7.4,
+          "unit": "percent_per_6mo",
+          "tolerance_pct": 40,
+          "paper_location": "L1334"
+        },
+        {
+          "name": "pB_r3_intercept_t",
+          "value": 5.17,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1345"
+        },
+        {
+          "name": "pB_r3_mom",
+          "value": 7.3,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1338"
+        },
+        {
+          "name": "pB_r3_mom_t",
+          "value": 5.53,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1349"
+        },
+        {
+          "name": "pB_r3_avg_r2",
+          "value": 1.23,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1342"
+        },
+        {
+          "name": "pB_r4_intercept",
+          "value": 11.35,
+          "unit": "percent_per_6mo",
+          "tolerance_pct": 40,
+          "paper_location": "L1356"
+        },
+        {
+          "name": "pB_r4_intercept_t",
+          "value": 2.88,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1367"
+        },
+        {
+          "name": "pB_r4_bm",
+          "value": 1.69,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1357"
+        },
+        {
+          "name": "pB_r4_bm_t",
+          "value": 3.79,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1368"
+        },
+        {
+          "name": "pB_r4_bm_dum",
+          "value": 4.59,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1358"
+        },
+        {
+          "name": "pB_r4_bm_dum_t",
+          "value": 6.43,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1369"
+        },
+        {
+          "name": "pB_r4_me",
+          "value": -0.64,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1359"
+        },
+        {
+          "name": "pB_r4_me_t",
+          "value": -2.31,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1370"
+        },
+        {
+          "name": "pB_r4_mom",
+          "value": 6.86,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1360"
+        },
+        {
+          "name": "pB_r4_mom_t",
+          "value": 5.63,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1371"
+        },
+        {
+          "name": "pB_r4_avg_r2",
+          "value": 3.73,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1364"
+        },
+        {
+          "name": "pB_r5_intercept",
+          "value": 8.11,
+          "unit": "percent_per_6mo",
+          "tolerance_pct": 40,
+          "paper_location": "L1378"
+        },
+        {
+          "name": "pB_r5_intercept_t",
+          "value": 5.42,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1389"
+        },
+        {
+          "name": "pB_r5_issue",
+          "value": -13.82,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1383"
+        },
+        {
+          "name": "pB_r5_issue_t",
+          "value": -7.26,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1394"
+        },
+        {
+          "name": "pB_r5_avg_r2",
+          "value": 0.43,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1386"
+        }
+      ],
+      "notes": "Panels A (1-month, all 8 specification rows) and B (6-month, rows 1-5) are fully legible in the OCR and committed cell-by-cell. Panel B rows 6-8 appear on the page-13 continuation (intercepts 8.80/8.81; ISSUE slope approx -10.92, t approx -6.89) but panel attribution of the page-14 continuation (Panels C-E: 1-year, 2nd-year, 3rd-year returns) is ambiguous under OCR, so those panels are evaluated at pattern level against the paper's narrative (L2105-2125): ISSUE remains negative and strongly significant at all holding periods, BM t-stats increase with horizon, MOM t-stat peaks at 6 months. Tables II and IV are excluded from scope: they require Thomson SDC Platinum SEO/repurchase/merger event data (L341, L2168), unavailable in ClickHouse. Regression dependent variables are in percent (intercepts ~0.8-2.7 vs ~1% mean monthly return), documented in assumptions.md."
+    },
+    {
+      "id": "T3cde",
+      "table_ref": "Table III, Panels C, D and E",
+      "description": "Fama-MacBeth cross-sectional regressions of 1-year (Panel C), 2nd-year (Panel D) and 3rd-year (Panel E) stock returns on BM, BM Dum, ME, MOM, ISSUE, DT-ISSUE and DT-Dum, January 1970 to December 2003 (408 in-sample months). Long-horizon extension of Table III Panels A/B.",
+      "replication_meaning": "Demonstrates the paper's horizon-stability claim (content.md L31: 'Our results remain strong for holding periods ranging from one month to 3 years'): ISSUE remains the most significant predictor at the 1/2/3-year horizons with overlap-consistent AR(11/23/35) t-stats, and DT-ISSUE loses significance in the 2- and 3-year joint specs (L2128). Exercises the same horse-race machinery as T3 on the r12/r24_y2/r36_y3 holding-period return columns (EWRETD-imputed per A7 for the year-2 and year-3 windows).",
+      "paper_quote": "The longer holding period results are broadly consistent with the 1-month results. The signs of the slopes remain unchanged... Regardless of holding period, the t-statistics on both issuance measures remain stable and strongly significant. The t-statistics on annual issuance are stronger than the t-statistics on BE, ME, and MOM for all holding periods. ... Although in the joint regressions 5-year issuance is significant for holding periods up to 1 year, it loses significance in the 2- and 3-year return joint regressions. (L2128)",
+      "exercises_preprocessing_rules": [
+        "var_issue_annual",
+        "var_issue_5year",
+        "var_dt_dummy",
+        "sample_issue_timing_6mo_lag",
+        "sample_shares_error_correction",
+        "var_bm_source_data60",
+        "var_bm_fallback_2yr",
+        "var_bm_log_ratio_dec_me",
+        "var_bm_timing_july_june",
+        "var_bm_dummy",
+        "var_me_definition",
+        "var_me_timing_june",
+        "var_mom_6mo",
+        "var_mom_lag_1mo",
+        "var_returns_holding_periods",
+        "delisting_ewretd_imputation",
+        "winsorize_rhs_1pct_both_tails",
+        "winsorize_returns_not_transformed",
+        "fm_monthly_cross_sectional",
+        "fm_report_averages_adjr2",
+        "fm_overlap_tstats_pontiff1996",
+        "fm_overlap_ar_order",
+        "fm_overlap_intercept_se",
+        "sort_fm_regression_horse_race",
+        "fm_sample_size_main_1970_2003"
+      ],
+      "metrics": [
+        {
+          "name": "pC_r1_intercept",
+          "value": 10.36,
+          "unit": "percent_per_12mo",
+          "tolerance_pct": 40,
+          "paper_location": "L1519"
+        },
+        {
+          "name": "pC_r1_intercept_t",
+          "value": 3.84,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1530"
+        },
+        {
+          "name": "pC_r1_bm",
+          "value": 4.56,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1520"
+        },
+        {
+          "name": "pC_r1_bm_t",
+          "value": 5.41,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1531"
+        },
+        {
+          "name": "pC_r1_bm_dum",
+          "value": 8.39,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1521"
+        },
+        {
+          "name": "pC_r1_bm_dum_t",
+          "value": 7.54,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1532"
+        },
+        {
+          "name": "pC_r1_avg_r2",
+          "value": 1.37,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1538"
+        },
+        {
+          "name": "pC_r2_intercept",
+          "value": 28.88,
+          "unit": "percent_per_12mo",
+          "tolerance_pct": 40,
+          "paper_location": "L1541"
+        },
+        {
+          "name": "pC_r2_intercept_t",
+          "value": 3.21,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1552"
+        },
+        {
+          "name": "pC_r2_me",
+          "value": -1.15,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1544"
+        },
+        {
+          "name": "pC_r2_me_t",
+          "value": -1.76,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1555"
+        },
+        {
+          "name": "pC_r2_avg_r2",
+          "value": 1.28,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1560"
+        },
+        {
+          "name": "pC_r3_intercept",
+          "value": 15.92,
+          "unit": "percent_per_12mo",
+          "tolerance_pct": 40,
+          "paper_location": "L1563"
+        },
+        {
+          "name": "pC_r3_intercept_t",
+          "value": 7.17,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1574"
+        },
+        {
+          "name": "pC_r3_mom",
+          "value": 9.62,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1567"
+        },
+        {
+          "name": "pC_r3_mom_t",
+          "value": 3.61,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1578"
+        },
+        {
+          "name": "pC_r3_avg_r2",
+          "value": 1.17,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1582"
+        },
+        {
+          "name": "pC_r4_intercept",
+          "value": 23.3,
+          "unit": "percent_per_12mo",
+          "tolerance_pct": 40,
+          "paper_location": "L1585"
+        },
+        {
+          "name": "pC_r4_intercept_t",
+          "value": 2.71,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1596"
+        },
+        {
+          "name": "pC_r4_bm",
+          "value": 3.33,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1586"
+        },
+        {
+          "name": "pC_r4_bm_t",
+          "value": 3.65,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1597"
+        },
+        {
+          "name": "pC_r4_bm_dum",
+          "value": 8.58,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1587"
+        },
+        {
+          "name": "pC_r4_bm_dum_t",
+          "value": 9.48,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1598"
+        },
+        {
+          "name": "pC_r4_me",
+          "value": -1.2,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1588"
+        },
+        {
+          "name": "pC_r4_me_t",
+          "value": -1.93,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1599"
+        },
+        {
+          "name": "pC_r4_mom",
+          "value": 8.66,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1589"
+        },
+        {
+          "name": "pC_r4_mom_t",
+          "value": 3.58,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1600"
+        },
+        {
+          "name": "pC_r4_avg_r2",
+          "value": 3.59,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1604"
+        },
+        {
+          "name": "pC_r5_intercept",
+          "value": 16.95,
+          "unit": "percent_per_12mo",
+          "tolerance_pct": 40,
+          "paper_location": "L1607"
+        },
+        {
+          "name": "pC_r5_intercept_t",
+          "value": 7.32,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1618"
+        },
+        {
+          "name": "pC_r5_issue",
+          "value": -27.32,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1612"
+        },
+        {
+          "name": "pC_r5_issue_t",
+          "value": -7.51,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1623"
+        },
+        {
+          "name": "pC_r5_avg_r2",
+          "value": 0.49,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1626"
+        },
+        {
+          "name": "pC_r6_intercept",
+          "value": 18.17,
+          "unit": "percent_per_12mo",
+          "tolerance_pct": 40,
+          "paper_location": "L1629"
+        },
+        {
+          "name": "pC_r6_intercept_t",
+          "value": 8.95,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1640"
+        },
+        {
+          "name": "pC_r6_dt_issue",
+          "value": -8.38,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1635"
+        },
+        {
+          "name": "pC_r6_dt_issue_t",
+          "value": -5.94,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1646"
+        },
+        {
+          "name": "pC_r6_dt_dum",
+          "value": -4.68,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1636"
+        },
+        {
+          "name": "pC_r6_dt_dum_t",
+          "value": -2.32,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1647"
+        },
+        {
+          "name": "pC_r6_avg_r2",
+          "value": 1.22,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1648"
+        },
+        {
+          "name": "pC_r7_intercept",
+          "value": 18.2,
+          "unit": "percent_per_12mo",
+          "tolerance_pct": 40,
+          "paper_location": "L1651"
+        },
+        {
+          "name": "pC_r7_intercept_t",
+          "value": 8.94,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1662"
+        },
+        {
+          "name": "pC_r7_issue",
+          "value": -20.71,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1656"
+        },
+        {
+          "name": "pC_r7_issue_t",
+          "value": -5.08,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1667"
+        },
+        {
+          "name": "pC_r7_dt_issue",
+          "value": -4.81,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1657"
+        },
+        {
+          "name": "pC_r7_dt_issue_t",
+          "value": -2.87,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1668"
+        },
+        {
+          "name": "pC_r7_dt_dum",
+          "value": -3.6,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1658"
+        },
+        {
+          "name": "pC_r7_dt_dum_t",
+          "value": -1.74,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1669"
+        },
+        {
+          "name": "pC_r7_avg_r2",
+          "value": 1.43,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1670"
+        },
+        {
+          "name": "pC_r8_intercept",
+          "value": 27.25,
+          "unit": "percent_per_12mo",
+          "tolerance_pct": 40,
+          "paper_location": "L1673"
+        },
+        {
+          "name": "pC_r8_intercept_t",
+          "value": 3.38,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1684"
+        },
+        {
+          "name": "pC_r8_bm",
+          "value": 2.59,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1674"
+        },
+        {
+          "name": "pC_r8_bm_t",
+          "value": 3.33,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1685"
+        },
+        {
+          "name": "pC_r8_bm_dum",
+          "value": 7.96,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1675"
+        },
+        {
+          "name": "pC_r8_bm_dum_t",
+          "value": 8.54,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1686"
+        },
+        {
+          "name": "pC_r8_me",
+          "value": -1.37,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1676"
+        },
+        {
+          "name": "pC_r8_me_t",
+          "value": -2.32,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1687"
+        },
+        {
+          "name": "pC_r8_mom",
+          "value": 8.02,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1677"
+        },
+        {
+          "name": "pC_r8_mom_t",
+          "value": 3.5,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1688"
+        },
+        {
+          "name": "pC_r8_issue",
+          "value": -16.52,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1678"
+        },
+        {
+          "name": "pC_r8_issue_t",
+          "value": -5.61,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1689"
+        },
+        {
+          "name": "pC_r8_dt_issue",
+          "value": -3.41,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1679"
+        },
+        {
+          "name": "pC_r8_dt_issue_t",
+          "value": -2.6,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1690"
+        },
+        {
+          "name": "pC_r8_dt_dum",
+          "value": -3.24,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1680"
+        },
+        {
+          "name": "pC_r8_dt_dum_t",
+          "value": -2.63,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1691"
+        },
+        {
+          "name": "pC_r8_avg_r2",
+          "value": 4.27,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1692"
+        },
+        {
+          "name": "pD_r1_intercept",
+          "value": 12.98,
+          "unit": "percent_per_24mo",
+          "tolerance_pct": 40,
+          "paper_location": "L1716"
+        },
+        {
+          "name": "pD_r1_intercept_t",
+          "value": 5.52,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1727"
+        },
+        {
+          "name": "pD_r1_bm",
+          "value": 3.38,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1717"
+        },
+        {
+          "name": "pD_r1_bm_t",
+          "value": 4.33,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1728"
+        },
+        {
+          "name": "pD_r1_bm_dum",
+          "value": 5.75,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1718"
+        },
+        {
+          "name": "pD_r1_bm_dum_t",
+          "value": 5.5,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1729"
+        },
+        {
+          "name": "pD_r1_avg_r2",
+          "value": 1.02,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1735"
+        },
+        {
+          "name": "pD_r2_intercept",
+          "value": 30.14,
+          "unit": "percent_per_24mo",
+          "tolerance_pct": 40,
+          "paper_location": "L1738"
+        },
+        {
+          "name": "pD_r2_intercept_t",
+          "value": 4.14,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1749"
+        },
+        {
+          "name": "pD_r2_me",
+          "value": -1.13,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1741"
+        },
+        {
+          "name": "pD_r2_me_t",
+          "value": -2.25,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1752"
+        },
+        {
+          "name": "pD_r2_avg_r2",
+          "value": 1.45,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1757"
+        },
+        {
+          "name": "pD_r3_intercept",
+          "value": 17.55,
+          "unit": "percent_per_24mo",
+          "tolerance_pct": 40,
+          "paper_location": "L1760"
+        },
+        {
+          "name": "pD_r3_intercept_t",
+          "value": 8.69,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1771"
+        },
+        {
+          "name": "pD_r3_mom",
+          "value": -2.78,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1764"
+        },
+        {
+          "name": "pD_r3_mom_t",
+          "value": -1.35,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1775"
+        },
+        {
+          "name": "pD_r3_avg_r2",
+          "value": 0.46,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1779"
+        },
+        {
+          "name": "pD_r4_intercept",
+          "value": 23.26,
+          "unit": "percent_per_24mo",
+          "tolerance_pct": 40,
+          "paper_location": "L1782"
+        },
+        {
+          "name": "pD_r4_intercept_t",
+          "value": 3.27,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1793"
+        },
+        {
+          "name": "pD_r4_bm",
+          "value": 2.38,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1783"
+        },
+        {
+          "name": "pD_r4_bm_t",
+          "value": 3.28,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1794"
+        },
+        {
+          "name": "pD_r4_bm_dum",
+          "value": 6.46,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1784"
+        },
+        {
+          "name": "pD_r4_bm_dum_t",
+          "value": 6.94,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1795"
+        },
+        {
+          "name": "pD_r4_me",
+          "value": -0.93,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1785"
+        },
+        {
+          "name": "pD_r4_me_t",
+          "value": -1.87,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1796"
+        },
+        {
+          "name": "pD_r4_mom",
+          "value": -3.69,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1786"
+        },
+        {
+          "name": "pD_r4_mom_t",
+          "value": -1.97,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1797"
+        },
+        {
+          "name": "pD_r4_avg_r2",
+          "value": 2.71,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1801"
+        },
+        {
+          "name": "pD_r5_intercept",
+          "value": 17.93,
+          "unit": "percent_per_24mo",
+          "tolerance_pct": 40,
+          "paper_location": "L1804"
+        },
+        {
+          "name": "pD_r5_intercept_t",
+          "value": 8.7,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1815"
+        },
+        {
+          "name": "pD_r5_issue",
+          "value": -20.03,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1809"
+        },
+        {
+          "name": "pD_r5_issue_t",
+          "value": -6.2,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1820"
+        },
+        {
+          "name": "pD_r5_avg_r2",
+          "value": 0.31,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1823"
+        },
+        {
+          "name": "pD_r6_intercept",
+          "value": 18.13,
+          "unit": "percent_per_24mo",
+          "tolerance_pct": 40,
+          "paper_location": "L1826"
+        },
+        {
+          "name": "pD_r6_intercept_t",
+          "value": 8.96,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1837"
+        },
+        {
+          "name": "pD_r6_dt_issue",
+          "value": -5.4,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1832"
+        },
+        {
+          "name": "pD_r6_dt_issue_t",
+          "value": -3.25,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1843"
+        },
+        {
+          "name": "pD_r6_dt_dum",
+          "value": -1.82,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1833"
+        },
+        {
+          "name": "pD_r6_dt_dum_t",
+          "value": -0.44,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1844"
+        },
+        {
+          "name": "pD_r6_avg_r2",
+          "value": 0.51,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1845"
+        },
+        {
+          "name": "pD_r7_intercept",
+          "value": 18.19,
+          "unit": "percent_per_24mo",
+          "tolerance_pct": 40,
+          "paper_location": "L1848"
+        },
+        {
+          "name": "pD_r7_intercept_t",
+          "value": 8.98,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1859"
+        },
+        {
+          "name": "pD_r7_issue",
+          "value": -13.69,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1853"
+        },
+        {
+          "name": "pD_r7_issue_t",
+          "value": -4.0,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1864"
+        },
+        {
+          "name": "pD_r7_dt_issue",
+          "value": -3.55,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1854"
+        },
+        {
+          "name": "pD_r7_dt_issue_t",
+          "value": -1.97,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1865"
+        },
+        {
+          "name": "pD_r7_dt_dum",
+          "value": -1.7,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1855"
+        },
+        {
+          "name": "pD_r7_dt_dum_t",
+          "value": -0.41,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1866"
+        },
+        {
+          "name": "pD_r7_avg_r2",
+          "value": 0.6,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1867"
+        },
+        {
+          "name": "pD_r8_intercept",
+          "value": 23.81,
+          "unit": "percent_per_24mo",
+          "tolerance_pct": 40,
+          "paper_location": "L1870"
+        },
+        {
+          "name": "pD_r8_intercept_t",
+          "value": 3.4,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1881"
+        },
+        {
+          "name": "pD_r8_bm",
+          "value": 2.1,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1871"
+        },
+        {
+          "name": "pD_r8_bm_t",
+          "value": 3.02,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1882"
+        },
+        {
+          "name": "pD_r8_bm_dum",
+          "value": 6.32,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1872"
+        },
+        {
+          "name": "pD_r8_bm_dum_t",
+          "value": 6.86,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1883"
+        },
+        {
+          "name": "pD_r8_me",
+          "value": -0.92,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1873"
+        },
+        {
+          "name": "pD_r8_me_t",
+          "value": -1.84,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1884"
+        },
+        {
+          "name": "pD_r8_mom",
+          "value": -3.94,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1874"
+        },
+        {
+          "name": "pD_r8_mom_t",
+          "value": -2.19,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1885"
+        },
+        {
+          "name": "pD_r8_issue",
+          "value": -11.63,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1875"
+        },
+        {
+          "name": "pD_r8_issue_t",
+          "value": -3.88,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1886"
+        },
+        {
+          "name": "pD_r8_dt_issue",
+          "value": -2.68,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1876"
+        },
+        {
+          "name": "pD_r8_dt_issue_t",
+          "value": -1.86,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1887"
+        },
+        {
+          "name": "pD_r8_dt_dum",
+          "value": -0.8,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1877"
+        },
+        {
+          "name": "pD_r8_dt_dum_t",
+          "value": -0.2,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1888"
+        },
+        {
+          "name": "pD_r8_avg_r2",
+          "value": 3.14,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1889"
+        },
+        {
+          "name": "pE_r1_intercept",
+          "value": 13.55,
+          "unit": "percent_per_36mo",
+          "tolerance_pct": 40,
+          "paper_location": "L1913"
+        },
+        {
+          "name": "pE_r1_intercept_t",
+          "value": 6.08,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1924"
+        },
+        {
+          "name": "pE_r1_bm",
+          "value": 3.17,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1914"
+        },
+        {
+          "name": "pE_r1_bm_t",
+          "value": 3.87,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1925"
+        },
+        {
+          "name": "pE_r1_bm_dum",
+          "value": 5.35,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1915"
+        },
+        {
+          "name": "pE_r1_bm_dum_t",
+          "value": 6.48,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1926"
+        },
+        {
+          "name": "pE_r1_avg_r2",
+          "value": 0.92,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1932"
+        },
+        {
+          "name": "pE_r2_intercept",
+          "value": 27.81,
+          "unit": "percent_per_36mo",
+          "tolerance_pct": 40,
+          "paper_location": "L1968"
+        },
+        {
+          "name": "pE_r2_intercept_t",
+          "value": 4.03,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1979"
+        },
+        {
+          "name": "pE_r2_me",
+          "value": -0.91,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1971"
+        },
+        {
+          "name": "pE_r2_me_t",
+          "value": -1.87,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1982"
+        },
+        {
+          "name": "pE_r2_avg_r2",
+          "value": 1.37,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1976"
+        },
+        {
+          "name": "pE_r3_intercept",
+          "value": 17.77,
+          "unit": "percent_per_36mo",
+          "tolerance_pct": 40,
+          "paper_location": "L1990"
+        },
+        {
+          "name": "pE_r3_intercept_t",
+          "value": 9.26,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2001"
+        },
+        {
+          "name": "pE_r3_mom",
+          "value": -1.72,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1994"
+        },
+        {
+          "name": "pE_r3_mom_t",
+          "value": -0.54,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2005"
+        },
+        {
+          "name": "pE_r3_avg_r2",
+          "value": 0.79,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L1998"
+        },
+        {
+          "name": "pE_r4_intercept",
+          "value": 21.67,
+          "unit": "percent_per_36mo",
+          "tolerance_pct": 40,
+          "paper_location": "L2012"
+        },
+        {
+          "name": "pE_r4_intercept_t",
+          "value": 3.19,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2023"
+        },
+        {
+          "name": "pE_r4_bm",
+          "value": 2.07,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L2013"
+        },
+        {
+          "name": "pE_r4_bm_t",
+          "value": 2.8,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2024"
+        },
+        {
+          "name": "pE_r4_bm_dum",
+          "value": 5.9,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L2014"
+        },
+        {
+          "name": "pE_r4_bm_dum_t",
+          "value": 8.66,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2025"
+        },
+        {
+          "name": "pE_r4_me",
+          "value": -0.75,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L2015"
+        },
+        {
+          "name": "pE_r4_me_t",
+          "value": -1.55,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2026"
+        },
+        {
+          "name": "pE_r4_mom",
+          "value": -2.24,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L2016"
+        },
+        {
+          "name": "pE_r4_mom_t",
+          "value": -0.83,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2027"
+        },
+        {
+          "name": "pE_r4_avg_r2",
+          "value": 2.78,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L2020"
+        },
+        {
+          "name": "pE_r5_intercept",
+          "value": 17.97,
+          "unit": "percent_per_36mo",
+          "tolerance_pct": 40,
+          "paper_location": "L2034"
+        },
+        {
+          "name": "pE_r5_intercept_t",
+          "value": 9.14,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2045"
+        },
+        {
+          "name": "pE_r5_issue",
+          "value": -14.18,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L2039"
+        },
+        {
+          "name": "pE_r5_issue_t",
+          "value": -3.17,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2050"
+        },
+        {
+          "name": "pE_r5_avg_r2",
+          "value": 0.25,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L2042"
+        },
+        {
+          "name": "pE_r6_intercept",
+          "value": 18.12,
+          "unit": "percent_per_36mo",
+          "tolerance_pct": 40,
+          "paper_location": "L2056"
+        },
+        {
+          "name": "pE_r6_intercept_t",
+          "value": 9.44,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2067"
+        },
+        {
+          "name": "pE_r6_dt_issue",
+          "value": -4.38,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L2062"
+        },
+        {
+          "name": "pE_r6_dt_issue_t",
+          "value": -2.27,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2073"
+        },
+        {
+          "name": "pE_r6_dt_dum",
+          "value": 1.98,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L2063"
+        },
+        {
+          "name": "pE_r6_dt_dum_t",
+          "value": 0.7,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2074"
+        },
+        {
+          "name": "pE_r6_avg_r2",
+          "value": 0.44,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L2064"
+        },
+        {
+          "name": "pE_r7_intercept",
+          "value": 18.13,
+          "unit": "percent_per_36mo",
+          "tolerance_pct": 40,
+          "paper_location": "L2078"
+        },
+        {
+          "name": "pE_r7_intercept_t",
+          "value": 9.43,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2089"
+        },
+        {
+          "name": "pE_r7_issue",
+          "value": -9.52,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L2083"
+        },
+        {
+          "name": "pE_r7_issue_t",
+          "value": -2.34,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2094"
+        },
+        {
+          "name": "pE_r7_dt_issue",
+          "value": -2.96,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L2084"
+        },
+        {
+          "name": "pE_r7_dt_issue_t",
+          "value": -1.5,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2095"
+        },
+        {
+          "name": "pE_r7_dt_dum",
+          "value": 2.21,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L2085"
+        },
+        {
+          "name": "pE_r7_dt_dum_t",
+          "value": 0.75,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2096"
+        },
+        {
+          "name": "pE_r7_avg_r2",
+          "value": 0.5,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L2086"
+        },
+        {
+          "name": "pE_r8_intercept",
+          "value": 21.9,
+          "unit": "percent_per_36mo",
+          "tolerance_pct": 40,
+          "paper_location": "L2100"
+        },
+        {
+          "name": "pE_r8_intercept_t",
+          "value": 3.25,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2111"
+        },
+        {
+          "name": "pE_r8_bm",
+          "value": 1.85,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L2101"
+        },
+        {
+          "name": "pE_r8_bm_t",
+          "value": 2.63,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2112"
+        },
+        {
+          "name": "pE_r8_bm_dum",
+          "value": 5.79,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L2102"
+        },
+        {
+          "name": "pE_r8_bm_dum_t",
+          "value": 8.77,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2113"
+        },
+        {
+          "name": "pE_r8_me",
+          "value": -0.73,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L2103"
+        },
+        {
+          "name": "pE_r8_me_t",
+          "value": -1.5,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2114"
+        },
+        {
+          "name": "pE_r8_mom",
+          "value": -2.42,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L2104"
+        },
+        {
+          "name": "pE_r8_mom_t",
+          "value": -0.94,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2115"
+        },
+        {
+          "name": "pE_r8_issue",
+          "value": -9.0,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L2105"
+        },
+        {
+          "name": "pE_r8_issue_t",
+          "value": -2.97,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2116"
+        },
+        {
+          "name": "pE_r8_dt_issue",
+          "value": -2.14,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L2106"
+        },
+        {
+          "name": "pE_r8_dt_issue_t",
+          "value": -1.27,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2117"
+        },
+        {
+          "name": "pE_r8_dt_dum",
+          "value": 3.12,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L2107"
+        },
+        {
+          "name": "pE_r8_dt_dum_t",
+          "value": 1.02,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2118"
+        },
+        {
+          "name": "pE_r8_avg_r2",
+          "value": 3.1,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L2108"
+        }
+      ],
+      "notes": "All 198 coefficient/t-stat/R2 cells of Panels C (1-year, k=12, AR(11)), D (2nd-year, k=24, AR(23)) and E (3rd-year, k=36, AR(35)) are legible in the OCR: Panel C at content.md L1501-1695, Panel D at L1698-1892, Panel E rows 1 at L1895-1935 and rows 2-8 on the page-14 continuation at L1952-2122. No cells were skipped for legibility. Dependent returns r12/r24_y2/r36_y3 are x100 (A3); year-2 (t+12..t+23) and year-3 (t+24..t+35) windows are EWRETD-imputed (A7). DT_DUM_FLIP=True (A19 ratified) is applied, so only intercept and DT-Dum-own-coefficient differ from the as-built polarity; ISSUE and DT-ISSUE are polarity-invariant. KNOWN DEVIATION: under the ratified flipped polarity the Panel E DT-Dum coefficient cells (pE_r6/r7/r8_dt_dum) come out NEGATIVE while the paper prints POSITIVE (+1.98/+2.21/+3.12) \u2014 the mirror image of the A15 finding (Panels A-D require the flipped sign; Panel E's printed DT-Dum sign matches the as-built polarity). This is a paper-side DT-Dum polarity inconsistency at the 3-year horizon; it is the ONLY sign deviation (3 FAIL cells) and does not touch any ratified convention or the issuance coefficients. Tolerances: +/-40% for coefficients and t-stats, +/-25% for R2, matching the T3 contract."
+    },
+    {
+      "id": "T5",
+      "table_ref": "Table V, Panel A",
+      "description": "Descriptive statistics for ISSUE, DT-ISSUE, BM, ME, MOM and the contemporaneous 1-year return over the out-of-sample September 1932 to December 1969 period.",
+      "replication_meaning": "Demonstrates that the split-adjusted share-issuance construction extends correctly to pre-1970 CRSP (where issuance is far rarer: mean 0.01 vs 0.04, std 0.07 vs 0.15, 62.6% zero vs 24.2%), validating the cumulative-factor adjustment across the 1930s-1960s split history and the out-of-sample universe composition (~524-528K firm-months). Matching these frequencies is a sharp test of the shares-outstanding pipeline independent of any regression.",
+      "paper_quote": "The sample observations range between 524,260 observations (for $MOM$ ) and 528,200 observations (for $R_{-11,0}$ ). (L2263)",
+      "exercises_preprocessing_rules": [
+        "sample_period_oos_1932_1969",
+        "var_total_factor",
+        "var_adjusted_shares",
+        "var_issue_annual",
+        "var_issue_5year",
+        "var_shares_exclude_split_dividends",
+        "var_me_definition",
+        "var_mom_6mo",
+        "var_mom_lag_1mo",
+        "var_table5_oos_obs_counts",
+        "var_bm_oos_dff2000"
+      ],
+      "metrics": [
+        {
+          "name": "oos_issue_mean",
+          "value": 0.01,
+          "unit": "log_share_change",
+          "tolerance_pct": 20,
+          "paper_location": "L2283"
+        },
+        {
+          "name": "oos_issue_p75",
+          "value": 0.0,
+          "unit": "log_share_change",
+          "tolerance_pct": 100,
+          "paper_location": "L2286"
+        },
+        {
+          "name": "oos_issue_std",
+          "value": 0.07,
+          "unit": "log_share_change",
+          "tolerance_pct": 15,
+          "paper_location": "L2287"
+        },
+        {
+          "name": "oos_dt_issue_mean",
+          "value": 0.08,
+          "unit": "log_share_change",
+          "tolerance_pct": 15,
+          "paper_location": "L2291"
+        },
+        {
+          "name": "oos_dt_issue_p75",
+          "value": 0.05,
+          "unit": "log_share_change",
+          "tolerance_pct": 20,
+          "paper_location": "L2294"
+        },
+        {
+          "name": "oos_dt_issue_std",
+          "value": 0.24,
+          "unit": "log_share_change",
+          "tolerance_pct": 15,
+          "paper_location": "L2295"
+        },
+        {
+          "name": "oos_bm_mean",
+          "value": -0.12,
+          "unit": "log_ratio",
+          "tolerance_pct": 20,
+          "paper_location": "L2299"
+        },
+        {
+          "name": "oos_bm_std",
+          "value": 0.94,
+          "unit": "log_ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L2303"
+        },
+        {
+          "name": "oos_me_mean",
+          "value": 10.28,
+          "unit": "log_dollars",
+          "tolerance_pct": 5,
+          "paper_location": "L2307"
+        },
+        {
+          "name": "oos_me_p25",
+          "value": 9.05,
+          "unit": "log_dollars",
+          "tolerance_pct": 5,
+          "paper_location": "L2308"
+        },
+        {
+          "name": "oos_me_median",
+          "value": 10.22,
+          "unit": "log_dollars",
+          "tolerance_pct": 5,
+          "paper_location": "L2309"
+        },
+        {
+          "name": "oos_me_p75",
+          "value": 11.5,
+          "unit": "log_dollars",
+          "tolerance_pct": 5,
+          "paper_location": "L2310"
+        },
+        {
+          "name": "oos_me_std",
+          "value": 1.8,
+          "unit": "log_dollars",
+          "tolerance_pct": 10,
+          "paper_location": "L2311"
+        },
+        {
+          "name": "oos_mom_mean",
+          "value": 0.09,
+          "unit": "decimal_return",
+          "tolerance_pct": 15,
+          "paper_location": "L2315"
+        },
+        {
+          "name": "oos_mom_std",
+          "value": 0.34,
+          "unit": "decimal_return",
+          "tolerance_pct": 10,
+          "paper_location": "L2319"
+        },
+        {
+          "name": "oos_r_11_0_mean",
+          "value": 0.19,
+          "unit": "decimal_return",
+          "tolerance_pct": 10,
+          "paper_location": "L2323"
+        },
+        {
+          "name": "oos_r_11_0_std",
+          "value": 0.6,
+          "unit": "decimal_return",
+          "tolerance_pct": 10,
+          "paper_location": "L2327"
+        },
+        {
+          "name": "oos_pct_positive_issuance",
+          "value": 28.2,
+          "unit": "percent",
+          "tolerance_pct": 10,
+          "paper_location": "L2441"
+        },
+        {
+          "name": "oos_pct_zero_issuance",
+          "value": 62.6,
+          "unit": "percent",
+          "tolerance_pct": 10,
+          "paper_location": "L2441"
+        },
+        {
+          "name": "oos_pct_negative_issuance",
+          "value": 9.2,
+          "unit": "percent",
+          "tolerance_pct": 10,
+          "paper_location": "L2441"
+        },
+        {
+          "name": "oos_n_obs_mom",
+          "value": 524260,
+          "unit": "count",
+          "tolerance_pct": 5,
+          "paper_location": "L2263"
+        },
+        {
+          "name": "oos_n_obs_r_11_0",
+          "value": 528200,
+          "unit": "count",
+          "tolerance_pct": 5,
+          "paper_location": "L2263"
+        }
+      ],
+      "notes": "BM cells (oos_bm_mean, oos_bm_std) depend on the Davis-Fama-French (2000) pre-1970 book-equity file the authors obtained from Ken French (L2445), not Compustat; if that file is absent from ClickHouse these cells are evaluated as SKIP and the BM-dependent rows of Table VI are reported at pattern level. The zero 75th percentile of pre-1970 annual issuance (62.6% of firms never change shares) carries tolerance 100%: it passes when our value rounds to 0.00."
+    },
+    {
+      "id": "T6",
+      "table_ref": "Table VI, Panel A",
+      "description": "Out-of-sample Fama-MacBeth regressions of 1-month stock returns on BM, BM Dum, ME, MOM, ISSUE, DT-ISSUE and DT-Dum, September 1932 to December 1969, 444 months, 373,590 firm-observations.",
+      "replication_meaning": "Demonstrates that the full methodology (share-issuance construction, FM machinery, overlap t-stats) behaves correctly OUT of sample: the paper's key out-of-sample finding is that annual issuance does NOT predict monthly returns pre-1970 (Panel A ISSUE slopes 0.52, 0.27, 0.84 \u2014 all positive and insignificant, t < 1 \u2014 vs post-1970 -2.23, t = -7.08), while ME stays significantly negative and MOM stays positive but insignificant. Reproducing both the sign flip of the ISSUE slope and its loss of significance is the paper's central pre-1970 claim and a strong guard against overfitting the post-1970 pipeline.",
+      "paper_quote": "These regressions are for the 444 months from September 1932 (to ensure the existence of shares outstanding) to December 1969, with a total of 373,590 firm-observations. (L2463)",
+      "exercises_preprocessing_rules": [
+        "sample_period_oos_1932_1969",
+        "var_issue_annual",
+        "var_issue_5year",
+        "var_dt_dummy",
+        "sample_issue_timing_6mo_lag",
+        "sample_shares_error_correction",
+        "var_me_definition",
+        "var_me_timing_june",
+        "var_mom_6mo",
+        "var_mom_lag_1mo",
+        "var_returns_holding_periods",
+        "delisting_ewretd_imputation",
+        "winsorize_rhs_1pct_both_tails",
+        "fm_monthly_cross_sectional",
+        "fm_overlap_tstats_pontiff1996",
+        "fm_overlap_ar_order",
+        "fm_overlap_intercept_se",
+        "sort_fm_regression_horse_race",
+        "fm_sample_size_oos_1932_1969",
+        "var_bm_oos_dff2000"
+      ],
+      "metrics": [
+        {
+          "name": "oos_n_obs_regressions",
+          "value": 373590,
+          "unit": "count",
+          "tolerance_pct": 10,
+          "paper_location": "L2463"
+        },
+        {
+          "name": "oos_n_months",
+          "value": 444,
+          "unit": "count",
+          "tolerance_pct": 1,
+          "paper_location": "L2463"
+        },
+        {
+          "name": "oos_pA_r1_intercept",
+          "value": 1.4,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2483"
+        },
+        {
+          "name": "oos_pA_r1_intercept_t",
+          "value": 3.94,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2494"
+        },
+        {
+          "name": "oos_pA_r1_bm",
+          "value": 0.34,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L2484"
+        },
+        {
+          "name": "oos_pA_r1_bm_t",
+          "value": 3.05,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2495"
+        },
+        {
+          "name": "oos_pA_r1_bm_dum",
+          "value": -0.02,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L2485"
+        },
+        {
+          "name": "oos_pA_r1_bm_dum_t",
+          "value": -0.19,
+          "unit": "t_stat",
+          "tolerance_pct": 100,
+          "paper_location": "L2496"
+        },
+        {
+          "name": "oos_pA_r1_avg_r2",
+          "value": 1.86,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L2491"
+        },
+        {
+          "name": "oos_pA_r2_intercept",
+          "value": 3.58,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2505"
+        },
+        {
+          "name": "oos_pA_r2_intercept_t",
+          "value": 3.79,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2516"
+        },
+        {
+          "name": "oos_pA_r2_me",
+          "value": -0.22,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L2508"
+        },
+        {
+          "name": "oos_pA_r2_me_t",
+          "value": -3.04,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2519"
+        },
+        {
+          "name": "oos_pA_r2_avg_r2",
+          "value": 2.58,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L2513"
+        },
+        {
+          "name": "oos_pA_r3_intercept",
+          "value": 1.35,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2527"
+        },
+        {
+          "name": "oos_pA_r3_intercept_t",
+          "value": 4.56,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2538"
+        },
+        {
+          "name": "oos_pA_r3_mom",
+          "value": 0.68,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L2531"
+        },
+        {
+          "name": "oos_pA_r3_mom_t",
+          "value": 1.34,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2542"
+        },
+        {
+          "name": "oos_pA_r3_avg_r2",
+          "value": 2.27,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L2535"
+        },
+        {
+          "name": "oos_pA_r4_intercept",
+          "value": 2.77,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2549"
+        },
+        {
+          "name": "oos_pA_r4_intercept_t",
+          "value": 3.88,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2560"
+        },
+        {
+          "name": "oos_pA_r4_bm",
+          "value": 0.15,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L2550"
+        },
+        {
+          "name": "oos_pA_r4_bm_t",
+          "value": 2.08,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2561"
+        },
+        {
+          "name": "oos_pA_r4_bm_dum",
+          "value": 0.17,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L2551"
+        },
+        {
+          "name": "oos_pA_r4_bm_dum_t",
+          "value": 2.0,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2562"
+        },
+        {
+          "name": "oos_pA_r4_me",
+          "value": -0.16,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L2552"
+        },
+        {
+          "name": "oos_pA_r4_me_t",
+          "value": -3.16,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2563"
+        },
+        {
+          "name": "oos_pA_r4_mom",
+          "value": 0.7,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L2553"
+        },
+        {
+          "name": "oos_pA_r4_mom_t",
+          "value": 1.59,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2564"
+        },
+        {
+          "name": "oos_pA_r4_avg_r2",
+          "value": 5.12,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L2557"
+        },
+        {
+          "name": "oos_pA_r5_intercept",
+          "value": 1.52,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2571"
+        },
+        {
+          "name": "oos_pA_r5_intercept_t",
+          "value": 4.29,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2582"
+        },
+        {
+          "name": "oos_pA_r5_issue",
+          "value": 0.52,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L2576"
+        },
+        {
+          "name": "oos_pA_r5_issue_t",
+          "value": 0.43,
+          "unit": "t_stat",
+          "tolerance_pct": 100,
+          "paper_location": "L2587"
+        },
+        {
+          "name": "oos_pA_r5_avg_r2",
+          "value": 0.12,
+          "unit": "percent",
+          "tolerance_pct": 50,
+          "paper_location": "L2571-2590"
+        },
+        {
+          "name": "oos_pA_r6_intercept",
+          "value": 1.51,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2593-2602"
+        },
+        {
+          "name": "oos_pA_r6_intercept_t",
+          "value": 4.31,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2604"
+        },
+        {
+          "name": "oos_pA_r6_dt_issue",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L2593-2602"
+        },
+        {
+          "name": "oos_pA_r6_dt_issue_t",
+          "value": -0.03,
+          "unit": "t_stat",
+          "tolerance_pct": 100,
+          "paper_location": "L2605-2612"
+        },
+        {
+          "name": "oos_pA_r6_dt_dum",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L2593-2602"
+        },
+        {
+          "name": "oos_pA_r6_dt_dum_t",
+          "value": 0.12,
+          "unit": "t_stat",
+          "tolerance_pct": 100,
+          "paper_location": "L2605-2612"
+        },
+        {
+          "name": "oos_pA_r6_avg_r2",
+          "value": 0.17,
+          "unit": "percent",
+          "tolerance_pct": 50,
+          "paper_location": "L2593-2612"
+        },
+        {
+          "name": "oos_pA_r7_intercept",
+          "value": 1.51,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2615-2623"
+        },
+        {
+          "name": "oos_pA_r7_intercept_t",
+          "value": 4.32,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2626"
+        },
+        {
+          "name": "oos_pA_r7_issue",
+          "value": 0.27,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L2615-2623"
+        },
+        {
+          "name": "oos_pA_r7_issue_t",
+          "value": 0.21,
+          "unit": "t_stat",
+          "tolerance_pct": 100,
+          "paper_location": "L2631"
+        },
+        {
+          "name": "oos_pA_r7_dt_issue",
+          "value": 0.06,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L2615-2623"
+        },
+        {
+          "name": "oos_pA_r7_dt_issue_t",
+          "value": 0.46,
+          "unit": "t_stat",
+          "tolerance_pct": 100,
+          "paper_location": "L2632"
+        },
+        {
+          "name": "oos_pA_r7_avg_r2",
+          "value": 0.23,
+          "unit": "percent",
+          "tolerance_pct": 50,
+          "paper_location": "L2615-2633"
+        },
+        {
+          "name": "oos_pA_r8_intercept",
+          "value": 2.76,
+          "unit": "percent_per_month",
+          "tolerance_pct": 40,
+          "paper_location": "L2637"
+        },
+        {
+          "name": "oos_pA_r8_intercept_t",
+          "value": 3.9,
+          "unit": "t_stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2648"
+        },
+        {
+          "name": "oos_pA_r8_bm",
+          "value": 0.15,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L2638"
+        },
+        {
+          "name": "oos_pA_r8_me",
+          "value": -0.16,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L2640"
+        },
+        {
+          "name": "oos_pA_r8_mom",
+          "value": 0.72,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L2641"
+        },
+        {
+          "name": "oos_pA_r8_issue",
+          "value": 0.84,
+          "unit": "coefficient",
+          "tolerance_pct": 100,
+          "paper_location": "L2642"
+        },
+        {
+          "name": "oos_pA_r8_issue_t",
+          "value": 0.68,
+          "unit": "t_stat",
+          "tolerance_pct": 100,
+          "paper_location": "L2653"
+        },
+        {
+          "name": "oos_pA_r8_avg_r2",
+          "value": 5.33,
+          "unit": "percent",
+          "tolerance_pct": 25,
+          "paper_location": "L2645"
+        }
+      ],
+      "notes": "Panels B-E of Table VI (6-month through 3rd-year returns) sit in the OCR-degraded page-20/21 continuations with uncertain panel attribution; they are evaluated at pattern level against the paper's narrative (L3295-3310): of 40 specifications, annual issuance is negative and significant in exactly one (annual-return joint regression), DT-ISSUE is significant-positive in 2 of 40 and insignificant in 38, ME is significantly negative in all, MOM is positive in all but its 1-month slopes are insignificant. ISSUE-related cells carry 100% tolerance because the paper's claim about them is sign-and-significance (positive, |t| < 1), not magnitude \u2014 matching the pattern (positive slope, t far below 2) is the target. BM rows depend on DFF (2000) book equity (see T5 notes)."
+    }
+  ]
+}

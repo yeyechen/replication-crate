@@ -1,0 +1,6 @@
+{
+  "replicable": true,
+  "paper_type": "empirical_cross_sectional",
+  "rationale": "Ang, Hodrick, Xing, and Zhang (2006, Journal of Finance) is a landmark empirical cross-sectional paper examining how aggregate volatility risk and idiosyncratic volatility are priced in the cross-section of stock returns. The paper uses CRSP daily and monthly stock returns (NYSE/AMEX/NASDAQ, 1963-2000), Fama-French three-factor model residuals for idiosyncratic volatility, and VIX index data for systematic volatility. Tables I-XI report portfolio sort results, Fama-MacBeth regressions, and robustness checks with means, standard deviations, alphas, and t-statistics. The idiosyncratic volatility results (Tables VI-XI) are fully replicable with CRSP and FF factor data. The systematic volatility results (Tables I-V) require VIX/VXO data which is not in ClickHouse.",
+  "block_reasons": []
+}

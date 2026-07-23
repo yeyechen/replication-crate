@@ -1,0 +1,9353 @@
+{
+ "tables": [
+  {
+   "id": "T1",
+   "table_ref": "Table I",
+   "cells": [
+    {
+     "name": "PA_J3_sell_K3",
+     "paper": 0.0108,
+     "ours": 0.011058,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J3_sell_K3_t",
+     "paper": 2.16,
+     "ours": 2.218364,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J3_sell_K6",
+     "paper": 0.0091,
+     "ours": 0.009115,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J3_sell_K6_t",
+     "paper": 1.87,
+     "ours": 1.887824,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J3_sell_K9",
+     "paper": 0.0092,
+     "ours": 0.009149,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J3_sell_K9_t",
+     "paper": 1.92,
+     "ours": 1.925372,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J3_sell_K12",
+     "paper": 0.0087,
+     "ours": 0.008625,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J3_sell_K12_t",
+     "paper": 1.87,
+     "ours": 1.858138,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J3_sell_K3",
+     "paper": 0.0083,
+     "ours": 0.00563,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J3_sell_K3_t",
+     "paper": 1.67,
+     "ours": 1.267063,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J3_sell_K6",
+     "paper": 0.0079,
+     "ours": 0.006401,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J3_sell_K6_t",
+     "paper": 1.64,
+     "ours": 1.406997,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J3_sell_K9",
+     "paper": 0.0084,
+     "ours": 0.00734,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J3_sell_K9_t",
+     "paper": 1.77,
+     "ours": 1.607714,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J3_sell_K12",
+     "paper": 0.0083,
+     "ours": 0.007267,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J3_sell_K12_t",
+     "paper": 1.79,
+     "ours": 1.614025,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J3_buy_K3",
+     "paper": 0.014,
+     "ours": 0.013391,
+     "tolerance_pct": 84,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J3_buy_K3_t",
+     "paper": 3.57,
+     "ours": 3.444199,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J3_buy_K6",
+     "paper": 0.0149,
+     "ours": 0.014442,
+     "tolerance_pct": 79,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J3_buy_K6_t",
+     "paper": 3.78,
+     "ours": 3.660012,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J3_buy_K9",
+     "paper": 0.0152,
+     "ours": 0.014857,
+     "tolerance_pct": 78,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J3_buy_K9_t",
+     "paper": 3.83,
+     "ours": 3.732441,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J3_buy_K12",
+     "paper": 0.0156,
+     "ours": 0.015342,
+     "tolerance_pct": 77,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J3_buy_K12_t",
+     "paper": 3.89,
+     "ours": 3.810047,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J3_buy_K3",
+     "paper": 0.0156,
+     "ours": 0.012481,
+     "tolerance_pct": 76,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J3_buy_K3_t",
+     "paper": 3.95,
+     "ours": 3.427703,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J3_buy_K6",
+     "paper": 0.0158,
+     "ours": 0.013987,
+     "tolerance_pct": 75,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J3_buy_K6_t",
+     "paper": 3.98,
+     "ours": 3.664699,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J3_buy_K9",
+     "paper": 0.0158,
+     "ours": 0.014553,
+     "tolerance_pct": 76,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J3_buy_K9_t",
+     "paper": 3.96,
+     "ours": 3.737914,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J3_buy_K12",
+     "paper": 0.016,
+     "ours": 0.015115,
+     "tolerance_pct": 75,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J3_buy_K12_t",
+     "paper": 3.98,
+     "ours": 3.815611,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J3_buy_sell_K3",
+     "paper": 0.0032,
+     "ours": 0.002333,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J3_buy_sell_K3_t",
+     "paper": 1.1,
+     "ours": 0.825522,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J3_buy_sell_K6",
+     "paper": 0.0058,
+     "ours": 0.005328,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J3_buy_sell_K6_t",
+     "paper": 2.29,
+     "ours": 2.175326,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J3_buy_sell_K9",
+     "paper": 0.0061,
+     "ours": 0.005708,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J3_buy_sell_K9_t",
+     "paper": 2.69,
+     "ours": 2.628278,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J3_buy_sell_K12",
+     "paper": 0.0069,
+     "ours": 0.006718,
+     "tolerance_pct": 85,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J3_buy_sell_K12_t",
+     "paper": 3.53,
+     "ours": 3.578859,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J3_buy_sell_K3",
+     "paper": 0.0073,
+     "ours": 0.006851,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J3_buy_sell_K3_t",
+     "paper": 2.61,
+     "ours": 2.906535,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J3_buy_sell_K6",
+     "paper": 0.0078,
+     "ours": 0.007587,
+     "tolerance_pct": 95,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J3_buy_sell_K6_t",
+     "paper": 3.16,
+     "ours": 3.420176,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J3_buy_sell_K9",
+     "paper": 0.0074,
+     "ours": 0.007214,
+     "tolerance_pct": 89,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J3_buy_sell_K9_t",
+     "paper": 3.36,
+     "ours": 3.570436,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J3_buy_sell_K12",
+     "paper": 0.0077,
+     "ours": 0.007847,
+     "tolerance_pct": 75,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J3_buy_sell_K12_t",
+     "paper": 4.0,
+     "ours": 4.433557,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J6_sell_K3",
+     "paper": 0.0087,
+     "ours": 0.009273,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J6_sell_K3_t",
+     "paper": 1.67,
+     "ours": 1.79062,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J6_sell_K6",
+     "paper": 0.0079,
+     "ours": 0.00811,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J6_sell_K6_t",
+     "paper": 1.56,
+     "ours": 1.61509,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J6_sell_K9",
+     "paper": 0.0072,
+     "ours": 0.007364,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J6_sell_K9_t",
+     "paper": 1.48,
+     "ours": 1.517866,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J6_sell_K12",
+     "paper": 0.008,
+     "ours": 0.008117,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J6_sell_K12_t",
+     "paper": 1.66,
+     "ours": 1.685624,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J6_sell_K3",
+     "paper": 0.0066,
+     "ours": 0.004508,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J6_sell_K3_t",
+     "paper": 1.28,
+     "ours": 0.977948,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J6_sell_K6",
+     "paper": 0.0068,
+     "ours": 0.005728,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J6_sell_K6_t",
+     "paper": 1.35,
+     "ours": 1.211,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J6_sell_K9",
+     "paper": 0.0067,
+     "ours": 0.005776,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J6_sell_K9_t",
+     "paper": 1.38,
+     "ours": 1.239685,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J6_sell_K12",
+     "paper": 0.0076,
+     "ours": 0.006926,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J6_sell_K12_t",
+     "paper": 1.58,
+     "ours": 1.482877,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J6_buy_K3",
+     "paper": 0.0171,
+     "ours": 0.016308,
+     "tolerance_pct": 70,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J6_buy_K3_t",
+     "paper": 4.28,
+     "ours": 4.123919,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J6_buy_K6",
+     "paper": 0.0174,
+     "ours": 0.016908,
+     "tolerance_pct": 69,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J6_buy_K6_t",
+     "paper": 4.33,
+     "ours": 4.218487,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J6_buy_K9",
+     "paper": 0.0174,
+     "ours": 0.017127,
+     "tolerance_pct": 70,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J6_buy_K9_t",
+     "paper": 4.31,
+     "ours": 4.233819,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J6_buy_K12",
+     "paper": 0.0166,
+     "ours": 0.016343,
+     "tolerance_pct": 73,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J6_buy_K12_t",
+     "paper": 4.13,
+     "ours": 4.059289,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J6_buy_K3",
+     "paper": 0.0179,
+     "ours": 0.014886,
+     "tolerance_pct": 67,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J6_buy_K3_t",
+     "paper": 4.47,
+     "ours": 4.018362,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J6_buy_K6",
+     "paper": 0.0178,
+     "ours": 0.016197,
+     "tolerance_pct": 68,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J6_buy_K6_t",
+     "paper": 4.41,
+     "ours": 4.177765,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J6_buy_K9",
+     "paper": 0.0175,
+     "ours": 0.016653,
+     "tolerance_pct": 69,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J6_buy_K9_t",
+     "paper": 4.32,
+     "ours": 4.208045,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J6_buy_K12",
+     "paper": 0.0166,
+     "ours": 0.015988,
+     "tolerance_pct": 73,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J6_buy_K12_t",
+     "paper": 4.13,
+     "ours": 4.036654,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J6_buy_sell_K3",
+     "paper": 0.0084,
+     "ours": 0.007035,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J6_buy_sell_K3_t",
+     "paper": 2.44,
+     "ours": 2.083125,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J6_buy_sell_K6",
+     "paper": 0.0095,
+     "ours": 0.008797,
+     "tolerance_pct": 98,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J6_buy_sell_K6_t",
+     "paper": 3.07,
+     "ours": 2.908658,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J6_buy_sell_K9",
+     "paper": 0.0102,
+     "ours": 0.009763,
+     "tolerance_pct": 80,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J6_buy_sell_K9_t",
+     "paper": 3.76,
+     "ours": 3.707034,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J6_buy_sell_K12",
+     "paper": 0.0086,
+     "ours": 0.008226,
+     "tolerance_pct": 89,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J6_buy_sell_K12_t",
+     "paper": 3.36,
+     "ours": 3.311278,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J6_buy_sell_K3",
+     "paper": 0.0114,
+     "ours": 0.010378,
+     "tolerance_pct": 89,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J6_buy_sell_K3_t",
+     "paper": 3.37,
+     "ours": 3.633914,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J6_buy_sell_K6",
+     "paper": 0.011,
+     "ours": 0.010469,
+     "tolerance_pct": 83,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J6_buy_sell_K6_t",
+     "paper": 3.61,
+     "ours": 3.782016,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J6_buy_sell_K9",
+     "paper": 0.0108,
+     "ours": 0.010878,
+     "tolerance_pct": 75,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J6_buy_sell_K9_t",
+     "paper": 4.01,
+     "ours": 4.400578,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J6_buy_sell_K12",
+     "paper": 0.009,
+     "ours": 0.009062,
+     "tolerance_pct": 85,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J6_buy_sell_K12_t",
+     "paper": 3.54,
+     "ours": 3.834634,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J9_sell_K3",
+     "paper": 0.0077,
+     "ours": 0.008432,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J9_sell_K3_t",
+     "paper": 1.47,
+     "ours": 1.605846,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J9_sell_K6",
+     "paper": 0.0065,
+     "ours": 0.0067,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J9_sell_K6_t",
+     "paper": 1.29,
+     "ours": 1.336594,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J9_sell_K9",
+     "paper": 0.0071,
+     "ours": 0.007273,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J9_sell_K9_t",
+     "paper": 1.43,
+     "ours": 1.464439,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J9_sell_K12",
+     "paper": 0.0082,
+     "ours": 0.008279,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J9_sell_K12_t",
+     "paper": 1.66,
+     "ours": 1.67359,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J9_sell_K3",
+     "paper": 0.0058,
+     "ours": 0.003912,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J9_sell_K3_t",
+     "paper": 1.13,
+     "ours": 0.837563,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J9_sell_K6",
+     "paper": 0.0058,
+     "ours": 0.004441,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J9_sell_K6_t",
+     "paper": 1.15,
+     "ours": 0.940748,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J9_sell_K9",
+     "paper": 0.0066,
+     "ours": 0.005767,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J9_sell_K9_t",
+     "paper": 1.34,
+     "ours": 1.208923,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J9_sell_K12",
+     "paper": 0.0078,
+     "ours": 0.007149,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J9_sell_K12_t",
+     "paper": 1.59,
+     "ours": 1.48974,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J9_buy_K3",
+     "paper": 0.0186,
+     "ours": 0.017931,
+     "tolerance_pct": 66,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J9_buy_K3_t",
+     "paper": 4.56,
+     "ours": 4.448606,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J9_buy_K6",
+     "paper": 0.0186,
+     "ours": 0.018231,
+     "tolerance_pct": 66,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J9_buy_K6_t",
+     "paper": 4.53,
+     "ours": 4.451817,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J9_buy_K9",
+     "paper": 0.0176,
+     "ours": 0.017284,
+     "tolerance_pct": 70,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J9_buy_K9_t",
+     "paper": 4.3,
+     "ours": 4.231034,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J9_buy_K12",
+     "paper": 0.0164,
+     "ours": 0.016187,
+     "tolerance_pct": 74,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J9_buy_K12_t",
+     "paper": 4.03,
+     "ours": 3.97915,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J9_buy_K3",
+     "paper": 0.0193,
+     "ours": 0.016341,
+     "tolerance_pct": 64,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J9_buy_K3_t",
+     "paper": 4.72,
+     "ours": 4.326291,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J9_buy_K6",
+     "paper": 0.0188,
+     "ours": 0.017436,
+     "tolerance_pct": 66,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J9_buy_K6_t",
+     "paper": 4.56,
+     "ours": 4.400401,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J9_buy_K9",
+     "paper": 0.0176,
+     "ours": 0.016754,
+     "tolerance_pct": 70,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J9_buy_K9_t",
+     "paper": 4.3,
+     "ours": 4.191767,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J9_buy_K12",
+     "paper": 0.0164,
+     "ours": 0.015789,
+     "tolerance_pct": 74,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J9_buy_K12_t",
+     "paper": 4.04,
+     "ours": 3.945193,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J9_buy_sell_K3",
+     "paper": 0.0109,
+     "ours": 0.009499,
+     "tolerance_pct": 99,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J9_buy_sell_K3_t",
+     "paper": 3.03,
+     "ours": 2.663423,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J9_buy_sell_K6",
+     "paper": 0.0121,
+     "ours": 0.011531,
+     "tolerance_pct": 79,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J9_buy_sell_K6_t",
+     "paper": 3.78,
+     "ours": 3.682803,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J9_buy_sell_K9",
+     "paper": 0.0105,
+     "ours": 0.010011,
+     "tolerance_pct": 86,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J9_buy_sell_K9_t",
+     "paper": 3.47,
+     "ours": 3.401135,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J9_buy_sell_K12",
+     "paper": 0.0082,
+     "ours": 0.007908,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J9_buy_sell_K12_t",
+     "paper": 2.89,
+     "ours": 2.839059,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J9_buy_sell_K3",
+     "paper": 0.0135,
+     "ours": 0.012429,
+     "tolerance_pct": 78,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J9_buy_sell_K3_t",
+     "paper": 3.85,
+     "ours": 4.11948,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J9_buy_sell_K6",
+     "paper": 0.013,
+     "ours": 0.012996,
+     "tolerance_pct": 73,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J9_buy_sell_K6_t",
+     "paper": 4.09,
+     "ours": 4.534019,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J9_buy_sell_K9",
+     "paper": 0.0109,
+     "ours": 0.010987,
+     "tolerance_pct": 82,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J9_buy_sell_K9_t",
+     "paper": 3.67,
+     "ours": 3.969153,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J9_buy_sell_K12",
+     "paper": 0.0085,
+     "ours": 0.00864,
+     "tolerance_pct": 99,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J9_buy_sell_K12_t",
+     "paper": 3.04,
+     "ours": 3.256039,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J12_sell_K3",
+     "paper": 0.006,
+     "ours": 0.006551,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J12_sell_K3_t",
+     "paper": 1.17,
+     "ours": 1.272789,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J12_sell_K6",
+     "paper": 0.0065,
+     "ours": 0.006817,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J12_sell_K6_t",
+     "paper": 1.29,
+     "ours": 1.339259,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J12_sell_K9",
+     "paper": 0.0075,
+     "ours": 0.007614,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J12_sell_K9_t",
+     "paper": 1.48,
+     "ours": 1.504386,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J12_sell_K12",
+     "paper": 0.0087,
+     "ours": 0.008851,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J12_sell_K12_t",
+     "paper": 1.74,
+     "ours": 1.753249,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J12_sell_K3",
+     "paper": 0.0048,
+     "ours": 0.002594,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J12_sell_K3_t",
+     "paper": 0.93,
+     "ours": 0.563517,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J12_sell_K6",
+     "paper": 0.0058,
+     "ours": 0.004838,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J12_sell_K6_t",
+     "paper": 1.15,
+     "ours": 1.00601,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J12_sell_K9",
+     "paper": 0.007,
+     "ours": 0.006295,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J12_sell_K9_t",
+     "paper": 1.4,
+     "ours": 1.291817,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J12_sell_K12",
+     "paper": 0.0085,
+     "ours": 0.007862,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J12_sell_K12_t",
+     "paper": 1.71,
+     "ours": 1.602274,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J12_buy_K3",
+     "paper": 0.0192,
+     "ours": 0.018848,
+     "tolerance_pct": 65,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J12_buy_K3_t",
+     "paper": 4.63,
+     "ours": 4.592678,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J12_buy_K6",
+     "paper": 0.0179,
+     "ours": 0.017778,
+     "tolerance_pct": 69,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J12_buy_K6_t",
+     "paper": 4.36,
+     "ours": 4.33586,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J12_buy_K9",
+     "paper": 0.0168,
+     "ours": 0.016755,
+     "tolerance_pct": 73,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J12_buy_K9_t",
+     "paper": 4.1,
+     "ours": 4.099788,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J12_buy_K12",
+     "paper": 0.0155,
+     "ours": 0.015579,
+     "tolerance_pct": 79,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J12_buy_K12_t",
+     "paper": 3.81,
+     "ours": 3.82185,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J12_buy_K3",
+     "paper": 0.0196,
+     "ours": 0.017128,
+     "tolerance_pct": 63,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J12_buy_K3_t",
+     "paper": 4.73,
+     "ours": 4.467054,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J12_buy_K6",
+     "paper": 0.0179,
+     "ours": 0.016917,
+     "tolerance_pct": 69,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J12_buy_K6_t",
+     "paper": 4.36,
+     "ours": 4.272482,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J12_buy_K9",
+     "paper": 0.0167,
+     "ours": 0.016182,
+     "tolerance_pct": 73,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J12_buy_K9_t",
+     "paper": 4.09,
+     "ours": 4.05285,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J12_buy_K12",
+     "paper": 0.0154,
+     "ours": 0.015148,
+     "tolerance_pct": 79,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J12_buy_K12_t",
+     "paper": 3.79,
+     "ours": 3.781335,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J12_buy_sell_K3",
+     "paper": 0.0131,
+     "ours": 0.012297,
+     "tolerance_pct": 80,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J12_buy_sell_K3_t",
+     "paper": 3.74,
+     "ours": 3.580941,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J12_buy_sell_K6",
+     "paper": 0.0114,
+     "ours": 0.010961,
+     "tolerance_pct": 88,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J12_buy_sell_K6_t",
+     "paper": 3.4,
+     "ours": 3.35798,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J12_buy_sell_K9",
+     "paper": 0.0093,
+     "ours": 0.009142,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J12_buy_sell_K9_t",
+     "paper": 2.95,
+     "ours": 2.954938,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J12_buy_sell_K12",
+     "paper": 0.0068,
+     "ours": 0.006727,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PA_J12_buy_sell_K12_t",
+     "paper": 2.25,
+     "ours": 2.265502,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J12_buy_sell_K3",
+     "paper": 0.0149,
+     "ours": 0.014534,
+     "tolerance_pct": 70,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J12_buy_sell_K3_t",
+     "paper": 4.28,
+     "ours": 4.917711,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J12_buy_sell_K6",
+     "paper": 0.0121,
+     "ours": 0.012079,
+     "tolerance_pct": 82,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J12_buy_sell_K6_t",
+     "paper": 3.65,
+     "ours": 3.999539,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J12_buy_sell_K9",
+     "paper": 0.0096,
+     "ours": 0.009887,
+     "tolerance_pct": 97,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J12_buy_sell_K9_t",
+     "paper": 3.09,
+     "ours": 3.372512,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J12_buy_sell_K12",
+     "paper": 0.0069,
+     "ours": 0.007287,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "PB_J12_buy_sell_K12_t",
+     "paper": 2.31,
+     "ours": 2.558263,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    }
+   ]
+  },
+  {
+   "id": "T2",
+   "table_ref": "Table II",
+   "cells": [
+    {
+     "name": "P1_beta",
+     "paper": 1.36,
+     "ours": 1.418775,
+     "tolerance_pct": 15,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P1_mcap_musd",
+     "paper": 208.24,
+     "ours": 170.765964,
+     "tolerance_pct": 20,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P2_beta",
+     "paper": 1.19,
+     "ours": 1.231292,
+     "tolerance_pct": 15,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P2_mcap_musd",
+     "paper": 480.07,
+     "ours": 340.226604,
+     "tolerance_pct": 20,
+     "status": "Tier 2"
+    },
+    {
+     "name": "P3_beta",
+     "paper": 1.14,
+     "ours": 1.181219,
+     "tolerance_pct": 15,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P3_mcap_musd",
+     "paper": 545.31,
+     "ours": 462.22463,
+     "tolerance_pct": 20,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P4_beta",
+     "paper": 1.11,
+     "ours": 1.148876,
+     "tolerance_pct": 15,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P4_mcap_musd",
+     "paper": 618.85,
+     "ours": 532.382909,
+     "tolerance_pct": 20,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P5_beta",
+     "paper": 1.09,
+     "ours": 1.132216,
+     "tolerance_pct": 15,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P5_mcap_musd",
+     "paper": 692.89,
+     "ours": 600.912098,
+     "tolerance_pct": 20,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_beta",
+     "paper": 1.08,
+     "ours": 1.13006,
+     "tolerance_pct": 15,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_mcap_musd",
+     "paper": 702.51,
+     "ours": 634.82042,
+     "tolerance_pct": 20,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_beta",
+     "paper": 1.09,
+     "ours": 1.128423,
+     "tolerance_pct": 15,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_mcap_musd",
+     "paper": 738.09,
+     "ours": 685.121567,
+     "tolerance_pct": 20,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_beta",
+     "paper": 1.12,
+     "ours": 1.149036,
+     "tolerance_pct": 15,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_mcap_musd",
+     "paper": 758.87,
+     "ours": 685.16918,
+     "tolerance_pct": 20,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_beta",
+     "paper": 1.17,
+     "ours": 1.190067,
+     "tolerance_pct": 15,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_mcap_musd",
+     "paper": 680.18,
+     "ours": 580.814915,
+     "tolerance_pct": 20,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_beta",
+     "paper": 1.28,
+     "ours": 1.290168,
+     "tolerance_pct": 15,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_mcap_musd",
+     "paper": 495.13,
+     "ours": 364.924816,
+     "tolerance_pct": 20,
+     "status": "Tier 2"
+    },
+    {
+     "name": "P10_P1_beta",
+     "paper": -0.08,
+     "ours": -0.128607,
+     "tolerance_pct": 60,
+     "status": "Tier 2"
+    }
+   ]
+  },
+  {
+   "id": "T3",
+   "table_ref": "Table III",
+   "cells": [
+    {
+     "name": "P1_all_pA",
+     "paper": 0.0079,
+     "ours": 0.00811,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P1_all_pA_t",
+     "paper": 1.56,
+     "ours": 1.61509,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P1_s1_pA",
+     "paper": 0.0083,
+     "ours": 0.007529,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P1_s1_pA_t",
+     "paper": 1.35,
+     "ours": 1.236689,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P1_s2_pA",
+     "paper": 0.0047,
+     "ours": 0.006845,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P1_s2_pA_t",
+     "paper": 0.99,
+     "ours": 1.457336,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "P1_s3_pA",
+     "paper": 0.0082,
+     "ours": 0.009532,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P1_s3_pA_t",
+     "paper": 2.22,
+     "ours": 2.576986,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P1_b1_pA",
+     "paper": 0.0129,
+     "ours": 0.014078,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P1_b1_pA_t",
+     "paper": 2.92,
+     "ours": 3.152347,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P1_b2_pA",
+     "paper": 0.0097,
+     "ours": 0.009266,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P1_b2_pA_t",
+     "paper": 2.01,
+     "ours": 1.982262,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P1_b3_pA",
+     "paper": 0.0052,
+     "ours": 0.004651,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P1_b3_pA_t",
+     "paper": 0.95,
+     "ours": 0.831433,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P2_all_pA",
+     "paper": 0.0112,
+     "ours": 0.011492,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P2_all_pA_t",
+     "paper": 2.78,
+     "ours": 2.827465,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P2_s1_pA",
+     "paper": 0.0117,
+     "ours": 0.010666,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P2_s1_pA_t",
+     "paper": 2.29,
+     "ours": 2.112056,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P2_s2_pA",
+     "paper": 0.0102,
+     "ours": 0.011514,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P2_s2_pA_t",
+     "paper": 2.54,
+     "ours": 2.831175,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P2_s3_pA",
+     "paper": 0.0098,
+     "ours": 0.01096,
+     "tolerance_pct": 97,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P2_s3_pA_t",
+     "paper": 3.08,
+     "ours": 3.455286,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P2_b1_pA",
+     "paper": 0.014,
+     "ours": 0.014212,
+     "tolerance_pct": 68,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P2_b1_pA_t",
+     "paper": 4.38,
+     "ours": 4.340383,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P2_b2_pA",
+     "paper": 0.0128,
+     "ours": 0.012808,
+     "tolerance_pct": 89,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P2_b2_pA_t",
+     "paper": 3.37,
+     "ours": 3.358972,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P2_b3_pA",
+     "paper": 0.0086,
+     "ours": 0.00797,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P2_b3_pA_t",
+     "paper": 1.83,
+     "ours": 1.643139,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P3_all_pA",
+     "paper": 0.0125,
+     "ours": 0.012815,
+     "tolerance_pct": 88,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P3_all_pA_t",
+     "paper": 3.4,
+     "ours": 3.422096,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P3_s1_pA",
+     "paper": 0.0152,
+     "ours": 0.013704,
+     "tolerance_pct": 93,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P3_s1_pA_t",
+     "paper": 3.23,
+     "ours": 2.902298,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P3_s2_pA",
+     "paper": 0.0125,
+     "ours": 0.013561,
+     "tolerance_pct": 90,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P3_s2_pA_t",
+     "paper": 3.34,
+     "ours": 3.527247,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P3_s3_pA",
+     "paper": 0.0105,
+     "ours": 0.011271,
+     "tolerance_pct": 85,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P3_s3_pA_t",
+     "paper": 3.53,
+     "ours": 3.785133,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P3_b1_pA",
+     "paper": 0.0132,
+     "ours": 0.014336,
+     "tolerance_pct": 65,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P3_b1_pA_t",
+     "paper": 4.59,
+     "ours": 4.840867,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P3_b2_pA",
+     "paper": 0.0133,
+     "ours": 0.013722,
+     "tolerance_pct": 80,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P3_b2_pA_t",
+     "paper": 3.77,
+     "ours": 3.800656,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P3_b3_pA",
+     "paper": 0.0102,
+     "ours": 0.009864,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P3_b3_pA_t",
+     "paper": 2.28,
+     "ours": 2.160093,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P4_all_pA",
+     "paper": 0.0124,
+     "ours": 0.013021,
+     "tolerance_pct": 84,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P4_all_pA_t",
+     "paper": 3.59,
+     "ours": 3.688881,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P4_s1_pA",
+     "paper": 0.0163,
+     "ours": 0.015091,
+     "tolerance_pct": 84,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P4_s1_pA_t",
+     "paper": 3.59,
+     "ours": 3.329087,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P4_s2_pA",
+     "paper": 0.013,
+     "ours": 0.013853,
+     "tolerance_pct": 84,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P4_s2_pA_t",
+     "paper": 3.58,
+     "ours": 3.721947,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P4_s3_pA",
+     "paper": 0.0105,
+     "ours": 0.011189,
+     "tolerance_pct": 82,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P4_s3_pA_t",
+     "paper": 3.66,
+     "ours": 3.827074,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P4_b1_pA",
+     "paper": 0.0134,
+     "ours": 0.013998,
+     "tolerance_pct": 60,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P4_b1_pA_t",
+     "paper": 5.02,
+     "ours": 5.052225,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P4_b2_pA",
+     "paper": 0.0128,
+     "ours": 0.013723,
+     "tolerance_pct": 79,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P4_b2_pA_t",
+     "paper": 3.82,
+     "ours": 3.970786,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P4_b3_pA",
+     "paper": 0.011,
+     "ours": 0.010715,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P4_b3_pA_t",
+     "paper": 2.5,
+     "ours": 2.384295,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P5_all_pA",
+     "paper": 0.0128,
+     "ours": 0.013411,
+     "tolerance_pct": 78,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P5_all_pA_t",
+     "paper": 3.87,
+     "ours": 3.957786,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P5_s1_pA",
+     "paper": 0.0164,
+     "ours": 0.015215,
+     "tolerance_pct": 80,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P5_s1_pA_t",
+     "paper": 3.74,
+     "ours": 3.497484,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P5_s2_pA",
+     "paper": 0.0134,
+     "ours": 0.014538,
+     "tolerance_pct": 78,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P5_s2_pA_t",
+     "paper": 3.83,
+     "ours": 4.040709,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P5_s3_pA",
+     "paper": 0.0109,
+     "ours": 0.011496,
+     "tolerance_pct": 78,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P5_s3_pA_t",
+     "paper": 3.85,
+     "ours": 4.044247,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P5_b1_pA",
+     "paper": 0.0135,
+     "ours": 0.014275,
+     "tolerance_pct": 58,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P5_b1_pA_t",
+     "paper": 5.14,
+     "ours": 5.217359,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P5_b2_pA",
+     "paper": 0.0135,
+     "ours": 0.014066,
+     "tolerance_pct": 72,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P5_b2_pA_t",
+     "paper": 4.15,
+     "ours": 4.199006,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P5_b3_pA",
+     "paper": 0.0121,
+     "ours": 0.011993,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P5_b3_pA_t",
+     "paper": 2.86,
+     "ours": 2.745663,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_all_pA",
+     "paper": 0.0134,
+     "ours": 0.014052,
+     "tolerance_pct": 72,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_all_pA_t",
+     "paper": 4.14,
+     "ours": 4.21552,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_s1_pA",
+     "paper": 0.0174,
+     "ours": 0.016208,
+     "tolerance_pct": 74,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_s1_pA_t",
+     "paper": 4.08,
+     "ours": 3.802764,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_s2_pA",
+     "paper": 0.0146,
+     "ours": 0.01536,
+     "tolerance_pct": 71,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_s2_pA_t",
+     "paper": 4.22,
+     "ours": 4.326411,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_s3_pA",
+     "paper": 0.0102,
+     "ours": 0.010855,
+     "tolerance_pct": 82,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_s3_pA_t",
+     "paper": 3.66,
+     "ours": 3.85133,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_b1_pA",
+     "paper": 0.0135,
+     "ours": 0.014353,
+     "tolerance_pct": 57,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_b1_pA_t",
+     "paper": 5.23,
+     "ours": 5.26427,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_b2_pA",
+     "paper": 0.0142,
+     "ours": 0.014901,
+     "tolerance_pct": 68,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_b2_pA_t",
+     "paper": 4.38,
+     "ours": 4.434239,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_b3_pA",
+     "paper": 0.0122,
+     "ours": 0.012334,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_b3_pA_t",
+     "paper": 2.92,
+     "ours": 2.870222,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_all_pA",
+     "paper": 0.0136,
+     "ours": 0.014045,
+     "tolerance_pct": 72,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_all_pA_t",
+     "paper": 4.19,
+     "ours": 4.236882,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_s1_pA",
+     "paper": 0.0175,
+     "ours": 0.015767,
+     "tolerance_pct": 73,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_s1_pA_t",
+     "paper": 4.13,
+     "ours": 3.765919,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_s2_pA",
+     "paper": 0.0143,
+     "ours": 0.015295,
+     "tolerance_pct": 73,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_s2_pA_t",
+     "paper": 4.12,
+     "ours": 4.273717,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_s3_pA",
+     "paper": 0.0109,
+     "ours": 0.011587,
+     "tolerance_pct": 77,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_s3_pA_t",
+     "paper": 3.9,
+     "ours": 4.081173,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_b1_pA",
+     "paper": 0.0136,
+     "ours": 0.014763,
+     "tolerance_pct": 59,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_b1_pA_t",
+     "paper": 5.09,
+     "ours": 5.338779,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_b2_pA",
+     "paper": 0.0142,
+     "ours": 0.014961,
+     "tolerance_pct": 68,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_b2_pA_t",
+     "paper": 4.43,
+     "ours": 4.499475,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_b3_pA",
+     "paper": 0.0126,
+     "ours": 0.012752,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_b3_pA_t",
+     "paper": 3.01,
+     "ours": 2.995221,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_all_pA",
+     "paper": 0.0143,
+     "ours": 0.014799,
+     "tolerance_pct": 70,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_all_pA_t",
+     "paper": 4.3,
+     "ours": 4.380486,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_s1_pA",
+     "paper": 0.0174,
+     "ours": 0.016395,
+     "tolerance_pct": 73,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_s1_pA_t",
+     "paper": 4.11,
+     "ours": 3.911534,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_s2_pA",
+     "paper": 0.0148,
+     "ours": 0.015897,
+     "tolerance_pct": 72,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_s2_pA_t",
+     "paper": 4.16,
+     "ours": 4.368433,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_s3_pA",
+     "paper": 0.0111,
+     "ours": 0.011748,
+     "tolerance_pct": 78,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_s3_pA_t",
+     "paper": 3.86,
+     "ours": 4.066136,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_b1_pA",
+     "paper": 0.0143,
+     "ours": 0.015097,
+     "tolerance_pct": 59,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_b1_pA_t",
+     "paper": 5.12,
+     "ours": 5.332626,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_b2_pA",
+     "paper": 0.0146,
+     "ours": 0.01504,
+     "tolerance_pct": 68,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_b2_pA_t",
+     "paper": 4.44,
+     "ours": 4.417069,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_b3_pA",
+     "paper": 0.0132,
+     "ours": 0.013595,
+     "tolerance_pct": 95,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_b3_pA_t",
+     "paper": 3.15,
+     "ours": 3.183915,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_all_pA",
+     "paper": 0.0153,
+     "ours": 0.01556,
+     "tolerance_pct": 69,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_all_pA_t",
+     "paper": 4.36,
+     "ours": 4.390435,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_s1_pA",
+     "paper": 0.0183,
+     "ours": 0.016985,
+     "tolerance_pct": 70,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_s1_pA_t",
+     "paper": 4.28,
+     "ours": 3.980802,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_s2_pA",
+     "paper": 0.0154,
+     "ours": 0.016204,
+     "tolerance_pct": 73,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_s2_pA_t",
+     "paper": 4.11,
+     "ours": 4.29302,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_s3_pA",
+     "paper": 0.0126,
+     "ours": 0.013236,
+     "tolerance_pct": 72,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_s3_pA_t",
+     "paper": 4.17,
+     "ours": 4.334848,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_b1_pA",
+     "paper": 0.0165,
+     "ours": 0.016239,
+     "tolerance_pct": 56,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_b1_pA_t",
+     "paper": 5.34,
+     "ours": 5.263226,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_b2_pA",
+     "paper": 0.0156,
+     "ours": 0.016483,
+     "tolerance_pct": 66,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_b2_pA_t",
+     "paper": 4.56,
+     "ours": 4.705662,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_b3_pA",
+     "paper": 0.0141,
+     "ours": 0.014186,
+     "tolerance_pct": 91,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_b3_pA_t",
+     "paper": 3.28,
+     "ours": 3.230835,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_all_pA",
+     "paper": 0.0174,
+     "ours": 0.016908,
+     "tolerance_pct": 69,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_all_pA_t",
+     "paper": 4.33,
+     "ours": 4.218487,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_s1_pA",
+     "paper": 0.0182,
+     "ours": 0.015711,
+     "tolerance_pct": 75,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_s1_pA_t",
+     "paper": 3.99,
+     "ours": 3.49962,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_s2_pA",
+     "paper": 0.0173,
+     "ours": 0.018019,
+     "tolerance_pct": 73,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_s2_pA_t",
+     "paper": 4.11,
+     "ours": 4.291354,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_s3_pA",
+     "paper": 0.0157,
+     "ours": 0.016585,
+     "tolerance_pct": 68,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_s3_pA_t",
+     "paper": 4.41,
+     "ours": 4.632355,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_b1_pA",
+     "paper": 0.0191,
+     "ours": 0.018079,
+     "tolerance_pct": 58,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_b1_pA_t",
+     "paper": 5.17,
+     "ours": 4.897802,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_b2_pA",
+     "paper": 0.0176,
+     "ours": 0.017056,
+     "tolerance_pct": 66,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_b2_pA_t",
+     "paper": 4.53,
+     "ours": 4.408563,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_b3_pA",
+     "paper": 0.016,
+     "ours": 0.015071,
+     "tolerance_pct": 86,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_b3_pA_t",
+     "paper": 3.5,
+     "ours": 3.277193,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10-1_all_pA",
+     "paper": 0.0095,
+     "ours": 0.008797,
+     "tolerance_pct": 98,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10-1_all_pA_t",
+     "paper": 3.07,
+     "ours": 2.908658,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10-1_s1_pA",
+     "paper": 0.0099,
+     "ours": 0.008182,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10-1_s1_pA_t",
+     "paper": 2.77,
+     "ours": 2.395984,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10-1_s2_pA",
+     "paper": 0.0126,
+     "ours": 0.011174,
+     "tolerance_pct": 66,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10-1_s2_pA_t",
+     "paper": 4.57,
+     "ours": 4.245787,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10-1_s3_pA",
+     "paper": 0.0075,
+     "ours": 0.007053,
+     "tolerance_pct": 99,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10-1_s3_pA_t",
+     "paper": 3.03,
+     "ours": 2.882678,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10-1_b1_pA",
+     "paper": 0.0062,
+     "ours": 0.004001,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10-1_b1_pA_t",
+     "paper": 2.05,
+     "ours": 1.350527,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10-1_b2_pA",
+     "paper": 0.0079,
+     "ours": 0.00779,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10-1_b2_pA_t",
+     "paper": 2.64,
+     "ours": 2.780741,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10-1_b3_pA",
+     "paper": 0.0108,
+     "ours": 0.01042,
+     "tolerance_pct": 90,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10-1_b3_pA_t",
+     "paper": 3.35,
+     "ours": 3.131452,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "f_stat_all_pA",
+     "paper": 2.83,
+     "ours": 0.406328,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "f_stat_s1_pA",
+     "paper": 2.65,
+     "ours": 0.412881,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "f_stat_s2_pA",
+     "paper": 4.51,
+     "ours": 0.633241,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "f_stat_s3_pA",
+     "paper": 4.38,
+     "ours": 0.376834,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "f_stat_b1_pA",
+     "paper": 2.51,
+     "ours": 0.16431,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "f_stat_b2_pA",
+     "paper": 1.99,
+     "ours": 0.348003,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "f_stat_b3_pA",
+     "paper": 1.69,
+     "ours": 0.471352,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "P1_all_pB",
+     "paper": -0.003,
+     "ours": -0.002542,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P1_all_pB_t",
+     "paper": -0.89,
+     "ours": -0.770444,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P1_s1_pB",
+     "paper": -0.0029,
+     "ours": -0.003386,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P1_s1_pB_t",
+     "paper": -0.6,
+     "ours": -0.7336,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P1_s2_pB",
+     "paper": -0.0062,
+     "ours": -0.003876,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P1_s2_pB_t",
+     "paper": -2.11,
+     "ours": -1.437044,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P1_s3_pB",
+     "paper": -0.002,
+     "ours": -0.000475,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P1_s3_pB_t",
+     "paper": -1.17,
+     "ours": -0.286039,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "P1_b1_pB",
+     "paper": 0.0031,
+     "ours": 0.004302,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P1_b1_pB_t",
+     "paper": 0.94,
+     "ours": 1.340281,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "P1_b2_pB",
+     "paper": -0.0009,
+     "ours": -0.001037,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P1_b2_pB_t",
+     "paper": -0.28,
+     "ours": -0.336502,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P1_b3_pB",
+     "paper": -0.0062,
+     "ours": -0.006563,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P1_b3_pB_t",
+     "paper": -1.71,
+     "ours": -1.785933,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P2_all_pB",
+     "paper": 0.0011,
+     "ours": 0.001497,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P2_all_pB_t",
+     "paper": 0.43,
+     "ours": 0.626182,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "P2_s1_pB",
+     "paper": 0.0012,
+     "ours": 0.000382,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P2_s1_pB_t",
+     "paper": 0.31,
+     "ours": 0.104762,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "P2_s2_pB",
+     "paper": -0.0001,
+     "ours": 0.001324,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "P2_s2_pB_t",
+     "paper": -0.03,
+     "ours": 0.610166,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "P2_s3_pB",
+     "paper": 0.0,
+     "ours": 0.001448,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "P2_s3_pB_t",
+     "paper": 0.03,
+     "ours": 1.185675,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "P2_b1_pB",
+     "paper": 0.0051,
+     "ours": 0.005239,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P2_b1_pB_t",
+     "paper": 2.36,
+     "ours": 2.478969,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P2_b2_pB",
+     "paper": 0.0029,
+     "ours": 0.003077,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P2_b2_pB_t",
+     "paper": 1.26,
+     "ours": 1.373262,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P2_b3_pB",
+     "paper": -0.0024,
+     "ours": -0.002913,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P2_b3_pB_t",
+     "paper": -0.87,
+     "ours": -1.045643,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P3_all_pB",
+     "paper": 0.0026,
+     "ours": 0.002996,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P3_all_pB_t",
+     "paper": 1.24,
+     "ours": 1.485112,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P3_s1_pB",
+     "paper": 0.0051,
+     "ours": 0.003661,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P3_s1_pB_t",
+     "paper": 1.46,
+     "ours": 1.088087,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P3_s2_pB",
+     "paper": 0.0024,
+     "ours": 0.003551,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P3_s2_pB_t",
+     "paper": 1.18,
+     "ours": 1.805362,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "P3_s3_pB",
+     "paper": 0.0009,
+     "ours": 0.001896,
+     "tolerance_pct": 100,
+     "status": "Tier 2"
+    },
+    {
+     "name": "P3_s3_pB_t",
+     "paper": 0.93,
+     "ours": 2.006603,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "P3_b1_pB",
+     "paper": 0.0045,
+     "ours": 0.005574,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P3_b1_pB_t",
+     "paper": 2.45,
+     "ours": 3.078187,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P3_b2_pB",
+     "paper": 0.0035,
+     "ours": 0.00402,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P3_b2_pB_t",
+     "paper": 1.83,
+     "ours": 2.106723,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P3_b3_pB",
+     "paper": -0.0007,
+     "ours": -0.000911,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P3_b3_pB_t",
+     "paper": -0.29,
+     "ours": -0.380911,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P4_all_pB",
+     "paper": 0.0026,
+     "ours": 0.003316,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P4_all_pB_t",
+     "paper": 1.48,
+     "ours": 1.902628,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P4_s1_pB",
+     "paper": 0.0062,
+     "ours": 0.005144,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P4_s1_pB_t",
+     "paper": 1.9,
+     "ours": 1.622471,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P4_s2_pB",
+     "paper": 0.003,
+     "ours": 0.003901,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P4_s2_pB_t",
+     "paper": 1.57,
+     "ours": 2.169673,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P4_s3_pB",
+     "paper": 0.0011,
+     "ours": 0.001842,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P4_s3_pB_t",
+     "paper": 1.24,
+     "ours": 2.210203,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "P4_b1_pB",
+     "paper": 0.0048,
+     "ours": 0.00529,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P4_b1_pB_t",
+     "paper": 2.98,
+     "ours": 3.447317,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P4_b2_pB",
+     "paper": 0.0031,
+     "ours": 0.004082,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P4_b2_pB_t",
+     "paper": 1.83,
+     "ours": 2.427374,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P4_b3_pB",
+     "paper": 0.0,
+     "ours": -5.5e-05,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "P4_b3_pB_t",
+     "paper": 0.01,
+     "ours": -0.024557,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "P5_all_pB",
+     "paper": 0.0031,
+     "ours": 0.003765,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P5_all_pB_t",
+     "paper": 1.96,
+     "ours": 2.468375,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P5_s1_pB",
+     "paper": 0.0064,
+     "ours": 0.005349,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P5_s1_pB_t",
+     "paper": 2.06,
+     "ours": 1.801897,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P5_s2_pB",
+     "paper": 0.0036,
+     "ours": 0.004701,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P5_s2_pB_t",
+     "paper": 1.98,
+     "ours": 2.769602,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P5_s3_pB",
+     "paper": 0.0014,
+     "ours": 0.002224,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P5_s3_pB_t",
+     "paper": 1.84,
+     "ours": 3.001598,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "P5_b1_pB",
+     "paper": 0.0049,
+     "ours": 0.00556,
+     "tolerance_pct": 93,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P5_b1_pB_t",
+     "paper": 3.21,
+     "ours": 3.79259,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P5_b2_pB",
+     "paper": 0.0038,
+     "ours": 0.004471,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P5_b2_pB_t",
+     "paper": 2.55,
+     "ours": 2.944864,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P5_b3_pB",
+     "paper": 0.0012,
+     "ours": 0.001239,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P5_b3_pB_t",
+     "paper": 0.58,
+     "ours": 0.613849,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_all_pB",
+     "paper": 0.0037,
+     "ours": 0.004413,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_all_pB_t",
+     "paper": 2.55,
+     "ours": 3.130564,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_s1_pB",
+     "paper": 0.0075,
+     "ours": 0.006341,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_s1_pB_t",
+     "paper": 2.51,
+     "ours": 2.235683,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_s2_pB",
+     "paper": 0.0048,
+     "ours": 0.005543,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_s2_pB_t",
+     "paper": 2.74,
+     "ours": 3.411958,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_s3_pB",
+     "paper": 0.0008,
+     "ours": 0.001589,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_s3_pB_t",
+     "paper": 1.13,
+     "ours": 2.393819,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "P6_b1_pB",
+     "paper": 0.0048,
+     "ours": 0.005603,
+     "tolerance_pct": 87,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_b1_pB_t",
+     "paper": 3.46,
+     "ours": 3.990452,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_b2_pB",
+     "paper": 0.0045,
+     "ours": 0.00523,
+     "tolerance_pct": 96,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_b2_pB_t",
+     "paper": 3.12,
+     "ours": 3.671933,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_b3_pB",
+     "paper": 0.0013,
+     "ours": 0.001605,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P6_b3_pB_t",
+     "paper": 0.69,
+     "ours": 0.846539,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_all_pB",
+     "paper": 0.0039,
+     "ours": 0.004411,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_all_pB_t",
+     "paper": 2.7,
+     "ours": 3.208148,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_s1_pB",
+     "paper": 0.0075,
+     "ours": 0.005988,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_s1_pB_t",
+     "paper": 2.57,
+     "ours": 2.139274,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_s2_pB",
+     "paper": 0.0044,
+     "ours": 0.005423,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_s2_pB_t",
+     "paper": 2.61,
+     "ours": 3.381735,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_s3_pB",
+     "paper": 0.0015,
+     "ours": 0.002287,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_s3_pB_t",
+     "paper": 2.15,
+     "ours": 3.556702,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "P7_b1_pB",
+     "paper": 0.0049,
+     "ours": 0.00598,
+     "tolerance_pct": 91,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_b1_pB_t",
+     "paper": 3.29,
+     "ours": 4.159058,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_b2_pB",
+     "paper": 0.0045,
+     "ours": 0.005316,
+     "tolerance_pct": 92,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_b2_pB_t",
+     "paper": 3.25,
+     "ours": 3.845497,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_b3_pB",
+     "paper": 0.0017,
+     "ours": 0.002024,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P7_b3_pB_t",
+     "paper": 0.9,
+     "ours": 1.121913,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_all_pB",
+     "paper": 0.0045,
+     "ours": 0.005093,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_all_pB_t",
+     "paper": 3.01,
+     "ours": 3.620053,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_s1_pB",
+     "paper": 0.0074,
+     "ours": 0.006525,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_s1_pB_t",
+     "paper": 2.56,
+     "ours": 2.395656,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_s2_pB",
+     "paper": 0.0048,
+     "ours": 0.005943,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_s2_pB_t",
+     "paper": 2.76,
+     "ours": 3.690353,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_s3_pB",
+     "paper": 0.0016,
+     "ours": 0.002388,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_s3_pB_t",
+     "paper": 2.12,
+     "ours": 3.541573,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "P8_b1_pB",
+     "paper": 0.0054,
+     "ours": 0.006205,
+     "tolerance_pct": 85,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_b1_pB_t",
+     "paper": 3.53,
+     "ours": 4.350375,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_b2_pB",
+     "paper": 0.0049,
+     "ours": 0.00531,
+     "tolerance_pct": 91,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_b2_pB_t",
+     "paper": 3.29,
+     "ours": 3.712426,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_b3_pB",
+     "paper": 0.0023,
+     "ours": 0.002859,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P8_b3_pB_t",
+     "paper": 1.19,
+     "ours": 1.570753,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_all_pB",
+     "paper": 0.0053,
+     "ours": 0.00571,
+     "tolerance_pct": 94,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_all_pB_t",
+     "paper": 3.2,
+     "ours": 3.654162,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_s1_pB",
+     "paper": 0.0082,
+     "ours": 0.006973,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_s1_pB_t",
+     "paper": 2.89,
+     "ours": 2.571063,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_s2_pB",
+     "paper": 0.0052,
+     "ours": 0.006136,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_s2_pB_t",
+     "paper": 2.76,
+     "ours": 3.529831,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_s3_pB",
+     "paper": 0.0029,
+     "ours": 0.003719,
+     "tolerance_pct": 93,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_s3_pB_t",
+     "paper": 3.23,
+     "ours": 4.337747,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_b1_pB",
+     "paper": 0.0074,
+     "ours": 0.007153,
+     "tolerance_pct": 73,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_b1_pB_t",
+     "paper": 4.1,
+     "ours": 4.272968,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_b2_pB",
+     "paper": 0.0057,
+     "ours": 0.006672,
+     "tolerance_pct": 83,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_b2_pB_t",
+     "paper": 3.6,
+     "ours": 4.365712,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_b3_pB",
+     "paper": 0.0031,
+     "ours": 0.003333,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P9_b3_pB_t",
+     "paper": 1.54,
+     "ours": 1.74075,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_all_pB",
+     "paper": 0.007,
+     "ours": 0.006704,
+     "tolerance_pct": 93,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_all_pB_t",
+     "paper": 3.24,
+     "ours": 3.280383,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_s1_pB",
+     "paper": 0.0077,
+     "ours": 0.005467,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_s1_pB_t",
+     "paper": 2.56,
+     "ours": 1.921349,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_s2_pB",
+     "paper": 0.0067,
+     "ours": 0.00762,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_s2_pB_t",
+     "paper": 2.91,
+     "ours": 3.526089,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_s3_pB",
+     "paper": 0.0056,
+     "ours": 0.006643,
+     "tolerance_pct": 86,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_s3_pB_t",
+     "paper": 3.5,
+     "ours": 4.418166,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_b1_pB",
+     "paper": 0.0094,
+     "ours": 0.008478,
+     "tolerance_pct": 73,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_b1_pB_t",
+     "paper": 4.1,
+     "ours": 3.890189,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_b2_pB",
+     "paper": 0.0074,
+     "ours": 0.007038,
+     "tolerance_pct": 86,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_b2_pB_t",
+     "paper": 3.47,
+     "ours": 3.504928,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_b3_pB",
+     "paper": 0.0048,
+     "ours": 0.004184,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10_b3_pB_t",
+     "paper": 2.02,
+     "ours": 1.806944,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10-1_all_pB",
+     "paper": 0.01,
+     "ours": 0.009246,
+     "tolerance_pct": 93,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10-1_all_pB_t",
+     "paper": 3.23,
+     "ours": 3.06314,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10-1_s1_pB",
+     "paper": 0.0106,
+     "ours": 0.008853,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10-1_s1_pB_t",
+     "paper": 2.97,
+     "ours": 2.610591,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10-1_s2_pB",
+     "paper": 0.0129,
+     "ours": 0.011495,
+     "tolerance_pct": 64,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10-1_s2_pB_t",
+     "paper": 4.69,
+     "ours": 4.367636,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10-1_s3_pB",
+     "paper": 0.0076,
+     "ours": 0.007118,
+     "tolerance_pct": 97,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10-1_s3_pB_t",
+     "paper": 3.08,
+     "ours": 2.896729,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10-1_b1_pB",
+     "paper": 0.0063,
+     "ours": 0.004176,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10-1_b1_pB_t",
+     "paper": 2.09,
+     "ours": 1.404608,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10-1_b2_pB",
+     "paper": 0.0083,
+     "ours": 0.008075,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10-1_b2_pB_t",
+     "paper": 2.76,
+     "ours": 2.87842,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10-1_b3_pB",
+     "paper": 0.0111,
+     "ours": 0.010747,
+     "tolerance_pct": 88,
+     "status": "Tier 1"
+    },
+    {
+     "name": "P10-1_b3_pB_t",
+     "paper": 3.42,
+     "ours": 3.224642,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "f_stat_all_pB",
+     "paper": 5.291,
+     "ours": 4.547558,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "f_stat_s1_pB",
+     "paper": 5.4401,
+     "ours": 3.802714,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "f_stat_s2_pB",
+     "paper": 8.3713,
+     "ours": 5.238379,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "f_stat_s3_pB",
+     "paper": 4.7386,
+     "ours": 4.26682,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "f_stat_b1_pB",
+     "paper": 3.6045,
+     "ours": 8.567222,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "f_stat_b2_pB",
+     "paper": 4.0171,
+     "ours": 5.687399,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "f_stat_b3_pB",
+     "paper": 2.5872,
+     "ours": 1.91838,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    }
+   ]
+  },
+  {
+   "id": "T4",
+   "table_ref": "Table IV",
+   "cells": [
+    {
+     "name": "jan_all_t4",
+     "paper": -0.0686,
+     "ours": -0.070586,
+     "tolerance_pct": 85,
+     "status": "Tier 1"
+    },
+    {
+     "name": "jan_all_t4_t",
+     "paper": -3.52,
+     "ours": -3.852813,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "jan_s1_t4",
+     "paper": -0.0797,
+     "ours": -0.082846,
+     "tolerance_pct": 89,
+     "status": "Tier 1"
+    },
+    {
+     "name": "jan_s1_t4_t",
+     "paper": -3.36,
+     "ours": -3.827953,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "jan_s2_t4",
+     "paper": -0.0347,
+     "ours": -0.032727,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "jan_s2_t4_t",
+     "paper": -2.14,
+     "ours": -2.158916,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "jan_s3_t4",
+     "paper": -0.0161,
+     "ours": -0.01602,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "jan_s3_t4_t",
+     "paper": -1.28,
+     "ours": -1.274556,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "feb_all_t4",
+     "paper": 0.0063,
+     "ours": 0.004074,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "feb_all_t4_t",
+     "paper": 0.85,
+     "ours": 0.550513,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "feb_s1_t4",
+     "paper": 0.0089,
+     "ours": 0.00329,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "feb_s1_t4_t",
+     "paper": 0.81,
+     "ours": 0.313212,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "feb_s2_t4",
+     "paper": 0.0149,
+     "ours": 0.013131,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "feb_s2_t4_t",
+     "paper": 2.44,
+     "ours": 2.314411,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "feb_s3_t4",
+     "paper": 0.0099,
+     "ours": 0.010054,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "feb_s3_t4_t",
+     "paper": 1.35,
+     "ours": 1.42704,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "mar_all_t4",
+     "paper": 0.0105,
+     "ours": 0.010321,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "mar_all_t4_t",
+     "paper": 1.37,
+     "ours": 1.447899,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "mar_s1_t4",
+     "paper": 0.0196,
+     "ours": 0.018678,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "mar_s1_t4_t",
+     "paper": 2.08,
+     "ours": 2.345582,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "mar_s2_t4",
+     "paper": 0.0103,
+     "ours": 0.00933,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "mar_s2_t4_t",
+     "paper": 1.49,
+     "ours": 1.321481,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "mar_s3_t4",
+     "paper": 0.0108,
+     "ours": 0.01021,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "mar_s3_t4_t",
+     "paper": 1.49,
+     "ours": 1.373088,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "apr_all_t4",
+     "paper": 0.0333,
+     "ours": 0.030386,
+     "tolerance_pct": 41,
+     "status": "Tier 1"
+    },
+    {
+     "name": "apr_all_t4_t",
+     "paper": 7.39,
+     "ours": 6.941929,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "apr_s1_t4",
+     "paper": 0.0323,
+     "ours": 0.026298,
+     "tolerance_pct": 56,
+     "status": "Tier 1"
+    },
+    {
+     "name": "apr_s1_t4_t",
+     "paper": 5.35,
+     "ours": 4.675819,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "apr_s2_t4",
+     "paper": 0.0368,
+     "ours": 0.03392,
+     "tolerance_pct": 41,
+     "status": "Tier 1"
+    },
+    {
+     "name": "apr_s2_t4_t",
+     "paper": 7.29,
+     "ours": 6.822498,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "apr_s3_t4",
+     "paper": 0.0215,
+     "ours": 0.021165,
+     "tolerance_pct": 61,
+     "status": "Tier 1"
+    },
+    {
+     "name": "apr_s3_t4_t",
+     "paper": 4.91,
+     "ours": 4.564549,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "may_all_t4",
+     "paper": 0.0102,
+     "ours": 0.009118,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "may_all_t4_t",
+     "paper": 1.32,
+     "ours": 1.15162,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "may_s1_t4",
+     "paper": 0.0046,
+     "ours": 0.001579,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "may_s1_t4_t",
+     "paper": 0.56,
+     "ours": 0.170758,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "may_s2_t4",
+     "paper": 0.0091,
+     "ours": 0.007853,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "may_s2_t4_t",
+     "paper": 1.18,
+     "ours": 1.083254,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "may_s3_t4",
+     "paper": 0.0079,
+     "ours": 0.008987,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "may_s3_t4_t",
+     "paper": 1.19,
+     "ours": 1.360101,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "jun_all_t4",
+     "paper": 0.0238,
+     "ours": 0.022556,
+     "tolerance_pct": 78,
+     "status": "Tier 1"
+    },
+    {
+     "name": "jun_all_t4_t",
+     "paper": 3.86,
+     "ours": 3.905183,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "jun_s1_t4",
+     "paper": 0.0237,
+     "ours": 0.022187,
+     "tolerance_pct": 86,
+     "status": "Tier 1"
+    },
+    {
+     "name": "jun_s1_t4_t",
+     "paper": 3.5,
+     "ours": 3.16321,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "jun_s2_t4",
+     "paper": 0.0231,
+     "ours": 0.022574,
+     "tolerance_pct": 93,
+     "status": "Tier 1"
+    },
+    {
+     "name": "jun_s2_t4_t",
+     "paper": 3.23,
+     "ours": 3.268851,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "jun_s3_t4",
+     "paper": 0.0185,
+     "ours": 0.018121,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "jun_s3_t4_t",
+     "paper": 2.59,
+     "ours": 2.72353,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "jul_all_t4",
+     "paper": 0.0075,
+     "ours": 0.007709,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "jul_all_t4_t",
+     "paper": 0.96,
+     "ours": 1.002902,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "jul_s1_t4",
+     "paper": 0.0112,
+     "ours": 0.011623,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "jul_s1_t4_t",
+     "paper": 1.44,
+     "ours": 1.535425,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "jul_s2_t4",
+     "paper": 0.0084,
+     "ours": 0.008774,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "jul_s2_t4_t",
+     "paper": 0.96,
+     "ours": 1.040725,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "jul_s3_t4",
+     "paper": 0.0035,
+     "ours": 0.003159,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "jul_s3_t4_t",
+     "paper": 0.41,
+     "ours": 0.367712,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "aug_all_t4",
+     "paper": 0.0027,
+     "ours": 0.003666,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "aug_all_t4_t",
+     "paper": 0.35,
+     "ours": 0.495005,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "aug_s1_t4",
+     "paper": 0.0079,
+     "ours": 0.00882,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "aug_s1_t4_t",
+     "paper": 0.97,
+     "ours": 1.089269,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "aug_s2_t4",
+     "paper": -0.0011,
+     "ours": -0.004403,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "aug_s2_t4_t",
+     "paper": -0.14,
+     "ours": -0.567462,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "aug_s3_t4",
+     "paper": -0.0058,
+     "ours": -0.004886,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "aug_s3_t4_t",
+     "paper": -0.71,
+     "ours": -0.609416,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sep_all_t4",
+     "paper": 0.0116,
+     "ours": 0.010095,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sep_all_t4_t",
+     "paper": 1.1,
+     "ours": 0.938148,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sep_s1_t4",
+     "paper": 0.0126,
+     "ours": 0.007944,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sep_s1_t4_t",
+     "paper": 1.2,
+     "ours": 0.702813,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "sep_s2_t4",
+     "paper": 0.0137,
+     "ours": 0.013815,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sep_s2_t4_t",
+     "paper": 1.27,
+     "ours": 1.291389,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sep_s3_t4",
+     "paper": 0.0053,
+     "ours": 0.004894,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sep_s3_t4_t",
+     "paper": 0.6,
+     "ours": 0.577063,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "oct_all_t4",
+     "paper": 0.0137,
+     "ours": 0.014818,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "oct_all_t4_t",
+     "paper": 1.3,
+     "ours": 1.435586,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "oct_s1_t4",
+     "paper": 0.016,
+     "ours": 0.01681,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "oct_s1_t4_t",
+     "paper": 1.4,
+     "ours": 1.578152,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "oct_s2_t4",
+     "paper": 0.0151,
+     "ours": 0.01397,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "oct_s2_t4_t",
+     "paper": 1.44,
+     "ours": 1.371103,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "oct_s3_t4",
+     "paper": 0.0025,
+     "ours": 0.001662,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "oct_s3_t4_t",
+     "paper": 0.22,
+     "ours": 0.146327,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "nov_all_t4",
+     "paper": 0.0372,
+     "ours": 0.036798,
+     "tolerance_pct": 56,
+     "status": "Tier 1"
+    },
+    {
+     "name": "nov_all_t4_t",
+     "paper": 5.31,
+     "ours": 5.395562,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "nov_s1_t4",
+     "paper": 0.0352,
+     "ours": 0.03323,
+     "tolerance_pct": 60,
+     "status": "Tier 1"
+    },
+    {
+     "name": "nov_s1_t4_t",
+     "paper": 5.01,
+     "ours": 4.730827,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "nov_s2_t4",
+     "paper": 0.0331,
+     "ours": 0.030227,
+     "tolerance_pct": 73,
+     "status": "Tier 1"
+    },
+    {
+     "name": "nov_s2_t4_t",
+     "paper": 4.12,
+     "ours": 3.864307,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "nov_s3_t4",
+     "paper": 0.0248,
+     "ours": 0.021798,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "nov_s3_t4_t",
+     "paper": 2.78,
+     "ours": 2.407889,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "dec_all_t4",
+     "paper": 0.0264,
+     "ours": 0.026614,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "dec_all_t4_t",
+     "paper": 2.61,
+     "ours": 2.823053,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "dec_s1_t4",
+     "paper": 0.0265,
+     "ours": 0.030575,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "dec_s1_t4_t",
+     "paper": 2.13,
+     "ours": 3.112977,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "dec_s2_t4",
+     "paper": 0.0224,
+     "ours": 0.01762,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "dec_s2_t4_t",
+     "paper": 2.86,
+     "ours": 2.442634,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "dec_s3_t4",
+     "paper": 0.007,
+     "ours": 0.005489,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "dec_s3_t4_t",
+     "paper": 0.99,
+     "ours": 0.79296,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "feb_dec_all_t4",
+     "paper": 0.0166,
+     "ours": 0.016014,
+     "tolerance_pct": 45,
+     "status": "Tier 1"
+    },
+    {
+     "name": "feb_dec_all_t4_t",
+     "paper": 6.67,
+     "ours": 6.572556,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "feb_dec_s1_t4",
+     "paper": 0.0181,
+     "ours": 0.016458,
+     "tolerance_pct": 46,
+     "status": "Tier 1"
+    },
+    {
+     "name": "feb_dec_s1_t4_t",
+     "paper": 6.47,
+     "ours": 6.152891,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "feb_dec_s2_t4",
+     "paper": 0.0169,
+     "ours": 0.015165,
+     "tolerance_pct": 44,
+     "status": "Tier 1"
+    },
+    {
+     "name": "feb_dec_s2_t4_t",
+     "paper": 6.83,
+     "ours": 6.342102,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "feb_dec_s3_t4",
+     "paper": 0.0096,
+     "ours": 0.00915,
+     "tolerance_pct": 75,
+     "status": "Tier 1"
+    },
+    {
+     "name": "feb_dec_s3_t4_t",
+     "paper": 4.0,
+     "ours": 3.84106,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "f_a_all_t4",
+     "paper": 7.9,
+     "ours": 8.646596,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "f_a_s1_t4",
+     "paper": 7.14,
+     "ours": 8.443315,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "f_a_s2_t4",
+     "paper": 4.11,
+     "ours": 3.954305,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "f_a_s3_t4",
+     "paper": 1.81,
+     "ours": 1.670391,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "f_b_all_t4",
+     "paper": 2.04,
+     "ours": 2.024001,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "f_b_s1_t4",
+     "paper": 1.23,
+     "ours": 1.506761,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "f_b_s2_t4",
+     "paper": 1.91,
+     "ours": 1.902177,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "f_b_s3_t4",
+     "paper": 1.28,
+     "ours": 1.138745,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    }
+   ]
+  },
+  {
+   "id": "T5",
+   "table_ref": "Table VII",
+   "cells": [
+    {
+     "name": "event_t1_monthly",
+     "paper": -0.0025,
+     "ours": -0.00237,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t1_monthly_t",
+     "paper": -0.59,
+     "ours": -0.63009,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t1_cumulative",
+     "paper": -0.0025,
+     "ours": -0.00237,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t1_cumulative_t",
+     "paper": -0.59,
+     "ours": -0.61935,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t13_monthly",
+     "paper": -0.0036,
+     "ours": -0.003407,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t13_monthly_t",
+     "paper": -1.12,
+     "ours": -1.114974,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t13_cumulative",
+     "paper": 0.0915,
+     "ours": 0.098665,
+     "tolerance_pct": 90,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t13_cumulative_t",
+     "paper": 3.35,
+     "ours": 3.959156,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t25_monthly",
+     "paper": -0.0035,
+     "ours": -0.00277,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t25_monthly_t",
+     "paper": -1.36,
+     "ours": -1.082795,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t25_cumulative",
+     "paper": 0.0521,
+     "ours": 0.069632,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t25_cumulative_t",
+     "paper": 1.41,
+     "ours": 1.854359,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t2_monthly",
+     "paper": 0.0124,
+     "ours": 0.011999,
+     "tolerance_pct": 91,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t2_monthly_t",
+     "paper": 3.29,
+     "ours": 3.590234,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t2_cumulative",
+     "paper": 0.0099,
+     "ours": 0.00963,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t2_cumulative_t",
+     "paper": 1.37,
+     "ours": 1.466463,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t14_monthly",
+     "paper": -0.0039,
+     "ours": -0.004061,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t14_monthly_t",
+     "paper": -1.34,
+     "ours": -1.475315,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t14_cumulative",
+     "paper": 0.0876,
+     "ours": 0.094604,
+     "tolerance_pct": 98,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t14_cumulative_t",
+     "paper": 3.07,
+     "ours": 3.587106,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t26_monthly",
+     "paper": -0.003,
+     "ours": -0.000624,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t26_monthly_t",
+     "paper": -1.14,
+     "ours": -0.243442,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "event_t26_cumulative",
+     "paper": 0.0492,
+     "ours": 0.069008,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t26_cumulative_t",
+     "paper": 1.22,
+     "ours": 1.759208,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "event_t3_monthly",
+     "paper": 0.0116,
+     "ours": 0.012188,
+     "tolerance_pct": 94,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t3_monthly_t",
+     "paper": 3.18,
+     "ours": 3.66318,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t3_cumulative",
+     "paper": 0.0216,
+     "ours": 0.021817,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t3_cumulative_t",
+     "paper": 2.2,
+     "ours": 2.404964,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t15_monthly",
+     "paper": -0.0034,
+     "ours": -0.003149,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t15_monthly_t",
+     "paper": -1.21,
+     "ours": -1.197009,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t15_cumulative",
+     "paper": 0.0842,
+     "ours": 0.091455,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t15_cumulative_t",
+     "paper": 2.89,
+     "ours": 3.313274,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t27_monthly",
+     "paper": -0.0024,
+     "ours": -0.001343,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t27_monthly_t",
+     "paper": -0.98,
+     "ours": -0.552015,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "event_t27_cumulative",
+     "paper": 0.0467,
+     "ours": 0.067665,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t27_cumulative_t",
+     "paper": 1.1,
+     "ours": 1.638777,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "event_t4_monthly",
+     "paper": 0.011,
+     "ours": 0.0119,
+     "tolerance_pct": 94,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t4_monthly_t",
+     "paper": 3.19,
+     "ours": 3.836511,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t4_cumulative",
+     "paper": 0.0326,
+     "ours": 0.033717,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t4_cumulative_t",
+     "paper": 2.67,
+     "ours": 2.986149,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t16_monthly",
+     "paper": -0.0038,
+     "ours": -0.003345,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t16_monthly_t",
+     "paper": -1.41,
+     "ours": -1.310582,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t16_cumulative",
+     "paper": 0.0804,
+     "ours": 0.088109,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t16_cumulative_t",
+     "paper": 2.76,
+     "ours": 3.076074,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t28_monthly",
+     "paper": -0.0032,
+     "ours": -0.001732,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t28_monthly_t",
+     "paper": -1.33,
+     "ours": -0.730036,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "event_t28_cumulative",
+     "paper": 0.0435,
+     "ours": 0.065933,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t28_cumulative_t",
+     "paper": 0.98,
+     "ours": 1.57411,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "event_t5_monthly",
+     "paper": 0.0093,
+     "ours": 0.010355,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t5_monthly_t",
+     "paper": 2.82,
+     "ours": 3.454987,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t5_cumulative",
+     "paper": 0.0419,
+     "ours": 0.044072,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t5_cumulative_t",
+     "paper": 2.79,
+     "ours": 3.337225,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t17_monthly",
+     "paper": -0.0047,
+     "ours": -0.004555,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t17_monthly_t",
+     "paper": -1.74,
+     "ours": -1.763236,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t17_cumulative",
+     "paper": 0.0757,
+     "ours": 0.083554,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t17_cumulative_t",
+     "paper": 2.7,
+     "ours": 2.854855,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t29_monthly",
+     "paper": -0.0032,
+     "ours": -0.002516,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t29_monthly_t",
+     "paper": -1.38,
+     "ours": -1.098731,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t29_cumulative",
+     "paper": 0.0403,
+     "ours": 0.063417,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t29_cumulative_t",
+     "paper": 0.87,
+     "ours": 1.40991,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "event_t6_monthly",
+     "paper": 0.0091,
+     "ours": 0.010073,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t6_monthly_t",
+     "paper": 2.94,
+     "ours": 3.618663,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t6_cumulative",
+     "paper": 0.051,
+     "ours": 0.054144,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t6_cumulative_t",
+     "paper": 2.92,
+     "ours": 3.602434,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t18_monthly",
+     "paper": -0.0056,
+     "ours": -0.004799,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t18_monthly_t",
+     "paper": -2.19,
+     "ours": -1.947959,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t18_cumulative",
+     "paper": 0.0701,
+     "ours": 0.078755,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t18_cumulative_t",
+     "paper": 2.68,
+     "ours": 2.610376,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t30_monthly",
+     "paper": -0.003,
+     "ours": -0.001858,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t30_monthly_t",
+     "paper": -1.31,
+     "ours": -0.838798,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t30_cumulative",
+     "paper": 0.0373,
+     "ours": 0.061559,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t30_cumulative_t",
+     "paper": 0.77,
+     "ours": 1.296019,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "event_t7_monthly",
+     "paper": 0.0134,
+     "ours": 0.014052,
+     "tolerance_pct": 60,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t7_monthly_t",
+     "paper": 4.98,
+     "ours": 5.698273,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t7_cumulative",
+     "paper": 0.0644,
+     "ours": 0.068197,
+     "tolerance_pct": 90,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t7_cumulative_t",
+     "paper": 3.32,
+     "ours": 4.131228,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t19_monthly",
+     "paper": -0.0026,
+     "ours": -0.000622,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t19_monthly_t",
+     "paper": -1.14,
+     "ours": -0.282797,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "event_t19_cumulative",
+     "paper": 0.0675,
+     "ours": 0.078134,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t19_cumulative_t",
+     "paper": 2.75,
+     "ours": 2.543772,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t31_monthly",
+     "paper": -0.0001,
+     "ours": 0.001495,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "event_t31_monthly_t",
+     "paper": -0.06,
+     "ours": 0.740646,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "event_t31_cumulative",
+     "paper": 0.0372,
+     "ours": 0.063054,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t31_cumulative_t",
+     "paper": 0.74,
+     "ours": 1.285582,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "event_t8_monthly",
+     "paper": 0.0115,
+     "ours": 0.012428,
+     "tolerance_pct": 72,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t8_monthly_t",
+     "paper": 4.16,
+     "ours": 4.965585,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t8_cumulative",
+     "paper": 0.0759,
+     "ours": 0.080625,
+     "tolerance_pct": 83,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t8_cumulative_t",
+     "paper": 3.6,
+     "ours": 4.507445,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t20_monthly",
+     "paper": -0.0032,
+     "ours": -0.00195,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t20_monthly_t",
+     "paper": -1.35,
+     "ours": -0.820178,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t20_cumulative",
+     "paper": 0.0642,
+     "ours": 0.076183,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t20_cumulative_t",
+     "paper": 2.73,
+     "ours": 2.425541,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t32_monthly",
+     "paper": 0.0008,
+     "ours": 0.001002,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t32_monthly_t",
+     "paper": 0.41,
+     "ours": 0.485028,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t32_cumulative",
+     "paper": 0.038,
+     "ours": 0.064056,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t32_cumulative_t",
+     "paper": 0.73,
+     "ours": 1.27319,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "event_t9_monthly",
+     "paper": 0.0085,
+     "ours": 0.009533,
+     "tolerance_pct": 98,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t9_monthly_t",
+     "paper": 3.07,
+     "ours": 3.642343,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t9_cumulative",
+     "paper": 0.0844,
+     "ours": 0.090158,
+     "tolerance_pct": 80,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t9_cumulative_t",
+     "paper": 3.73,
+     "ours": 4.698517,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t21_monthly",
+     "paper": -0.0032,
+     "ours": -0.002012,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t21_monthly_t",
+     "paper": -1.32,
+     "ours": -0.832551,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t21_cumulative",
+     "paper": 0.0611,
+     "ours": 0.074171,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t21_cumulative_t",
+     "paper": 2.55,
+     "ours": 2.282551,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t33_monthly",
+     "paper": 0.0013,
+     "ours": 0.002151,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t33_monthly_t",
+     "paper": 0.62,
+     "ours": 1.01438,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "event_t33_cumulative",
+     "paper": 0.0394,
+     "ours": 0.066207,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t33_cumulative_t",
+     "paper": 0.73,
+     "ours": 1.28657,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "event_t10_monthly",
+     "paper": 0.0048,
+     "ours": 0.005422,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t10_monthly_t",
+     "paper": 1.69,
+     "ours": 2.000281,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t10_cumulative",
+     "paper": 0.0892,
+     "ours": 0.09558,
+     "tolerance_pct": 80,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t10_cumulative_t",
+     "paper": 3.74,
+     "ours": 4.681668,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t22_monthly",
+     "paper": -0.0034,
+     "ours": -0.002372,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t22_monthly_t",
+     "paper": -1.39,
+     "ours": -0.999285,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t22_cumulative",
+     "paper": 0.0577,
+     "ours": 0.071799,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t22_cumulative_t",
+     "paper": 2.21,
+     "ours": 2.135957,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t34_monthly",
+     "paper": 0.0008,
+     "ours": 0.001069,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t34_monthly_t",
+     "paper": 0.36,
+     "ours": 0.483899,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t34_cumulative",
+     "paper": 0.0402,
+     "ours": 0.067276,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t34_cumulative_t",
+     "paper": 0.71,
+     "ours": 1.245823,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "event_t11_monthly",
+     "paper": 0.0045,
+     "ours": 0.005088,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t11_monthly_t",
+     "paper": 1.55,
+     "ours": 1.844843,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t11_cumulative",
+     "paper": 0.0938,
+     "ours": 0.100668,
+     "tolerance_pct": 80,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t11_cumulative_t",
+     "paper": 3.77,
+     "ours": 4.643527,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t23_monthly",
+     "paper": -0.0011,
+     "ours": 2.9e-05,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "event_t23_monthly_t",
+     "paper": -0.45,
+     "ours": 0.012361,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "event_t23_cumulative",
+     "paper": 0.0566,
+     "ours": 0.071828,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t23_cumulative_t",
+     "paper": 1.93,
+     "ours": 2.062938,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t35_monthly",
+     "paper": 0.001,
+     "ours": 0.002164,
+     "tolerance_pct": 100,
+     "status": "Tier 2"
+    },
+    {
+     "name": "event_t35_monthly_t",
+     "paper": 0.45,
+     "ours": 0.972989,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "event_t35_cumulative",
+     "paper": 0.0412,
+     "ours": 0.06944,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t35_cumulative_t",
+     "paper": 0.71,
+     "ours": 1.247264,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "event_t12_monthly",
+     "paper": 0.0013,
+     "ours": 0.001404,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t12_monthly_t",
+     "paper": 0.43,
+     "ours": 0.481634,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t12_cumulative",
+     "paper": 0.0951,
+     "ours": 0.102072,
+     "tolerance_pct": 82,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t12_cumulative_t",
+     "paper": 3.67,
+     "ours": 4.404484,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t24_monthly",
+     "paper": -0.001,
+     "ours": 0.000574,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "event_t24_monthly_t",
+     "paper": -0.4,
+     "ours": 0.238826,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "event_t24_cumulative",
+     "paper": 0.0556,
+     "ours": 0.072402,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t24_cumulative_t",
+     "paper": 1.69,
+     "ours": 2.011186,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t36_monthly",
+     "paper": -0.0005,
+     "ours": 0.000154,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "event_t36_monthly_t",
+     "paper": -0.24,
+     "ours": 0.069055,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "event_t36_cumulative",
+     "paper": 0.0406,
+     "ours": 0.069595,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "event_t36_cumulative_t",
+     "paper": 0.67,
+     "ours": 1.165732,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    }
+   ]
+  },
+  {
+   "id": "T6",
+   "table_ref": "Table V",
+   "cells": [
+    {
+     "name": "prop_jan_all",
+     "paper": 0.24,
+     "ours": 0.2,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_jan_s1",
+     "paper": 0.16,
+     "ours": 0.16,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_jan_s2",
+     "paper": 0.2,
+     "ours": 0.2,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_jan_s3",
+     "paper": 0.44,
+     "ours": 0.48,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_feb_all",
+     "paper": 0.6,
+     "ours": 0.64,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_feb_s1",
+     "paper": 0.6,
+     "ours": 0.6,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_feb_s2",
+     "paper": 0.76,
+     "ours": 0.72,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_feb_s3",
+     "paper": 0.6,
+     "ours": 0.72,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_mar_all",
+     "paper": 0.8,
+     "ours": 0.76,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_mar_s1",
+     "paper": 0.76,
+     "ours": 0.72,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_mar_s2",
+     "paper": 0.72,
+     "ours": 0.72,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_mar_s3",
+     "paper": 0.72,
+     "ours": 0.72,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_apr_all",
+     "paper": 0.96,
+     "ours": 0.96,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_apr_s1",
+     "paper": 0.92,
+     "ours": 0.92,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_apr_s2",
+     "paper": 0.96,
+     "ours": 0.88,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_apr_s3",
+     "paper": 0.8,
+     "ours": 0.76,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_may_all",
+     "paper": 0.68,
+     "ours": 0.68,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_may_s1",
+     "paper": 0.68,
+     "ours": 0.68,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_may_s2",
+     "paper": 0.72,
+     "ours": 0.68,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_may_s3",
+     "paper": 0.56,
+     "ours": 0.56,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_jun_all",
+     "paper": 0.76,
+     "ours": 0.76,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_jun_s1",
+     "paper": 0.64,
+     "ours": 0.64,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_jun_s2",
+     "paper": 0.76,
+     "ours": 0.72,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_jun_s3",
+     "paper": 0.72,
+     "ours": 0.72,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_jul_all",
+     "paper": 0.56,
+     "ours": 0.6,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_jul_s1",
+     "paper": 0.68,
+     "ours": 0.64,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_jul_s2",
+     "paper": 0.56,
+     "ours": 0.56,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_jul_s3",
+     "paper": 0.52,
+     "ours": 0.52,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_aug_all",
+     "paper": 0.52,
+     "ours": 0.48,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_aug_s1",
+     "paper": 0.6,
+     "ours": 0.6,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_aug_s2",
+     "paper": 0.48,
+     "ours": 0.48,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_aug_s3",
+     "paper": 0.48,
+     "ours": 0.48,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_sep_all",
+     "paper": 0.8,
+     "ours": 0.68,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_sep_s1",
+     "paper": 0.72,
+     "ours": 0.64,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_sep_s2",
+     "paper": 0.8,
+     "ours": 0.76,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_sep_s3",
+     "paper": 0.68,
+     "ours": 0.64,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_oct_all",
+     "paper": 0.64,
+     "ours": 0.68,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_oct_s1",
+     "paper": 0.6,
+     "ours": 0.6,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_oct_s2",
+     "paper": 0.64,
+     "ours": 0.6,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_oct_s3",
+     "paper": 0.56,
+     "ours": 0.56,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_nov_all",
+     "paper": 0.84,
+     "ours": 0.88,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_nov_s1",
+     "paper": 0.84,
+     "ours": 0.84,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_nov_s2",
+     "paper": 0.84,
+     "ours": 0.84,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_nov_s3",
+     "paper": 0.68,
+     "ours": 0.64,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_dec_all",
+     "paper": 0.68,
+     "ours": 0.68,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_dec_s1",
+     "paper": 0.76,
+     "ours": 0.72,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_dec_s2",
+     "paper": 0.68,
+     "ours": 0.72,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_dec_s3",
+     "paper": 0.44,
+     "ours": 0.44,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_feb_dec_all",
+     "paper": 0.71,
+     "ours": 0.709091,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_feb_dec_s1",
+     "paper": 0.71,
+     "ours": 0.690909,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_feb_dec_s2",
+     "paper": 0.72,
+     "ours": 0.698182,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_feb_dec_s3",
+     "paper": 0.61,
+     "ours": 0.614545,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_all_months_all",
+     "paper": 0.67,
+     "ours": 0.666667,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_all_months_s1",
+     "paper": 0.66,
+     "ours": 0.646667,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_all_months_s2",
+     "paper": 0.68,
+     "ours": 0.656667,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    },
+    {
+     "name": "prop_all_months_s3",
+     "paper": 0.6,
+     "ours": 0.603333,
+     "tolerance_pct": 50,
+     "status": "Tier 1"
+    }
+   ]
+  },
+  {
+   "id": "T7",
+   "table_ref": "Table VI",
+   "cells": [
+    {
+     "name": "sp_all_all_6569",
+     "paper": 0.0123,
+     "ours": 0.01165,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_all_all_6569_t",
+     "paper": 1.94,
+     "ours": 1.823701,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_all_all_7074",
+     "paper": 0.0109,
+     "ours": 0.009116,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_all_all_7074_t",
+     "paper": 1.23,
+     "ours": 1.015579,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_all_all_7579",
+     "paper": -0.0044,
+     "ours": -0.006356,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_all_all_7579_t",
+     "paper": -0.51,
+     "ours": -0.825575,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "sp_all_all_8084",
+     "paper": 0.0127,
+     "ours": 0.012969,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_all_all_8084_t",
+     "paper": 2.67,
+     "ours": 2.795674,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_all_all_8589",
+     "paper": 0.0162,
+     "ours": 0.016608,
+     "tolerance_pct": 88,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_all_all_8589_t",
+     "paper": 3.42,
+     "ours": 3.371569,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_all_jan_6569",
+     "paper": -0.0524,
+     "ours": -0.055203,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_all_jan_6569_t",
+     "paper": -1.28,
+     "ours": -1.313046,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_all_jan_7074",
+     "paper": -0.107,
+     "ours": -0.112865,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_all_jan_7074_t",
+     "paper": -2.54,
+     "ours": -2.467153,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_all_jan_7579",
+     "paper": -0.1017,
+     "ours": -0.099034,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_all_jan_7579_t",
+     "paper": -1.31,
+     "ours": -1.498977,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_all_jan_8084",
+     "paper": -0.0253,
+     "ours": -0.028962,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_all_jan_8084_t",
+     "paper": -1.38,
+     "ours": -1.954093,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "sp_all_jan_8589",
+     "paper": -0.0569,
+     "ours": -0.05687,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_all_jan_8589_t",
+     "paper": -2.76,
+     "ours": -2.723207,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_all_feb_dec_6569",
+     "paper": 0.0182,
+     "ours": 0.017727,
+     "tolerance_pct": 89,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_all_feb_dec_6569_t",
+     "paper": 3.36,
+     "ours": 3.319001,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_all_feb_dec_7074",
+     "paper": 0.0217,
+     "ours": 0.020206,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_all_feb_dec_7074_t",
+     "paper": 2.88,
+     "ours": 2.733867,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_all_feb_dec_7579",
+     "paper": 0.0044,
+     "ours": 0.002069,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_all_feb_dec_7579_t",
+     "paper": 0.78,
+     "ours": 0.409941,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "sp_all_feb_dec_8084",
+     "paper": 0.0161,
+     "ours": 0.016781,
+     "tolerance_pct": 87,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_all_feb_dec_8084_t",
+     "paper": 3.44,
+     "ours": 3.666997,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_all_feb_dec_8589",
+     "paper": 0.0229,
+     "ours": 0.023288,
+     "tolerance_pct": 49,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_all_feb_dec_8589_t",
+     "paper": 6.09,
+     "ours": 5.809359,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s1_all_6569",
+     "paper": 0.0082,
+     "ours": 0.006096,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s1_all_6569_t",
+     "paper": 1.14,
+     "ours": 0.855129,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s1_all_7074",
+     "paper": 0.0128,
+     "ours": 0.009879,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s1_all_7074_t",
+     "paper": 1.63,
+     "ours": 1.254074,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s1_all_7579",
+     "paper": -0.0064,
+     "ours": -0.011163,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s1_all_7579_t",
+     "paper": -0.58,
+     "ours": -1.242245,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "sp_s1_all_8084",
+     "paper": 0.0153,
+     "ours": 0.016276,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s1_all_8084_t",
+     "paper": 2.61,
+     "ours": 2.69186,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s1_all_8589",
+     "paper": 0.0197,
+     "ours": 0.019823,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s1_all_8589_t",
+     "paper": 2.89,
+     "ours": 2.661833,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s1_jan_6569",
+     "paper": -0.0838,
+     "ours": -0.088476,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s1_jan_6569_t",
+     "paper": -1.6,
+     "ours": -1.612381,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s1_jan_7074",
+     "paper": -0.0853,
+     "ours": -0.094178,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s1_jan_7074_t",
+     "paper": -2.29,
+     "ours": -2.093608,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s1_jan_7579",
+     "paper": -0.1107,
+     "ours": -0.107902,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s1_jan_7579_t",
+     "paper": -1.09,
+     "ours": -1.305442,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s1_jan_8084",
+     "paper": -0.0124,
+     "ours": -0.019731,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s1_jan_8084_t",
+     "paper": -0.62,
+     "ours": -1.152341,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "sp_s1_jan_8589",
+     "paper": -0.1064,
+     "ours": -0.103946,
+     "tolerance_pct": 67,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s1_jan_8589_t",
+     "paper": -4.45,
+     "ours": -4.286074,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s1_feb_dec_6569",
+     "paper": 0.0165,
+     "ours": 0.014694,
+     "tolerance_pct": 94,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s1_feb_dec_6569_t",
+     "paper": 3.19,
+     "ours": 3.00733,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s1_feb_dec_7074",
+     "paper": 0.0217,
+     "ours": 0.019339,
+     "tolerance_pct": 94,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s1_feb_dec_7074_t",
+     "paper": 3.18,
+     "ours": 3.04046,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s1_feb_dec_7579",
+     "paper": 0.0031,
+     "ours": -0.002368,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "sp_s1_feb_dec_7579_t",
+     "paper": 0.41,
+     "ours": -0.411933,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "sp_s1_feb_dec_8084",
+     "paper": 0.0179,
+     "ours": 0.019549,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s1_feb_dec_8084_t",
+     "paper": 2.94,
+     "ours": 3.121627,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s1_feb_dec_8589",
+     "paper": 0.0311,
+     "ours": 0.031075,
+     "tolerance_pct": 46,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s1_feb_dec_8589_t",
+     "paper": 6.59,
+     "ours": 5.328552,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s2_all_6569",
+     "paper": 0.0177,
+     "ours": 0.01694,
+     "tolerance_pct": 97,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s2_all_6569_t",
+     "paper": 3.08,
+     "ours": 2.950926,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s2_all_7074",
+     "paper": 0.0115,
+     "ours": 0.009523,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s2_all_7074_t",
+     "paper": 1.57,
+     "ours": 1.320874,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s2_all_7579",
+     "paper": 0.0018,
+     "ours": 4.4e-05,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s2_all_7579_t",
+     "paper": 0.24,
+     "ours": 0.00645,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "sp_s2_all_8084",
+     "paper": 0.0172,
+     "ours": 0.016766,
+     "tolerance_pct": 89,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s2_all_8084_t",
+     "paper": 3.38,
+     "ours": 3.457981,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s2_all_8589",
+     "paper": 0.0146,
+     "ours": 0.012595,
+     "tolerance_pct": 88,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s2_all_8589_t",
+     "paper": 3.4,
+     "ours": 3.044328,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s2_jan_6569",
+     "paper": -0.0264,
+     "ours": -0.022807,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s2_jan_6569_t",
+     "paper": -1.05,
+     "ours": -0.881682,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s2_jan_7074",
+     "paper": -0.0465,
+     "ours": -0.045323,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s2_jan_7074_t",
+     "paper": -1.81,
+     "ours": -1.637678,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s2_jan_7579",
+     "paper": -0.0795,
+     "ours": -0.074205,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s2_jan_7579_t",
+     "paper": -1.16,
+     "ours": -1.19289,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s2_jan_8084",
+     "paper": -0.01,
+     "ours": -0.013474,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s2_jan_8084_t",
+     "paper": -0.46,
+     "ours": -0.738899,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "sp_s2_jan_8589",
+     "paper": -0.0112,
+     "ours": -0.007828,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s2_jan_8589_t",
+     "paper": -0.48,
+     "ours": -0.345005,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s2_feb_dec_6569",
+     "paper": 0.0217,
+     "ours": 0.020554,
+     "tolerance_pct": 78,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s2_feb_dec_6569_t",
+     "paper": 3.86,
+     "ours": 3.640676,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s2_feb_dec_7074",
+     "paper": 0.0168,
+     "ours": 0.014509,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s2_feb_dec_7074_t",
+     "paper": 2.29,
+     "ours": 2.026273,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s2_feb_dec_7579",
+     "paper": 0.0092,
+     "ours": 0.006794,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s2_feb_dec_7579_t",
+     "paper": 1.87,
+     "ours": 1.541021,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s2_feb_dec_8084",
+     "paper": 0.0197,
+     "ours": 0.019516,
+     "tolerance_pct": 78,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s2_feb_dec_8084_t",
+     "paper": 3.83,
+     "ours": 3.975159,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s2_feb_dec_8589",
+     "paper": 0.017,
+     "ours": 0.014451,
+     "tolerance_pct": 74,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s2_feb_dec_8589_t",
+     "paper": 4.08,
+     "ours": 3.594051,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_all_6569",
+     "paper": 0.0129,
+     "ours": 0.014166,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_all_6569_t",
+     "paper": 2.71,
+     "ours": 2.871716,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_all_7074",
+     "paper": 0.0115,
+     "ours": 0.009606,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_all_7074_t",
+     "paper": 1.62,
+     "ours": 1.358962,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_all_7579",
+     "paper": 0.0018,
+     "ours": 0.002483,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_all_7579_t",
+     "paper": 0.35,
+     "ours": 0.489404,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_all_8084",
+     "paper": 0.0076,
+     "ours": 0.006989,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_all_8084_t",
+     "paper": 1.41,
+     "ours": 1.352346,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_all_8589",
+     "paper": 0.0035,
+     "ours": 0.00202,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_all_8589_t",
+     "paper": 0.73,
+     "ours": 0.419533,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "sp_s3_jan_6569",
+     "paper": -0.0073,
+     "ours": -0.007671,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_jan_6569_t",
+     "paper": -0.32,
+     "ours": -0.358061,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_jan_7074",
+     "paper": -0.0154,
+     "ours": -0.0181,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_jan_7074_t",
+     "paper": -0.48,
+     "ours": -0.530231,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_jan_7579",
+     "paper": -0.0335,
+     "ours": -0.031202,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_jan_7579_t",
+     "paper": -0.77,
+     "ours": -0.715416,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_jan_8084",
+     "paper": -0.0094,
+     "ours": -0.008241,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_jan_8084_t",
+     "paper": -0.33,
+     "ours": -0.296778,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_jan_8589",
+     "paper": -0.0147,
+     "ours": -0.014889,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_jan_8589_t",
+     "paper": -0.78,
+     "ours": -0.794984,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_feb_dec_6569",
+     "paper": 0.0148,
+     "ours": 0.016151,
+     "tolerance_pct": 97,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_feb_dec_6569_t",
+     "paper": 3.08,
+     "ours": 3.227824,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_feb_dec_7074",
+     "paper": 0.0139,
+     "ours": 0.012125,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_feb_dec_7074_t",
+     "paper": 1.95,
+     "ours": 1.709591,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_feb_dec_7579",
+     "paper": 0.005,
+     "ours": 0.005545,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_feb_dec_7579_t",
+     "paper": 1.21,
+     "ours": 1.395672,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_feb_dec_8084",
+     "paper": 0.0092,
+     "ours": 0.008373,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_feb_dec_8084_t",
+     "paper": 1.7,
+     "ours": 1.635373,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_feb_dec_8589",
+     "paper": 0.0052,
+     "ours": 0.003557,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "sp_s3_feb_dec_8589_t",
+     "paper": 1.04,
+     "ours": 0.715156,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    }
+   ]
+  },
+  {
+   "id": "T8",
+   "table_ref": "Table VIII",
+   "cells": [
+    {
+     "name": "bt_a_t1_monthly",
+     "paper": -0.0495,
+     "ours": -0.05005,
+     "tolerance_pct": 81,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t1_monthly_t",
+     "paper": -3.72,
+     "ours": -4.339513,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t1_cumulative",
+     "paper": -0.0495,
+     "ours": -0.05005,
+     "tolerance_pct": 81,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t1_cumulative_t",
+     "paper": -3.72,
+     "ours": -3.452581,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t13_monthly",
+     "paper": -0.0245,
+     "ours": -0.017505,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t13_monthly_t",
+     "paper": -2.6,
+     "ours": -1.905744,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t13_cumulative",
+     "paper": -0.1257,
+     "ours": -0.102129,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t13_cumulative_t",
+     "paper": -1.5,
+     "ours": -2.192908,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t25_monthly",
+     "paper": -0.0118,
+     "ours": -0.009214,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t25_monthly_t",
+     "paper": -1.41,
+     "ours": -1.130822,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t25_cumulative",
+     "paper": -0.3359,
+     "ours": -0.286852,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t25_cumulative_t",
+     "paper": -2.48,
+     "ours": -4.591639,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t2_monthly",
+     "paper": -0.0143,
+     "ours": -0.01379,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t2_monthly_t",
+     "paper": -1.32,
+     "ours": -1.351429,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t2_cumulative",
+     "paper": -0.0639,
+     "ours": -0.06384,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t2_cumulative_t",
+     "paper": -2.21,
+     "ours": -2.647723,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t14_monthly",
+     "paper": -0.0166,
+     "ours": -0.014757,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t14_monthly_t",
+     "paper": -2.08,
+     "ours": -1.872349,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t14_cumulative",
+     "paper": -0.1423,
+     "ours": -0.116886,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t14_cumulative_t",
+     "paper": -1.69,
+     "ours": -2.412609,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t26_monthly",
+     "paper": -0.0067,
+     "ours": -0.005008,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t26_monthly_t",
+     "paper": -1.01,
+     "ours": -0.78451,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t26_cumulative",
+     "paper": -0.3427,
+     "ours": -0.29186,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t26_cumulative_t",
+     "paper": -2.53,
+     "ours": -4.689422,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t3_monthly",
+     "paper": -0.0088,
+     "ours": -0.01176,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t3_monthly_t",
+     "paper": -0.87,
+     "ours": -1.093827,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t3_cumulative",
+     "paper": -0.0726,
+     "ours": -0.075599,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t3_cumulative_t",
+     "paper": -1.78,
+     "ours": -2.380704,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t15_monthly",
+     "paper": -0.0164,
+     "ours": -0.016124,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t15_monthly_t",
+     "paper": -1.87,
+     "ours": -1.84937,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t15_cumulative",
+     "paper": -0.1587,
+     "ours": -0.133011,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t15_cumulative_t",
+     "paper": -1.83,
+     "ours": -2.577349,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t27_monthly",
+     "paper": -0.0135,
+     "ours": -0.010419,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t27_monthly_t",
+     "paper": -1.82,
+     "ours": -1.484571,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t27_cumulative",
+     "paper": -0.3562,
+     "ours": -0.302279,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t27_cumulative_t",
+     "paper": -2.52,
+     "ours": -4.834356,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t4_monthly",
+     "paper": -0.0048,
+     "ours": -0.004831,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t4_monthly_t",
+     "paper": -0.45,
+     "ours": -0.492851,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t4_cumulative",
+     "paper": -0.0775,
+     "ours": -0.08043,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t4_cumulative_t",
+     "paper": -1.6,
+     "ours": -2.295144,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t16_monthly",
+     "paper": -0.02,
+     "ours": -0.019106,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t16_monthly_t",
+     "paper": -2.2,
+     "ours": -2.016307,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t16_cumulative",
+     "paper": -0.1787,
+     "ours": -0.152116,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t16_cumulative_t",
+     "paper": -2.01,
+     "ours": -2.793785,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t28_monthly",
+     "paper": -0.0082,
+     "ours": -0.006043,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t28_monthly_t",
+     "paper": -1.06,
+     "ours": -0.823348,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t28_cumulative",
+     "paper": -0.3644,
+     "ours": -0.308322,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t28_cumulative_t",
+     "paper": -2.47,
+     "ours": -4.845578,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t5_monthly",
+     "paper": 0.0061,
+     "ours": 0.00345,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t5_monthly_t",
+     "paper": 0.6,
+     "ours": 0.350715,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t5_cumulative",
+     "paper": -0.0713,
+     "ours": -0.076981,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t5_cumulative_t",
+     "paper": -1.4,
+     "ours": -2.146044,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t17_monthly",
+     "paper": -0.0131,
+     "ours": -0.015286,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t17_monthly_t",
+     "paper": -1.8,
+     "ours": -1.783132,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t17_cumulative",
+     "paper": -0.1919,
+     "ours": -0.167402,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t17_cumulative_t",
+     "paper": -2.12,
+     "ours": -2.9863,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t29_monthly",
+     "paper": -0.0125,
+     "ours": -0.009696,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t29_monthly_t",
+     "paper": -1.37,
+     "ours": -1.099242,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t29_cumulative",
+     "paper": -0.3769,
+     "ours": -0.318018,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t29_cumulative_t",
+     "paper": -2.39,
+     "ours": -4.873295,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t6_monthly",
+     "paper": 0.0057,
+     "ours": 0.004389,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t6_monthly_t",
+     "paper": 0.55,
+     "ours": 0.468262,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t6_cumulative",
+     "paper": -0.0656,
+     "ours": -0.072592,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t6_cumulative_t",
+     "paper": -1.22,
+     "ours": -1.957261,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t18_monthly",
+     "paper": -0.0166,
+     "ours": -0.017153,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t18_monthly_t",
+     "paper": -2.11,
+     "ours": -1.979296,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t18_cumulative",
+     "paper": -0.2085,
+     "ours": -0.184555,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t18_cumulative_t",
+     "paper": -2.07,
+     "ours": -3.15167,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t30_monthly",
+     "paper": -0.0107,
+     "ours": -0.009931,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t30_monthly_t",
+     "paper": -1.2,
+     "ours": -1.112129,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t30_cumulative",
+     "paper": -0.3876,
+     "ours": -0.327949,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t30_cumulative_t",
+     "paper": -2.29,
+     "ours": -4.945399,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t7_monthly",
+     "paper": 0.0092,
+     "ours": 0.009448,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t7_monthly_t",
+     "paper": 0.83,
+     "ours": 0.964486,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t7_cumulative",
+     "paper": -0.0564,
+     "ours": -0.063144,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t7_cumulative_t",
+     "paper": -1.05,
+     "ours": -1.673559,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t19_monthly",
+     "paper": -0.0161,
+     "ours": -0.018506,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t19_monthly_t",
+     "paper": -1.9,
+     "ours": -2.051885,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t19_cumulative",
+     "paper": -0.2245,
+     "ours": -0.203061,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t19_cumulative_t",
+     "paper": -2.01,
+     "ours": -3.374535,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t31_monthly",
+     "paper": -0.0018,
+     "ours": -0.001099,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t31_monthly_t",
+     "paper": -0.2,
+     "ours": -0.134106,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t31_cumulative",
+     "paper": -0.3894,
+     "ours": -0.329048,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t31_cumulative_t",
+     "paper": -2.18,
+     "ours": -4.868857,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t8_monthly",
+     "paper": 0.0054,
+     "ours": 0.006422,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t8_monthly_t",
+     "paper": 0.52,
+     "ours": 0.63886,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t8_cumulative",
+     "paper": -0.0511,
+     "ours": -0.056722,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t8_cumulative_t",
+     "paper": -0.92,
+     "ours": -1.499531,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t20_monthly",
+     "paper": -0.0224,
+     "ours": -0.019752,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t20_monthly_t",
+     "paper": -2.28,
+     "ours": -1.975024,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t20_cumulative",
+     "paper": -0.2469,
+     "ours": -0.222813,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t20_cumulative_t",
+     "paper": -2.03,
+     "ours": -3.654075,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t32_monthly",
+     "paper": -0.0022,
+     "ours": -0.001464,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t32_monthly_t",
+     "paper": -0.26,
+     "ours": -0.179893,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t32_cumulative",
+     "paper": -0.3916,
+     "ours": -0.330512,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t32_cumulative_t",
+     "paper": -2.07,
+     "ours": -4.801233,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t9_monthly",
+     "paper": -0.0029,
+     "ours": -0.000335,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t9_monthly_t",
+     "paper": -0.34,
+     "ours": -0.039949,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t9_cumulative",
+     "paper": -0.0539,
+     "ours": -0.057057,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t9_cumulative_t",
+     "paper": -0.94,
+     "ours": -1.508507,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t21_monthly",
+     "paper": -0.0178,
+     "ours": -0.014234,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t21_monthly_t",
+     "paper": -1.92,
+     "ours": -1.475377,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t21_cumulative",
+     "paper": -0.2647,
+     "ours": -0.237047,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t21_cumulative_t",
+     "paper": -2.04,
+     "ours": -3.808273,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t33_monthly",
+     "paper": 0.0008,
+     "ours": 0.000462,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t33_monthly_t",
+     "paper": 0.11,
+     "ours": 0.068238,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t33_cumulative",
+     "paper": -0.3908,
+     "ours": -0.33005,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t33_cumulative_t",
+     "paper": -1.99,
+     "ours": -4.724813,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t10_monthly",
+     "paper": -0.0065,
+     "ours": -0.002626,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t10_monthly_t",
+     "paper": -0.68,
+     "ours": -0.303745,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t10_cumulative",
+     "paper": -0.0604,
+     "ours": -0.059683,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t10_cumulative_t",
+     "paper": -0.9,
+     "ours": -1.512472,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t22_monthly",
+     "paper": -0.0213,
+     "ours": -0.015353,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t22_monthly_t",
+     "paper": -2.08,
+     "ours": -1.586907,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t22_cumulative",
+     "paper": -0.286,
+     "ours": -0.2524,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t22_cumulative_t",
+     "paper": -2.14,
+     "ours": -4.02695,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t34_monthly",
+     "paper": -0.0025,
+     "ours": -0.000744,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t34_monthly_t",
+     "paper": -0.41,
+     "ours": -0.123032,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t34_cumulative",
+     "paper": -0.3933,
+     "ours": -0.330795,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t34_cumulative_t",
+     "paper": -1.97,
+     "ours": -4.669841,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t11_monthly",
+     "paper": -0.0183,
+     "ours": -0.009793,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t11_monthly_t",
+     "paper": -1.74,
+     "ours": -1.078556,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t11_cumulative",
+     "paper": -0.0787,
+     "ours": -0.069476,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t11_cumulative_t",
+     "paper": -1.04,
+     "ours": -1.645228,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t23_monthly",
+     "paper": -0.0183,
+     "ours": -0.011567,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t23_monthly_t",
+     "paper": -1.74,
+     "ours": -1.16267,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t23_cumulative",
+     "paper": -0.3043,
+     "ours": -0.263967,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t23_cumulative_t",
+     "paper": -2.23,
+     "ours": -4.221966,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t35_monthly",
+     "paper": -0.005,
+     "ours": -0.002894,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t35_monthly_t",
+     "paper": -0.89,
+     "ours": -0.512997,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t35_cumulative",
+     "paper": -0.3983,
+     "ours": -0.333689,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t35_cumulative_t",
+     "paper": -1.97,
+     "ours": -4.703406,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t12_monthly",
+     "paper": -0.0225,
+     "ours": -0.015149,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t12_monthly_t",
+     "paper": -2.35,
+     "ours": -1.80247,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t12_cumulative",
+     "paper": -0.1012,
+     "ours": -0.084625,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t12_cumulative_t",
+     "paper": -1.27,
+     "ours": -1.904968,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t24_monthly",
+     "paper": -0.0198,
+     "ours": -0.013671,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t24_monthly_t",
+     "paper": -1.94,
+     "ours": -1.463363,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t24_cumulative",
+     "paper": -0.3241,
+     "ours": -0.277638,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t24_cumulative_t",
+     "paper": -2.41,
+     "ours": -4.433208,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_a_t36_monthly",
+     "paper": -0.0098,
+     "ours": -0.008287,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t36_monthly_t",
+     "paper": -1.47,
+     "ours": -1.290316,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t36_cumulative",
+     "paper": -0.4081,
+     "ours": -0.341976,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_a_t36_cumulative_t",
+     "paper": -2.01,
+     "ours": -4.822435,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_b_t1_monthly",
+     "paper": -0.0035,
+     "ours": -0.001371,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t1_monthly_t",
+     "paper": -1.04,
+     "ours": -0.439952,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_b_t1_cumulative",
+     "paper": -0.0035,
+     "ours": -0.001371,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t1_cumulative_t",
+     "paper": -1.04,
+     "ours": -0.499562,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_b_t13_monthly",
+     "paper": -0.0068,
+     "ours": -0.00418,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t13_monthly_t",
+     "paper": -2.14,
+     "ours": -1.787819,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t13_cumulative",
+     "paper": 0.0515,
+     "ours": 0.05796,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t13_cumulative_t",
+     "paper": 2.57,
+     "ours": 3.33402,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t25_monthly",
+     "paper": -0.0035,
+     "ours": -0.00191,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t25_monthly_t",
+     "paper": -1.32,
+     "ours": -0.888507,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t25_cumulative",
+     "paper": 0.0014,
+     "ours": 0.018968,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t25_cumulative_t",
+     "paper": 0.04,
+     "ours": 0.41181,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t2_monthly",
+     "paper": 0.0069,
+     "ours": 0.008775,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t2_monthly_t",
+     "paper": 2.32,
+     "ours": 3.194007,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t2_cumulative",
+     "paper": 0.0034,
+     "ours": 0.007404,
+     "tolerance_pct": 100,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_b_t2_cumulative_t",
+     "paper": 0.59,
+     "ours": 1.599282,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_b_t14_monthly",
+     "paper": -0.0085,
+     "ours": -0.006329,
+     "tolerance_pct": 98,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t14_monthly_t",
+     "paper": -3.07,
+     "ours": -2.686962,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t14_cumulative",
+     "paper": 0.0429,
+     "ours": 0.051631,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t14_cumulative_t",
+     "paper": 1.9,
+     "ours": 2.591819,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t26_monthly",
+     "paper": -0.0027,
+     "ours": -0.000124,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t26_monthly_t",
+     "paper": -1.08,
+     "ours": -0.072152,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_b_t26_cumulative",
+     "paper": -0.0013,
+     "ours": 0.018843,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t26_cumulative_t",
+     "paper": -0.03,
+     "ours": 0.374018,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t3_monthly",
+     "paper": 0.0109,
+     "ours": 0.011072,
+     "tolerance_pct": 72,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t3_monthly_t",
+     "paper": 4.15,
+     "ours": 4.285083,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t3_cumulative",
+     "paper": 0.0143,
+     "ours": 0.018476,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t3_cumulative_t",
+     "paper": 2.2,
+     "ours": 3.125879,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_b_t15_monthly",
+     "paper": -0.0059,
+     "ours": -0.005277,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t15_monthly_t",
+     "paper": -2.4,
+     "ours": -2.310897,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t15_cumulative",
+     "paper": 0.0371,
+     "ours": 0.046354,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t15_cumulative_t",
+     "paper": 1.54,
+     "ours": 2.095943,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t27_monthly",
+     "paper": -0.0015,
+     "ours": -0.000678,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t27_monthly_t",
+     "paper": -0.69,
+     "ours": -0.403335,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_b_t27_cumulative",
+     "paper": -0.0028,
+     "ours": 0.018165,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t27_cumulative_t",
+     "paper": -0.07,
+     "ours": 0.338452,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t4_monthly",
+     "paper": 0.0098,
+     "ours": 0.009615,
+     "tolerance_pct": 79,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t4_monthly_t",
+     "paper": 3.81,
+     "ours": 3.773551,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t4_cumulative",
+     "paper": 0.0241,
+     "ours": 0.028091,
+     "tolerance_pct": 95,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t4_cumulative_t",
+     "paper": 3.15,
+     "ours": 3.85538,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t16_monthly",
+     "paper": -0.0063,
+     "ours": -0.005957,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t16_monthly_t",
+     "paper": -2.8,
+     "ours": -2.688269,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t16_cumulative",
+     "paper": 0.0308,
+     "ours": 0.040397,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t16_cumulative_t",
+     "paper": 1.21,
+     "ours": 1.766685,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_b_t28_monthly",
+     "paper": -0.0003,
+     "ours": 0.000235,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t28_monthly_t",
+     "paper": -0.14,
+     "ours": 0.145056,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t28_cumulative",
+     "paper": -0.003,
+     "ours": 0.018401,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t28_cumulative_t",
+     "paper": -0.08,
+     "ours": 0.33976,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t5_monthly",
+     "paper": 0.0075,
+     "ours": 0.007068,
+     "tolerance_pct": 97,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t5_monthly_t",
+     "paper": 3.09,
+     "ours": 3.163629,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t5_cumulative",
+     "paper": 0.0316,
+     "ours": 0.035159,
+     "tolerance_pct": 88,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t5_cumulative_t",
+     "paper": 3.4,
+     "ours": 4.272337,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t17_monthly",
+     "paper": -0.008,
+     "ours": -0.007137,
+     "tolerance_pct": 81,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t17_monthly_t",
+     "paper": -3.7,
+     "ours": -3.41536,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t17_cumulative",
+     "paper": 0.0228,
+     "ours": 0.03326,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t17_cumulative_t",
+     "paper": 0.86,
+     "ours": 1.350078,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_b_t29_monthly",
+     "paper": -0.0009,
+     "ours": -9e-06,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t29_monthly_t",
+     "paper": -0.51,
+     "ours": -0.00586,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_b_t29_cumulative",
+     "paper": -0.0039,
+     "ours": 0.018392,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t29_cumulative_t",
+     "paper": -0.11,
+     "ours": 0.331286,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t6_monthly",
+     "paper": 0.0049,
+     "ours": 0.005076,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t6_monthly_t",
+     "paper": 1.97,
+     "ours": 2.209841,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t6_cumulative",
+     "paper": 0.0365,
+     "ours": 0.040235,
+     "tolerance_pct": 88,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t6_cumulative_t",
+     "paper": 3.42,
+     "ours": 4.442263,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t18_monthly",
+     "paper": -0.0074,
+     "ours": -0.006687,
+     "tolerance_pct": 83,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t18_monthly_t",
+     "paper": -3.63,
+     "ours": -3.386103,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t18_cumulative",
+     "paper": 0.0153,
+     "ours": 0.026573,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t18_cumulative_t",
+     "paper": 0.56,
+     "ours": 1.012,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_b_t30_monthly",
+     "paper": -0.0001,
+     "ours": -2e-06,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t30_monthly_t",
+     "paper": -0.03,
+     "ours": -0.001283,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_b_t30_cumulative",
+     "paper": -0.004,
+     "ours": 0.01839,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t30_cumulative_t",
+     "paper": -0.12,
+     "ours": 0.320038,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t7_monthly",
+     "paper": 0.0079,
+     "ours": 0.008869,
+     "tolerance_pct": 93,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t7_monthly_t",
+     "paper": 3.24,
+     "ours": 3.975011,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t7_cumulative",
+     "paper": 0.0444,
+     "ours": 0.049104,
+     "tolerance_pct": 79,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t7_cumulative_t",
+     "paper": 3.82,
+     "ours": 4.966391,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t19_monthly",
+     "paper": -0.0033,
+     "ours": -0.002398,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t19_monthly_t",
+     "paper": -1.61,
+     "ours": -1.216083,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t19_cumulative",
+     "paper": 0.012,
+     "ours": 0.024175,
+     "tolerance_pct": 100,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_b_t19_cumulative_t",
+     "paper": 0.43,
+     "ours": 0.867755,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_b_t31_monthly",
+     "paper": 0.0017,
+     "ours": 0.001115,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t31_monthly_t",
+     "paper": 0.98,
+     "ours": 0.668072,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t31_cumulative",
+     "paper": -0.0023,
+     "ours": 0.019504,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t31_cumulative_t",
+     "paper": -0.08,
+     "ours": 0.319903,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t8_monthly",
+     "paper": 0.0062,
+     "ours": 0.006376,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t8_monthly_t",
+     "paper": 2.52,
+     "ours": 2.869668,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t8_cumulative",
+     "paper": 0.0507,
+     "ours": 0.05548,
+     "tolerance_pct": 75,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t8_cumulative_t",
+     "paper": 4.0,
+     "ours": 5.165319,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t20_monthly",
+     "paper": -0.0012,
+     "ours": -0.000229,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t20_monthly_t",
+     "paper": -0.61,
+     "ours": -0.121504,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_b_t20_cumulative",
+     "paper": 0.0108,
+     "ours": 0.023946,
+     "tolerance_pct": 100,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_b_t20_cumulative_t",
+     "paper": 0.38,
+     "ours": 0.818153,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_b_t32_monthly",
+     "paper": 0.0011,
+     "ours": 0.001326,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t32_monthly_t",
+     "paper": 0.69,
+     "ours": 0.822259,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t32_cumulative",
+     "paper": -0.0012,
+     "ours": 0.020831,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t32_cumulative_t",
+     "paper": -0.05,
+     "ours": 0.320723,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t9_monthly",
+     "paper": 0.0039,
+     "ours": 0.003958,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t9_monthly_t",
+     "paper": 1.63,
+     "ours": 1.791365,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t9_cumulative",
+     "paper": 0.0546,
+     "ours": 0.059438,
+     "tolerance_pct": 77,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t9_cumulative_t",
+     "paper": 3.91,
+     "ours": 4.974494,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t21_monthly",
+     "paper": -0.0016,
+     "ours": -0.000291,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t21_monthly_t",
+     "paper": -0.81,
+     "ours": -0.155591,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_b_t21_cumulative",
+     "paper": 0.0092,
+     "ours": 0.023654,
+     "tolerance_pct": 100,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_b_t21_cumulative_t",
+     "paper": 0.31,
+     "ours": 0.775968,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_b_t33_monthly",
+     "paper": -0.0005,
+     "ours": -0.000262,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t33_monthly_t",
+     "paper": -0.32,
+     "ours": -0.165683,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_b_t33_cumulative",
+     "paper": -0.0017,
+     "ours": 0.020569,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t33_cumulative_t",
+     "paper": -0.1,
+     "ours": 0.27773,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t10_monthly",
+     "paper": 0.0022,
+     "ours": 0.001999,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t10_monthly_t",
+     "paper": 0.96,
+     "ours": 0.919157,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t10_cumulative",
+     "paper": 0.0568,
+     "ours": 0.061436,
+     "tolerance_pct": 80,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t10_cumulative_t",
+     "paper": 3.73,
+     "ours": 4.661873,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t22_monthly",
+     "paper": -0.0021,
+     "ours": -0.000818,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t22_monthly_t",
+     "paper": -1.04,
+     "ours": -0.431429,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_b_t22_cumulative",
+     "paper": 0.0071,
+     "ours": 0.022837,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t22_cumulative_t",
+     "paper": 0.22,
+     "ours": 0.688449,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t34_monthly",
+     "paper": -0.0006,
+     "ours": -0.001123,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t34_monthly_t",
+     "paper": -0.37,
+     "ours": -0.695435,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_b_t34_cumulative",
+     "paper": -0.0023,
+     "ours": 0.019446,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t34_cumulative_t",
+     "paper": -0.17,
+     "ours": 0.226522,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t11_monthly",
+     "paper": 0.0024,
+     "ours": 0.002314,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t11_monthly_t",
+     "paper": 1.0,
+     "ours": 1.009509,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t11_cumulative",
+     "paper": 0.0592,
+     "ours": 0.06375,
+     "tolerance_pct": 81,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t11_cumulative_t",
+     "paper": 3.7,
+     "ours": 4.520196,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t23_monthly",
+     "paper": -0.0008,
+     "ours": -0.000941,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t23_monthly_t",
+     "paper": -0.35,
+     "ours": -0.446262,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t23_cumulative",
+     "paper": 0.0063,
+     "ours": 0.021896,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t23_cumulative_t",
+     "paper": 0.19,
+     "ours": 0.592294,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t35_monthly",
+     "paper": -0.0004,
+     "ours": -0.000371,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t35_monthly_t",
+     "paper": -0.24,
+     "ours": -0.252608,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t35_cumulative",
+     "paper": -0.0027,
+     "ours": 0.019075,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t35_cumulative_t",
+     "paper": -0.2,
+     "ours": 0.185668,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t12_monthly",
+     "paper": -0.0009,
+     "ours": -0.00161,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t12_monthly_t",
+     "paper": -0.34,
+     "ours": -0.590868,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "bt_b_t12_cumulative",
+     "paper": 0.0583,
+     "ours": 0.06214,
+     "tolerance_pct": 88,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t12_cumulative_t",
+     "paper": 3.4,
+     "ours": 3.998819,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t24_monthly",
+     "paper": -0.0014,
+     "ours": -0.001018,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t24_monthly_t",
+     "paper": -0.6,
+     "ours": -0.467974,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t24_cumulative",
+     "paper": 0.005,
+     "ours": 0.020877,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t24_cumulative_t",
+     "paper": 0.14,
+     "ours": 0.503966,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t36_monthly",
+     "paper": -0.0004,
+     "ours": -0.000408,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t36_monthly_t",
+     "paper": -0.28,
+     "ours": -0.294478,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "bt_b_t36_cumulative",
+     "paper": -0.003,
+     "ours": 0.018667,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "bt_b_t36_cumulative_t",
+     "paper": -0.2,
+     "ours": 0.140959,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    }
+   ]
+  },
+  {
+   "id": "T9",
+   "table_ref": "Table IX",
+   "cells": [
+    {
+     "name": "ea_t1",
+     "paper": 0.0055,
+     "ours": 0.007867,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t1_t",
+     "paper": 2.75,
+     "ours": 5.837368,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "ea_t13",
+     "paper": -0.0055,
+     "ours": -0.005361,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t13_t",
+     "paper": -2.56,
+     "ours": -3.823392,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "ea_t25",
+     "paper": -0.0002,
+     "ours": -0.001755,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "ea_t25_t",
+     "paper": -0.11,
+     "ours": -1.188234,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "ea_t2",
+     "paper": 0.0082,
+     "ours": 0.009449,
+     "tolerance_pct": 68,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t2_t",
+     "paper": 4.41,
+     "ours": 7.154191,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "ea_t14",
+     "paper": -0.008,
+     "ours": -0.004813,
+     "tolerance_pct": 77,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t14_t",
+     "paper": -3.89,
+     "ours": -3.401377,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t26",
+     "paper": -0.0021,
+     "ours": -0.002689,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t26_t",
+     "paper": -1.02,
+     "ours": -1.769223,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "ea_t3",
+     "paper": 0.0082,
+     "ours": 0.008295,
+     "tolerance_pct": 69,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t3_t",
+     "paper": 4.36,
+     "ours": 6.136171,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "ea_t15",
+     "paper": -0.0071,
+     "ours": -0.005086,
+     "tolerance_pct": 74,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t15_t",
+     "paper": -4.04,
+     "ours": -3.486602,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t27",
+     "paper": -0.0032,
+     "ours": -0.00264,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t27_t",
+     "paper": -1.68,
+     "ours": -1.696815,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t4",
+     "paper": 0.009,
+     "ours": 0.008797,
+     "tolerance_pct": 61,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t4_t",
+     "paper": 4.88,
+     "ours": 6.625775,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t16",
+     "paper": -0.0097,
+     "ours": -0.005652,
+     "tolerance_pct": 52,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t16_t",
+     "paper": -5.75,
+     "ours": -3.879233,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t28",
+     "paper": -0.0028,
+     "ours": -0.002907,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t28_t",
+     "paper": -1.31,
+     "ours": -1.767888,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t5",
+     "paper": 0.0059,
+     "ours": 0.006307,
+     "tolerance_pct": 95,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t5_t",
+     "paper": 3.16,
+     "ours": 4.77159,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "ea_t17",
+     "paper": -0.0062,
+     "ours": -0.005269,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t17_t",
+     "paper": -2.9,
+     "ours": -3.650051,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t29",
+     "paper": -0.0015,
+     "ours": -0.002493,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t29_t",
+     "paper": -0.62,
+     "ours": -1.594791,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "ea_t6",
+     "paper": 0.0058,
+     "ours": 0.00583,
+     "tolerance_pct": 96,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t6_t",
+     "paper": 3.14,
+     "ours": 4.322041,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t18",
+     "paper": -0.006,
+     "ours": -0.004217,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t18_t",
+     "paper": -2.96,
+     "ours": -2.786116,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t30",
+     "paper": -0.0021,
+     "ours": -0.001966,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t30_t",
+     "paper": -1.1,
+     "ours": -1.187563,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t7",
+     "paper": 0.0013,
+     "ours": 0.003762,
+     "tolerance_pct": 100,
+     "status": "Tier 2"
+    },
+    {
+     "name": "ea_t7_t",
+     "paper": 0.62,
+     "ours": 2.829485,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "ea_t19",
+     "paper": -0.0031,
+     "ours": -0.003506,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t19_t",
+     "paper": -1.63,
+     "ours": -2.309415,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "ea_t31",
+     "paper": -0.0027,
+     "ours": -0.003279,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t31_t",
+     "paper": -1.52,
+     "ours": -1.961584,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t8",
+     "paper": 0.0,
+     "ours": 0.001509,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "ea_t8_t",
+     "paper": -0.02,
+     "ours": 1.146663,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "ea_t20",
+     "paper": -0.0017,
+     "ours": -0.005056,
+     "tolerance_pct": 100,
+     "status": "Tier 2"
+    },
+    {
+     "name": "ea_t20_t",
+     "paper": -0.82,
+     "ours": -3.34021,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "ea_t32",
+     "paper": -0.0021,
+     "ours": -0.005807,
+     "tolerance_pct": 100,
+     "status": "Tier 2"
+    },
+    {
+     "name": "ea_t32_t",
+     "paper": -1.13,
+     "ours": -3.615187,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "ea_t9",
+     "paper": -0.002,
+     "ours": 0.000576,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "ea_t9_t",
+     "paper": -1.07,
+     "ours": 0.426971,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "ea_t21",
+     "paper": 0.0006,
+     "ours": -0.003797,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "ea_t21_t",
+     "paper": 0.27,
+     "ours": -2.475467,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "ea_t33",
+     "paper": -0.002,
+     "ours": -0.0056,
+     "tolerance_pct": 100,
+     "status": "Tier 2"
+    },
+    {
+     "name": "ea_t33_t",
+     "paper": -1.05,
+     "ours": -3.346461,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "ea_t10",
+     "paper": -0.0031,
+     "ours": -0.001429,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t10_t",
+     "paper": -1.6,
+     "ours": -1.044142,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t22",
+     "paper": -0.0005,
+     "ours": -0.001845,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "ea_t22_t",
+     "paper": -0.29,
+     "ours": -1.17747,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "ea_t34",
+     "paper": -0.0017,
+     "ours": -0.005316,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "ea_t34_t",
+     "paper": -0.91,
+     "ours": -3.253633,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "ea_t11",
+     "paper": -0.0039,
+     "ours": -0.004213,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t11_t",
+     "paper": -2.23,
+     "ours": -3.0549,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t23",
+     "paper": -0.0001,
+     "ours": -0.002048,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "ea_t23_t",
+     "paper": -0.05,
+     "ours": -1.311391,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "ea_t35",
+     "paper": -0.0022,
+     "ours": -0.002931,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t35_t",
+     "paper": -1.29,
+     "ours": -1.865449,
+     "tolerance_pct": 40,
+     "status": "Tier 2"
+    },
+    {
+     "name": "ea_t12",
+     "paper": -0.0053,
+     "ours": -0.003725,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t12_t",
+     "paper": -2.75,
+     "ours": -2.62407,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t24",
+     "paper": 0.0012,
+     "ours": -0.001636,
+     "tolerance_pct": 100,
+     "status": "FAIL"
+    },
+    {
+     "name": "ea_t24_t",
+     "paper": 0.63,
+     "ours": -1.025894,
+     "tolerance_pct": 40,
+     "status": "FAIL"
+    },
+    {
+     "name": "ea_t36",
+     "paper": -0.0059,
+     "ours": -0.003557,
+     "tolerance_pct": 100,
+     "status": "Tier 1"
+    },
+    {
+     "name": "ea_t36_t",
+     "paper": -2.91,
+     "ours": -2.217359,
+     "tolerance_pct": 40,
+     "status": "Tier 1"
+    }
+   ]
+  }
+ ],
+ "grand": {
+  "Tier 1": 1127,
+  "Tier 2": 130,
+  "FAIL": 70,
+  "SKIP": 0
+ }
+}

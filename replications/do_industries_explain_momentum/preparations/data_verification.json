@@ -1,0 +1,60 @@
+{
+  "verdict": "ready",
+  "requirements": [
+    {
+      "id": "crsp_monthly_returns",
+      "description": "Monthly stock returns, prices, shares outstanding, and volume for the July 1963-July 1995 sample (plus warm-up months for formation windows): value-weighting weights, 6/12/36-month formation returns, IM(L,H) holding returns, dollar trading volume.",
+      "needed_columns": ["permno", "date", "ret", "prc", "shrout", "vol"],
+      "matched_table": "crsp_202601.msf",
+      "matched_columns": ["permno", "date", "ret", "prc", "shrout", "vol"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_names_pit",
+      "description": "Point-in-time security classification for the universe filter (shrcd 10/11, exchcd 1/2/3) and time-varying 2-digit SIC codes used to form the 20 industry portfolios monthly, per the paper's use of the CRSP SIC time series.",
+      "needed_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "siccd"],
+      "matched_table": "crsp_202601.msenames",
+      "matched_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "siccd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_monthly_index",
+      "description": "CRSP value-weighted index monthly return for beta estimation (footnote 25: regression on the CRSP value-weighted index) and the equal-weighted index referenced in Section III.A.2.",
+      "needed_columns": ["date", "vwretd", "ewretd"],
+      "matched_table": "crsp_202601.msi",
+      "matched_columns": ["date", "vwretd", "ewretd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "comp_book_equity",
+      "description": "Compustat annual fundamentals for book equity (Daniel-Titman 5x5 and DGTW 5x5x5 characteristic sorts, Table VI BE/ME regressor): total assets, common equity, deferred taxes and investment tax credits, preferred stock, current/long-term debt, stockholders' equity.",
+      "needed_columns": ["gvkey", "fyear", "datadate", "at", "ceq", "txdb", "pstkrv", "dlc", "dltt", "seq", "consol", "indfmt", "datafmt", "popsrc"],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": ["gvkey", "fyear", "datadate", "at", "ceq", "txdb", "pstkrv", "dlc", "dltt", "seq", "consol", "indfmt", "datafmt", "popsrc"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_comp_link",
+      "description": "CRSP-Compustat link to join Compustat book equity to CRSP permnos for the characteristic sorts and FM regressions (January 1973-July 1995 subperiod).",
+      "needed_columns": ["gvkey", "lpermno", "linktype", "linkprim", "linkdt", "linkenddt", "usedflag"],
+      "matched_table": "crsp_202601.ccmxpf_linktable",
+      "matched_columns": ["gvkey", "lpermno", "linktype", "linkprim", "linkdt", "linkenddt", "usedflag"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_monthly_factors",
+      "description": "Fama-French monthly factors and risk-free rate: the 3-month T-bill rate for excess returns (Table I) and Mkt-RF/SMB/HML for the Section III.A.2 serial-covariance checks on the factor-mimicking portfolios.",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "mom", "rf"],
+      "matched_table": "ff.four_factor_monthly",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "mom", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    }
+  ],
+  "blocking_issues": []
+}

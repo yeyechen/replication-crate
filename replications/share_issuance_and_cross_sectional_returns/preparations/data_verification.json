@@ -1,0 +1,60 @@
+{
+  "verdict": "ready",
+  "requirements": [
+    {
+      "id": "crsp_monthly_stock",
+      "description": "Monthly stock returns, prices, shares outstanding, and the cumulative share-adjustment factor (cfacshr) for constructing split-adjusted shares and the ISSUE/DT-ISSUE measures, 1926-2003",
+      "needed_columns": ["permno", "date", "ret", "prc", "shrout", "cfacshr", "vol"],
+      "matched_table": "crsp_202601.msf",
+      "matched_columns": ["permno", "date", "ret", "prc", "shrout", "cfacshr", "vol"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_universe_pit",
+      "description": "Point-in-time security name records (share code, exchange code, name period dates) for the universe filter and the 'at least 6 months in CRSP' listing-age rule; ncusip for the Compustat join",
+      "needed_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "ncusip"],
+      "matched_table": "crsp_202601.dsenames",
+      "matched_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "ncusip"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_market_indexes",
+      "description": "CRSP monthly market indexes providing EWRETD (equal-weighted return with dividends), used to impute missing monthly stock returns in holding-period return construction",
+      "needed_columns": ["date", "ewretd"],
+      "matched_table": "crsp_202601.msi",
+      "matched_columns": ["date", "ewretd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "comp_fundamentals",
+      "description": "Compustat annual fundamentals providing data60 (ceq, book value of common equity) for the post-1970 book-to-market variable, with format/consolidation/peer/population flags for standard filtering",
+      "needed_columns": ["gvkey", "fyear", "datadate", "ceq", "indfmt", "consol", "popsrc", "datafmt"],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": ["gvkey", "fyear", "datadate", "ceq", "indfmt", "consol", "popsrc", "datafmt"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_comp_link",
+      "description": "CRSP-Compustat (CCM) link table to join Compustat book equity to CRSP permnos with link validity flags and date ranges",
+      "needed_columns": ["lpermno", "gvkey", "linkdt", "linkenddt", "linkprim", "linktype", "usedflag"],
+      "matched_table": "crsp_202601.ccmxpf_linktable",
+      "matched_columns": ["lpermno", "gvkey", "linkdt", "linkenddt", "linkprim", "linktype", "usedflag"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_delisting",
+      "description": "Monthly delisting records (delisting date, code, return) — used for diagnostics only; the paper does not use dlret, it imputes missing monthly returns with EWRETD per the Returns section (L116)",
+      "needed_columns": ["permno", "dlstdt", "dlstcd", "dlret"],
+      "matched_table": "crsp_202601.msedelist",
+      "matched_columns": ["permno", "dlstdt", "dlstcd", "dlret"],
+      "missing_columns": [],
+      "status": "full"
+    }
+  ],
+  "blocking_issues": []
+}

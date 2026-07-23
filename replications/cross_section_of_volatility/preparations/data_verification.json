@@ -1,0 +1,69 @@
+{
+  "verdict": "ready",
+  "requirements": [
+    {
+      "id": "crsp_daily_returns",
+      "description": "Daily stock returns for computing firm-level volatility (total and idiosyncratic) using daily data over the previous month",
+      "needed_columns": ["permno", "date", "ret", "prc", "vol", "shrout"],
+      "matched_table": "crsp_202601.dsf",
+      "matched_columns": ["permno", "date", "ret", "prc", "vol", "shrout"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_monthly_returns",
+      "description": "Monthly stock returns for computing portfolio returns and momentum controls",
+      "needed_columns": ["permno", "date", "ret", "prc", "vol", "shrout"],
+      "matched_table": "crsp_202601.msf",
+      "matched_columns": ["permno", "date", "ret", "prc", "vol", "shrout"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_universe_filter",
+      "description": "Share code and exchange code for universe filtering (common stocks on NYSE/AMEX/NASDAQ)",
+      "needed_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd"],
+      "matched_table": "crsp_202601.dsenames",
+      "matched_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_three_factor",
+      "description": "Fama-French three factors (MKT-RF, SMB, HML) plus risk-free rate for idiosyncratic volatility regression and alpha computation",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "rf"],
+      "matched_table": "ff.three_factor",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_four_factor",
+      "description": "Fama-French four factors (adds momentum UMD) for robustness checks",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "mom", "rf"],
+      "matched_table": "ff.four_factor_monthly",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "mom", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "comp_fundamentals",
+      "description": "Compustat annual fundamentals for book equity (BE = CEQ + TXDB - PSTKRV, fallback AT - DLC - DLTT - PSTKRV), leverage, and B/M ratio",
+      "needed_columns": ["gvkey", "fyear", "datadate", "at", "ceq", "txdb", "pstkrv", "dlc", "dltt", "seq", "prcc_f", "csho"],
+      "matched_table": "comp.funda",
+      "matched_columns": ["gvkey", "fyear", "datadate", "at", "ceq", "txdb", "pstkrv", "dlc", "dltt", "seq", "prcc_f", "csho"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_comp_link",
+      "description": "CRSP-Compustat link table for joining CRSP permno to Compustat gvkey",
+      "needed_columns": ["gvkey", "lpermno", "linktype", "linkprim", "linkdt", "linkenddt"],
+      "matched_table": "crsp_202601.ccmxpf_linktable",
+      "matched_columns": ["gvkey", "lpermno", "linktype", "linkprim", "linkdt", "linkenddt"],
+      "missing_columns": [],
+      "status": "full"
+    }
+  ],
+  "blocking_issues": []
+}

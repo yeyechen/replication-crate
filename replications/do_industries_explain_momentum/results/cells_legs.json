@@ -1,0 +1,65 @@
+[
+ {
+  "metric": "stk_66_long_contrib",
+  "ours": 0.00017587237659198775,
+  "paper": null,
+  "unit": "monthly return",
+  "status": "corroborates_claim"
+ },
+ {
+  "metric": "stk_66_short_contrib",
+  "ours": 0.003959404700251917,
+  "paper": null,
+  "unit": "monthly return",
+  "status": "corroborates_claim"
+ },
+ {
+  "metric": "stk_66_loser_driven",
+  "ours": 1,
+  "paper": 1,
+  "unit": "binary",
+  "status": "PASS"
+ },
+ {
+  "metric": "ind_66_long_contrib",
+  "ours": 0.0022613918679497604,
+  "paper": null,
+  "unit": "monthly return",
+  "status": "corroborates_claim"
+ },
+ {
+  "metric": "ind_66_short_contrib",
+  "ours": 0.0017106532564512785,
+  "paper": null,
+  "unit": "monthly return",
+  "status": "corroborates_claim"
+ },
+ {
+  "metric": "ind_66_long_driven",
+  "ours": 1,
+  "paper": 1,
+  "unit": "binary",
+  "status": "PASS"
+ },
+ {
+  "metric": "ind_11_balanced",
+  "ours": 1,
+  "paper": 1,
+  "unit": "binary",
+  "status": "PASS"
+ },
+ {
+  "metric": "ind_66_wimid",
+  "ours": 0.001473428973720783,
+  "paper": 0.0036,
+  "unit": "monthly return",
+  "status": "Tier2"
+ },
+ {
+  "metric": "ind_66_midlo",
+  "ours": 0.002498616150680255,
+  "paper": 0.0007,
+  "unit": "monthly return",
+  "status": "Tier2"
+ }
+]

@@ -1,0 +1,254 @@
+[
+  {
+    "rule_id": "universe_crsp_all_firms",
+    "category": "universe",
+    "section": "§I Data and Estimation, Sample",
+    "paper_location": "L51",
+    "paper_quote": "Our primary sample consists of all firm observations that are in the CRSP database as of January 1970."
+  },
+  {
+    "rule_id": "sample_nonmissing_return_6mo_listing",
+    "category": "sample",
+    "section": "§I Data and Estimation, Sample",
+    "paper_location": "L51",
+    "paper_quote": "For each month, we select only those firms that have a nonmissing return entry in that month, and that have been in the CRSP database for at least 6 months, allowing us to compute their past 6-month returns."
+  },
+  {
+    "rule_id": "sample_period_oos_1932_1969",
+    "category": "sample",
+    "section": "§I Data and Estimation, Sample",
+    "paper_location": "L51",
+    "paper_quote": "We conduct an out-of-sample test of the explanatory power of the share issuance variable for the September 1932 to December 1969 sample period."
+  },
+  {
+    "rule_id": "var_total_factor",
+    "category": "variable",
+    "section": "§I Data and Estimation, Share Issuance, equation (1)",
+    "paper_location": "L53-57",
+    "paper_quote": "We first compute a total factor at time $t$ , which represents the cumulative product of the CRSP-provided factor $f$ up to period $t$ inclusive: $\\text{Total Factor}_t = \\prod_{i=1}^{t} (1 + f_i)$."
+  },
+  {
+    "rule_id": "var_adjusted_shares",
+    "category": "variable",
+    "section": "§I Data and Estimation, Share Issuance",
+    "paper_location": "L60-63",
+    "paper_quote": "We compute the number of shares outstanding adjusted for splits and other events as $\\text{AdjustedShares}_t = \\text{SharesOutstanding}_t / \\text{Total Factor}_t$."
+  },
+  {
+    "rule_id": "var_issue_annual",
+    "category": "variable",
+    "section": "§I Data and Estimation, Share Issuance, equation (2)",
+    "paper_location": "L66-69",
+    "paper_quote": "We use this measure of adjusted shares to compute annual share issuance at time $t$ as $\\text{ISSUE}_{t,t-11} = \\text{Ln}(\\text{AdjustedShares}_t) - \\text{Ln}(\\text{AdjustedShares}_{t-11})$."
+  },
+  {
+    "rule_id": "var_issue_5year",
+    "category": "variable",
+    "section": "§I Data and Estimation, Share Issuance, equation (3)",
+    "paper_location": "L73-76",
+    "paper_quote": "Analogously our 5-year issuance measure is $\\text{ISSUE}_{t,t-59} = \\text{Ln}(\\text{AdjustedShares}_t) - \\text{Ln}(\\text{AdjustedShares}_{t-59})$."
+  },
+  {
+    "rule_id": "var_dt_dummy",
+    "category": "variable",
+    "section": "§I Data and Estimation, Share Issuance",
+    "paper_location": "L94",
+    "paper_quote": "In such instances, we assign the firm’s 5-year issuance measure a value of zero and set the D-T dummy variable equal to zero; otherwise, the D-T dummy variable is set to one."
+  },
+  {
+    "rule_id": "sample_issue_timing_6mo_lag",
+    "category": "sample",
+    "section": "§I Data and Estimation, Share Issuance",
+    "paper_location": "L96",
+    "paper_quote": "In order to be conservative and ensure that the shares outstanding numbers are available to investors, we only use share changes using 6 month-old CRSP data to predict returns. Thus, current returns (at time 0) are predicted either using $ISSUE_{-17,-6}$ or $ISSUE_{-65,-6}$ ."
+  },
+  {
+    "rule_id": "sample_shares_error_correction",
+    "category": "sample",
+    "section": "§I Data and Estimation, Share Issuance",
+    "paper_location": "L98",
+    "paper_quote": "If the number of shares outstanding changes by more than 20% and subsequently 95% of the change is reversed within three months, then we treat the change as an erroneous entry and we correct the shares outstanding to the level previous to the change."
+  },
+  {
+    "rule_id": "var_bm_source_data60",
+    "category": "variable",
+    "section": "§I Data and Estimation, Book-to-market",
+    "paper_location": "L108",
+    "paper_quote": "We use the annual COMPUSTAT book value of common equity (data60) to construct the book-to-market variable."
+  },
+  {
+    "rule_id": "var_bm_fallback_2yr",
+    "category": "variable",
+    "section": "§I Data and Estimation, Book-to-market",
+    "paper_location": "L108",
+    "paper_quote": "If the previous year’s book value is unavailable, we use the book value 2 years ago."
+  },
+  {
+    "rule_id": "var_bm_log_ratio_dec_me",
+    "category": "variable",
+    "section": "§I Data and Estimation, Book-to-market",
+    "paper_location": "L108",
+    "paper_quote": "Book value is divided by size, where size is constructed using CRSP’s firm market value at the end of December the previous year (concurrent with the book value of common equity)."
+  },
+  {
+    "rule_id": "var_bm_timing_july_june",
+    "category": "variable",
+    "section": "§I Data and Estimation, Book-to-market",
+    "paper_location": "L108",
+    "paper_quote": "This variable is used to forecast returns from July of the current year to June of the following year."
+  },
+  {
+    "rule_id": "var_bm_dummy",
+    "category": "variable",
+    "section": "§I Data and Estimation, Book-to-market",
+    "paper_location": "L110",
+    "paper_quote": "When the book value of equity is unavailable or it is negative, the book value variable is assigned a value of zero and the book value dummy variable is set equal to zero. Otherwise, the dummy variable is set to one."
+  },
+  {
+    "rule_id": "var_me_definition",
+    "category": "variable",
+    "section": "§I Data and Estimation, Size",
+    "paper_location": "L112",
+    "paper_quote": "We use the natural logarithm of the share price times the number of shares outstanding for that month."
+  },
+  {
+    "rule_id": "var_me_timing_june",
+    "category": "variable",
+    "section": "§I Data and Estimation, Size",
+    "paper_location": "L112",
+    "paper_quote": "The SIZE from the month of June is used to predict returns from July of the current year through June of the following year."
+  },
+  {
+    "rule_id": "var_mom_6mo",
+    "category": "variable",
+    "section": "§I Data and Estimation, Momentum",
+    "paper_location": "L114",
+    "paper_quote": "The momentum proxy is the 6-month holding period return of the stock between month 1 and month 6."
+  },
+  {
+    "rule_id": "var_mom_lag_1mo",
+    "category": "variable",
+    "section": "§I Data and Estimation, Momentum",
+    "paper_location": "L114",
+    "paper_quote": "The momentum variable is lagged by 1 month to avoid losing predictive ability due to positive autocorrelation attributable to bid-ask bounce."
+  },
+  {
+    "rule_id": "var_returns_holding_periods",
+    "category": "variable",
+    "section": "§I Data and Estimation, Returns",
+    "paper_location": "L116",
+    "paper_quote": "The dependent variable in our regressions is the stock return for holding periods of 1 month and 6 months, as well as the annual stock return in the first, second, and third year."
+  },
+  {
+    "rule_id": "delisting_ewretd_imputation",
+    "category": "delisting",
+    "section": "§I Data and Estimation, Returns",
+    "paper_location": "L116",
+    "paper_quote": "If return information is missing in CRSP for a given month, we construct the holding period return by replacing the missing stock return with the return of the CRSP equally weighted market portfolio with dividends reinvested (EWRETD)."
+  },
+  {
+    "rule_id": "winsorize_rhs_1pct_both_tails",
+    "category": "winsorize",
+    "section": "§I Data and Estimation, Estimation",
+    "paper_location": "L132",
+    "paper_quote": "Thus, in order to avoid giving any observations undue weight in the regression estimation, we winsorize all right-hand-side variables by setting the smallest and largest 1% of the observations equal to the value of the observation at the respective 1% tail."
+  },
+  {
+    "rule_id": "winsorize_returns_not_transformed",
+    "category": "winsorize",
+    "section": "§I Data and Estimation, Estimation",
+    "paper_location": "L132",
+    "paper_quote": "We do not transform the holding period returns that are used as dependent variables."
+  },
+  {
+    "rule_id": "factor_no_factor_model",
+    "category": "factor",
+    "section": "§I Data and Estimation, Estimation",
+    "paper_location": "L132",
+    "paper_quote": "Our regressions estimate linear relations between returns and our independent variables."
+  },
+  {
+    "rule_id": "fm_monthly_cross_sectional",
+    "category": "fm",
+    "section": "§I Data and Estimation, Estimation",
+    "paper_location": "L134",
+    "paper_quote": "In the same vein as Fama and MacBeth (1973), for each month of data, we estimate separate regressions using returns as our dependent variable."
+  },
+  {
+    "rule_id": "fm_report_averages_adjr2",
+    "category": "fm",
+    "section": "§I Data and Estimation, Estimation",
+    "paper_location": "L134",
+    "paper_quote": "We report the average slope coefficients, intercepts, and adjusted-$R^2$s."
+  },
+  {
+    "rule_id": "fm_overlap_tstats_pontiff1996",
+    "category": "fm",
+    "section": "§I Data and Estimation, Estimation",
+    "paper_location": "L134",
+    "paper_quote": "Using the same procedure as in Pontiff (1996), $t$-statistics for the slope coefficients are calculated with autocorrelation-consistent standard errors that consider the holding period overlap."
+  },
+  {
+    "rule_id": "fm_overlap_ar_order",
+    "category": "fm",
+    "section": "§I Data and Estimation, Estimation",
+    "paper_location": "L134",
+    "paper_quote": "This procedure estimates a regression using each month’s slope estimate where the residuals of the process follow an $n^{th}$-order autoregressive process, with $n$ equal to one minus the length of the holding period (in months)."
+  },
+  {
+    "rule_id": "fm_overlap_intercept_se",
+    "category": "fm",
+    "section": "§I Data and Estimation, Estimation",
+    "paper_location": "L134",
+    "paper_quote": "The standard error of the intercept from this estimation is used as the overlap-consistent standard error of our average slope coefficient."
+  },
+  {
+    "rule_id": "var_table1_december_measurement",
+    "category": "sample",
+    "section": "Table I description, Panel A",
+    "paper_location": "L156",
+    "paper_quote": "The variables are measured at the end of December for the period between 1970 and 2003."
+  },
+  {
+    "rule_id": "var_shares_exclude_split_dividends",
+    "category": "variable",
+    "section": "Table I description, Panel A",
+    "paper_location": "L156",
+    "paper_quote": "Shares associated with splits and stock dividends are not included in the computation of shares outstanding."
+  },
+  {
+    "rule_id": "sort_fm_regression_horse_race",
+    "category": "sort",
+    "section": "§II In-Sample Estimation Results",
+    "paper_location": "L1056",
+    "paper_quote": "The first four rows present a “horse race” by considering separate estimation for book-to-market ($BM$), size ($ME$), momentum ($MOM$), annual issuance ($ISSUE$), and 5-year issuance ($DT-ISSUE$)."
+  },
+  {
+    "rule_id": "fm_sample_size_main_1970_2003",
+    "category": "fm",
+    "section": "Table III description",
+    "paper_location": "L1074",
+    "paper_quote": "These regressions are for the 396 months from January 1970 to December 2003, with a total of 2,155,945 firm-observations."
+  },
+  {
+    "rule_id": "var_table5_oos_obs_counts",
+    "category": "sample",
+    "section": "Table V description, Panel A",
+    "paper_location": "L2263",
+    "paper_quote": "The variables are measured at the end of December for the period between September 1932 and December 1969."
+  },
+  {
+    "rule_id": "var_bm_oos_dff2000",
+    "category": "variable",
+    "section": "§III Out-of-Sample Estimation Results",
+    "paper_location": "L2445",
+    "paper_quote": "We obtain data on the book value of equity from Kenneth French for our out-of-sample study, since COMPUSTAT coverage is limited or nonexistent during this time period."
+  },
+  {
+    "rule_id": "fm_sample_size_oos_1932_1969",
+    "category": "fm",
+    "section": "Table VI description",
+    "paper_location": "L2463",
+    "paper_quote": "These regressions are for the 444 months from September 1932 (to ensure the existence of shares outstanding) to December 1969, with a total of 373,590 firm-observations."
+  }
+]

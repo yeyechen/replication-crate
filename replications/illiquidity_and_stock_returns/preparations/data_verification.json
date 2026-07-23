@@ -1,0 +1,87 @@
+{
+  "verdict": "ready",
+  "requirements": [
+    {
+      "id": "crsp_daily_returns",
+      "description": "Daily stock returns, prices, share volume, shares outstanding for ILLIQ (eq. 1), SDRET, R100/R100YR and daily EW market/size-portfolio returns; NYSE universe 1963-1997. crsp_202601.dsf covers 1925-12-31 to 2024-12-31 (107.7M rows).",
+      "needed_columns": ["permno", "date", "prc", "vol", "ret", "retx", "shrout"],
+      "matched_table": "crsp_202601.dsf",
+      "matched_columns": ["permno", "date", "prc", "vol", "ret", "retx", "shrout"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_monthly_returns",
+      "description": "Monthly returns, prices and shares outstanding for the monthly FM cross-sections (Table 2 dependent variable, month-end SIZE, market cap at year-end y-1). crsp_202601.msf covers 1925-12-31 to 2024-12-31.",
+      "needed_columns": ["permno", "date", "prc", "vol", "ret", "retx", "shrout"],
+      "matched_table": "crsp_202601.msf",
+      "matched_columns": ["permno", "date", "prc", "vol", "ret", "retx", "shrout"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_pit_universe",
+      "description": "Point-in-time share code (10/11 ordinary common) and exchange code (1 = NYSE) validity windows for the NYSE universe filter and the 'listed at end of year y-1' criterion. dsfhdr has hshrcd/hexcd with begdat/enddat; dsenames provides namedt/nameendt plus siccd.",
+      "needed_columns": ["permno", "hshrcd", "hexcd", "begdat", "enddat"],
+      "matched_table": "crsp_202601.dsfhdr",
+      "matched_columns": ["permno", "hshrcd", "hexcd", "begdat", "enddat"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_names_history",
+      "description": "Supplementary names/share-class history (shrcd, exchcd, siccd with namedt/nameendt) for universe checks and ticker history.",
+      "needed_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "siccd"],
+      "matched_table": "crsp_202601.dsenames",
+      "matched_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "siccd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_delisting",
+      "description": "Delisting codes and delisting returns for the Shumway (1997) treatment: use dlret when available, else assign -30% for dlstcd 500/520/551-573/574/580/584 (footnote 9).",
+      "needed_columns": ["permno", "dlstdt", "dlstcd", "dlret", "dlretx"],
+      "matched_table": "crsp_202601.dsedelist",
+      "matched_columns": ["permno", "dlstdt", "dlstcd", "dlret", "dlretx"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_dividends",
+      "description": "Cash distribution amounts and dates for DIVYLD (sum of annual cash dividends / end-of-year price). distcd 1xxx codes are ordinary cash dividends.",
+      "needed_columns": ["permno", "distcd", "divamt", "exdt", "paydt"],
+      "matched_table": "crsp_202601.dsedist",
+      "matched_columns": ["permno", "distcd", "divamt", "exdt", "paydt"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_size_portfolios",
+      "description": "CRSP cap-based size-decile portfolio returns (RSZ_i, i = 2, 4, 6, 8, 10) and the EW market index for Tables 3-4; crsp_202601.msib has monthly decile returns decret1-decret10 plus ewretd/vwretd, 1925-12-31 to 2024-12-31. Decile numbering (1 = smallest) to be verified at runtime against return magnitudes before use.",
+      "needed_columns": ["caldt", "decret2", "decret4", "decret6", "decret8", "decret10", "ewretd"],
+      "matched_table": "crsp_202601.msib",
+      "matched_columns": ["caldt", "decret2", "decret4", "decret6", "decret8", "decret10", "ewretd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "risk_free_rate",
+      "description": "One-month T-bill rate for monthly excess returns (Tables 4; compounded to annual for Table 3 — the paper specifies the one-year bill yield 'as of the beginning of year y' for the annual model, but no one-year T-bill yield series exists in the catalog; the one-month bill compounded annually is the documented substitute, logged in assumptions.md). ff.four_factor_monthly.rf covers 1926-07-31 to 2025-10-31; crsp_202601.mcti.t30ret (30-day T-bill monthly return, 1925-2024) is the equivalent backup covering all of 1963.",
+      "needed_columns": ["dt", "rf"],
+      "matched_table": "ff.four_factor_monthly",
+      "matched_columns": ["dt", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "market_index_daily",
+      "description": "Daily EW/VW market index returns (backup for the equally-weighted market return used in the Scholes-Williams beta market model and as a cross-check on the NYSE-only EW series computed from dsf). crsp_202601.dsi covers 1925-12-31 to 2024-12-31.",
+      "needed_columns": ["date", "ewretd", "vwretd"],
+      "matched_table": "crsp_202601.dsi",
+      "matched_columns": ["date", "ewretd", "vwretd"],
+      "missing_columns": [],
+      "status": "full"
+    }
+  ],
+  "blocking_issues": []
+}

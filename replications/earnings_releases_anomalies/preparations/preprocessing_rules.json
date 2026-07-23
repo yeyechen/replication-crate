@@ -1,0 +1,289 @@
+[
+  {
+    "rule_id": "sample_announcement_dates",
+    "category": "sample",
+    "section": "§2.2B(iii) Use of Hindsight Information",
+    "paper_location": "L270",
+    "paper_quote": "The research in this paper uses actual earnings announcement dates (as reported by Standard and Poor’s) in an attempt to avoid this problem."
+  },
+  {
+    "rule_id": "sort_prior_quarter_cutoffs_equal_weight",
+    "category": "sort",
+    "section": "§2.2B(iii) (footnote 4)",
+    "paper_location": "L286",
+    "paper_quote": "The research in this paper uses cut-off points based on a ranking of the previous quarter's earnings forecast errors to assign firms into one of ten forecast error portfolios, and all observations in a given portfolio are weighted equally."
+  },
+  {
+    "rule_id": "delisting_survivorship_1982_tape",
+    "category": "delisting",
+    "section": "§2.2B(iii) Survivorship (footnote 5)",
+    "paper_location": "L288",
+    "paper_quote": "Firms that were publicly listed in 1973 but were delisted prior to 1982 are excluded from the 1982 tape."
+  },
+  {
+    "rule_id": "universe_compustat_1982_tape",
+    "category": "universe",
+    "section": "§3 Sample Selection",
+    "paper_location": "L338",
+    "paper_quote": "The 1982 Compustat tape, covering 2,454 companies, was the initial data base examined."
+  },
+  {
+    "rule_id": "winsorize_paper_silent",
+    "category": "winsorize",
+    "section": "§3 Sample Selection",
+    "paper_location": "L338",
+    "paper_quote": "The 1982 Compustat tape, covering 2,454 companies, was the initial data base examined. paper silent on winsorization — the paper describes no trimming or winsorization of quarterly earnings, forecast errors, or security returns; none is applied."
+  },
+  {
+    "rule_id": "universe_crsp_daily_screen",
+    "category": "universe",
+    "section": "§3 Sample Selection",
+    "paper_location": "L338",
+    "paper_quote": "The second screen required each company to have data on the CRSP daily tape."
+  },
+  {
+    "rule_id": "sample_ten_consecutive_earnings",
+    "category": "sample",
+    "section": "§3 Sample Selection",
+    "paper_location": "L338",
+    "paper_quote": "The first screen, requiring each company to have at least ten consecutive earnings observations, reduced the sample to 2,213 companies."
+  },
+  {
+    "rule_id": "sample_earnings_file_range",
+    "category": "sample",
+    "section": "§3 Sample Selection",
+    "paper_location": "L338",
+    "paper_quote": "Early versions of the quarterly Compustat tape were then used to build for each company (if available) a quarterly earnings file covering the second quarter of 1970 to the fourth quarter of the 1981 period."
+  },
+  {
+    "rule_id": "sample_car_period",
+    "category": "sample",
+    "section": "§3 Sample Selection",
+    "paper_location": "L340",
+    "paper_quote": "The cumulative abnormal return (CAR) results reported in this paper cover the 1974 to 1981 period."
+  },
+  {
+    "rule_id": "sample_pre1974_estimation",
+    "category": "sample",
+    "section": "§3 Sample Selection",
+    "paper_location": "L340",
+    "paper_quote": "The pre-1974 period is used in estimating univariate time-series models."
+  },
+  {
+    "rule_id": "sample_obs_per_quarter_bounds",
+    "category": "sample",
+    "section": "§3 Sample Selection",
+    "paper_location": "L340",
+    "paper_quote": "The minimum number of observations in any one quarter is 1,495 while the maximum number is 1,978."
+  },
+  {
+    "rule_id": "var_earnings_forecast_model",
+    "category": "variable",
+    "section": "§4 Models (eq. 8)",
+    "paper_location": "L357",
+    "paper_quote": "E(Q_{i,t}) = Q_{i,t-4} + \\phi_i(Q_{i,t-1} - Q_{i,t-5}) + \\delta_i \\quad (8)"
+  },
+  {
+    "rule_id": "var_forecast_params_20q",
+    "category": "variable",
+    "section": "§4 Models (eq. 8 text)",
+    "paper_location": "L360",
+    "paper_quote": "The $\\phi_i$ and $\\delta_i$ parameters are estimated using the most recent twenty quarters of data."
+  },
+  {
+    "rule_id": "var_fe_model1",
+    "category": "variable",
+    "section": "§4 Models (eq. 9)",
+    "paper_location": "L365",
+    "paper_quote": "\\text{FE}_i^1 = \\frac{Q_{i,t} - E(Q_{i,t})}{|Q_{i,t}|} \\quad (9)"
+  },
+  {
+    "rule_id": "var_fe_model2",
+    "category": "variable",
+    "section": "§4 Models (eq. 10)",
+    "paper_location": "L371",
+    "paper_quote": "\\text{FE}_i^2 = \\frac{Q_{i,t} - E(Q_{i,t})}{\\sigma[Q_{i,t} - E(Q_{i,t})]} \\quad (10)"
+  },
+  {
+    "rule_id": "var_fe_model3",
+    "category": "variable",
+    "section": "§4 Models (eq. 12)",
+    "paper_location": "L387",
+    "paper_quote": "\\text{FE}_i^3 = \\frac{\\sum_{t=-1}^{0} \\tilde{u}_{i,t}}{\\sigma(\\tilde{u}_{i,t})} \\quad (12)"
+  },
+  {
+    "rule_id": "var_fe_model3_sigma",
+    "category": "variable",
+    "section": "§4 Models (eq. 12 definition)",
+    "paper_location": "L399",
+    "paper_quote": "\\sigma(\\tilde{u}_{i,t}) = \\text{the standard deviation of } \\tilde{u}_{i,t} \\text{ in the 250-trading-day period prior to the } [-1, 0] \\text{ event time period being examined.}"
+  },
+  {
+    "rule_id": "var_fe_model4",
+    "category": "variable",
+    "section": "§4 Models (eq. 13)",
+    "paper_location": "L407",
+    "paper_quote": "\\text{FE}_i^4 = \\frac{\\left( \\sum_{t=-60}^{0} \\tilde{u}_{i,t} \\right) / 61}{\\sigma(\\tilde{u}_{i,t})} \\quad (13)"
+  },
+  {
+    "rule_id": "var_fe_model4_window",
+    "category": "variable",
+    "section": "§4 Models (eq. 13 definition)",
+    "paper_location": "L413",
+    "paper_quote": "\\sum_{t=-60}^{0} \\tilde{u}_{i,t} = \\text{the cumulative abnormal return in the 61-trading-day period up to and including the day of the earnings announcement, and}"
+  },
+  {
+    "rule_id": "var_fe_model4_sigma",
+    "category": "variable",
+    "section": "§4 Models (eq. 13 definition)",
+    "paper_location": "L417",
+    "paper_quote": "\\sigma(\\tilde{u}_{i,t}) = \\text{the standard deviation of } \\tilde{u}_{i,t} \\text{ in the 250-trading-day period prior to the } [-60, 0] \\text{ event time period being examined.}"
+  },
+  {
+    "rule_id": "var_forecast_params_first5q",
+    "category": "variable",
+    "section": "§4 Models (footnote 6)",
+    "paper_location": "L424",
+    "paper_quote": "For the first five quarters of the 1974–1981 period, 15, 16, 17, 18, and 19 observations, respectively, are used to estimate $\\phi_i$ and $\\delta_i$ ."
+  },
+  {
+    "rule_id": "var_fe_model2_sigma_max20",
+    "category": "variable",
+    "section": "§4 Models (footnote 7)",
+    "paper_location": "L426",
+    "paper_quote": "Only forecast errors observed prior to the quarter examined are used to estimate the standard deviation of the forecast error. The maximum number of observations used to compute the standard deviation is 20."
+  },
+  {
+    "rule_id": "sort_fep_decile_cutoffs",
+    "category": "sort",
+    "section": "§4 Models (portfolio formation)",
+    "paper_location": "L829",
+    "paper_quote": "These deciles were used as the cut-offs for assigning firms into one of ten forecast error portfolios in the quarter subsequent to that in which the cut-off points were determined."
+  },
+  {
+    "rule_id": "var_abnormal_return_size_decale",
+    "category": "variable",
+    "section": "§5 (eq. 15)",
+    "paper_location": "L921",
+    "paper_quote": "\\tilde{u}_{i,t} = \\tilde{R}_{i,t} - \\tilde{R}_{p,t}"
+  },
+  {
+    "rule_id": "factor_size_decile_benchmark",
+    "category": "factor",
+    "section": "§5 (eq. 15 definition)",
+    "paper_location": "L929",
+    "paper_quote": "$\\tilde{R}_{p,t}$ = equally weighted mean return on the NYSE firm size decile that firm $i$ is a member of in the quarter examined."
+  },
+  {
+    "rule_id": "factor_size_decile_construction",
+    "category": "factor",
+    "section": "§5 (size decile construction)",
+    "paper_location": "L933",
+    "paper_quote": "The firm size deciles used in (15) are constructed by ranking all firms on the NYSE at the start of each year and then computing the mean daily returns of each decile for the next 12 months."
+  },
+  {
+    "rule_id": "var_beta_annual_regression",
+    "category": "variable",
+    "section": "Table 3 (footnote a)",
+    "paper_location": "L1353",
+    "paper_quote": "The beta is based on a separate regression using daily data for each year. The annual betas are averaged over the nine-year period."
+  },
+  {
+    "rule_id": "sample_empirical_dist_8000",
+    "category": "sample",
+    "section": "§5 Significance Testing (step 1)",
+    "paper_location": "L1357",
+    "paper_quote": "Randomly select 8,000 firm/quarter combinations over the 1974 to 1981 period (out of a maximum of 65,696—2,053 firms × 32 quarters)."
+  },
+  {
+    "rule_id": "sample_availability_requirements",
+    "category": "sample",
+    "section": "§5 Significance Testing (step 2)",
+    "paper_location": "L1359",
+    "paper_quote": "Select those observations satisfying the announcement date/security return availability requirements and compute the CAR for that sample over the time period in question."
+  },
+  {
+    "rule_id": "sample_empirical_dist_1000_trials",
+    "category": "sample",
+    "section": "§5 Significance Testing (step 3)",
+    "paper_location": "L1363",
+    "paper_quote": "Repeat Steps 1 and 2 1,000 times and then rank the sample CAR’s from lowest to highest to obtain the empirical distribution of CAR’s for the sample."
+  },
+  {
+    "rule_id": "sample_quintile_200_trials",
+    "category": "sample",
+    "section": "§5 Significance Testing",
+    "paper_location": "L1367",
+    "paper_quote": "Significance tests presented in Section 7 for the separate firm size quintiles are based on an empirical distribution generated over 200 independent trials for the specific firm size quintile being examined."
+  },
+  {
+    "rule_id": "var_car_m1_0",
+    "category": "variable",
+    "section": "§6 (event windows)",
+    "paper_location": "L1373",
+    "paper_quote": "$[-1, 0]$ = CAR for the trading day preceding and the trading day of the earnings announcement,"
+  },
+  {
+    "rule_id": "var_car_m60_0",
+    "category": "variable",
+    "section": "§6 (event windows)",
+    "paper_location": "L1375",
+    "paper_quote": "$[-60, 0]$ = CAR from 61 trading days up to and including the day of the earnings announcement, and"
+  },
+  {
+    "rule_id": "var_car_p1_p60",
+    "category": "variable",
+    "section": "§6 (event windows)",
+    "paper_location": "L1377",
+    "paper_quote": "$[+1, +60]$ = CAR for the 60-trading-day period subsequent to the earnings announcement date."
+  },
+  {
+    "rule_id": "sample_significance_percentile_rule",
+    "category": "sample",
+    "section": "Table 4 (Significance Testing)",
+    "paper_location": "L1576-1578",
+    "paper_quote": "* For Portfolio 1–5, * Indicates CAR < 1st Percentile of Sample Distribution of $R_i - R_{p}$ .\n\n* For Portfolio 6–10, * Indicates CAR > 99th Percentile of Sample Distribution of $R_i - R_{p}$ ."
+  },
+  {
+    "rule_id": "sort_size_quintiles_nyse",
+    "category": "sort",
+    "section": "§7 Firm Size Partitions",
+    "paper_location": "L2088",
+    "paper_quote": "Each observation underlying Tables 4 and 5 was placed into one of five NYSE firm size quintiles based on the firm’s market capitalization at the start of the year of each earnings announcement examined: I = smallest firm to .20 market capitalization decile, II = .20 decile to .40 decile, . . . V = .80 decile to largest firm."
+  },
+  {
+    "rule_id": "fm_cross_sectional_regression",
+    "category": "fm",
+    "section": "§7 (eq. 16)",
+    "paper_location": "L2095",
+    "paper_quote": "\\text{CAR}_j = \\hat{\\alpha} + \\hat{\\beta}_1 \\cdot \\text{FEP}_j + \\hat{\\beta}_2 \\cdot \\text{FSQ}_j + \\hat{e}_j \\quad (16)"
+  },
+  {
+    "rule_id": "var_fep_coding",
+    "category": "variable",
+    "section": "§7 (eq. 16 definition)",
+    "paper_location": "L2101",
+    "paper_quote": "$\\text{FEP}_j$ = a coding from 1 to 10 of the earnings forecast error of portfolio $j$ , and"
+  },
+  {
+    "rule_id": "var_fsq_coding",
+    "category": "variable",
+    "section": "§7 (eq. 16 definition)",
+    "paper_location": "L2102",
+    "paper_quote": "$\\text{FSQ}_j$ = a coding of the firm size quintile of portfolio $j$ . For FEP $_1$ to FEP $_5$ , the firm size quintiles (I–V) are each coded I(10), II(9), III(8), IV(7) and V(6). For FEP $_6$ to FEP $_{10}$ , the firm size quintiles were each coded I(1), II(2), III(3), IV(4) and V(5)."
+  },
+  {
+    "rule_id": "factor_market_index_ew",
+    "category": "factor",
+    "section": "Appendix (eq. 17 definition)",
+    "paper_location": "L3023",
+    "paper_quote": "$ R_{i,t} $ = return on security $ i $ in day $ t $ and $ R_{M,t} $ = equally weighted return on CRSP daily file (NYSE and ASE firms) in day $ t $ ."
+  },
+  {
+    "rule_id": "fm_car_aggregation",
+    "category": "fm",
+    "section": "Appendix (eq. 18)",
+    "paper_location": "L3490",
+    "paper_quote": "\\text{CAR} = \\frac{1}{n} \\sum_{i=1}^{N} \\sum_{t=1}^{T} \\tilde{u}_{i,t} \\quad (18)"
+  }
+]

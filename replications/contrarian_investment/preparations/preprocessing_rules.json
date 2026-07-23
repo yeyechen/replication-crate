@@ -1,0 +1,191 @@
+[
+  {
+    "rule_id": "universe_nyse_amex",
+    "category": "universe",
+    "section": "I. Methodology",
+    "paper_location": "L116",
+    "paper_quote": "The universe of stocks is the New York Stock Exchange (NYSE) and the American Stock Exchange (AMEX)."
+  },
+  {
+    "rule_id": "universe_share_code_convention",
+    "category": "universe",
+    "section": "I. Methodology",
+    "paper_location": "L116-L120",
+    "paper_quote": "Paper silent on explicit CRSP share codes. The universe is stated as NYSE and AMEX stocks (L116); the paper emphasizes that NASDAQ firms are excluded ('The major expansion of COMPUSTAT largely involved adding (successful) NASDAQ firms', L120). Implement with CRSP share codes 10 and 11 (ordinary common shares) and exchange codes 1 (NYSE) and 2 (AMEX) via a point-in-time dsenames join — the standard operationalization of an NYSE/AMEX common-stock universe."
+  },
+  {
+    "rule_id": "sample_period",
+    "category": "sample",
+    "section": "I. Methodology",
+    "paper_location": "L116",
+    "paper_quote": "The sample period covered in this study is from the end of April 1963 to the end of April 1990."
+  },
+  {
+    "rule_id": "sample_formation_april",
+    "category": "sample",
+    "section": "I. Methodology",
+    "paper_location": "L116-L122",
+    "paper_quote": "we look at portfolios formed every year starting at the end of April 1968 ... We form portfolios in April to ensure that the previous year's accounting numbers were available at the time of formation. (22 formation periods: end of April 1968 through end of April 1989.)"
+  },
+  {
+    "rule_id": "sample_five_year_history",
+    "category": "sample",
+    "section": "I. Methodology",
+    "paper_location": "L116",
+    "paper_quote": "Some of our formation strategies require 5 years of past accounting data. Consequently, we look at portfolios formed every year starting at the end of April 1968."
+  },
+  {
+    "rule_id": "sample_positive_ratios",
+    "category": "sample",
+    "section": "I. Methodology",
+    "paper_location": "L162",
+    "paper_quote": "For these classifications, we consider only stocks with positive ratios of cash flow-to-price or earnings-to-price because negative ratios cannot be interpreted in terms of expected growth rates."
+  },
+  {
+    "rule_id": "sample_large_50pct",
+    "category": "sample",
+    "section": "III.B. Do These Results Apply As Well to Large Stocks?",
+    "paper_location": "L1261-L1283",
+    "paper_quote": "Table III presents a summary version of Table II for the subsample consisting of the largest 50 percent of our NYSE/AMEX firms. ... At the end of each April between 1968 and 1989, 9 subgroups of the largest 50 percent of stocks by market capitalization are formed."
+  },
+  {
+    "rule_id": "delisting_size_decile_replacement",
+    "category": "delisting",
+    "section": "I. Methodology",
+    "paper_location": "L138",
+    "paper_quote": "If a stock disappears from CRSP during a year, its return is replaced until the end of the year with the return on a corresponding size decile portfolio."
+  },
+  {
+    "rule_id": "sort_univariate_deciles",
+    "category": "sort",
+    "section": "II. Simple Glamour and Value Strategies",
+    "paper_location": "L206",
+    "paper_quote": "At the end of each April between 1968 and 1989, 10-decile portfolios are formed in ascending order based on B/M, C/P, E/P, and GS. ... We divide the universe of stocks annually into book-to-market (B/M) deciles, where book value is taken from COMPUSTAT for the end of the previous fiscal year, and market value is taken from CRSP as the market value of equity at portfolio formation time (L166)."
+  },
+  {
+    "rule_id": "sort_gs_weighted_rank",
+    "category": "sort",
+    "section": "II. Simple Glamour and Value Strategies",
+    "paper_location": "L742",
+    "paper_quote": "for each company for each of Years -1, -2, ..., -5 prior to formation, we calculate the GS in that year. Then, for each year, we rank all firms by GS for that year. We then compute each firm's weighted average rank, giving the weight of 5 to its growth rank in Year -1, the weight of 4 to its growth rank in Year -2, etc. Finally, we form deciles based on each stock's weighted average sales growth rank."
+  },
+  {
+    "rule_id": "sort_2d_30_40_30",
+    "category": "sort",
+    "section": "III.A. Performance of Contrarian Strategies",
+    "paper_location": "L778-L779",
+    "paper_quote": "we independently sort stocks into three groups (1) bottom 30 percent, (2) middle 40 percent, and (3) top 30 percent) by GS and by C/P, and then take intersections resulting from the two classifications. Because the classifications are done independently, extreme glamour (high GS, low C/P) and value portfolios (low GS, high C/P) contain greater than average numbers of stocks, since GS and C/P are negatively correlated (L1213)."
+  },
+  {
+    "rule_id": "sort_value_glamour_corners",
+    "category": "sort",
+    "section": "III.A. Performance of Contrarian Strategies",
+    "paper_location": "L796",
+    "paper_quote": "Depending on the two variables being used for classification, the value portfolio either refers to the portfolio containing stocks ranked in the top group (3) on both variables from among C/P, E/P, or B/M, or else the portfolio containing stocks ranking in the top group on one of those variables and in the bottom group (1) on GS. The glamour portfolio contains stocks with precisely the opposite set of rankings."
+  },
+  {
+    "rule_id": "sort_size_deciles_prev_year_end",
+    "category": "sort",
+    "section": "I. Methodology",
+    "paper_location": "L140",
+    "paper_quote": "To adjust portfolio returns for size, we first identify, for every stock in the sample, its market capitalization decile at the end of the previous year. We then construct a size benchmark return for each portfolio as follows. For each stock in the portfolio, replace its return in each year with an annual buy-and-hold return on an equally weighted portfolio of all stocks in its size decile for that year."
+  },
+  {
+    "rule_id": "winsorize_paper_silent",
+    "category": "winsorize",
+    "section": "I. Methodology",
+    "paper_location": "L114-L163",
+    "paper_quote": "Paper silent: the methodology section (Section I, L114-L163) does not mention winsorization or trimming of any variable. No winsorization is applied. The sorts are rank-based (deciles and 30/40/30 groups), which makes portfolio assignment robust to outliers by construction; the only stock-level screens the paper states are the positive C/P and E/P requirements for those sorts (L162)."
+  },
+  {
+    "rule_id": "factor_size_benchmark_only",
+    "category": "factor",
+    "section": "I. Methodology",
+    "paper_location": "L140",
+    "paper_quote": "For most of our results, we present size-adjusted returns as well as raw returns. ... The annual size-adjusted return on the original portfolio is then computed as the return on that portfolio minus the return on that year's size benchmark portfolio. (No multi-factor model is used for the main portfolio results; the only risk adjustments are the size-decile benchmark here and CAPM betas vs. the value-weighted index in Table VIII.)"
+  },
+  {
+    "rule_id": "factor_beta_vw_index",
+    "category": "factor",
+    "section": "V. Are Contrarian Strategies Riskier?",
+    "paper_location": "L2788",
+    "paper_quote": "For each portfolio described below, we compute, using 22 year-after-the-formation returns as observations, its beta with respect to the value-weighted index. ... We also have corresponding returns on the value-weighted CRSP index and the risk-free asset, and hence can calculate a beta for each portfolio (L2342)."
+  },
+  {
+    "rule_id": "fm_fama_macbeth_year1",
+    "category": "fm",
+    "section": "III.C. Regression Analysis",
+    "paper_location": "L1671",
+    "paper_quote": "for postformation Year +1, we run 22 separate cross-sectional regressions in which the dependent variable is the annual return on stock i and the independent variables are characteristics of stock i observed at the beginning of the year. Then, using the Fama-MacBeth (1973) procedure, the coefficients for these 22 cross-sectional regressions are averaged and the t-statistics are computed. ... The results presented in Table IV are for the Year +1."
+  },
+  {
+    "rule_id": "fm_hansen_hodrick_se",
+    "category": "fm",
+    "section": "V. Are Contrarian Strategies Riskier?",
+    "paper_location": "L2278",
+    "paper_quote": "Standard errors for t-tests involving overlapping 3- and 5-year horizons are computed using the method of Hansen-Hodrick (1980), assuming annual MA(2) and MA(4) processes, respectively."
+  },
+  {
+    "rule_id": "var_bm_definition",
+    "category": "variable",
+    "section": "II. Simple Glamour and Value Strategies",
+    "paper_location": "L166-L206",
+    "paper_quote": "B/M is the ratio of book value of equity to market value of equity ... We divide the universe of stocks annually into book-to-market (B/M) deciles, where book value is taken from COMPUSTAT for the end of the previous fiscal year, and market value is taken from CRSP as the market value of equity at portfolio formation time."
+  },
+  {
+    "rule_id": "var_accounting_definitions",
+    "category": "variable",
+    "section": "I. Methodology",
+    "paper_location": "L142",
+    "paper_quote": "All accounting variables are taken from COMPUSTAT. Earnings are measured before extraordinary items, and cash flow is defined as earnings plus depreciation. (C/P is the ratio of cash flow to market value of equity; E/P is the ratio of earnings to market value of equity — Table I caption, L206 — using end-of-April market value and previous-fiscal-year accounting numbers.)"
+  },
+  {
+    "rule_id": "var_gs_sales_growth",
+    "category": "variable",
+    "section": "II. Simple Glamour and Value Strategies",
+    "paper_location": "L742",
+    "paper_quote": "We measure past growth by growth in sales (GS) since sales is less volatile than either cash flow or earnings ... for each company for each of Years -1, -2, ..., -5 prior to formation, we calculate the GS in that year. (Year -k sales growth is sale in fiscal year ending in/before April of year t-k divided by sale one year earlier, minus one; the five annual growth rates feed the weighted average rank of sort_gs_weighted_rank.)"
+  },
+  {
+    "rule_id": "var_size_log_me",
+    "category": "variable",
+    "section": "III.C. Regression Analysis",
+    "paper_location": "L1691",
+    "paper_quote": "SIZE, the end of April natural logarithm of market value of equity (in millions)"
+  },
+  {
+    "rule_id": "var_ep_cp_positive_dummies",
+    "category": "variable",
+    "section": "III.C. Regression Analysis",
+    "paper_location": "L1909",
+    "paper_quote": "we define variables C/P+ and E/P+, which are equal to zero when C/P and E/P are negative, and are equal to C/P and E/P when they are positive. We also include in the regressions dummy variables, called DC/P and DE/P, which take the value of 1 when C/P or E/P are negative, respectively, and zero otherwise."
+  },
+  {
+    "rule_id": "var_annual_buy_hold_ew",
+    "category": "variable",
+    "section": "I. Methodology",
+    "paper_location": "L138",
+    "paper_quote": "Within each of our portfolios, we equally weight all the stocks and compute returns using an annual buy-and-hold strategy for Years +1, +2, ..., +5 relative to the time of formation. ... At the end of each year, the portfolio is rebalanced and each surviving stock gets the same weight."
+  },
+  {
+    "rule_id": "var_saar_definition",
+    "category": "variable",
+    "section": "I. Methodology",
+    "paper_location": "L140-L206",
+    "paper_quote": "SAAR is the average annual size-adjusted return computed over 5 postformation years (Table I caption, L206); each annual size-adjusted return is the portfolio return minus the return on that year's size benchmark portfolio (L140)."
+  },
+  {
+    "rule_id": "var_cr5_definition",
+    "category": "variable",
+    "section": "II. Simple Glamour and Value Strategies",
+    "paper_location": "L206",
+    "paper_quote": "CR_5 is the compounded 5-year return assuming annual rebalancing."
+  },
+  {
+    "rule_id": "var_growth_per_dollar_invested",
+    "category": "variable",
+    "section": "I. Methodology",
+    "paper_location": "L144-L160",
+    "paper_quote": "We consider the portfolio that invests $1 in each stock at the end of Year -4. This fixes the proportion of each firm owned at 1/(market capitalization) ... For each stock in the portfolio, we multiply total firm earnings by the proportion of the firm owned. We then sum these numbers across all stocks in the portfolio for that year and divide by the number of stocks in the portfolio. ... we average Year -4 and Year -3 portfolio earnings across all 22 formation periods before computing growth rates."
+  }
+]

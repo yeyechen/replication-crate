@@ -1,0 +1,359 @@
+[
+  {
+    "rule_id": "var_illiq_daily",
+    "category": "variable",
+    "section": "§2.1 Measures of illiquidity",
+    "paper_location": "L103",
+    "paper_quote": "Stock illiquidity is defined here as the average ratio of the daily absolute return to the (dollar) trading volume on that day, $|R_{iyd}|/VOLD_{iyd}$ ."
+  },
+  {
+    "rule_id": "var_illiq_annual",
+    "category": "variable",
+    "section": "§2.1 Measures of illiquidity",
+    "paper_location": "L105-L112",
+    "paper_quote": "ILLIQ_{iy} = 1/D_{iy} \\sum_{t=1}^{D_{iy}} |R_{iyd}|/VOLD_{ivyd},"
+  },
+  {
+    "rule_id": "universe_nyse",
+    "category": "universe",
+    "section": "§2.2 Empirical methodology",
+    "paper_location": "L158",
+    "paper_quote": "The effect of illiquidity on stock return is examined for stocks traded in the New York Stock Exchange (NYSE) in the years 1963–1997, using data from daily and monthly databases of CRSP (Center for Research of Securities Prices of the University of Chicago)."
+  },
+  {
+    "rule_id": "fm_monthly_cross_sections",
+    "category": "fm",
+    "section": "§2.2 Empirical methodology",
+    "paper_location": "L158",
+    "paper_quote": "A cross-section model is estimated for each month $m = 1, 2, \\ldots, 12$ in year $y$ , $y = 1964, 1965, \\ldots, 1997$ (a total of 408 months), where monthly stock returns are a function of stock characteristics:"
+  },
+  {
+    "rule_id": "delisting_adjusted_returns",
+    "category": "delisting",
+    "section": "§2.2 Empirical methodology",
+    "paper_location": "L165",
+    "paper_quote": "$R_{imy}$ is the return on stock $i$ in month $m$ of year $y$ , with returns being adjusted for stock delistings to avoid survivorship bias, following Shumway (1997)."
+  },
+  {
+    "rule_id": "fm_time_series_average",
+    "category": "fm",
+    "section": "§2.2 Empirical methodology",
+    "paper_location": "L165",
+    "paper_quote": "These monthly estimates are averaged and tests of statistical significance are performed."
+  },
+  {
+    "rule_id": "sample_min_trading_days",
+    "category": "sample",
+    "section": "§2.2 Empirical methodology",
+    "paper_location": "L169",
+    "paper_quote": "(i) The stock has return and volume data for more than 200 days during year $y - 1$ . This makes the estimated parameters more reliable. Also, the stock must be listed at the end of year $y - 1$ ."
+  },
+  {
+    "rule_id": "sample_min_price",
+    "category": "sample",
+    "section": "§2.2 Empirical methodology",
+    "paper_location": "L171",
+    "paper_quote": "(ii) The stock price is greater than \\ $5 at the end of year $ y - 1 $."
+  },
+  {
+    "rule_id": "delisting_return_imputation",
+    "category": "delisting",
+    "section": "§2.2 (footnote 9)",
+    "paper_location": "L177",
+    "paper_quote": "A return of $-30\\%$ is assigned if the deletion reason is coded by 500 (reason unavailable), 520 (went to OTC), 551–573 and 580 (various reasons), 574 (bankruptcy) and 584 (does not meet exchange financial guidelines)."
+  },
+  {
+    "rule_id": "sample_mcap_available",
+    "category": "sample",
+    "section": "§2.2 Empirical methodology",
+    "paper_location": "L189",
+    "paper_quote": "(iii) The stock has data on market capitalization at the end of year $y - 1$ in the CRSP database."
+  },
+  {
+    "rule_id": "winsorize_illiq_two_tails",
+    "category": "winsorize",
+    "section": "§2.2 Empirical methodology",
+    "paper_location": "L191",
+    "paper_quote": "(iv) Outliers are eliminated—stocks whose estimated $ILLIQ_{iy}$ in year $y - 1$ is at the highest or lowest 1% tails of the distribution (after satisfying criteria (i)–(iii))."
+  },
+  {
+    "rule_id": "sample_cross_section_counts",
+    "category": "sample",
+    "section": "§2.2 Empirical methodology",
+    "paper_location": "L193",
+    "paper_quote": "There are between 1061 and 2291 stocks that satisfy these four conditions and are included in the cross-section estimations."
+  },
+  {
+    "rule_id": "var_illiq_scaling",
+    "category": "variable",
+    "section": "§2.3.1 Liquidity variables",
+    "paper_location": "L199",
+    "paper_quote": "The measure of liquidity is $ILLIQ_{iy}$ that is calculated for each stock $i$ in year $y$ from daily data as in (1) above (multiplied by $10^6$ )."
+  },
+  {
+    "rule_id": "var_ailliq",
+    "category": "variable",
+    "section": "§2.3.1 Liquidity variables",
+    "paper_location": "L206",
+    "paper_quote": "(The stocks that are used to calculate the average illiquidity are those that satisfy conditions (i)–(iv) above.)"
+  },
+  {
+    "rule_id": "var_illiqma",
+    "category": "variable",
+    "section": "§2.3.1 Liquidity variables",
+    "paper_location": "L206-L210",
+    "paper_quote": "Since average illiquidity varies considerably over the years, $ILLIQ_{iy}$ is replaced in the estimation of the cross-section model (2) by its mean-adjusted value"
+  },
+  {
+    "rule_id": "var_size",
+    "category": "variable",
+    "section": "§2.3.1 Liquidity variables",
+    "paper_location": "L213",
+    "paper_quote": "The cross-sectional model (2) also includes $SIZE_{iy}$ , the market value of stock $i$ at the end of year $y$ , as given by CRSP."
+  },
+  {
+    "rule_id": "sort_size_portfolios_for_beta",
+    "category": "sort",
+    "section": "§2.3.2 Risk variables",
+    "paper_location": "L217",
+    "paper_quote": "At the end of each year $y$ , stocks are ranked by their size (capitalization) and divided into ten equal portfolios."
+  },
+  {
+    "rule_id": "sample_stats_convention",
+    "category": "sample",
+    "section": "Table 1 description",
+    "paper_location": "L230",
+    "paper_quote": "The table presents the means over the 34 years of the annual means, standard deviations and skewness and the medians of the annual means, as well as the maximum and minimum annual means."
+  },
+  {
+    "rule_id": "factor_market_model_scholes_williams",
+    "category": "factor",
+    "section": "§2.3.2 Risk variables",
+    "paper_location": "L291",
+    "paper_quote": "$RM_{ty}$ is the equally-weighted market return and $BETA_{py}$ is the slope coefficient, estimated by the Scholes and Williams (1977) method."
+  },
+  {
+    "rule_id": "var_beta_assignment",
+    "category": "variable",
+    "section": "§2.3.2 Risk variables",
+    "paper_location": "L291",
+    "paper_quote": "The beta assigned to stock $i$ , $BETA_{iy}$ , is $BETA_{py}$ of the portfolio in which stock $i$ is included."
+  },
+  {
+    "rule_id": "var_sdret",
+    "category": "variable",
+    "section": "§2.3.2 Risk variables",
+    "paper_location": "L293",
+    "paper_quote": "The stock total risk is $SDRET_{iy}$ , the standard deviation of the daily return on stock $i$ in year $y$ (multiplied by $10^2$ )."
+  },
+  {
+    "rule_id": "var_divyld",
+    "category": "variable",
+    "section": "§2.3.3 Additional variables",
+    "paper_location": "L305",
+    "paper_quote": "The cross-sectional model (2) includes the dividend yield for stock $ i $ in year $ y $ , $ DIVYLD_{iy} $ , calculated as the sum of the dividends during year $ y $ divided by the end-of-year price (following Brennan et al., 1998)."
+  },
+  {
+    "rule_id": "var_r100",
+    "category": "variable",
+    "section": "§2.3.3 Additional variables",
+    "paper_location": "L307",
+    "paper_quote": "$ R100_{iy} $ , the return on stock $ i $ during the last 100 days of year $ y $"
+  },
+  {
+    "rule_id": "var_r100yr",
+    "category": "variable",
+    "section": "§2.3.3 Additional variables",
+    "paper_location": "L307",
+    "paper_quote": "$ R100YR_{iy} $ , the return on stock $ i $ over the rest of the period, between the beginning of the year and 100 days before its end."
+  },
+  {
+    "rule_id": "fm_january_exclusion",
+    "category": "fm",
+    "section": "§2.4 Cross-section estimation results",
+    "paper_location": "L322",
+    "paper_quote": "Tests are also performed for the means that exclude the January coefficients since by some studies, excluding January makes the effects of beta, size and the bid-ask spread insignificant (e.g., Keim, 1983; Tinic and West, 1986; Eleswarapu and Reinganum, 1993)."
+  },
+  {
+    "rule_id": "fm_two_subperiods",
+    "category": "fm",
+    "section": "§2.4 Cross-section estimation results",
+    "paper_location": "L322",
+    "paper_quote": "Finally, to examine the stability over time of the effects of the stock characteristics, tests are done separately for two equal subperiods of 204 months (17 years) each."
+  },
+  {
+    "rule_id": "var_lnsize",
+    "category": "variable",
+    "section": "Table 2 description",
+    "paper_location": "L340",
+    "paper_quote": "In $SIZE$ is the logarithm of the market capitalization of the stock at the end of the year"
+  },
+  {
+    "rule_id": "sample_table2_window",
+    "category": "sample",
+    "section": "Table 2 description",
+    "paper_location": "L342",
+    "paper_quote": "The data include 408 months over 34 years, 1964–1997, (the stock characteristics are calculated for the years 1963–1996)."
+  },
+  {
+    "rule_id": "winsorize_ailliq_upper_tail",
+    "category": "winsorize",
+    "section": "§3.1 Estimation procedure and results",
+    "paper_location": "L503",
+    "paper_quote": "Market illiquidity is measured by $AILLIQ_y$ (see (3)), the average across all stocks in each year $y$ of stock illiquidity, $ILLIQ_{iy}$ (defined in (1)), excluding stocks whose $ILLIQ_{iy}$ is in the upper 1% tail of the distribution for the year."
+  },
+  {
+    "rule_id": "var_ar1_annual",
+    "category": "variable",
+    "section": "§3.1 Estimation procedure and results",
+    "paper_location": "L507-L509",
+    "paper_quote": "\\ln AILLIQ_y = c_0 + c_1 \\ln AILLIQ_{y-1} + v_y,"
+  },
+  {
+    "rule_id": "var_model10_annual",
+    "category": "variable",
+    "section": "§3.1 Estimation procedure and results",
+    "paper_location": "L539",
+    "paper_quote": "(RM - Rf)_y = g_0 + g_1 \\ln AILLIQ_{y-1} + g_2 \\ln AILLIQ_y^U + w_y,"
+  },
+  {
+    "rule_id": "var_unexpected_illiq_annual",
+    "category": "variable",
+    "section": "§3.1 Estimation procedure and results",
+    "paper_location": "L543",
+    "paper_quote": "where $\\ln AILLIQ_y^U$ is the *unexpected* illiquidity in year $y$ , $\\ln AILLIQ_y^U = v_y$ , the residual from (7)."
+  },
+  {
+    "rule_id": "var_kendall_bias_correction",
+    "category": "variable",
+    "section": "§3.1 Estimation procedure and results",
+    "paper_location": "L548",
+    "paper_quote": "Kendall’s (1954) proposed a bias correction approximation procedure by which the estimated coefficient $\\hat{c}_1$ is augmented by the term $(1 + 3\\hat{c}_1)/T$ , where $T$ is the sample size."
+  },
+  {
+    "rule_id": "var_rm_rf_annual",
+    "category": "variable",
+    "section": "§3.1 Estimation procedure and results",
+    "paper_location": "L579",
+    "paper_quote": "In model (10), $RM_y$ is the annual return on the equally weighted market portfolio for NYSE stocks (source: CRSP), and $Rf$ is the one-year Treasury bill yield as of the beginning of year $y$ (source: Federal Reserve Bank)."
+  },
+  {
+    "rule_id": "sort_crsp_size_portfolios",
+    "category": "sort",
+    "section": "Table 3 description",
+    "paper_location": "L629",
+    "paper_quote": "$RSZ_i, i = 2, 4, 6, 8$ and $10$ , are the annual returns on CRSP size-portfolio $i$ (the smaller number indicates smaller size)."
+  },
+  {
+    "rule_id": "sample_annual_ts_period",
+    "category": "sample",
+    "section": "Table 3 description",
+    "paper_location": "L631",
+    "paper_quote": "Period of estimation: 1964–1996."
+  },
+  {
+    "rule_id": "fm_newey_west_table3",
+    "category": "fm",
+    "section": "Table 3 footnote a",
+    "paper_location": "L696",
+    "paper_quote": "[ $t$ -statistics calculated from standard errors that are robust to heteroskedasticity and autocorrelation, using the method of Newey and West, 1987.]"
+  },
+  {
+    "rule_id": "var_milliq",
+    "category": "variable",
+    "section": "§3.3 Monthly data",
+    "paper_location": "L737",
+    "paper_quote": "Monthly illiquidity, $MILLIQ_m$ , is the average across stocks of $|R_{idm}|/VOLD_{idm}$ , the illiquidity measure of stock $i$ on day $d$ in month $m$ , and then averaged over the days of month $m$ ."
+  },
+  {
+    "rule_id": "var_ar1_monthly",
+    "category": "variable",
+    "section": "§3.3 Monthly data",
+    "paper_location": "L737",
+    "paper_quote": "An autoregressive model similar to (7) is estimated for the monthly data as follows:"
+  },
+  {
+    "rule_id": "var_unexpected_illiq_monthly",
+    "category": "variable",
+    "section": "§3.3 Monthly data",
+    "paper_location": "L759",
+    "paper_quote": "Next, the monthly unexpected illiquidity is calculated, $MILLIQ_m^U$ , the residual from model (7m) after the coefficients are adjusted."
+  },
+  {
+    "rule_id": "var_model10m_monthly",
+    "category": "variable",
+    "section": "§3.3 Monthly data",
+    "paper_location": "L764",
+    "paper_quote": "$(RM - Rf)_m = g_0 + g_1 \\ln MILLIQ_{m-1} + g_2 \\ln MILLIQ_m^U + g_3 JANDUM_m + w_m.$"
+  },
+  {
+    "rule_id": "var_jandum",
+    "category": "variable",
+    "section": "§3.3 Monthly data",
+    "paper_location": "L768",
+    "paper_quote": "This model adds $JANDUM_m$ , a January dummy, that accounts for the well-known January effect."
+  },
+  {
+    "rule_id": "var_rm_rf_monthly",
+    "category": "variable",
+    "section": "§3.3 Monthly data",
+    "paper_location": "L768",
+    "paper_quote": "$RM_m$ is the monthly return on the equally weighted market portfolio (for NYSE stocks) and $Rf$ is the one-month Treasury bill rate."
+  },
+  {
+    "rule_id": "var_def",
+    "category": "variable",
+    "section": "§3.4 Bond yield premiums",
+    "paper_location": "L800-L803",
+    "paper_quote": "DEF_m = YBAA_m - YAAA_m,"
+  },
+  {
+    "rule_id": "var_term",
+    "category": "variable",
+    "section": "§3.4 Bond yield premiums",
+    "paper_location": "L808-L810",
+    "paper_quote": "TERM_m = YLONG_m - YTB3_m,"
+  },
+  {
+    "rule_id": "fm_bond_premium_lag",
+    "category": "fm",
+    "section": "§3.4 Bond yield premiums",
+    "paper_location": "L908-L912",
+    "paper_quote": "+ a_1 DEF_{m-1} + a_2 TERM_{m-1} + u_m."
+  },
+  {
+    "rule_id": "var_bond_data_source",
+    "category": "variable",
+    "section": "§3.4 Bond yield premiums",
+    "paper_location": "L903",
+    "paper_quote": "The data source is Basic Economics."
+  },
+  {
+    "rule_id": "sample_monthly_ts_period",
+    "category": "sample",
+    "section": "Table 4 description",
+    "paper_location": "L823",
+    "paper_quote": "The period of estimation is 1964–1996."
+  },
+  {
+    "rule_id": "fm_white_table4",
+    "category": "fm",
+    "section": "Table 4 footnote a",
+    "paper_location": "L897",
+    "paper_quote": "[ $t$ -statistics calculated from standard errors that are heteroskedastic-consistent, following White, 1980.]"
+  },
+  {
+    "rule_id": "sample_table5_period",
+    "category": "sample",
+    "section": "Table 5 description",
+    "paper_location": "L969",
+    "paper_quote": "The estimation period is 1963–1996."
+  },
+  {
+    "rule_id": "fm_white_table5",
+    "category": "fm",
+    "section": "Table 5 footnote a",
+    "paper_location": "L1061",
+    "paper_quote": "[ $t$ -statistics calculated from standard errors that are heteroskedastic-consistent following White, 1980.]"
+  }
+]

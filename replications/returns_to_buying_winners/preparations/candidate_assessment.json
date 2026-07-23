@@ -1,0 +1,6 @@
+{
+  "replicable": true,
+  "paper_type": "empirical_cross_sectional",
+  "rationale": "Jegadeesh and Titman (1993, Journal of Finance 48(1), 65-91) is an empirical cross-sectional portfolio-sort paper. Data section: CRSP daily returns file, July 1962 to December 1989, NYSE and AMEX stocks (content.md L85, L117-125, L139). Methodology: stocks ranked into deciles on J-month (J=3,6,9,12) lagged returns, equally weighted, held K months (K=3,6,9,12) with overlapping portfolios and monthly rebalancing (L109-113). Tables I-IX report average monthly returns, t-statistics, post-ranking betas, market capitalizations, size- and beta-subsample returns, market-model alphas, calendar-month and 5-year subperiod returns, 36-month event-time returns, 1927-1964 back-tests, and earnings-announcement-date returns (COMPUSTAT quarterly, 1980-1989). All variables are operationalized: formation-period compounded returns, zero-cost winners-minus-loser portfolios, Scholes-Williams betas, 3-day announcement returns.",
+  "block_reasons": []
+}

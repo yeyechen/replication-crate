@@ -1,0 +1,51 @@
+{
+  "verdict": "ready",
+  "requirements": [
+    {
+      "id": "crsp_monthly_returns",
+      "description": "Monthly stock returns, month-end prices, monthly high/low, volume, and shares outstanding for all CRSP stocks 1962-2001 (monthly returns R_{i,t}, 52-week-high ratio from month-end prices, market cap = |prc| x shrout x 1000, GH turnover V_t = vol / (shrout x 1000))",
+      "needed_columns": ["permno", "date", "ret", "prc", "bidlo", "askhi", "vol", "shrout"],
+      "matched_table": "crsp_202601.msf",
+      "matched_columns": ["permno", "date", "ret", "prc", "bidlo", "askhi", "vol", "shrout"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_daily_prices",
+      "description": "Daily closing prices for computing the 12-month maximum price (52-week high) as max of daily closes; used as alternative to the msf monthly high (askhi) for robustness of the 52-week-high signal",
+      "needed_columns": ["permno", "date", "prc"],
+      "matched_table": "crsp_202601.dsf",
+      "matched_columns": ["permno", "date", "prc"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_universe_sic",
+      "description": "Point-in-time share codes (shrcd 10/11 common-stock filter), exchange codes, and 2-digit SIC codes (hsiccd/siccd) for the MG 20-industry classification, valid over namedt..nameendt windows",
+      "needed_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "siccd"],
+      "matched_table": "crsp_202601.dsenames",
+      "matched_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "siccd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_delisting",
+      "description": "Delisting dates, codes and delisting returns for robustness checks on loser-portfolio returns (paper is silent on delisting treatment; default is msf ret without dlret)",
+      "needed_columns": ["permno", "dlstdt", "dlstcd", "dlret"],
+      "matched_table": "crsp_202601.msedelist",
+      "matched_columns": ["permno", "dlstdt", "dlstcd", "dlret"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_three_factor",
+      "description": "Fama-French (1996) monthly factors Mkt-RF, SMB, HML (plus RF) for the risk-adjustment time-series regressions of Tables V and VII; ff.four_factor_monthly is monthly (month-end dt), in decimals, and covers 1963-07 to 2001-12 with exactly the paper's 462 months (ff.three_factor is daily — not used).",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "rf"],
+      "matched_table": "ff.four_factor_monthly",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "rf", "mom"],
+      "missing_columns": [],
+      "status": "full"
+    }
+  ],
+  "blocking_issues": []
+}

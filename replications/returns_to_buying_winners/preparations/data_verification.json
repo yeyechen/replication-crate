@@ -1,0 +1,69 @@
+{
+  "verdict": "ready",
+  "requirements": [
+    {
+      "id": "crsp_daily_returns",
+      "description": "CRSP daily stock returns, prices, and shares (compounded to monthly returns; also needed for Scholes-Williams daily betas and 3-day announcement returns), covering July 1962 to December 1989 for the main sample",
+      "needed_columns": ["permno", "date", "ret", "prc", "vol", "shrout"],
+      "matched_table": "crsp_202601.dsf",
+      "matched_columns": ["permno", "date", "ret", "prc", "vol", "shrout", "retx", "cfacpr", "cfacshr", "hexcd", "hsiccd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_universe_pit",
+      "description": "Point-in-time share codes and exchange codes for the NYSE/AMEX common-stock universe filter (shrcd 10/11, exchcd 1/2) with validity windows",
+      "needed_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "siccd"],
+      "matched_table": "crsp_202601.dsenames",
+      "matched_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "siccd", "ncusip", "comnam"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_delisting_returns",
+      "description": "Delisting returns so that stocks delisting mid-sample are not dropped with a missing final return (paper is silent on delisting treatment; standard adjustment documented in assumptions.md)",
+      "needed_columns": ["permno", "dlstdt", "dlret", "dlstcd"],
+      "matched_table": "crsp_202601.dsedelist",
+      "matched_columns": ["permno", "dlstdt", "dlret", "dlretx", "dlstcd", "dlprc"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_market_indexes",
+      "description": "CRSP value-weighted and equal-weighted daily index returns: value-weighted index as market proxy for betas (Table II), market-model regressions (Table III Panel B), and the squared-market-return regression (Section III.D); equal-weighted index for the serial-covariance checks (Section III.C)",
+      "needed_columns": ["date", "vwretd", "ewretd"],
+      "matched_table": "crsp_202601.dsi",
+      "matched_columns": ["date", "vwretd", "vwretx", "ewretd", "ewretx", "sprtrn"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "risk_free_rate",
+      "description": "Monthly risk-free rate (1-month T-bill) for the market-model excess-return regressions in Table III Panel B (paper: 'interest rate on 1-month Treasury Bill')",
+      "needed_columns": ["dt", "rf"],
+      "matched_table": "ff.four_factor_monthly",
+      "matched_columns": ["dt", "rf", "mkt_rf", "smb", "hml", "mom"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_compustat_link",
+      "description": "CRSP-Compustat link (permno to gvkey) to match stocks to quarterly earnings announcement dates for the Table IX replication (stretch target)",
+      "needed_columns": ["gvkey", "lpermno", "linktype", "linkprim", "linkdt", "linkenddt"],
+      "matched_table": "crsp_202601.ccmxpf_linktable",
+      "matched_columns": ["gvkey", "lpermno", "lpermco", "linktype", "linkprim", "liid", "usedflag", "linkdt", "linkenddt"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "compustat_earnings_announcement_dates",
+      "description": "Quarterly earnings announcement dates (RDQ) from the Compustat quarterly industrial file for Table IX (paper: 'COMPUSTAT quarterly industrial database', 1980-1989)",
+      "needed_columns": ["gvkey", "datadate", "fyearq", "fqtr", "rdq", "indfmt"],
+      "matched_table": "comp_202601.fundq",
+      "matched_columns": ["gvkey", "datadate", "fyearq", "fqtr", "rdq", "indfmt", "consol", "datafmt", "cusip", "tic"],
+      "missing_columns": [],
+      "status": "full"
+    }
+  ],
+  "blocking_issues": []
+}

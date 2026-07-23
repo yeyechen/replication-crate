@@ -1,0 +1,5609 @@
+{
+  "tables": [
+    {
+      "id": "table_1",
+      "table_ref": "Table I",
+      "description": "Average monthly returns (Panel A, %), post-ranking betas (Panel B), and average size ln(ME) (Panel C) for 100 portfolios formed on size (NYSE decile breakpoints, rows) then pre-ranking beta (10 groups within each decile, columns), equal-weighted, July 1963-December 1990. Includes All row (beta-group portfolios) and All column (size-decile portfolios).",
+      "replication_meaning": "Proves correct two-pass portfolio construction: CRSP-Compustat intersection universe, NYSE size breakpoints, within-decile beta sorts with NYSE breakpoints on data-qualified stocks, Dimson sum-beta post-ranking estimation against the CRSP VW market, equal-weighted monthly returns held July-June. The All column validates the size effect (1.52 -> 0.89 %/mo); the flat All row validates the paper's central claim that beta variation unrelated to size earns no premium.",
+      "paper_quote": "Portfolios are formed yearly. The breakpoints for the size (ME, price times shares outstanding) deciles are determined in June of year t (t = 1963-1990) using all NYSE stocks on CRSP. All NYSE, AMEX, and NASDAQ stocks that meet the CRSP-COMPUSTAT data requirements are allocated to the 10 size portfolios using the NYSE breakpoints. Each size decile is subdivided into 10 beta portfolios using pre-ranking betas of individual stocks, estimated with 2 to 5 years of monthly returns (as available) ending in June of year t. We use only NYSE stocks that meet the CRSP-COMPUSTAT data requirements to establish the beta breakpoints.",
+      "exercises_preprocessing_rules": [
+        "universe_crsp_compustat_intersection",
+        "universe_exchanges_nyse_amex_nasdaq",
+        "sample_return_period",
+        "sample_accounting_return_matching",
+        "sample_dec_jun_price_requirement",
+        "sample_preranking_return_requirement",
+        "sort_size_nyse_breakpoints",
+        "sort_size_then_beta_100_portfolios",
+        "var_me_definition",
+        "var_preranking_beta_estimation",
+        "var_postranking_sum_beta_dimson",
+        "factor_market_proxy"
+      ],
+      "metrics": [
+        {
+          "name": "T1A avg return [All x All]",
+          "value": 1.25,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [All x Low-b]",
+          "value": 1.34,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [All x b-2]",
+          "value": 1.29,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [All x b-3]",
+          "value": 1.36,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [All x b-4]",
+          "value": 1.31,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [All x b-5]",
+          "value": 1.33,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [All x b-6]",
+          "value": 1.28,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [All x b-7]",
+          "value": 1.24,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [All x b-8]",
+          "value": 1.21,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [All x b-9]",
+          "value": 1.25,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [All x High-b]",
+          "value": 1.14,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [Small-ME x All]",
+          "value": 1.52,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [Small-ME x Low-b]",
+          "value": 1.71,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [Small-ME x b-2]",
+          "value": 1.57,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [Small-ME x b-3]",
+          "value": 1.79,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [Small-ME x b-4]",
+          "value": 1.61,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [Small-ME x b-5]",
+          "value": 1.5,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [Small-ME x b-6]",
+          "value": 1.5,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [Small-ME x b-7]",
+          "value": 1.37,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [Small-ME x b-8]",
+          "value": 1.63,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [Small-ME x b-9]",
+          "value": 1.5,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [Small-ME x High-b]",
+          "value": 1.42,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [ME-2 x All]",
+          "value": 1.29,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [ME-3 x All]",
+          "value": 1.24,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [ME-4 x All]",
+          "value": 1.25,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [ME-5 x All]",
+          "value": 1.29,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [ME-5 x Low-b]",
+          "value": 1.34,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [ME-5 x b-2]",
+          "value": 1.42,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [ME-5 x b-3]",
+          "value": 1.39,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [ME-5 x b-4]",
+          "value": 1.48,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [ME-5 x b-5]",
+          "value": 1.42,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [ME-5 x b-6]",
+          "value": 1.18,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [ME-5 x b-7]",
+          "value": 1.13,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [ME-5 x b-8]",
+          "value": 1.27,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [ME-5 x b-9]",
+          "value": 1.18,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [ME-5 x High-b]",
+          "value": 1.08,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [ME-6 x All]",
+          "value": 1.17,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [ME-7 x All]",
+          "value": 1.07,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [ME-8 x All]",
+          "value": 1.1,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [ME-9 x All]",
+          "value": 0.95,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [Large-ME x All]",
+          "value": 0.89,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [Large-ME x Low-b]",
+          "value": 1.01,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [Large-ME x b-2]",
+          "value": 0.93,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [Large-ME x b-3]",
+          "value": 1.1,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [Large-ME x b-4]",
+          "value": 0.94,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [Large-ME x b-5]",
+          "value": 0.93,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [Large-ME x b-6]",
+          "value": 0.89,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [Large-ME x b-7]",
+          "value": 1.03,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [Large-ME x b-8]",
+          "value": 0.71,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [Large-ME x b-9]",
+          "value": 0.74,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1A avg return [Large-ME x High-b]",
+          "value": 0.56,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L259-L434"
+        },
+        {
+          "name": "T1B post-ranking beta [Small-ME x All]",
+          "value": 1.44,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L450-L614"
+        },
+        {
+          "name": "T1B post-ranking beta [ME-2 x All]",
+          "value": 1.39,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L450-L614"
+        },
+        {
+          "name": "T1B post-ranking beta [ME-3 x All]",
+          "value": 1.35,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L450-L614"
+        },
+        {
+          "name": "T1B post-ranking beta [ME-4 x All]",
+          "value": 1.34,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L450-L614"
+        },
+        {
+          "name": "T1B post-ranking beta [ME-5 x All]",
+          "value": 1.25,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L450-L614"
+        },
+        {
+          "name": "T1B post-ranking beta [ME-6 x All]",
+          "value": 1.23,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L450-L614"
+        },
+        {
+          "name": "T1B post-ranking beta [ME-7 x All]",
+          "value": 1.17,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L450-L614"
+        },
+        {
+          "name": "T1B post-ranking beta [ME-8 x All]",
+          "value": 1.09,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L450-L614"
+        },
+        {
+          "name": "T1B post-ranking beta [ME-9 x All]",
+          "value": 1.03,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L450-L614"
+        },
+        {
+          "name": "T1B post-ranking beta [Large-ME x All]",
+          "value": 0.92,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L450-L614"
+        },
+        {
+          "name": "T1B post-ranking beta [Small-ME x Low-b]",
+          "value": 1.05,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L450-L614"
+        },
+        {
+          "name": "T1B post-ranking beta [Small-ME x High-b]",
+          "value": 1.79,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L450-L614"
+        },
+        {
+          "name": "T1B post-ranking beta [Large-ME x Low-b]",
+          "value": 0.57,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L450-L614"
+        },
+        {
+          "name": "T1B post-ranking beta [Large-ME x High-b]",
+          "value": 1.32,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L450-L614"
+        },
+        {
+          "name": "T1B post-ranking beta [ME-8 x Low-b]",
+          "value": 0.53,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L450-L614"
+        },
+        {
+          "name": "T1C avg ln(ME) [All x All]",
+          "value": 4.11,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [All x Low-b]",
+          "value": 3.86,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [All x b-2]",
+          "value": 4.26,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [All x b-3]",
+          "value": 4.33,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [All x b-4]",
+          "value": 4.41,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [All x b-5]",
+          "value": 4.27,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [All x b-6]",
+          "value": 4.32,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [All x b-7]",
+          "value": 4.26,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [All x b-8]",
+          "value": 4.19,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [All x b-9]",
+          "value": 4.03,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [All x High-b]",
+          "value": 3.77,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [Small-ME x All]",
+          "value": 2.24,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [Small-ME x Low-b]",
+          "value": 2.12,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [Small-ME x b-2]",
+          "value": 2.27,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [Small-ME x b-3]",
+          "value": 2.3,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [Small-ME x b-4]",
+          "value": 2.3,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [Small-ME x b-5]",
+          "value": 2.28,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [Small-ME x b-6]",
+          "value": 2.29,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [Small-ME x b-7]",
+          "value": 2.3,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [Small-ME x b-8]",
+          "value": 2.32,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [Small-ME x b-9]",
+          "value": 2.25,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [Small-ME x High-b]",
+          "value": 2.15,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [Large-ME x All]",
+          "value": 7.93,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [Large-ME x Low-b]",
+          "value": 7.94,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [Large-ME x b-2]",
+          "value": 8.04,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [Large-ME x b-3]",
+          "value": 8.1,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [Large-ME x b-4]",
+          "value": 8.04,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [Large-ME x b-5]",
+          "value": 8.02,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [Large-ME x b-6]",
+          "value": 8.02,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [Large-ME x b-7]",
+          "value": 7.94,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [Large-ME x b-8]",
+          "value": 7.8,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [Large-ME x b-9]",
+          "value": 7.75,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [Large-ME x High-b]",
+          "value": 7.62,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [All x All]",
+          "value": 4.11,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [Small-ME x All]",
+          "value": 2.24,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [ME-2 x All]",
+          "value": 3.63,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [ME-3 x All]",
+          "value": 4.1,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [ME-4 x All]",
+          "value": 4.5,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [ME-5 x All]",
+          "value": 4.89,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [ME-6 x All]",
+          "value": 5.3,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [ME-7 x All]",
+          "value": 5.73,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [ME-8 x All]",
+          "value": 6.24,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [ME-9 x All]",
+          "value": 6.82,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        },
+        {
+          "name": "T1C avg ln(ME) [Large-ME x All]",
+          "value": 7.93,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L616-L791"
+        }
+      ],
+      "notes": "Panel A (returns) and Panel C (ln(ME)) parse complete from OCR (11x11); targets cover All row, All column, Small-ME/Large-ME/ME-5 rows. Panel B (betas) OCR dropped one interior column (10 of 11 values per row); targets restricted to the All column (all 10 size deciles, confirmed by paper prose 'post-ranking betas range from 1.44 ... to 0.92') plus prose-anchored corners (small decile 1.05-1.79; overall min 0.53). Interior Panel B cells excluded as OCR-unverifiable."
+    },
+    {
+      "id": "table_2",
+      "table_ref": "Table II",
+      "description": "Properties of 12 portfolios formed on size alone (Panel A) or pre-ranking beta alone (Panel B): average return, post-ranking beta, ln(ME), ln(BE/ME), ln(A/ME), ln(A/BE), E/P dummy, E(+)/P, Firms. Portfolios 2-9 are deciles; 1A/1B and 10A/10B split the extreme deciles. NYSE breakpoints, equal-weighted, July 1963-December 1990.",
+      "replication_meaning": "Proves correct one-dimensional sort mechanics (deciles with split extremes), the characteristic-averaging convention (time-series avg of monthly portfolio averages), the BE/A/E definitions on Compustat fiscal data with December t-1 ME, and the beta-assignment scheme (stocks carry their size-beta portfolio's post-ranking beta). The flat beta-sorted returns (1A=1.20 vs 10B=1.18 with beta 0.81 vs 1.73) is a headline result.",
+      "paper_quote": "At the end of June of each year t, 12 portfolios are formed on the basis of ranked values of size (ME) or pre-ranking beta. The pre-ranking betas use 2 to 5 years (as available) of monthly returns ending in June of t. Portfolios 2-9 cover deciles of the ranking variables. The bottom and top 2 portfolios (1A, 1B, 10A, and 10B) split the bottom and top deciles in half. The breakpoints for the ME portfolios are based on ranked values of ME for all NYSE stocks on CRSP. NYSE breakpoints for pre-ranking betas are also used to form the beta portfolios.",
+      "exercises_preprocessing_rules": [
+        "universe_crsp_compustat_intersection",
+        "sort_one_dimensional_12_portfolios",
+        "sort_size_nyse_breakpoints",
+        "sort_beta_breakpoints_nyse_universe_note",
+        "sample_negative_be_excluded",
+        "var_be_definition",
+        "var_me_definition",
+        "var_ep_dummy_and_epos",
+        "var_december_me_for_ratios",
+        "var_table_characteristics_averaging",
+        "fm_beta_assigned_each_june"
+      ],
+      "metrics": [
+        {
+          "name": "T2A size-sorted Return [1A]",
+          "value": 1.64,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted Return [1B]",
+          "value": 1.16,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted Return [2]",
+          "value": 1.29,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted Return [3]",
+          "value": 1.24,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted Return [4]",
+          "value": 1.25,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted Return [5]",
+          "value": 1.29,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted Return [6]",
+          "value": 1.17,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted Return [7]",
+          "value": 1.07,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted Return [8]",
+          "value": 1.1,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted Return [9]",
+          "value": 0.95,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted Return [10A]",
+          "value": 0.88,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted Return [10B]",
+          "value": 0.9,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted beta [1A]",
+          "value": 1.44,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted beta [1B]",
+          "value": 1.44,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted beta [2]",
+          "value": 1.39,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted beta [3]",
+          "value": 1.34,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted beta [4]",
+          "value": 1.33,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted beta [5]",
+          "value": 1.24,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted beta [6]",
+          "value": 1.22,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted beta [7]",
+          "value": 1.16,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted beta [8]",
+          "value": 1.08,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted beta [9]",
+          "value": 1.02,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted beta [10A]",
+          "value": 0.95,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted beta [10B]",
+          "value": 0.9,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(ME) [1A]",
+          "value": 1.98,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(ME) [1B]",
+          "value": 3.18,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(ME) [2]",
+          "value": 3.63,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(ME) [3]",
+          "value": 4.1,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(ME) [4]",
+          "value": 4.5,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(ME) [5]",
+          "value": 4.89,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(ME) [6]",
+          "value": 5.3,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(ME) [7]",
+          "value": 5.73,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(ME) [8]",
+          "value": 6.24,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(ME) [9]",
+          "value": 6.82,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(ME) [10A]",
+          "value": 7.39,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(ME) [10B]",
+          "value": 8.44,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(BE/ME) [1A]",
+          "value": -0.01,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(BE/ME) [1B]",
+          "value": -0.21,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(BE/ME) [2]",
+          "value": -0.23,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(BE/ME) [3]",
+          "value": -0.26,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(BE/ME) [4]",
+          "value": -0.32,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(BE/ME) [5]",
+          "value": -0.36,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(BE/ME) [6]",
+          "value": -0.44,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(BE/ME) [7]",
+          "value": -0.4,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(BE/ME) [8]",
+          "value": -0.42,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(BE/ME) [9]",
+          "value": -0.51,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(BE/ME) [10A]",
+          "value": -0.65,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(BE/ME) [10B]",
+          "value": -0.65,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(A/ME) [1A]",
+          "value": 0.73,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(A/ME) [1B]",
+          "value": 0.5,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(A/ME) [2]",
+          "value": 0.46,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(A/ME) [3]",
+          "value": 0.43,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(A/ME) [4]",
+          "value": 0.37,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(A/ME) [5]",
+          "value": 0.32,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(A/ME) [6]",
+          "value": 0.24,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(A/ME) [7]",
+          "value": 0.29,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(A/ME) [8]",
+          "value": 0.27,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(A/ME) [9]",
+          "value": 0.17,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(A/ME) [10A]",
+          "value": -0.03,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(A/ME) [10B]",
+          "value": -0.03,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(A/BE) [1A]",
+          "value": 0.75,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(A/BE) [1B]",
+          "value": 0.71,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(A/BE) [2]",
+          "value": 0.69,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(A/BE) [3]",
+          "value": 0.69,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(A/BE) [4]",
+          "value": 0.68,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(A/BE) [5]",
+          "value": 0.67,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(A/BE) [6]",
+          "value": 0.68,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(A/BE) [7]",
+          "value": 0.69,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(A/BE) [8]",
+          "value": 0.7,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(A/BE) [9]",
+          "value": 0.68,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(A/BE) [10A]",
+          "value": 0.62,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted ln(A/BE) [10B]",
+          "value": 0.62,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted E/P dummy [1A]",
+          "value": 0.26,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted E/P dummy [1B]",
+          "value": 0.14,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted E/P dummy [2]",
+          "value": 0.11,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted E/P dummy [3]",
+          "value": 0.09,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted E/P dummy [4]",
+          "value": 0.06,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted E/P dummy [5]",
+          "value": 0.04,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted E/P dummy [6]",
+          "value": 0.04,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted E/P dummy [7]",
+          "value": 0.03,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted E/P dummy [8]",
+          "value": 0.02,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted E/P dummy [9]",
+          "value": 0.02,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted E/P dummy [10A]",
+          "value": 0.01,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted E/P dummy [10B]",
+          "value": 0.01,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted Firms [1A]",
+          "value": 772,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted Firms [1B]",
+          "value": 189,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted Firms [2]",
+          "value": 236,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted Firms [3]",
+          "value": 170,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted Firms [4]",
+          "value": 144,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted Firms [5]",
+          "value": 140,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted Firms [6]",
+          "value": 125,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted Firms [7]",
+          "value": 128,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted Firms [8]",
+          "value": 119,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted Firms [9]",
+          "value": 114,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted Firms [10A]",
+          "value": 60,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2A size-sorted Firms [10B]",
+          "value": 64,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L821-L964"
+        },
+        {
+          "name": "T2B beta-sorted beta [1A]",
+          "value": 0.81,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted beta [1B]",
+          "value": 0.79,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted beta [2]",
+          "value": 0.92,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted beta [3]",
+          "value": 1.04,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted beta [4]",
+          "value": 1.13,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted beta [5]",
+          "value": 1.19,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted beta [6]",
+          "value": 1.26,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted beta [7]",
+          "value": 1.32,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted beta [8]",
+          "value": 1.41,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted beta [9]",
+          "value": 1.52,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted beta [10A]",
+          "value": 1.63,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted beta [10B]",
+          "value": 1.73,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(ME) [1A]",
+          "value": 4.21,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(ME) [1B]",
+          "value": 4.86,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(ME) [2]",
+          "value": 4.75,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(ME) [3]",
+          "value": 4.68,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(ME) [4]",
+          "value": 4.59,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(ME) [5]",
+          "value": 4.48,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(ME) [6]",
+          "value": 4.36,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(ME) [7]",
+          "value": 4.25,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(ME) [8]",
+          "value": 3.97,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(ME) [9]",
+          "value": 3.78,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(ME) [10A]",
+          "value": 3.52,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(ME) [10B]",
+          "value": 3.15,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(BE/ME) [1A]",
+          "value": -0.18,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(BE/ME) [1B]",
+          "value": -0.13,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(BE/ME) [2]",
+          "value": -0.22,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(BE/ME) [3]",
+          "value": -0.21,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(BE/ME) [4]",
+          "value": -0.23,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(BE/ME) [5]",
+          "value": -0.22,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(BE/ME) [6]",
+          "value": -0.22,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(BE/ME) [7]",
+          "value": -0.25,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(BE/ME) [8]",
+          "value": -0.23,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(BE/ME) [9]",
+          "value": -0.27,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(BE/ME) [10A]",
+          "value": -0.31,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(BE/ME) [10B]",
+          "value": -0.5,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(A/ME) [1A]",
+          "value": 0.6,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(A/ME) [1B]",
+          "value": 0.66,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(A/ME) [2]",
+          "value": 0.49,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(A/ME) [3]",
+          "value": 0.45,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(A/ME) [4]",
+          "value": 0.42,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(A/ME) [5]",
+          "value": 0.42,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(A/ME) [6]",
+          "value": 0.45,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(A/ME) [7]",
+          "value": 0.42,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(A/ME) [8]",
+          "value": 0.47,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(A/ME) [9]",
+          "value": 0.46,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(A/ME) [10A]",
+          "value": 0.46,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(A/ME) [10B]",
+          "value": 0.31,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(A/BE) [1A]",
+          "value": 0.78,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(A/BE) [1B]",
+          "value": 0.79,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(A/BE) [2]",
+          "value": 0.71,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(A/BE) [3]",
+          "value": 0.66,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(A/BE) [4]",
+          "value": 0.64,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(A/BE) [5]",
+          "value": 0.65,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(A/BE) [6]",
+          "value": 0.67,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(A/BE) [7]",
+          "value": 0.67,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(A/BE) [8]",
+          "value": 0.7,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(A/BE) [9]",
+          "value": 0.73,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(A/BE) [10A]",
+          "value": 0.77,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted ln(A/BE) [10B]",
+          "value": 0.81,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted E/P dummy [1A]",
+          "value": 0.12,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted E/P dummy [1B]",
+          "value": 0.06,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted E/P dummy [2]",
+          "value": 0.09,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted E/P dummy [3]",
+          "value": 0.09,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted E/P dummy [4]",
+          "value": 0.08,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted E/P dummy [5]",
+          "value": 0.09,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted E/P dummy [6]",
+          "value": 0.1,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted E/P dummy [7]",
+          "value": 0.12,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted E/P dummy [8]",
+          "value": 0.12,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted E/P dummy [9]",
+          "value": 0.14,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted E/P dummy [10A]",
+          "value": 0.17,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted E/P dummy [10B]",
+          "value": 0.23,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted E(+)/P [1A]",
+          "value": 0.11,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted E(+)/P [1B]",
+          "value": 0.12,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted E(+)/P [2]",
+          "value": 0.1,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted E(+)/P [3]",
+          "value": 0.1,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted E(+)/P [4]",
+          "value": 0.1,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted E(+)/P [5]",
+          "value": 0.1,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted E(+)/P [6]",
+          "value": 0.1,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted E(+)/P [7]",
+          "value": 0.09,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted E(+)/P [8]",
+          "value": 0.1,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted E(+)/P [9]",
+          "value": 0.09,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted E(+)/P [10A]",
+          "value": 0.09,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted E(+)/P [10B]",
+          "value": 0.08,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted Firms [1A]",
+          "value": 116,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted Firms [1B]",
+          "value": 80,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted Firms [2]",
+          "value": 185,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted Firms [3]",
+          "value": 181,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted Firms [4]",
+          "value": 179,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted Firms [5]",
+          "value": 182,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted Firms [6]",
+          "value": 185,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted Firms [7]",
+          "value": 205,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted Firms [8]",
+          "value": 227,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted Firms [9]",
+          "value": 267,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted Firms [10A]",
+          "value": 165,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted Firms [10B]",
+          "value": 291,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted Return [1A]",
+          "value": 1.2,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L980-L1137"
+        },
+        {
+          "name": "T2B beta-sorted Return [10B]",
+          "value": 1.18,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L980-L1137"
+        }
+      ],
+      "notes": "OCR correction: Panel A row labels were shifted by one (the 'Return' label was dropped); corrected mapping verified by paper prose (returns 1.64->0.90; betas 1.44->0.90) and the identity ln(A/ME)-ln(A/BE)=ln(BE/ME). Panel A E(+)/P row is missing from the OCR -> excluded. Panel B Return row lost one interior cell -> only prose-anchored 1A and 10B targeted; all other Panel B rows are complete."
+    },
+    {
+      "id": "table_3",
+      "table_ref": "Table III",
+      "description": "Time-series averages of slopes (with t-statistics) from month-by-month Fama-MacBeth regressions of individual stock returns on beta, ln(ME), ln(BE/ME), ln(A/ME), ln(A/BE), E/P dummy, and E(+)/P over 11 specifications, July 1963-December 1990. ~2267 stocks per monthly regression; ratios winsorized at 0.005/0.995 fractiles.",
+      "replication_meaning": "Proves the Fama-MacBeth machinery: monthly cross-sectional OLS on individual stocks with portfolio-assigned betas and firm-specific characteristics, correct timing (June t size, December t-1 ratios, July t-June t+1 returns), the 0.5% winsorization of the four ratios, and the E(+)/P / E/P-dummy split. The headline cells \u2014 ln(ME) alone -0.15 (-2.58), beta alone 0.15 (0.46), ln(BE/ME) alone 0.50 (5.71) \u2014 are the paper's core asset-pricing claims.",
+      "paper_quote": "The average slope is the time-series average of the monthly regression slopes for July 1963 to December 1990, and the t-statistic is the average slope divided by its time-series standard error. [...] On average, there are 2267 stocks in the monthly regressions. To avoid giving extreme observations heavy weight in the regressions, the smallest and largest 0.5% of the observations on E(+)/P, BE/ME, A/ME, and A/BE are set equal to the next largest or smallest values of the ratios (the 0.005 and 0.995 fractiles).",
+      "exercises_preprocessing_rules": [
+        "fm_monthly_cross_sectional_regressions",
+        "fm_slope_average_and_tstat",
+        "fm_individual_stocks_with_portfolio_betas",
+        "fm_explanatory_variable_timing",
+        "winsorize_fm_regression_fractiles",
+        "var_ep_dummy_and_epos",
+        "var_ln_transforms_leverage",
+        "var_december_me_for_ratios",
+        "sample_fm_regression_count"
+      ],
+      "metrics": [
+        {
+          "name": "T3 slope R1: beta [beta]",
+          "value": 0.15,
+          "unit": "percent/month per unit",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 t-stat R1: beta [beta]",
+          "value": 0.46,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 slope R2: ln(ME) [ln(ME)]",
+          "value": -0.15,
+          "unit": "percent/month per unit",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 t-stat R2: ln(ME) [ln(ME)]",
+          "value": -2.58,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 slope R3: beta, ln(ME) [beta]",
+          "value": -0.37,
+          "unit": "percent/month per unit",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 t-stat R3: beta, ln(ME) [beta]",
+          "value": -1.21,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 slope R3: beta, ln(ME) [ln(ME)]",
+          "value": -0.17,
+          "unit": "percent/month per unit",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 t-stat R3: beta, ln(ME) [ln(ME)]",
+          "value": -3.41,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 slope R4: ln(BE/ME) [ln(BE/ME)]",
+          "value": 0.5,
+          "unit": "percent/month per unit",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 t-stat R4: ln(BE/ME) [ln(BE/ME)]",
+          "value": 5.71,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 slope R5: ln(A/ME), ln(A/BE) [ln(A/ME)]",
+          "value": 0.5,
+          "unit": "percent/month per unit",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 t-stat R5: ln(A/ME), ln(A/BE) [ln(A/ME)]",
+          "value": 5.69,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 slope R5: ln(A/ME), ln(A/BE) [ln(A/BE)]",
+          "value": -0.57,
+          "unit": "percent/month per unit",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 t-stat R5: ln(A/ME), ln(A/BE) [ln(A/BE)]",
+          "value": -5.34,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 slope R6: E/P dummy, E(+)/P [E/P dummy]",
+          "value": 0.57,
+          "unit": "percent/month per unit",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 t-stat R6: E/P dummy, E(+)/P [E/P dummy]",
+          "value": 2.28,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 slope R6: E/P dummy, E(+)/P [E(+)/P]",
+          "value": 4.72,
+          "unit": "percent/month per unit",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 t-stat R6: E/P dummy, E(+)/P [E(+)/P]",
+          "value": 4.57,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 slope R7: ln(ME), ln(BE/ME) [ln(ME)]",
+          "value": -0.11,
+          "unit": "percent/month per unit",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 t-stat R7: ln(ME), ln(BE/ME) [ln(ME)]",
+          "value": -1.99,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 slope R7: ln(ME), ln(BE/ME) [ln(BE/ME)]",
+          "value": 0.35,
+          "unit": "percent/month per unit",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 t-stat R7: ln(ME), ln(BE/ME) [ln(BE/ME)]",
+          "value": 4.44,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 slope R8: beta, ln(A/ME), ln(A/BE) [beta]",
+          "value": -0.11,
+          "unit": "percent/month per unit",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 t-stat R8: beta, ln(A/ME), ln(A/BE) [beta]",
+          "value": -2.06,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 slope R8: beta, ln(A/ME), ln(A/BE) [ln(A/ME)]",
+          "value": 0.35,
+          "unit": "percent/month per unit",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 t-stat R8: beta, ln(A/ME), ln(A/BE) [ln(A/ME)]",
+          "value": 4.32,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 slope R8: beta, ln(A/ME), ln(A/BE) [ln(A/BE)]",
+          "value": -0.5,
+          "unit": "percent/month per unit",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 t-stat R8: beta, ln(A/ME), ln(A/BE) [ln(A/BE)]",
+          "value": -4.56,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 slope R9: beta, E/P dummy, E(+)/P [beta]",
+          "value": -0.16,
+          "unit": "percent/month per unit",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 t-stat R9: beta, E/P dummy, E(+)/P [beta]",
+          "value": -3.06,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 slope R9: beta, E/P dummy, E(+)/P [E/P dummy]",
+          "value": 0.06,
+          "unit": "percent/month per unit",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 t-stat R9: beta, E/P dummy, E(+)/P [E/P dummy]",
+          "value": 0.38,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 slope R9: beta, E/P dummy, E(+)/P [E(+)/P]",
+          "value": 2.99,
+          "unit": "percent/month per unit",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 t-stat R9: beta, E/P dummy, E(+)/P [E(+)/P]",
+          "value": 3.04,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 slope R10: beta, ln(ME), ln(BE/ME), E/P dummy, E(+)/P [beta]",
+          "value": -0.13,
+          "unit": "percent/month per unit",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 t-stat R10: beta, ln(ME), ln(BE/ME), E/P dummy, E(+)/P [beta]",
+          "value": -2.47,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 slope R10: beta, ln(ME), ln(BE/ME), E/P dummy, E(+)/P [ln(BE/ME)]",
+          "value": 0.33,
+          "unit": "percent/month per unit",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 t-stat R10: beta, ln(ME), ln(BE/ME), E/P dummy, E(+)/P [ln(BE/ME)]",
+          "value": 4.46,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 slope R10: beta, ln(ME), ln(BE/ME), E/P dummy, E(+)/P [E/P dummy]",
+          "value": -0.14,
+          "unit": "percent/month per unit",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 t-stat R10: beta, ln(ME), ln(BE/ME), E/P dummy, E(+)/P [E/P dummy]",
+          "value": -0.9,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 slope R10: beta, ln(ME), ln(BE/ME), E/P dummy, E(+)/P [E(+)/P]",
+          "value": 0.87,
+          "unit": "percent/month per unit",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 t-stat R10: beta, ln(ME), ln(BE/ME), E/P dummy, E(+)/P [E(+)/P]",
+          "value": 1.23,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 slope R11: beta, ln(A/ME), ln(A/BE), E/P dummy, E(+)/P [beta]",
+          "value": -0.13,
+          "unit": "percent/month per unit",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 t-stat R11: beta, ln(A/ME), ln(A/BE), E/P dummy, E(+)/P [beta]",
+          "value": -2.47,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 slope R11: beta, ln(A/ME), ln(A/BE), E/P dummy, E(+)/P [ln(A/ME)]",
+          "value": 0.32,
+          "unit": "percent/month per unit",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 t-stat R11: beta, ln(A/ME), ln(A/BE), E/P dummy, E(+)/P [ln(A/ME)]",
+          "value": 4.28,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 slope R11: beta, ln(A/ME), ln(A/BE), E/P dummy, E(+)/P [ln(A/BE)]",
+          "value": -0.46,
+          "unit": "percent/month per unit",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 t-stat R11: beta, ln(A/ME), ln(A/BE), E/P dummy, E(+)/P [ln(A/BE)]",
+          "value": -4.45,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 slope R11: beta, ln(A/ME), ln(A/BE), E/P dummy, E(+)/P [E/P dummy]",
+          "value": -0.08,
+          "unit": "percent/month per unit",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 t-stat R11: beta, ln(A/ME), ln(A/BE), E/P dummy, E(+)/P [E/P dummy]",
+          "value": -0.56,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 slope R11: beta, ln(A/ME), ln(A/BE), E/P dummy, E(+)/P [E(+)/P]",
+          "value": 1.15,
+          "unit": "percent/month per unit",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        },
+        {
+          "name": "T3 t-stat R11: beta, ln(A/ME), ln(A/BE), E/P dummy, E(+)/P [E(+)/P]",
+          "value": 1.57,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L1191-L1304"
+        }
+      ],
+      "notes": "OCR corrections: R7's two cells appear shifted one column left in the OCR (they are ln(ME)=-0.11 (-1.99) and ln(BE/ME)=0.35 (4.44), confirmed by paper prose: 'the average size slope is still -1.99 standard errors from 0; the book-to-market slope is an impressive 4.44'). R10 is missing its ln(ME) cell in the OCR -> that single cell is excluded; all other cells confirmed against the paper's prose (E/P slope drops 4.72->0.87, t=1.23; E/P dummy killed)."
+    },
+    {
+      "id": "table_4",
+      "table_ref": "Table IV",
+      "description": "Properties of portfolios formed on BE/ME (Panel A, 12 portfolios 1A-10B) and E/P (Panel B, 13 portfolios with 0 = negative E/P): return, beta, ln(ME), ln(BE/ME), ln(A/ME), ln(A/BE), E/P dummy, E(+)/P, Firms. Breakpoints from ALL data-qualified stocks (not NYSE-only). Formed at end of year t-1, equal-weighted July t-June t+1.",
+      "replication_meaning": "Proves correct accounting-ratio construction with December t-1 ME (BE/ME and E/P), the negative-E portfolio-0 handling, the all-stock (non-NYSE) breakpoint convention for BE/ME and E/P sorts, and exclusion of negative book equity firms. The BE/ME return spread 0.30 -> 1.83 %/mo (1.53 spread) with flat betas (~1.27-1.36) is the paper's strongest cross-sectional result; the U-shaped E/P pattern (1.46 -> 0.93 -> 1.72) validates the E/P dummy + E(+)/P variable split.",
+      "paper_quote": "At the end of each year t - 1, 12 portfolios are formed on the basis of ranked values of BE/ME or E/P. [...] For E/P, there are 13 portfolios; portfolio 0 is stocks with negative E/P. Since BE/ME and E/P are not strongly related to exchange listing, their portfolio breakpoints are determined on the basis of the ranked values of the variables for all stocks that satisfy the CRSP-COMPUSTAT data requirements.",
+      "exercises_preprocessing_rules": [
+        "sort_beme_ep_all_stock_breakpoints",
+        "sort_one_dimensional_12_portfolios",
+        "var_be_definition",
+        "var_ep_dummy_and_epos",
+        "var_december_me_for_ratios",
+        "var_table_characteristics_averaging",
+        "sample_negative_be_excluded",
+        "fm_beta_assigned_each_june"
+      ],
+      "metrics": [
+        {
+          "name": "T4A BE/ME-sorted Return [1A]",
+          "value": 0.3,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted Return [1B]",
+          "value": 0.67,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted Return [2]",
+          "value": 0.87,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted Return [3]",
+          "value": 0.97,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted Return [4]",
+          "value": 1.04,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted Return [5]",
+          "value": 1.17,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted Return [6]",
+          "value": 1.3,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted Return [7]",
+          "value": 1.44,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted Return [8]",
+          "value": 1.5,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted Return [9]",
+          "value": 1.59,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted Return [10A]",
+          "value": 1.92,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted Return [10B]",
+          "value": 1.83,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted beta [1A]",
+          "value": 1.36,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted beta [1B]",
+          "value": 1.34,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted beta [2]",
+          "value": 1.32,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted beta [3]",
+          "value": 1.3,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted beta [4]",
+          "value": 1.28,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted beta [5]",
+          "value": 1.27,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted beta [6]",
+          "value": 1.27,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted beta [7]",
+          "value": 1.27,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted beta [8]",
+          "value": 1.27,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted beta [9]",
+          "value": 1.29,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted beta [10A]",
+          "value": 1.33,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted beta [10B]",
+          "value": 1.35,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(ME) [1A]",
+          "value": 4.53,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(ME) [1B]",
+          "value": 4.67,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(ME) [2]",
+          "value": 4.69,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(ME) [3]",
+          "value": 4.56,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(ME) [4]",
+          "value": 4.47,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(ME) [5]",
+          "value": 4.38,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(ME) [6]",
+          "value": 4.23,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(ME) [7]",
+          "value": 4.06,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(ME) [8]",
+          "value": 3.85,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(ME) [9]",
+          "value": 3.51,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(ME) [10A]",
+          "value": 3.06,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(ME) [10B]",
+          "value": 2.65,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(BE/ME) [1A]",
+          "value": -2.22,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(BE/ME) [1B]",
+          "value": -1.51,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(BE/ME) [2]",
+          "value": -1.09,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(BE/ME) [3]",
+          "value": -0.75,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(BE/ME) [4]",
+          "value": -0.51,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(BE/ME) [5]",
+          "value": -0.32,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(BE/ME) [6]",
+          "value": -0.14,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(BE/ME) [7]",
+          "value": 0.03,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(BE/ME) [8]",
+          "value": 0.21,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(BE/ME) [9]",
+          "value": 0.42,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(BE/ME) [10A]",
+          "value": 0.66,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(BE/ME) [10B]",
+          "value": 1.02,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(A/ME) [1A]",
+          "value": -1.24,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(A/ME) [1B]",
+          "value": -0.79,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(A/ME) [2]",
+          "value": -0.4,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(A/ME) [3]",
+          "value": -0.05,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(A/ME) [4]",
+          "value": 0.2,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(A/ME) [5]",
+          "value": 0.4,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(A/ME) [6]",
+          "value": 0.56,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(A/ME) [7]",
+          "value": 0.71,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(A/ME) [8]",
+          "value": 0.91,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(A/ME) [9]",
+          "value": 1.12,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(A/ME) [10A]",
+          "value": 1.35,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(A/ME) [10B]",
+          "value": 1.75,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(A/BE) [1A]",
+          "value": 0.94,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(A/BE) [1B]",
+          "value": 0.71,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(A/BE) [2]",
+          "value": 0.68,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(A/BE) [3]",
+          "value": 0.7,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(A/BE) [4]",
+          "value": 0.71,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(A/BE) [5]",
+          "value": 0.71,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(A/BE) [6]",
+          "value": 0.7,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(A/BE) [7]",
+          "value": 0.68,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(A/BE) [8]",
+          "value": 0.7,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(A/BE) [9]",
+          "value": 0.7,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(A/BE) [10A]",
+          "value": 0.7,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted ln(A/BE) [10B]",
+          "value": 0.73,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted E/P dummy [1A]",
+          "value": 0.29,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted E/P dummy [1B]",
+          "value": 0.15,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted E/P dummy [2]",
+          "value": 0.1,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted E/P dummy [3]",
+          "value": 0.08,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted E/P dummy [4]",
+          "value": 0.08,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted E/P dummy [5]",
+          "value": 0.08,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted E/P dummy [6]",
+          "value": 0.09,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted E/P dummy [7]",
+          "value": 0.09,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted E/P dummy [8]",
+          "value": 0.11,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted E/P dummy [9]",
+          "value": 0.15,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted E/P dummy [10A]",
+          "value": 0.22,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted E/P dummy [10B]",
+          "value": 0.36,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted E(+)/P [1A]",
+          "value": 0.03,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted E(+)/P [1B]",
+          "value": 0.04,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted E(+)/P [2]",
+          "value": 0.06,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted E(+)/P [3]",
+          "value": 0.08,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted E(+)/P [4]",
+          "value": 0.09,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted E(+)/P [5]",
+          "value": 0.1,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted E(+)/P [6]",
+          "value": 0.11,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted E(+)/P [7]",
+          "value": 0.11,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted E(+)/P [8]",
+          "value": 0.12,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted E(+)/P [9]",
+          "value": 0.11,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted E(+)/P [10A]",
+          "value": 0.1,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted E(+)/P [10B]",
+          "value": 0.1,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted Firms [1A]",
+          "value": 89,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted Firms [1B]",
+          "value": 98,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted Firms [2]",
+          "value": 209,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted Firms [3]",
+          "value": 222,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted Firms [4]",
+          "value": 226,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted Firms [5]",
+          "value": 230,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted Firms [6]",
+          "value": 235,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted Firms [7]",
+          "value": 237,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted Firms [8]",
+          "value": 239,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted Firms [9]",
+          "value": 239,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted Firms [10A]",
+          "value": 120,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4A BE/ME-sorted Firms [10B]",
+          "value": 117,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1390-L1555"
+        },
+        {
+          "name": "T4B E/P-sorted Return [0]",
+          "value": 1.46,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted Return [1A]",
+          "value": 1.04,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted Return [1B]",
+          "value": 0.93,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted Return [2]",
+          "value": 0.94,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted Return [3]",
+          "value": 1.03,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted Return [4]",
+          "value": 1.18,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted Return [5]",
+          "value": 1.22,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted Return [6]",
+          "value": 1.33,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted Return [7]",
+          "value": 1.42,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted Return [8]",
+          "value": 1.46,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted Return [9]",
+          "value": 1.57,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted Return [10A]",
+          "value": 1.74,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted Return [10B]",
+          "value": 1.72,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted beta [0]",
+          "value": 1.47,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted beta [1A]",
+          "value": 1.4,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted beta [1B]",
+          "value": 1.35,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted beta [2]",
+          "value": 1.31,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted beta [3]",
+          "value": 1.28,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted beta [4]",
+          "value": 1.26,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted beta [5]",
+          "value": 1.25,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted beta [6]",
+          "value": 1.26,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted beta [7]",
+          "value": 1.24,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted beta [8]",
+          "value": 1.23,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted beta [9]",
+          "value": 1.24,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted beta [10A]",
+          "value": 1.28,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted beta [10B]",
+          "value": 1.31,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(ME) [0]",
+          "value": 2.48,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(ME) [1A]",
+          "value": 3.64,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(ME) [1B]",
+          "value": 4.33,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(ME) [2]",
+          "value": 4.61,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(ME) [3]",
+          "value": 4.64,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(ME) [4]",
+          "value": 4.63,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(ME) [5]",
+          "value": 4.58,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(ME) [6]",
+          "value": 4.49,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(ME) [7]",
+          "value": 4.37,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(ME) [8]",
+          "value": 4.28,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(ME) [9]",
+          "value": 4.07,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(ME) [10A]",
+          "value": 3.82,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(ME) [10B]",
+          "value": 3.52,
+          "unit": "ln(millions $)",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(BE/ME) [0]",
+          "value": -0.1,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(BE/ME) [1A]",
+          "value": -0.76,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(BE/ME) [1B]",
+          "value": -0.91,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(BE/ME) [2]",
+          "value": -0.79,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(BE/ME) [3]",
+          "value": -0.61,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(BE/ME) [4]",
+          "value": -0.47,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(BE/ME) [5]",
+          "value": -0.33,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(BE/ME) [6]",
+          "value": -0.21,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(BE/ME) [7]",
+          "value": -0.08,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(BE/ME) [8]",
+          "value": 0.02,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(BE/ME) [9]",
+          "value": 0.15,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(BE/ME) [10A]",
+          "value": 0.26,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(BE/ME) [10B]",
+          "value": 0.4,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(A/ME) [0]",
+          "value": 0.9,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(A/ME) [1A]",
+          "value": -0.05,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(A/ME) [1B]",
+          "value": -0.27,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(A/ME) [2]",
+          "value": -0.16,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(A/ME) [3]",
+          "value": 0.03,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(A/ME) [4]",
+          "value": 0.18,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(A/ME) [5]",
+          "value": 0.31,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(A/ME) [6]",
+          "value": 0.44,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(A/ME) [7]",
+          "value": 0.58,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(A/ME) [8]",
+          "value": 0.7,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(A/ME) [9]",
+          "value": 0.85,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(A/ME) [10A]",
+          "value": 1.01,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(A/ME) [10B]",
+          "value": 1.25,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(A/BE) [0]",
+          "value": 0.99,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(A/BE) [1A]",
+          "value": 0.7,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(A/BE) [1B]",
+          "value": 0.63,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(A/BE) [2]",
+          "value": 0.63,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(A/BE) [3]",
+          "value": 0.64,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(A/BE) [4]",
+          "value": 0.65,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(A/BE) [5]",
+          "value": 0.64,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(A/BE) [6]",
+          "value": 0.65,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(A/BE) [7]",
+          "value": 0.66,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(A/BE) [8]",
+          "value": 0.68,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(A/BE) [9]",
+          "value": 0.71,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(A/BE) [10A]",
+          "value": 0.75,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted ln(A/BE) [10B]",
+          "value": 0.86,
+          "unit": "ln ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted E/P dummy [0]",
+          "value": 1.0,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted E/P dummy [1A]",
+          "value": 0.0,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted E/P dummy [1B]",
+          "value": 0.0,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted E/P dummy [2]",
+          "value": 0.0,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted E/P dummy [3]",
+          "value": 0.0,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted E/P dummy [4]",
+          "value": 0.0,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted E/P dummy [5]",
+          "value": 0.0,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted E/P dummy [6]",
+          "value": 0.0,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted E/P dummy [7]",
+          "value": 0.0,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted E/P dummy [8]",
+          "value": 0.0,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted E/P dummy [9]",
+          "value": 0.0,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted E/P dummy [10A]",
+          "value": 0.0,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted E/P dummy [10B]",
+          "value": 0.0,
+          "unit": "fraction",
+          "tolerance_pct": 30,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted E(+)/P [0]",
+          "value": 0.0,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted E(+)/P [1A]",
+          "value": 0.01,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted E(+)/P [1B]",
+          "value": 0.03,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted E(+)/P [2]",
+          "value": 0.05,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted E(+)/P [3]",
+          "value": 0.06,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted E(+)/P [4]",
+          "value": 0.08,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted E(+)/P [5]",
+          "value": 0.09,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted E(+)/P [6]",
+          "value": 0.11,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted E(+)/P [7]",
+          "value": 0.12,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted E(+)/P [8]",
+          "value": 0.14,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted E(+)/P [9]",
+          "value": 0.16,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted E(+)/P [10A]",
+          "value": 0.2,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted E(+)/P [10B]",
+          "value": 0.28,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted Firms [0]",
+          "value": 355,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted Firms [1A]",
+          "value": 88,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted Firms [1B]",
+          "value": 90,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted Firms [2]",
+          "value": 182,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted Firms [3]",
+          "value": 190,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted Firms [4]",
+          "value": 193,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted Firms [5]",
+          "value": 196,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted Firms [6]",
+          "value": 194,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted Firms [7]",
+          "value": 197,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted Firms [8]",
+          "value": 195,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted Firms [9]",
+          "value": 195,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted Firms [10A]",
+          "value": 95,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1571-L1742"
+        },
+        {
+          "name": "T4B E/P-sorted Firms [10B]",
+          "value": 91,
+          "unit": "count",
+          "tolerance_pct": 20,
+          "paper_location": "L1571-L1742"
+        }
+      ],
+      "notes": "OCR correction: Panel A header includes a spurious '0' column (no negative-BE portfolio exists; paper p.441 'we do not include them in the tests'); the 12 data values map to 1A-10B, verified by prose ('returns rise from 0.30% for the lowest BE/ME portfolio to 1.83% for the highest') and monotonic ln(BE/ME). Panel B's first of two 'ln(A/BE)' rows is ln(A/ME), verified via ln(A/ME)-ln(A/BE)=ln(BE/ME)."
+    },
+    {
+      "id": "table_5",
+      "table_ref": "Table V",
+      "description": "Average monthly returns (%) on 100 portfolios formed on size (NYSE decile breakpoints) then BE/ME (10 groups within each decile, breakpoints within decile), equal-weighted, July 1963-December 1990. BE/ME = (common equity + balance-sheet deferred taxes, fiscal t-1) / ME December t-1.",
+      "replication_meaning": "Proves the two-dimensional size x BE/ME sort with the within-decile BE/ME breakpoints and the December-t-1 ratio timing, and demonstrates the paper's parsimonious model: within each size decile returns rise strongly with BE/ME (avg within-decile spread 0.99%/mo: 1.63-0.64 in the All row), and within each BE/ME group returns decline with size (0.58%/mo: 1.47-0.89 in the All column). This is the empirical foundation of the FF three-factor HML design.",
+      "paper_quote": "In June of each year t, the NYSE, AMEX, and NASDAQ stocks that meet the CRSP-COMPUSTAT data requirements are allocated to 10 size portfolios using the NYSE size (ME) breakpoints. The NYSE, AMEX, and NASDAQ stocks in each size decile are then sorted into 10 BE/ME portfolios using the book-to-market ratios for year t - 1. BE/ME is the book value of common equity plus balance-sheet deferred taxes for fiscal year t - 1, over market equity for December of year t - 1.",
+      "exercises_preprocessing_rules": [
+        "sort_size_beme_10x10",
+        "sort_size_nyse_breakpoints",
+        "var_be_definition",
+        "var_december_me_for_ratios",
+        "universe_crsp_compustat_intersection",
+        "sample_negative_be_excluded"
+      ],
+      "metrics": [
+        {
+          "name": "T5 avg return [All x BE/ME-All]",
+          "value": 1.23,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [All x BE/ME-Low]",
+          "value": 0.64,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [All x BE/ME-2]",
+          "value": 0.98,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [All x BE/ME-3]",
+          "value": 1.06,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [All x BE/ME-4]",
+          "value": 1.17,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [All x BE/ME-5]",
+          "value": 1.24,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [All x BE/ME-6]",
+          "value": 1.26,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [All x BE/ME-7]",
+          "value": 1.39,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [All x BE/ME-8]",
+          "value": 1.4,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [All x BE/ME-9]",
+          "value": 1.5,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [All x BE/ME-High]",
+          "value": 1.63,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [Small-ME x BE/ME-All]",
+          "value": 1.47,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [Small-ME x BE/ME-Low]",
+          "value": 0.7,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [Small-ME x BE/ME-2]",
+          "value": 1.14,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [Small-ME x BE/ME-3]",
+          "value": 1.2,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [Small-ME x BE/ME-4]",
+          "value": 1.43,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [Small-ME x BE/ME-5]",
+          "value": 1.56,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [Small-ME x BE/ME-6]",
+          "value": 1.51,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [Small-ME x BE/ME-7]",
+          "value": 1.7,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [Small-ME x BE/ME-8]",
+          "value": 1.71,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [Small-ME x BE/ME-9]",
+          "value": 1.82,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [Small-ME x BE/ME-High]",
+          "value": 1.92,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-2 x BE/ME-All]",
+          "value": 1.22,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-2 x BE/ME-Low]",
+          "value": 0.43,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-2 x BE/ME-2]",
+          "value": 1.05,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-2 x BE/ME-3]",
+          "value": 0.96,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-2 x BE/ME-4]",
+          "value": 1.19,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-2 x BE/ME-5]",
+          "value": 1.33,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-2 x BE/ME-6]",
+          "value": 1.19,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-2 x BE/ME-7]",
+          "value": 1.58,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-2 x BE/ME-8]",
+          "value": 1.28,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-2 x BE/ME-9]",
+          "value": 1.43,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-2 x BE/ME-High]",
+          "value": 1.79,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-3 x BE/ME-All]",
+          "value": 1.22,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-3 x BE/ME-Low]",
+          "value": 0.56,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-3 x BE/ME-2]",
+          "value": 0.88,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-3 x BE/ME-3]",
+          "value": 1.23,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-3 x BE/ME-4]",
+          "value": 0.95,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-3 x BE/ME-5]",
+          "value": 1.36,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-3 x BE/ME-6]",
+          "value": 1.3,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-3 x BE/ME-7]",
+          "value": 1.3,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-3 x BE/ME-8]",
+          "value": 1.4,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-3 x BE/ME-9]",
+          "value": 1.54,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-3 x BE/ME-High]",
+          "value": 1.6,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-4 x BE/ME-All]",
+          "value": 1.19,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-4 x BE/ME-Low]",
+          "value": 0.39,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-4 x BE/ME-2]",
+          "value": 0.72,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-4 x BE/ME-3]",
+          "value": 1.06,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-4 x BE/ME-4]",
+          "value": 1.36,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-4 x BE/ME-5]",
+          "value": 1.13,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-4 x BE/ME-6]",
+          "value": 1.21,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-4 x BE/ME-7]",
+          "value": 1.34,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-4 x BE/ME-8]",
+          "value": 1.59,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-4 x BE/ME-9]",
+          "value": 1.51,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-4 x BE/ME-High]",
+          "value": 1.47,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-5 x BE/ME-All]",
+          "value": 1.24,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-5 x BE/ME-Low]",
+          "value": 0.88,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-5 x BE/ME-2]",
+          "value": 0.65,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-5 x BE/ME-3]",
+          "value": 1.08,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-5 x BE/ME-4]",
+          "value": 1.47,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-5 x BE/ME-5]",
+          "value": 1.13,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-5 x BE/ME-6]",
+          "value": 1.43,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-5 x BE/ME-7]",
+          "value": 1.44,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-5 x BE/ME-8]",
+          "value": 1.26,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-5 x BE/ME-9]",
+          "value": 1.52,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-5 x BE/ME-High]",
+          "value": 1.49,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-6 x BE/ME-All]",
+          "value": 1.15,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-6 x BE/ME-Low]",
+          "value": 0.7,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-6 x BE/ME-2]",
+          "value": 0.98,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-6 x BE/ME-3]",
+          "value": 1.14,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-6 x BE/ME-4]",
+          "value": 1.23,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-6 x BE/ME-5]",
+          "value": 0.94,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-6 x BE/ME-6]",
+          "value": 1.27,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-6 x BE/ME-7]",
+          "value": 1.19,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-6 x BE/ME-8]",
+          "value": 1.19,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-6 x BE/ME-9]",
+          "value": 1.24,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-6 x BE/ME-High]",
+          "value": 1.5,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-7 x BE/ME-All]",
+          "value": 1.07,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-7 x BE/ME-Low]",
+          "value": 0.95,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-7 x BE/ME-2]",
+          "value": 1.0,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-7 x BE/ME-3]",
+          "value": 0.99,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-7 x BE/ME-4]",
+          "value": 0.83,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-7 x BE/ME-5]",
+          "value": 0.99,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-7 x BE/ME-6]",
+          "value": 1.13,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-7 x BE/ME-7]",
+          "value": 0.99,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-7 x BE/ME-8]",
+          "value": 1.16,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-7 x BE/ME-9]",
+          "value": 1.1,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-7 x BE/ME-High]",
+          "value": 1.47,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-8 x BE/ME-All]",
+          "value": 1.08,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-8 x BE/ME-Low]",
+          "value": 0.66,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-8 x BE/ME-2]",
+          "value": 1.13,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-8 x BE/ME-3]",
+          "value": 0.91,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-8 x BE/ME-4]",
+          "value": 0.95,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-8 x BE/ME-5]",
+          "value": 0.99,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-8 x BE/ME-6]",
+          "value": 1.01,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-8 x BE/ME-7]",
+          "value": 1.15,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-8 x BE/ME-8]",
+          "value": 1.05,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-8 x BE/ME-9]",
+          "value": 1.29,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-8 x BE/ME-High]",
+          "value": 1.55,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-9 x BE/ME-All]",
+          "value": 0.95,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-9 x BE/ME-Low]",
+          "value": 0.44,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-9 x BE/ME-2]",
+          "value": 0.89,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-9 x BE/ME-3]",
+          "value": 0.92,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-9 x BE/ME-4]",
+          "value": 1.0,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-9 x BE/ME-5]",
+          "value": 1.05,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-9 x BE/ME-6]",
+          "value": 0.93,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-9 x BE/ME-7]",
+          "value": 0.82,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-9 x BE/ME-8]",
+          "value": 1.11,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-9 x BE/ME-9]",
+          "value": 1.04,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [ME-9 x BE/ME-High]",
+          "value": 1.22,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [Large-ME x BE/ME-All]",
+          "value": 0.89,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [Large-ME x BE/ME-Low]",
+          "value": 0.93,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [Large-ME x BE/ME-2]",
+          "value": 0.88,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [Large-ME x BE/ME-3]",
+          "value": 0.84,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [Large-ME x BE/ME-4]",
+          "value": 0.71,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [Large-ME x BE/ME-5]",
+          "value": 0.79,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [Large-ME x BE/ME-6]",
+          "value": 0.83,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [Large-ME x BE/ME-7]",
+          "value": 0.81,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [Large-ME x BE/ME-8]",
+          "value": 0.96,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [Large-ME x BE/ME-9]",
+          "value": 0.97,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        },
+        {
+          "name": "T5 avg return [Large-ME x BE/ME-High]",
+          "value": 1.18,
+          "unit": "percent/month",
+          "tolerance_pct": 25,
+          "paper_location": "L1824-L1987"
+        }
+      ],
+      "notes": "Complete 11x11 matrix targeted (all cells). Prose cross-checks: within-decile spread 1.63-0.64 = 0.99%/mo; All-column size spread 1.47-0.89 = 0.58%/mo."
+    },
+    {
+      "id": "table_6",
+      "table_ref": "Table VI",
+      "description": "Subperiod means, standard deviations and t-statistics for (i) NYSE value- and equal-weighted portfolio returns, (ii) FM regression of returns on ln(ME) + ln(BE/ME), and (iii) FM regression on beta + ln(ME) + ln(BE/ME), over the full period (330 months) and two subperiods (162/168 months).",
+      "replication_meaning": "Proves temporal robustness and the subperiod stability of the BE/ME effect (slopes 0.36 and 0.35 vs 0.35 full-period; all > 2.95 SE from 0), the insignificance of beta in both subperiods (0.10, t=0.25 in 63-76; -0.44, t=-1.17 in 77-90), and validates the NYSE VW/EW benchmark return computation from CRSP. Also checks the FM intercept magnitudes (large intercepts ~1.7-2.1%/mo).",
+      "paper_quote": "Table VI shows the average FM slopes for two roughly equal subperiods (July 1963-December 1976 and January 1977-December 1990) from two regressions: (a) the cross-section of stock returns on size, ln(ME), and book-to-market equity, ln(BE/ME), and (b) returns on beta, ln(ME), and ln(BE/ME). For perspective, average returns on the value-weighted and equal-weighted (VW and EW) portfolios of NYSE stocks are also shown.",
+      "exercises_preprocessing_rules": [
+        "factor_market_index_for_table_vi",
+        "fm_monthly_cross_sectional_regressions",
+        "fm_slope_average_and_tstat",
+        "sample_return_period",
+        "fm_explanatory_variable_timing",
+        "fm_individual_stocks_with_portfolio_betas"
+      ],
+      "metrics": [
+        {
+          "name": "T6 NYSE VW Mean [7/63-12/90]",
+          "value": 0.81,
+          "unit": "percent/month",
+          "tolerance_pct": 15,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 NYSE VW Std [7/63-12/90]",
+          "value": 4.47,
+          "unit": "percent/month",
+          "tolerance_pct": 10,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 NYSE VW t(Mn) [7/63-12/90]",
+          "value": 3.27,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 NYSE VW Mean [7/63-12/76]",
+          "value": 0.56,
+          "unit": "percent/month",
+          "tolerance_pct": 15,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 NYSE VW Std [7/63-12/76]",
+          "value": 4.26,
+          "unit": "percent/month",
+          "tolerance_pct": 10,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 NYSE VW t(Mn) [7/63-12/76]",
+          "value": 1.67,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 NYSE VW Mean [1/77-12/90]",
+          "value": 1.04,
+          "unit": "percent/month",
+          "tolerance_pct": 15,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 NYSE VW Std [1/77-12/90]",
+          "value": 4.66,
+          "unit": "percent/month",
+          "tolerance_pct": 10,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 NYSE VW t(Mn) [1/77-12/90]",
+          "value": 2.89,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 NYSE EW Mean [7/63-12/90]",
+          "value": 0.97,
+          "unit": "percent/month",
+          "tolerance_pct": 15,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 NYSE EW Std [7/63-12/90]",
+          "value": 5.49,
+          "unit": "percent/month",
+          "tolerance_pct": 10,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 NYSE EW t(Mn) [7/63-12/90]",
+          "value": 3.19,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 NYSE EW Mean [7/63-12/76]",
+          "value": 0.77,
+          "unit": "percent/month",
+          "tolerance_pct": 15,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 NYSE EW Std [7/63-12/76]",
+          "value": 5.7,
+          "unit": "percent/month",
+          "tolerance_pct": 10,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 NYSE EW t(Mn) [7/63-12/76]",
+          "value": 1.72,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 NYSE EW Mean [1/77-12/90]",
+          "value": 1.15,
+          "unit": "percent/month",
+          "tolerance_pct": 15,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 NYSE EW Std [1/77-12/90]",
+          "value": 5.28,
+          "unit": "percent/month",
+          "tolerance_pct": 10,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 NYSE EW t(Mn) [1/77-12/90]",
+          "value": 2.82,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(a) intercept Mean [7/63-12/90]",
+          "value": 1.77,
+          "unit": "percent/month",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(a) intercept Std [7/63-12/90]",
+          "value": 8.51,
+          "unit": "percent/month (std)",
+          "tolerance_pct": 10,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(a) intercept t(Mn) [7/63-12/90]",
+          "value": 3.77,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(a) intercept Mean [7/63-12/76]",
+          "value": 1.86,
+          "unit": "percent/month",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(a) intercept Std [7/63-12/76]",
+          "value": 10.1,
+          "unit": "percent/month (std)",
+          "tolerance_pct": 10,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(a) intercept t(Mn) [7/63-12/76]",
+          "value": 2.33,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(a) intercept Mean [1/77-12/90]",
+          "value": 1.69,
+          "unit": "percent/month",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(a) intercept Std [1/77-12/90]",
+          "value": 6.67,
+          "unit": "percent/month (std)",
+          "tolerance_pct": 10,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(a) intercept t(Mn) [1/77-12/90]",
+          "value": 3.27,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(a) b2 ln(ME) Mean [7/63-12/90]",
+          "value": -0.11,
+          "unit": "percent/month",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(a) b2 ln(ME) Std [7/63-12/90]",
+          "value": 1.02,
+          "unit": "percent/month (std)",
+          "tolerance_pct": 10,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(a) b2 ln(ME) t(Mn) [7/63-12/90]",
+          "value": -1.99,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(a) b2 ln(ME) Mean [7/63-12/76]",
+          "value": -0.16,
+          "unit": "percent/month",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(a) b2 ln(ME) Std [7/63-12/76]",
+          "value": 1.25,
+          "unit": "percent/month (std)",
+          "tolerance_pct": 10,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(a) b2 ln(ME) t(Mn) [7/63-12/76]",
+          "value": -1.62,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(a) b2 ln(ME) Mean [1/77-12/90]",
+          "value": -0.07,
+          "unit": "percent/month",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(a) b2 ln(ME) Std [1/77-12/90]",
+          "value": 0.73,
+          "unit": "percent/month (std)",
+          "tolerance_pct": 10,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(a) b2 ln(ME) t(Mn) [1/77-12/90]",
+          "value": -1.16,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(a) b3 ln(BE/ME) Mean [7/63-12/90]",
+          "value": 0.35,
+          "unit": "percent/month",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(a) b3 ln(BE/ME) Std [7/63-12/90]",
+          "value": 1.45,
+          "unit": "percent/month (std)",
+          "tolerance_pct": 10,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(a) b3 ln(BE/ME) t(Mn) [7/63-12/90]",
+          "value": 4.43,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(a) b3 ln(BE/ME) Mean [7/63-12/76]",
+          "value": 0.36,
+          "unit": "percent/month",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(a) b3 ln(BE/ME) Std [7/63-12/76]",
+          "value": 1.53,
+          "unit": "percent/month (std)",
+          "tolerance_pct": 10,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(a) b3 ln(BE/ME) t(Mn) [7/63-12/76]",
+          "value": 2.96,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(a) b3 ln(BE/ME) Mean [1/77-12/90]",
+          "value": 0.35,
+          "unit": "percent/month",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(a) b3 ln(BE/ME) Std [1/77-12/90]",
+          "value": 1.37,
+          "unit": "percent/month (std)",
+          "tolerance_pct": 10,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(a) b3 ln(BE/ME) t(Mn) [1/77-12/90]",
+          "value": 3.3,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) intercept Mean [7/63-12/90]",
+          "value": 2.07,
+          "unit": "percent/month",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) intercept Std [7/63-12/90]",
+          "value": 5.75,
+          "unit": "percent/month (std)",
+          "tolerance_pct": 10,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) intercept t(Mn) [7/63-12/90]",
+          "value": 6.55,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) intercept Mean [7/63-12/76]",
+          "value": 1.73,
+          "unit": "percent/month",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) intercept Std [7/63-12/76]",
+          "value": 6.22,
+          "unit": "percent/month (std)",
+          "tolerance_pct": 10,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) intercept t(Mn) [7/63-12/76]",
+          "value": 3.54,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) intercept Mean [1/77-12/90]",
+          "value": 2.4,
+          "unit": "percent/month",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) intercept Std [1/77-12/90]",
+          "value": 5.25,
+          "unit": "percent/month (std)",
+          "tolerance_pct": 10,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) intercept t(Mn) [1/77-12/90]",
+          "value": 5.92,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) b1 beta Mean [7/63-12/90]",
+          "value": -0.17,
+          "unit": "percent/month",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) b1 beta Std [7/63-12/90]",
+          "value": 5.12,
+          "unit": "percent/month (std)",
+          "tolerance_pct": 10,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) b1 beta t(Mn) [7/63-12/90]",
+          "value": -0.62,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) b1 beta Mean [7/63-12/76]",
+          "value": 0.1,
+          "unit": "percent/month",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) b1 beta Std [7/63-12/76]",
+          "value": 5.33,
+          "unit": "percent/month (std)",
+          "tolerance_pct": 10,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) b1 beta t(Mn) [7/63-12/76]",
+          "value": 0.25,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) b1 beta Mean [1/77-12/90]",
+          "value": -0.44,
+          "unit": "percent/month",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) b1 beta Std [1/77-12/90]",
+          "value": 4.91,
+          "unit": "percent/month (std)",
+          "tolerance_pct": 10,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) b1 beta t(Mn) [1/77-12/90]",
+          "value": -1.17,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) b2 ln(ME) Mean [7/63-12/90]",
+          "value": -0.12,
+          "unit": "percent/month",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) b2 ln(ME) Std [7/63-12/90]",
+          "value": 0.89,
+          "unit": "percent/month (std)",
+          "tolerance_pct": 10,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) b2 ln(ME) t(Mn) [7/63-12/90]",
+          "value": -2.52,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) b2 ln(ME) Mean [7/63-12/76]",
+          "value": -0.15,
+          "unit": "percent/month",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) b2 ln(ME) Std [7/63-12/76]",
+          "value": 1.03,
+          "unit": "percent/month (std)",
+          "tolerance_pct": 10,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) b2 ln(ME) t(Mn) [7/63-12/76]",
+          "value": -1.91,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) b2 ln(ME) Mean [1/77-12/90]",
+          "value": -0.09,
+          "unit": "percent/month",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) b2 ln(ME) Std [1/77-12/90]",
+          "value": 0.74,
+          "unit": "percent/month (std)",
+          "tolerance_pct": 10,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) b2 ln(ME) t(Mn) [1/77-12/90]",
+          "value": -1.64,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) b3 ln(BE/ME) Mean [7/63-12/90]",
+          "value": 0.33,
+          "unit": "percent/month",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) b3 ln(BE/ME) Std [7/63-12/90]",
+          "value": 1.24,
+          "unit": "percent/month (std)",
+          "tolerance_pct": 10,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) b3 ln(BE/ME) t(Mn) [7/63-12/90]",
+          "value": 4.8,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) b3 ln(BE/ME) Mean [7/63-12/76]",
+          "value": 0.34,
+          "unit": "percent/month",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) b3 ln(BE/ME) Std [7/63-12/76]",
+          "value": 1.36,
+          "unit": "percent/month (std)",
+          "tolerance_pct": 10,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) b3 ln(BE/ME) t(Mn) [7/63-12/76]",
+          "value": 3.17,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) b3 ln(BE/ME) Mean [1/77-12/90]",
+          "value": 0.31,
+          "unit": "percent/month",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) b3 ln(BE/ME) Std [1/77-12/90]",
+          "value": 1.1,
+          "unit": "percent/month (std)",
+          "tolerance_pct": 10,
+          "paper_location": "L2043-L2182"
+        },
+        {
+          "name": "T6 reg(b) b3 ln(BE/ME) t(Mn) [1/77-12/90]",
+          "value": 3.67,
+          "unit": "t-stat",
+          "tolerance_pct": 40,
+          "paper_location": "L2043-L2182"
+        }
+      ],
+      "notes": "Complete table targeted (all 81 cells). Prose cross-checks: beta slope 0.10 (t=0.25) 1963-76 and -0.44 (t=-1.17) 1977-90; BE/ME subperiod slopes 0.36 and 0.35 vs 0.35 full period. NYSE VW/EW returns are computed from CRSP NYSE-listed common stocks (shrcd 10/11, exchcd 1) with delisting-adjusted returns \u2014 the CRSP msi index includes AMEX/NASDAQ and is not the paper's NYSE-only series."
+    }
+  ]
+}

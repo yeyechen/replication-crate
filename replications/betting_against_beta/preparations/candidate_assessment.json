@@ -1,0 +1,6 @@
+{
+  "replicable": true,
+  "paper_type": "empirical_cross_sectional",
+  "rationale": "Empirical cross-sectional and time-series paper using CRSP daily stock files (US equities, 1926-2012) and 19 international markets (Xpressfeed Global, 1984-2012). Clear methodology: rolling beta estimation (1-year vol, 5-year correlation, Vasicek shrinkage w=0.6 toward beta=1), decile portfolio sorts on NYSE breakpoints, BAB factor construction (rank-weighted, rescaled to unit beta), and factor-model regressions (CAPM, FF3, Carhart 4-factor, 5-factor with Pastor-Stambaugh liquidity). Tables 1-10 report extensive numerical results including decile returns, alphas, t-statistics, betas, volatilities, and Sharpe ratios. The core US equity result (Table 3) uses CRSP data with well-defined sample and methodology, making it an excellent replication candidate.",
+  "block_reasons": []
+}

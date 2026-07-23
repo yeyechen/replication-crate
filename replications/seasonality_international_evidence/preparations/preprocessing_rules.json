@@ -1,0 +1,219 @@
+[
+  {
+    "rule_id": "universe_countries_14",
+    "category": "universe",
+    "section": "Table 1 description",
+    "paper_location": "L59",
+    "paper_quote": "The sample includes stocks from Austria, Belgium, Canada, Finland, France, Germany, Italy, Japan, Netherlands, Norway, Spain, Sweden, Switzerland, and United Kingdom for the time period January 1985–June 2006 (258 months)."
+  },
+  {
+    "rule_id": "universe_factset_monthly_total_returns",
+    "category": "universe",
+    "section": "§2 Predictability in International Stock Returns",
+    "paper_location": "L39",
+    "paper_quote": "The data are free of survivorship bias and consist of monthly stock returns (including dividends) and market capitalizations on firms in 14 non-U.S. countries from January"
+  },
+  {
+    "rule_id": "universe_no_sharecode_filter_paper_silent",
+    "category": "universe",
+    "section": "§2 Predictability in International Stock Returns",
+    "paper_location": "L39-41",
+    "paper_quote": "The data are free of survivorship bias and consist of monthly stock returns (including dividends) and market capitalizations on firms in 14 non-U.S. countries from January 1985 through June 2006. (paper silent on share-code, security-type, or financial-firm filters — the paper describes the sample simply as 'stocks'; no such filter is applied in the replication beyond ordinary common equities)"
+  },
+  {
+    "rule_id": "sample_period_1985_2006",
+    "category": "sample",
+    "section": "§2 Predictability in International Stock Returns",
+    "paper_location": "L49",
+    "paper_quote": "1985 through June 2006. We measure returns in U.S. dollars but present results only for excess returns, which are robust to choice of numeraire."
+  },
+  {
+    "rule_id": "sample_simple_returns",
+    "category": "sample",
+    "section": "§2 (footnote 1)",
+    "paper_location": "L102",
+    "paper_quote": "While we follow the literature in using simple monthly returns, they are a close approximation for continuously compounded returns, which are literally independent of the numeraire currency."
+  },
+  {
+    "rule_id": "sample_regression_window_lags",
+    "category": "sample",
+    "section": "Table 2 description",
+    "paper_location": "L122",
+    "paper_quote": "The regression is calculated for every month $t$ from February 1985 through June 2006 (257 months), and for lag $k$ values 1–12, and each 12th lag thereafter through 60."
+  },
+  {
+    "rule_id": "sample_all_available_firms_no_hindsight",
+    "category": "sample",
+    "section": "§2 Predictability in International Stock Returns",
+    "paper_location": "L112",
+    "paper_quote": "Note that this regression uses all firms with returns available in month $t$ and month $t-k$ . Therefore, the estimated return responses represent a feasible portfolio strategy that does not suffer from hindsight bias."
+  },
+  {
+    "rule_id": "delisting_survivorship_free_no_explicit_rule",
+    "category": "delisting",
+    "section": "§2 Predictability in International Stock Returns",
+    "paper_location": "L39",
+    "paper_quote": "The data are free of survivorship bias and consist of monthly stock returns (including dividends) and market capitalizations on firms in 14 non-U.S. countries. (paper silent on explicit delisting-return treatment — the FactSet vendor file already includes delisted firms with their terminal-month returns; in the Compustat substitute, delisted securities remain in the security master and their final-month prices enter returns until delisting, with no CRSP-style dlret imputation applied)"
+  },
+  {
+    "rule_id": "sort_deciles_monthly_rebalance_1m_hold",
+    "category": "sort",
+    "section": "§3 Portfolio Strategies",
+    "paper_location": "L206",
+    "paper_quote": "After sorting the stocks, we calculate the difference between the returns on the top and bottom deciles. We rebalance these portfolios monthly and calculate average excess returns on these decile portfolio sorts for a holding period of 1 month."
+  },
+  {
+    "rule_id": "sort_equal_number_per_decile",
+    "category": "sort",
+    "section": "Table 3 description",
+    "paper_location": "L234",
+    "paper_quote": "Each month stocks are grouped into 10 portfolios (with equal number of stocks in each portfolio) based on past performance."
+  },
+  {
+    "rule_id": "sort_signal_excess_of_country_ew_index",
+    "category": "sort",
+    "section": "§3 Portfolio Strategies",
+    "paper_location": "L192",
+    "paper_quote": "Each month we sort stocks into deciles based on their historical returns in excess of equal-weighted local country indices."
+  },
+  {
+    "rule_id": "sort_panel_a_vs_panel_b_signals",
+    "category": "sort",
+    "section": "Table 3 description",
+    "paper_location": "L234",
+    "paper_quote": "A stock's past return performance is measured either in excess of its country's equal-weighted average (Panel A) or as its total (simple) return (Panel B)."
+  },
+  {
+    "rule_id": "sort_annual_vs_nonannual_lags",
+    "category": "sort",
+    "section": "§3 Portfolio Strategies",
+    "paper_location": "L210",
+    "paper_quote": "The annual strategies buy stocks based on historical monthly returns that are a multiple of 12. For example, the Year 1 annual strategies represent decile portfolios sorted on a single lag 12-month return. The nonannual strategies buy stocks based on historical returns at lags that are not a multiple of 12. For example, the Year 1 nonannual strategies choose stocks based on the most recent 11 months of returns."
+  },
+  {
+    "rule_id": "sort_year_groupings_average_lags",
+    "category": "sort",
+    "section": "Table 3 description",
+    "paper_location": "L234",
+    "paper_quote": "For example, the trading strategy that is formed based on past annual returns during Years 4–5 ranks stocks according to their average returns during the historical lags 48 and 60."
+  },
+  {
+    "rule_id": "sort_all_strategy_contiguous_interval",
+    "category": "sort",
+    "section": "§3 Portfolio Strategies",
+    "paper_location": "L210",
+    "paper_quote": "When sorting stocks based on all 12 of the past Year 1 returns in excess of country returns, the highest decile outperforms the lowest decile by 131 bp per month."
+  },
+  {
+    "rule_id": "sort_difference_annual_minus_nonannual",
+    "category": "sort",
+    "section": "Table 3 description",
+    "paper_location": "L234",
+    "paper_quote": "The difference strategy is the annual strategy minus the nonannual strategy."
+  },
+  {
+    "rule_id": "sort_ew_and_vw_deciles",
+    "category": "sort",
+    "section": "§3 Portfolio Strategies",
+    "paper_location": "L216",
+    "paper_quote": "The lower panels of Table 3 report profitability of value-weighted decile spread strategies instead of equal-weighted strategies. The holding period returns on both equal- and value-weighted decile spreads compare the top 10% of stocks to the bottom 10% of stocks, not to an equal- or value-weighted index."
+  },
+  {
+    "rule_id": "sort_intra_inter_return_decomposition",
+    "category": "sort",
+    "section": "Table 3 description",
+    "paper_location": "L234",
+    "paper_quote": "The monthly holding return of every stock is then decomposed into intra- and intercountry components. The intracountry component is the monthly return of the stock excess of its country's equal-weighted average return, and the intercountry component is the average monthly return of the country itself."
+  },
+  {
+    "rule_id": "sort_size_groups_30_40_30_monthly",
+    "category": "sort",
+    "section": "Table 5 description",
+    "paper_location": "L1218",
+    "paper_quote": "Table 5 reports the results of this procedure, performed separately for 3 different size groups (measured by market capitalization in U.S. dollars), within each country and across all countries. Small firms are defined as the bottom 30%, large firms are the top 30%, and the remaining 40% are medium-size firms. The size categorization is reevaluated in the beginning of every month."
+  },
+  {
+    "rule_id": "winsorize_none_paper_silent",
+    "category": "winsorize",
+    "section": "paper silent",
+    "paper_location": "L234",
+    "paper_quote": "Each month stocks are grouped into 10 portfolios (with equal number of stocks in each portfolio) based on past performance. (paper silent on winsorization or trimming — no truncation of returns or signals is mentioned anywhere in the paper; the replication applies none)"
+  },
+  {
+    "rule_id": "factor_market_vw_excess_tbill",
+    "category": "factor",
+    "section": "§4.C Controlling for Risk",
+    "paper_location": "L1832",
+    "paper_quote": "To analyze risk we construct a market index factor as the return on a value-weighted combination of stocks in our sample in excess of the risk-free return on a 1-month U.S. T-bill."
+  },
+  {
+    "rule_id": "factor_smb_within_country_median",
+    "category": "factor",
+    "section": "§4.C Controlling for Risk",
+    "paper_location": "L1832",
+    "paper_quote": "This \"small-minus-big\" (SMB) factor is a value-weighted return on the smallest 50% of market capitalization stocks within each country in excess of the largest 50% of firms within each country."
+  },
+  {
+    "rule_id": "factor_french_international_value_factors",
+    "category": "factor",
+    "section": "§4.C Controlling for Risk",
+    "paper_location": "L1832",
+    "paper_quote": "We also use additional international factors from Ken French to control for the risk of BM, earnings-to-price (EP), CEP, and dividend yield (DP) ratios. These portfolio risk factors are available for all the countries in our sample, as well as an internationally diversified combination."
+  },
+  {
+    "rule_id": "factor_country_ew_benchmark",
+    "category": "factor",
+    "section": "§3 Portfolio Strategies (footnote 4)",
+    "paper_location": "L198",
+    "paper_quote": "We obtain similar results using value-weighted indices."
+  },
+  {
+    "rule_id": "fm_monthly_xs_regression_country_dummies_ts_average",
+    "category": "fm",
+    "section": "Table 2 description",
+    "paper_location": "L122",
+    "paper_quote": "monthly univariate cross-sectional regressions of the form $r_{i,t} = \\alpha_{k,t} + \\gamma_{k,t} r_{i,t-k} + u_{i,t}$ are calculated for each month $t$ and lag $k$ ... Regression results (using country dummy variables for intercept) are reported separately for different samples: all countries, European countries only, Canada, and Japan. The time-series averages of $\\gamma_{k,t}$ as well as $t$ -statistics are reported."
+  },
+  {
+    "rule_id": "fm_wls_reciprocal_country_variance",
+    "category": "fm",
+    "section": "Table 2 description",
+    "paper_location": "L122",
+    "paper_quote": "Heteroskedasticity-adjusted regressions for all countries and European countries are computed by weighting each firm observation by the pooled cross-sectional and time-series variance of firm returns in its country."
+  },
+  {
+    "rule_id": "fm_alpha_regression_on_global_factors",
+    "category": "fm",
+    "section": "§4.C Controlling for Risk",
+    "paper_location": "L1834",
+    "paper_quote": "To adjust the average returns for risk, we regress the decile spreads of our portfolio strategies (from Table 3) on the international risk factors. The intercepts or $\\alpha$ s represent risk-adjusted excess returns."
+  },
+  {
+    "rule_id": "var_return_response_gamma",
+    "category": "variable",
+    "section": "§2 Predictability in International Stock Returns (eq. 1)",
+    "paper_location": "L98",
+    "paper_quote": "The coefficients $\\gamma_{tk}$ represent the response of returns at time $t$ to previous returns lagged by $k$ months. Therefore, we call them \"return responses.\""
+  },
+  {
+    "rule_id": "var_country_excess_return_intra",
+    "category": "variable",
+    "section": "Table 3 description",
+    "paper_location": "L234",
+    "paper_quote": "The intracountry component is the monthly return of the stock excess of its country's equal-weighted average return, and the intercountry component is the average monthly return of the country itself."
+  },
+  {
+    "rule_id": "var_market_cap_usd_for_size",
+    "category": "variable",
+    "section": "Table 5 description",
+    "paper_location": "L1218",
+    "paper_quote": "performed separately for 3 different size groups (measured by market capitalization in U.S. dollars)"
+  },
+  {
+    "rule_id": "var_strategy_window_returns",
+    "category": "variable",
+    "section": "Table 3 description",
+    "paper_location": "L234",
+    "paper_quote": "The average monthly returns (equal- and value-weighted) of the various trading strategies (for both intra- and interindustry components) for the period February 1985–June 2006 (257 months) are reported, as well as the corresponding t-statistics (2-decimal-place numbers)."
+  }
+]

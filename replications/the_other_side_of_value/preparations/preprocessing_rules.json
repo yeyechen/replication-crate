@@ -1,0 +1,135 @@
+[
+  {
+    "rule_id": "universe_exclude_financials",
+    "category": "universe",
+    "section": "§2.1",
+    "paper_location": "L119",
+    "paper_quote": "The sample excludes financial firms [i.e., those with a one-digit standard industrial classification (SIC) code of six], though retaining financials has little impact on the results."
+  },
+  {
+    "rule_id": "sample_period",
+    "category": "sample",
+    "section": "§2.1",
+    "paper_location": "L119",
+    "paper_quote": "I use Compustat data starting in 1962, the year of the American Stock Exchange (Amex) inclusion, and employ accounting data for a given fiscal year starting at the end of June of the following calendar year. Asset pricing tests consequently cover July 1963 through December 2010."
+  },
+  {
+    "rule_id": "sample_fiscal_year_mapping",
+    "category": "sample",
+    "section": "§2.1",
+    "paper_location": "L119",
+    "paper_quote": "employ accounting data for a given fiscal year starting at the end of June of the following calendar year."
+  },
+  {
+    "rule_id": "delisting_paper_silent",
+    "category": "delisting",
+    "section": "paper silent",
+    "paper_location": "L119",
+    "paper_quote": "paper silent — the paper does not discuss delisting return treatment. Standard CRSP convention applies (use dlret when available)."
+  },
+  {
+    "rule_id": "sort_quintile_nyse_breaks",
+    "category": "sort",
+    "section": "§2.2",
+    "paper_location": "L652",
+    "paper_quote": "Portfolios are constructed using a quintile sort, based on New York Stock Exchange (NYSE) break points, and are rebalanced each year at the end of June."
+  },
+  {
+    "rule_id": "sort_value_weighted",
+    "category": "sort",
+    "section": "Table 2 description",
+    "paper_location": "L329",
+    "paper_quote": "This table shows monthly value-weighted average excess returns to portfolios sorted on gross profits-to-assets [(REVT – COGS)/AT], employing NYSE breakpoints"
+  },
+  {
+    "rule_id": "sort_double_independent",
+    "category": "sort",
+    "section": "§3.1",
+    "paper_location": "L797",
+    "paper_quote": "Portfolios are formed by independently quintile sorting on the two variables, using NYSE breaks."
+  },
+  {
+    "rule_id": "sort_table7_tertile_combined",
+    "category": "sort",
+    "section": "§3.2",
+    "paper_location": "L1412",
+    "paper_quote": "The strategy I consider is constructed within the 500 largest nonfinancial stocks for which gross profits-to-assets and book-to-market are both available. Each year I rank these stocks on both their gross profits-to-assets and book-to-market ratios, from 1 (lowest) to 500 (highest). At the end of each June the strategy buys one dollar of each of the 150 stocks with the highest combined profitability and value ranks, and it shorts one dollar of each of the 150 stocks with the lowest combined ranks."
+  },
+  {
+    "rule_id": "winsorize_1pct_99pct",
+    "category": "winsorize",
+    "section": "§2.1",
+    "paper_location": "L119",
+    "paper_quote": "Independent variables are trimmed at the 1% and 99% levels."
+  },
+  {
+    "rule_id": "factor_ff3",
+    "category": "factor",
+    "section": "Table 2 description",
+    "paper_location": "L329",
+    "paper_quote": "results of time series regressions of these portfolios' returns on the Fama and French factors [the market factor (MKT), the size factor small-minus-large (SMB), and the value factor high-minus-low (HML)]"
+  },
+  {
+    "rule_id": "factor_conditional_hml_gp",
+    "category": "factor",
+    "section": "§3.3",
+    "paper_location": "L2188-2190",
+    "paper_quote": "a firm is deemed a value (growth) stock if it has a book-to-market higher (lower) than 70% of the NYSE firms in the same gross profitability decile (NYSE breaks) and is considered profitable (unprofitable) if it has a gross profits-to-assets higher (lower) than 70% of the NYSE firms in the same book-to-market decile (NYSE breaks)."
+  },
+  {
+    "rule_id": "factor_industry_adjusted",
+    "category": "factor",
+    "section": "§4.1",
+    "paper_location": "L2435",
+    "paper_quote": "Specifically, each of these factors is constructed as an equal weighted mix of large and small cap strategies, in which large and small are defined by the NYSE median market capitalization. The strategies are long (short) firms in the top (bottom) tertile by NYSE breaks on the primary sorting variable. For the value factor, this is log book-to-market, demeaned by industry (the Fama and French 49). For the momentum and profitability factors, it is performance over the first 11 months of the preceding year and gross profits-to-assets, both again demeaned by industry. Each stock position is hedged for industry exposure, by taking an offsetting position of equal magnitude in the corresponding stock's value-weighted industry portfolio."
+  },
+  {
+    "rule_id": "fm_regression_spec",
+    "category": "fm",
+    "section": "§2.1",
+    "paper_location": "L113",
+    "paper_quote": "Table 1 shows results of Fama and MacBeth regressions of firms' returns on gross profits-to-assets, earnings-to-book equity, and free cash flow-to-book equity. Regressions include controls for book-to-market (log(B/M)), size (log(ME)), and past performance measured at horizons of one month ($r_{1,0}$) and 12 to two months ($r_{12,2}$)."
+  },
+  {
+    "rule_id": "var_gp_a",
+    "category": "variable",
+    "section": "§2.1 (footnote 2)",
+    "paper_location": "L117",
+    "paper_quote": "Gross profits is also defined as total revenue (REVT) minus cost of goods sold (COGS), where COGS represents all expenses directly related to production"
+  },
+  {
+    "rule_id": "var_earnings",
+    "category": "variable",
+    "section": "§2.1 (footnote 2)",
+    "paper_location": "L117",
+    "paper_quote": "Gross profits and earnings before extraordinary items are Compustat data items GP and IB, respectively."
+  },
+  {
+    "rule_id": "var_fcf",
+    "category": "variable",
+    "section": "§2.1 (footnote 2)",
+    "paper_location": "L117",
+    "paper_quote": "For free cash flow, I employ net income plus depreciation and amortization minus changes in working capital minus capital expenditures (NI + DP – WCAPCH – CAPX)."
+  },
+  {
+    "rule_id": "var_bm",
+    "category": "variable",
+    "section": "§2.1 (footnote 2)",
+    "paper_location": "L117",
+    "paper_quote": "Book-to-market is book equity scaled by market equity, where market equity is lagged six months to avoid taking unintentional positions in momentum."
+  },
+  {
+    "rule_id": "var_book_equity",
+    "category": "variable",
+    "section": "§2.1 (footnote 2)",
+    "paper_location": "L127",
+    "paper_quote": "Stockholders equity is as given in Compustat (SEQ) if available, or else common equity plus the carrying value of preferred stock (CEQ+PSTX) if available, or else total assets minus total liabilities (AT – LT). Deferred taxes is deferred taxes and investment tax credits (TXDITC) if available, or else deferred taxes and/or investment tax credit (TXDB and/or ITCB). Preferred stock is redemption value (PSTKR) if available, or else liquidating value (PSTKRL) if available, or else carrying value (PSTK)."
+  },
+  {
+    "rule_id": "var_industry_ff49",
+    "category": "variable",
+    "section": "§2.1",
+    "paper_location": "L119",
+    "paper_quote": "the industries are the Fama and French (1997) 49 industry portfolios."
+  }
+]
