@@ -94,6 +94,18 @@ replication could not do" and "what the world turned out to be"; the
 two steps now partition cleanly on attribution, which is the user's
 stated semantics.
 
+**v6.3 -> v6.4 — own-claim contradiction rule; regression-only precedence.**
+WHY: batch-2.1 tune under v6.3: natural 9/9 (core task solved) but
+corrupted_construction 1/4 (mutations hid behind the standardized-
+construction allowance) and regression_only regressed 4/4 -> 2/4 (v6.3's
+strengthened finding rule overrode it).
+WHY IT IMPROVES: both are precedence clarifications, not new axes. The
+standardized-construction allowance is scoped to paper-vs-convention
+differences and can never excuse a record contradicting its own stated
+convention (internal coherence family); the regression-only rule is
+declared senior to the finding allowance. Rule collisions are resolved by
+explicit precedence, the same mechanism that fixed v1->v2.
+
 ## Grader changes (calibration phase only; hard-frozen since)
 
 - Percent/decimal display variants in number-grounding. WHY: gold answers
