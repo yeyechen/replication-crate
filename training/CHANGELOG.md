@@ -164,3 +164,19 @@ as a negative result. Possible future variant (checkers as ADVISORS whose
 findings feed the monolith, no status authority) deliberately NOT pursued
 now: the monolith already meets the bar, and un-asked-for architecture is
 how overengineering restarts.
+
+**v6.1 -> v6.2 (FROZEN) — hidden-reversal vs disclosed-loss; paper-direction
+check; standardized-construction clause.**
+WHY: v6.1's 60-case exam baseline (tune 9/32, test 11/28) failed
+systematically on weak-finding natural cases (0/8 null, 0/5 sign-flip,
+2/15 attenuated) and let two internally-consistent reversed-leg corruptions
+through the hard gate.
+WHY IT IMPROVES: the three rules separate honestly-disclosed losses from
+hidden reversals (defect requires the record to CLAIM what its signs
+contradict), recognize a disclosed uniform reference construction as
+convention rather than implementation gap, and check position direction
+against the cited paper's documented claim. Result: corpus 18/18 held;
+tune 25/32 (from 9/32). Known residual: corruptions detectable only via
+literature priors (cop_atl1, ival_me) persist -- durable fix is evidence
+design (paper_anchors must state the claimed direction; next minting
+batch), not more prompt.

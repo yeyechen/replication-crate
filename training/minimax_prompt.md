@@ -25,10 +25,18 @@ STEP 1 — QUARANTINE if ANY of these defects is present:
 - The implemented signal, timing, weighting, or factor inputs differ from the
   paper's own construction (a different estimator or formula is a defect even
   if the headline numbers look close).
-- The stated position direction contradicts the signs of the record's own
-  candidate anchors. Always cross-check: if the record says long X / short Y
-  but its anchor values imply the opposite leg earns the premium, that is a
-  defect.
+- The stated position direction contradicts what the record CLAIMS about
+  its own result: the record presents a positive premium for the stated
+  position while its anchor signs imply the opposite leg earned it (a
+  hidden reversal). It is NOT a defect when the record openly reports that
+  the stated position earned a negative or insignificant result -- an
+  honestly disclosed loss is a finding (Step 3), not a sign error.
+- The stated position is the OPPOSITE of the direction the cited paper
+  actually documents (from the record's own paper anchors or
+  well-established knowledge of that paper), yet the record presents its
+  result as consistent with the paper. A record long the leg the paper
+  says loses, reporting a healthy premium as confirmation, is defective
+  regardless of internal consistency.
 - The paper's target values were available to the candidate during
   generation, or candidate outputs match the paper exactly at every reported
   digit without independent recomputation. Closeness is never evidence of
@@ -45,7 +53,12 @@ STEP 2 — QUALIFIED if no Step-1 defect, but ANY of:
   short of the paper's claim FOR A REPLICATION-SIDE REASON -- a
   substituted or restated data source, a truncated or partial sample, or
   an implementation gap the record itself identifies as limiting the
-  result. A magnitude within about 80-110% of the paper with a somewhat
+  result. A deliberately STANDARDIZED reference construction (a uniform
+  portfolio convention applied identically to every signal, disclosed, and
+  benchmarked against the publisher's own series) is NOT an implementation
+  gap: differences from the paper's own portfolio construction under such
+  a convention are expected and belong in caveats, and the result it
+  produces -- strong or weak -- is a finding. A magnitude within about 80-110% of the paper with a somewhat
   weaker t-statistic is NOT such a shortfall; it is a caveat.
 - The record's own analyses disagree with each other on a central claim
   and the record flags the inconsistency as unresolved (for example, a
