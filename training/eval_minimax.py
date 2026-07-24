@@ -34,12 +34,14 @@ def candidate_view(case: dict) -> dict:
 
 def call_minimax(api_key: str, system: str, user: str, model: str,
                  max_tokens: int) -> dict:
+    # NOTE: no reasoning_split -- that flag splits reasoning/content at an
+    # arbitrary token boundary, chopping the head off the answer. Without it
+    # the content is "<think>...</think>" + answer, which parses cleanly.
     body = {
         "model": model,
         "messages": [{"role": "system", "content": system},
                      {"role": "user", "content": user}],
         "max_tokens": max_tokens,
-        "reasoning_split": True,
     }
     req = Request(API_URL, data=json.dumps(body).encode(),
                   headers={"Authorization": f"Bearer {api_key}",
@@ -55,7 +57,7 @@ def main() -> int:
     ap.add_argument("--perturbations", action="store_true")
     ap.add_argument("--prompt", default=str(HERE / "minimax_prompt.md"))
     ap.add_argument("--model", default="MiniMax-M3")
-    ap.add_argument("--max-tokens", type=int, default=2400)
+    ap.add_argument("--max-tokens", type=int, default=4000)
     ap.add_argument("--out", default=None)
     ap.add_argument("--once", action="store_true",
                     help="refuse to run if an output file already exists "
@@ -104,6 +106,15 @@ def main() -> int:
                 print(f"  FAILED {case['case_id']}", file=sys.stderr)
                 continue
             answer = body["choices"][0]["message"].get("content", "")
+            if "</think>" in answer:
+                answer = answer.rsplit("</think>", 1)[1].strip()
+            if "STATUS:" not in answer:
+                # reasoning ate the whole budget; one retry with more room
+                body = call_minimax(api_key, system, user, args.model,
+                                    args.max_tokens + 3000)
+                answer = body["choices"][0]["message"].get("content", "")
+                if "</think>" in answer:
+                    answer = answer.rsplit("</think>", 1)[1].strip()
             fh.write(json.dumps({
                 "case_id": case["case_id"], "answer": answer,
                 "usage": body.get("usage", {}),
