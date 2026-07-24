@@ -84,6 +84,16 @@ no changes, only the rule's stated scope. Honest weak findings become
 successes, which is exactly the production incentive we want the evaluator
 to enforce on future MiniMax replications.
 
+**v6.2 -> v6.3 — "collapsed support" explicitly scoped to
+replication-side causes.**
+WHY: batch-2 tune misses (betabab sign_flip, iskew null, be_gr1a
+attenuated -> QUALIFIED x3 runs each): Step 2's collapsed-support bullet
+still swallowed faithful-verified weak findings despite the Step 3 rule.
+WHY IT IMPROVES: removes the last rule collision between "what the
+replication could not do" and "what the world turned out to be"; the
+two steps now partition cleanly on attribution, which is the user's
+stated semantics.
+
 ## Grader changes (calibration phase only; hard-frozen since)
 
 - Percent/decimal display variants in number-grounding. WHY: gold answers
