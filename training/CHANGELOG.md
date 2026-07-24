@@ -133,3 +133,19 @@ with a justification here.
   a PARSE_FAIL on the verification checker wrongly downgraded asset growth.
 - Panel aggregator fails closed: unparseable hard-gate checker =>
   QUARANTINE. WHY: asymmetric costs apply to infrastructure failure too.
+
+## Architecture A/B: checker panel vs monolithic prompt (2026-07-24)
+
+Panel (6 targeted checkers + mechanical aggregator + composer) vs monolith
+v5 on identical cases and grader: train 4/9 vs 9/9, dev 1/4 vs 4/4,
+boundary 4/5 vs 5/5. PANEL SHELVED.
+WHY IT LOST: isolated checkers over-fire on caveat language without the
+holistic record context (earnings/f_score/industry momentum wrongly
+quarantined); scoped judgment rules (regression-only, vendor-vs-vintage)
+degrade when split across contextless specialists; fail-closed parse
+handling further inflated quarantines. Context integration is load-bearing
+for these records — the opposite of the pre-registered hypothesis; recorded
+as a negative result. Possible future variant (checkers as ADVISORS whose
+findings feed the monolith, no status authority) deliberately NOT pursued
+now: the monolith already meets the bar, and un-asked-for architecture is
+how overengineering restarts.
