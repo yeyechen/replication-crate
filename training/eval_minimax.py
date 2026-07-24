@@ -97,10 +97,11 @@ def main() -> int:
                     body = call_minimax(api_key, system, user, args.model,
                                         args.max_tokens)
                     break
-                except HTTPError as exc:
-                    detail = exc.read().decode(errors="replace")[:200]
-                    print(f"  retry {attempt} {case['case_id']}: "
-                          f"{exc.code} {detail}", file=sys.stderr)
+                except Exception as exc:  # HTTP errors, timeouts, resets
+                    detail = exc.read().decode(errors="replace")[:200] \
+                        if isinstance(exc, HTTPError) else repr(exc)[:200]
+                    print(f"  retry {attempt} {case['case_id']}: {detail}",
+                          file=sys.stderr)
                     time.sleep(5 * attempt)
             else:
                 print(f"  FAILED {case['case_id']}", file=sys.stderr)
@@ -110,11 +111,15 @@ def main() -> int:
                 answer = answer.rsplit("</think>", 1)[1].strip()
             if "STATUS:" not in answer:
                 # reasoning ate the whole budget; one retry with more room
-                body = call_minimax(api_key, system, user, args.model,
-                                    args.max_tokens + 3000)
-                answer = body["choices"][0]["message"].get("content", "")
-                if "</think>" in answer:
-                    answer = answer.rsplit("</think>", 1)[1].strip()
+                try:
+                    body = call_minimax(api_key, system, user, args.model,
+                                        args.max_tokens + 3000)
+                    answer = body["choices"][0]["message"].get("content", "")
+                    if "</think>" in answer:
+                        answer = answer.rsplit("</think>", 1)[1].strip()
+                except Exception as exc:
+                    print(f"  big-budget retry failed {case['case_id']}: "
+                          f"{repr(exc)[:150]}", file=sys.stderr)
             fh.write(json.dumps({
                 "case_id": case["case_id"], "answer": answer,
                 "usage": body.get("usage", {}),
