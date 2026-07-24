@@ -106,9 +106,13 @@ def main() -> int:
             else:
                 print(f"  FAILED {case['case_id']}", file=sys.stderr)
                 continue
-            answer = body["choices"][0]["message"].get("content", "")
+            full = body["choices"][0]["message"].get("content", "")
+            answer = full
             if "</think>" in answer:
                 answer = answer.rsplit("</think>", 1)[1].strip()
+            if "STATUS:" not in answer and "STATUS:" in full:
+                # stray think tag inside the answer; recover from full text
+                answer = full[full.index("STATUS:"):].replace("</think>", "")
             if "STATUS:" not in answer:
                 # reasoning ate the whole budget; one retry with more room
                 try:
