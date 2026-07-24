@@ -98,6 +98,11 @@ def anchor_numbers(case: dict) -> set[str]:
 
 
 def parse_sections(answer: str) -> dict[str, str] | None:
+    # MiniMax occasionally emits a section word broken by blank lines
+    # ("TR\n\nADE:"); normalize before parsing.
+    for s in SECTIONS:
+        broken = r"\s*".join(re.escape(ch) for ch in s) + r"\s*:"
+        answer = re.sub(broken, s + ":", answer)
     idx = []
     for s in SECTIONS:
         m = re.search(rf"^{s}:", answer, flags=re.M)
@@ -174,7 +179,9 @@ def build_others_numbers(corpus: list[dict], case_id: str) -> set[str]:
             for key in ("paper_anchors", "candidate_anchors"):
                 out |= numbers_in(c.get(key))
     # drop numbers too short to be distinctive (e.g. 0.45, 1.05 could recur)
-    return {n for n in out if len(n.replace("-", "").replace(".", "")) >= 4}
+    return {n for n in out
+            if len(n.replace("-", "").replace(".", "")) >= 4
+            and float(n) % 10 != 0}
 
 
 def main() -> int:
