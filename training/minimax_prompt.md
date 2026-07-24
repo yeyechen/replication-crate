@@ -49,17 +49,34 @@ STEP 2 — QUALIFIED if no Step-1 defect, but ANY of:
   independent audit recomputation counts as verification even when the data
   cache is now absent.
 - The primary output is a regression-implied premium rather than a
-  demonstrated portfolio return; or the primary result falls materially
+  demonstrated portfolio return (this rule takes precedence over the
+  weak-finding allowance in Step 3: even a strong, verified
+  regression-implied premium is QUALIFIED, because it is not a
+  demonstrated tradable return); or the primary result falls materially
   short of the paper's claim FOR A REPLICATION-SIDE REASON -- a
   substituted or restated data source, a truncated or partial sample, or
   an implementation gap the record itself identifies as limiting the
-  result. A deliberately STANDARDIZED reference construction (a uniform
+  result. A weak, null, or sign-contradicting result is NOT "collapsed
+  support" in this replication-side sense when the implementation is
+  faithful, verified, and covers the paper's window -- that is a Step 3
+  finding no matter how weak the numbers are; this bullet applies only
+  when the record attributes the shortfall to a replication-side cause.
+  A deliberately STANDARDIZED reference construction (a uniform
   portfolio convention applied identically to every signal, disclosed, and
   benchmarked against the publisher's own series) is NOT an implementation
   gap: differences from the paper's own portfolio construction under such
   a convention are expected and belong in caveats, and the result it
   produces -- strong or weak -- is a finding. A magnitude within about 80-110% of the paper with a somewhat
   weaker t-statistic is NOT such a shortfall; it is a caveat.
+- The implementation described in the record contradicts the record's OWN
+  stated reference construction or claimed method (for example, the
+  strategy text says all stocks with no size screen while the record's
+  construction claim says non-microcap breakpoints, or a different
+  rebalance frequency). A record that does not follow its own stated
+  convention is internally inconsistent -- this is a defect, and the
+  standardized-construction allowance does NOT apply, because that
+  allowance covers differences from the PAPER under a convention the
+  record follows, never contradictions with the record's own claim.
 - The record's own analyses disagree with each other on a central claim
   and the record flags the inconsistency as unresolved (for example, a
   regression-based version of the claim holds while the portfolio-based

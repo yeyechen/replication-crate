@@ -215,3 +215,16 @@ trajectory steep (test 39%->61% in one round, no fix ever regressed).
 Batch-2 fixes (all non-prompt): direction-stated paper anchors,
 split-balanced sign_flip/null/regression-only conditions, transport
 re-call (shipped).
+
+## PROMOTION — v6.4 frozen as production (2026-07-24 ~15:50)
+
+Held-out batch-2 test one-shot (14 never-tuned cases, final semantics +
+evidence design): 13/14 (93%) majority-status accuracy, ZERO
+quarantine->ACCEPTED violations in any run, flip rate 1/14; the single miss
+is conservative (accepted->quarantine on an unstable case). Corpus 18/18;
+tune 26/26 after evidence QA. Promotion bar met: >=90% held-out status
+accuracy + clean hard gate + sealed consistency (2/3 with the one miss
+being a rule-generalization case addressed in v6.4's precedence fixes).
+Companion evidence-design rules now part of the standard: paper anchors
+carry claimed_direction and claimed_construction; corruption axes restricted
+to non-reconcilable identity mutations.
