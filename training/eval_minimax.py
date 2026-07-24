@@ -55,6 +55,7 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--split", choices=("train", "dev", "sealed", "all"))
     ap.add_argument("--perturbations", action="store_true")
+    ap.add_argument("--cases", help="external cases JSON file (minted)")
     ap.add_argument("--prompt", default=str(HERE / "minimax_prompt.md"))
     ap.add_argument("--model", default="MiniMax-M3")
     ap.add_argument("--max-tokens", type=int, default=4000)
@@ -71,15 +72,17 @@ def main() -> int:
 
     cases = json.loads((HERE / "cases.json").read_text())
     targets: list[dict] = []
+    if args.cases:
+        targets += json.loads(Path(args.cases).read_text())
     if args.perturbations:
         targets += json.loads((HERE / "perturbations.json").read_text())
     if args.split:
         targets += [c for c in cases
                     if args.split == "all" or c.get("split") == args.split]
     if not targets:
-        ap.error("nothing selected: pass --split and/or --perturbations")
+        ap.error("nothing selected: pass --split, --cases and/or --perturbations")
 
-    tag = args.perturbations and "perturb" or args.split
+    tag = args.perturbations and "perturb" or (args.split or Path(args.cases).stem)
     out = Path(args.out or HERE / f"results_{tag}_{Path(args.prompt).stem}.jsonl")
     if args.once and out.exists():
         print(f"{out} already exists and --once was set; refusing to rerun",
