@@ -67,6 +67,23 @@ each scoped rule now fires only on its own axis, which is what made 18/18
 stable across runs rather than oscillating as v3/v4 did. Result: 18/18 majority-vote across train/dev/perturbations x3;
 quarantine-recall 100% in all 15 runs.
 
+**v5 -> v6 — status measures replication-record quality; weak in-window
+results are findings, not defects.**
+WHY: user-directed semantics clarification during minted-exam gold review
+("I don't care if they're weak in window, I care about our replication").
+The minted batch surfaced the ambiguity: 40/60 reference implementations
+are faithful and verified but show weak/null in-window premia; v5 would
+have downgraded them all.
+WHY IT IMPROVES: it separates the two questions an evaluator conflates at
+its peril -- "is the replication trustworthy?" (the status) and "what did
+it find?" (the content). Downgrades now require a REPLICATION-SIDE cause
+(substituted/restated source, truncation, implementation gap), which is
+consistent with every existing corpus label (earnings=restated data,
+seasonality=vendor swap, f_score=truncation) -- so the corpus gold needed
+no changes, only the rule's stated scope. Honest weak findings become
+successes, which is exactly the production incentive we want the evaluator
+to enforce on future MiniMax replications.
+
 ## Grader changes (calibration phase only; hard-frozen since)
 
 - Percent/decimal display variants in number-grounding. WHY: gold answers
