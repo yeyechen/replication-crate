@@ -16,6 +16,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 import time
 from pathlib import Path
@@ -113,6 +114,9 @@ def main() -> int:
             answer = full
             if "</think>" in answer:
                 answer = answer.rsplit("</think>", 1)[1].strip()
+            if re.match(r"^:\s*(ACCEPTED|QUALIFIED|QUARANTINE)\b", answer):
+                # "STATUS" was absorbed into the think block; restore it
+                answer = "STATUS" + answer
             if "STATUS:" not in answer and "STATUS:" in full:
                 # stray think tag inside the answer; recover from full text
                 answer = full[full.index("STATUS:"):].replace("</think>", "")

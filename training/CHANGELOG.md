@@ -128,6 +128,9 @@ with a justification here.
 - <think>-strip + STATUS-recovery fallback + broad exception retry +
   4000-token default. WHY: observed truncated/empty answers (reasoning
   exhausting budget) and an uncaught socket timeout that killed a run.
+- Restore "STATUS" when the model closes its think block flush against it
+  (content arrives as ": QUALIFIED..."). WHY: two v6.1 dev answers were
+  judgment-correct but unparseable; transport repair, not leniency.
 - Panel checkers: 3 attempts at escalating budgets (2500/5000/7500). WHY:
   checker reasoning exhausted 2500 tokens before emitting JSON;
   a PARSE_FAIL on the verification checker wrongly downgraded asset growth.
