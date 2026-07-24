@@ -65,3 +65,23 @@ python3 training/run_minimax.py \
   accept/qualify/quarantine boundary, not the paper roster.
 - Splits: train 9 / dev 4 / sealed 3. The sealed cases are scored ONCE,
   after optimization ends (`eval_minimax.py --split sealed --once`).
+
+## Promotion criterion and process (after Thinking Machines' expert-judgment
+## recipe, thinkingmachines.ai 2026)
+
+MiniMax's evaluator role is promoted to production only when, with a frozen
+prompt:
+1. status accuracy on dev is >= 90%, AND
+2. NO quarantine-class case (real or perturbed) is ever answered ACCEPTED
+   (asymmetric costs: trusting a contaminated result is the expensive error),
+3. and the sealed set (scored exactly once, at the end) is consistent with dev.
+
+Process rules:
+- Disagreement routing: a status miss is first treated as a possible GOLD
+  error (review the record and its evidence), and only then as a prompt
+  defect. Contested cases are label QA.
+- Rule ablation: once dev plateaus, each prompt rule is removed one at a
+  time; rules whose removal does not degrade train+dev+perturbation scores
+  are deleted.
+- Expert prompt over optimizer machinery: hand-edited rules from failure
+  traces; automatic prompt search only if hand-editing measurably plateaus.
