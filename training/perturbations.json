@@ -1,0 +1,266 @@
+[
+ {
+  "case_id": "perturb_momentum_unverified",
+  "verification_level": "report_only; no independent recomputation was performed; the data cache is absent from the checkout",
+  "strategy": {
+   "universe": "NYSE and AMEX common shares (shrcd 10/11, exchcd 1/2), point-in-time via CRSP dsenames validity windows, no minimum-price filter",
+   "signal": "compounded return over the 6 months ending at formation month f (cumret_6_raw, [f-5, f]), computed from CRSP daily returns",
+   "formation": "rank all eligible stocks ascending into equal-count deciles at the end of each month; decile 1 = losers, decile 10 = winners; formed immediately after the signal window ends, no skip (Panel A); a 1-week-skip variant is also reported (Panel B)",
+   "position": "long decile 10 (past winners, buy), short decile 1 (past losers, sell) -- the zero-cost buy-minus-sell portfolio",
+   "holding": "K months (reported K=3,6,9,12), overlapping cohorts rebalanced monthly to equal weights within each cohort, membership fixed at formation; primary reported cell is J=6/K=6",
+   "weighting": "equal-weighted deciles"
+  },
+  "paper_anchors": {
+   "sample": "January 1965 through December 1989 (300 months)",
+   "j6_k6_buy_sell_return_pct_per_month": 0.95,
+   "j6_k6_buy_sell_t": 3.07,
+   "j6_k6_sell_return_pct_per_month": 0.79,
+   "j6_k6_buy_return_pct_per_month": 1.74,
+   "compounded_excess_return_pct_per_year": 12.01,
+   "source": "replications/returns_to_buying_winners/inputs/content.md (Table I cell, L236/L723/L1341/L1491; L2201 for the 12.01%/year headline)"
+  },
+  "candidate_anchors": {
+   "j6_k6_buy_sell_return_pct_per_month": 0.8797,
+   "j6_k6_buy_sell_t": 2.908658,
+   "j6_k6_sell_return_pct_per_month": 0.811,
+   "j6_k6_buy_return_pct_per_month": 1.6908,
+   "annualized_sharpe": 0.5817,
+   "ff5_alpha_annualized_pct": 14.5,
+   "ff5_alpha_t": 3.88,
+   "source": "replications/returns_to_buying_winners/results/table_1.md (anchor-check block: PA J6/K6 sell 0.008110, buy 0.016908, buy-sell 0.008797, buy-sell t 2.908658) and replications/returns_to_buying_winners/results/primary_diagnostics.md (Sharpe 0.5817, FF5 alpha 14.50%, t 3.88)"
+  },
+  "reassurance": [
+   "The paper's out-of-sample 1927-1964 back-test (Table VIII) and the earnings-announcement pattern (Table IX) both reproduce in sign and shape, corroborating the effect outside the primary 1965-1989 window."
+  ],
+  "caveats": [
+   "Historical, gross of transaction costs; turnover, capacity, and live out-of-sample performance are not established, and momentum strategies are known to be costly to trade at this turnover.",
+   "The data cache (data/panel.parquet) is not committed in this checkout, so this review relied on the audit trail's independent recomputation rather than a fresh replay.",
+   "Table III Panel A F-statistics (7 secondary cells) use an unidentified paper construction; three variants are reported without an exact match, though the underlying decile means they test do replicate.",
+   "Vintage effects (2026 CRSP/Compustat vs the paper's 1990 data) inflate Table IX t-statistics via richer announcement coverage and shrink Table VII/VIII Newey-West t-stats via lower autocorrelation; these are documented, quantified, and do not change the sign or shape of any primary or corollary result."
+  ],
+  "exclude_from_target": [
+   "legacy REPLICATED verdict and PARTIAL audit_verdict label",
+   "the 1,327-cell Tier 1/Tier 2/FAIL tallies and per-cell tolerance percentages",
+   "quality dimension scores (methodology, headline_matching, etc.) and the 4.17/5.00 overall score",
+   "REPORT.md's five stale pre-A13 numbers (January proportion 0.24, Jan 1970-74 -10.1%, All 1975-79 -0.33%/mo, PA 3/3 0.0038, and the 11.13% compounding slip), flagged as uncorrected text-hygiene errors by audit2.md m1"
+  ],
+  "base_case_id": "returns_to_buying_winners",
+  "gold_status": "qualified",
+  "perturbation": "verification stripped: no independent recomputation anywhere; primary result rests on the candidate's own report"
+ },
+ {
+  "case_id": "perturb_bab_wrong_signal",
+  "verification_level": "legacy_auditor_independently_recomputed_from_cached_artifacts across 3 audit iterations (own from-scratch statsmodels regressions reproduced BAB and corollary cells to the decimal, byte-identical file regeneration); data/panel.parquet is gitignored and absent from the current checkout, so this review could not itself replay the pipeline.",
+  "strategy": {
+   "universe": "All CRSP common stocks (shrcd 10/11) on NYSE, AMEX, and NASDAQ (point-in-time exchcd via dsenames)",
+   "signal": "rolling market beta from a single 5-year monthly-return OLS regression, with no separate volatility/correlation windows and no Vasicek shrinkage",
+   "formation": "each month split all stocks at the median estimated beta into a low-beta group and a high-beta group; within each group weight stocks by beta rank; both legs rescaled to unit beta at formation",
+   "position": "long the low-beta group levered up by 1/beta_L (~$1.44 of exposure per $1 invested) and short the high-beta group de-levered by 1/beta_H (~$0.69 of exposure); BAB = (1/beta_L)*r_L - (1/beta_H)*r_H, a self-financing, market-neutral spread",
+   "holding": "monthly, rebalanced every calendar month",
+   "weighting": "rank-weighted within the low- and high-beta legs of the BAB factor; decile portfolios reported separately for descriptive analysis are equal-weighted using NYSE breakpoints"
+  },
+  "paper_anchors": {
+   "sample": "January 1926 through March 2012",
+   "bab_excess_return_pct_per_month": 0.7,
+   "bab_excess_return_t": 7.12,
+   "bab_ff3_alpha_pct_per_month": 0.73,
+   "bab_ff3_alpha_t": 7.39,
+   "bab_ff4_alpha_pct_per_month": 0.55,
+   "bab_ff4_alpha_t": 5.59,
+   "bab_annualized_sharpe": 0.78,
+   "bab_leverage_long_short_usd": [
+    1.4,
+    0.7
+   ],
+   "source": "replications/betting_against_beta/inputs/content.md (Table 3, Table B1, p.9)"
+  },
+  "candidate_anchors": {
+   "sample_months": 1004,
+   "sample_range": "1928-08 through 2012-03 (first estimable beta requires a 750-day correlation warmup from the 1925-12-31 CRSP daily start)",
+   "bab_excess_return_pct_per_month": 0.715,
+   "bab_excess_return_t": 6.85,
+   "bab_ff3_alpha_pct_per_month": 0.748,
+   "bab_ff3_alpha_t": 7.11,
+   "bab_ff4_alpha_pct_per_month": 0.576,
+   "bab_ff4_alpha_t": 5.54,
+   "bab_annualized_sharpe": 0.75,
+   "bab_leverage_long_short_usd": [
+    1.44,
+    0.69
+   ],
+   "source": "replications/betting_against_beta/results/table_3.md (BAB column, validation table) and results/table_b1.md (leverage)"
+  },
+  "reassurance": [
+   "An independent audit re-derived every headline BAB cell from scratch with its own statsmodels regressions and matched to the decimal; the run is deterministic (byte-identical re-execution).",
+   "Realized BAB factor loadings carry the paper-predicted sign in all four cases: market approx 0 (-0.056), SMB approx 0 (+0.008), HML positive (+0.061), UMD positive (+0.200) (results/table_b1.md), and average leverage long $1.44 / short $0.69 closely matches the paper $1.40/$0.70.",
+   "BAB is positive in all four ~20-year subperiods and significant in 3 of 4 (results/table_3_subsample.md); the one sub-significant window (1928-1948) reflects the later effective start date, not a sign reversal.",
+   "BAB is positive and significant (all FF3 |t|>3.7) within each of three size terciles (results/table_3_size.md), supporting the paper's claim that the effect holds within size groups."
+  ],
+  "caveats": [
+   "The beta estimator differs from the paper's one-year-volatility times five-year-correlation construction with Vasicek shrinkage; the ranking variable is therefore not the paper's signal.",
+   "The secondary decile multi-factor alphas (not the primary BAB trade) run systematically higher than the paper for P1/P5/P10, and the P10 four-factor alpha flips sign (+0.03 vs paper -0.13); a post-1962 sub-window test shows this converging toward the paper and is diagnosed as data-vintage/beta-estimation-limited, not a construction defect (results/table_3_post1962.md).",
+   "The effective sample starts 1928-08 rather than the paper's 1926-01 (a 750-day correlation warmup), about 2.5 years shorter at the front end.",
+   "Beta-window/benchmark robustness (Table B2) and the idiosyncratic-volatility control (Table B5) were not computed; the beta-window scope-out is documented (preparations/assumptions.md A25) but was not committed until the third audit iteration flagged its absence.",
+   "Historical, gross (pre-cost) result; the data cache is absent from the current checkout (gitignored), so this review relies on the documented multi-iteration audit trail rather than a fresh independent replay."
+  ],
+  "exclude_from_target": [
+   "legacy REPLICATED verdict and audit_verdict/PARTIAL framing",
+   "the 4.17/5.00 overall quality score and per-dimension scores",
+   "25/32 (78%) Tier-1 cell-pass-rate framing and per-cell tolerance bands",
+   "REPORT.md 'SUCCESS with documented limitations' headline framing"
+  ],
+  "base_case_id": "betting_against_beta",
+  "gold_status": "quarantine",
+  "perturbation": "signal construction contradicts the paper's estimator; defect touches the primary ranking variable"
+ },
+ {
+  "case_id": "perturb_profitability_target_copy",
+  "verification_level": "the paper's target values were available to the candidate during generation; no independent recomputation was performed",
+  "strategy": {
+   "universe": "US nonfinancial common stocks",
+   "signal": "gross profits divided by total assets",
+   "formation": "NYSE-breakpoint quintiles at the end of June",
+   "position": "long the highest GP/A quintile and short the lowest",
+   "holding": "July through the following June; rebalance annually",
+   "weighting": "value-weighted"
+  },
+  "paper_anchors": {
+   "sample": "July 1963 through December 2010",
+   "gross_high_minus_low_return_pct_per_month": 0.31,
+   "return_t": 2.49,
+   "ff3_alpha_pct_per_month": 0.52,
+   "ff3_alpha_t": 4.49,
+   "hml_loading": -0.44,
+   "source": "replications/the_other_side_of_value/inputs/content.md"
+  },
+  "candidate_anchors": {
+   "gross_high_minus_low_return_pct_per_month": 0.31,
+   "return_t": 2.49,
+   "ff3_alpha_pct_per_month": 0.52,
+   "ff3_alpha_t": 4.49,
+   "hml_loading": -0.44,
+   "source": "replications/the_other_side_of_value/results/table_2.md"
+  },
+  "reassurance": [
+   "The quintile spread, alpha, alpha t-statistic, and HML loading all closely track the paper.",
+   "A fresh replay restored 274 valid -100% stock-month returns and left the core result unchanged at every reported digit.",
+   "The separate official Novy-Marx 2x3 PMU series averages 0.3319% per month over the same 570 months (t 3.44; annualized Sharpe 0.50), corroborating a profitability premium but not reproducing this exact quintile sort.",
+   "The high-GP/A portfolio has a large negative HML loading, confirming that profitability is not merely conventional value exposure."
+  ],
+  "caveats": [
+   "Candidate outputs match the paper's reported values exactly at every reported digit.",
+   "The reported result is historical and gross; costs, capacity, and modern out-of-sample performance are not shown.",
+   "Paper targets and tolerances remain in the reporting/evaluation section of candidate code; the fresh replay confirms they are not needed to compute the portfolio, but they should be removed before using generated code as a candidate example.",
+   "The local ignored cache now permits replay, but the code still depends on the separate rep-it-up shared utils package.",
+   "The large-liquid combined profitability/value strategy and the joint profitability/value portfolio statistics remain unverified."
+  ],
+  "exclude_from_target": [
+   "legacy REPLICATED verdict",
+   "candidate-authored tolerances and Tier labels",
+   "claim that all four committed tables were delivered"
+  ],
+  "base_case_id": "the_other_side_of_value",
+  "gold_status": "quarantine",
+  "perturbation": "targets leaked to candidate and outputs match paper exactly; closeness alone must not be rewarded"
+ },
+ {
+  "case_id": "perturb_asset_growth_no_reassurance",
+  "verification_level": "legacy_auditor_recomputed_from_cached_artifacts; cache absent from current checkout",
+  "strategy": {
+   "universe": "US NYSE, AMEX, and NASDAQ nonfinancial common stocks",
+   "signal": "year-over-year total-asset growth using fiscal-year t-1 versus t-2 data",
+   "formation": "sort into deciles at the end of each June",
+   "position": "long D1, the lowest asset-growth decile; short D10, the highest",
+   "holding": "July through the following June; rebalance annually",
+   "weighting": "report both equal-weighted and value-weighted; the implementation freezes June market equity for value weights"
+  },
+  "paper_anchors": {
+   "sample": "July 1968 through June 2003",
+   "gross_low_minus_high_return_pct_per_month": {
+    "equal_weighted": 1.73,
+    "value_weighted": 1.05
+   },
+   "source": "replications/asset_growth_and_the_cross_section_of_stock_returns/inputs/content.md"
+  },
+  "candidate_anchors": {
+   "sample_months": 420,
+   "gross_low_minus_high_return_pct_per_month": {
+    "equal_weighted": 1.7128466242864935,
+    "equal_weighted_t": 7.960497766992901,
+    "value_weighted": 1.0328221428274866,
+    "value_weighted_t": 4.305119217414663
+   },
+   "value_weighted_leg_return_annualized_pct": {
+    "low_growth_long": 19.198259393496443,
+    "high_growth_short_leg_underlying_return": 5.427581638342738
+   },
+   "source": "replications/asset_growth_and_the_cross_section_of_stock_returns/results/table_2_eval.json"
+  },
+  "reassurance": [],
+  "caveats": [
+   "Historical gross result; transaction costs, turnover, capacity, and live out-of-sample performance are not established.",
+   "The fixed-June value-weight convention is an implementation choice inferred from the paper rather than fully specified by it.",
+   "The annual-cohort Sharpe of 0.703 is not the same statistic as the monthly-series annualized Sharpe of 0.75.",
+   "The checkout excludes data panels and cannot currently replay the result; the legacy audit did recompute it when the cache existed.",
+   "A rerun of src/table_2.py would overwrite the already computed five-year section with a placeholder.",
+   "No corollary or robustness evidence is included in this record."
+  ],
+  "exclude_from_target": [
+   "legacy REPLICATED verdict",
+   "119 candidate-authored tolerance values",
+   "Tier, status, reason, ratio, and within_2x fields"
+  ],
+  "base_case_id": "asset_growth_and_the_cross_section_of_stock_returns",
+  "gold_status": "accepted",
+  "perturbation": "reassurance removed entirely; a verified primary result without corollaries is still acceptable"
+ },
+ {
+  "case_id": "perturb_52wh_reversed_legs",
+  "verification_level": "auditor directly recomputed wh_winner/wh_loser/wh_w_minus_l and its t-statistic from results/intermediate/strategy_returns.parquet (present in this checkout, n=462 months); output matches results/table_1.md to all reported digits (0.4233, t=1.7568). The legacy audit (logs/audit3.md) additionally recomputed all 900 cells across seven tables from the same coefficient caches with FF3 pulled from ClickHouse, 0 mismatches. The raw CRSP-built panel (data/panel.parquet, 2,387,326 rows) is not present in this checkout, so the pipeline cannot be rebuilt from source data; only the derived per-month/per-coefficient caches are present and were used for this recomputation.",
+  "strategy": {
+   "universe": "all CRSP common stocks (shrcd 10/11), 1963-2001, all exchanges",
+   "signal": "ratio of current price to the highest daily closing price achieved over the trailing 12 months (nearness to 52-week high)",
+   "formation": "each month, sort into equal-weighted 30/30/40 portfolios by the price-to-52-week-high ratio; no skip month",
+   "position": "long the loser portfolio (stocks farthest below their 52-week high) and short the winner portfolio (stocks nearest their 52-week high)",
+   "holding": "hold 6 months with overlapping monthly cohorts (each month's return is the equal-weighted average of the six cohorts formed in the prior 6 months); rebalance monthly",
+   "weighting": "equal-weighted portfolios"
+  },
+  "paper_anchors": {
+   "sample": "July 1963 through December 2001",
+   "wh_winner_pct_per_month": 1.51,
+   "wh_loser_pct_per_month": 1.06,
+   "wh_winner_minus_loser_pct_per_month": 0.45,
+   "wh_winner_minus_loser_t": 2.0,
+   "source": "replications/the_52_week_high_and_momentum_investing/inputs/content.md (Table I, lines 105-110)"
+  },
+  "candidate_anchors": {
+   "sample_months": 462,
+   "wh_winner_pct_per_month": 1.468,
+   "wh_loser_pct_per_month": 1.0447,
+   "wh_winner_minus_loser_pct_per_month": 0.4233,
+   "wh_winner_minus_loser_t": 1.7568,
+   "source": "replications/the_52_week_high_and_momentum_investing/results/table_1.md; independently re-derived by this auditor from results/intermediate/strategy_returns.parquet"
+  },
+  "reassurance": [
+   "Outside January and after FF3 risk adjustment, the 52-week-high Fama-MacBeth dummy spread dominates JT and MG in all six of those columns (e.g. ex-January raw wh_spread 0.87 vs JT 0.64 and MG 0.36), matching the paper's own emphasis that dominance is clearest outside January and risk-adjusted (results/table_5.md).",
+   "The January-split (Table II) and nested winner/middle sorts (Table III) reproduce the same 52-week-high dominance pattern the paper reports.",
+   "Two corollaries added after audit found them missing both replicate closely: 52-week-high profits do not reverse at 1-4 year horizons (Table VI, anchor 0.178 vs paper 0.16, t 2.39 vs 1.93), and a symmetric 52-week-low strategy is unprofitable (Table IX, all eight low-spread cells insignificant, matching the paper).",
+   "The legacy audit (logs/audit3.md) independently recomputed all 900 cells (values, t-stats, per-cell tiers) across seven tables from the same caches with zero mismatches, and verified the coefficient caches are sha256-identical across the replication's iterations."
+  ],
+  "caveats": [
+   "Historical, gross-of-costs result; EW 30/30 portfolios ignore transaction costs and capacity, and the sample ends December 2001 with no modern out-of-sample evidence.",
+   "The primary spread's statistical significance is weaker than the paper's: t=1.76 vs the paper's t=2.00, even though the point estimate is close (0.42 vs 0.45, about 94% of the paper's magnitude).",
+   "The paper's broader claim that the 52-week-high signal dominates JT/MG in Fama-MacBeth regressions inverts in the two January-included raw regression columns in this replication (a tested, documented CRSP-2026-vintage effect that a pre-registered rankable-only sensitivity did not fix), and the Grinblatt-Han disposition-effect dummies (Table VII) are broken by 1970s CRSP volume-data missingness. These are limitations of the secondary regression evidence, not of the primary Table I portfolio.",
+   "The raw CRSP-built panel is not present in this checkout (only derived per-month/per-coefficient caches are), so the full data pipeline cannot presently be rebuilt from source; this recomputation used the cached strategy-return series."
+  ],
+  "exclude_from_target": [
+   "legacy REPLICATED verdict and the 3.67/5.00 overall quality score",
+   "Tier 1/Tier 2/FAIL per-cell tolerance labels and the 59.7% Tier-1 (537/900) aggregate statistic",
+   "the cumulative_wl.png framing that 52WH 'dominates' the all-months compounded EW value (the figure actually shows MG 11.9x > JT 5.1x > WH 3.4x on that basis; dominance holds only ex-January and in the regression/risk-adjusted columns)",
+   "treating the Table V/VII Fama-MacBeth dummy coefficients as if they were this paper's primary tradable portfolio result rather than corollary regression evidence"
+  ],
+  "base_case_id": "the_52_week_high_and_momentum_investing",
+  "gold_status": "quarantine",
+  "perturbation": "position direction reversed relative to the record's own positive winner-minus-loser anchors; sign inconsistency inside the record"
+ }
+]

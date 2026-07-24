@@ -51,3 +51,17 @@ python3 training/run_minimax.py \
   --case the_other_side_of_value \
   --mode baseline
 ```
+
+## Optimizer toolkit (added 2026-07-24)
+
+- `grade.py` — deterministic grader (status, grounding, contamination,
+  legacy vocabulary, format, trade legs). FROZEN during prompt optimization,
+  along with cases.json gold labels. `--self-test` re-verifies calibration.
+- `eval_minimax.py` — runs MiniMax over a split (or the perturbations) with
+  any candidate prompt (`--prompt`) and writes answers for grading.
+- `make_perturbations.py` / `perturbations.json` — five boundary cases
+  derived from real records (stripped verification, wrong signal, leaked
+  targets, no reassurance, reversed legs) so the prompt learns the
+  accept/qualify/quarantine boundary, not the paper roster.
+- Splits: train 9 / dev 4 / sealed 3. The sealed cases are scored ONCE,
+  after optimization ends (`eval_minimax.py --split sealed --once`).
