@@ -1,0 +1,75 @@
+[
+ {
+  "case_id": "perturb_momentum_unverified",
+  "format": 1.0,
+  "status": 0.0,
+  "status_got": "ACCEPTED",
+  "grounding": 1.0,
+  "ungrounded": [],
+  "contamination": 1.0,
+  "contaminants": [],
+  "legacy": 1.0,
+  "trade_legs": 1.0,
+  "overall": 0.6,
+  "split": null
+ },
+ {
+  "case_id": "perturb_bab_wrong_signal",
+  "format": 1.0,
+  "status": 1.0,
+  "status_got": "QUARANTINE",
+  "grounding": 0.8181818181818182,
+  "ungrounded": [
+   "0.72",
+   "2018.0"
+  ],
+  "contamination": 1.0,
+  "contaminants": [],
+  "legacy": 1.0,
+  "trade_legs": 1.0,
+  "overall": 0.9545,
+  "split": null
+ },
+ {
+  "case_id": "perturb_profitability_target_copy",
+  "format": 1.0,
+  "status": 1.0,
+  "status_got": "QUARANTINE",
+  "grounding": 1.0,
+  "ungrounded": [],
+  "contamination": 1.0,
+  "contaminants": [],
+  "legacy": 1.0,
+  "trade_legs": 1.0,
+  "overall": 1.0,
+  "split": null
+ },
+ {
+  "case_id": "perturb_asset_growth_no_reassurance",
+  "format": 1.0,
+  "status": 1.0,
+  "status_got": "ACCEPTED",
+  "grounding": 1.0,
+  "ungrounded": [],
+  "contamination": 1.0,
+  "contaminants": [],
+  "legacy": 1.0,
+  "trade_legs": 1.0,
+  "overall": 1.0,
+  "split": null
+ },
+ {
+  "case_id": "perturb_52wh_reversed_legs",
+  "format": 1.0,
+  "status": 1.0,
+  "status_got": "QUARANTINE",
+  "grounding": 1.0,
+  "ungrounded": [],
+  "contamination": 1.0,
+  "contaminants": [],
+  "legacy": 1.0,
+  "trade_legs": 1.0,
+  "overall": 1.0,
+  "split": null
+ }
+]

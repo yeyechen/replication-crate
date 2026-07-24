@@ -43,6 +43,11 @@ def p1(p):
     p["reassurance"] = [b for b in p["reassurance"]
                         if "auditor" not in b.lower()
                         and "independently" not in b.lower()]
+    p["caveats"] = [c for c in p["caveats"]
+                    if "recomputation" not in c.lower()
+                    and "audit" not in c.lower()] + [
+        "No audit or independent recomputation of any kind has been "
+        "performed on this candidate's outputs."]
 out.append(derive(
     "returns_to_buying_winners", "perturb_momentum_unverified", "qualified",
     "verification stripped: no independent recomputation anywhere; "

@@ -34,9 +34,9 @@
   ],
   "caveats": [
    "Historical, gross of transaction costs; turnover, capacity, and live out-of-sample performance are not established, and momentum strategies are known to be costly to trade at this turnover.",
-   "The data cache (data/panel.parquet) is not committed in this checkout, so this review relied on the audit trail's independent recomputation rather than a fresh replay.",
    "Table III Panel A F-statistics (7 secondary cells) use an unidentified paper construction; three variants are reported without an exact match, though the underlying decile means they test do replicate.",
-   "Vintage effects (2026 CRSP/Compustat vs the paper's 1990 data) inflate Table IX t-statistics via richer announcement coverage and shrink Table VII/VIII Newey-West t-stats via lower autocorrelation; these are documented, quantified, and do not change the sign or shape of any primary or corollary result."
+   "Vintage effects (2026 CRSP/Compustat vs the paper's 1990 data) inflate Table IX t-statistics via richer announcement coverage and shrink Table VII/VIII Newey-West t-stats via lower autocorrelation; these are documented, quantified, and do not change the sign or shape of any primary or corollary result.",
+   "No audit or independent recomputation of any kind has been performed on this candidate's outputs."
   ],
   "exclude_from_target": [
    "legacy REPLICATED verdict and PARTIAL audit_verdict label",

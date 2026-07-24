@@ -122,7 +122,8 @@ def grade_one(case: dict, answer: str, others_numbers: set[str]) -> dict:
                    legacy=0.0, trade_legs=0.0, overall=0.0)
         return res
 
-    got = parts["STATUS"].split()[0].upper() if parts["STATUS"] else ""
+    got_raw = "".join(parts["STATUS"].split()).upper()
+    got = next((s for s in STATUS_VALUES if got_raw.startswith(s)), got_raw[:12])
     res["status"] = 1.0 if got == gold else 0.0
     res["status_got"] = got
 
