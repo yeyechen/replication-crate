@@ -139,6 +139,23 @@ def main() -> int:
                 except Exception as exc:
                     print(f"  big-budget retry failed {case['case_id']}: "
                           f"{repr(exc)[:150]}", file=sys.stderr)
+            needed = ("STATUS:", "TRADE:", "PRIMARY RESULT:",
+                      "REASSURANCE:", "CAVEATS:")
+            for extra in (1, 2):
+                if all(k in answer for k in needed):
+                    break
+                try:  # unparseable emission; a fresh call usually fixes it
+                    body = call_minimax(api_key, system, user, args.model,
+                                        args.max_tokens + 2000)
+                    answer = body["choices"][0]["message"].get("content", "")
+                    if "</think>" in answer:
+                        answer = answer.rsplit("</think>", 1)[1].strip()
+                    if "STATUS:" not in answer and "STATUS:" in                             body["choices"][0]["message"].get("content", ""):
+                        full2 = body["choices"][0]["message"]["content"]
+                        answer = full2[full2.index("STATUS:"):]                            .replace("</think>", "")
+                except Exception as exc:
+                    print(f"  reparse retry failed {case['case_id']}: "
+                          f"{repr(exc)[:120]}", file=sys.stderr)
             fh.write(json.dumps({
                 "case_id": case["case_id"], "answer": answer,
                 "usage": body.get("usage", {}),
