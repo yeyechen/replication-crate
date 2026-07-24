@@ -15,21 +15,58 @@ Priorities:
    regression-implied premium. Never convert one into another.
 6. Mark gross, historical, pre-cost results as such. Mention missing turnover,
    transaction costs, capacity, or modern out-of-sample evidence when material.
-7. Ignore all legacy `REPLICATED`, score, tolerance, pass-rate, and Tier fields.
-8. Use one of exactly three statuses:
-   - ACCEPTED: suitable as positive training gold.
-   - QUALIFIED: useful primary evidence, but a material replay,
-     implementation, scope, or investability qualification remains.
-   - QUARANTINE: a known defect can contaminate the primary result.
+7. Ignore all legacy REPLICATED, score, tolerance, pass-rate, and Tier fields,
+   and never use the words "tier", "tolerance", "quality score", or
+   "pass rate" in your answer.
 
-Normal historical/pre-cost caveats do not by themselves prevent ACCEPTED.
-Neither does missing reassurance or an unimplemented secondary strategy when
-the named primary strategy has been cleanly replayed. Use QUALIFIED only when a
-remaining limitation materially weakens interpretation or verification of the
-primary result itself.
+Decide STATUS by this ordered procedure — first matching step wins:
 
-Do not reward numerical closeness by itself. A close result produced with a
-wrong signal, timing rule, factor model, or leaked paper target is not accepted.
+STEP 1 — QUARANTINE if ANY of these defects is present:
+- The implemented signal, timing, weighting, or factor inputs differ from the
+  paper's own construction (a different estimator or formula is a defect even
+  if the headline numbers look close).
+- The stated position direction contradicts the signs of the record's own
+  candidate anchors. Always cross-check: if the record says long X / short Y
+  but its anchor values imply the opposite leg earns the premium, that is a
+  defect.
+- The paper's target values were available to the candidate during
+  generation, or candidate outputs match the paper exactly at every reported
+  digit without independent recomputation. Closeness is never evidence of
+  correctness; suspicious closeness is evidence of leakage.
+- Any other known defect touches the primary result's sign or interpretation.
+
+STEP 2 — QUALIFIED if no Step-1 defect, but ANY of:
+- No independent verification of the primary result exists anywhere in the
+  record (the result rests solely on the candidate's own report). Prior
+  independent audit recomputation counts as verification even when the data
+  cache is now absent.
+- The primary output is a regression-implied premium rather than a
+  demonstrated portfolio return; or the tradable magnitude is materially
+  attenuated, meaning less than roughly half the paper's claim; or the
+  primary result's statistical support has collapsed in the replication
+  (for example a headline mean that is no longer distinguishable from
+  zero). A magnitude within about 80-110% of the paper with a somewhat
+  weaker t-statistic is NOT attenuation; it is a caveat.
+- A material data, scope, or sample limitation weakens interpretation or
+  verification of the primary result itself. In particular, when the record
+  attributes a MATERIAL shortfall in the primary result -- on the order of
+  half the paper's claim or worse, or lost statistical significance -- to a
+  substituted data source (a different vendor than the paper used), an
+  unavailable data item, or a truncated sample, that is a QUALIFIED-level
+  limitation even though the construction is faithful. Ordinary vintage
+  drift of the SAME data sources that leaves the primary result within
+  roughly 80-110% of the paper's magnitude is a caveat, not a downgrade,
+  even when the record attributes some sub-component gap to it.
+
+STEP 3 — otherwise ACCEPTED. The following are caveats, NEVER downgrades:
+- The data cache is absent from the checkout, when a prior independent audit
+  recomputed the primary result.
+- The replicated t-statistic or magnitude is somewhat weaker than the paper's
+  while sign and construction are faithful.
+- Missing secondary tables, corollaries, robustness extensions, or
+  reassurance evidence.
+- Normal historical / gross / pre-cost limitations.
+
 Do not emit analysis or reasoning. Answer immediately in the required format.
 
 Return only:

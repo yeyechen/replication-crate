@@ -1,0 +1,142 @@
+[
+ {
+  "case_id": "asset_growth_and_the_cross_section_of_stock_returns",
+  "format": 1.0,
+  "status": 1.0,
+  "status_got": "ACCEPTED",
+  "grounding": 0.6923076923076923,
+  "ungrounded": [
+   "110.0",
+   "80.0",
+   "98.0",
+   "99.0"
+  ],
+  "contamination": 1.0,
+  "contaminants": [],
+  "legacy": 1.0,
+  "trade_legs": 1.0,
+  "overall": 0.9231,
+  "split": "train"
+ },
+ {
+  "case_id": "quality_minus_junk",
+  "format": 1.0,
+  "status": 1.0,
+  "status_got": "QUARANTINE",
+  "grounding": 1.0,
+  "ungrounded": [],
+  "contamination": 1.0,
+  "contaminants": [],
+  "legacy": 1.0,
+  "trade_legs": 1.0,
+  "overall": 1.0,
+  "split": "train"
+ },
+ {
+  "case_id": "betting_against_beta",
+  "format": 1.0,
+  "status": 1.0,
+  "status_got": "ACCEPTED",
+  "grounding": 1.0,
+  "ungrounded": [],
+  "contamination": 1.0,
+  "contaminants": [],
+  "legacy": 1.0,
+  "trade_legs": 1.0,
+  "overall": 1.0,
+  "split": "train"
+ },
+ {
+  "case_id": "cross_section_of_volatility",
+  "format": 1.0,
+  "status": 1.0,
+  "status_got": "ACCEPTED",
+  "grounding": 0.8181818181818182,
+  "ungrounded": [
+   "-110.0",
+   "80.0"
+  ],
+  "contamination": 1.0,
+  "contaminants": [],
+  "legacy": 1.0,
+  "trade_legs": 1.0,
+  "overall": 0.9545,
+  "split": "train"
+ },
+ {
+  "case_id": "earnings_releases_anomalies",
+  "format": 1.0,
+  "status": 1.0,
+  "status_got": "QUALIFIED",
+  "grounding": 1.0,
+  "ungrounded": [],
+  "contamination": 1.0,
+  "contaminants": [],
+  "legacy": 1.0,
+  "trade_legs": 1.0,
+  "overall": 1.0,
+  "split": "train"
+ },
+ {
+  "case_id": "returns_to_buying_winners",
+  "format": 1.0,
+  "status": 1.0,
+  "status_got": "ACCEPTED",
+  "grounding": 0.9,
+  "ungrounded": [
+   "93.0"
+  ],
+  "contamination": 1.0,
+  "contaminants": [],
+  "legacy": 1.0,
+  "trade_legs": 1.0,
+  "overall": 0.975,
+  "split": "train"
+ },
+ {
+  "case_id": "seasonality_international_evidence",
+  "format": 1.0,
+  "status": 1.0,
+  "status_got": "QUALIFIED",
+  "grounding": 1.0,
+  "ungrounded": [],
+  "contamination": 1.0,
+  "contaminants": [],
+  "legacy": 1.0,
+  "trade_legs": 1.0,
+  "overall": 1.0,
+  "split": "train"
+ },
+ {
+  "case_id": "the_cross_section_of_expected_stock_returns",
+  "format": 1.0,
+  "status": 1.0,
+  "status_got": "ACCEPTED",
+  "grounding": 0.9090909090909091,
+  "ungrounded": [
+   "90.0"
+  ],
+  "contamination": 1.0,
+  "contaminants": [],
+  "legacy": 1.0,
+  "trade_legs": 1.0,
+  "overall": 0.9773,
+  "split": "train"
+ },
+ {
+  "case_id": "value_investing_f_score",
+  "format": 1.0,
+  "status": 1.0,
+  "status_got": "QUALIFIED",
+  "grounding": 0.9545454545454546,
+  "ungrounded": [
+   "45.0"
+  ],
+  "contamination": 1.0,
+  "contaminants": [],
+  "legacy": 1.0,
+  "trade_legs": 1.0,
+  "overall": 0.9886,
+  "split": "train"
+ }
+]
