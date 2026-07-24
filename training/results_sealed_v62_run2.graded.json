@@ -1,0 +1,57 @@
+[
+ {
+  "case_id": "contrarian_investment",
+  "format": 1.0,
+  "status": 1.0,
+  "status_got": "ACCEPTED",
+  "grounding": 0.8571428571428571,
+  "ungrounded": [
+   "92.0",
+   "98.0"
+  ],
+  "contamination": 1.0,
+  "contaminants": [],
+  "legacy": 1.0,
+  "trade_legs": 1.0,
+  "overall": 0.9643,
+  "split": "sealed"
+ },
+ {
+  "case_id": "share_issuance_and_cross_sectional_returns",
+  "format": 1.0,
+  "status": 0.0,
+  "status_got": "ACCEPTED",
+  "grounding": 0.75,
+  "ungrounded": [
+   "0.31",
+   "203.0",
+   "273.0",
+   "92.0"
+  ],
+  "contamination": 1.0,
+  "contaminants": [],
+  "legacy": 1.0,
+  "trade_legs": 0.5,
+  "overall": 0.5125,
+  "split": "sealed"
+ },
+ {
+  "case_id": "time_series_momentum",
+  "format": 1.0,
+  "status": 1.0,
+  "status_got": "ACCEPTED",
+  "grounding": 0.8571428571428571,
+  "ungrounded": [
+   "2012.0",
+   "46.6"
+  ],
+  "contamination": 0.0,
+  "contaminants": [
+   "2012.0"
+  ],
+  "legacy": 1.0,
+  "trade_legs": 1.0,
+  "overall": 0.8143,
+  "split": "sealed"
+ }
+]

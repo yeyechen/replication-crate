@@ -180,3 +180,16 @@ tune 25/32 (from 9/32). Known residual: corruptions detectable only via
 literature priors (cop_atl1, ival_me) persist -- durable fix is evidence
 design (paper_anchors must state the claimed direction; next minting
 batch), not more prompt.
+
+## Evaluation-side verdict under frozen v6.2 (2026-07-24 ~11:00)
+
+Corpus 18/18; sealed 2/3 (share_issuance ACCEPTED x3 vs QUALIFIED gold: the
+regression-implied-premium rule generalized to the dev instance it was
+tuned near but not to the unseen one -- sealed did its job); minted tune
+25/32; minted test-28 one-shot 17/28 (61%, 71% of parsed). Hard gate clean
+on corpus/boundary/sealed; violated only by internally-consistent minted
+corruptions (evidence-design class). NOT yet unattended-production grade;
+trajectory steep (test 39%->61% in one round, no fix ever regressed).
+Batch-2 fixes (all non-prompt): direction-stated paper anchors,
+split-balanced sign_flip/null/regression-only conditions, transport
+re-call (shipped).
