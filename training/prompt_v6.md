@@ -47,6 +47,12 @@ STEP 2 — QUALIFIED if no Step-1 defect, but ANY of:
   an implementation gap the record itself identifies as limiting the
   result. A magnitude within about 80-110% of the paper with a somewhat
   weaker t-statistic is NOT such a shortfall; it is a caveat.
+- The record's own analyses disagree with each other on a central claim
+  and the record flags the inconsistency as unresolved (for example, a
+  regression-based version of the claim holds while the portfolio-based
+  version fails, with no reconciliation). An unreconciled internal
+  inconsistency is an interpretive limitation of the record itself, not a
+  finding.
 - A material data, scope, or sample limitation weakens interpretation or
   verification of the primary result itself. In particular, when the record
   attributes a MATERIAL shortfall in the primary result -- on the order of

@@ -134,6 +134,18 @@ with a justification here.
 - Panel aggregator fails closed: unparseable hard-gate checker =>
   QUARANTINE. WHY: asymmetric costs apply to infrastructure failure too.
 
+**v6 -> v6.1 — unresolved internal inconsistency rule.**
+WHY: under v6, industry momentum flipped to ACCEPTED (2-1). Disagreement
+routing reviewed the gold and KEPT qualified: the record's FM analysis
+confirms the paper's central claim while its portfolio analysis rejects it,
+explicitly flagged as unreconciled — an interpretive limitation of the
+record, not a weak finding.
+WHY IT IMPROVES: it names a distinct record-quality axis (internal
+coherence) that the finding/replication-side split does not cover. A record
+that cannot reconcile its own analyses is not yet trustworthy evidence
+regardless of construction fidelity — general to any future record, not a
+patch for this paper.
+
 ## Architecture A/B: checker panel vs monolithic prompt (2026-07-24)
 
 Panel (6 targeted checkers + mechanical aggregator + composer) vs monolith
