@@ -67,9 +67,10 @@ def extract_json(text: str) -> dict | None:
 
 def run_checker(api_key: str, name: str, evidence: str, model: str) -> dict:
     system = (PANEL / f"{name}.md").read_text()
-    for attempt in (1, 2):
+    for attempt in (1, 2, 3):
         try:
-            body = call_minimax(api_key, system, evidence, model, 2500)
+            body = call_minimax(api_key, system, evidence, model,
+                                2500 + 2500 * (attempt - 1))
             out = extract_json(body["choices"][0]["message"].get("content", ""))
             if out and out.get("verdict") in VALID[name]:
                 out["_tokens"] = body.get("usage", {}).get("total_tokens", 0)
