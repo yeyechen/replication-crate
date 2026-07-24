@@ -117,6 +117,14 @@ def main() -> int:
             if re.match(r"^:\s*(ACCEPTED|QUALIFIED|QUARANTINE)\b", answer):
                 # "STATUS" was absorbed into the think block; restore it
                 answer = "STATUS" + answer
+            if "STATUS" not in answer and "TRADE:" in answer:
+                # head fragment like "INE\nTRADE:" -- status word split by
+                # the think boundary; reconstruct from the unique tail
+                frag = answer.split("\n", 1)[0].strip().upper()
+                hits = [s for s in ("ACCEPTED", "QUALIFIED", "QUARANTINE")
+                        if frag and s.endswith(frag)]
+                if len(hits) == 1:
+                    answer = f"STATUS: {hits[0]}\n" + answer.split("\n", 1)[1]
             if "STATUS:" not in answer and "STATUS:" in full:
                 # stray think tag inside the answer; recover from full text
                 answer = full[full.index("STATUS:"):].replace("</think>", "")
