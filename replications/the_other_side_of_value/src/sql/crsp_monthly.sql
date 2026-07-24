@@ -43,7 +43,7 @@ FROM
         -- 1970-01-01, so toStartOfMonth(toDate(...)) is NOT usable here)
         makeDate32(toYear(toDate32(m.date)), toMonth(toDate32(m.date)), 1)
                                                 AS month,
-        if(m.ret > -1.0, m.ret, NULL)           AS ret,
+        if(m.ret >= -1.0, m.ret, NULL)          AS ret,
         if(abs(m.prc) > 0 AND m.shrout > 0,
            abs(m.prc) * m.shrout * 1000, NULL)  AS me,
         abs(m.prc)                              AS prc,

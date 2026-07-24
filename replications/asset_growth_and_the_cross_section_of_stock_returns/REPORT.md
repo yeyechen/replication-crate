@@ -3,7 +3,7 @@
 **Paper:** Cooper, M. J., Gulen, H., & Schill, M. J. (2008). "Asset Growth and the Cross-Section of Stock Returns." *The Journal of Finance*, 63(4), 1609–1651.
 **Slug:** `asset_growth_and_the_cross_section_of_stock_returns`
 **Data:** CRSP (`crsp_202601`), Compustat (`comp_202601`), Fama–French factors (`ff`), via ClickHouse.
-**Status:** Two outer iterations complete (audit 1 → PARTIAL with one actionable major; outer iteration 2 closed it). 4 tables, 119 target cells. Awaiting audit 2.
+**Status:** Two outer iterations complete; audit 2 passed after the one actionable audit-1 item was closed. 4 tables, 119 target cells.
 
 ---
 

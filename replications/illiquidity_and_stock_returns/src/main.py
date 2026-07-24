@@ -15,7 +15,7 @@ Results artifacts (written at the end of main()):
                               line and 12-month rolling mean
   results/table_3.md          Table 3: annual time-series regressions
                               (model 10), 1964-1996 (T=33): AR(1) block
-                              + 6 columns x (g0..g2 with OLS and NW(3)
+                              + 6 columns x (g0..g2 with OLS and NW(0)
                               t, R2, DW), 73-cell evaluation
   results/table_4.md          Table 4: monthly time-series regressions
                               (model 10m), 1964-01..1996-12 (T=396):

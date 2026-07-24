@@ -1,0 +1,206 @@
+[
+  {
+    "case_id": "asset_growth_and_the_cross_section_of_stock_returns",
+    "split": "train",
+    "status": "accepted",
+    "status_reason": "The core decile strategy, raw spread, factor-adjusted spread, and persistence evidence are internally consistent and were previously audited. The current checkout cannot replay the old cache, so replay provenance remains a caveat rather than a claim of fresh verification.",
+    "verification_level": "legacy_auditor_recomputed_from_cached_artifacts; cache absent from current checkout",
+    "strategy": {
+      "universe": "US NYSE, AMEX, and NASDAQ nonfinancial common stocks",
+      "signal": "year-over-year total-asset growth using fiscal-year t-1 versus t-2 data",
+      "formation": "sort into deciles at the end of each June",
+      "position": "long D1, the lowest asset-growth decile; short D10, the highest",
+      "holding": "July through the following June; rebalance annually",
+      "weighting": "report both equal-weighted and value-weighted; the implementation freezes June market equity for value weights"
+    },
+    "paper_anchors": {
+      "sample": "July 1968 through June 2003",
+      "gross_low_minus_high_return_pct_per_month": {
+        "equal_weighted": 1.73,
+        "value_weighted": 1.05
+      },
+      "source": "replications/asset_growth_and_the_cross_section_of_stock_returns/inputs/content.md"
+    },
+    "candidate_anchors": {
+      "sample_months": 420,
+      "gross_low_minus_high_return_pct_per_month": {
+        "equal_weighted": 1.7128466242864935,
+        "equal_weighted_t": 7.960497766992901,
+        "value_weighted": 1.0328221428274866,
+        "value_weighted_t": 4.305119217414663
+      },
+      "value_weighted_leg_return_annualized_pct": {
+        "low_growth_long": 19.198259393496443,
+        "high_growth_short_leg_underlying_return": 5.427581638342738
+      },
+      "source": "replications/asset_growth_and_the_cross_section_of_stock_returns/results/table_2_eval.json"
+    },
+    "reassurance": [
+      "Equal-weighted decile returns decline almost monotonically from low to high asset growth.",
+      "FF3 low-minus-high alpha is 1.4874% per month equal-weighted (t 6.81) and 0.5566% value-weighted (t 3.14).",
+      "Low growth beats high growth in 97.1% of formation years equal-weighted and 77.1% value-weighted.",
+      "The low-minus-high effect remains positive through event years 2 to 5."
+    ],
+    "caveats": [
+      "Historical gross result; transaction costs, turnover, capacity, and live out-of-sample performance are not established.",
+      "The fixed-June value-weight convention is an implementation choice inferred from the paper rather than fully specified by it.",
+      "The annual-cohort Sharpe of 0.703 is not the same statistic as the monthly-series annualized Sharpe of 0.75.",
+      "The checkout excludes data panels and cannot currently replay the result; the legacy audit did recompute it when the cache existed.",
+      "A rerun of src/table_2.py would overwrite the already computed five-year section with a placeholder."
+    ],
+    "exclude_from_target": [
+      "legacy REPLICATED verdict",
+      "119 candidate-authored tolerance values",
+      "Tier, status, reason, ratio, and within_2x fields"
+    ],
+    "gold_answer": "STATUS: ACCEPTED\nTRADE: Each June, sort eligible US nonfinancial common stocks by year-over-year asset growth; long the lowest-growth decile and short the highest-growth decile, hold July-June, and rebalance annually.\nPRIMARY RESULT: On the replicated July 1968-June 2003 sample, the historical gross low-minus-high premium is 1.713% per month equal-weighted (t = 7.96) and 1.033% value-weighted (t = 4.31), versus paper values of 1.73% and 1.05%. The replicated value-weighted low- and high-growth legs annualize to 19.2% and 5.4%.\nREASSURANCE:\n- Equal-weighted returns fall almost monotonically across the growth deciles.\n- FF3 low-minus-high alpha is 1.487% per month equal-weighted and 0.557% value-weighted.\n- Low growth beats high growth in 97% of years equal-weighted and 77% value-weighted.\n- The effect remains positive through event years 2-5.\nCAVEATS:\n- These are historical gross, pre-cost results; turnover, capacity, and live out-of-sample performance are not established.\n- Value weighting freezes June market equity, an implementation choice not fully specified by the paper.\n- The old cache is absent, so this checkout cannot freshly replay the previously audited result."
+  },
+  {
+    "case_id": "quality_minus_junk",
+    "split": "train",
+    "status": "quarantine",
+    "status_reason": "The current output has the right broad sign, but the implementation uses the wrong beta, non-per-share growth, rolling rather than fixed annual accounting timing, and non-paper risk factors. Numerical closeness is therefore not sufficient for positive gold.",
+    "verification_level": "current candidate output audited; independent official-factor check supports the economic conclusion but does not repair the candidate signal",
+    "strategy": {
+      "universe": "US common stocks",
+      "signal": "composite quality from profitability, safety, growth, and payout",
+      "formation": "NYSE median size split and conditional top/bottom 30% quality portfolios",
+      "position": "one-half Small Quality plus one-half Big Quality, minus one-half Small Junk and one-half Big Junk",
+      "holding": "monthly factor return",
+      "weighting": "value-weighted legs"
+    },
+    "paper_anchors": {
+      "sample": "July 1957 through December 2016",
+      "qmj_return_pct_per_month": 0.29,
+      "qmj_return_t": 3.62,
+      "four_factor_alpha_pct_per_month": 0.6,
+      "four_factor_alpha_t": 9.95,
+      "annualized_sharpe": 0.47,
+      "source": "replications/quality_minus_junk/inputs/content.md"
+    },
+    "candidate_anchors": {
+      "qmj_return_pct_per_month": 0.22,
+      "qmj_return_t": 3.02,
+      "four_factor_alpha_pct_per_month": 0.46,
+      "four_factor_alpha_t": 8.07,
+      "annualized_sharpe": 0.39,
+      "source": "replications/quality_minus_junk/results/table_4.md"
+    },
+    "known_primary_defects": [
+      "Plain rolling monthly CAPM beta is used instead of Frazzini-Pedersen daily beta.",
+      "Growth inputs are not computed per split-adjusted share.",
+      "Accounting data use a rolling six-month ASOF rule instead of the paper's fixed fiscal-year t-1 to June t timing.",
+      "Generic Fama-French/Carhart regressors replace the paper's AQR Appendix-2 factors, including HML Devil.",
+      "The monthly QMJ factor and its four legs are not persisted for independent checking."
+    ],
+    "reassurance": [
+      "An independent regression of the official local AQR QMJ series on the paper-aligned AQR factors gives a four-factor alpha of 0.616% per month (Newey-West t 9.80), close to the paper's 0.60% and 9.95.",
+      "The current candidate's QMJ mean remains positive and statistically significant."
+    ],
+    "caveats": [
+      "The independent official-series check supports the investment conclusion, not the correctness of the candidate replication.",
+      "The candidate should be rerun after the signal, timing, factor, and output-series fixes.",
+      "Missing Table 9 is secondary reassurance and is not a core investment blocker."
+    ],
+    "exclude_from_target": [
+      "legacy REPLICATED verdict",
+      "candidate-authored tolerances and Tier labels"
+    ],
+    "gold_answer": "STATUS: QUARANTINE\nTRADE: The intended factor is value-weighted QMJ: long the top 30% quality stocks within small and big size groups and short the bottom 30%, combining the four legs with equal one-half weights.\nPRIMARY RESULT: The candidate reports 0.22% per month (t = 3.02), a four-factor alpha of 0.46% (t = 8.07), and Sharpe 0.39, versus paper values of 0.29%, 0.60%, and 0.47. Do not accept that numerical resemblance as training gold: the candidate's beta, per-share growth, accounting timing, and risk-factor inputs do not implement the paper's signal and model faithfully.\nREASSURANCE:\n- A separate check using the official AQR QMJ series and paper-aligned AQR factors produces a 0.616% monthly four-factor alpha (t = 9.80), strongly supporting the economic QMJ conclusion.\nCAVEATS:\n- The official-series result does not validate the candidate construction.\n- Correct the four primary inputs and persist the monthly factor plus SQ/BQ/SJ/BJ legs before rerunning and promoting this case.\n- Missing Table 9 is reassurance, not the immediate investment-result blocker."
+  },
+  {
+    "case_id": "the_other_side_of_value",
+    "split": "dev",
+    "status": "accepted",
+    "status_reason": "The core gross-profitability quintile spread closely reproduces the paper and was freshly replayed after fixing the total-loss return filter. The combined liquid profitability/value implementation is reassurance beyond this primary signal.",
+    "verification_level": "fresh isolated ClickHouse replay on 2026-07-23; corrected output identical to the committed core table at every reported digit",
+    "strategy": {
+      "universe": "US nonfinancial common stocks",
+      "signal": "gross profits divided by total assets",
+      "formation": "NYSE-breakpoint quintiles at the end of June",
+      "position": "long the highest GP/A quintile and short the lowest",
+      "holding": "July through the following June; rebalance annually",
+      "weighting": "value-weighted"
+    },
+    "paper_anchors": {
+      "sample": "July 1963 through December 2010",
+      "gross_high_minus_low_return_pct_per_month": 0.31,
+      "return_t": 2.49,
+      "ff3_alpha_pct_per_month": 0.52,
+      "ff3_alpha_t": 4.49,
+      "hml_loading": -0.44,
+      "source": "replications/the_other_side_of_value/inputs/content.md"
+    },
+    "candidate_anchors": {
+      "gross_high_minus_low_return_pct_per_month": 0.317,
+      "return_t": 2.506,
+      "ff3_alpha_pct_per_month": 0.543,
+      "ff3_alpha_t": 4.582,
+      "hml_loading": -0.453,
+      "source": "replications/the_other_side_of_value/results/table_2.md"
+    },
+    "reassurance": [
+      "The quintile spread, alpha, alpha t-statistic, and HML loading all closely track the paper.",
+      "A fresh replay restored 274 valid -100% stock-month returns and left the core result unchanged at every reported digit.",
+      "The separate official Novy-Marx 2x3 PMU series averages 0.3319% per month over the same 570 months (t 3.44; annualized Sharpe 0.50), corroborating a profitability premium but not reproducing this exact quintile sort.",
+      "The high-GP/A portfolio has a large negative HML loading, confirming that profitability is not merely conventional value exposure."
+    ],
+    "caveats": [
+      "The reported result is historical and gross; costs, capacity, and modern out-of-sample performance are not shown.",
+      "Paper targets and tolerances remain in the reporting/evaluation section of candidate code; the fresh replay confirms they are not needed to compute the portfolio, but they should be removed before using generated code as a candidate example.",
+      "The local ignored cache now permits replay, but the code still depends on the separate rep-it-up shared utils package.",
+      "The large-liquid combined profitability/value strategy and the joint profitability/value portfolio statistics remain unverified."
+    ],
+    "exclude_from_target": [
+      "legacy REPLICATED verdict",
+      "candidate-authored tolerances and Tier labels",
+      "claim that all four committed tables were delivered"
+    ],
+    "gold_answer": "STATUS: ACCEPTED\nTRADE: At each June rebalance, rank eligible US nonfinancial common stocks on gross profits-to-assets; hold a value-weighted long position in the highest quintile and short the lowest through the following June.\nPRIMARY RESULT: Over July 1963-December 2010, the historical gross high-minus-low return is 0.317% per month (t = 2.51), with FF3 alpha 0.543% (t = 4.58) and HML loading -0.453. The paper reports 0.31%, 0.52%, and -0.44, respectively. A fresh isolated replay after restoring valid -100% returns reproduced the committed core table at every reported digit.\nREASSURANCE:\n- The raw spread, FF3 alpha, alpha t-statistic, and HML loading closely track the paper.\n- Restoring 274 valid total-loss stock-months leaves the core result unchanged at reported precision.\n- The author's separate 2x3 PMU series is also positive over the same sample, although it is not the same portfolio construction.\nCAVEATS:\n- Historical gross result; trading costs, capacity, and modern out-of-sample performance are not established.\n- The combined liquid profitability/value strategy remains unverified.\n- Paper targets in the reporting code should be removed before candidate training; replay also requires the separate shared-utils package."
+  },
+  {
+    "case_id": "illiquidity_and_stock_returns",
+    "split": "dev",
+    "status": "qualified",
+    "status_reason": "The primary Fama-MacBeth premium was independently recomputed during the legacy audit, but it is a regression-implied expected-return tilt rather than a demonstrated tradable spread, and the current checkout cannot replay the omitted cache.",
+    "verification_level": "legacy_auditor_recomputed_from_cached_artifacts; cache absent from current checkout",
+    "strategy": {
+      "universe": "eligible NYSE common stocks",
+      "signal": "prior-calendar-year ILLIQMA: average absolute daily return divided by dollar volume, normalized by the annual cross-sectional mean",
+      "formation": "measure and rank at the start of the following return year",
+      "position": "favor or go long higher-ILLIQMA, less-liquid stocks and underweight or short lower-ILLIQMA stocks",
+      "holding": "following-year monthly returns enter the cross-sectional regressions",
+      "weighting": "not a reported portfolio backtest; the primary output is a Fama-MacBeth slope"
+    },
+    "paper_anchors": {
+      "sample": "1964 through 1997",
+      "illiqma_coef_pct_return_per_month": 0.162,
+      "illiqma_t": 6.55,
+      "source": "replications/illiquidity_and_stock_returns/inputs/content.md"
+    },
+    "candidate_anchors": {
+      "illiqma_coef_pct_return_per_month": 0.1657,
+      "illiqma_t": 6.56,
+      "interpretation": "A +1.0 increase in normalized ILLIQMA is associated with about 16.6 basis points higher expected monthly return, conditional on the model's other regressors.",
+      "source": "replications/illiquidity_and_stock_returns/results/table_2.md"
+    },
+    "reassurance": [
+      "With size, volatility, and dividend-yield controls, the slope is 0.1242 (t 5.86), versus paper 0.112 (t 5.39).",
+      "Excluding January, the slope is 0.1301 (t 5.34), versus paper 0.126 (t 5.30).",
+      "The slope is positive and significant in both sample halves.",
+      "63.24% of the 408 monthly slopes are positive, versus paper 63.4%, and the auditor independently recomputed the headline when cached data were available."
+    ],
+    "caveats": [
+      "This is a regression-implied liquidity premium, not a reported quantile long-short return.",
+      "Turnover, transaction costs, capacity, Sharpe ratio, and modern out-of-sample performance are absent; those omissions are especially important for illiquid stocks.",
+      "The current checkout excludes the cached data and required shared utils, so the result cannot presently be replayed.",
+      "The sample is NYSE-only and ends in 1997."
+    ],
+    "exclude_from_target": [
+      "legacy REPLICATED verdict",
+      "candidate-authored tolerances and Tier labels",
+      "conversion of the regression coefficient into a claimed realized portfolio return"
+    ],
+    "gold_answer": "STATUS: QUALIFIED\nTRADE: The candidate tilt is to favor stocks with higher prior-year normalized Amihud illiquidity (ILLIQMA), meaning less-liquid stocks, and underweight lower-ILLIQMA stocks in the following year.\nPRIMARY RESULT: In the 1964-1997 Fama-MacBeth analysis, a +1.0 increase in ILLIQMA is associated with 0.1657 percentage points, or about 16.6 basis points, higher expected monthly return (t = 6.56), conditional on the other regressors. The paper reports 0.162 and t = 6.55. This is a regression-implied historical liquidity premium, not a demonstrated long-short portfolio return.\nREASSURANCE:\n- The coefficient remains positive with size, volatility, and dividend-yield controls: 0.1242, t = 5.86.\n- It remains positive excluding January and in both sample halves.\n- 63.24% of monthly slopes are positive, almost exactly the paper's 63.4%.\n- The legacy auditor independently recomputed the headline from the cache then available.\nCAVEATS:\n- No quantile spread, turnover, costs, capacity, Sharpe, or modern out-of-sample result is reported.\n- Illiquidity itself makes the gross regression premium particularly difficult to monetize.\n- The current checkout lacks the old cache and shared utilities, so it cannot freshly replay the result."
+  }
+]
