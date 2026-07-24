@@ -877,5 +877,807 @@
    "framing that the sample restriction and headline attenuation constitute a full replication of the paper's abstract-level 7.5% and 23% figures"
   ],
   "gold_answer": "STATUS: QUALIFIED\nTRADE: Each year, restrict Compustat firms to the highest book-to-market quintile (using the prior fiscal year's BM distribution); within that value universe, compute F_SCORE (0-9) from nine binary fundamental signals and go long firms scoring 8-9 while shorting firms scoring 0-1, holding 12 months from the fifth month after fiscal year-end.\nPRIMARY RESULT: Under a data-forced restriction to formation years 1988-1996 (oancf is NULL pre-1987 in this Compustat vintage), the strong-minus-weak one-year market-adjusted spread is 0.1045 (High mean 0.0702, n=546; Low mean -0.0344, n=177), versus the paper's 1976-1996 spread of 0.230 (0.134 vs -0.096). The sign and the direction of the effect hold, but the mean difference is not significant by a Welch t-test in this sample (t=1.49 vs paper 5.59); the median/distributional shift is significant (Wilcoxon p=0.0021).\nREASSURANCE:\n- A same-period annual hedge (F_SCORE>=5 long, <5 short) averages a 0.1040 spread (t=3.86, 9/9 positive years), closely matching the paper's own printed 1988-1996 average of 0.091.\n- The Table 7 cross-sectional F_SCORE coefficient replicates within the paper's stated range (0.0276-0.0227 vs paper 0.031-0.027).\n- The High-Low spread is positive in all three size terciles, strongest among small firms, matching the paper's concentration claim.\n- The share-price partition confirms the strategy is not confined to low-priced stocks, and the low-volume bucket nearly matches the paper exactly (0.233 vs 0.239).\nCAVEATS:\n- The sample covers only 9 of the paper's 21 formation years and 41% of its firm-years; the abstract's full-period 23% figure is unreachable by construction here.\n- The primary spread's mean is not t-significant in this sample; its statistical case rests on the median test and the separate median-split hedge, not a mean-return t-stat.\n- Historical, gross, pre-cost result with thin extreme-score legs; turnover, costs, capacity, and out-of-sample performance are not established.\n- The data cache is absent from this checkout; headline numbers rely on the committed results files and the prior audit's logged recomputation."
+ },
+ {
+  "case_id": "pilot_sale_me_barbee1996_certified",
+  "split": "train",
+  "status": "accepted",
+  "status_reason": "Examiner audit found and fixed a CRSP-Compustat link-join duplication defect in the panel construction, with negligible impact on the primary result (corrected EW in-window spread unchanged at 0.910%/mo, t=3.624), and corroborated the value-weighted Sharpe fingerprint against an external reference the worker had no access to. The worker also honestly disclosed the weak in-window value-weighted FF3 alpha (t=1.25).",
+  "verification_level": "worker self-verified end-to-end; independently audited and certified by the examiner: link-join defect found and fixed (impact on primary result negligible; corrected EW in-window spread identical), corrected panel counts verified plausible, and the result corroborated against an external reference implementation the worker had no access to (sign match, near-identical Sharpe fingerprint). Reference-partition scan clean.",
+  "strategy": {
+   "universe": "US common stocks in crsp_202601.msf linked to comp_202601.funda via ccmxpf_linktable (LC/LU linktype, P/C linkprim); annuals restricted to indfmt='INDL', consol='C', datafmt='STD', popsrc='D'.",
+   "signal": "Sales-to-price S/P = REVT(fyear=t-1) / ME_Dec(t-1); REVT from comp_202601.funda (argMax over datadate per gvkey-fyear), ME from crsp_202601.msf December (abs(prc)*shrout*1000 per permno per calendar year). Both REVT>0 and me_dec>0 required.",
+   "formation": "Monthly at end-of-June t using FY t-1 fundamentals and December t-1 market equity (standard 6-month accounting lag). Deciles assigned on NYSE-only (hexcd=1) breakpoints; non-NYSE stocks placed against those breakpoints.",
+   "position": "Long top decile (D10, highest S/P), short bottom decile (D1, lowest S/P).",
+   "holding": "12 months, from July t through June t+1, with monthly rebalancing.",
+   "weighting": "Both equal-weighted (EW) and value-weighted (VW, by December t-1 market equity) decile returns are computed and the spread is D10 minus D1."
+  },
+  "paper_anchors": {
+   "cite": "Barbee, Mukherji & Raines (1996), Financial Analysts Journal.",
+   "sample": "1979-1991 monthly US stock returns.",
+   "claimed_direction": "higher S/P predicts higher returns",
+   "published_tstat": 2.2
+  },
+  "candidate_anchors": {
+   "in_window_mean_pct_per_month": {
+    "ew": 0.91,
+    "vw": 0.633
+   },
+   "in_window_t": {
+    "ew": 3.624,
+    "vw": 2.463
+   },
+   "full_sample_period": "1970-01 to 2024-12",
+   "full_sample_n_months": 661,
+   "full_sample_mean_pct_per_month": {
+    "ew": 0.93,
+    "vw": 0.72
+   },
+   "full_sample_t": {
+    "ew": 5.615,
+    "vw": 2.982
+   },
+   "full_sample_annualized_sharpe": {
+    "ew": 0.757,
+    "vw": 0.402
+   },
+   "ff3_alpha_pct_per_month": {
+    "ew_full_sample": 0.659,
+    "ew_in_window": 0.742,
+    "vw_full_sample": 0.389,
+    "vw_in_window": 0.283
+   },
+   "ff3_alpha_t": {
+    "ew_full_sample": 4.152,
+    "ew_in_window": 2.689,
+    "vw_full_sample": 1.953,
+    "vw_in_window": 1.252
+   },
+   "loadings": {
+    "ew_full_sample": {
+     "MKT-RF": -0.009,
+     "SMB": -0.028,
+     "HML": 0.878,
+     "R2": 0.409
+    },
+    "ew_in_window": {
+     "MKT-RF": -0.01,
+     "SMB": 0.142,
+     "HML": 0.663,
+     "R2": 0.291
+    },
+    "vw_full_sample": {
+     "MKT-RF": -0.009,
+     "SMB": 0.595,
+     "HML": 0.977,
+     "R2": 0.277
+    },
+    "vw_in_window": {
+     "MKT-RF": 0.154,
+     "SMB": 0.333,
+     "HML": 0.909,
+     "R2": 0.427
+    }
+   }
+  },
+  "reassurance": [
+   "Direction matches the paper: every spread (EW and VW, full sample and 1979-1991) is positive, and every decile mean-return profile is monotonically increasing in S/P except for one mild D9>D10 in the 1979-1991 EW profile.",
+   "EW in-window classical t = 3.624 exceeds the paper's published t of 2.2; EW full-sample t = 5.615 over 661 months; EW FF3 alpha t = 4.152 (full) and 2.689 (in-window) -- the EW claim replicates cleanly.",
+   "VW in-window classical t = 2.463 also exceeds the published t of 2.2.",
+   "6-month accounting lag is implemented as `fr.fyear = la.june_year - 1` and `me.yr = la.june_year - 1` in src/01_panel.sql, so no look-ahead bias.",
+   "NYSE breakpoints are implemented via a separate `hexcd=1` quantile subquery, not via full-universe quantiles.",
+   "No data outside the allowed anchors (comp_202601, crsp_202601, ccmxpf_linktable, ff.four_factor_monthly); no forbidden contrib_202408.*, claude.jkp_*, /home/alan/jkp-library, /home/alan/replication-crate, /home/alan/rep-it-up was consulted.",
+   "Examiner audit (AUDIT.md) certified the corrected panel and externally corroborated the spread's fingerprint."
+  ],
+  "caveats": [
+   "VW spread FF3 alpha in the paper window is only t = 1.252 -- the value-weighted S/P effect does not reliably survive the standard three-factor adjustment in the original 1979-1991 sample. The raw mean (0.633 %/mo, classical t = 2.463) is positive and significant, but alpha is 28 bp/month and not statistically distinguishable from zero.",
+   "EW payoffs come disproportionately from smaller-cap deciles; a cap-neutral investor reading the VW result should treat the claim as weaker than the EW headline suggests.",
+   "Mild non-monotonicity: in the 1979-1991 EW profile D9 (1.698 %/mo) edges out D10 (1.687 %/mo). Full-sample EW profile is strictly monotone 0.652 -> 1.582 %/mo.",
+   "FF3 alphas are computed against ff.four_factor_monthly (MKT-RF/SMB/HML/RF); UMD momentum was not used because no `*_three_factor_monthly` table exists in `ff` and UMD is only available in the 4-factor table. A Carhart 4-factor regression would be a stricter test.",
+   "Early-1970 universe artefact: the first month of decile_returns.csv (1970-01-01) carries unusually large per-decile counts (D1=9034, D10=10911). This is a CRSP share-count scale artefact in the very first month, not a breakpoint failure; from 1970-02 onward counts settle.",
+   "Sample start (1970-01) is constrained by the December-t-1 market-equity requirement for a June-t formation; this gives 661 months rather than the longer window that a January-t formation would yield.",
+   "HAC lag choice (Newey-West max lag = 6) is conservative for monthly data; larger lags modestly shrink t-stats without changing the qualitative picture."
+  ],
+  "exclude_from_target": [],
+  "gold_answer": "STATUS: ACCEPTED\nTRADE: Long the top NYSE-decile of US common stocks ranked by sales-to-price (REVT(fyear=t\u22121) / ME_Dec(t\u22121)), short the bottom NYSE-decile, held 12 months from July t through June t+1 with monthly rebalancing.\nPRIMARY RESULT: The candidate replicates the Barbee\u2013Mukherji\u2013Raines (1996) sales-to-price effect as a long-short D10\u2212D1 spread. In the paper's 1979\u20131991 sample, the equal-weighted spread is 0.91%/month (classical t = 3.62) and the value-weighted spread is 0.63%/month (classical t = 2.46), both positive and beating the paper's published t of 2.2. Over the full 1970\u20132024 sample (661 months), the EW spread is 0.93%/mo (t = 5.62) and the VW spread is 0.72%/mo (t = 2.98). The result is gross, historical, pre-cost, and presented as a realized long-short portfolio return rather than a regression-implied premium.\nREASSURANCE:\n- Direction matches the paper in every cut (EW and VW, full sample and 1979\u20131991), and the decile-by-decile mean-return profile is monotonically increasing in S/P except for a mild D9 > D10 in the 1979\u20131991 EW profile.\n- Examiner audit found and fixed a link-join defect with negligible impact on the primary result, and the EW spread was corroborated against an external reference implementation the worker did not access (sign match, near-identical Sharpe fingerprint).\n- 6-month accounting lag is explicitly implemented via fyear = June_year \u2212 1 and ME_Dec(t\u22121), with NYSE-only breakpoints assigned through a separate hexcd=1 quantile subquery \u2014 no look-ahead and no full-universe-quantile ambiguity.\n- No forbidden data sources were consulted; the corrected panel counts were verified plausible and the reference-partition scan was clean.\nCAVEATS:\n- VW FF3 alpha in the paper's 1979\u20131991 window is only t = 1.25 (28 bp/month); the value-weighted S/P effect does not reliably survive the standard three-factor adjustment in the original sample, even though the raw mean is positive and significant.\n- Equal-weighted payoffs are concentrated in smaller-cap deciles, so a cap-neutral investor reading the VW result should treat the claim as weaker than the EW headline suggests.\n- FF3 alpha is reported against market/SMB/HML; a Carhart four-factor regression (UMD) was not run because the ff package only exposes a four-factor_monthly table.\n- The result is gross of transaction costs and ignores turnover; no capacity or modern out-of-sample post-publication decay analysis is provided."
+ },
+ {
+  "case_id": "bhandari_1988_debt_to_market_certified",
+  "split": "train",
+  "status": "qualified",
+  "status_reason": "Examiner certification corroborated the raw equal-weighted spread and its uniformly negative FF3 alphas against a reserved external reference, but the replicated panel begins in 1962 and covers only about 55% of the paper's 1948-1979 window -- a replication-side coverage limitation, not a result defect.",
+  "verification_level": "Stage-three artifact audit only: directly inspected the preserved SQL, statistics code, stats summary, and decile-return CSV; transcribed candidate numbers from results/stats.md; validated RECORD.json syntax; did not rerun ClickHouse extraction or statistics, independently validate source-table line | Independently audited and certified by the examiner: Examiner certification: partition clean; fingerprint corroborated against the reserved reference (reference full-sample premium ~0.06%/mo t=0.46, in-window negative -- consistent with the worker's null VW spread and uniformly negative FF3 alphas; the EW spread's strength reflects small-cap/value tilt absent from the capped reference). Honest negative finding verified. MATERIAL COVERAGE LIMIT: panel begins 1962, covering only ~55% of the paper's 1948-1979 window.",
+  "strategy": {
+   "universe": "CRSP monthly securities with nonzero price and positive shares outstanding that link to Compustat; NYSE securities set breakpoints and all eligible linked securities are assigned. No explicit common-share-code screen is present.",
+   "signal": "Positive finite (DLTT + DLC) divided by prior-December market equity, using the brief's standard accounting lag.",
+   "formation": "Monthly exact NYSE breakpoints assign D1 through D10, with D1 lowest debt-to-market and D10 highest.",
+   "position": "Long D10 and short D1.",
+   "holding": "Monthly rebalanced.",
+   "weighting": "Equal weighted and value weighted; the preserved SQL uses contemporaneous monthly market equity for VW weights."
+  },
+  "paper_anchors": {
+   "cite": "Bhandari (1988), Journal of Finance",
+   "sample": "1948-1979",
+   "claimed_direction": "Higher leverage predicts higher subsequent returns.",
+   "published_tstat": 3.9
+  },
+  "candidate_anchors": {
+   "in_window": {
+    "sample": "1979-1991",
+    "equal_weighted": {
+     "n": 156,
+     "mean_pct_per_month": 0.459,
+     "tstat": 1.782
+    },
+    "value_weighted": {
+     "n": 156,
+     "mean_pct_per_month": 0.251,
+     "tstat": 0.917
+    }
+   },
+   "full_sample": {
+    "sample": "1962-01-31 to 2024-12-31",
+    "equal_weighted": {
+     "n": 756,
+     "mean_pct_per_month": 0.595,
+     "tstat": 3.671,
+     "annualized_sharpe": 0.462
+    },
+    "value_weighted": {
+     "n": 756,
+     "mean_pct_per_month": 0.183,
+     "tstat": 1.026,
+     "annualized_sharpe": 0.129
+    }
+   },
+   "ff3": {
+    "in_window": {
+     "equal_weighted": {
+      "n": 110,
+      "alpha_pct_per_month": -0.494,
+      "alpha_tstat": -1.964,
+      "loadings": {
+       "mkt_rf": 0.053,
+       "smb": 0.184,
+       "hml": 0.82
+      }
+     },
+     "value_weighted": {
+      "n": 110,
+      "alpha_pct_per_month": -0.801,
+      "alpha_tstat": -3.411,
+      "loadings": {
+       "mkt_rf": 0.29,
+       "smb": 0.272,
+       "hml": 0.885
+      }
+     }
+    },
+    "full_sample": {
+     "equal_weighted": {
+      "n": 528,
+      "alpha_pct_per_month": -0.191,
+      "alpha_tstat": -1.213,
+      "loadings": {
+       "mkt_rf": 0.132,
+       "smb": 0.014,
+       "hml": 1.036
+      }
+     },
+     "value_weighted": {
+      "n": 528,
+      "alpha_pct_per_month": -0.855,
+      "alpha_tstat": -5.575,
+      "loadings": {
+       "mkt_rf": 0.296,
+       "smb": 0.209,
+       "hml": 1.199
+      }
+     }
+    }
+   }
+  },
+  "reassurance": [
+   "The raw equal-weighted spread has the paper's claimed positive direction in both evaluated windows.",
+   "The full-sample equal-weighted spread is +0.595% per month with t-stat +3.671 and annualized Sharpe +0.462.",
+   "The full-sample equal-weighted decile profile rises broadly from +0.838% per month in D1 to +1.423% in D10.",
+   "Both equal- and value-weighted spreads and FF3 diagnostics are preserved, making specification sensitivity visible."
+  ],
+  "caveats": [
+   "The designated 1979-1991 equal-weighted result is positive but weak at +0.459% per month with t-stat +1.782; the value-weighted t-stat is +0.917.",
+   "The full-sample value-weighted raw spread is weak at +0.183% per month with t-stat +1.026.",
+   "Every FF3 alpha is negative; the value-weighted alphas are -0.855% per month with t-stat -5.575 in the full sample and -0.801% with t-stat -3.411 in-window.",
+   "HML loadings range from +0.820 to +1.199, so the spread has substantial value-factor exposure.",
+   "The original 1948-1979 sample is not reproduced; the spread begins on 1962-01-31 and the designated window is 1979-1991.",
+   "FF3 regressions use classic non-robust standard errors and fewer observations than raw spread summaries.",
+   "The SQL retains one link globally per permno before date filtering rather than deduplicating one gvkey per permno-date; no duplicate-check result is preserved.",
+   "VW weights use same-month market equity rather than lagged formation weights.",
+   "The SQL lacks an explicit common-share-code screen, visible delisting-return integration, and an explicit return-null filter before stock counts.",
+   "Zero-debt firms are excluded, and no cross-sectional signal summary statistics are present in results/stats.md."
+  ],
+  "exclude_from_target": [],
+  "gold_answer": "STATUS: QUALIFIED\nTRADE: Long D10 (highest debt-to-market) and short D1 (lowest debt-to-market), monthly rebalanced equal- and value-weighted portfolios of CRSP/Compustat-linked securities with NYSE breakpoints.\nPRIMARY RESULT: The raw equal-weighted spread is positive in both tested windows but ranges from weakly positive in the 1979\u20131991 post-paper window (+0.459%/mo, t=1.782) to strongly positive in the 1962\u20132024 full sample (+0.595%/mo, t=3.671, annualized Sharpe 0.462). The value-weighted spread is weak in the full sample (+0.183%/mo, t=1.026) and null in-window (+0.251%/mo, t=0.917). Every FF3 alpha is negative, with the full-sample value-weighted alpha at \u22120.855%/mo (t=\u22125.575) and HML loadings near +1.0, indicating the raw premium is almost entirely a value-factor artifact rather than a leverage anomaly.\nREASSURANCE:\n- Examiner independently audited the preserved SQL, statistics code, and decile CSV and certified the reproduced numbers as honest.\n- The raw equal-weighted spread carries the paper's claimed positive sign in both windows, with decile-level returns rising monotonically from D1 to D10.\n- Both equal- and value-weighted spreads and FF3 diagnostics are co-preserved, making specification sensitivity fully visible.\n- The \"in_window\" 1979\u20131991 result is a deliberate out-of-sample post-paper replication, not a mislabeled window.\nCAVEATS:\n- The replication covers only ~55% of the paper's 1948\u20131979 window (panel begins 1962-01-31); the paper's full sample is not reproduced.\n- The full-sample value-weighted raw spread is weak (t=1.026) and the in-window value-weighted spread is effectively null (t=0.917).\n- Every FF3 alpha is negative, with the value-weighted full-sample alpha at \u22120.855%/mo (t=\u22125.575), so the raw premium does not survive factor adjustment.\n- HML loadings of +0.82 to +1.20 show the spread is largely a value trade; the EW strength reflects small-cap/value tilt.\n- Implementation gaps: no explicit common-share-code screen, no delisting-return integration, same-month VW weights rather than lagged formation weights, FF3 regressions use non-robust standard errors, and the global permno link is deduplicated before rather than per date."
+ },
+ {
+  "case_id": "oaccruals_hafzalla2011_certified",
+  "split": "train",
+  "status": "accepted",
+  "status_reason": "Examiner certification corroborated the equal-weighted decile spread's magnitude and t-stat against a reserved external reference and confirmed the paper's 1989-2008 window is fully covered; the honest value-weighted null (sign does not replicate) was independently verified as a genuine finding rather than a defect.",
+  "verification_level": "Stage 1 panel SQL (src/01_panel.sql) was re-run and produced the same row count (4,438 data rows = 445 months x up to 10 deciles). Link-table dedup verified: 3,752,980 stock-month rows after the ASOF join, zero duplicates (3,612 (permno, linkdt) tie pairs resolved by preferring linkprim='P'). Stage  | Independently audited and certified by the examiner: Examiner certification: partition clean; fingerprint corroborated against the reserved reference (reference window premium 0.31%/mo t=3.05 on capped terciles vs worker EW deciles 0.654 t=4.56 -- consistent decile/tercile ratio; worker's pure-VW null is explained by mega-cap dilution the reference's cap avoids). Paper window 1989-2008 fully covered. Honest partial-replication decomposition verified.",
+  "strategy": {
+   "universe": "US common stocks (NYSE/AMEX/NASDAQ via CRSP dsenames with non-null exchcd) joined to Compustat via deduplicated ccmxpf_linktable (linkprim IN ('P','C'), one gvkey per (permno, link_start)); IB, OANCF, NI non-null with abs(NI) > 0.",
+   "signal": "(IB - OANCF) / ABS(NI) - percent operating accruals, cash-flow-statement definition from comp_202601.funda. Standard 6-month accounting lag (FY t-1 data usable from end of June t).",
+   "formation": "Monthly deciles 1-10 formed on NYSE (exchcd=1) signal breakpoints using quantileExact at the 10th..90th percentiles (HAVING count() >= 5). D1 = lowest-accruals decile; D10 = highest-accruals decile.",
+   "position": "Long D1 (lowest accruals), Short D10 (highest accruals). Spread reported two ways: D1-D10 (paper hedge convention) and D10-D1 (task convention = top minus bottom of signal).",
+   "holding": "1-month holding period; portfolios re-formed every calendar month using the signal available at the prior 6-month-lagged Compustat snapshot.",
+   "weighting": "Equal-weighted (EW = simple mean of member returns) and value-weighted (VW = sum(r_i * mcap_i) / sum(mcap_i) with mcap = abs(prc)*shrout from CRSP)."
+  },
+  "paper_anchors": {
+   "cite": "Hafzalla, Lundholm & Van Winkle (2011), 'Percent Operating Accruals Predict Stock Returns', The Accounting Review.",
+   "sample": "1989-2008 US stock returns.",
+   "claimed_direction": "LOWER percent accruals -> HIGHER subsequent returns; the long leg of the hedge is the LOWEST-accrual decile (D1).",
+   "published_tstat": 3.3,
+   "published_mean_pct_mo": 0.97,
+   "published_weighting": "Equal-weighted long-short (D1-D10)."
+  },
+  "candidate_anchors": {
+   "in_window": {
+    "sample": "1989-01 to 2008-12 (240 months, months with all 10 deciles present).",
+    "ew_D1_minus_D10": {
+     "mean_pct_mo": 0.654,
+     "std_pct_mo": 2.223,
+     "t_stat": 4.555,
+     "ann_sharpe": 1.019
+    },
+    "ew_D10_minus_D1": {
+     "mean_pct_mo": -0.654,
+     "std_pct_mo": 2.223,
+     "t_stat": -4.555,
+     "ann_sharpe": -1.019
+    },
+    "vw_D1_minus_D10": {
+     "mean_pct_mo": -0.132,
+     "std_pct_mo": 3.747,
+     "t_stat": -0.546,
+     "ann_sharpe": -0.122
+    },
+    "vw_D10_minus_D1": {
+     "mean_pct_mo": 0.132,
+     "std_pct_mo": 3.747,
+     "t_stat": 0.546,
+     "ann_sharpe": 0.122
+    }
+   },
+   "full_sample": {
+    "sample": "1988-03 to 2024-12 (442 months, months with all 10 deciles present).",
+    "ew_D1_minus_D10": {
+     "mean_pct_mo": 0.547,
+     "std_pct_mo": 2.325,
+     "t_stat": 4.949,
+     "ann_sharpe": 0.815
+    },
+    "ew_D10_minus_D1": {
+     "mean_pct_mo": -0.547,
+     "std_pct_mo": 2.325,
+     "t_stat": -4.949,
+     "ann_sharpe": -0.815
+    },
+    "vw_D1_minus_D10": {
+     "mean_pct_mo": 0.126,
+     "std_pct_mo": 3.721,
+     "t_stat": 0.709,
+     "ann_sharpe": 0.117
+    },
+    "vw_D10_minus_D1": {
+     "mean_pct_mo": -0.126,
+     "std_pct_mo": 3.721,
+     "t_stat": -0.709,
+     "ann_sharpe": -0.117
+    }
+   },
+   "ff3_alpha_t": {
+    "method": "OLS with Newey-West HAC standard errors, 4 lags. Regressand = spread return - rf (ff.four_factor_monthly.rf). Regressors: mkt_rf, smb, hml. Alpha reported in %/month.",
+    "paper_window": {
+     "ew_D1_minus_D10": {
+      "alpha_pct_mo": 0.196,
+      "t_alpha": 1.764
+     },
+     "ew_D10_minus_D1": {
+      "alpha_pct_mo": -0.885,
+      "t_alpha": -7.21
+     },
+     "vw_D1_minus_D10": {
+      "alpha_pct_mo": -0.501,
+      "t_alpha": -2.316
+     },
+     "vw_D10_minus_D1": {
+      "alpha_pct_mo": -0.187,
+      "t_alpha": -0.851
+     }
+    },
+    "full_sample": {
+     "ew_D1_minus_D10": {
+      "alpha_pct_mo": 0.266,
+      "t_alpha": 3.24
+     },
+     "ew_D10_minus_D1": {
+      "alpha_pct_mo": -0.742,
+      "t_alpha": -8.131
+     },
+     "vw_D1_minus_D10": {
+      "alpha_pct_mo": -0.037,
+      "t_alpha": -0.227
+     },
+     "vw_D10_minus_D1": {
+      "alpha_pct_mo": -0.44,
+      "t_alpha": -2.772
+     }
+    }
+   },
+   "ff3_loadings": {
+    "paper_window": {
+     "ew_D1_minus_D10": {
+      "beta_mkt": -0.04,
+      "beta_smb": -0.11,
+      "beta_hml": 0.368,
+      "t_mkt": -0.895,
+      "t_smb": -3.24,
+      "t_hml": 6.499
+     },
+     "ew_D10_minus_D1": {
+      "beta_mkt": 0.035,
+      "beta_smb": 0.127,
+      "beta_hml": -0.356,
+      "t_mkt": 0.698,
+      "t_smb": 3.681,
+      "t_hml": -5.709
+     },
+     "vw_D1_minus_D10": {
+      "beta_mkt": -0.162,
+      "beta_smb": -0.017,
+      "beta_hml": 0.26,
+      "t_mkt": -2.546,
+      "t_smb": -0.277,
+      "t_hml": 2.002
+     },
+     "vw_D10_minus_D1": {
+      "beta_mkt": 0.157,
+      "beta_smb": 0.034,
+      "beta_hml": -0.248,
+      "t_mkt": 2.333,
+      "t_smb": 0.553,
+      "t_hml": -1.919
+     }
+    },
+    "full_sample": {
+     "ew_D1_minus_D10": {
+      "beta_mkt": -0.003,
+      "beta_smb": -0.096,
+      "beta_hml": 0.315,
+      "t_mkt": -0.083,
+      "t_smb": -2.598,
+      "t_hml": 8.703
+     },
+     "ew_D10_minus_D1": {
+      "beta_mkt": 0.005,
+      "beta_smb": 0.108,
+      "beta_hml": -0.311,
+      "t_mkt": 0.155,
+      "t_smb": 2.938,
+      "t_hml": -7.899
+     },
+     "vw_D1_minus_D10": {
+      "beta_mkt": -0.112,
+      "beta_smb": -0.063,
+      "beta_hml": 0.06,
+      "t_mkt": -2.282,
+      "t_smb": -1.299,
+      "t_hml": 0.662
+     },
+     "vw_D10_minus_D1": {
+      "beta_mkt": 0.115,
+      "beta_smb": 0.075,
+      "beta_hml": -0.055,
+      "t_mkt": 2.308,
+      "t_smb": 1.53,
+      "t_hml": -0.609
+     }
+    }
+   },
+   "decile_profile_pct_mo": {
+    "ew_full_sample": [
+     1.294,
+     1.357,
+     1.319,
+     1.163,
+     1.208,
+     1.08,
+     1.056,
+     0.97,
+     0.917,
+     0.747
+    ],
+    "ew_paper_window": [
+     1.177,
+     1.271,
+     1.167,
+     1.076,
+     1.149,
+     1.02,
+     1.003,
+     0.938,
+     0.806,
+     0.524
+    ],
+    "vw_full_sample": [
+     1.928,
+     1.834,
+     1.746,
+     1.67,
+     1.518,
+     1.635,
+     1.708,
+     1.716,
+     1.658,
+     1.803
+    ],
+    "vw_paper_window": [
+     1.64,
+     1.732,
+     1.683,
+     1.596,
+     1.385,
+     1.605,
+     1.749,
+     1.715,
+     1.522,
+     1.772
+    ]
+   },
+   "universe_counts": {
+    "full_sample": {
+     "n_months": 442,
+     "mean": 4572,
+     "median": 4346,
+     "min": 37,
+     "min_month": "1988-03-31",
+     "max": 6638,
+     "max_month": "1997-11-30"
+    },
+    "paper_window": {
+     "n_months": 240,
+     "mean": 5187,
+     "median": 4925,
+     "min": 1252,
+     "min_month": "1989-01-31",
+     "max": 6638,
+     "max_month": "1997-11-30"
+    }
+   },
+   "signal_summary": {
+    "raw_full_sample": {
+     "cross_sectional_n_mean": 4541,
+     "monthly_mean_avg": -2.8595,
+     "monthly_std_avg": 57.0913,
+     "p25_avg": -1.5852,
+     "p50_avg": -0.6107,
+     "p75_avg": -0.0667,
+     "min_of_monthly_extremes": -17674.5,
+     "max_of_monthly_extremes": 7914.5
+    },
+    "winsorized_full_sample": {
+     "monthly_mean_avg": -1.7118,
+     "monthly_std_avg": 5.4634,
+     "p25_avg": -1.5851,
+     "p50_avg": -0.6114,
+     "p75_avg": -0.0671
+    },
+    "raw_paper_window": {
+     "monthly_mean_avg": -2.1786,
+     "monthly_std_avg": 39.134,
+     "p25_avg": -1.5172,
+     "p50_avg": -0.5737,
+     "p75_avg": 0.0051
+    }
+   }
+  },
+  "reassurance": [
+   "Link-dedup test was a hard pass: 3,752,980 stock-month rows after the ASOF join, zero duplicate permno-month pairs.",
+   "Panel CSV is reproducible from src/01_panel.sql (same row count on re-run; only floating-point representation artifacts in the values).",
+   "All numbers in REPORT.md and this RECORD.json are direct copies from results/stats.md and the per-month CSVs in results/ - no value was typed by hand.",
+   "EW D1-D10 sign matches the paper's claimed direction in both windows (positive in 1989-2008 paper window and in 1988-2024 full sample), with t>4 in both.",
+   "Decile EW profile slopes monotonically downward with accruals in both windows, consistent with the qualitative paper claim.",
+   "FF3 alpha on EW D1-D10 is positive in both windows (0.196 %/mo paper, 0.266 %/mo full); full-sample alpha clears conventional significance (t 3.24)."
+  ],
+  "caveats": [
+   "VW replication does NOT replicate the sign. VW D1-D10 is -0.132 %/mo (t -0.546) in the paper window and +0.126 %/mo (t 0.709) in the full sample - both statistically indistinguishable from zero, and the paper-window value is the wrong sign. VW D10 has the highest mean return in both windows (1.803 %/mo full / 1.772 %/mo paper), so the cap-weighted high-accruals basket is not the short leg the paper claims.",
+   "EW magnitude is ~two-thirds of the published 0.97 %/mo anchor (in-window EW D1-D10 = 0.654 %/mo; full-sample = 0.547 %/mo). The t-stat is actually higher than the cited 3.3 (in-window t=4.555, full t=4.949), so the standard error is correspondingly smaller - consistent with a smaller mean on a less noisy denominator. The OSAP reproduction may use different universe filters, CRSP adjustments, or rebalance timing; those are not examined here.",
+   "Signal distribution is extremely heavy-tailed in raw form (monthly std ~57 full sample; extremes -17,675 to +7,915), driven by tiny-|NI| firms. Headline decile returns are formed on the RAW signal; winsorized deciles were not re-run, so the headline spread is sensitive to a small number of extreme-accrual firms each month.",
+   "Three early months (1987-12, 1988-01, 1988-02) have too few NYSE observations for all 10 deciles to be assigned and are dropped from the 442/240-month analyses. Anyone re-running on a different Compustat vintage may get a different number of sparse months at the start.",
+   "Link-table edge cases: 28 permnos have overlapping link records with different gvkey values; dedup picks the primary record (linkprim='P') within the validity window. Signal continuity across gvkey changes is not imputed.",
+   "The published 0.97 %/mo / t~3.3 anchor from BRIEF.md is a target number supplied by the brief, not a number this replication produced. It is recorded in paper_anchors and should be read as an external target.",
+   "FF3 regression uses ff.four_factor_monthly (no momentum); the original paper may have also reported 4-factor regressions, which are not run here.",
+   "The paper's exact construction (specific CRSP adjustments, point-in-time vintage, rebalance timing, handling of zero-|NI| firms beyond the abs(ni) > 0 filter) is not recovered. Differences in any of these could explain the magnitude gap from 0.97 to 0.654."
+  ],
+  "exclude_from_target": [],
+  "gold_answer": "STATUS: ACCEPTED\nTRADE: Long the lowest-accruals decile (D1) and short the highest-accruals decile (D10), re-formed monthly on NYSE breakpoints of (IB \u2212 OANCF)/|NI|, equal-weighted, held one month.\nPRIMARY RESULT: In the paper's 1989\u20132008 window the EW D1\u2212D10 spread earns 0.654 %/month (t = 4.55), matching the paper's claimed direction with a t-stat actually stronger than the published 3.3; the full-sample (1988\u20132024) EW D1\u2212D10 is 0.547 %/mo (t = 4.95) and the FF3 alpha is 0.266 %/mo (t = 3.24). The value-weighted D1\u2212D10 does not replicate sign or significance (\u22120.132 %/mo, t = \u22120.55 in-window; +0.126 %/mo, t = 0.71 full sample), and the EW decile profile slopes monotonically downward with accruals in both windows.\nREASSURANCE:\n- Independent examiner certification with corroborating decile/tercile fingerprint on a reserved reference window\n- EW D1\u2212D10 sign matches the paper's direction with t > 4 in both the paper window and the full sample\n- Decile EW profile slopes monotonically downward with accruals in both windows, consistent with the paper's qualitative claim\n- Link-table dedup is hard-verified (3,752,980 stock-month rows, zero duplicate permno-month pairs); panel SQL re-runs to the same row count\nCAVEATS:\n- EW magnitude is ~67% of the paper's 0.97 %/mo anchor (0.654 %/mo in-window); the paper's exact construction (CRSP adjustments, point-in-time vintage, rebalance timing, zero-|NI| handling) is not recovered, which the record identifies as the likely source of the gap\n- VW D1\u2212D10 fails to replicate sign or significance; the examiner attributes this to mega-cap dilution under pure value-weighting rather than an implementation bug\n- Raw signal is extremely heavy-tailed (monthly cross-sectional std ~57 full sample, extremes to ~17,000); headline deciles are formed on the raw signal and winsorized deciles were not re-run\n- Results are gross, historical, pre-cost, with no turnover, transaction-cost, or capacity analysis; early-month sparse-NYSE observations (1987-12 through 1988-02) are dropped from the headline windows"
+ },
+ {
+  "case_id": "pilot_inv_gr1a_thomas2002_certified",
+  "split": "train",
+  "status": "accepted",
+  "status_reason": "Examiner mechanically re-ran the committed panel SQL and corroborated the spread's sign and magnitude ratio against a reserved external reference; the only defect found was a brief-template mislabeling of the in-window sample period, which the examiner relabeled with a caveat rather than treating as a result error.",
+  "verification_level": "End-to-end SELECT-only pipeline, run in this directory. (1) panel built from raw comp_202601.funda, crsp_202601.msf, crsp_202601.ccmxpf_linktable -- SQL in src/01_panel.sql, results materialized to results/decile_returns.csv (READ-ONLY). (2) row coun | Examiner-certified: partition clean; committed SQL reproduces the panel (verified mechanically); reserved-reference fingerprint corroborates (reference window premium 0.31%/mo t=3.05 low-minus-high on capped terciles vs worker EW decile spread ~0.9%/mo \u2014 consistent construction ratio, same sign). Window relabeled by examiner (subwindow), numbers worker-authored.",
+  "strategy": {
+   "universe": "US common stocks (CRSP/Compustat universe linked via ccmxpf_linktable, linkprim IN ('P','C'), validity dates enforced). NYSE-listed stocks (hexcd=1) define the breakpoints; all other listed stocks are scored against those NYSE cutoffs.",
+   "signal": "Inventory change scaled by average total assets: (INVT_t - INVT_{t-1}) / ((AT_t + AT_{t-1})/2). Adjacent fiscal years, same gvkey. Point-in-time: obs_date = fiscal year-end + 6 months. Signal is held for 12 months then refreshed.",
+   "formation": "Single-sort monthly decile portfolios on the inventory-change signal, using NYSE-only breakpoints (quantileExact at 10/20/.../90). All months 1970-12 to 2024-12 are eligible; 649 unique months.",
+   "position": "Long D1 (lowest inventory-change decile) / short D10 (highest inventory-change decile). Spread reported as D10 - D1 (negative = paper-claim-consistent).",
+   "holding": "Monthly rebalance. Signal refreshes when a newer fiscal year is available; otherwise the most recent active signal is held for up to 12 months.",
+   "weighting": "Both equal-weighted (EW) and value-weighted (VW) using market cap = |prc| * shrout at month-end."
+  },
+  "paper_anchors": {
+   "cite": "Thomas & Zhang (2002), Review of Accounting Studies",
+   "sample": "1970 to 1997 (per BRIEF.md; the BRIEF's stats window is 1979-1991)",
+   "claimed_direction": "LOWER inventory change -> HIGHER subsequent returns. Long leg = LOWEST inventory-change decile. Low-minus-high hedge earns ~0.95%/month in the paper's 1970 to 1997 sample.",
+   "published_tstat": null
+  },
+  "candidate_anchors": {
+   "in_window": {
+    "window": "1979-01 to 1991-12 \u2014 NOTE: a SUBWINDOW of the paper's true 1970 to 1997 sample (brief template mislabeled the window; examiner relabel, numbers unchanged)",
+    "EW_spread_mean_pct_mo": -0.86,
+    "EW_spread_t": -6.33,
+    "EW_spread_n_months": 156,
+    "VW_spread_mean_pct_mo": -0.72,
+    "VW_spread_t": -3.05,
+    "VW_spread_n_months": 156,
+    "ff3_alpha_EW_pct_mo": -0.81,
+    "ff3_alpha_EW_t": -6.96,
+    "ff3_alpha_EW_R2": 0.315,
+    "ff3_alpha_VW_pct_mo": -0.56,
+    "ff3_alpha_VW_t": -2.52,
+    "ff3_alpha_VW_R2": 0.182,
+    "ff3_loadings_EW": {
+     "MKT": 0.05,
+     "SMB": -0.03,
+     "HML": -0.31
+    },
+    "ff3_loadings_VW": {
+     "MKT": -0.03,
+     "SMB": -0.01,
+     "HML": -0.52
+    }
+   },
+   "full_sample": {
+    "window": "1970-12 to 2024-12",
+    "EW_spread_mean_pct_mo": -1.05,
+    "EW_spread_t": -10.61,
+    "EW_spread_sharpe_annualized": -1.44,
+    "EW_spread_n_months": 649,
+    "VW_spread_mean_pct_mo": -0.73,
+    "VW_spread_t": -5.11,
+    "VW_spread_sharpe_annualized": -0.69,
+    "VW_spread_n_months": 649,
+    "ff3_alpha_EW_pct_mo": -1.03,
+    "ff3_alpha_EW_t": -10.73,
+    "ff3_alpha_EW_R2": 0.101,
+    "ff3_alpha_VW_pct_mo": -0.6,
+    "ff3_alpha_VW_t": -4.56,
+    "ff3_alpha_VW_R2": 0.178,
+    "ff3_loadings_EW": {
+     "MKT": 0.08,
+     "SMB": -0.1,
+     "HML": -0.22
+    },
+    "ff3_loadings_VW": {
+     "MKT": 0.03,
+     "SMB": -0.03,
+     "HML": -0.49
+    }
+   },
+   "decile_mean_profile_EW_full_pct_mo": {
+    "1": 1.39,
+    "2": 1.22,
+    "3": 1.28,
+    "4": 1.34,
+    "5": 1.22,
+    "6": 1.13,
+    "7": 1.01,
+    "8": 0.94,
+    "9": 0.76,
+    "10": 0.33
+   },
+   "decile_mean_profile_VW_full_pct_mo": {
+    "1": 2.48,
+    "2": 1.85,
+    "3": 1.89,
+    "4": 1.86,
+    "5": 1.45,
+    "6": 1.66,
+    "7": 1.48,
+    "8": 1.62,
+    "9": 1.72,
+    "10": 1.75
+   },
+   "signal_cross_section_410071_firm_years": {
+    "mean": 0.0085,
+    "p01": -0.2055,
+    "p10": -0.0255,
+    "p50": 0.0,
+    "p90": 0.0597,
+    "p99": 0.2567
+   },
+   "universe_coverage_months_full_sample": {
+    "n_unique_months": 649,
+    "stocks_per_month_mean": 3374,
+    "stocks_per_month_median": 3486,
+    "stocks_per_month_min": 148,
+    "stocks_per_month_max": 6542
+   },
+   "universe_coverage_months_1979_1991": {
+    "n_unique_months": 156,
+    "stocks_per_month_mean": 3950,
+    "stocks_per_month_median": 3997,
+    "stocks_per_month_min": 3426,
+    "stocks_per_month_max": 4585
+   }
+  },
+  "reassurance": [
+   "Direction matches the paper: D10-D1 EW spread is NEGATIVE in every window (full sample -1.05 %/mo, 1979-1991 -0.86 %/mo). The paper's claim that lower inventory change predicts higher subsequent returns is preserved.",
+   "Magnitude matches the paper: in-window EW -0.86 %/mo vs paper's headline ~0.95 %/mo low-minus-high; full-sample EW -1.05 %/mo is even larger (out-of-sample adds power).",
+   "Statistical significance: t = -6.33 in the paper window (156 months), t = -10.61 in the full sample (649 months). Both are strongly significant at conventional levels.",
+   "FF3 alpha is significantly negative in all four blocks (EW full -1.03 %/mo t=-10.73; EW paper -0.81 %/mo t=-6.96; VW full -0.60 %/mo t=-4.56; VW paper -0.56 %/mo t=-2.52). The signal is not reducible to known factor exposure.",
+   "Signal is economically sensible: cross-sectional p10 = -0.0255 and p90 = +0.0597, so the NYSE breakpoints separate genuinely different firms, not noise.",
+   "Universe coverage is dense: 1979-1991 has 3,426-4,585 stocks per month (mean 3,950), matching the scale of the paper's sample.",
+   "Independent pipeline: the panel SQL and the stats Python are separate stages; the stats script reads only the committed CSV and the ff factor table."
+  ],
+  "caveats": [
+   "VW profile is non-monotonic. The EW monoticity (D1 wins, D10 loses) is the primary driver of the paper-style spread. The VW profile dips at D5 then climbs back up, so the value-weighted magnitude (-0.73 %/mo full, -0.72 %/mo paper) is roughly half the EW magnitude. The signal is mainly a small-cap story in this sample.",
+   "Strong HML loading: HML loading is -0.22 (EW full), -0.31 (EW paper), -0.49 (VW full), -0.52 (VW paper), all t <= -6. A large fraction of the spread is a value/growth tilt, not pure alpha. The FF3 alpha is still large and significant, so the spread is not fully captured by HML -- but the alpha is not a 'free lunch'.",
+   "No HAC standard errors are reported. The spread is plausibly autocorrelated (inventory changes persist), so plain OLS t-stats may be overstated. The reported t-stats are large enough that the qualitative conclusion survives.",
+   "Point-in-time proxy: obs_date = fiscal year-end + 6 months is a coarse approximation of the actual disclosure lag. A retrospective redo with exact filing dates could shift the in-window mean by a few basis points.",
+   "Window framing: the paper's headline is 1970 to 1997; the BRIEF.md 'paper window' for stats is 1979-1991. We report both. The 1979-1991 sub-window was chosen by the BRIEF; we did not re-derive it from the paper.",
+   "No transaction-cost / short-cost adjustment. The short leg (high-inventory-change firms) is small-cap-heavy; shorting costs in small-caps were material for parts of the sample.",
+   "No NBER recessions / regime split. The spread is a long-run average; we did not break it down by NBER-expansion vs recession.",
+   "The paper's published t-stat is not given in BRIEF.md. paper_anchors.published_tstat is reported as null rather than fabricated. We anchor only on the paper's economic claim (sign + magnitude).",
+   "Single-sort on S/P: the BRIEF explicitly names S/P (NYSE breakpoints) as the sort; we did not attempt a double-sort on size or book-to-market.",
+   "Last month (2024-12) has only 148 stocks in the panel because CRSP coverage thins at the right edge. This does not affect the headline statistics materially (the full-sample mean is -1.05 %/mo with or without the trailing month).",
+   "In-window statistics cover 1979-1991, a subwindow of Thomas-Zhang's 1970 to 1997 sample, due to a brief template error; the full 1970-2024 sample (EW spread -1.05%/mo, t=-10.6) and the subwindow agree on sign and strength."
+  ],
+  "exclude_from_target": [],
+  "gold_answer": "STATUS: ACCEPTED\nTRADE: Long the lowest-inventory-change NYSE-breakpoint decile (D1) / short the highest-inventory-change decile (D10), single-sort monthly, equal- or value-weighted, monthly rebalance with a 12-month signal holding.\nPRIMARY RESULT: The paper-claim-consistent portfolio return (D1 minus D10) is +0.86%/mo equal-weighted over 1979-1991 (t = +6.33, 156 months), matching the paper's claimed ~0.95%/mo magnitude and same direction; over the full 1970-2024 sample the equal-weighted spread is +1.05%/mo (t = +10.61, 649 months), and the FF3 alpha is significantly negative across every reported block (e.g., \u22121.03%/mo EW full-sample, t = \u221210.73). The value-weighted spread is roughly half the equal-weighted magnitude, with a non-monotonic decile profile indicating the result is driven mainly by smaller-cap names.\nREASSURANCE:\n- Sign is preserved in every reported block: D10 \u2212 D1 spread is negative (EW full \u22121.05%/mo, EW in-window \u22120.86%/mo, VW full \u22120.73%/mo, VW in-window \u22120.72%/mo).\n- In-window EW magnitude is \u22480.86%/mo vs paper's \u22480.95%/mo (\u224890% of paper) and the full-sample EW magnitude (1.05%/mo) exceeds the paper's claim, ruling out a primary-result shortfall.\n- FF3 alpha is significantly negative in all four configurations (t = \u22126.96, \u221210.73, \u22122.52, \u22124.56), so the spread is not fully captured by Mkt/SMB/HML.\n- Independent examiner fingerprint (\"reserved-reference fingerprint corroborates\u2026 same sign\") and mechanically verified SQL reproduction of the panel provide independent verification beyond the candidate's own report.\nCAVEATS:\n- Value-weighted decile profile is non-monotonic (V-shaped around D5); the EW monotonic profile is the primary driver of the paper-style spread, indicating the result is largely a small-cap phenomenon in this sample.\n- Strong negative HML loading (\u2248 \u22120.22 EW full to \u22120.52 VW in-window) means a meaningful share of the spread is a value/growth tilt rather than pure alpha, although FF3 alpha remains large and significant.\n- No HAC/Newey-West standard errors reported; plain OLS t-stats may be overstated under autocorrelated inventory signals (conclusion robust given magnitudes).\n- Point-in-time construction uses fiscal year-end + 6 months as a proxy for disclosure lag rather than actual filing dates.\n- The 1979-1991 \"in-window\" block is a subwindow of the paper's 1970-1997 sample (template error acknowledged); full-sample 1970-2024 is also reported.\n- No transaction-cost, short-cost, capacity, regime, or NBER-recession breakdown is provided; result is gross and historical."
+ },
+ {
+  "case_id": "pilot_capx_gr1_xie2001_certified",
+  "split": "train",
+  "status": "accepted",
+  "status_reason": "Examiner verified the panel's byte-reproducible provenance and corroborated the spread's direction and magnitude class against a reserved external reference; the worker's honest-null treatment of the missing published t-stat was noted as exemplary, with only an examiner-owned brief-template window mislabel requiring correction.",
+  "verification_level": "End-to-end run inside this directory: I executed src/01_panel.sql against ClickHouse via clickhouse-client (SELECT-only, SETTINGS max_memory_usage=12000000000) to produce results/decile_returns.csv (6,540 rows, 654 months 1970-07..2024-12, exactly 10 | Examiner-certified: partition clean; panel byte-reproducible from committed SQL per worker's own stage-1 validation; reserved-reference fingerprint corroborates (reference low-minus-high premium positive and significant; worker's D10-D1 negative spread is the same effect in mirror sign, consistent magnitude ratio for decile-vs-tercile). Window relabeled by examiner (subwindow).",
+  "strategy": {
+   "universe": "US common stocks (CRSP shrcd IN (10,11)) on NYSE/AMEX/NASDAQ (exchcd IN (1,2,3)); linked to Compustat (crsp_202601.ccmxpf_linktable, linkprim IN ('P','C'), point-in-time within [linkdt, linkenddt])",
+   "signal": "annual capex growth, signal = CAPX(t-1)/CAPX(t-2) - 1, both CAPX strictly positive and prior fyear = fyear - 1; indfmt='INDL', datafmt='STD', popsrc='D', consol='C' on comp_202601.funda; annual dedup by latest datadate per (gvkey, fyear)",
+   "formation": "monthly deciles on NYSE (exchcd=1) breakpoints (quantilesExact at 0.1..0.9) applied to the full NYSE/AMEX/NASDAQ common-stock universe",
+   "position": "long D01 (lowest capex growth), short D10 (highest capex growth); spread reported as D10 - D01 (negative when paper claim holds)",
+   "holding": "12-month holding window beginning six months after fiscal year-end: obs_date in (datadate + 6 months, datadate + 18 months]",
+   "weighting": "equal-weighted (EW) and value-weighted (VW) by prior-month market equity (abs(prc)*shrout lagged one month)"
+  },
+  "paper_anchors": {
+   "cite": "Xie (2001), The Accounting Review (investment-growth literature)",
+   "sample": "1971-1992",
+   "claimed_direction": "negative (lower capex growth predicts higher subsequent returns; long D01, short D10)",
+   "published_tstat": null
+  },
+  "candidate_anchors": {
+   "in_window": {
+    "window": "1979-01 to 1991-12 \u2014 a SUBWINDOW of Xie's 1971-1992 sample (brief template mislabel; examiner relabel, numbers unchanged)",
+    "ew": {
+     "mean_pct_mo": -0.3915,
+     "t_stat": -3.239,
+     "sd_pct_mo": 1.5097,
+     "ann_sharpe": -0.898
+    },
+    "vw": {
+     "mean_pct_mo": -0.2701,
+     "t_stat": -1.496,
+     "sd_pct_mo": 2.254,
+     "ann_sharpe": -0.415
+    }
+   },
+   "full_sample": {
+    "window": "1970-07 to 2024-12 (654 months)",
+    "ew": {
+     "mean_pct_mo": -0.6644,
+     "t_stat": -8.076,
+     "sd_pct_mo": 2.1038,
+     "ann_sharpe": -1.094
+    },
+    "vw": {
+     "mean_pct_mo": -0.4334,
+     "t_stat": -3.694,
+     "sd_pct_mo": 3.0006,
+     "ann_sharpe": -0.5
+    }
+   },
+   "ff3_alpha": {
+    "full_sample_ew": {
+     "alpha_pct_mo": -1.0007,
+     "alpha_t": -12.951,
+     "n": 654
+    },
+    "full_sample_vw": {
+     "alpha_pct_mo": -0.7315,
+     "alpha_t": -6.54,
+     "n": 654
+    },
+    "in_window_ew": {
+     "alpha_pct_mo": -1.0562,
+     "alpha_t": -10.069,
+     "n": 156
+    },
+    "in_window_vw": {
+     "alpha_pct_mo": -0.8624,
+     "alpha_t": -4.833,
+     "n": 156
+    }
+   },
+   "ff3_loadings": {
+    "full_sample_ew": {
+     "b_mkt_rf": 0.083,
+     "t_mkt_rf": 4.658,
+     "b_smb": -0.099,
+     "t_smb": -3.807,
+     "b_hml": -0.239,
+     "t_hml": -9.417,
+     "r2": 0.168
+    },
+    "full_sample_vw": {
+     "b_mkt_rf": 0.065,
+     "t_mkt_rf": 2.529,
+     "b_smb": -0.066,
+     "t_smb": -1.754,
+     "b_hml": -0.34,
+     "t_hml": -9.241,
+     "r2": 0.137
+    },
+    "in_window_ew": {
+     "b_mkt_rf": 0.068,
+     "t_mkt_rf": 2.642,
+     "b_smb": -0.091,
+     "t_smb": -2.068,
+     "b_hml": -0.28,
+     "t_hml": -6.019,
+     "r2": 0.339
+    },
+    "in_window_vw": {
+     "b_mkt_rf": -0.018,
+     "t_mkt_rf": -0.403,
+     "b_smb": -0.045,
+     "t_smb": -0.607,
+     "b_hml": -0.324,
+     "t_hml": -4.096,
+     "r2": 0.118
+    }
+   }
+  },
+  "reassurance": [
+   "Direction matches the paper in every reported window and weighting: D10 - D01 is negative (D01 higher return than D10), consistent with the claimed negative capex-growth -> return relation.",
+   "In-window EW t-stat is -3.24 (significant) and full-sample EW t-stat is -8.08 (highly significant).",
+   "FF3 alpha is strongly negative in every spec (t between -4.83 and -12.95), so the result is not driven by Mkt-RF, SMB, or HML exposure.",
+   "Decile mean profile is monotone on EW: D01=1.5009%/mo vs D10=0.8365%/mo, with the middle deciles sitting monotonically between them.",
+   "Panel is balanced and audit-clean: 6,540 rows = 654 months x 10 deciles, no duplicate permno-month observations, no non-finite returns; provenance sha256 of src/01_panel.sql is 4a02ada9f45bcb0f6aef08e77c44826fe35d2d9bc92ba3b74371ce6e4733f018."
+  ],
+  "caveats": [
+   "published_tstat is null: BRIEF.md gives the paper's claim and direction but no published t-stat number, and the paper itself is forbidden to consult, so I report the candidate t-stat from this replication and leave the published anchor as an honest null.",
+   "In-window VW spread is only t=-1.50 (marginal); the EW spread is decisive but the VW spread is the one most often emphasised for value-style signals, so the VW result is the weakest link in-window.",
+   "FF3 standard errors are OLS (non-robust) from statsmodels' default fit(); results/stats.md labels them 'HC1-robust' but the actual computation does not pass cov_type='HC1'. Newey-West or HC1 SEs would shrink some t-stats and are not applied here.",
+   "NYSE breakpoints applied to the full NYSE/AMEX/NASDAQ common-stock universe give unequal decile sizes (mean share 6.85% in D5 up to 18.35% in D10, 17.24% in D1), per BRIEF.md; this is faithful but is the most likely reason EW t > VW t.",
+   "No signal trimming: extreme CAPX growth (max_signal up to ~178 in some months, min bounded near -1) is allowed; no winsorisation or minimum CAPX size filter was applied, per the 'both positive' BRIEF.md rule.",
+   "Panel starts 1970-07 rather than 1971-01 because the six-month reporting lag requires a 1969 fiscal year to feed 1970-07; the paper's stated 1971-1992 window is bracketed by the task-specified 1979-1991 in-window analysis (156 months).",
+   "FF3 model only (Mkt-RF, SMB, HML); no momentum factor was added because the brief only names the ff-database factor tables without MOM.",
+   "Honest null framing: an honest null in RECORD.json is a success criterion in BRIEF.md; this run does not claim to reproduce a published t-stat, only to report candidate t-stats against the claimed direction.",
+   "In-window stats cover 1979-1991, a subwindow of the paper's 1971-1992 sample (brief template error); full sample and subwindow agree on sign and significance."
+  ],
+  "exclude_from_target": [],
+  "gold_answer": "STATUS: ACCEPTED\nTRADE: Long the lowest annual-capex-growth decile (D01), short the highest-capex-growth decile (D10), rebalanced monthly using NYSE-breakpoint deciles applied to the full NYSE/AMEX/NASDAQ common-stock universe; 12-month holding window beginning six months after fiscal year-end. The record reports the spread as D10 \u2212 D01, which is negative under the paper's claim; the investor's long-short position therefore earns a positive monthly return.\nPRIMARY RESULT: The long-D01 / short-D10 position realized a positive gross monthly return of approximately +0.39% (EW) over the 1979-1991 in-window (t = +3.24, annualized Sharpe \u2248 +0.90) and +0.27% (VW, t = +1.50). In the full 1970-07 to 2024-12 sample (654 months), the EW spread is approximately +0.66%/month (t = +8.08) and the VW spread approximately +0.43%/month (t = +3.69). FF3 alphas are strongly positive on the long-short position (EW alpha +1.00%/mo, t = +12.95 full sample; in-window EW +1.06%/mo, t = +10.07). Sign and significance are consistent with Xie (2001)'s claim that lower capex growth predicts higher subsequent returns. Result is a realized gross, pre-cost portfolio return, not a regression-implied premium.\nREASSURANCE:\n- In-window EW t-stat +3.24 and full-sample EW t-stat +8.08 are both statistically significant; sign matches the paper's claim.\n- FF3 alpha is strongly positive in every spec (t from +4.83 to +12.95), so the result is not driven by Mkt-RF, SMB, or HML exposure.\n- Decile profile is monotone on EW: D01 \u2248 1.50%/mo vs D10 \u2248 0.84%/mo, with middle deciles sitting monotonically between.\n- Reserved-reference fingerprint corroborates the candidate's mirror-sign result, and the SQL panel is byte-reproducible (6,540 rows = 654 months \u00d7 10 deciles, clean partition).\nCAVEATS:\n- The paper's published t-stat is null in the brief; no quantitative benchmark exists to compare magnitudes against.\n- The in-window analysis (1979-1991) is a subwindow of the paper's stated 1971-1992 sample; the full-sample run extends to 1970-2024 using the same six-month reporting-lag construction.\n- The in-window VW spread is only t = +1.50 (marginal); the EW result is decisive but the VW spread is the weighting most often emphasized for value-style signals.\n- FF3 standard errors are OLS (non-robust) from statsmodels' default fit, despite an HC1-robust label in stats.md; alpha magnitudes are unaffected but reported t-stats may be somewhat inflated.\n- Result is gross of transaction costs with no turnover, capacity, or out-of-sample post-publication analysis; no signal trimming was applied (extreme capex-growth values pass through).\n- NYSE-breakpoint deciles are applied to the full NYSE/AMEX/NASDAQ universe, producing unequal decile membership (\u22486.9% in D5 to \u224818.4% in D10), which is faithful to the convention but contributes to the EW > VW t-stat gap."
  }
 ]

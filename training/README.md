@@ -66,6 +66,13 @@ python3 training/run_minimax.py \
 - Splits: train 9 / dev 4 / sealed 3. The sealed cases are scored ONCE,
   after optimization ends (`eval_minimax.py --split sealed --once`).
 
+## Pilot records (added 2026-07-24)
+
+The corpus now also includes 5 MiniMax-authored, examiner-certified
+replication records (provenance class: `pilot`), integrated via
+`integrate_pilots.py` from `/home/alan/minimax-pilot/`. All 5 are `train`
+split; 4 `accepted`, 1 `qualified` (debt_me: ~55% paper-window coverage).
+
 ## Promotion criterion and process (after Thinking Machines' expert-judgment
 ## recipe, thinkingmachines.ai 2026)
 
