@@ -2,7 +2,7 @@
 
 > **Status notes (2026-07-25).** (1) Per-paper `SUMMARY.md` verdicts are
 > superseded by the corrected corpus in `training/cases.json` (16 papers:
-> 9 accepted / 6 qualified / 1 quarantine, plus 5 pilot records). (2) The
+> 9 accepted / 6 qualified / 1 quarantine, plus 8 pilot records). (2) The
 > replication folders are NOT standalone-rebuildable from a fresh clone:
 > pipelines import shared utilities from the private `rep-it-up` repo and
 > data caches are gitignored by design. Reproducibility from raw sources
