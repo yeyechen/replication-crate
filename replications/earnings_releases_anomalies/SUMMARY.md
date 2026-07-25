@@ -1,3 +1,5 @@
+> **NOTICE (2026-07-25): the binary verdict below is SUPERSEDED.** Corrected investment-first records with accepted/qualified/quarantine statuses live in `training/cases.json`; see `training/README.md`.
+
 ---
 schema_version: 2
 slug: earnings_releases_anomalies

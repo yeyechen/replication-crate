@@ -1,5 +1,14 @@
 # replication-crate
 
+> **Status notes (2026-07-25).** (1) Per-paper `SUMMARY.md` verdicts are
+> superseded by the corrected corpus in `training/cases.json` (16 papers:
+> 9 accepted / 6 qualified / 1 quarantine, plus 5 pilot records). (2) The
+> replication folders are NOT standalone-rebuildable from a fresh clone:
+> pipelines import shared utilities from the private `rep-it-up` repo and
+> data caches are gitignored by design. Reproducibility from raw sources
+> requires ClickHouse access and those utilities.
+
+
 This repo contains replications of published academic finance papers, done by a multi-agent system (rep-it-up). Each paper has a stand-alone folder with implementation code (SQL + Python), a detailed report and a scored summary comparing our results against the paper's original findings.
 
 Data panels are excluded; the SQL in the src/ directory documents how every dataset is constructed and results can be rebuilt from the source database.
