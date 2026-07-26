@@ -228,3 +228,29 @@ being a rule-generalization case addressed in v6.4's precedence fixes).
 Companion evidence-design rules now part of the standard: paper anchors
 carry claimed_direction and claimed_construction; corruption axes restricted
 to non-reconcilable identity mutations.
+
+## 2026-07-26 — candidate v6.5 REJECTED (Step-1 standardized-construction exception)
+
+Motivation: three live Step-1 misfires on disclosed derived characteristics
+(harness capx_gr1 1/3 dissent, sale_bev 3/3 quarantine, dsale_dsga 1/3
+dissent) where the spec explicitly disclosed a standardized derived
+construction and the implementation matched it.
+
+Candidate: fold an exception into Step 1's construction gate (disclosed
+derived characteristic + implementation matches stated construction = not a
+hidden defect). File: candidate_v65.md (kept for the trace).
+
+Regression: gold corpus 24/24 majority ×3 clean, perturbations 15/15 — but
+batch-2 FAILED: corrupted_construction detection 1/4 (v6.4: 4/4) and THREE
+quarantine→ACCEPTED any-vote violations (dsale_dinv_r2, ival_me_r2,
+lnoa_gr1a_r2). Mechanism: minted corruption cases carry
+disclosure-sounding construction sentences; the evaluator cannot verify
+"implementation matches the stated construction" from a record alone, so
+the exception reads corruption as disclosure. The hard gate is inviolable →
+REJECTED. Sealed batch-3 was NOT opened.
+
+Resolution: evidence-level rule instead (mirrors the accepted pilot gold):
+derived-characteristic specs must phrase claimed_direction as a bare
+characteristic-level expectation ("Higher X predicts higher subsequent
+returns"), never as a paper attribution, with the derivation disclosed in
+claim/notes. Prompt stays frozen at v6.4.
