@@ -24,3 +24,11 @@ Data panels are excluded; the SQL in the src/ directory documents how every data
 - [The Cross-Section of Expected Stock Returns (Fama & French 1992, *Journal of Finance* 47(2))](replications/the_cross_section_of_expected_stock_returns/)
 - [Earnings Releases, Anomalies, and the Behavior of Security Returns (Foster, Olsen & Shevlin 1984)](replications/earnings_releases_anomalies/)
 <!-- END PAPER LIST -->
+
+## JKP test
+
+We conducted a test against existing factor return data from jkpfactors.com to benchmark our replicated factor returns against the official JKP factor library. For each factor we compute the cumulative log H-L (high-minus-low) return of our replicated series and the JKP-published series under both equal-weighted (EW) and value-weighted (VW) portfolios, and report the Pearson correlation across the overlapping months. High correlations indicate that our pipeline reproduces the published JKP factors closely, while divergences flag implementation differences worth investigating.
+
+![JKP vs Agent replication H-L Log-Return Correlation](assets/jkp_ret_corr_test.png)
+
+Refer to https://jkpfactors-data.s3.amazonaws.com/documents/Documentation.pdf for variable name definitions.
