@@ -1,0 +1,212 @@
+[
+  {
+    "rule_id": "universe_data_sources",
+    "category": "universe",
+    "section": "§2 Data",
+    "paper_location": "L122",
+    "paper_quote": "The data are obtained from the Compustat quarterly database and the CRSP daily returns database."
+  },
+  {
+    "rule_id": "avail_compustat_quarterly_required",
+    "category": "universe",
+    "section": "§2.1 Sample selection",
+    "paper_location": "L124",
+    "paper_quote": "it must have the following data available on the Compustat quarterly database: earnings before extraordinary items and discontinued operations (Compustat Quarterly data8), and beginning-of-quarter total assets (Compustat Quarterly data44); and each firm-quarter must have return data available in the CRSP daily returns database."
+  },
+  {
+    "rule_id": "universe_pre_filter_count",
+    "category": "sample",
+    "section": "§2.1 Sample selection",
+    "paper_location": "L124",
+    "paper_quote": "This requirement yields 471,997 firm-quarters covering 15,261 distinct firms."
+  },
+  {
+    "rule_id": "universe_price_filter_1dollar",
+    "category": "universe",
+    "section": "§2.1 Sample selection",
+    "paper_location": "L124",
+    "paper_quote": "we exclude all firms with stock prices five days prior to the quarterly earnings announcement date below $1."
+  },
+  {
+    "rule_id": "universe_price_filter_outcome",
+    "category": "sample",
+    "section": "§2.1 Sample selection",
+    "paper_location": "L124-138",
+    "paper_quote": "This final data requirement decreases the final sample for our primary tests to 458,693 firm-quarters, covering 15,143 distinct firms."
+  },
+  {
+    "rule_id": "sample_period_1976_2005",
+    "category": "sample",
+    "section": "§2.1 Sample selection",
+    "paper_location": "L124",
+    "paper_quote": "the sample period spans from fiscal years 1976 through 2005 (120 fiscal quarters)"
+  },
+  {
+    "rule_id": "avail_sue_13_quarters",
+    "category": "sample",
+    "section": "§2.1 Sample selection",
+    "paper_location": "L140",
+    "paper_quote": "a firm-quarter must have 13 consecutive quarters of data for earnings per share excluding extraordinary and discontinued operations (Compustat Quarterly data9), as an estimation period spanning the most recent 12 quarters is required."
+  },
+  {
+    "rule_id": "avail_book_to_market",
+    "category": "sample",
+    "section": "§2.1 Sample selection",
+    "paper_location": "L142",
+    "paper_quote": "The required data are: common equity (Compustat Quarterly data59), common shares outstanding (Compustat Quarterly data61), and end-of-quarter closing stock price (Compustat Quarterly data14)."
+  },
+  {
+    "rule_id": "avail_accruals_components",
+    "category": "sample",
+    "section": "§2.1 Sample selection",
+    "paper_location": "L144",
+    "paper_quote": "The required data to compute accruals are: earnings before extraordinary items and discontinued operations (Compustat Quarterly data76), net cash flow from operating activities (Compustat Quarterly data108), extraordinary income and discontinued operations (Compustat Quarterly data78), and average total assets (Compustat Quarterly data44)."
+  },
+  {
+    "rule_id": "sample_accruals_period_1988_2005",
+    "category": "sample",
+    "section": "§2.1 Sample selection",
+    "paper_location": "L144",
+    "paper_quote": "Due to the unavailability of cash flow statement information prior to 1988, this sample spans the 18-year period, 1988-2005."
+  },
+  {
+    "rule_id": "var_earnings_definition",
+    "category": "variable",
+    "section": "§2.2 Variable definitions",
+    "paper_location": "L158",
+    "paper_quote": "The first definition is earnings before extraordinary items and discontinued operations (Compustat Quarterly data8)."
+  },
+  {
+    "rule_id": "var_earnings_scaling",
+    "category": "variable",
+    "section": "§2.2 Variable definitions",
+    "paper_location": "L158",
+    "paper_quote": "All three measures are scaled by beginning-of-quarter total assets (Compustat Quarterly data44) to alleviate a potential heteroscedasticity problem that may arise when earnings data are pooled across firms and over time."
+  },
+  {
+    "rule_id": "var_bhar_definition",
+    "category": "variable",
+    "section": "§2.2 Variable definitions",
+    "paper_location": "L162",
+    "paper_quote": "$\\prod_{t=1,n} (1 + R_{it}) - \\prod_{t=1,n} (1 + ER_{it})$"
+  },
+  {
+    "rule_id": "delisting_performance_substitution",
+    "category": "delisting",
+    "section": "§2.2 Variable definitions (footnote 5)",
+    "paper_location": "L166",
+    "paper_quote": "If a firm delists during the return accumulation window, we compute the remaining return by using the CRSP daily delisting return, reinvesting any remaining proceeds in the appropriate benchmark portfolio, and adjusting the corresponding market return to reflect the effect of the delisting return on our measures of expected returns (see Shumway 1997; Beaver et al. 2007)."
+  },
+  {
+    "rule_id": "delisting_missing_perf_minus_one",
+    "category": "delisting",
+    "section": "§2.2 Variable definitions (footnote 5)",
+    "paper_location": "L174",
+    "paper_quote": "Poor performance-related delistings (delisting codes 500 and 520–584) often have missing delisting returns in the CRSP database (Shumway 1997). To correct for this bias, we set missing performance-related delisting returns to –100 percent as recommended by Shumway (1997)."
+  },
+  {
+    "rule_id": "var_size_adjusted_expected_return",
+    "category": "variable",
+    "section": "§2.2 Variable definitions",
+    "paper_location": "L168-184",
+    "paper_quote": "Our first measure of daily expected return for firm $i$ on day $t$ , the one based on firm size, is defined as the value-weighted return for all firms in firm $i$ ’s size-matched decile on day $t$, where size is measured using market capitalization at the beginning of the most recent calendar year."
+  },
+  {
+    "rule_id": "var_carhart_4factor_lookback",
+    "category": "variable",
+    "section": "§2.2 Variable definitions",
+    "paper_location": "L186-198",
+    "paper_quote": "we first estimate the following model using a 40-trading-day hold-out period, starting 55 trading days prior to the earnings announcement date: $R_{it} - RF_t = a_i + b_i(RMRF_t) + s_i(SMB_t) + h_i(HML_t) + p_i(UMD_t) + e_{it}$"
+  },
+  {
+    "rule_id": "var_sue_definition",
+    "category": "variable",
+    "section": "§2.2 Variable definitions",
+    "paper_location": "L202-216",
+    "paper_quote": "standardized unexpected earnings (SUE) are generated via a seasonal random walk with a drift model...for firm $i$ in quarter $q$, we first estimate the model by using the most recent 12 quarters of data (i.e., quarters $q$-12 through $q$-1). We compute $SUE_{i,q}$ by taking the difference between the reported quarterly earnings per share and expected quarterly earnings per share generated by the model, scaled by the standard deviation of forecast errors over the estimation period."
+  },
+  {
+    "rule_id": "var_bm_definition",
+    "category": "variable",
+    "section": "§2.2 Variable definitions",
+    "paper_location": "L218",
+    "paper_quote": "A firm’s book-to-market ratio is defined as book value of equity divided by market capitalization, where market capitalization is the product of the number of shares outstanding and the closing stock price as reported in Compustat."
+  },
+  {
+    "rule_id": "var_accruals_definition",
+    "category": "variable",
+    "section": "§2.2 Variable definitions",
+    "paper_location": "L218",
+    "paper_quote": "accruals are defined as the difference between earnings before extraordinary items and discontinued operations and net operating cash flows from continuing operations (measured as total cash from operations less the cash portion of discontinued operations and extraordinary items), scaled by average total assets."
+  },
+  {
+    "rule_id": "var_zscore_altman_1968",
+    "category": "variable",
+    "section": "§2.2 Variable definitions",
+    "paper_location": "L222-226",
+    "paper_quote": "$Z = 1.2 \\left( \\frac{\\text{working capital}}{\\text{total assets}} \\right) + 1.4 \\left( \\frac{\\text{retained earnings}}{\\text{total assets}} \\right) + 3.3 \\left( \\frac{\\text{earnings before extraordinary items and discontinued operations}}{\\text{total assets}} \\right) + 0.6 \\left( \\frac{\\text{market value of equity}}{\\text{total liabilities}} \\right) + 1 \\left( \\frac{\\text{sales}}{\\text{total assets}} \\right)$."
+  },
+  {
+    "rule_id": "var_zscore_altman_1968_compustat_mapping",
+    "category": "variable",
+    "section": "§2.2 Variable definitions (footnote 7)",
+    "paper_location": "L232",
+    "paper_quote": "$Z = 1.2 \\left( \\frac{\\text{data40}-\\text{data49}}{\\text{data44}} \\right) + 1.4 \\left( \\frac{\\text{data58}}{\\text{data44}} \\right) + 3.3 \\left( \\frac{\\text{data8}}{\\text{data44}} \\right) + 0.6 \\left[ \\frac{\\text{data61*data14}}{\\text{data54}} \\right] + 1 \\left( \\frac{\\text{data2}}{\\text{data44}} \\right)$."
+  },
+  {
+    "rule_id": "sort_decile_by_earnings_prior_quarter",
+    "category": "sort",
+    "section": "§3.1 Methodology",
+    "paper_location": "L256",
+    "paper_quote": "we partition all firm-quarter observations into ten earnings deciles...To address this problem [of look-ahead bias], we compute cut-off points based on the previous fiscal quarter’s earnings distribution."
+  },
+  {
+    "rule_id": "sort_decile1_high_loss_decile10_high_profit",
+    "category": "sort",
+    "section": "§3.1 Methodology",
+    "paper_location": "L256",
+    "paper_quote": "The lowest decile (decile 1) contains firms with the highest losses and the highest decile (decile 10) contains firms with the highest profits."
+  },
+  {
+    "rule_id": "winsorize_table3_panel_b_variables",
+    "category": "winsorize",
+    "section": "Table 3 Panel B notes",
+    "paper_location": "L1661",
+    "paper_quote": "To mitigate the influence of outliers, MVE, Assets, Sales, Return Volatility, and Z Score are winsorized at the $1^{\\text{st}}$ and $99^{\\text{th}}$ percentile."
+  },
+  {
+    "rule_id": "factor_carhart_4f_sources",
+    "category": "factor",
+    "section": "§2.2 Variable definitions (footnote 6)",
+    "paper_location": "L206",
+    "paper_quote": "$RF$, $RMRF$, $SMB$, $HML$, and $UMD$ are obtained from Professor Kenneth French’s web site"
+  },
+  {
+    "rule_id": "fm_regression_decile_rankings",
+    "category": "fm",
+    "section": "§4.1 Methodology",
+    "paper_location": "L372",
+    "paper_quote": "The decile rankings for all rank variables are determined every quarter $q$ based on the distribution of the underlying variables in quarter $q-1$. Each rank variable is scaled to range between zero and one."
+  },
+  {
+    "rule_id": "fm_clustered_se_firm_quarter",
+    "category": "fm",
+    "section": "§4.1 Methodology",
+    "paper_location": "L372",
+    "paper_quote": "For both methods the standard errors are clustered at the firm $i$ and quarter $q$ level following Gow et al. (2009)."
+  },
+  {
+    "rule_id": "fm_lts_robustness",
+    "category": "fm",
+    "section": "Table 5 notes",
+    "paper_location": "L2360",
+    "paper_quote": "Model V corresponds to the least trimmed squares regression in which one percent of the observations with the largest squared residuals are excluded before re-estimating the model."
+  },
+  {
+    "rule_id": "var_size_decile_calendar_year",
+    "category": "variable",
+    "section": "§2.2 Variable definitions",
+    "paper_location": "L184",
+    "paper_quote": "size is measured using market capitalization at the beginning of the most recent calendar year"
+  }
+]

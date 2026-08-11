@@ -1,0 +1,6 @@
+{
+  "replicable": true,
+  "paper_type": "empirical_cross_sectional",
+  "rationale": "Cross-sectional equity paper using Compustat quarterly data (data8 = ibq, data44 = atq, data9 = epspxq, etc.) and CRSP daily returns. Methodology: partition firm-quarter observations into ten earnings deciles each quarter using prior-quarter earnings distribution as breakpoints; compute buy-and-hold size-adjusted abnormal returns (and Carhart 4-factor abnormal returns) over [-2,0], [1,60], and [1,120] event windows; report decile returns plus the High-Profit minus High-Loss hedge spread (the headline ~21% annualized figure). Sample period 1976-2005 (120 fiscal quarters). Multiple tables with numerical results (Tables 1-8) that exercise universe construction, sample selection, decile sort, BHAR computation, and Fama-MacBeth-style regression.",
+  "block_reasons": []
+}

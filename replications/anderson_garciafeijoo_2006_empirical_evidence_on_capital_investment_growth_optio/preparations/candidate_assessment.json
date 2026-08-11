@@ -1,0 +1,6 @@
+{
+  "replicable": true,
+  "paper_type": "empirical_cross_sectional",
+  "rationale": "Cross-sectional equity paper using CRSP for monthly returns and Compustat for accounting data (sample 1976-1999). Methodology: form portfolios based on growth in capital expenditures (INV); compute decile-sort portfolio returns; run Fama-MacBeth cross-sectional regressions on size, B/M, and INV; and estimate factor-model regressions (FF3 + INV) on investment-sorted portfolios. Multiple tables of numerical results (Tables I-V) support replication of the paper's main claims that prior investment growth predicts low subsequent returns, subsumes part of B/M, and produces a useful factor.",
+  "block_reasons": []
+}

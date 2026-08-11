@@ -1,0 +1,60 @@
+{
+  "verdict": "ready",
+  "requirements": [
+    {
+      "id": "crsp_monthly_returns",
+      "description": "Monthly stock returns, price, shares outstanding, exchange code, and SIC code (1976-1999) for NYSE/AMEX/NASDAQ common stocks",
+      "needed_columns": ["permno", "date", "ret", "prc", "shrout", "hexcd", "hsiccd"],
+      "matched_table": "crsp_202601.msf",
+      "matched_columns": ["permno", "date", "ret", "prc", "shrout", "hexcd", "hsiccd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_share_code_pit",
+      "description": "Point-in-time share code for each permno (used to enforce shrcd IN (10, 11))",
+      "needed_columns": ["permno", "exchcd", "shrcd"],
+      "matched_table": "crsp_202601.dsenames",
+      "matched_columns": ["permno", "shrcd", "exchcd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_delisting",
+      "description": "Delisting returns and delisting codes for total-return adjustment at end of life",
+      "needed_columns": ["permno", "dlret", "dlstcd"],
+      "matched_table": "crsp_202601.msedelist",
+      "matched_columns": ["permno", "dlret", "dlstcd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "compustat_annual_fundamentals",
+      "description": "Compustat annual fundamentals (capital expenditures, total assets, book equity, long-term debt, etc.) used to construct INV signal and B/M ratio",
+      "needed_columns": ["gvkey", "datadate", "fyear", "indfmt", "consol", "popsrc", "sich", "capx", "at", "ceq", "ib", "dlc", "dltt", "pstkrv", "txdb", "csho", "prcc_f", "dp"],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": ["gvkey", "datadate", "fyear", "indfmt", "consol", "popsrc", "sich", "capx", "at", "ceq", "ib", "dlc", "dltt", "pstkrv", "txdb", "csho", "prcc_f", "dp"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "compustat_crsp_link",
+      "description": "Link table connecting Compustat gvkeys to CRSP permnos (with time-varying link history)",
+      "needed_columns": ["gvkey", "permno", "linktype", "linkprim", "linkdt", "linkenddt"],
+      "matched_table": "crsp_202601.ccmxpf_linktable",
+      "matched_columns": ["gvkey", "permno", "linktype", "linkprim", "linkdt", "linkenddt"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_factors_monthly",
+      "description": "Monthly Fama-French factors Mkt-RF, SMB, HML, RMW, CMA (and RF) used as regressors in Table V",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "rf"],
+      "matched_table": "crsp_202601.five_factor_monthly",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "rmw", "cma", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    }
+  ],
+  "blocking_issues": []
+}

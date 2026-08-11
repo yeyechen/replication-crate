@@ -1,0 +1,362 @@
+{
+  "paper_claims": [
+    {
+      "id": "C1",
+      "claim": "Sloan (1996) result replicates: the accrual component of operating income is less persistent than the cash component for one-year-ahead ROA (eq. 2: beta_ACC = 0.676, beta_CFO = 0.737, paired-t = 4.58).",
+      "paper_location": "L335-339"
+    },
+    {
+      "id": "C2",
+      "claim": "FWY main contribution (Hypothesis 1): conditioned on current ROA, GrLTNOA is negatively associated with one-year-ahead ROA with the same severity as ACC (eq. 4: alpha_2_ACC = -0.061, alpha_3_GrLTNOA = -0.039; paired-t for equality = -1.21, not significant).",
+      "paper_location": "L153-156, L1114-1120, L1145-1148"
+    },
+    {
+      "id": "C3",
+      "claim": "Denominator-effect hypothesis (Hypothesis 2): when the dependent variable uses LAGGED average total assets (eqs. 5, 6), ACC and GrLTNOA exhibit non-negative associations with one-year-ahead operating income (eq. 5 gamma_ACC = -0.121 t=-0.65; eq. 6 delta_3_GrLTNOA = 0.030 t=2.20, paired-t for equality = -1.50 not significant).",
+      "paper_location": "L157-161, L1215-1226, L1255-1258"
+    },
+    {
+      "id": "C4",
+      "claim": "Mishkin-test hypothesis (Hypothesis 3): investors appear to overweight both ACC and GrLTNOA in pricing relative to their predictive abilities (gamma*_2_ACC = 0.069 vs gamma_2_ACC = -0.045, LR = 103.90; gamma*_3_GrLTNOA = 0.051 vs gamma_3_GrLTNOA = -0.048, LR = 110.58), but the overpricing of the two components is statistically equivalent (joint LR = 1.82, p = 0.403).",
+      "paper_location": "L443-449, L1330-1344, L1364-1381"
+    }
+  ],
+  "budget_flag": null,
+  "tables": [
+    {
+      "id": "T1",
+      "table_ref": "Table 1",
+      "description": "Descriptive statistics on ROA, ACC, CFO, and growth variables (33,080 firm-years).",
+      "replication_meaning": "Demonstrates that the seven accounting variables are correctly constructed (operating income, accruals via the indirect balance-sheet method, cash flows as OPINC - ACC, net operating assets and its decomposition), the financial-firm exclusion is applied, and the sample composition matches the paper.",
+      "covers_claims": [],
+      "paper_quote": "Table 1 provides descriptive statistics on ROA, accruals, cash flows, total growth in net operating assets, growth in long-term net operating assets, and the components of accruals (growth in working capital and depreciation) in year t. The mean (median) ROA for the firms in the sample is 11.6% (11.1%). Number of observations = 33,080 firm-years between 1962 and 1991. (L607-687)",
+      "exercises_preprocessing_rules": [
+        "var_opinc", "var_ta", "var_roa_current", "var_acc", "var_grwc", "var_cfo",
+        "var_grltnoa", "var_noa_definition", "var_oa_components", "var_ol_components",
+        "universe_financial_services_exclusion", "sample_period_body", "sample_final_count"
+      ],
+      "metrics": [
+        {"name": "T1_ROA_mean",   "value": 0.116, "unit": "ratio", "tolerance_pct": 8, "paper_location": "L627"},
+        {"name": "T1_ROA_std",    "value": 0.117, "unit": "ratio", "tolerance_pct": 8, "paper_location": "L628"},
+        {"name": "T1_ROA_median", "value": 0.111, "unit": "ratio", "tolerance_pct": 8, "paper_location": "L629"},
+        {"name": "T1_ROA_q1",     "value": 0.067, "unit": "ratio", "tolerance_pct": 8, "paper_location": "L630"},
+        {"name": "T1_ROA_q3",     "value": 0.167, "unit": "ratio", "tolerance_pct": 8, "paper_location": "L631"},
+
+        {"name": "T1_ACC_mean",   "value": -0.019, "unit": "ratio", "tolerance_pct": 10, "paper_location": "L635"},
+        {"name": "T1_ACC_std",    "value": 0.103,  "unit": "ratio", "tolerance_pct": 8,  "paper_location": "L636"},
+        {"name": "T1_ACC_median", "value": -0.026, "unit": "ratio", "tolerance_pct": 10, "paper_location": "L637"},
+        {"name": "T1_ACC_q1",     "value": -0.045, "unit": "ratio", "tolerance_pct": 10, "paper_location": "L638"},
+        {"name": "T1_ACC_q3",     "value": 0.019,  "unit": "ratio", "tolerance_pct": 10, "paper_location": "L639"},
+
+        {"name": "T1_CFO_mean",   "value": 0.135, "unit": "ratio", "tolerance_pct": 8, "paper_location": "L643"},
+        {"name": "T1_CFO_std",    "value": 0.136, "unit": "ratio", "tolerance_pct": 8, "paper_location": "L644"},
+        {"name": "T1_CFO_median", "value": 0.136, "unit": "ratio", "tolerance_pct": 8, "paper_location": "L645"},
+        {"name": "T1_CFO_q1",     "value": 0.080, "unit": "ratio", "tolerance_pct": 8, "paper_location": "L646"},
+        {"name": "T1_CFO_q3",     "value": 0.197, "unit": "ratio", "tolerance_pct": 8, "paper_location": "L647"},
+
+        {"name": "T1_GrNOA_mean",   "value": 0.072, "unit": "ratio", "tolerance_pct": 10, "paper_location": "L654"},
+        {"name": "T1_GrNOA_std",    "value": 0.161, "unit": "ratio", "tolerance_pct": 8,  "paper_location": "L655"},
+        {"name": "T1_GrNOA_median", "value": 0.058, "unit": "ratio", "tolerance_pct": 10, "paper_location": "L656"},
+        {"name": "T1_GrNOA_q1",     "value": -0.001, "unit": "ratio", "tolerance_pct": 15, "paper_location": "L657"},
+        {"name": "T1_GrNOA_q3",     "value": 0.129, "unit": "ratio", "tolerance_pct": 10, "paper_location": "L658"},
+
+        {"name": "T1_GrWC_mean",   "value": 0.025, "unit": "ratio", "tolerance_pct": 10, "paper_location": "L662"},
+        {"name": "T1_GrWC_std",    "value": 0.097, "unit": "ratio", "tolerance_pct": 8,  "paper_location": "L663"},
+        {"name": "T1_GrWC_median", "value": 0.015, "unit": "ratio", "tolerance_pct": 10, "paper_location": "L664"},
+        {"name": "T1_GrWC_q1",     "value": -0.012, "unit": "ratio", "tolerance_pct": 15, "paper_location": "L665"},
+        {"name": "T1_GrWC_q3",     "value": 0.056, "unit": "ratio", "tolerance_pct": 10, "paper_location": "L666"},
+
+        {"name": "T1_DEPAM_mean",   "value": 0.044, "unit": "ratio", "tolerance_pct": 10, "paper_location": "L670"},
+        {"name": "T1_DEPAM_std",    "value": 0.029, "unit": "ratio", "tolerance_pct": 8,  "paper_location": "L671"},
+        {"name": "T1_DEPAM_median", "value": 0.038, "unit": "ratio", "tolerance_pct": 10, "paper_location": "L672"},
+        {"name": "T1_DEPAM_q1",     "value": 0.027, "unit": "ratio", "tolerance_pct": 10, "paper_location": "L673"},
+        {"name": "T1_DEPAM_q3",     "value": 0.053, "unit": "ratio", "tolerance_pct": 10, "paper_location": "L674"},
+
+        {"name": "T1_GrLTNOA_mean",   "value": 0.091, "unit": "ratio", "tolerance_pct": 10, "paper_location": "L678"},
+        {"name": "T1_GrLTNOA_std",    "value": 0.119, "unit": "ratio", "tolerance_pct": 8,  "paper_location": "L679"},
+        {"name": "T1_GrLTNOA_median", "value": 0.070, "unit": "ratio", "tolerance_pct": 10, "paper_location": "L680"},
+        {"name": "T1_GrLTNOA_q1",     "value": 0.033, "unit": "ratio", "tolerance_pct": 10, "paper_location": "L681"},
+        {"name": "T1_GrLTNOA_q3",     "value": 0.124, "unit": "ratio", "tolerance_pct": 10, "paper_location": "L682"}
+      ],
+      "notes": null
+    },
+    {
+      "id": "T2",
+      "table_ref": "Table 2",
+      "description": "Mean values of ROA, ACC, CFO (Panel A) and growth components (Panel B) across ten equal-accrual decile portfolios formed annually.",
+      "replication_meaning": "Demonstrates correct accruals-based decile sorting (annual rebalance), the working capital / depreciation decomposition of ACC, and that the cross-sectional patterns across deciles (ROA increases with ACC, CFO decreases, GrNOA and GrWC increase, DEPAM decreases, GrLTNOA flat) match the paper's design.",
+      "covers_claims": ["C1"],
+      "paper_quote": "Table 2 describes the results of sorting the sample into equal deciles based on accruals. The patterns for the data reported in panel A are consistent with those reported in Sloan (1996). Number of observations = 33,080 firm-years between 1962 and 1991. (L305-307, L817)",
+      "exercises_preprocessing_rules": [
+        "sort_deciles_by_acc", "sort_annual_rebalancing",
+        "var_acc", "var_cfo", "var_roa_current", "var_grwc", "var_depam", "var_grltnoa"
+      ],
+      "metrics": [
+        {"name": "T2_PanelA_ROA_D1",  "value": 0.06,  "unit": "ratio", "tolerance_pct": 10, "paper_location": "L722"},
+        {"name": "T2_PanelA_ROA_D2",  "value": 0.09,  "unit": "ratio", "tolerance_pct": 10, "paper_location": "L723"},
+        {"name": "T2_PanelA_ROA_D3",  "value": 0.11,  "unit": "ratio", "tolerance_pct": 8,  "paper_location": "L724"},
+        {"name": "T2_PanelA_ROA_D4",  "value": 0.11,  "unit": "ratio", "tolerance_pct": 8,  "paper_location": "L725"},
+        {"name": "T2_PanelA_ROA_D5",  "value": 0.11,  "unit": "ratio", "tolerance_pct": 8,  "paper_location": "L726"},
+        {"name": "T2_PanelA_ROA_D6",  "value": 0.12,  "unit": "ratio", "tolerance_pct": 8,  "paper_location": "L727"},
+        {"name": "T2_PanelA_ROA_D7",  "value": 0.13,  "unit": "ratio", "tolerance_pct": 8,  "paper_location": "L728"},
+        {"name": "T2_PanelA_ROA_D8",  "value": 0.14,  "unit": "ratio", "tolerance_pct": 8,  "paper_location": "L729"},
+        {"name": "T2_PanelA_ROA_D9",  "value": 0.15,  "unit": "ratio", "tolerance_pct": 8,  "paper_location": "L730"},
+        {"name": "T2_PanelA_ROA_D10", "value": 0.15,  "unit": "ratio", "tolerance_pct": 8,  "paper_location": "L731"},
+
+        {"name": "T2_PanelA_ACC_D1",  "value": -0.17, "unit": "ratio", "tolerance_pct": 10, "paper_location": "L735"},
+        {"name": "T2_PanelA_ACC_D2",  "value": -0.09, "unit": "ratio", "tolerance_pct": 10, "paper_location": "L736"},
+        {"name": "T2_PanelA_ACC_D3",  "value": -0.06, "unit": "ratio", "tolerance_pct": 10, "paper_location": "L737"},
+        {"name": "T2_PanelA_ACC_D4",  "value": -0.05, "unit": "ratio", "tolerance_pct": 10, "paper_location": "L738"},
+        {"name": "T2_PanelA_ACC_D5",  "value": -0.03, "unit": "ratio", "tolerance_pct": 15, "paper_location": "L739"},
+        {"name": "T2_PanelA_ACC_D6",  "value": -0.02, "unit": "ratio", "tolerance_pct": 15, "paper_location": "L740"},
+        {"name": "T2_PanelA_ACC_D7",  "value": 0.00,  "unit": "ratio", "tolerance_pct": 20, "paper_location": "L741"},
+        {"name": "T2_PanelA_ACC_D8",  "value": 0.02,  "unit": "ratio", "tolerance_pct": 10, "paper_location": "L742"},
+        {"name": "T2_PanelA_ACC_D9",  "value": 0.05,  "unit": "ratio", "tolerance_pct": 10, "paper_location": "L743"},
+        {"name": "T2_PanelA_ACC_D10", "value": 0.16,  "unit": "ratio", "tolerance_pct": 10, "paper_location": "L744"},
+
+        {"name": "T2_PanelA_CFO_D1",  "value": 0.23,  "unit": "ratio", "tolerance_pct": 10, "paper_location": "L748"},
+        {"name": "T2_PanelA_CFO_D2",  "value": 0.18,  "unit": "ratio", "tolerance_pct": 10, "paper_location": "L749"},
+        {"name": "T2_PanelA_CFO_D3",  "value": 0.17,  "unit": "ratio", "tolerance_pct": 10, "paper_location": "L750"},
+        {"name": "T2_PanelA_CFO_D4",  "value": 0.16,  "unit": "ratio", "tolerance_pct": 10, "paper_location": "L751"},
+        {"name": "T2_PanelA_CFO_D5",  "value": 0.14,  "unit": "ratio", "tolerance_pct": 10, "paper_location": "L752"},
+        {"name": "T2_PanelA_CFO_D6",  "value": 0.14,  "unit": "ratio", "tolerance_pct": 10, "paper_location": "L753"},
+        {"name": "T2_PanelA_CFO_D7",  "value": 0.13,  "unit": "ratio", "tolerance_pct": 10, "paper_location": "L754"},
+        {"name": "T2_PanelA_CFO_D8",  "value": 0.12,  "unit": "ratio", "tolerance_pct": 10, "paper_location": "L755"},
+        {"name": "T2_PanelA_CFO_D9",  "value": 0.10,  "unit": "ratio", "tolerance_pct": 10, "paper_location": "L756"},
+        {"name": "T2_PanelA_CFO_D10", "value": -0.01, "unit": "ratio", "tolerance_pct": 15, "paper_location": "L757"},
+
+        {"name": "T2_PanelB_GrNOA_D1",  "value": -0.08, "unit": "ratio", "tolerance_pct": 15, "paper_location": "L764"},
+        {"name": "T2_PanelB_GrNOA_D2",  "value": 0.01,  "unit": "ratio", "tolerance_pct": 20, "paper_location": "L765"},
+        {"name": "T2_PanelB_GrNOA_D3",  "value": 0.03,  "unit": "ratio", "tolerance_pct": 15, "paper_location": "L766"},
+        {"name": "T2_PanelB_GrNOA_D4",  "value": 0.05,  "unit": "ratio", "tolerance_pct": 15, "paper_location": "L767"},
+        {"name": "T2_PanelB_GrNOA_D5",  "value": 0.05,  "unit": "ratio", "tolerance_pct": 15, "paper_location": "L768"},
+        {"name": "T2_PanelB_GrNOA_D6",  "value": 0.07,  "unit": "ratio", "tolerance_pct": 15, "paper_location": "L769"},
+        {"name": "T2_PanelB_GrNOA_D7",  "value": 0.08,  "unit": "ratio", "tolerance_pct": 15, "paper_location": "L770"},
+        {"name": "T2_PanelB_GrNOA_D8",  "value": 0.10,  "unit": "ratio", "tolerance_pct": 15, "paper_location": "L771"},
+        {"name": "T2_PanelB_GrNOA_D9",  "value": 0.15,  "unit": "ratio", "tolerance_pct": 15, "paper_location": "L772"},
+        {"name": "T2_PanelB_GrNOA_D10", "value": 0.27,  "unit": "ratio", "tolerance_pct": 15, "paper_location": "L773"},
+
+        {"name": "T2_PanelB_GrWC_D1",  "value": -0.10, "unit": "ratio", "tolerance_pct": 15, "paper_location": "L777"},
+        {"name": "T2_PanelB_GrWC_D2",  "value": -0.02, "unit": "ratio", "tolerance_pct": 20, "paper_location": "L778"},
+        {"name": "T2_PanelB_GrWC_D3",  "value": -0.01, "unit": "ratio", "tolerance_pct": 20, "paper_location": "L779"},
+        {"name": "T2_PanelB_GrWC_D4",  "value": 0.00,  "unit": "ratio", "tolerance_pct": 30, "paper_location": "L780"},
+        {"name": "T2_PanelB_GrWC_D5",  "value": 0.00,  "unit": "ratio", "tolerance_pct": 30, "paper_location": "L781"},
+        {"name": "T2_PanelB_GrWC_D6",  "value": 0.02,  "unit": "ratio", "tolerance_pct": 25, "paper_location": "L782"},
+        {"name": "T2_PanelB_GrWC_D7",  "value": 0.03,  "unit": "ratio", "tolerance_pct": 20, "paper_location": "L783"},
+        {"name": "T2_PanelB_GrWC_D8",  "value": 0.04,  "unit": "ratio", "tolerance_pct": 15, "paper_location": "L784"},
+        {"name": "T2_PanelB_GrWC_D9",  "value": 0.09,  "unit": "ratio", "tolerance_pct": 15, "paper_location": "L785"},
+        {"name": "T2_PanelB_GrWC_D10", "value": 0.19,  "unit": "ratio", "tolerance_pct": 15, "paper_location": "L786"},
+
+        {"name": "T2_PanelB_DEPAM_D1",  "value": 0.06, "unit": "ratio", "tolerance_pct": 15, "paper_location": "L790"},
+        {"name": "T2_PanelB_DEPAM_D2",  "value": 0.06, "unit": "ratio", "tolerance_pct": 15, "paper_location": "L791"},
+        {"name": "T2_PanelB_DEPAM_D3",  "value": 0.05, "unit": "ratio", "tolerance_pct": 15, "paper_location": "L792"},
+        {"name": "T2_PanelB_DEPAM_D4",  "value": 0.05, "unit": "ratio", "tolerance_pct": 15, "paper_location": "L793"},
+        {"name": "T2_PanelB_DEPAM_D5",  "value": 0.04, "unit": "ratio", "tolerance_pct": 15, "paper_location": "L794"},
+        {"name": "T2_PanelB_DEPAM_D6",  "value": 0.04, "unit": "ratio", "tolerance_pct": 15, "paper_location": "L795"},
+        {"name": "T2_PanelB_DEPAM_D7",  "value": 0.04, "unit": "ratio", "tolerance_pct": 15, "paper_location": "L796"},
+        {"name": "T2_PanelB_DEPAM_D8",  "value": 0.03, "unit": "ratio", "tolerance_pct": 15, "paper_location": "L797"},
+        {"name": "T2_PanelB_DEPAM_D9",  "value": 0.03, "unit": "ratio", "tolerance_pct": 15, "paper_location": "L798"},
+        {"name": "T2_PanelB_DEPAM_D10", "value": 0.03, "unit": "ratio", "tolerance_pct": 15, "paper_location": "L799"},
+
+        {"name": "T2_PanelB_GrLTNOA_D1",  "value": 0.08, "unit": "ratio", "tolerance_pct": 15, "paper_location": "L803"},
+        {"name": "T2_PanelB_GrLTNOA_D2",  "value": 0.09, "unit": "ratio", "tolerance_pct": 12, "paper_location": "L804"},
+        {"name": "T2_PanelB_GrLTNOA_D3",  "value": 0.09, "unit": "ratio", "tolerance_pct": 12, "paper_location": "L805"},
+        {"name": "T2_PanelB_GrLTNOA_D4",  "value": 0.10, "unit": "ratio", "tolerance_pct": 12, "paper_location": "L806"},
+        {"name": "T2_PanelB_GrLTNOA_D5",  "value": 0.09, "unit": "ratio", "tolerance_pct": 12, "paper_location": "L807"},
+        {"name": "T2_PanelB_GrLTNOA_D6",  "value": 0.09, "unit": "ratio", "tolerance_pct": 12, "paper_location": "L808"},
+        {"name": "T2_PanelB_GrLTNOA_D7",  "value": 0.09, "unit": "ratio", "tolerance_pct": 12, "paper_location": "L809"},
+        {"name": "T2_PanelB_GrLTNOA_D8",  "value": 0.09, "unit": "ratio", "tolerance_pct": 12, "paper_location": "L810"},
+        {"name": "T2_PanelB_GrLTNOA_D9",  "value": 0.09, "unit": "ratio", "tolerance_pct": 12, "paper_location": "L811"},
+        {"name": "T2_PanelB_GrLTNOA_D10", "value": 0.11, "unit": "ratio", "tolerance_pct": 12, "paper_location": "L812"}
+      ],
+      "notes": "Decile-level mean values, signed and rounded to two decimals by the paper. Tolerances widened for the middle deciles (D4-D7) where absolute magnitudes are small and rounding binds tightly."
+    },
+    {
+      "id": "T3",
+      "table_ref": "Table 3",
+      "description": "Correlation matrix among ROA_{t+1}, current variables, and growth components (8x8, Pearson lower triangle, Spearman upper triangle).",
+      "replication_meaning": "Demonstrates the cross-sectional correlation structure of the constructed variables and validates the disjointness of the two growth components (low correlation between ACC and GrLTNOA = 0.05, consistent with a Nelson-Sloan-style Granger argument).",
+      "covers_claims": [],
+      "paper_quote": "Table 3 reports correlations among one-year-ahead ROA, and current ROA, accruals, cash flows, total growth in net operating assets, growth in long-term net operating assets, and the components of accruals. Number of observations = 33,080 firm-years between 1962 and 1991. (L315-317, L941)",
+      "exercises_preprocessing_rules": [
+        "var_opinc", "var_acc", "var_cfo", "var_roa_current", "var_grwc", "var_depam",
+        "var_grltnoa", "var_noa_definition"
+      ],
+      "metrics": [
+        {"name": "T3_corr_ROAt1_ROAt_pearson",    "value": 0.78, "unit": "corr", "tolerance_pct": 5, "paper_location": "L863"},
+        {"name": "T3_corr_ROAt1_ACC_pearson",     "value": 0.15, "unit": "corr", "tolerance_pct": 20, "paper_location": "L874"},
+        {"name": "T3_corr_ROAt1_CFO_pearson",     "value": 0.56, "unit": "corr", "tolerance_pct": 5, "paper_location": "L885"},
+        {"name": "T3_corr_ROAt1_GrNOA_pearson",   "value": 0.13, "unit": "corr", "tolerance_pct": 15, "paper_location": "L896"},
+        {"name": "T3_corr_ROAt1_GrWC_pearson",    "value": 0.13, "unit": "corr", "tolerance_pct": 15, "paper_location": "L907"},
+        {"name": "T3_corr_ROAt1_DEPAM_pearson",   "value": -0.07, "unit": "corr", "tolerance_pct": 20, "paper_location": "L918"},
+        {"name": "T3_corr_ROAt1_GrLTNOA_pearson", "value": 0.05, "unit": "corr", "tolerance_pct": 25, "paper_location": "L929"},
+
+        {"name": "T3_corr_ROA_ACC_pearson",     "value": 0.24, "unit": "corr", "tolerance_pct": 8, "paper_location": "L875"},
+        {"name": "T3_corr_ROA_CFO_pearson",     "value": 0.68, "unit": "corr", "tolerance_pct": 5, "paper_location": "L886"},
+        {"name": "T3_corr_ROA_GrNOA_pearson",   "value": 0.25, "unit": "corr", "tolerance_pct": 8, "paper_location": "L897"},
+        {"name": "T3_corr_ROA_GrWC_pearson",    "value": 0.22, "unit": "corr", "tolerance_pct": 10, "paper_location": "L908"},
+        {"name": "T3_corr_ROA_DEPAM_pearson",   "value": -0.12, "unit": "corr", "tolerance_pct": 15, "paper_location": "L919"},
+        {"name": "T3_corr_ROA_GrLTNOA_pearson", "value": 0.13, "unit": "corr", "tolerance_pct": 15, "paper_location": "L930"},
+
+        {"name": "T3_corr_ACC_CFO_pearson",     "value": -0.55, "unit": "corr", "tolerance_pct": 5, "paper_location": "L887"},
+        {"name": "T3_corr_ACC_GrNOA_pearson",   "value": 0.67, "unit": "corr", "tolerance_pct": 5, "paper_location": "L898"},
+        {"name": "T3_corr_ACC_GrWC_pearson",    "value": 0.96, "unit": "corr", "tolerance_pct": 3, "paper_location": "L909"},
+        {"name": "T3_corr_ACC_DEPAM_pearson",   "value": -0.34, "unit": "corr", "tolerance_pct": 8, "paper_location": "L920"},
+        {"name": "T3_corr_ACC_GrLTNOA_pearson", "value": 0.05, "unit": "corr", "tolerance_pct": 25, "paper_location": "L931"},
+
+        {"name": "T3_corr_CFO_GrNOA_pearson",   "value": -0.29, "unit": "corr", "tolerance_pct": 8, "paper_location": "L899"},
+        {"name": "T3_corr_CFO_GrWC_pearson",    "value": -0.54, "unit": "corr", "tolerance_pct": 5, "paper_location": "L910"},
+        {"name": "T3_corr_CFO_DEPAM_pearson",   "value": 0.16, "unit": "corr", "tolerance_pct": 15, "paper_location": "L921"},
+        {"name": "T3_corr_CFO_GrLTNOA_pearson", "value": 0.08, "unit": "corr", "tolerance_pct": 25, "paper_location": "L932"},
+
+        {"name": "T3_corr_GrNOA_GrWC_pearson",    "value": 0.71, "unit": "corr", "tolerance_pct": 5, "paper_location": "L911"},
+        {"name": "T3_corr_GrNOA_DEPAM_pearson",   "value": -0.01, "unit": "corr", "tolerance_pct": 50, "paper_location": "L922"},
+        {"name": "T3_corr_GrNOA_GrLTNOA_pearson", "value": 0.71, "unit": "corr", "tolerance_pct": 5, "paper_location": "L933"},
+
+        {"name": "T3_corr_GrWC_DEPAM_pearson",   "value": -0.07, "unit": "corr", "tolerance_pct": 25, "paper_location": "L923"},
+        {"name": "T3_corr_GrWC_GrLTNOA_pearson", "value": 0.16, "unit": "corr", "tolerance_pct": 15, "paper_location": "L934"},
+
+        {"name": "T3_corr_DEPAM_GrLTNOA_pearson", "value": 0.28, "unit": "corr", "tolerance_pct": 10, "paper_location": "L935"}
+      ],
+      "notes": "Pearson correlations only; Spearman upper triangle is highly correlated with Pearson in this sample (~0.95 within pairs) and omitted to keep cell count manageable."
+    },
+    {
+      "id": "T4",
+      "table_ref": "Table 4",
+      "description": "Equations (1) and (2) -- one-year-ahead ROA on current ROA and on ACC/CFO (Sloan 1996 benchmark replication).",
+      "replication_meaning": "Demonstrates that the Fama-MacBeth by-year regression machinery (30 annual OLS, time-series average, time-series t-stat) is correctly implemented and that the Sloan (1996) differential persistence result is reproduced (eq. 2: beta_ACC = 0.676 with paired-t 4.58).",
+      "covers_claims": ["C1"],
+      "paper_quote": "Table 4 reports the results of estimation of equation (1). The estimated coefficient of current ROA is 0.721. The estimated coefficient of accruals is 0.676 and cash flows from operations is 0.737. A matched paired t-test of the coefficients, reported in panel B, suggests a significant difference (p-value < 0.01). (L328-340)",
+      "exercises_preprocessing_rules": [
+        "fm_by_year_then_time_series", "fm_matched_paired_t", "var_roa_forward", "var_roa_current",
+        "var_acc", "var_cfo"
+      ],
+      "metrics": [
+        {"name": "T4_eq1_intercept",     "value": 0.028,  "unit": "coef",   "tolerance_pct": 25, "paper_location": "L986"},
+        {"name": "T4_eq1_intercept_t",   "value": 12.44,  "unit": "t_stat", "tolerance_pct": 15, "paper_location": "L987"},
+        {"name": "T4_eq1_ROA",           "value": 0.721,  "unit": "coef",   "tolerance_pct": 10, "paper_location": "L993"},
+        {"name": "T4_eq1_ROA_t",         "value": 52.31,  "unit": "t_stat", "tolerance_pct": 10, "paper_location": "L994"},
+        {"name": "T4_eq1_adj_R2",        "value": 0.573,  "unit": "r2",     "tolerance_pct": 5,  "paper_location": "L1014"},
+
+        {"name": "T4_eq2_intercept",     "value": 0.026,  "unit": "coef",   "tolerance_pct": 25, "paper_location": "L988"},
+        {"name": "T4_eq2_intercept_t",   "value": 11.55,  "unit": "t_stat", "tolerance_pct": 15, "paper_location": "L989"},
+        {"name": "T4_eq2_ACC",           "value": 0.676,  "unit": "coef",   "tolerance_pct": 10, "paper_location": "L1002"},
+        {"name": "T4_eq2_ACC_t",         "value": 37.82,  "unit": "t_stat", "tolerance_pct": 10, "paper_location": "L1003"},
+        {"name": "T4_eq2_CFO",           "value": 0.737,  "unit": "coef",   "tolerance_pct": 10, "paper_location": "L1009"},
+        {"name": "T4_eq2_CFO_t",         "value": 54.05,  "unit": "t_stat", "tolerance_pct": 10, "paper_location": "L1010"},
+        {"name": "T4_eq2_adj_R2",        "value": 0.579,  "unit": "r2",     "tolerance_pct": 5,  "paper_location": "L1016"},
+
+        {"name": "T4_eq2_paired_t_diff", "value": 4.58,   "unit": "t_stat", "tolerance_pct": 15, "paper_location": "L1041"}
+      ],
+      "notes": null
+    },
+    {
+      "id": "T5",
+      "table_ref": "Table 5",
+      "description": "Equations (3) and (4) -- one-year-ahead ROA on ROA + ACC, and on ROA + ACC + GrLTNOA (Hypothesis 1 main test).",
+      "replication_meaning": "Demonstrates that, conditioned on current ROA, ACC and GrLTNOA both carry a significantly negative coefficient for one-year-ahead ROA (alpha_2_ACC = -0.061 t=-4.58 in eq. 3, delta_3_GrLTNOA = -0.039 t=-4.06 in eq. 4), and that the two are statistically equivalent (paired-t = -1.21, p = 0.236). This is the headline test of FWY's paper.",
+      "covers_claims": ["C2"],
+      "paper_quote": "In Table 5, we report the expected negative coefficient of accruals and also observe a significant negative coefficient of growth in long-term net operating assets. In panel B, we test whether accruals is equivalent to growth in long-term net operating assets in their implications for one-year-ahead ROA. We find no reliable difference between the coefficients of accruals and growth in long-term net operating assets. (L381-383)",
+      "exercises_preprocessing_rules": [
+        "fm_by_year_then_time_series", "fm_matched_paired_t",
+        "var_eq3_roa_acc", "var_eq4_roa_acc_grltnoa",
+        "var_roa_forward", "var_roa_current", "var_acc", "var_grltnoa"
+      ],
+      "metrics": [
+        {"name": "T5_eq3_intercept",   "value": 0.026,  "unit": "coef",   "tolerance_pct": 25, "paper_location": "L1095"},
+        {"name": "T5_eq3_intercept_t", "value": 11.55,  "unit": "t_stat", "tolerance_pct": 15, "paper_location": "L1096"},
+        {"name": "T5_eq3_ROA",         "value": 0.737,  "unit": "coef",   "tolerance_pct": 10, "paper_location": "L1102"},
+        {"name": "T5_eq3_ROA_t",       "value": 54.05,  "unit": "t_stat", "tolerance_pct": 10, "paper_location": "L1103"},
+        {"name": "T5_eq3_ACC",         "value": -0.061, "unit": "coef",   "tolerance_pct": 20, "paper_location": "L1109"},
+        {"name": "T5_eq3_ACC_t",       "value": -4.58,  "unit": "t_stat", "tolerance_pct": 15, "paper_location": "L1110"},
+        {"name": "T5_eq3_adj_R2",      "value": 0.579,  "unit": "r2",     "tolerance_pct": 5,  "paper_location": "L1123"},
+
+        {"name": "T5_eq4_intercept",   "value": 0.028,  "unit": "coef",   "tolerance_pct": 25, "paper_location": "L1097"},
+        {"name": "T5_eq4_intercept_t", "value": 11.94,  "unit": "t_stat", "tolerance_pct": 15, "paper_location": "L1098"},
+        {"name": "T5_eq4_ROA",         "value": 0.744,  "unit": "coef",   "tolerance_pct": 10, "paper_location": "L1104"},
+        {"name": "T5_eq4_ROA_t",       "value": 53.49,  "unit": "t_stat", "tolerance_pct": 10, "paper_location": "L1105"},
+        {"name": "T5_eq4_ACC",         "value": -0.061, "unit": "coef",   "tolerance_pct": 20, "paper_location": "L1111"},
+        {"name": "T5_eq4_ACC_t",       "value": -4.55,  "unit": "t_stat", "tolerance_pct": 15, "paper_location": "L1112"},
+        {"name": "T5_eq4_GrLTNOA",     "value": -0.039, "unit": "coef",   "tolerance_pct": 25, "paper_location": "L1118"},
+        {"name": "T5_eq4_GrLTNOA_t",   "value": -4.06,  "unit": "t_stat", "tolerance_pct": 15, "paper_location": "L1119"},
+        {"name": "T5_eq4_adj_R2",      "value": 0.584,  "unit": "r2",     "tolerance_pct": 5,  "paper_location": "L1125"},
+
+        {"name": "T5_eq4_paired_t_diff", "value": -1.21, "unit": "t_stat", "tolerance_pct": 25, "paper_location": "L1147"}
+      ],
+      "notes": "Panel B paired-t for the test 'beta_2 = beta_3' is reported as -1.21 (p = 0.236). Magnitude of the time-series t-stat for the coefficient contrast is what carries the cell, since the SUR/non-linear joint estimation can amplify small differences."
+    },
+    {
+      "id": "T6",
+      "table_ref": "Table 6",
+      "description": "Equations (5) and (6) -- one-year-ahead operating income (deflated by LAGGED avg total assets) on ROA + ACC and on ROA + ACC + GrLTNOA (Hypothesis 2 denominator test).",
+      "replication_meaning": "Demonstrates that under the lagged-deflator specification (which removes the growth-on-denominator confound), the previously-negative ACC coefficient loses significance (gamma_2_ACC = -0.121 t=-0.65 in eq. 5; -0.007 t=-0.35 in eq. 6) and GrLTNOA flips positive (delta_3_GrLTNOA = 0.030 t=2.20), supporting Hypothesis 2.",
+      "covers_claims": ["C3"],
+      "paper_quote": "Table 6 reports the results of estimating equation (5). We find that the coefficient of accruals is not significantly different from zero. The estimated coefficient of growth in long-term net operating assets is 0.030, and is significantly different from zero at the five percent level. Neither component of growth in net operating assets exhibits a reliably negative coefficient. (L411-419)",
+      "exercises_preprocessing_rules": [
+        "fm_by_year_then_time_series", "fm_matched_paired_t",
+        "var_eq5_opinc1_lagdef", "var_eq6_opinc1_lagdef_grltnoa",
+        "var_opinc", "var_roa_current", "var_acc", "var_grltnoa"
+      ],
+      "metrics": [
+        {"name": "T6_eq5_intercept",   "value": 0.027,  "unit": "coef",   "tolerance_pct": 25, "paper_location": "L1202"},
+        {"name": "T6_eq5_intercept_t", "value": 7.07,   "unit": "t_stat", "tolerance_pct": 15, "paper_location": "L1203"},
+        {"name": "T6_eq5_ROA",         "value": 0.913,  "unit": "coef",   "tolerance_pct": 10, "paper_location": "L1209"},
+        {"name": "T6_eq5_ROA_t",       "value": 40.17,  "unit": "t_stat", "tolerance_pct": 10, "paper_location": "L1210"},
+        {"name": "T6_eq5_ACC",         "value": -0.121, "unit": "coef",   "tolerance_pct": 30, "paper_location": "L1216"},
+        {"name": "T6_eq5_ACC_t",       "value": -0.65,  "unit": "t_stat", "tolerance_pct": 25, "paper_location": "L1217"},
+        {"name": "T6_eq5_adj_R2",      "value": 0.547,  "unit": "r2",     "tolerance_pct": 5,  "paper_location": "L1230"},
+
+        {"name": "T6_eq6_intercept",   "value": 0.024,  "unit": "coef",   "tolerance_pct": 30, "paper_location": "L1204"},
+        {"name": "T6_eq6_intercept_t", "value": 6.34,   "unit": "t_stat", "tolerance_pct": 15, "paper_location": "L1205"},
+        {"name": "T6_eq6_ROA",         "value": 0.915,  "unit": "coef",   "tolerance_pct": 10, "paper_location": "L1211"},
+        {"name": "T6_eq6_ROA_t",       "value": 41.51,  "unit": "t_stat", "tolerance_pct": 10, "paper_location": "L1212"},
+        {"name": "T6_eq6_ACC",         "value": -0.007, "unit": "coef",   "tolerance_pct": 80, "paper_location": "L1218"},
+        {"name": "T6_eq6_ACC_t",       "value": -0.35,  "unit": "t_stat", "tolerance_pct": 40, "paper_location": "L1219"},
+        {"name": "T6_eq6_GrLTNOA",     "value": 0.030,  "unit": "coef",   "tolerance_pct": 30, "paper_location": "L1225"},
+        {"name": "T6_eq6_GrLTNOA_t",   "value": 2.20,   "unit": "t_stat", "tolerance_pct": 25, "paper_location": "L1226"},
+        {"name": "T6_eq6_adj_R2",      "value": 0.538,  "unit": "r2",     "tolerance_pct": 5,  "paper_location": "L1232"},
+
+        {"name": "T6_eq6_paired_t_diff", "value": -1.50, "unit": "t_stat", "tolerance_pct": 30, "paper_location": "L1257"}
+      ],
+      "notes": "Per the paper's footnote b and surrounding text, ACC in eq. 6 is 'not significantly different from zero' (t = -0.35, p > 0.10). Significance carries the cell over magnitude. See T7 for the joint nonlinear Mishkin test."
+    },
+    {
+      "id": "T7",
+      "table_ref": "Table 7",
+      "description": "Nonlinear GLS Mishkin (1983) test of market mispricing -- forecasting coefficients (eq. 7) vs valuation coefficients (eq. 8) for ROA, ACC, GrLTNOA, plus LR statistics testing the rational-pricing null.",
+      "replication_meaning": "Demonstrates that the joint nonlinear GLS procedure for the Mishkin test is implemented correctly: forecasting coefficients are negative (-0.045 ACC, -0.048 GrLTNOA) while valuation coefficients are positive (0.069 ACC, 0.051 GrLTNOA); the joint LR test that the two mispricings are equivalent fails to reject (1.82, p = 0.403).",
+      "covers_claims": ["C4"],
+      "paper_quote": "Panel A of table 7 reports the estimated coefficient for equations (7) and (8) obtained from the first stage. We reject rational pricing of accruals. For growth in long-term net operating assets, gamma*_3 = 0.051 is significantly larger than gamma_3 = -0.048. The joint test ACC, GrLTNOA: gamma*_2 = gamma*_3 AND gamma_2 = gamma_3 gives LR = 1.82, p = 0.403. (L485-499)",
+      "exercises_preprocessing_rules": [
+        "var_eq7_forecasting", "var_eq8_valuation", "mishkin_lr_stat",
+        "fm_by_year_then_time_series", "bhar_size_decile_matching",
+        "var_roa_forward", "var_roa_current", "var_acc", "var_grltnoa"
+      ],
+      "metrics": [
+        {"name": "T7A_fcst_ROA",      "value": 0.746,  "unit": "coef", "tolerance_pct": 8,  "paper_location": "L1324"},
+        {"name": "T7A_fcst_ROA_se",   "value": 0.0033, "unit": "se",   "tolerance_pct": 25, "paper_location": "L1325"},
+
+        {"name": "T7A_fcst_ACC",      "value": -0.045, "unit": "coef", "tolerance_pct": 20, "paper_location": "L1332"},
+        {"name": "T7A_fcst_ACC_se",   "value": 0.0037, "unit": "se",   "tolerance_pct": 25, "paper_location": "L1333"},
+
+        {"name": "T7A_fcst_GrLTNOA",    "value": -0.048, "unit": "coef", "tolerance_pct": 20, "paper_location": "L1340"},
+        {"name": "T7A_fcst_GrLTNOA_se", "value": 0.0032, "unit": "se",   "tolerance_pct": 25, "paper_location": "L1341"},
+
+        {"name": "T7A_val_ROA",      "value": 0.704,  "unit": "coef", "tolerance_pct": 10, "paper_location": "L1327"},
+        {"name": "T7A_val_ROA_se",   "value": 0.0093, "unit": "se",   "tolerance_pct": 25, "paper_location": "L1328"},
+
+        {"name": "T7A_val_ACC",      "value": 0.069, "unit": "coef", "tolerance_pct": 25, "paper_location": "L1335"},
+        {"name": "T7A_val_ACC_se",   "value": 0.0107, "unit": "se",   "tolerance_pct": 25, "paper_location": "L1336"},
+
+        {"name": "T7A_val_GrLTNOA",    "value": 0.051, "unit": "coef", "tolerance_pct": 25, "paper_location": "L1343"},
+        {"name": "T7A_val_GrLTNOA_se", "value": 0.0090, "unit": "se",   "tolerance_pct": 25, "paper_location": "L1344"},
+
+        {"name": "T7B_LR_ROA_q1",         "value": 18.85, "unit": "lr_stat", "tolerance_pct": 25, "paper_location": "L1364"},
+        {"name": "T7B_LR_ACC_q1",         "value": 103.90, "unit": "lr_stat", "tolerance_pct": 15, "paper_location": "L1369"},
+        {"name": "T7B_LR_GrLTNOA_q1",     "value": 110.58, "unit": "lr_stat", "tolerance_pct": 15, "paper_location": "L1374"},
+        {"name": "T7B_LR_GrLTNOA_ACC_q2", "value": 1.82,   "unit": "lr_stat", "tolerance_pct": 50, "paper_location": "L1379"}
+      ],
+      "notes": "Tolerances widen for the joint constraint test (q=2 jointly on eqs. 7 and 8 with 33080 * 2 * 30 effective obs); the small-magnitude LR=1.82 with p=0.403 is the most fragile cell because it tests the joint equality of growth components. Sign / direction carries the cell."
+    }
+  ]
+}

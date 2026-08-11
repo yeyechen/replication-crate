@@ -1,0 +1,317 @@
+[
+  {
+    "rule_id": "universe_financial_services_exclusion",
+    "category": "universe",
+    "section": "§III Sample",
+    "paper_location": "L173",
+    "paper_quote": "Firms in the financial services industry (DNUM 6000-6999) are removed since those firms typically do not have the required data to calculate accruals."
+  },
+  {
+    "rule_id": "universe_data_sources",
+    "category": "universe",
+    "section": "§III Sample",
+    "paper_location": "L173",
+    "paper_quote": "The financial disclosure data are taken from the annual database of Standard & Poor's 1999 COMPUSTAT Industrial and Research files (Primary, Supplemental, Tertiary; Full-Coverage; and Industrial Research Files). The stock price and share data are obtained from the Center for Research in Security Prices (CRSP) 1999 monthly stock price database."
+  },
+  {
+    "rule_id": "sample_period_body",
+    "category": "sample",
+    "section": "§III Sample",
+    "paper_location": "L173",
+    "paper_quote": "Our sample consists of firms with required financial statement and stock price data for the 30 year period 1963-1992."
+  },
+  {
+    "rule_id": "sample_period_footnote_8",
+    "category": "sample",
+    "section": "§III footnote 8",
+    "paper_location": "L181",
+    "paper_quote": "Sloan (1996) employs financial data for the 30 years from 1962 to 1991. However, we drop observations from 1962 from our sample since the required data reduce the sample size for that year to below a reasonable sample size on which to run annual cross-sectional regressions. Therefore, we add one additional year, 1992, to our sample period which yields a 30-year sample period as in Sloan (1996). The conclusions of this study are unchanged if observations from 1992 are removed."
+  },
+  {
+    "rule_id": "sample_indirect_method_initial",
+    "category": "sample",
+    "section": "§III Sample",
+    "paper_location": "L175",
+    "paper_quote": "We eliminate from the sample those observations without sufficient financial disclosures to compute operating income, accruals, cash flows, or net operating assets. There are 35,886 firm-years with sufficient stock price data and financial disclosure data to estimate the financial statement variables."
+  },
+  {
+    "rule_id": "sample_footnote_eliminations",
+    "category": "sample",
+    "section": "§III footnote 9",
+    "paper_location": "L199",
+    "paper_quote": "We first eliminate observations for which COMPUSTAT footnote codes suggest that certain classifications such as current assets, current liabilities, and debt due in one year, are estimated since the company reports an unclassified balance sheet (364 firm-years). In the second step, we eliminate observations where COMPUSTAT footnote codes suggest that an income statement item reflects an accounting change (2,059 firm-years). In the third step, we remove observations for which there was a one-year increase in goodwill (597 firm-years). The net elimination of 2,806 firm-years results."
+  },
+  {
+    "rule_id": "sample_final_count",
+    "category": "sample",
+    "section": "§III Sample",
+    "paper_location": "L187",
+    "paper_quote": "The sample selection process results in a final sample of 33,080 observations with available stock price and financial statement data in the prior, current, and subsequent year."
+  },
+  {
+    "rule_id": "avail_three_year_panel",
+    "category": "sample",
+    "section": "§III Sample",
+    "paper_location": "L187",
+    "paper_quote": "33,080 observations with available stock price and financial statement data in the prior, current, and subsequent year."
+  },
+  {
+    "rule_id": "var_opinc",
+    "category": "variable",
+    "section": "§III Measurement of the Variables",
+    "paper_location": "L213",
+    "paper_quote": "OPINC_t = operating income after depreciation and mortization (COMPUSTAT item 178)"
+  },
+  {
+    "rule_id": "var_ta",
+    "category": "variable",
+    "section": "§III Measurement of the Variables",
+    "paper_location": "L214",
+    "paper_quote": "TA_t = total assets (COMPUSTAT item 6)."
+  },
+  {
+    "rule_id": "var_roa_current",
+    "category": "variable",
+    "section": "§III Measurement of the Variables",
+    "paper_location": "L193-195",
+    "paper_quote": "ROA_t = OPINC_t / AVG(TA_{t-1} + TA_t)"
+  },
+  {
+    "rule_id": "var_roa_forward",
+    "category": "variable",
+    "section": "§II",
+    "paper_location": "L116-117",
+    "paper_quote": "ROA_{t+1} = OPINC_{t+1} / AVG(TA_t + TA_{t+1})"
+  },
+  {
+    "rule_id": "var_acc",
+    "category": "variable",
+    "section": "§III Measurement of the Variables",
+    "paper_location": "L218-221",
+    "paper_quote": "ACC_t = GrWC_t - DEPAM_t"
+  },
+  {
+    "rule_id": "var_grwc",
+    "category": "variable",
+    "section": "§III Measurement of the Variables",
+    "paper_location": "L227-228",
+    "paper_quote": "GrWC_t = (\\Delta AR_t + \\Delta INV_t + \\Delta CAO_t) - (\\Delta AP_t + \\Delta CLO_t)"
+  },
+  {
+    "rule_id": "var_dar",
+    "category": "variable",
+    "section": "§III Measurement of the Variables",
+    "paper_location": "L234",
+    "paper_quote": "\\Delta AR = change in accounts receivable (COMPUSTAT item 2)"
+  },
+  {
+    "rule_id": "var_dinv",
+    "category": "variable",
+    "section": "§III Measurement of the Variables",
+    "paper_location": "L235",
+    "paper_quote": "\\Delta INV = change in inventories (COMPUSTAT item 3)"
+  },
+  {
+    "rule_id": "var_dcao",
+    "category": "variable",
+    "section": "§III Measurement of the Variables",
+    "paper_location": "L236",
+    "paper_quote": "\\Delta CAO = change in other current assets (COMPUSTAT item 68)"
+  },
+  {
+    "rule_id": "var_dap",
+    "category": "variable",
+    "section": "§III Measurement of the Variables",
+    "paper_location": "L237",
+    "paper_quote": "\\Delta AP = change in accounts payable (COMPUSTAT item 70)"
+  },
+  {
+    "rule_id": "var_dclo",
+    "category": "variable",
+    "section": "§III Measurement of the Variables",
+    "paper_location": "L238",
+    "paper_quote": "\\Delta CLO = change in other current liabilities (COMPUSTAT item 72)"
+  },
+  {
+    "rule_id": "var_cfo",
+    "category": "variable",
+    "section": "§III Measurement of the Variables",
+    "paper_location": "L242-256",
+    "paper_quote": "CFO_t = OPINC_t - ACC_t. Both variables, ACC and CFO are deflated, as in Sloan (1996), by contemporaneous average total assets."
+  },
+  {
+    "rule_id": "var_depam",
+    "category": "variable",
+    "section": "§III Measurement of the Variables",
+    "paper_location": "L221",
+    "paper_quote": "ACC_t = GrWC_t - DEPAM_t, where DEPAM is current period depreciation and amortization expense (paper does not specify COMPUSTAT item; industry convention is item 14 DP)."
+  },
+  {
+    "rule_id": "var_grltnoa",
+    "category": "variable",
+    "section": "§III Measurement of the Variables",
+    "paper_location": "L258-264",
+    "paper_quote": "GrLTNOA_t = GrNOA_t - ACC_t, where growth in net operating assets (GrNOA) is defined as annual changes in net operating assets: GrNOA_t = NOA_t - NOA_{t-1}."
+  },
+  {
+    "rule_id": "var_noa_definition",
+    "category": "variable",
+    "section": "§III Measurement of the Variables",
+    "paper_location": "L266-296",
+    "paper_quote": "Net operating assets (NOA) is defined as operating assets minus operating liabilities at year t. Specifically, we define NOA as: NOA_t = operating assets (OA_t) - operating liabilities (OL_t), where operating assets (OA) and operating liabilities (OL) are defined as: OA_t = AR_t + INV_t + CAO_t + PPE_t + INT_t + AO_t, and OL_t = AP_t + CLO_t + LO_t"
+  },
+  {
+    "rule_id": "var_oa_components",
+    "category": "variable",
+    "section": "§III Measurement of the Variables",
+    "paper_location": "L276-292",
+    "paper_quote": "AR = accounts receivable (COMPUSTAT item 2), INV = inventories (COMPUSTAT item 3), CAO = other current assets (COMPUSTAT item 68), PPE = net property, plant, and equipment (COMPUSTAT item 8), INT = intangibles (COMPUSTAT item 33), AO = other long-term assets (COMPUSTAT item 69)"
+  },
+  {
+    "rule_id": "var_ol_components",
+    "category": "variable",
+    "section": "§III Measurement of the Variables",
+    "paper_location": "L294-296",
+    "paper_quote": "AP = accounts payable (COMPUSTAT item 70), CLO = other current liabilities (COMPUSTAT item 72), and, LO = other long-term liabilities (COMPUSTAT item 75)."
+  },
+  {
+    "rule_id": "var_deflator",
+    "category": "variable",
+    "section": "§III Measurement of the Variables",
+    "paper_location": "L297",
+    "paper_quote": "Growth in long-term net operating assets is, like the other explanatory variables, scaled by contemporaneous average total assets."
+  },
+  {
+    "rule_id": "var_goodwill_filter",
+    "category": "variable",
+    "section": "§III footnote 9",
+    "paper_location": "L199",
+    "paper_quote": "We consider an increase to be a positive year-to-year change in goodwill (COMPUSTAT item 240) where the data item has a non-missing value."
+  },
+  {
+    "rule_id": "sort_deciles_by_acc",
+    "category": "sort",
+    "section": "§III / Table 2 caption",
+    "paper_location": "L705-707",
+    "paper_quote": "TABLE 2 - Mean Values of ROA, Accruals, Cash Flows, and Growth Characteristics of Ten Portfolios of Firms Formed Annually Based on the Magnitude of Accruals"
+  },
+  {
+    "rule_id": "sort_annual_rebalancing",
+    "category": "sort",
+    "section": "§IV (Equations by year)",
+    "paper_location": "L323",
+    "paper_quote": "Equation (1) is estimated, by year."
+  },
+  {
+    "rule_id": "bhar_size_decile_matching",
+    "category": "sort",
+    "section": "§VI",
+    "paper_location": "L463",
+    "paper_quote": "BHAR_{t+1} is the size-adjusted abnormal stock return computed as the difference between a firm's annual buy-and-hold return and the annual buy-and-hold return for the same 12-month period on the market-capitalization-based portfolio decile to which the firm belongs."
+  },
+  {
+    "rule_id": "winsorize_silent_main_spec",
+    "category": "winsorize",
+    "section": "§IV footnote 17",
+    "paper_location": "L343",
+    "paper_quote": "The paper mentions Belsley, Kuh, and Welsch (1980) outlier-control as a sensitivity test but does NOT winsorize in the main specification. Variables are reported as raw deflated ratios in Table 1."
+  },
+  {
+    "rule_id": "factor_paper_silent",
+    "category": "factor",
+    "section": "§IV-VII (paper silent)",
+    "paper_location": "L343",
+    "paper_quote": "Paper is silent on Fama-French style factor construction. Regressions (eqs. 1-6) and the Mishkin (1983) test (eqs. 7-8) use only accounting variables deflated by contemporaneous (or lagged) average total assets; no FF factor loadings are computed. FF factors are not used in any table."
+  },
+  {
+    "rule_id": "fm_by_year_then_time_series",
+    "category": "fm",
+    "section": "§IV footnote 17",
+    "paper_location": "L343",
+    "paper_quote": "As in Fama and McBeth (1973), we estimate annual regressions and report t-values based on the means and standard deviations of the parameter estimates obtained in the annual regressions."
+  },
+  {
+    "rule_id": "fm_matched_paired_t",
+    "category": "fm",
+    "section": "§IV footnote 17",
+    "paper_location": "L343",
+    "paper_quote": "Coefficient contrasts are based on matched-pair t-tests."
+  },
+  {
+    "rule_id": "var_eq1_roa_persistence",
+    "category": "variable",
+    "section": "§IV Equation (1)",
+    "paper_location": "L323-326",
+    "paper_quote": "ROA_{t+1} = \\alpha_0 + \\alpha_1 ROA_t + e_t (1)"
+  },
+  {
+    "rule_id": "var_eq2_acc_cfo",
+    "category": "variable",
+    "section": "§IV Equation (2)",
+    "paper_location": "L331-336",
+    "paper_quote": "ROA_{t+1} = \\beta_0 + \\beta_1 ACC_t + \\beta_2 CFO_t + u_{t+1} (2)"
+  },
+  {
+    "rule_id": "var_eq3_roa_acc",
+    "category": "variable",
+    "section": "§IV Equation (3)",
+    "paper_location": "L357-360",
+    "paper_quote": "ROA_{t+1} = \\alpha_0 + \\alpha_1 ROA_t + \\alpha_2 ACC_t + e_{t+1} (3)"
+  },
+  {
+    "rule_id": "var_eq4_roa_acc_grltnoa",
+    "category": "variable",
+    "section": "§IV Equation (4)",
+    "paper_location": "L365-370",
+    "paper_quote": "ROA_{t+1} = \\delta_0 + \\delta_1 ROA_t + \\delta_2 ACC_t + \\delta_3 GrLTNOA_t + v_{t+1} (4)"
+  },
+  {
+    "rule_id": "var_eq5_opinc1_lagdef",
+    "category": "variable",
+    "section": "§V Equation (5)",
+    "paper_location": "L403-410",
+    "paper_quote": "OPINC_{t+1} / AVG(TA_{t-1} + TA_t) = \\gamma_0 + \\gamma_1 ROA_t + \\gamma_2 ACC_t + \\epsilon_{t+1}"
+  },
+  {
+    "rule_id": "var_eq6_opinc1_lagdef_grltnoa",
+    "category": "variable",
+    "section": "§V Equation (6)",
+    "paper_location": "L415-419",
+    "paper_quote": "OPINC_{t+1} / AVG(TA_{t-1} + TA_t) = \\delta_0 + \\delta_1 ROA_t + \\delta_2 ACC_t + \\delta_3 GrLTNOA_t + \\nu_{t+1}"
+  },
+  {
+    "rule_id": "var_eq7_forecasting",
+    "category": "variable",
+    "section": "§VI Equation (7)",
+    "paper_location": "L453-456",
+    "paper_quote": "Forecasting Equation: ROA_{t+1} = \\gamma_0 + \\gamma_1 ROA_t + \\gamma_2 ACC_t + \\gamma_3 GrLTNOA_t + u_{t+1}"
+  },
+  {
+    "rule_id": "var_eq8_valuation",
+    "category": "variable",
+    "section": "§VI Equation (8)",
+    "paper_location": "L460-461",
+    "paper_quote": "Valuation Equation: BHAR_{t+1} = \\alpha + \\beta (ROA_{t+1} - \\gamma_0 - \\gamma_1^* ROA_t - \\gamma_2^* ACC_t - \\gamma_3^* GrLTNOA_t) + e_{t+1}"
+  },
+  {
+    "rule_id": "mishkin_lr_stat",
+    "category": "fm",
+    "section": "§VI",
+    "paper_location": "L471-484",
+    "paper_quote": "2n log (SSR^c / SSR^u), where q = number of rational pricing constraints, n = number of observations, log = natural logarithm operator, SSR^c = sum of squared residuals from the constrained weighted system, and SSR^u = sum of squared residuals from the unconstrained weighted system."
+  },
+  {
+    "rule_id": "table_estimates_average_of_30",
+    "category": "fm",
+    "section": "Table 4 footnote a",
+    "paper_location": "L1048",
+    "paper_quote": "The coefficients and explained variation are the averages of the 30 annual estimates obtained from 1962 to 1991."
+  },
+  {
+    "rule_id": "delist_paper_silent",
+    "category": "delisting",
+    "section": "§III (paper silent)",
+    "paper_location": "L187",
+    "paper_quote": "The paper is silent on delisting-return treatment for the BHAR computation in §VI. The sample is restricted to firm-years with available stock price and financial statement data in the prior, current, and subsequent year, so missing 12-month forward returns are implicitly dropped."
+  }
+]

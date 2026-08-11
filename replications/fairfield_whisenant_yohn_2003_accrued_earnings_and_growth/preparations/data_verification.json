@@ -1,0 +1,93 @@
+{
+  "verdict": "partial",
+  "coverage_pct": 92,
+  "requirements": [
+    {
+      "id": "comp_funda_annual",
+      "description": "Annual Compustat fundamentals for FY 1962-1992 -- the seven accounting variables (OPINC, AT, AR/rect, INV/invt, CAO/aco, AP, CLO/lco) plus PPE, INT, AO, LO and goodwill for the indirect-method accruals, GrNOA decomposition, and footnote filters.",
+      "needed_columns": [
+        "gvkey", "datadate", "fyear", "indfmt", "consol", "popsrc", "datafmt", "sich", "fic",
+        "at", "rect", "invt", "aco", "ap", "lco",
+        "ppent", "intan", "ao", "lo", "gdwl",
+        "oiadp", "dp", "csho", "prcc_f"
+      ],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": [
+        "gvkey", "datadate", "fyear", "indfmt", "consol", "popsrc", "datafmt", "sich", "fic",
+        "at", "rect", "invt", "aco", "ap", "lco",
+        "ppent", "intan", "ao", "lo", "gdwl",
+        "oiadp", "dp", "csho", "prcc_f"
+      ],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "comp_footnote_codes",
+      "description": "Footnote/audit codes for the unclassified-balance-sheet and accounting-change filters (paper §III footnote 9 step 1 + step 2) -- these come from comp_202601.funda_fncd, paired to each line item.",
+      "needed_columns": ["at_fn", "rect_fn", "invt_fn", "aco_fn", "ap_fn", "lco_fn", "oiadp_fn", "dp_fn", "gdwl_fn"],
+      "matched_table": "comp_202601.funda_fncd",
+      "matched_columns": ["at_fn", "rect_fn", "invt_fn", "aco_fn", "ap_fn", "lco_fn", "oiadp_fn", "dp_fn", "gdwl_fn"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ccm_link_pit",
+      "description": "Point-in-time CRSP-Compustat link for FY 1962-1992 (linktype in [LC,LU], linkprim in [P,C], usedflag=1) so that we can attach CRSP permno information to each firm-year and apply SHRCD/HN filters.",
+      "needed_columns": ["gvkey", "lpermno", "lpermco", "linktype", "linkprim", "usedflag", "linkdt", "linkenddt"],
+      "matched_table": "crsp_202601.ccmxpf_linktable",
+      "matched_columns": ["gvkey", "lpermno", "lpermco", "linktype", "linkprim", "usedflag", "linkdt", "linkenddt"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_msf_size",
+      "description": "Monthly CRSP stock data for SHRCD/EXCHCD filters and pre-/post-year stock returns needed to construct the BHAR for the Mishkin (1983) test in Table 7 -- 1962 through 1993 (to span the +1 window for 1992 fiscal-year firms).",
+      "needed_columns": ["permno", "permco", "date", "ret", "retx", "prc", "shrout"],
+      "matched_table": "crsp_202601.msf",
+      "matched_columns": ["permno", "permco", "date", "ret", "retx", "prc", "shrout", "hexcd", "hsiccd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_dsfhhr_share_exch",
+      "description": "Point-in-time CRSP header records for share code (shrcd) and exchange code (exchcd) filtering at fiscal-year-end.",
+      "needed_columns": ["permno", "hshrcd", "hexcd", "begdat", "enddat"],
+      "matched_table": "crsp_202601.dsfhdr",
+      "matched_columns": ["permno", "hshrcd", "hexcd", "begdat", "enddat"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_size_decile_lookup_for_bhar",
+      "description": "Pre-aggregated NYSE/AMEX size-decile portfolios for size-matched BHAR (paper §VI: 'the market-capitalization-based portfolio decile to which the firm belongs').",
+      "needed_columns": ["permno", "date", "ret", "decret"],
+      "matched_table": "crsp_202601.erdport1",
+      "matched_columns": ["permno", "ret", "date", "capn", "decret"],
+      "missing_columns": ["size_decile_label", "size_decile_portfolio_id"],
+      "status": "partial"
+    },
+    {
+      "id": "ff_factors",
+      "description": "Fama-French research factors -- not used in the main regressions but needed for context",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "mom", "rf"],
+      "matched_table": "ff.four_factor_monthly",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "mom", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    }
+  ],
+  "blocking_issues": [
+    {
+      "requirement": "crsp_size_decile_lookup_for_bhar",
+      "reason": "erdport1 / mport1 carry pre-sorted deciles with numeric sort criteria that are not perfectly transparent in the catalog (no explicit 'dec_rank' / 'size_decile' column). Without verified docs on which table number corresponds to size-decile portfolios, we will compute the size decile ourselves from CRSP msf market equity at fiscal-year-end instead of relying on mport1.",
+      "affected_targets": ["T7"],
+      "recommendation": "Compute size decile inline from (permno, year) using CRSP msf shrout*prc at the last trading day of each calendar year (or June of fyear) -- this matches the paper's 'market-capitalization-based portfolio decile to which the firm belongs' phrasing exactly. Document the choice in assumptions.md."
+    },
+    {
+      "requirement": "comp_footnote_codes",
+      "reason": "Although comp_202601.funda_fncd exists in the catalog, the modern WRDS post-2014 footnote codes (opthe, ifootnote) do not match the original COMPUSTAT 1999 Industrial file footnote codes referenced in footnote 9 of the paper. The 364 / 2,059 / 597 firm-year elimination steps cannot be replicated exactly without the legacy 1999-specific codes. Approximation: drop firm-years where any of the required line items has a footnote flag indicating 'estimated', which yields an approximately comparable sample.",
+      "affected_targets": ["T1", "T2", "T3"],
+      "recommendation": "Apply an approximate footnote filter using comp_202601.funda_fncd -- drop firm-years where any of at / rect / invt / aco / ap / lco / oiadp / dp has a non-zero / non-null audit footnote. Document the substitution and the resulting sample-size impact in assumptions.md."
+    }
+  ]
+}

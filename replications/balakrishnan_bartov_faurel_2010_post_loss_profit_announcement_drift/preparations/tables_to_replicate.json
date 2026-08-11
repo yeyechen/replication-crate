@@ -1,0 +1,118 @@
+{
+  "paper_claims": [
+    {
+      "id": "C1",
+      "claim": "Firms with extreme quarterly losses (earnings decile 1) earn significantly negative post-announcement drift; firms with extreme quarterly profits (decile 10) earn significantly positive post-announcement drift; the High-Profit minus High-Loss hedge portfolio generates a buy-and-hold abnormal return of ~10% over 120 trading days (~21% annualized) for both size-adjusted and Carhart 4-factor returns.",
+      "paper_location": "L296"
+    },
+    {
+      "id": "C2",
+      "claim": "The drift increases monotonically across the ten earnings deciles, consistent with underreaction to loss/profit announcements.",
+      "paper_location": "L278"
+    },
+    {
+      "id": "C3",
+      "claim": "Primary test sample is 458,693 firm-quarters covering 15,143 distinct firms over 1976-2005; before price filter the sample is 471,997 / 15,261.",
+      "paper_location": "L124-138"
+    }
+  ],
+  "budget_flag": null,
+  "tables": [
+    {
+      "id": "T1_sample_selection",
+      "table_ref": "Table 1 (Sample Selection)",
+      "description": "Sample selection count of firm-quarters and distinct firms across primary and three supplementary test sub-samples",
+      "replication_meaning": "Demonstrates correct universe construction: Compustat-CRSP merge with required data8 (ibq) and data44 (atq), price filter at $1 five days prior to announcement, and the period 1976-2005. Validates that the candidate pool at each filter stage matches the paper.",
+      "covers_claims": ["C3"],
+      "paper_quote": "With stock price five days prior to the quarterly earnings announcement date above $1... This final data requirement decreases the final sample for our primary tests to 458,693 firm-quarters, covering 15,143 distinct firms. (L1035-1047)",
+      "exercises_preprocessing_rules": [
+        "universe_data_sources",
+        "avail_compustat_quarterly_required",
+        "universe_pre_filter_count",
+        "universe_price_filter_1dollar",
+        "universe_price_filter_outcome",
+        "sample_period_1976_2005",
+        "avail_sue_13_quarters",
+        "avail_book_to_market",
+        "avail_accruals_components",
+        "sample_accruals_period_1988_2005"
+      ],
+      "metrics": [
+        {"name": "primary_all_firmqtrs",          "value": 471997, "unit": "count",   "tolerance_pct": 2,  "paper_location": "L1036"},
+        {"name": "primary_all_distinct_firms",    "value": 15261,  "unit": "count",   "tolerance_pct": 2,  "paper_location": "L1037"},
+        {"name": "primary_after_price1",          "value": 458693, "unit": "count",   "tolerance_pct": 2,  "paper_location": "L1043"},
+        {"name": "primary_after_price1_firms",    "value": 15143,  "unit": "count",   "tolerance_pct": 2,  "paper_location": "L1043"},
+        {"name": "supp1_sue_firmqtrs",            "value": 359909, "unit": "count",   "tolerance_pct": 2,  "paper_location": "L1056"},
+        {"name": "supp1_sue_distinct_firms",      "value": 12824,  "unit": "count",   "tolerance_pct": 2,  "paper_location": "L1057"},
+        {"name": "supp2_bm_firmqtrs",             "value": 448500, "unit": "count",   "tolerance_pct": 2,  "paper_location": "L1065"},
+        {"name": "supp2_bm_distinct_firms",       "value": 15101,  "unit": "count",   "tolerance_pct": 2,  "paper_location": "L1066"},
+        {"name": "supp3_accruals_firmqtrs",       "value": 267416, "unit": "count",   "tolerance_pct": 2,  "paper_location": "L1076"},
+        {"name": "supp3_accruals_distinct_firms", "value": 10695,  "unit": "count",   "tolerance_pct": 2,  "paper_location": "L1077"}
+      ],
+      "notes": null
+    },
+    {
+      "id": "T2_table2_main",
+      "table_ref": "Table 2 (Buy-and-Hold Abnormal Stock Returns for Portfolios Formed on Earnings)",
+      "description": "Ten earnings-decile portfolios' buy-and-hold abnormal stock returns over [-2,0], [1,60], and [1,120] windows, reported using both size-adjusted returns (SAR) and Carhart's 1997 four-factor model (FF). Plus the High-Profit minus High-Loss hedge spread.",
+      "replication_meaning": "Demonstrates the headline result: correct prior-quarter earnings decile-sort construction (using q-1 distribution of earnings/total_assets), correct BHAR computation under both size-adjusted and Carhart 4-factor expected-return models, and correct event-time alignment ([-2,0], [1,60], [1,120] anchored at the earnings-announcement date).",
+      "covers_claims": ["C1", "C2"],
+      "paper_quote": "the drift increases monotonically across the ten earnings deciles. It is most negative for the High Loss portfolio: -3.12 percent (t-statistic = -16.10) and -5.79 percent (t-statistic = -21.53) and most positive for the High Profit portfolio: 2.85 percent (t-statistic = 23.15) and 4.42 percent (t-statistic = 23.16), in the windows [1, 60] and [1, 120], respectively. (L296)",
+      "exercises_preprocessing_rules": [
+        "var_earnings_definition",
+        "var_earnings_scaling",
+        "var_bhar_definition",
+        "var_size_adjusted_expected_return",
+        "var_carhart_4factor_lookback",
+        "var_size_decile_calendar_year",
+        "delisting_performance_substitution",
+        "delisting_missing_perf_minus_one",
+        "factor_carhart_4f_sources",
+        "sort_decile_by_earnings_prior_quarter",
+        "sort_decile1_high_loss_decile10_high_profit"
+      ],
+      "metrics": [
+        {"name": "d1_high_loss_n",            "value": 46753, "unit": "count",                       "tolerance_pct": 2,  "paper_location": "L1130"},
+        {"name": "d10_high_profit_n",         "value": 47078, "unit": "count",                       "tolerance_pct": 2, "paper_location": "L1310"},
+
+        {"name": "d1_sar_m2_0",               "value": -0.0102, "unit": "fraction",                  "tolerance_pct": 12, "paper_location": "L1131"},
+        {"name": "d1_ff_m2_0",                "value": -0.0109, "unit": "fraction",                  "tolerance_pct": 12, "paper_location": "L1132"},
+        {"name": "d1_sar_1_60",               "value": -0.0312, "unit": "fraction",                  "tolerance_pct": 12, "paper_location": "L1133"},
+        {"name": "d1_ff_1_60",                "value": -0.0526, "unit": "fraction",                  "tolerance_pct": 12, "paper_location": "L1134"},
+        {"name": "d1_sar_1_120",              "value": -0.0579, "unit": "fraction",                  "tolerance_pct": 12, "paper_location": "L1135"},
+        {"name": "d1_ff_1_120",               "value": -0.1046, "unit": "fraction",                  "tolerance_pct": 12, "paper_location": "L1136"},
+
+        {"name": "d2_sar_1_120",              "value": -0.0444, "unit": "fraction",                  "tolerance_pct": 12, "paper_location": "L1155"},
+        {"name": "d3_sar_1_120",              "value": -0.0198, "unit": "fraction",                  "tolerance_pct": 12, "paper_location": "L1175"},
+        {"name": "d4_sar_1_120",              "value": -0.0013, "unit": "fraction",                  "tolerance_pct": 15, "paper_location": "L1195"},
+        {"name": "d5_sar_1_120",              "value":  0.0066, "unit": "fraction",                  "tolerance_pct": 15, "paper_location": "L1215"},
+        {"name": "d6_sar_1_120",              "value":  0.0142, "unit": "fraction",                  "tolerance_pct": 12, "paper_location": "L1235"},
+        {"name": "d7_sar_1_120",              "value":  0.0158, "unit": "fraction",                  "tolerance_pct": 12, "paper_location": "L1255"},
+        {"name": "d8_sar_1_120",              "value":  0.0198, "unit": "fraction",                  "tolerance_pct": 12, "paper_location": "L1275"},
+        {"name": "d9_sar_1_120",              "value":  0.0296, "unit": "fraction",                  "tolerance_pct": 12, "paper_location": "L1295"},
+
+        {"name": "d10_sar_m2_0",              "value":  0.0187, "unit": "fraction",                  "tolerance_pct": 12, "paper_location": "L1311"},
+        {"name": "d10_ff_m2_0",               "value":  0.0170, "unit": "fraction",                  "tolerance_pct": 12, "paper_location": "L1312"},
+        {"name": "d10_sar_1_60",              "value":  0.0285, "unit": "fraction",                  "tolerance_pct": 12, "paper_location": "L1313"},
+        {"name": "d10_ff_1_60",               "value":  0.0150, "unit": "fraction",                  "tolerance_pct": 12, "paper_location": "L1314"},
+        {"name": "d10_sar_1_120",             "value":  0.0442, "unit": "fraction",                  "tolerance_pct": 12, "paper_location": "L1315"},
+        {"name": "d10_ff_1_120",              "value":  0.0133, "unit": "fraction",                  "tolerance_pct": 12, "paper_location": "L1316"},
+
+        {"name": "hedge_sar_m2_0",             "value":  0.0290, "unit": "fraction",                  "tolerance_pct": 12, "paper_location": "L1331"},
+        {"name": "hedge_ff_m2_0",              "value":  0.0279, "unit": "fraction",                  "tolerance_pct": 12, "paper_location": "L1332"},
+        {"name": "hedge_sar_1_60",             "value":  0.0596, "unit": "fraction",                  "tolerance_pct": 12, "paper_location": "L1333"},
+        {"name": "hedge_ff_1_60",              "value":  0.0676, "unit": "fraction",                  "tolerance_pct": 12, "paper_location": "L1334"},
+        {"name": "hedge_sar_1_120",            "value":  0.1021, "unit": "fraction",                  "tolerance_pct": 12, "paper_location": "L1335"},
+        {"name": "hedge_ff_1_120",             "value":  0.1178, "unit": "fraction",                  "tolerance_pct": 12, "paper_location": "L1336"},
+
+        {"name": "d1_sar_1_120_t",            "value": -21.53,  "unit": "t_stat",                     "tolerance_pct": 15, "paper_location": "L1145"},
+        {"name": "d10_sar_1_120_t",           "value":  23.16,  "unit": "t_stat",                     "tolerance_pct": 15, "paper_location": "L1325"},
+        {"name": "hedge_sar_1_120_t",          "value":  30.98,  "unit": "t_stat",                     "tolerance_pct": 15, "paper_location": "L1345"},
+        {"name": "hedge_ff_1_120_t",           "value":  31.23,  "unit": "t_stat",                     "tolerance_pct": 15, "paper_location": "L1346"},
+        {"name": "hedge_sar_1_120_t_fmb",      "value":  10.80,  "unit": "t_stat_fama_macbeth",        "tolerance_pct": 25, "paper_location": "L1355"},
+        {"name": "hedge_ff_1_120_t_fmb",       "value":  12.77,  "unit": "t_stat_fama_macbeth",        "tolerance_pct": 25, "paper_location": "L1356"}
+      ],
+      "notes": null
+    }
+  ]
+}

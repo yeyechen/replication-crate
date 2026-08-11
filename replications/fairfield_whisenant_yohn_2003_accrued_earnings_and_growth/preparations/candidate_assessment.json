@@ -1,0 +1,6 @@
+{
+  "replicable": true,
+  "paper_type": "empirical_cross_sectional",
+  "rationale": "Annual cross-sectional accounting study using CRSP/Compustat data from 1962–1991. Methodology is operationalized: operating-income components (ACC, CFO), growth in net operating assets (GrNOA, GrWC, DEPAM, GrLTNOA), and ROA are computed from balance-sheet items via the indirect method. Annual regressions (Fama–MacBeth style, one per year, time-series mean of coefficients) test the differential persistence of ACC, CFO, and GrLTNOA for one-year-ahead ROA; a Mishkin (1983) test examines market mispricing. All formulas, variable definitions (paper §III), sample restrictions (§III), and seven results tables (Tables 1–7) are explicitly specified in the paper. Numerical replication is the strongest evidence, but pattern-level (sign + sign + magnitude order) also carries the paper's argument.",
+  "block_reasons": []
+}

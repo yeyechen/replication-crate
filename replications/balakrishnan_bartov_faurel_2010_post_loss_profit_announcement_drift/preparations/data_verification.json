@@ -1,0 +1,87 @@
+{
+  "verdict": "ready",
+  "requirements": [
+    {
+      "id": "crsp_daily_returns",
+      "description": "CRSP daily stock returns (raw and excess) and prices used for BHAR computation and earnings-announcement-day return matching",
+      "needed_columns": ["permno", "date", "ret", "prc", "shrout", "hexcd"],
+      "matched_table": "crsp_202601.dsf",
+      "matched_columns": ["cusip", "permno", "permco", "issuno", "hexcd", "hsiccd", "date", "bidlo", "askhi", "prc", "vol", "ret", "bid", "ask", "shrout", "cfacpr", "cfacshr", "openprc", "numtrd", "retx"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_delisting_returns",
+      "description": "CRSP delisting returns and reason codes (Shumway 1997 substitution requires dlstcd 500,520-584 -> -100%)",
+      "needed_columns": ["permno", "dlstdt", "dlstcd", "dlret"],
+      "matched_table": "crsp_202601.dsedelist",
+      "matched_columns": ["permno", "dlstdt", "dlstcd", "nwperm", "nwcomp", "nextdt", "dlamt", "dlretx", "dlprc", "dlpdt", "dlret", "permco", "compno", "issuno", "hexcd", "hsiccd", "cusip", "acperm", "accomp"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_universe_pit",
+      "description": "CRSP point-in-time share/exchange codes for ordinary common stocks universe filter",
+      "needed_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd"],
+      "matched_table": "crsp_202601.dsenames",
+      "matched_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "siccd", "ncusip", "ticker", "comnam", "shrcls", "tsymbol", "naics", "primexch", "trdstat", "secstat", "permco", "compno", "issuno", "hexcd", "hsiccd", "cusip"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_index_vw",
+      "description": "CRSP daily value-weighted market return for size-adjusted expected-return matching (firm size decile)",
+      "needed_columns": ["date", "vwretd"],
+      "matched_table": "crsp_202601.dsi",
+      "matched_columns": ["date", "vwretd", "vwretx", "ewretd", "ewretx", "sprtrn", "spindx", "totval", "totcnt", "usdval", "usdcnt"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_size_decile_returns",
+      "description": "CRSP size-decile (1-10) value-weighted daily returns for firm-size-adjusted expected-return benchmark",
+      "needed_columns": ["date", "permno", "ret", "capn"],
+      "matched_table": "crsp_202601.erdport1",
+      "matched_columns": ["permno", "ret", "date", "capn", "decret"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "comp_quarterly_fundamentals",
+      "description": "Compustat quarterly data items required for primary tests: data8 (ibq) earnings before extraordinary items, data44 (atq) total assets, data9 (epspxq) diluted EPS excl. extraordinary, data14 (prccq) close price, data61 (cshoq) shares, data59 (ceqq) common equity, data76 (ibq) earnings for accruals, data108 (oancfy) cash from operations, data78 (xidocy) extraordinary items, data40 (wcapq) working capital, data49 (lctq) current liabilities, data58 (req) retained earnings, data54 (lttq) long-term debt, data2 (saleq) sales; plus datadate, gvkey, rdq (announcement date)",
+      "needed_columns": ["gvkey", "datadate", "rdq", "ibq", "atq", "epspxq", "prccq", "cshoq", "ceqq", "oancfy", "xidocy", "wcapq", "lctq", "req", "lttq", "saleq"],
+      "matched_table": "comp_202601.fundq",
+      "matched_columns": ["gvkey", "datadate", "fyearq", "fqtr", "fyr", "indfmt", "conm", "tic", "cusip", "rdq", "ibq", "atq", "epspxq", "prccq", "cshoq", "ceqq", "oancfy", "xidocy", "wcapq", "lctq", "req", "lttq", "saleq"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ccm_linktable",
+      "description": "Compustat-CRSP link table to map gvkey -> permno for each firm-quarter",
+      "needed_columns": ["gvkey", "lpermno", "linkdt", "linkenddt"],
+      "matched_table": "crsp_202601.ccmxpf_linktable",
+      "matched_columns": ["gvkey", "linkprim", "liid", "linktype", "lpermno", "lpermco", "usedflag", "linkdt", "linkenddt"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_carhart_4f_daily",
+      "description": "Daily Fama-French-Carhart 4 factors (Mkt-RF, SMB, HML, UMD, RF) for Carhart expected-return model estimation",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "mom", "rf"],
+      "matched_table": "ff.four_factor",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "rf", "mom"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_carhart_4f_monthly",
+      "description": "Monthly Fama-French-Carhart 4 factors (for any robustness reference)",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "mom", "rf"],
+      "matched_table": "ff.four_factor_monthly",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "mom", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    }
+  ],
+  "blocking_issues": []
+}

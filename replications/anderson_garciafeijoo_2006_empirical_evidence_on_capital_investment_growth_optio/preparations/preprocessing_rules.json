@@ -1,0 +1,163 @@
+[
+  {
+    "rule_id": "universe_exchanges",
+    "category": "universe",
+    "section": "§I (Data description)",
+    "paper_location": "L88",
+    "paper_quote": "We rely on stock price and return data from the Center for Research on Securities Prices (CRSP) and financial statement data from COMPUSTAT over the period 1976 to 1999."
+  },
+  {
+    "rule_id": "universe_share_codes",
+    "category": "universe",
+    "section": "§I (Data description)",
+    "paper_location": "L88",
+    "paper_quote": "only non-financial firms (SIC other than in the 60s) and firms with ordinary common equity (security type 10 or 11 in CRSP) are considered."
+  },
+  {
+    "rule_id": "universe_exclude_financials",
+    "category": "universe",
+    "section": "§I (Data description)",
+    "paper_location": "L88",
+    "paper_quote": "only non-financial firms (SIC other than in the 60s)"
+  },
+  {
+    "rule_id": "avail_3yr_compustat_tenure",
+    "category": "sample",
+    "section": "§I (Data description)",
+    "paper_location": "L88",
+    "paper_quote": "We do not include firms until they are on the COMPUSTAT database for three years to reduce the survival biases."
+  },
+  {
+    "rule_id": "avail_36mo_return_history",
+    "category": "sample",
+    "section": "§I (Data description)",
+    "paper_location": "L88",
+    "paper_quote": "in computing returns we require 36 months of data before a company is included in a portfolio."
+  },
+  {
+    "rule_id": "sample_period",
+    "category": "sample",
+    "section": "§I",
+    "paper_location": "L88",
+    "paper_quote": "the period 1976 to 1999"
+  },
+  {
+    "rule_id": "avail_negative_book_excl_breakpoints",
+    "category": "sample",
+    "section": "§I (size/B/M breakpoint methodology)",
+    "paper_location": "L110",
+    "paper_quote": "We do not use firms with negative book values when calculating the breakpoints or when forming the size-B/M portfolios."
+  },
+  {
+    "rule_id": "sort_annual_june",
+    "category": "sort",
+    "section": "§I (FF-style portfolio formation)",
+    "paper_location": "L110",
+    "paper_quote": "For each year t we divide NYSE, AMEX and NASDAQ stocks into two groups based on size (price times shares outstanding) at the end of June of year t"
+  },
+  {
+    "rule_id": "sort_bm_book_year_minus1_over_me_dec_year_minus1",
+    "category": "sort",
+    "section": "§I",
+    "paper_location": "L110",
+    "paper_quote": "into three groups based on the ratio of book common equity for the fiscal year ending in calendar t+1, divided by market equity at the end of December of year t+1"
+  },
+  {
+    "rule_id": "sort_nyse_breakpoints",
+    "category": "sort",
+    "section": "§I",
+    "paper_location": "L110",
+    "paper_quote": "We use the median NYSE size to allocate NYSE, AMEX and NASDAQ stocks to the two size groups, small or big (S or B). Similarly, we use the NYSE breakpoints for the bottom and top 30 percent to allocate all stocks to the three B/M groups, low (L), medium (M), and high (H)."
+  },
+  {
+    "rule_id": "var_inv_growth_definition",
+    "category": "variable",
+    "section": "§I",
+    "paper_location": "L90",
+    "paper_quote": "investment growth is measured as the difference between capital expenditures at the end of fiscal year t-1 minus capital expenditures at the end of fiscal year t-3 divided by capital expenditures in fiscal year t-3, where year 0 is the year of portfolio formation."
+  },
+  {
+    "rule_id": "var_capx_compustat_item_128",
+    "category": "variable",
+    "section": "Figure 1 caption",
+    "paper_location": "L120",
+    "paper_quote": "Figure 1 plots growth rates in capital expenditures (COMPUSTAT item #128) around the portfolio-formation year"
+  },
+  {
+    "rule_id": "var_book_equity_bm",
+    "category": "variable",
+    "section": "Table I caption",
+    "paper_location": "L438",
+    "paper_quote": "B/M is the ratio of book value equity at the end of fiscal year t-1 divided by market value of equity at the end of December of calendar year t-1."
+  },
+  {
+    "rule_id": "winsorize_inv_table1_1pct",
+    "category": "winsorize",
+    "section": "Table I caption",
+    "paper_location": "L438",
+    "paper_quote": "Observations larger than 1000% were deleted (highest and lowest 1%)."
+  },
+  {
+    "rule_id": "winsorize_fm_1pct_lnsize_lnbm_lninv",
+    "category": "winsorize",
+    "section": "Table III description",
+    "paper_location": "L738",
+    "paper_quote": "Ln(size), Ln(B/M), and Ln(inv) are winsorized at the 1% and 99% levels."
+  },
+  {
+    "rule_id": "fm_monthly_cross_section_avg_tstat",
+    "category": "fm",
+    "section": "Table III description",
+    "paper_location": "L172",
+    "paper_quote": "parameter estimates are time-series averages of the cross-sectional slopes of monthly returns regressed on size, B/M and growth rates in capital expenditures. The t-statistic is the time-series average divided by its standard error. For each independent variable, the top and bottom one percent are deleted each year to exclude extreme observations."
+  },
+  {
+    "rule_id": "fm_beta_scholes_williams_2yr_window",
+    "category": "variable",
+    "section": "§II",
+    "paper_location": "L174",
+    "paper_quote": "we compute [betas] as in Fama and French (1992)."
+  },
+  {
+    "rule_id": "factor_inv_construction",
+    "category": "factor",
+    "section": "§III.A",
+    "paper_location": "L248",
+    "paper_quote": "Each June we sort stocks into five groups based on past investment growth, defined as the average investment growth over the two years prior to portfolio formation. We next subtract the returns on the high investment group from the low investment group each month, starting in July. In this manner we construct a portfolio-based factor comparable to the HML and SMB factors constructed by Fama and French."
+  },
+  {
+    "rule_id": "factor_ff_mkt_smb_hml",
+    "category": "factor",
+    "section": "Table V description",
+    "paper_location": "L1470",
+    "paper_quote": "The computation of MKT, SMB, and HML is described in Fama and French (1993)."
+  },
+  {
+    "rule_id": "fm_exclude_january_specification",
+    "category": "fm",
+    "section": "§II and Table III Panel row 'Feb-Dec'",
+    "paper_location": "L186",
+    "paper_quote": "we also investigate if the exclusion of January returns affects the significance of the investment-growth variable."
+  },
+  {
+    "rule_id": "delisting_naive",
+    "category": "delisting",
+    "section": "§I (Data description)",
+    "paper_location": "L88",
+    "paper_quote": "We rely on stock price and return data from the Center for Research on Securities Prices (CRSP) and financial statement data from COMPUSTAT over the period 1976 to 1999."
+  },
+  {
+    "rule_id": "portfolio_weighting_table_ii_ew",
+    "category": "variable",
+    "section": "Table II description",
+    "paper_location": "L570",
+    "paper_quote": "The returns in the table are equally-weighted monthly percent averages over all formation periods."
+  },
+  {
+    "rule_id": "portfolio_weighting_table_iv_vw",
+    "category": "variable",
+    "section": "Table IV description",
+    "paper_location": "L956",
+    "paper_quote": "The average returns shown in the table are value-weighted monthly percent averages across formation periods."
+  }
+]
