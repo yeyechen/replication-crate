@@ -1,0 +1,584 @@
+{
+  "schema_version": 1,
+  "slug": "lev_nissim_2004_taxable_income_future_earnings_and_equity_values",
+  "panels": {
+    "A": {
+      "label": "Pre-SFAS 109",
+      "years": [
+        1987,
+        1988,
+        1989,
+        1990,
+        1991,
+        1992
+      ],
+      "models": {
+        "1": {
+          "label": "Model 1 \u2014 R_TAX only",
+          "g_vars": {
+            "g1": {
+              "panel": "A",
+              "model": "1",
+              "g": "g1",
+              "mean_betas": {
+                "r_tax": 0.4673255697599608
+              },
+              "std_betas": {
+                "r_tax": 0.47326249072778115
+              },
+              "t_stats": {
+                "r_tax": 0.9874553316940656
+              },
+              "mean_r2": 0.060162281153337105,
+              "mean_n": 1244,
+              "n_periods_used": 6,
+              "n_periods_skipped": 0,
+              "n_periods_total": 6
+            },
+            "g2": {
+              "panel": "A",
+              "model": "1",
+              "g": "g2",
+              "mean_betas": {
+                "r_tax": 0.5316242306370526
+              },
+              "std_betas": {
+                "r_tax": 0.5914367355622242
+              },
+              "t_stats": {
+                "r_tax": 0.898869141315151
+              },
+              "mean_r2": 0.06377724355192245,
+              "mean_n": 1122,
+              "n_periods_used": 6,
+              "n_periods_skipped": 0,
+              "n_periods_total": 6
+            },
+            "g3": {
+              "panel": "A",
+              "model": "1",
+              "g": "g3",
+              "mean_betas": {
+                "r_tax": 0.7032830986188183
+              },
+              "std_betas": {
+                "r_tax": 0.6239796009062424
+              },
+              "t_stats": {
+                "r_tax": 1.1270930934238856
+              },
+              "mean_r2": 0.057808995025434705,
+              "mean_n": 998,
+              "n_periods_used": 6,
+              "n_periods_skipped": 0,
+              "n_periods_total": 6
+            }
+          }
+        },
+        "2": {
+          "label": "Model 2 \u2014 R_DEF only",
+          "g_vars": {
+            "g1": {
+              "panel": "A",
+              "model": "2",
+              "g": "g1",
+              "mean_betas": {
+                "r_def": 1.6019393678323997
+              },
+              "std_betas": {
+                "r_def": 0.6746701673291534
+              },
+              "t_stats": {
+                "r_def": 2.3744037389026222
+              },
+              "mean_r2": 0.04758118930736046,
+              "mean_n": 1724,
+              "n_periods_used": 5,
+              "n_periods_skipped": 1,
+              "n_periods_total": 6
+            },
+            "g2": {
+              "panel": "A",
+              "model": "2",
+              "g": "g2",
+              "mean_betas": {
+                "r_def": 0.6501735392038523
+              },
+              "std_betas": {
+                "r_def": 0.8195545385513519
+              },
+              "t_stats": {
+                "r_def": 0.7933255306634039
+              },
+              "mean_r2": 0.04613715650282968,
+              "mean_n": 1510,
+              "n_periods_used": 5,
+              "n_periods_skipped": 1,
+              "n_periods_total": 6
+            },
+            "g3": {
+              "panel": "A",
+              "model": "2",
+              "g": "g3",
+              "mean_betas": {
+                "r_def": -0.49920623765836725
+              },
+              "std_betas": {
+                "r_def": 1.6511603486759177
+              },
+              "t_stats": {
+                "r_def": -0.3023366192500237
+              },
+              "mean_r2": 0.055367842107029094,
+              "mean_n": 1312,
+              "n_periods_used": 5,
+              "n_periods_skipped": 1,
+              "n_periods_total": 6
+            }
+          }
+        },
+        "3": {
+          "label": "Model 3 \u2014 R_TAX + R_DEF",
+          "g_vars": {
+            "g1": {
+              "panel": "A",
+              "model": "3",
+              "g": "g1",
+              "mean_betas": {
+                "r_tax": 0.44978661243616846,
+                "r_def": -0.6349938542961487
+              },
+              "std_betas": {
+                "r_tax": 0.37635336501758343,
+                "r_def": 0.18288361921929921
+              },
+              "t_stats": {
+                "r_tax": 1.19511781810468,
+                "r_def": -3.4721199033944945
+              },
+              "mean_r2": 0.06970488767886059,
+              "mean_n": 1125,
+              "n_periods_used": 5,
+              "n_periods_skipped": 1,
+              "n_periods_total": 6
+            },
+            "g2": {
+              "panel": "A",
+              "model": "3",
+              "g": "g2",
+              "mean_betas": {
+                "r_tax": 0.5176435358263005,
+                "r_def": -0.69440477862706
+              },
+              "std_betas": {
+                "r_tax": 0.32155811895105463,
+                "r_def": 0.2562629471222433
+              },
+              "t_stats": {
+                "r_tax": 1.6097977482729728,
+                "r_def": -2.709735396494184
+              },
+              "mean_r2": 0.07266088165529172,
+              "mean_n": 1025,
+              "n_periods_used": 5,
+              "n_periods_skipped": 1,
+              "n_periods_total": 6
+            },
+            "g3": {
+              "panel": "A",
+              "model": "3",
+              "g": "g3",
+              "mean_betas": {
+                "r_tax": 0.790148590489644,
+                "r_def": -0.987583026998632
+              },
+              "std_betas": {
+                "r_tax": 0.21848980442996652,
+                "r_def": 0.2709587938591026
+              },
+              "t_stats": {
+                "r_tax": 3.6164094363630306,
+                "r_def": -3.6447720073339673
+              },
+              "mean_r2": 0.06496594041886894,
+              "mean_n": 913,
+              "n_periods_used": 5,
+              "n_periods_skipped": 1,
+              "n_periods_total": 6
+            }
+          }
+        },
+        "4": {
+          "label": "Model 4 \u2014 R_TAX + R_DEF + R_CFO",
+          "g_vars": {
+            "g1": {
+              "panel": "A",
+              "model": "4",
+              "g": "g1",
+              "mean_betas": {
+                "r_tax": 0.4565847368411987,
+                "r_def": -0.6212884939126282,
+                "r_cfo": 0.3117076430084119
+              },
+              "std_betas": {
+                "r_tax": 0.34295228049641413,
+                "r_def": 0.2423192222371421,
+                "r_cfo": 0.5890839028478226
+              },
+              "t_stats": {
+                "r_tax": 1.331336056959017,
+                "r_def": -2.563925751233278,
+                "r_cfo": 0.5291396378368448
+              },
+              "mean_r2": 0.07094821266993363,
+              "mean_n": 1076,
+              "n_periods_used": 5,
+              "n_periods_skipped": 1,
+              "n_periods_total": 6
+            },
+            "g2": {
+              "panel": "A",
+              "model": "4",
+              "g": "g2",
+              "mean_betas": {
+                "r_tax": 0.504980771586383,
+                "r_def": -0.6519978952927621,
+                "r_cfo": 0.5617560428762272
+              },
+              "std_betas": {
+                "r_tax": 0.2836929329880761,
+                "r_def": 0.30667959834651776,
+                "r_cfo": 0.6306784232996893
+              },
+              "t_stats": {
+                "r_tax": 1.7800259113525676,
+                "r_def": -2.125990443472763,
+                "r_cfo": 0.8907170788198803
+              },
+              "mean_r2": 0.07583578286241544,
+              "mean_n": 982,
+              "n_periods_used": 5,
+              "n_periods_skipped": 1,
+              "n_periods_total": 6
+            },
+            "g3": {
+              "panel": "A",
+              "model": "4",
+              "g": "g3",
+              "mean_betas": {
+                "r_tax": 0.8060405478766081,
+                "r_def": -1.0007865710883632,
+                "r_cfo": 0.4275507926975548
+              },
+              "std_betas": {
+                "r_tax": 0.23954067432412413,
+                "r_def": 0.249098390535588,
+                "r_cfo": 0.9352341241650428
+              },
+              "t_stats": {
+                "r_tax": 3.3649423011390085,
+                "r_def": -4.017635637615184,
+                "r_cfo": 0.45715910235767226
+              },
+              "mean_r2": 0.06872524615097989,
+              "mean_n": 875,
+              "n_periods_used": 5,
+              "n_periods_skipped": 1,
+              "n_periods_total": 6
+            }
+          }
+        }
+      }
+    },
+    "B": {
+      "label": "Post-SFAS 109",
+      "years": [
+        1993,
+        1994,
+        1995,
+        1996,
+        1997,
+        1998,
+        1999,
+        2000
+      ],
+      "models": {
+        "1": {
+          "label": "Model 1 \u2014 R_TAX only",
+          "g_vars": {
+            "g1": {
+              "panel": "B",
+              "model": "1",
+              "g": "g1",
+              "mean_betas": {
+                "r_tax": 1.8621122323659556
+              },
+              "std_betas": {
+                "r_tax": 0.6926824789678147
+              },
+              "t_stats": {
+                "r_tax": 2.6882623552724194
+              },
+              "mean_r2": 0.06445008561935199,
+              "mean_n": 1681,
+              "n_periods_used": 7,
+              "n_periods_skipped": 1,
+              "n_periods_total": 8
+            },
+            "g2": {
+              "panel": "B",
+              "model": "1",
+              "g": "g2",
+              "mean_betas": {
+                "r_tax": 2.5942060465903416
+              },
+              "std_betas": {
+                "r_tax": 0.7167390429381257
+              },
+              "t_stats": {
+                "r_tax": 3.6194568611135263
+              },
+              "mean_r2": 0.05460415451769714,
+              "mean_n": 1405,
+              "n_periods_used": 5,
+              "n_periods_skipped": 3,
+              "n_periods_total": 8
+            },
+            "g3": {
+              "panel": "B",
+              "model": "1",
+              "g": "g3",
+              "mean_betas": {
+                "r_tax": 2.87388948176778
+              },
+              "std_betas": {
+                "r_tax": 0.8207499578137047
+              },
+              "t_stats": {
+                "r_tax": 3.5015408217908193
+              },
+              "mean_r2": 0.053692368838883175,
+              "mean_n": 1100,
+              "n_periods_used": 3,
+              "n_periods_skipped": 5,
+              "n_periods_total": 8
+            }
+          }
+        },
+        "2": {
+          "label": "Model 2 \u2014 R_DEF only",
+          "g_vars": {
+            "g1": {
+              "panel": "B",
+              "model": "2",
+              "g": "g1",
+              "mean_betas": {
+                "r_def": 0.9178562644300385
+              },
+              "std_betas": {
+                "r_def": 1.6975880913161874
+              },
+              "t_stats": {
+                "r_def": 0.5406825537509509
+              },
+              "mean_r2": 0.043867372957953114,
+              "mean_n": 2481,
+              "n_periods_used": 7,
+              "n_periods_skipped": 1,
+              "n_periods_total": 8
+            },
+            "g2": {
+              "panel": "B",
+              "model": "2",
+              "g": "g2",
+              "mean_betas": {
+                "r_def": -0.0005053015322647348
+              },
+              "std_betas": {
+                "r_def": 0.8622425528293464
+              },
+              "t_stats": {
+                "r_def": -0.0005860317733178998
+              },
+              "mean_r2": 0.0523003048958975,
+              "mean_n": 1912,
+              "n_periods_used": 5,
+              "n_periods_skipped": 3,
+              "n_periods_total": 8
+            },
+            "g3": {
+              "panel": "B",
+              "model": "2",
+              "g": "g3",
+              "mean_betas": {
+                "r_def": -2.248226937975811
+              },
+              "std_betas": {
+                "r_def": 1.6216461214905846
+              },
+              "t_stats": {
+                "r_def": -1.38638566588701
+              },
+              "mean_r2": 0.03991230983836147,
+              "mean_n": 1429,
+              "n_periods_used": 3,
+              "n_periods_skipped": 5,
+              "n_periods_total": 8
+            }
+          }
+        },
+        "3": {
+          "label": "Model 3 \u2014 R_TAX + R_DEF",
+          "g_vars": {
+            "g1": {
+              "panel": "B",
+              "model": "3",
+              "g": "g1",
+              "mean_betas": {
+                "r_tax": 1.6501116373556284,
+                "r_def": -1.2458573725053828
+              },
+              "std_betas": {
+                "r_tax": 0.4627122504251138,
+                "r_def": 1.141517906230777
+              },
+              "t_stats": {
+                "r_tax": 3.5661723583924982,
+                "r_def": -1.0914041432947192
+              },
+              "mean_r2": 0.06832839642858315,
+              "mean_n": 1484,
+              "n_periods_used": 7,
+              "n_periods_skipped": 1,
+              "n_periods_total": 8
+            },
+            "g2": {
+              "panel": "B",
+              "model": "3",
+              "g": "g2",
+              "mean_betas": {
+                "r_tax": 2.3810446965837975,
+                "r_def": -1.8369229819935309
+              },
+              "std_betas": {
+                "r_tax": 0.9685847666950816,
+                "r_def": 0.7179970163276016
+              },
+              "t_stats": {
+                "r_tax": 2.4582718812605173,
+                "r_def": -2.5583991858197295
+              },
+              "mean_r2": 0.06001663489395801,
+              "mean_n": 1225,
+              "n_periods_used": 5,
+              "n_periods_skipped": 3,
+              "n_periods_total": 8
+            },
+            "g3": {
+              "panel": "B",
+              "model": "3",
+              "g": "g3",
+              "mean_betas": {
+                "r_tax": 2.5338006775424797,
+                "r_def": -1.122470420652607
+              },
+              "std_betas": {
+                "r_tax": 0.2911217411077683,
+                "r_def": 1.0643745315848123
+              },
+              "t_stats": {
+                "r_tax": 8.703577643843886,
+                "r_def": -1.0545821863863016
+              },
+              "mean_r2": 0.06090173608316859,
+              "mean_n": 962,
+              "n_periods_used": 3,
+              "n_periods_skipped": 5,
+              "n_periods_total": 8
+            }
+          }
+        },
+        "4": {
+          "label": "Model 4 \u2014 R_TAX + R_DEF + R_CFO",
+          "g_vars": {
+            "g1": {
+              "panel": "B",
+              "model": "4",
+              "g": "g1",
+              "mean_betas": {
+                "r_tax": 1.717541757946026,
+                "r_def": -1.3026579128169604,
+                "r_cfo": 0.5549019384935959
+              },
+              "std_betas": {
+                "r_tax": 0.5259491334376899,
+                "r_def": 1.1178638280557953,
+                "r_cfo": 0.36624495010034935
+              },
+              "t_stats": {
+                "r_tax": 3.2656043118084273,
+                "r_def": -1.1653100137273085,
+                "r_cfo": 1.5151115075895394
+              },
+              "mean_r2": 0.07413558893243334,
+              "mean_n": 1428,
+              "n_periods_used": 7,
+              "n_periods_skipped": 1,
+              "n_periods_total": 8
+            },
+            "g2": {
+              "panel": "B",
+              "model": "4",
+              "g": "g2",
+              "mean_betas": {
+                "r_tax": 2.4700849820238258,
+                "r_def": -1.845455603109081,
+                "r_cfo": 0.6614973544547809
+              },
+              "std_betas": {
+                "r_tax": 0.9956770390734708,
+                "r_def": 0.7203728651033957,
+                "r_cfo": 0.8468089172554303
+              },
+              "t_stats": {
+                "r_tax": 2.4808094242309413,
+                "r_def": -2.5618061041821742,
+                "r_cfo": 0.7811648424756109
+              },
+              "mean_r2": 0.06308510583016717,
+              "mean_n": 1181,
+              "n_periods_used": 5,
+              "n_periods_skipped": 3,
+              "n_periods_total": 8
+            },
+            "g3": {
+              "panel": "B",
+              "model": "4",
+              "g": "g3",
+              "mean_betas": {
+                "r_tax": 2.638749951015131,
+                "r_def": -1.1440337080358554,
+                "r_cfo": 1.0746594652161272
+              },
+              "std_betas": {
+                "r_tax": 0.30469536130619623,
+                "r_def": 1.1415476599797794,
+                "r_cfo": 0.8751585311150527
+              },
+              "t_stats": {
+                "r_tax": 8.66028921380061,
+                "r_def": -1.002177787352409,
+                "r_cfo": 1.2279597661544672
+              },
+              "mean_r2": 0.06415088725192834,
+              "mean_n": 930,
+              "n_periods_used": 3,
+              "n_periods_skipped": 5,
+              "n_periods_total": 8
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,191 @@
+[
+  {
+    "rule_id": "var_r_it",
+    "category": "variable",
+    "section": "§I Empirical Test",
+    "paper_location": "L84-88",
+    "paper_quote": "Let $\\tilde{R}_{it}$ be the return on security $i$ in month $t$"
+  },
+  {
+    "rule_id": "var_r_bar_it",
+    "category": "variable",
+    "section": "§I.A The Model",
+    "paper_location": "L152-156",
+    "paper_quote": "$\\bar{R}_{it}$ is the mean monthly return of security $i$ in the sample period $t + 1$ to $t + 60$ ."
+  },
+  {
+    "rule_id": "var_cross_sectional_regression",
+    "category": "variable",
+    "section": "§I.A The Model (equation 2)",
+    "paper_location": "L152",
+    "paper_quote": "$\\tilde{R}_{it} - \\bar{R}_{it} = a_{0t} + \\sum_{j=1}^{12} a_{jt} R_{it-j} + a_{13t} R_{it-24} + a_{14t} R_{it-36} + \\tilde{u}_{it}$"
+  },
+  {
+    "rule_id": "universe_crsp_monthly",
+    "category": "universe",
+    "section": "§I.B Results",
+    "paper_location": "L159",
+    "paper_quote": "The security returns data are obtained from the Center for Research in Security Prices (CRSP) monthly returns file."
+  },
+  {
+    "rule_id": "sample_period_cross_sectional_regressions",
+    "category": "sample",
+    "section": "§I.B Results (footnote 5)",
+    "paper_location": "L159-167",
+    "paper_quote": "The tests in this section are conducted over the period 1929–1982."
+  },
+  {
+    "rule_id": "sample_period_portfolio_formation",
+    "category": "sample",
+    "section": "§II.A Portfolio Formation Procedure",
+    "paper_location": "L621",
+    "paper_quote": "the starting period for portfolio formation is January 1934, and the ending period is 1987 since ex post returns data are not required in the model used here to form the predictive portfolios."
+  },
+  {
+    "rule_id": "sample_window_5_years_for_forecast",
+    "category": "sample",
+    "section": "§II.A (footnote 15)",
+    "paper_location": "L631",
+    "paper_quote": "The $\\hat{a}_{jt}$ 's for the month of January are estimated from the January regressions in the previous five years."
+  },
+  {
+    "rule_id": "sample_period_table_vi",
+    "category": "sample",
+    "section": "§III.C Bid-Ask Spread (footnote 23)",
+    "paper_location": "L1188",
+    "paper_quote": "The first full calendar year of data available in this data set is 1963."
+  },
+  {
+    "rule_id": "sample_period_size_quintiles",
+    "category": "sample",
+    "section": "§I.B Results",
+    "paper_location": "L585",
+    "paper_quote": "The stocks in the sample are sorted on the basis of market value of equity and assigned to five size-based groups."
+  },
+  {
+    "rule_id": "sample_january_excluded_febdec",
+    "category": "sample",
+    "section": "§II.A (footnote 10)",
+    "paper_location": "L589",
+    "paper_quote": "Specifically, cross-sectional regressions where January returns enter as the dependent variables are excluded from the sample."
+  },
+  {
+    "rule_id": "sort_deciles_equal_weighted",
+    "category": "sort",
+    "section": "§II.A Portfolio Formation Procedure",
+    "paper_location": "L621",
+    "paper_quote": "ten predictive portfolios are formed. Specifically, the securities in the top decile are assigned to portfolio $P1$, the securities in the next decile are assigned to portfolio $P2$, and so on, and each security in a portfolio is assigned equal weight."
+  },
+  {
+    "rule_id": "sort_monthly_rebalance",
+    "category": "sort",
+    "section": "§II.A Portfolio Formation Procedure",
+    "paper_location": "L621",
+    "paper_quote": "The same procedure is used every month to revise the predictive portfolios."
+  },
+  {
+    "rule_id": "sort_s0_desc_predicted",
+    "category": "sort",
+    "section": "§II.A",
+    "paper_location": "L621",
+    "paper_quote": "The securities are ranked in descending order on the basis of predicted returns, and ten predictive portfolios are formed."
+  },
+  {
+    "rule_id": "sort_s1_asc_lag1",
+    "category": "sort",
+    "section": "§II.A",
+    "paper_location": "L645",
+    "paper_quote": "Under the second trading strategy, labeled $ S1 $ , the securities are ranked in ascending order on the basis of the one-month lagged returns"
+  },
+  {
+    "rule_id": "sort_s12_desc_lag12",
+    "category": "sort",
+    "section": "§II.A",
+    "paper_location": "L645",
+    "paper_quote": "Under this strategy the securities are ranked in descending order on the basis of twelve-month lagged returns"
+  },
+  {
+    "rule_id": "factor_market_model",
+    "category": "factor",
+    "section": "§II.A (equation 3)",
+    "paper_location": "L647-653",
+    "paper_quote": "$\\tilde{R}_{pt} - R_{ft} = \\alpha_p + \\beta_p (R_{mt} - R_{ft}) + \\tilde{u}_{pt}$"
+  },
+  {
+    "rule_id": "factor_riskfree_rate",
+    "category": "factor",
+    "section": "§II.A",
+    "paper_location": "L653",
+    "paper_quote": "The interest rate on the one-month T-bills is used as the risk-free rate, and the interest rate data are obtained from the dataset maintained by CRSP."
+  },
+  {
+    "rule_id": "factor_market_proxy_equal_weighted",
+    "category": "factor",
+    "section": "§II.A",
+    "paper_location": "L653",
+    "paper_quote": "the CRSP equal-weighted index is used as the market proxy here."
+  },
+  {
+    "rule_id": "factor_heteroskedasticity_white",
+    "category": "factor",
+    "section": "§II.B Portfolio Performance (footnote 17)",
+    "paper_location": "L661",
+    "paper_quote": "The heteroskedasticity-consistent estimates of the standard errors suggested by White (1980) are used to compute the $ t $ -statistics."
+  },
+  {
+    "rule_id": "factor_size_based_3_factor",
+    "category": "factor",
+    "section": "§III.A (equation 4)",
+    "paper_location": "L1047-1051",
+    "paper_quote": "$\\tilde{R}_{pt} = \\alpha_0 + b_{pS} R_{St} + b_{pM} R_{Mt} + b_{pL} R_{Lt} + \\tilde{u}_{pt}$, where $R_{St}$, $R_{Mt}$, and $R_{Lt}$ are the returns on the small-, medium-, and large-firm size-quintile portfolios in month $t$"
+  },
+  {
+    "rule_id": "factor_subperiod_3_year_betas",
+    "category": "factor",
+    "section": "§III.B Time-Varying Market Risk",
+    "paper_location": "L1154",
+    "paper_quote": "the abnormal returns on the predictive portfolios were estimated by fitting the market model within eighteen three-year subperiods."
+  },
+  {
+    "rule_id": "fm_cross_sectional_monthly",
+    "category": "fm",
+    "section": "§I.B Results",
+    "paper_location": "L159",
+    "paper_quote": "The regression model (2) is fitted separately for each month using the OLS procedure. The parameter estimates and the test statistics are obtained from the time series of monthly cross-sectional regression estimates as in Fama and MacBeth (1973)."
+  },
+  {
+    "rule_id": "fm_5_year_forecast_window",
+    "category": "fm",
+    "section": "§II.A",
+    "paper_location": "L621",
+    "paper_quote": "$\\hat{a}_{jt}$ 's are estimated from a regression model similar to the regression model (2), with the raw return $\\hat{R}_{it}$ as the dependent variable in the place of $\\hat{R}_{it} - \\bar{R}_{it}$, over the period $t - 60$ to $t - 1$"
+  },
+  {
+    "rule_id": "fm_size_quintile_subsamples",
+    "category": "fm",
+    "section": "§I.B Results",
+    "paper_location": "L585",
+    "paper_quote": "The groups are revised every month based on firm size at the end of the previous month, and the regression model (2) is fitted within each group."
+  },
+  {
+    "rule_id": "var_bias_adjusted_lag1_excl_last_day",
+    "category": "variable",
+    "section": "§III.C Bid-Ask Spread",
+    "paper_location": "L1174",
+    "paper_quote": "in order to avoid measurement error-induced biases, $R_{it-1}$ is measured excluding the last trading day in month $t - 1$ . As an added precaution, the securities which did not trade on the last trading day of the month $t - 1$ were deleted from the sample for the month $t$ ."
+  },
+  {
+    "rule_id": "delisting_crsp_default",
+    "category": "delisting",
+    "section": "§I.B Results",
+    "paper_location": "L159",
+    "paper_quote": "The security returns data are obtained from the Center for Research in Security Prices (CRSP) monthly returns file."
+  },
+  {
+    "rule_id": "winsorize_paper_silent",
+    "category": "winsorize",
+    "section": "§I.A The Model",
+    "paper_location": "L84-88",
+    "paper_quote": "Let $\\tilde{R}_{it}$ be the return on security $i$ in month $t$"
+  }
+]

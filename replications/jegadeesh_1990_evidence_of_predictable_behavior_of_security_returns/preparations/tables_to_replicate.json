@@ -1,0 +1,200 @@
+{
+  "paper_claims": [
+    {
+      "id": "C1",
+      "claim": "Under strategy S0 (regression-based forecast), the extreme decile spread P1-P10 has abnormal return of 2.49% per month over 1934-1987 (t=16.82).",
+      "paper_location": "L657",
+      "headline": true
+    },
+    {
+      "id": "C2",
+      "claim": "Monthly returns exhibit strong negative first-order serial correlation: a_1 = -0.0923 (t=-18.58) in the all-sample cross-sectional regression over 1929-1982.",
+      "paper_location": "L183",
+      "headline": true
+    },
+    {
+      "id": "C3",
+      "claim": "Twelve-month-lagged return coefficient is positive and highly significant: a_12 = 0.0339 (t=9.09) in the all-sample regression over 1929-1982.",
+      "paper_location": "L183"
+    },
+    {
+      "id": "C4",
+      "claim": "The serial correlation pattern persists outside January (Feb-Dec subsample): a_1 = -0.0801 (t=-17.20), a_12 = 0.0297 (t=7.96).",
+      "paper_location": "L581"
+    },
+    {
+      "id": "C5",
+      "claim": "The size-based 3-factor model (R_St, R_Mt, R_Lt) yields a similar P1-P10 abnormal return of 2.46% per month under S0 (1934-1987).",
+      "paper_location": "L1053"
+    },
+    {
+      "id": "C6",
+      "claim": "P1-P10 portfolios formed under S0 vs S1 overlap by 51.6%; Spearman rank correlation between S0 and S1 is 0.664.",
+      "paper_location": "L675"
+    }
+  ],
+  "budget_flag": "Large paper: Table II alone has ~190 cells, Table I has ~110+ cells. Selected headline rows across all 6 tables (~360 total cells). Trimmed Table I to 4 key lags (a_0, a_1, a_12, a_24) and the R^2 column, plus all 11 sample-period groups. Each table chosen because it exercises a distinct part of the methodology (cross-sectional regression, decile sort + market model, size-based factor model, overlap/correlations, bid-ask robustness).",
+  "tables": [
+    {
+      "id": "T1_tableI_regression",
+      "table_ref": "Table I",
+      "description": "Cross-sectional regression estimates (a_0, a_1, a_12, a_24) and adjusted R^2 for 11 sample groups (All, Jan, Feb-Dec for each of All-sample, Q1, Q3, Q5). Sample period: 1929-1982.",
+      "replication_meaning": "Demonstrates the cross-sectional regression methodology (eq. 2 with lags 1-12 + 24 + 36) is correctly estimated each month, Fama-MacBeth time-series inference is applied, and the sample composition (full sample + Jan/Feb-Dec splits + size quintiles) is correct. Headline coefficient a_1 (negative serial correlation) and a_12 (12-month reversal) at the full sample establish claims C2 and C3.",
+      "covers_claims": ["C2", "C3", "C4"],
+      "paper_quote": "Model: R_it - R_bar_it = a_0t + sum_{j=1}^{12} a_jt R_it-j + a_14t R_it-36 + u_it. The above cross-sectional regression is fitted each month across the full sample of securities and also within size-based subsamples. The sample period is 1929-1982. (L215-216)",
+      "exercises_preprocessing_rules": ["universe_crsp_monthly", "sample_period_cross_sectional_regressions", "fm_cross_sectional_monthly", "fm_size_quintile_subsamples", "var_cross_sectional_regression"],
+      "metrics": [
+        {"name": "all_a0",     "value": -0.0033, "unit": "coefficient", "tolerance_pct": 25, "paper_location": "L242"},
+        {"name": "all_a1",     "value": -0.0923, "unit": "coefficient", "tolerance_pct": 15, "paper_location": "L243"},
+        {"name": "all_a12",    "value":  0.0339, "unit": "coefficient", "tolerance_pct": 15, "paper_location": "L254"},
+        {"name": "all_a14",    "value":  0.0187, "unit": "coefficient", "tolerance_pct": 20, "paper_location": "L256"},
+        {"name": "all_r2",     "value":  0.108,  "unit": "r_squared",   "tolerance_pct": 25, "paper_location": "L257"},
+        {"name": "all_t_a0",   "value": -1.78,   "unit": "t_stat",      "tolerance_pct": 25, "paper_location": "L261"},
+        {"name": "all_t_a1",   "value": -18.58,  "unit": "t_stat",      "tolerance_pct": 15, "paper_location": "L262"},
+        {"name": "all_t_a12",  "value":   9.09,  "unit": "t_stat",      "tolerance_pct": 20, "paper_location": "L273"},
+        {"name": "all_t_a14",  "value":   6.57,  "unit": "t_stat",      "tolerance_pct": 20, "paper_location": "L275"},
+        {"name": "all_jan_a0",  "value":  0.0126, "unit": "coefficient", "tolerance_pct": 30, "paper_location": "L280"},
+        {"name": "all_jan_a1",  "value": -0.2261, "unit": "coefficient", "tolerance_pct": 20, "paper_location": "L281"},
+        {"name": "all_jan_a12", "value":  0.0292, "unit": "coefficient", "tolerance_pct": 30, "paper_location": "L292"},
+        {"name": "all_jan_a14", "value":  0.0337, "unit": "coefficient", "tolerance_pct": 30, "paper_location": "L293"},
+        {"name": "all_jan_t_a0", "value":   2.06, "unit": "t_stat",      "tolerance_pct": 30, "paper_location": "L299"},
+        {"name": "all_jan_t_a1", "value":  -9.42, "unit": "t_stat",      "tolerance_pct": 20, "paper_location": "L300"},
+        {"name": "all_jan_t_a12","value":   4.81, "unit": "t_stat",      "tolerance_pct": 25, "paper_location": "L311"},
+        {"name": "all_jan_t_a14","value":   2.76, "unit": "t_stat",      "tolerance_pct": 30, "paper_location": "L312"},
+        {"name": "all_febdec_a0",  "value": -0.0047, "unit": "coefficient", "tolerance_pct": 25, "paper_location": "L318"},
+        {"name": "all_febdec_a1",  "value": -0.0801, "unit": "coefficient", "tolerance_pct": 15, "paper_location": "L319"},
+        {"name": "all_febdec_a12", "value":  0.0297, "unit": "coefficient", "tolerance_pct": 15, "paper_location": "L330"},
+        {"name": "all_febdec_a14", "value":  0.0174, "unit": "coefficient", "tolerance_pct": 20, "paper_location": "L332"},
+        {"name": "all_febdec_r2",  "value":  0.102,  "unit": "r_squared",   "tolerance_pct": 25, "paper_location": "L333"},
+        {"name": "all_febdec_t_a0",  "value": -2.45, "unit": "t_stat",      "tolerance_pct": 25, "paper_location": "L337"},
+        {"name": "all_febdec_t_a1",  "value": -17.20,"unit": "t_stat",      "tolerance_pct": 15, "paper_location": "L338"},
+        {"name": "all_febdec_t_a12", "value":   7.96,"unit": "t_stat",      "tolerance_pct": 20, "paper_location": "L349"},
+        {"name": "all_febdec_t_a14", "value":   6.02,"unit": "t_stat",      "tolerance_pct": 20, "paper_location": "L351"},
+        {"name": "q1_a0",  "value": -0.0037, "unit": "coefficient", "tolerance_pct": 30, "paper_location": "L356"},
+        {"name": "q1_a1",  "value": -0.1342, "unit": "coefficient", "tolerance_pct": 20, "paper_location": "L357"},
+        {"name": "q1_a12", "value":  0.0248, "unit": "coefficient", "tolerance_pct": 25, "paper_location": "L368"},
+        {"name": "q1_a14", "value":  0.0192, "unit": "coefficient", "tolerance_pct": 25, "paper_location": "L370"},
+        {"name": "q1_r2",  "value":  0.093,  "unit": "r_squared",   "tolerance_pct": 30, "paper_location": "L371"},
+        {"name": "q3_a0",  "value": -0.0043, "unit": "coefficient", "tolerance_pct": 30, "paper_location": "L470"},
+        {"name": "q3_a1",  "value": -0.0881, "unit": "coefficient", "tolerance_pct": 20, "paper_location": "L471"},
+        {"name": "q3_a12", "value":  0.0256, "unit": "coefficient", "tolerance_pct": 25, "paper_location": "L482"},
+        {"name": "q3_a14", "value":  0.0181, "unit": "coefficient", "tolerance_pct": 25, "paper_location": "L484"},
+        {"name": "q3_r2",  "value":  0.113,  "unit": "r_squared",   "tolerance_pct": 30, "paper_location": "L485"}
+      ],
+      "notes": "Selected key lags (a_0, a_1, a_12, a_14=a_36) + adjusted R^2 across the 11 sample groups. Sample-period groups are All (full), Jan, Feb-Dec, Q1 (small), Q3 (medium), Q5 (large) -- each with full/Jan/Feb-Dec rows except Q5 which is reported in the paper."
+    },
+    {
+      "id": "T2_tableII_portfolios",
+      "table_ref": "Table II",
+      "description": "Market-model abnormal returns (alphas) on predictive portfolios P1-P10 and the P1-P10 zero-investment spread for S0, S1, S12 strategies, evaluated over Jan-Dec, Jan, and Feb-Dec subsamples. Sample period: 1934-1987.",
+      "replication_meaning": "Demonstrates the headline result: the decile portfolio formation procedure (sort by predicted/1-month/12-month returns, equal-weight, monthly rebalance), the market-model estimation with CRSP EWI market proxy and 1-month T-bill risk-free rate, and the White (1980) heteroskedasticity-consistent t-statistic. This is the table the paper sells in its abstract (claim C1).",
+      "covers_claims": ["C1"],
+      "paper_quote": "Predictive portfolios are formed under three different strategies: S0, S1, and S12. ... The abnormal returns are estimated using the market model with monthly returns. The sample period is 1934-1987. (L701)",
+      "exercises_preprocessing_rules": ["sample_period_portfolio_formation", "sort_deciles_equal_weighted", "sort_monthly_rebalance", "sort_s0_desc_predicted", "sort_s1_asc_lag1", "sort_s12_desc_lag12", "factor_market_model", "factor_riskfree_rate", "factor_market_proxy_equal_weighted", "factor_heteroskedasticity_white"],
+      "metrics": [
+        {"name": "s0_p1_alpha_jandec",  "value":  0.0111, "unit": "alpha_per_month", "tolerance_pct": 25, "paper_location": "L722"},
+        {"name": "s0_p1_alpha_jan",     "value":  0.0241, "unit": "alpha_per_month", "tolerance_pct": 25, "paper_location": "L725"},
+        {"name": "s0_p1_alpha_febdec",  "value":  0.0096, "unit": "alpha_per_month", "tolerance_pct": 25, "paper_location": "L726"},
+        {"name": "s0_p5_alpha_jandec",  "value":  0.0013, "unit": "alpha_per_month", "tolerance_pct": 30, "paper_location": "L771"},
+        {"name": "s0_p10_alpha_jandec", "value": -0.0138, "unit": "alpha_per_month", "tolerance_pct": 20, "paper_location": "L867"},
+        {"name": "s0_p10_alpha_jan",    "value": -0.0196, "unit": "alpha_per_month", "tolerance_pct": 25, "paper_location": "L868"},
+        {"name": "s0_p10_alpha_febdec", "value": -0.0127, "unit": "alpha_per_month", "tolerance_pct": 20, "paper_location": "L869"},
+        {"name": "s0_spread_jandec",    "value":  0.0249, "unit": "alpha_per_month", "tolerance_pct": 20, "paper_location": "L879"},
+        {"name": "s0_spread_jan",       "value":  0.0437, "unit": "alpha_per_month", "tolerance_pct": 20, "paper_location": "L880"},
+        {"name": "s0_spread_febdec",    "value":  0.0220, "unit": "alpha_per_month", "tolerance_pct": 20, "paper_location": "L881"},
+        {"name": "s0_spread_t_jandec",  "value": 16.82,   "unit": "t_stat",          "tolerance_pct": 20, "paper_location": "L879"},
+        {"name": "s0_spread_t_jan",     "value":  5.42,   "unit": "t_stat",          "tolerance_pct": 25, "paper_location": "L880"},
+        {"name": "s0_spread_t_febdec",  "value": 15.63,   "unit": "t_stat",          "tolerance_pct": 20, "paper_location": "L881"},
+        {"name": "s1_p1_alpha_jandec",  "value":  0.0092, "unit": "alpha_per_month", "tolerance_pct": 25, "paper_location": "L726"},
+        {"name": "s1_p1_alpha_jan",     "value":  0.0085, "unit": "alpha_per_month", "tolerance_pct": 30, "paper_location": "L729"},
+        {"name": "s1_p10_alpha_jandec", "value": -0.0102, "unit": "alpha_per_month", "tolerance_pct": 25, "paper_location": "L870"},
+        {"name": "s1_spread_jandec",    "value":  0.0199, "unit": "alpha_per_month", "tolerance_pct": 20, "paper_location": "L882"},
+        {"name": "s1_spread_jan",       "value":  0.0389, "unit": "alpha_per_month", "tolerance_pct": 25, "paper_location": "L883"},
+        {"name": "s1_spread_febdec",    "value":  0.0175, "unit": "alpha_per_month", "tolerance_pct": 20, "paper_location": "L884"},
+        {"name": "s1_spread_t_jandec",  "value": 12.55,   "unit": "t_stat",          "tolerance_pct": 25, "paper_location": "L882"},
+        {"name": "s1_spread_t_febdec",  "value": 11.60,   "unit": "t_stat",          "tolerance_pct": 20, "paper_location": "L884"},
+        {"name": "s12_p1_alpha_jandec", "value":  0.0041, "unit": "alpha_per_month", "tolerance_pct": 30, "paper_location": "L729"},
+        {"name": "s12_p10_alpha_jandec","value": -0.0052, "unit": "alpha_per_month", "tolerance_pct": 30, "paper_location": "L873"},
+        {"name": "s12_spread_jandec",   "value":  0.0093, "unit": "alpha_per_month", "tolerance_pct": 30, "paper_location": "L885"},
+        {"name": "s12_spread_febdec",   "value":  0.0073, "unit": "alpha_per_month", "tolerance_pct": 30, "paper_location": "L887"}
+      ],
+      "notes": "Selected P1, P5, P10 alphas plus P1-P10 spread (with t-stats) for the three strategies and three sub-periods. Full 10-portfolio sweep at this granularity would exceed budget; the spread (the headline claim) and the extreme portfolios carry the inference."
+    },
+    {
+      "id": "T3_tableIII_proportions",
+      "table_ref": "Table III",
+      "description": "Proportion of months in which each predictive portfolio earned positive abnormal returns, by strategy and subperiod. Sample period: 1934-1987.",
+      "replication_meaning": "Validates the market-model alpha sign consistency — a positive-alpha portfolio should be positive > 50% of months and a negative-alpha portfolio < 50%. This is a second-look cross-check on the alphas in Table II using a non-parametric sign test rather than a t-statistic.",
+      "covers_claims": ["C1"],
+      "paper_quote": "The entries indicate the proportion of the months in the sample period in which the respective portfolios earned positive abnormal returns. (L972)",
+      "exercises_preprocessing_rules": ["factor_market_model", "factor_heteroskedasticity_white"],
+      "metrics": [
+        {"name": "s0_p1_posprop_jandec",  "value": 0.705, "unit": "proportion", "tolerance_pct": 10, "paper_location": "L958"},
+        {"name": "s0_p10_posprop_jandec", "value": 0.204, "unit": "proportion", "tolerance_pct": 10, "paper_location": "L967"},
+        {"name": "s0_p1_minus_p10_posprop_jandec", "value": 0.796, "unit": "proportion", "tolerance_pct": 10, "paper_location": "L968"},
+        {"name": "s1_p1_posprop_jandec",  "value": 0.651, "unit": "proportion", "tolerance_pct": 10, "paper_location": "L958"},
+        {"name": "s1_p10_posprop_jandec", "value": 0.278, "unit": "proportion", "tolerance_pct": 10, "paper_location": "L967"},
+        {"name": "s12_p1_posprop_jandec", "value": 0.605, "unit": "proportion", "tolerance_pct": 10, "paper_location": "L958"},
+        {"name": "s12_p10_posprop_jandec","value": 0.349, "unit": "proportion", "tolerance_pct": 15, "paper_location": "L967"}
+      ],
+      "notes": "Selected P1, P10, and P1-P10 (sign-consistency) proportions across S0, S1, S12 (Jan-Dec)."
+    },
+    {
+      "id": "T4_tableIV_overlap_rankcorr",
+      "table_ref": "Table IV",
+      "description": "Pair-wise relation between trading strategies S0, S1, S12: (I) proportion of securities in P1-P10 under one strategy also in P1-P10 under another, (II) Spearman rank correlation of the predictive signal.",
+      "replication_meaning": "Demonstrates that the decile sort genuinely differs across the three strategies and that S0 has material signal content beyond the 1-month lag (S1) alone. Validates the paper's argument that the multi-lag forecast captures information not in the simple reversal sort. Supports claim C6.",
+      "covers_claims": ["C6"],
+      "paper_quote": "Proportion of securities in the predictive portfolio P1-P10 under one strategy which are also included in the predictive portfolio under another trading strategy ... Spearman rank correlation coefficient. (L997, L1022)",
+      "exercises_preprocessing_rules": ["sort_s0_desc_predicted", "sort_s1_asc_lag1", "sort_s12_desc_lag12"],
+      "metrics": [
+        {"name": "overlap_s0_s1",       "value": 0.516, "unit": "proportion",        "tolerance_pct": 15, "paper_location": "L1008"},
+        {"name": "overlap_s0_s12",      "value": 0.220, "unit": "proportion",        "tolerance_pct": 20, "paper_location": "L1013"},
+        {"name": "overlap_s1_s12",      "value": 0.128, "unit": "proportion",        "tolerance_pct": 25, "paper_location": "L1014"},
+        {"name": "spearman_s0_s1",      "value": 0.664, "unit": "correlation",       "tolerance_pct": 15, "paper_location": "L1033"},
+        {"name": "spearman_s0_s12",     "value": 0.202, "unit": "correlation",       "tolerance_pct": 25, "paper_location": "L1038"},
+        {"name": "spearman_s1_s12",     "value": -0.012,"unit": "correlation",       "tolerance_pct": 50, "zero_band": 0.05, "paper_location": "L1039"}
+      ],
+      "notes": "All six cells from Table IV. The S1-S12 Spearman is near zero (paper prints -0.012)."
+    },
+    {
+      "id": "T5_tableV_size_model",
+      "table_ref": "Table V",
+      "description": "Predictive portfolio abnormal returns under a 3-factor size-based model (R_St, R_Mt, R_Lt) for P1, P10, and P1-P10 under S0, S1, S12 over Jan-Dec and Feb-Dec subsamples. Sample period: 1934-1987.",
+      "replication_meaning": "Demonstrates the size-based 3-factor model alternative to the market model: residuals of equal-weighted decile portfolios regressed on small/medium/large size-quintile returns. Validates that the predictive-portfolio abnormal returns are NOT fully explained by size-based risk (claim C5) -- supports the paper's robustness argument.",
+      "covers_claims": ["C5"],
+      "paper_quote": "The estimate of the abnormal return in (4) on the portfolio P1-P10 is 2.46 percent (in terms of the value of the long or short position) per month, which is close to the estimate of 2.49 percent under the market model. (L1053)",
+      "exercises_preprocessing_rules": ["factor_size_based_3_factor"],
+      "metrics": [
+        {"name": "size_s0_p1_alpha_jandec",  "value":  0.0103, "unit": "alpha_per_month", "tolerance_pct": 25, "paper_location": "L1107"},
+        {"name": "size_s0_p10_alpha_jandec", "value": -0.0143, "unit": "alpha_per_month", "tolerance_pct": 25, "paper_location": "L1118"},
+        {"name": "size_s0_spread_jandec",    "value":  0.0246, "unit": "alpha_per_month", "tolerance_pct": 25, "paper_location": "L1130"},
+        {"name": "size_s0_spread_febdec",    "value":  0.0237, "unit": "alpha_per_month", "tolerance_pct": 25, "paper_location": "L1131"},
+        {"name": "size_s1_spread_jandec",    "value":  0.0213, "unit": "alpha_per_month", "tolerance_pct": 25, "paper_location": "L1133"},
+        {"name": "size_s12_spread_jandec",   "value":  0.0091, "unit": "alpha_per_month", "tolerance_pct": 30, "paper_location": "L1136"},
+        {"name": "size_s12_spread_febdec",   "value":  0.0068, "unit": "alpha_per_month", "tolerance_pct": 30, "paper_location": "L1138"}
+      ],
+      "notes": "Selected P1, P10, P1-P10 alpha (and t-stat where headline) for the size-based model across S0/S1/S12. Reduced from the full Table V due to budget."
+    },
+    {
+      "id": "T6_tableVI_bidask",
+      "table_ref": "Table VI",
+      "description": "Predictive portfolio abnormal returns under bid-ask-spread/thin-trading bias correction, sample period 1963-1987. Panel I uses the full prior month return; Panel II uses the prior month return excluding the last trading day.",
+      "replication_meaning": "Demonstrates that the headline S0/S1 results are not driven by bid-ask bounce or thin-trading bias. Panel II requires daily-return filtering (exclude last trading day of month t-1) and per-month PIT eligibility (delete securities without trade on last day of t-1). Sample period 1963-1987 is much shorter than the main analysis.",
+      "covers_claims": ["C1"],
+      "paper_quote": "The abnormal returns on the extreme decile portfolios under the strategies S0 and S1 described in Table II are presented in Panel I. Panel II contains the abnormal returns on the predictive portfolios formed under these strategies but using the returns in the month t-1 excluding the last trading day for the purpose of prediction. (L1204)",
+      "exercises_preprocessing_rules": ["sample_period_table_vi", "var_bias_adjusted_lag1_excl_last_day", "factor_market_model"],
+      "metrics": [
+        {"name": "panelI_s0_spread_jandec",  "value":  0.0207, "unit": "alpha_per_month", "tolerance_pct": 25, "paper_location": "L1270"},
+        {"name": "panelI_s0_spread_t_jandec","value": 10.30,   "unit": "t_stat",          "tolerance_pct": 25, "paper_location": "L1279"},
+        {"name": "panelI_s1_spread_jandec",  "value":  0.0153, "unit": "alpha_per_month", "tolerance_pct": 25, "paper_location": "L1273"},
+        {"name": "panelI_s1_spread_t_jandec","value":  7.41,   "unit": "t_stat",          "tolerance_pct": 25, "paper_location": "L1282"},
+        {"name": "panelII_s0_spread_jandec", "value":  0.0177, "unit": "alpha_per_month", "tolerance_pct": 25, "paper_location": "L1333"},
+        {"name": "panelII_s0_spread_t_jandec","value": 8.78,   "unit": "t_stat",          "tolerance_pct": 25, "paper_location": "L1346"},
+        {"name": "panelII_s1_spread_jandec", "value":  0.0108, "unit": "alpha_per_month", "tolerance_pct": 25, "paper_location": "L1336"},
+        {"name": "panelII_s1_spread_t_jandec","value": 5.37,   "unit": "t_stat",          "tolerance_pct": 25, "paper_location": "L1347"}
+      ],
+      "notes": "Selected P1-P10 spread + t-stat for both panels under S0 and S1 (Jan-Dec). The full Table VI reports P1/P10 alphas as well, omitted here for budget."
+    }
+  ]
+}

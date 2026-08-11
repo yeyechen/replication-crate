@@ -1,0 +1,105 @@
+{
+  "verdict": "ready",
+  "requirements": [
+    {
+      "id": "comp_fundamentals",
+      "description": "Compustat annual fundamentals for DuPont decomposition (NOA, PM, ATO, RNOA, sales, debt, equity, minority interest, cash, STI, investments, current assets/liabilities, accruals)",
+      "needed_columns": ["gvkey", "fyear", "datadate", "sale", "at", "act", "lct", "che", "ivst", "dltt", "dlc", "mib", "ceq", "teq", "pstk", "pstkr", "oiadp", "ib", "capx", "cogs", "xsga", "rect", "invt", "emp", "txt", "lt"],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": ["gvkey", "fyear", "datadate", "sale", "at", "act", "lct", "che", "ivst", "dltt", "dlc", "mib", "ceq", "teq", "pstk", "pstkr", "oiadp", "ib", "capx", "cogs", "xsga", "rect", "invt", "emp", "txt", "lt"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "comp_link_to_crsp",
+      "description": "Compustat-CRSP link table (gvkey ↔ permno PIT)",
+      "needed_columns": ["gvkey", "permno", "linkdt", "linkenddt"],
+      "matched_table": "crsp_202601.ccmxpf_linktable",
+      "matched_columns": ["gvkey", "permno", "linkdt", "linkenddt"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "comp_company_metadata",
+      "description": "Compustat company-level metadata for SIC code (financial-firm exclusion SIC 6000-6999)",
+      "needed_columns": ["gvkey", "sic"],
+      "matched_table": "comp_202601.company",
+      "matched_columns": ["gvkey", "sic"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_daily_returns",
+      "description": "CRSP daily stock returns, prices, shares outstanding for the sample period (1984-2002) for buy-hold return construction (long-window and short-window)",
+      "needed_columns": ["permno", "date", "ret", "prc", "shrout"],
+      "matched_table": "crsp_202601.dsf",
+      "matched_columns": ["permno", "date", "ret", "prc", "shrout", "hexcd", "hsiccd", "cusip", "cfacpr", "cfacshr"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_delisting_returns",
+      "description": "CRSP delisting returns for Shumway (1997) substitution of -35%/-55% for performance-related delistings",
+      "needed_columns": ["permno", "dlstcd", "dlret", "dlstdat", "hexcd"],
+      "matched_table": "crsp_202601.dsedelist",
+      "matched_columns": ["permno", "dlstcd", "dlret", "dlstdat", "hexcd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_universe_filter",
+      "description": "CRSP header table for point-in-time universe filter (share code 10/11, exchange code 1/2/3)",
+      "needed_columns": ["permno", "begdat", "enddat", "hshrcd", "hexcd"],
+      "matched_table": "crsp_202601.dsfhdr",
+      "matched_columns": ["permno", "begdat", "enddat", "hshrcd", "hexcd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_value_weighted_index",
+      "description": "CRSP value-weighted index returns (raw return minus value-weighted return = market-adjusted return)",
+      "needed_columns": ["date", "vwretd"],
+      "matched_table": "crsp_202601.dsi",
+      "matched_columns": ["date", "vwretd", "vwretx", "ewretd", "ewretx", "sprtrn"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_factors",
+      "description": "Fama-French 3-factor monthly (Mkt-RF, SMB, HML, RF) for the FF risk factor controls in Table 7",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "rf"],
+      "matched_table": "ff.three_factor",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ibes_consensus_stats",
+      "description": "IBES consensus statistics (median forecast) for the firm-year level — used to construct Anal_REV (first post-announcement median of t+1 minus last pre-announcement median of t+1) and SUR (annual actual EPS minus most recent pre-announcement median forecast)",
+      "needed_columns": ["ticker", "statpers", "fiscalp", "measure", "medest", "numest", "fpedats"],
+      "matched_table": "ibes_202601.statsumu_epsus",
+      "matched_columns": ["ticker", "cusip", "oftic", "cname", "statpers", "measure", "fiscalp", "fpi", "estflag", "curcode", "numest", "numup", "numdown", "medest", "meanest", "stdev", "highest", "lowest", "usfirm", "fpedats"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ibes_forecast_detail",
+      "description": "IBES detailed unadjusted forecast data with announcement dates — for forecast-revision / forecast-error construction where announcement-date precision is needed (vs. monthly statpers snapshots)",
+      "needed_columns": ["ticker", "actdats", "fpedats", "value", "measure", "anndats"],
+      "matched_table": "ibes_202601.detu_epsus",
+      "matched_columns": ["ticker", "cusip", "oftic", "cname", "actdats", "estimator", "analys", "currfl", "pdf", "fpi", "measure", "value", "curr", "usfirm", "fpedats", "acttims", "revdats", "revtims", "anndats", "anntims", "report_curr"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ibes_actual_eps",
+      "description": "IBES actual reported EPS for the realized-earnings side of the forecast-error test (Table 9)",
+      "needed_columns": ["ticker", "anndats", "actual", "pyear", "pmon"],
+      "matched_table": "ibes_202601.surpsumu",
+      "matched_columns": ["ticker", "oftic", "measure", "fiscalp", "pyear", "pmon", "usfirm", "anndats", "actual", "surpmean", "surpstdev", "suescore"],
+      "missing_columns": [],
+      "status": "full"
+    }
+  ],
+  "blocking_issues": []
+}

@@ -1,0 +1,55 @@
+{
+  "iterations": [
+    {
+      "iteration": 1,
+      "loss": 0.39325842696629215,
+      "n_total_evaluated": 89,
+      "tier_counts": {
+        "tier1": 55,
+        "tier2": 33,
+        "fail": 1,
+        "missing": 0,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 2,
+      "loss": 0.3707865168539326,
+      "n_total_evaluated": 89,
+      "tier_counts": {
+        "tier1": 57,
+        "tier2": 31,
+        "fail": 1,
+        "missing": 0,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 3,
+      "loss": 0.3707865168539326,
+      "n_total_evaluated": 89,
+      "tier_counts": {
+        "tier1": 57,
+        "tier2": 31,
+        "fail": 1,
+        "missing": 0,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 5,
+      "loss": 0.3595505617977528,
+      "n_committed": 89,
+      "status_counts": {
+        "match": 57,
+        "fail": 32,
+        "missing": 0,
+        "skip": 0,
+        "no_effect": 0
+      }
+    }
+  ]
+}

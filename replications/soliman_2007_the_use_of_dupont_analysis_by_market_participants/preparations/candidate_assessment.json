@@ -1,0 +1,6 @@
+{
+  "replicable": true,
+  "paper_type": "empirical_cross_sectional",
+  "rationale": "Soliman (2007) is an empirical cross-sectional accounting paper that decomposes RNOA into PM and ATO (DuPont components) and tests whether market participants (investors and analysts) use this information. The paper uses Compustat (financial statements), CRSP (returns), and I/B/E/S (analyst forecasts), 1984-2002. All variables are operationalized with explicit Compustat item numbers and formulas. The paper reports nine tables of annual cross-sectional Fama-MacBeth regression results (coefficients + Newey-West t-stats), descriptive statistics, and a correlation matrix. The methodology is clearly specified: sample size 38,716 firm-years, SIC 6000-6999 excluded, firm-years with negative operating income and negative NOA excluded, winsorized at 1%/99%. The paper provides explicit I/B/E/S forecast revision and forecast error formulas and Compustat-based definitions for all DuPont components.",
+  "block_reasons": []
+}

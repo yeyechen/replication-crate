@@ -1,0 +1,670 @@
+{
+  "schema_version": 2,
+  "slug": "lev_nissim_2004_taxable_income_future_earnings_and_equity_values",
+  "metrics": {
+    "T2_A_R_TAX_only_G1_mean_b1": {
+      "value": 0.4673255697599608,
+      "paper": 0.354,
+      "unit": "coefficient",
+      "tolerance_pct": 20,
+      "paper_location": "L1744",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_A_R_TAX_only_G1_t_b1": {
+      "value": 0.9874553316940656,
+      "paper": 10.364,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L1746",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_A_R_TAX_only_G1_R2": {
+      "value": 0.060162281153337105,
+      "paper": 0.093,
+      "unit": "r_squared",
+      "tolerance_pct": 15,
+      "paper_location": "L1750",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_A_R_TAX_only_G1_n": {
+      "value": 1244.0,
+      "paper": 1144,
+      "unit": "count",
+      "tolerance_pct": 10,
+      "paper_location": "L1751",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_A_R_TAX_only_G2_mean_b1": {
+      "value": 0.5316242306370526,
+      "paper": 0.461,
+      "unit": "coefficient",
+      "tolerance_pct": 20,
+      "paper_location": "L1755",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_A_R_TAX_only_G2_t_b1": {
+      "value": 0.898869141315151,
+      "paper": 12.499,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L1756",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_A_R_TAX_only_G2_R2": {
+      "value": 0.06377724355192245,
+      "paper": 0.105,
+      "unit": "r_squared",
+      "tolerance_pct": 15,
+      "paper_location": "L1761",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_A_R_TAX_only_G2_n": {
+      "value": 1122.0,
+      "paper": 1028,
+      "unit": "count",
+      "tolerance_pct": 10,
+      "paper_location": "L1762",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_A_R_TAX_only_G3_mean_b1": {
+      "value": 0.7032830986188183,
+      "paper": 0.545,
+      "unit": "coefficient",
+      "tolerance_pct": 20,
+      "paper_location": "L1766",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_A_R_TAX_only_G3_t_b1": {
+      "value": 1.1270930934238856,
+      "paper": 15.253,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L1767",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_A_R_TAX_only_G3_R2": {
+      "value": 0.057808995025434705,
+      "paper": 0.116,
+      "unit": "r_squared",
+      "tolerance_pct": 15,
+      "paper_location": "L1772",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_A_R_TAX_only_G3_n": {
+      "value": 998.0,
+      "paper": 918,
+      "unit": "count",
+      "tolerance_pct": 10,
+      "paper_location": "L1773",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_A_full_model_G1_mean_b1": {
+      "value": 0.4565847368411987,
+      "paper": 0.406,
+      "unit": "coefficient",
+      "tolerance_pct": 20,
+      "paper_location": "L1843",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_A_full_model_G1_t_b1": {
+      "value": 1.331336056959017,
+      "paper": 11.225,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L1844",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_A_full_model_G1_mean_b3": {
+      "value": 0.3117076430084119,
+      "paper": 0.183,
+      "unit": "coefficient",
+      "tolerance_pct": 20,
+      "paper_location": "L1847",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_A_full_model_G1_t_b3": {
+      "value": 0.5291396378368448,
+      "paper": 4.539,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L1848",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_A_full_model_G1_R2": {
+      "value": 0.07094821266993363,
+      "paper": 0.099,
+      "unit": "r_squared",
+      "tolerance_pct": 15,
+      "paper_location": "L1849",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_A_full_model_G2_mean_b1": {
+      "value": 0.504980771586383,
+      "paper": 0.524,
+      "unit": "coefficient",
+      "tolerance_pct": 20,
+      "paper_location": "L1854",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_A_full_model_G2_t_b1": {
+      "value": 1.7800259113525676,
+      "paper": 11.943,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L1855",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_A_full_model_G2_mean_b3": {
+      "value": 0.5617560428762272,
+      "paper": 0.266,
+      "unit": "coefficient",
+      "tolerance_pct": 20,
+      "paper_location": "L1858",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_A_full_model_G2_t_b3": {
+      "value": 0.8907170788198803,
+      "paper": 6.479,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L1859",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_A_full_model_G2_R2": {
+      "value": 0.07583578286241544,
+      "paper": 0.112,
+      "unit": "r_squared",
+      "tolerance_pct": 15,
+      "paper_location": "L1860",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_A_full_model_G3_mean_b1": {
+      "value": 0.8060405478766081,
+      "paper": 0.618,
+      "unit": "coefficient",
+      "tolerance_pct": 20,
+      "paper_location": "L1864",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_A_full_model_G3_t_b1": {
+      "value": 3.3649423011390085,
+      "paper": 14.46,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L1865",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_A_full_model_G3_mean_b3": {
+      "value": 0.4275507926975548,
+      "paper": 0.177,
+      "unit": "coefficient",
+      "tolerance_pct": 20,
+      "paper_location": "L1869",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_A_full_model_G3_t_b3": {
+      "value": 0.45715910235767226,
+      "paper": 4.026,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L1870",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_A_full_model_G3_R2": {
+      "value": 0.06872524615097989,
+      "paper": 0.121,
+      "unit": "r_squared",
+      "tolerance_pct": 15,
+      "paper_location": "L1871",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_B_R_TAX_only_G1_mean_b1": {
+      "value": 1.8621122323659556,
+      "paper": 0.534,
+      "unit": "coefficient",
+      "tolerance_pct": 20,
+      "paper_location": "L1896",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_B_R_TAX_only_G1_t_b1": {
+      "value": 2.6882623552724194,
+      "paper": 8.531,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L1897",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_B_R_TAX_only_G1_R2": {
+      "value": 0.06445008561935199,
+      "paper": 0.078,
+      "unit": "r_squared",
+      "tolerance_pct": 15,
+      "paper_location": "L1902",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_B_R_TAX_only_G1_n": {
+      "value": 1681.0,
+      "paper": 1583,
+      "unit": "count",
+      "tolerance_pct": 10,
+      "paper_location": "L1903",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_B_full_model_G3_mean_b1": {
+      "value": 2.638749951015131,
+      "paper": 0.7,
+      "unit": "coefficient",
+      "tolerance_pct": 25,
+      "paper_location": "L1983",
+      "source": "results/table_t2_cells.json"
+    },
+    "T2_B_full_model_G3_t_b1": {
+      "value": 8.66028921380061,
+      "paper": 7.5,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L1984",
+      "source": "results/table_t2_cells.json"
+    },
+    "T3_A_R_TAX_only_G1_mean_b1": {
+      "value": 0.4673255697599597,
+      "paper": 0.16,
+      "unit": "coefficient",
+      "tolerance_pct": 25,
+      "paper_location": "L2072",
+      "source": "results/table_t3_cells.json"
+    },
+    "T3_A_R_TAX_only_G1_t_b1": {
+      "value": 0.9874553316940652,
+      "paper": 4.905,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L2073",
+      "source": "results/table_t3_cells.json"
+    },
+    "T3_A_R_TAX_only_G1_R2": {
+      "value": 0.060162281153337216,
+      "paper": 0.175,
+      "unit": "r_squared",
+      "tolerance_pct": 15,
+      "paper_location": "L2078",
+      "source": "results/table_t3_cells.json"
+    },
+    "T3_A_R_TAX_only_G1_n": {
+      "value": 1244.0,
+      "paper": 871,
+      "unit": "count",
+      "tolerance_pct": 10,
+      "paper_location": "L2079",
+      "source": "results/table_t3_cells.json"
+    },
+    "T3_A_R_TAX_only_G3_mean_b1": {
+      "value": 0.7032830986188183,
+      "paper": 0.223,
+      "unit": "coefficient",
+      "tolerance_pct": 25,
+      "paper_location": "L2094",
+      "source": "results/table_t3_cells.json"
+    },
+    "T3_A_R_TAX_only_G3_t_b1": {
+      "value": 1.1270930934238845,
+      "paper": 5.166,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L2095",
+      "source": "results/table_t3_cells.json"
+    },
+    "T3_A_R_TAX_only_G3_R2": {
+      "value": 0.05780899502543448,
+      "paper": 0.21,
+      "unit": "r_squared",
+      "tolerance_pct": 15,
+      "paper_location": "L2100",
+      "source": "results/table_t3_cells.json"
+    },
+    "T3_A_full_model_G1_mean_b1": {
+      "value": 0.09734322949993411,
+      "paper": 0.172,
+      "unit": "coefficient",
+      "tolerance_pct": 25,
+      "paper_location": "L2171",
+      "source": "results/table_t3_cells.json"
+    },
+    "T3_A_full_model_G1_t_b1": {
+      "value": NaN,
+      "paper": 4.648,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L2172",
+      "source": "results/table_t3_cells.json"
+    },
+    "T3_A_full_model_G1_mean_b3": {
+      "value": 0.48352298543203875,
+      "paper": 0.198,
+      "unit": "coefficient",
+      "tolerance_pct": 25,
+      "paper_location": "L2175",
+      "source": "results/table_t3_cells.json"
+    },
+    "T3_A_full_model_G1_t_b3": {
+      "value": NaN,
+      "paper": 6.871,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L2176",
+      "source": "results/table_t3_cells.json"
+    },
+    "T3_A_full_model_G1_R2": {
+      "value": 0.348771214837727,
+      "paper": 0.181,
+      "unit": "r_squared",
+      "tolerance_pct": 15,
+      "paper_location": "L2177",
+      "source": "results/table_t3_cells.json"
+    },
+    "T3_A_full_model_G3_mean_b1": {
+      "value": 0.39714699039728896,
+      "paper": 0.222,
+      "unit": "coefficient",
+      "tolerance_pct": 25,
+      "paper_location": "L2192",
+      "source": "results/table_t3_cells.json"
+    },
+    "T3_A_full_model_G3_t_b1": {
+      "value": NaN,
+      "paper": 4.016,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L2193",
+      "source": "results/table_t3_cells.json"
+    },
+    "T3_A_full_model_G3_mean_b3": {
+      "value": 0.9329937150630694,
+      "paper": 0.201,
+      "unit": "coefficient",
+      "tolerance_pct": 25,
+      "paper_location": "L2197",
+      "source": "results/table_t3_cells.json"
+    },
+    "T3_A_full_model_G3_t_b3": {
+      "value": NaN,
+      "paper": 5.069,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L2198",
+      "source": "results/table_t3_cells.json"
+    },
+    "T3_A_full_model_G3_R2": {
+      "value": 0.27484912239130244,
+      "paper": 0.214,
+      "unit": "r_squared",
+      "tolerance_pct": 15,
+      "paper_location": "L2199",
+      "source": "results/table_t3_cells.json"
+    },
+    "T3_B_R_TAX_only_G1_mean_b1": {
+      "value": 1.8621122323659542,
+      "paper": 0.278,
+      "unit": "coefficient",
+      "tolerance_pct": 25,
+      "paper_location": "L2224",
+      "source": "results/table_t3_cells.json"
+    },
+    "T3_B_R_TAX_only_G1_t_b1": {
+      "value": 2.688262355272426,
+      "paper": 4.454,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L2225",
+      "source": "results/table_t3_cells.json"
+    },
+    "T3_B_R_TAX_only_G1_R2": {
+      "value": 0.06445008561935205,
+      "paper": 0.144,
+      "unit": "r_squared",
+      "tolerance_pct": 15,
+      "paper_location": "L2230",
+      "source": "results/table_t3_cells.json"
+    },
+    "T3_B_R_TAX_only_G1_n": {
+      "value": 1681.0,
+      "paper": 1019,
+      "unit": "count",
+      "tolerance_pct": 10,
+      "paper_location": "L2231",
+      "source": "results/table_t3_cells.json"
+    },
+    "T3_B_R_TAX_only_G3_mean_b1": {
+      "value": 2.8738894817677783,
+      "paper": 0.495,
+      "unit": "coefficient",
+      "tolerance_pct": 25,
+      "paper_location": "L2246",
+      "source": "results/table_t3_cells.json"
+    },
+    "T3_B_R_TAX_only_G3_t_b1": {
+      "value": 3.501540821790829,
+      "paper": 10.993,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L2247",
+      "source": "results/table_t3_cells.json"
+    },
+    "T3_B_R_TAX_only_G3_R2": {
+      "value": 0.05369236883888325,
+      "paper": 0.105,
+      "unit": "r_squared",
+      "tolerance_pct": 15,
+      "paper_location": "L2252",
+      "source": "results/table_t3_cells.json"
+    },
+    "T3_B_full_model_G3_mean_b1": {
+      "value": -0.7389518413224424,
+      "paper": 0.516,
+      "unit": "coefficient",
+      "tolerance_pct": 25,
+      "paper_location": "L2344",
+      "source": "results/table_t3_cells.json"
+    },
+    "T3_B_full_model_G3_t_b1": {
+      "value": -0.20678371873055246,
+      "paper": 6.442,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L2345",
+      "source": "results/table_t3_cells.json"
+    },
+    "T3_B_full_model_G3_mean_b3": {
+      "value": 1.8176854881514208,
+      "paper": 0.322,
+      "unit": "coefficient",
+      "tolerance_pct": 25,
+      "paper_location": "L2349",
+      "source": "results/table_t3_cells.json"
+    },
+    "T3_B_full_model_G3_t_b3": {
+      "value": 1.2089930589746092,
+      "paper": 3.587,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L2350",
+      "source": "results/table_t3_cells.json"
+    },
+    "T3_B_full_model_G3_R2": {
+      "value": 0.21706257597112125,
+      "paper": 0.109,
+      "unit": "r_squared",
+      "tolerance_pct": 15,
+      "paper_location": "L2351",
+      "source": "results/table_t3_cells.json"
+    },
+    "T4_A_R_TAX_spec1_mean_b": {
+      "value": -0.21153495582581075,
+      "paper": -0.083,
+      "unit": "coefficient",
+      "tolerance_pct": 25,
+      "paper_location": "L2431",
+      "source": "results/table_4_cells.json"
+    },
+    "T4_A_R_TAX_spec1_t_b": {
+      "value": -1.7478261291926938,
+      "paper": -1.364,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L2445",
+      "source": "results/table_4_cells.json"
+    },
+    "T4_A_R_TAX_spec3_mean_b": {
+      "value": -0.15733450972904234,
+      "paper": -0.063,
+      "unit": "coefficient",
+      "tolerance_pct": 25,
+      "paper_location": "L2487",
+      "source": "results/table_4_cells.json"
+    },
+    "T4_A_R_TAX_spec3_t_b": {
+      "value": -1.514638589377912,
+      "paper": -0.814,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L2501",
+      "source": "results/table_4_cells.json"
+    },
+    "T4_A_n": {
+      "value": 1014.0,
+      "paper": 535,
+      "unit": "count",
+      "tolerance_pct": 10,
+      "paper_location": "L2434",
+      "source": "results/table_4_cells.json"
+    },
+    "T4_B_R_TAX_spec1_mean_b": {
+      "value": -0.5117280556295087,
+      "paper": -0.288,
+      "unit": "coefficient",
+      "tolerance_pct": 20,
+      "paper_location": "L2566",
+      "source": "results/table_4_cells.json"
+    },
+    "T4_B_R_TAX_spec1_t_b": {
+      "value": -2.8442379908107207,
+      "paper": -11.349,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L2580",
+      "source": "results/table_4_cells.json"
+    },
+    "T4_B_R_TAX_spec3_mean_b": {
+      "value": -0.3235584477025545,
+      "paper": -0.212,
+      "unit": "coefficient",
+      "tolerance_pct": 20,
+      "paper_location": "L2622",
+      "source": "results/table_4_cells.json"
+    },
+    "T4_B_R_TAX_spec3_t_b": {
+      "value": -2.6571277319535422,
+      "paper": -8.483,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L2636",
+      "source": "results/table_4_cells.json"
+    },
+    "T4_B_n": {
+      "value": 1392.0,
+      "paper": 911,
+      "unit": "count",
+      "tolerance_pct": 10,
+      "paper_location": "L2569",
+      "source": "results/table_4_cells.json"
+    },
+    "T5_A_R_TAX_spec1_mean_b": {
+      "value": 0.006915180572993576,
+      "paper": 0.013,
+      "unit": "coefficient",
+      "tolerance_pct": 25,
+      "paper_location": "L2743",
+      "source": "results/table_5_cells.json"
+    },
+    "T5_A_R_TAX_spec1_t_b": {
+      "value": 1.8614884544348096,
+      "paper": 3.913,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L2756",
+      "source": "results/table_5_cells.json"
+    },
+    "T5_A_R_TAX_spec3_mean_b": {
+      "value": 0.007296921467750321,
+      "paper": 0.014,
+      "unit": "coefficient",
+      "tolerance_pct": 25,
+      "paper_location": "L2795",
+      "source": "results/table_5_cells.json"
+    },
+    "T5_A_R_TAX_spec3_t_b": {
+      "value": 1.3758324574392546,
+      "paper": 3.851,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L2808",
+      "source": "results/table_5_cells.json"
+    },
+    "T5_A_n": {
+      "value": 1016.0,
+      "paper": 978,
+      "unit": "count",
+      "tolerance_pct": 10,
+      "paper_location": "L2746",
+      "source": "results/table_5_cells.json"
+    },
+    "T5_A_R2_spec1": {
+      "value": 0.10076715814282489,
+      "paper": 0.155,
+      "unit": "r_squared",
+      "tolerance_pct": 15,
+      "paper_location": "L2747",
+      "source": "results/table_5_cells.json"
+    },
+    "T5_B_R_TAX_spec1_mean_b": {
+      "value": 0.0026523626684571665,
+      "paper": 0.003,
+      "unit": "coefficient",
+      "tolerance_pct": 30,
+      "paper_location": "L2869",
+      "source": "results/table_5_cells.json"
+    },
+    "T5_B_R_TAX_spec1_t_b": {
+      "value": 0.11882949820419228,
+      "paper": 0.673,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L2882",
+      "source": "results/table_5_cells.json"
+    },
+    "T5_B_R_TAX_spec3_mean_b": {
+      "value": 0.00452171465001273,
+      "paper": 0.003,
+      "unit": "coefficient",
+      "tolerance_pct": 30,
+      "paper_location": "L2921",
+      "source": "results/table_5_cells.json"
+    },
+    "T5_B_R_TAX_spec3_t_b": {
+      "value": 0.1870056552610247,
+      "paper": 0.486,
+      "unit": "t_statistic",
+      "tolerance_pct": 15,
+      "paper_location": "L2934",
+      "source": "results/table_5_cells.json"
+    },
+    "T5_B_n": {
+      "value": 1391.0,
+      "paper": 1378,
+      "unit": "count",
+      "tolerance_pct": 10,
+      "paper_location": "L2872",
+      "source": "results/table_5_cells.json"
+    }
+  }
+}

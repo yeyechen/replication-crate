@@ -1,0 +1,275 @@
+[
+  {
+    "rule_id": "universe_sic_exclude_financials",
+    "category": "universe",
+    "section": "§III Sample",
+    "paper_location": "L488",
+    "paper_quote": "All firm-year observations with SIC codes 6000-6999 (financial companies) are excluded because the DuPont decomposition is not meaningful for these firms."
+  },
+  {
+    "rule_id": "universe_exclude_negative_oi",
+    "category": "universe",
+    "section": "§III Sample (footnote 25)",
+    "paper_location": "L498",
+    "paper_quote": "all observations that do not have all the necessary information to perform my tests are removed as well as firm-year observations with negative $NOA$ and operating income."
+  },
+  {
+    "rule_id": "avail_ibes_required",
+    "category": "sample",
+    "section": "§III Sample",
+    "paper_location": "L498",
+    "paper_quote": "Firm-year observations that are 1) not tracked by $I/B/E/S$ , 2) have insufficient data on $Compustat$ to compute the financial statement variables used in the tests, or 3) do not have contemporaneous and future return data on $CRSP$ are eliminated."
+  },
+  {
+    "rule_id": "avail_compustat_required",
+    "category": "sample",
+    "section": "§III Sample",
+    "paper_location": "L498",
+    "paper_quote": "Firm-year observations that are 1) not tracked by $I/B/E/S$ , 2) have insufficient data on $Compustat$ to compute the financial statement variables used in the tests, or 3) do not have contemporaneous and future return data on $CRSP$ are eliminated."
+  },
+  {
+    "rule_id": "avail_crsp_required",
+    "category": "sample",
+    "section": "§III Sample",
+    "paper_location": "L498",
+    "paper_quote": "Firm-year observations that are 1) not tracked by $I/B/E/S$ , 2) have insufficient data on $Compustat$ to compute the financial statement variables used in the tests, or 3) do not have contemporaneous and future return data on $CRSP$ are eliminated."
+  },
+  {
+    "rule_id": "sample_period",
+    "category": "sample",
+    "section": "§III Sample",
+    "paper_location": "L488",
+    "paper_quote": "I restrict the sample to the 1984-2002 period because of weak coverage by $I/B/E/S$ in earlier years."
+  },
+  {
+    "rule_id": "sample_size",
+    "category": "sample",
+    "section": "§III Sample",
+    "paper_location": "L498",
+    "paper_quote": "These criteria yield a final sample size of 38,716 firm-year observations with non-missing analyst forecasts, financial statement, and returns data."
+  },
+  {
+    "rule_id": "delist_substitution",
+    "category": "delisting",
+    "section": "§II Research Design (footnote 23)",
+    "paper_location": "L426",
+    "paper_quote": "For firms that delist due to poor performance (delisting codes 500 and 520–584), I use a –35% delisting return for NYSE/AMEX firms and a –55% delisting return for NASDAQ firms, as recommended in Shumway (1997) and Shumway and Warther (1999)."
+  },
+  {
+    "rule_id": "delist_reinvest_market",
+    "category": "delisting",
+    "section": "§II Research Design (footnote 23)",
+    "paper_location": "L426",
+    "paper_quote": "For firms that delist during the future return period, I calculate the remaining return by taking CRSP's delisting return and then reinvesting the proceeds in the value-weighted market portfolio."
+  },
+  {
+    "rule_id": "winsorize_all_financial",
+    "category": "winsorize",
+    "section": "§III Variable Measurement",
+    "paper_location": "L522",
+    "paper_quote": "All financial variables are winsorized at 1% and 99% to dampen the effect of outliers on the analysis."
+  },
+  {
+    "rule_id": "fm_annual_cross_section",
+    "category": "fm",
+    "section": "§II Predictions and Research Design",
+    "paper_location": "L279",
+    "paper_quote": "Because pooled regressions are subject to cross-sectional correlation in the residuals, I estimate all the regressions in the paper separately for each year in the sample and then construct Fama-MacBeth t-statistics using the resulting set's time-series of annual coefficient estimates (Fama and MacBeth 1973)."
+  },
+  {
+    "rule_id": "fm_newey_west",
+    "category": "fm",
+    "section": "§II Predictions and Research Design",
+    "paper_location": "L279",
+    "paper_quote": "I also adjust for serial correlation in the annual coefficient estimates due to overlapping periods (Bernard 1987) by using the Newey-West (1987) adjustment (see Verbeek 2000 for a detailed explanation)."
+  },
+  {
+    "rule_id": "var_op_assets",
+    "category": "variable",
+    "section": "§III Variable Measurement / Table 1 description",
+    "paper_location": "L504",
+    "paper_quote": "Operating assets is total assets (Compustat item #6) less cash and short-term investments (Compustat item #1 and item #32)."
+  },
+  {
+    "rule_id": "var_op_liabilities",
+    "category": "variable",
+    "section": "§III Variable Measurement / Table 1 description",
+    "paper_location": "L504-505",
+    "paper_quote": "Operating liabilities is total assets (Compustat item #6), less the long- and short-term portions of debt (Compustat items #9 and #34), less book value of total common and preferred equity (Compustat items #60 and #130), less minority interest (Compustat item #38)."
+  },
+  {
+    "rule_id": "var_noa",
+    "category": "variable",
+    "section": "§III Variable Measurement",
+    "paper_location": "L504",
+    "paper_quote": "$RNOA$ is operating income before interest (Compustat item #178) divided by average net operating assets ( $NOA$ ), where $NOA$ is Operating Assets $_t$ - Operating Liabilities $_t$ ."
+  },
+  {
+    "rule_id": "var_rnoa",
+    "category": "variable",
+    "section": "§III Variable Measurement",
+    "paper_location": "L504",
+    "paper_quote": "$RNOA$ is operating income before interest (Compustat item #178) divided by average net operating assets ( $NOA$ )."
+  },
+  {
+    "rule_id": "var_pm",
+    "category": "variable",
+    "section": "§III Variable Measurement",
+    "paper_location": "L522",
+    "paper_quote": "$RNOA$ is decomposed into the multiplicative components of $PM$ (Operating Income (Compustat item #178) / Total Sales (Compustat item #12)) and $ATO$ (Sales / Average $NOA$ )."
+  },
+  {
+    "rule_id": "var_ato",
+    "category": "variable",
+    "section": "§III Variable Measurement",
+    "paper_location": "L522",
+    "paper_quote": "$ATO$ = Sales / Average $NOA$"
+  },
+  {
+    "rule_id": "var_delta_pm",
+    "category": "variable",
+    "section": "§III Variable Measurement",
+    "paper_location": "L522",
+    "paper_quote": "$\\Delta PM_t = (PM_t - PM_{t-1})$"
+  },
+  {
+    "rule_id": "var_delta_ato",
+    "category": "variable",
+    "section": "§III Variable Measurement",
+    "paper_location": "L522",
+    "paper_quote": "$ATO$ is measured similarly. ... $\\Delta ATO_t = (ATO_t - ATO_{t-1})$"
+  },
+  {
+    "rule_id": "var_delta_rnoa",
+    "category": "variable",
+    "section": "§III Variable Measurement",
+    "paper_location": "L522",
+    "paper_quote": "Future changes in $RNOA$ is $\\Delta RNOA_t = RNOA_{t+1} - RNOA_t$ ."
+  },
+  {
+    "rule_id": "var_delta_noa",
+    "category": "variable",
+    "section": "§III Variable Measurement",
+    "paper_location": "L522",
+    "paper_quote": "Growth in Net Operating Assets ( $\\Delta NOA$ ) = $(NOA_t - NOA_{t-1}) / NOA_{t-1}$ ."
+  },
+  {
+    "rule_id": "var_earn",
+    "category": "variable",
+    "section": "§II Equation (3)",
+    "paper_location": "L333",
+    "paper_quote": "$EARN_t = EPS_t / P_{t-1}$ . Earnings before extraordinary items per share in year $t$ , deflated by the market value of equity per share at the end of fiscal year $t-1$ ."
+  },
+  {
+    "rule_id": "var_delta_earn",
+    "category": "variable",
+    "section": "§II Equation (3)",
+    "paper_location": "L335",
+    "paper_quote": "$\\Delta EARN_t = \\Delta EPS_t / P_{t-1}$ . Earnings before extraordinary items per share in year $t$ minus its annual earnings per share in year $t-1$ , deflated by the market value of equity per share at the end of fiscal year $t-1$ ."
+  },
+  {
+    "rule_id": "var_long_window_return",
+    "category": "variable",
+    "section": "§II Equation (3)",
+    "paper_location": "L331",
+    "paper_quote": "$R_t$ = Stock returns are measured using compounded buy-hold market-adjusted returns (raw return minus the corresponding value-weighted return), inclusive of dividends and other distributions computed over the 12 months beginning in the first month of the firm's fiscal year and ending at the end of the fiscal year $t$ ."
+  },
+  {
+    "rule_id": "var_short_window_return",
+    "category": "variable",
+    "section": "§II Equation (5)",
+    "paper_location": "L395",
+    "paper_quote": "$UR_t$ = Stock returns are measured using compounded buy-hold market-adjusted returns (raw return minus the corresponding value-weighted return), inclusive of dividends and other distributions computed over the five-day window surrounding the earnings announcement beginning two days before and ending two days after the annual earnings announcement for fiscal year $t$ ."
+  },
+  {
+    "rule_id": "var_future_window_return",
+    "category": "variable",
+    "section": "§II Equation (6) (footnote 23)",
+    "paper_location": "L420",
+    "paper_quote": "$R_{t+1}$ = Future stock returns are measured using compounded buy-hold market-adjusted returns (raw return minus the corresponding value-weighted return), inclusive of dividends and other distributions beginning four months after the end of the fiscal year $t$ and continuing for one year."
+  },
+  {
+    "rule_id": "var_sur",
+    "category": "variable",
+    "section": "§II Equation (5)",
+    "paper_location": "L397",
+    "paper_quote": "$SUR_t$ = Annual earnings surprise. Calculated as annual $I/B/E/S$ earnings - the most recent median forecast of annual earnings for year $t$ deflated by the market value of equity per share at the end of fiscal year $t-1$ ."
+  },
+  {
+    "rule_id": "var_anal_rev",
+    "category": "variable",
+    "section": "§II Equation (7)",
+    "paper_location": "L460",
+    "paper_quote": "$Anal\\_REV_t$ = Analyst revision of one-year-ahead earnings forecast measured as the revision to the consensus analyst forecast of year $t+1$ earnings made just after year $t$ earnings are announced. Specifically, it is the first median $I/B/E/S$ consensus one-year-ahead forecast of year $t+1$ earnings, minus the last median consensus of year $t+1$ earnings made directly before the announcement of year $t$ earnings, all scaled by share price at the end of fiscal year $t-1$ ."
+  },
+  {
+    "rule_id": "var_fe",
+    "category": "variable",
+    "section": "§II Equation (8) / Table 9 description",
+    "paper_location": "L480",
+    "paper_quote": "$FE_{t+1}$ = Forecast error is the realized earnings for year $t+1$ less the median forecast earnings from the month prior to the announcement of $t+1$ earnings, scaled by the stock price at the end of the month of the earnings announcement for year $t$ ."
+  },
+  {
+    "rule_id": "var_bm",
+    "category": "variable",
+    "section": "§III Control Variable Definitions",
+    "paper_location": "L530",
+    "paper_quote": "$BM$ = Book value of equity (Compustat item # 60) / Market Value of Equity (shares x price - item #25 x item #199)."
+  },
+  {
+    "rule_id": "var_log_mve",
+    "category": "variable",
+    "section": "§III Control Variable Definitions",
+    "paper_location": "L531",
+    "paper_quote": "$MVE$ Size of the Firm = Log (Market Value of Equity)."
+  },
+  {
+    "rule_id": "var_beta",
+    "category": "variable",
+    "section": "§III Control Variable Definitions",
+    "paper_location": "L532",
+    "paper_quote": "$BETA (\\beta)$ $\\beta$ for firm $i$ for fiscal year $t$ is estimated by a market model regression. The regression is run using weekly returns for a period of two years ending at the end of the fiscal year from which I obtain the data to compute each of the financial ratios."
+  },
+  {
+    "rule_id": "var_delta_wc",
+    "category": "variable",
+    "section": "Table 3 description",
+    "paper_location": "L1656",
+    "paper_quote": "$\\Delta WC_t = WC_t - WC_{t-1}.\\ WC$ is calculated as Current Operating Assets (COA) - Current Operating Liabilities (COL), and COA = Current Assets (Compustat Item #4) - Cash and Short Term Investments (STI) (Compustat Item #1), and COL = Current Liabilities (Compustat Item #5) - Debt in Current Liabilities (Compustat Item #34)."
+  },
+  {
+    "rule_id": "var_delta_nco",
+    "category": "variable",
+    "section": "Table 3 description",
+    "paper_location": "L1660",
+    "paper_quote": "$\\Delta NCO_t$ Change in net non-current operating assets is defined as $NCO_t - NCO_{t-1}.\\ NCO$ is calculated as Non-Current Operating Assets (NCOA) - Non-Current Operating Liabilities (NCOL), and NCOA = Total Assets (Compustat Item #6) - Current Assets (Compustat Item #4) - Investments and Advances (Compustat Item #32), and NCOL = Total Liabilities (Compustat Item #181) - Current Liabilities (Compustat Item #5) - Long Term Debt (Compustat Item #9)."
+  },
+  {
+    "rule_id": "var_delta_fin",
+    "category": "variable",
+    "section": "Table 3 description",
+    "paper_location": "L1664",
+    "paper_quote": "$\\Delta FIN_t$ Change in net financial assets is defined as $FIN_t - FIN_{t-1}$ and $FIN = $ Financial Assets (FINA) - Financial Liabilities (FINL). FINA = Short Term Investments (STI) (Compustat Item #193) + Long Term Investments (LTI) (Compustat Item #32), and FINL = Long Term Debt (Compustat Item #9) + Debt in Current Liabilities (Compustat Item #34) + Preferred Stock (Compustat Item #130)."
+  },
+  {
+    "rule_id": "var_ann_rank_decile",
+    "category": "variable",
+    "section": "§II Future Return Tests",
+    "paper_location": "L422",
+    "paper_quote": "To create decile ranks, all the continuous variables are sorted annually into ten equal-sized groups numbered zero to nine each year and then divided by nine."
+  },
+  {
+    "rule_id": "factor_ff3_risk_controls",
+    "category": "factor",
+    "section": "§III Control Variable Definitions / Table 7 description",
+    "paper_location": "L530-532",
+    "paper_quote": "$BM$ = Book value of equity (Compustat item # 60) / Market Value of Equity (shares x price - item #25 x item #199). $MVE$ Size of the Firm = Log (Market Value of Equity). $BETA$ ... is estimated by a market model regression."
+  },
+  {
+    "rule_id": "sort_annual_decile_rank",
+    "category": "sort",
+    "section": "§II Future Return Tests",
+    "paper_location": "L422",
+    "paper_quote": "all the continuous variables are sorted annually into ten equal-sized groups numbered zero to nine each year and then divided by nine."
+  }
+]

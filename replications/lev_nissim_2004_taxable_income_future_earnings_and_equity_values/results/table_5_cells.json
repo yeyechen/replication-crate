@@ -1,0 +1,280 @@
+{
+  "schema_version": 1,
+  "slug": "lev_nissim_2004_taxable_income_future_earnings_and_equity_values",
+  "panels": {
+    "A": {
+      "label": "Pre-SFAS 109",
+      "years": [
+        1987,
+        1988,
+        1989,
+        1990,
+        1991,
+        1992
+      ],
+      "models": {
+        "1": {
+          "label": "Model 1 \u2014 R_TAX+R_DEF+R_CFO only",
+          "x_cols": [
+            "r_tax",
+            "r_def",
+            "r_cfo"
+          ],
+          "result": {
+            "panel": "A",
+            "model": "1",
+            "y_col": "cum_ret_may_april",
+            "mean_betas": {
+              "r_tax": 0.006915180572993576,
+              "r_def": -0.0049725337892677175,
+              "r_cfo": 0.00827322742168055
+            },
+            "std_betas": {
+              "r_tax": 0.0037148662171494276,
+              "r_def": 0.01734418202168563,
+              "r_cfo": 0.015016005314665863
+            },
+            "t_stats": {
+              "r_tax": 1.8614884544348096,
+              "r_def": -0.2866975094617032,
+              "r_cfo": 0.5509606082517989
+            },
+            "mean_r2": 0.10076715814282489,
+            "mean_n": 1016,
+            "n_periods_used": 5,
+            "n_periods_skipped": 1,
+            "n_periods_total": 6
+          }
+        },
+        "2": {
+          "label": "Model 2 \u2014 M1 + SIZE + B/P + E/P",
+          "x_cols": [
+            "r_tax",
+            "r_def",
+            "r_cfo",
+            "ln_me_april",
+            "b_to_p",
+            "ep_pct"
+          ],
+          "result": {
+            "panel": "A",
+            "model": "2",
+            "y_col": "cum_ret_may_april",
+            "mean_betas": {
+              "r_tax": 0.007296921467750321,
+              "r_def": -0.008720600148248967,
+              "r_cfo": 0.007871529487879163,
+              "ln_me_april": -0.008451072635230712,
+              "b_to_p": -0.022981895554479694,
+              "ep_pct": 9.602742078382299e-08
+            },
+            "std_betas": {
+              "r_tax": 0.005303641027143374,
+              "r_def": 0.01735228524372099,
+              "r_cfo": 0.012195251161239196,
+              "ln_me_april": 0.01087954663294362,
+              "b_to_p": 0.08107410961097326,
+              "ep_pct": 0.0018271630120869108
+            },
+            "t_stats": {
+              "r_tax": 1.3758324574392546,
+              "r_def": -0.5025620559922825,
+              "r_cfo": 0.6454585792294016,
+              "ln_me_april": -0.7767853680263285,
+              "b_to_p": -0.28346775147770636,
+              "ep_pct": 5.255547542752871e-05
+            },
+            "mean_r2": 0.11060482379472676,
+            "mean_n": 1015,
+            "n_periods_used": 5,
+            "n_periods_skipped": 1,
+            "n_periods_total": 6
+          }
+        },
+        "3": {
+          "label": "Model 3 \u2014 M2 + BETA + VOL (BETA/VOL unavailable)",
+          "x_cols": [
+            "r_tax",
+            "r_def",
+            "r_cfo",
+            "ln_me_april",
+            "b_to_p",
+            "ep_pct"
+          ],
+          "result": {
+            "panel": "A",
+            "model": "3",
+            "y_col": "cum_ret_may_april",
+            "mean_betas": {
+              "r_tax": 0.007296921467750321,
+              "r_def": -0.008720600148248967,
+              "r_cfo": 0.007871529487879163,
+              "ln_me_april": -0.008451072635230712,
+              "b_to_p": -0.022981895554479694,
+              "ep_pct": 9.602742078382299e-08
+            },
+            "std_betas": {
+              "r_tax": 0.005303641027143374,
+              "r_def": 0.01735228524372099,
+              "r_cfo": 0.012195251161239196,
+              "ln_me_april": 0.01087954663294362,
+              "b_to_p": 0.08107410961097326,
+              "ep_pct": 0.0018271630120869108
+            },
+            "t_stats": {
+              "r_tax": 1.3758324574392546,
+              "r_def": -0.5025620559922825,
+              "r_cfo": 0.6454585792294016,
+              "ln_me_april": -0.7767853680263285,
+              "b_to_p": -0.28346775147770636,
+              "ep_pct": 5.255547542752871e-05
+            },
+            "mean_r2": 0.11060482379472676,
+            "mean_n": 1015,
+            "n_periods_used": 5,
+            "n_periods_skipped": 1,
+            "n_periods_total": 6
+          }
+        }
+      }
+    },
+    "B": {
+      "label": "Post-SFAS 109",
+      "years": [
+        1993,
+        1994,
+        1995,
+        1996,
+        1997,
+        1998,
+        1999,
+        2000
+      ],
+      "models": {
+        "1": {
+          "label": "Model 1 \u2014 R_TAX+R_DEF+R_CFO only",
+          "x_cols": [
+            "r_tax",
+            "r_def",
+            "r_cfo"
+          ],
+          "result": {
+            "panel": "B",
+            "model": "1",
+            "y_col": "cum_ret_may_april",
+            "mean_betas": {
+              "r_tax": 0.0026523626684571665,
+              "r_def": -0.002851946713895399,
+              "r_cfo": 0.03275460753566123
+            },
+            "std_betas": {
+              "r_tax": 0.02232074281673262,
+              "r_def": 0.02179554349975366,
+              "r_cfo": 0.014850214392529775
+            },
+            "t_stats": {
+              "r_tax": 0.11882949820419228,
+              "r_def": -0.1308499929780431,
+              "r_cfo": 2.2056656334967157
+            },
+            "mean_r2": 0.10463816861689913,
+            "mean_n": 1391,
+            "n_periods_used": 8,
+            "n_periods_skipped": 0,
+            "n_periods_total": 8
+          }
+        },
+        "2": {
+          "label": "Model 2 \u2014 M1 + SIZE + B/P + E/P",
+          "x_cols": [
+            "r_tax",
+            "r_def",
+            "r_cfo",
+            "ln_me_april",
+            "b_to_p",
+            "ep_pct"
+          ],
+          "result": {
+            "panel": "B",
+            "model": "2",
+            "y_col": "cum_ret_may_april",
+            "mean_betas": {
+              "r_tax": 0.00452171465001273,
+              "r_def": -0.005802047251335058,
+              "r_cfo": 0.03208386615428491,
+              "ln_me_april": -0.00957016586397844,
+              "b_to_p": 0.0022053266117232004,
+              "ep_pct": 8.162463449641957e-05
+            },
+            "std_betas": {
+              "r_tax": 0.024179561006865097,
+              "r_def": 0.020062713835931,
+              "r_cfo": 0.015500057867323247,
+              "ln_me_april": 0.027909832421107485,
+              "b_to_p": 0.06612070573258581,
+              "ep_pct": 0.004567375603698568
+            },
+            "t_stats": {
+              "r_tax": 0.1870056552610247,
+              "r_def": -0.2891955345016173,
+              "r_cfo": 2.069919120877809,
+              "ln_me_april": -0.342895855467078,
+              "b_to_p": 0.03335304103743655,
+              "ep_pct": 0.017871233193591875
+            },
+            "mean_r2": 0.11602923517573788,
+            "mean_n": 1390,
+            "n_periods_used": 8,
+            "n_periods_skipped": 0,
+            "n_periods_total": 8
+          }
+        },
+        "3": {
+          "label": "Model 3 \u2014 M2 + BETA + VOL (BETA/VOL unavailable)",
+          "x_cols": [
+            "r_tax",
+            "r_def",
+            "r_cfo",
+            "ln_me_april",
+            "b_to_p",
+            "ep_pct"
+          ],
+          "result": {
+            "panel": "B",
+            "model": "3",
+            "y_col": "cum_ret_may_april",
+            "mean_betas": {
+              "r_tax": 0.00452171465001273,
+              "r_def": -0.005802047251335058,
+              "r_cfo": 0.03208386615428491,
+              "ln_me_april": -0.00957016586397844,
+              "b_to_p": 0.0022053266117232004,
+              "ep_pct": 8.162463449641957e-05
+            },
+            "std_betas": {
+              "r_tax": 0.024179561006865097,
+              "r_def": 0.020062713835931,
+              "r_cfo": 0.015500057867323247,
+              "ln_me_april": 0.027909832421107485,
+              "b_to_p": 0.06612070573258581,
+              "ep_pct": 0.004567375603698568
+            },
+            "t_stats": {
+              "r_tax": 0.1870056552610247,
+              "r_def": -0.2891955345016173,
+              "r_cfo": 2.069919120877809,
+              "ln_me_april": -0.342895855467078,
+              "b_to_p": 0.03335304103743655,
+              "ep_pct": 0.017871233193591875
+            },
+            "mean_r2": 0.11602923517573788,
+            "mean_n": 1390,
+            "n_periods_used": 8,
+            "n_periods_skipped": 0,
+            "n_periods_total": 8
+          }
+        }
+      }
+    }
+  }
+}

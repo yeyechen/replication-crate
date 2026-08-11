@@ -1,0 +1,638 @@
+{
+  "schema_version": 1,
+  "slug": "lev_nissim_2004_taxable_income_future_earnings_and_equity_values",
+  "panels": {
+    "A": {
+      "label": "Pre-SFAS 109",
+      "years": [
+        1987,
+        1988,
+        1989,
+        1990,
+        1991,
+        1992
+      ],
+      "models": {
+        "1": {
+          "label": "Model 1 \u2014 R_TAX only",
+          "x_cols": [
+            "r_tax"
+          ],
+          "g_vars": {
+            "g1": {
+              "panel": "A",
+              "model": "1",
+              "g": "g1",
+              "mean_betas": {
+                "r_tax": 0.4673255697599597
+              },
+              "std_betas": {
+                "r_tax": 0.47326249072778026
+              },
+              "t_stats": {
+                "r_tax": 0.9874553316940652
+              },
+              "mean_r2": 0.060162281153337216,
+              "mean_n": 1244,
+              "n_periods_used": 6,
+              "n_periods_skipped": 0,
+              "n_periods_total": 6,
+              "skip_reasons": []
+            },
+            "g3": {
+              "panel": "A",
+              "model": "1",
+              "g": "g3",
+              "mean_betas": {
+                "r_tax": 0.7032830986188183
+              },
+              "std_betas": {
+                "r_tax": 0.623979600906243
+              },
+              "t_stats": {
+                "r_tax": 1.1270930934238845
+              },
+              "mean_r2": 0.05780899502543448,
+              "mean_n": 998,
+              "n_periods_used": 6,
+              "n_periods_skipped": 0,
+              "n_periods_total": 6,
+              "skip_reasons": []
+            }
+          }
+        },
+        "2": {
+          "label": "Model 2 \u2014 R_DEF only",
+          "x_cols": [
+            "r_def"
+          ],
+          "g_vars": {
+            "g1": {
+              "panel": "A",
+              "model": "2",
+              "g": "g1",
+              "mean_betas": {
+                "r_def": 1.6019393678324008
+              },
+              "std_betas": {
+                "r_def": 0.6746701673291537
+              },
+              "t_stats": {
+                "r_def": 2.3744037389026227
+              },
+              "mean_r2": 0.04758118930736026,
+              "mean_n": 1724,
+              "n_periods_used": 5,
+              "n_periods_skipped": 1,
+              "n_periods_total": 6,
+              "skip_reasons": [
+                "1987: too thin"
+              ]
+            },
+            "g3": {
+              "panel": "A",
+              "model": "2",
+              "g": "g3",
+              "mean_betas": {
+                "r_def": -0.4992062376583662
+              },
+              "std_betas": {
+                "r_def": 1.651160348675917
+              },
+              "t_stats": {
+                "r_def": -0.30233661925002314
+              },
+              "mean_r2": 0.05536784210702892,
+              "mean_n": 1312,
+              "n_periods_used": 5,
+              "n_periods_skipped": 1,
+              "n_periods_total": 6,
+              "skip_reasons": [
+                "1987: too thin"
+              ]
+            }
+          }
+        },
+        "3": {
+          "label": "Model 3 \u2014 R_TAX + R_DEF",
+          "x_cols": [
+            "r_tax",
+            "r_def"
+          ],
+          "g_vars": {
+            "g1": {
+              "panel": "A",
+              "model": "3",
+              "g": "g1",
+              "mean_betas": {
+                "r_tax": 0.4497866124361688,
+                "r_def": -0.6349938542961485
+              },
+              "std_betas": {
+                "r_tax": 0.37635336501758393,
+                "r_def": 0.18288361921929905
+              },
+              "t_stats": {
+                "r_tax": 1.195117818104679,
+                "r_def": -3.4721199033944967
+              },
+              "mean_r2": 0.0697048876788604,
+              "mean_n": 1125,
+              "n_periods_used": 5,
+              "n_periods_skipped": 1,
+              "n_periods_total": 6,
+              "skip_reasons": [
+                "1987: too thin"
+              ]
+            },
+            "g3": {
+              "panel": "A",
+              "model": "3",
+              "g": "g3",
+              "mean_betas": {
+                "r_tax": 0.7901485904896428,
+                "r_def": -0.9875830269986349
+              },
+              "std_betas": {
+                "r_tax": 0.21848980442996838,
+                "r_def": 0.270958793859107
+              },
+              "t_stats": {
+                "r_tax": 3.6164094363629946,
+                "r_def": -3.644772007333919
+              },
+              "mean_r2": 0.06496594041886886,
+              "mean_n": 913,
+              "n_periods_used": 5,
+              "n_periods_skipped": 1,
+              "n_periods_total": 6,
+              "skip_reasons": [
+                "1987: too thin"
+              ]
+            }
+          }
+        },
+        "4": {
+          "label": "Model 4 \u2014 Full model (R_TAX + R_DEF + R_CFO + PRED_1..9)",
+          "x_cols": [
+            "r_tax",
+            "r_def",
+            "r_cfo",
+            "pred_1",
+            "pred_2",
+            "pred_3",
+            "pred_4",
+            "pred_5",
+            "pred_6",
+            "pred_7",
+            "pred_8",
+            "pred_9"
+          ],
+          "g_vars": {
+            "g1": {
+              "panel": "A",
+              "model": "4",
+              "g": "g1",
+              "mean_betas": {
+                "r_tax": 0.09734322949993411,
+                "r_def": 0.4849816180974917,
+                "r_cfo": 0.48352298543203875,
+                "pred_1": 37.383975685108624,
+                "pred_2": -13.187477813084215,
+                "pred_3": -50.94653052931479,
+                "pred_4": -66.73290357957893,
+                "pred_5": -29.76129875081255,
+                "pred_6": -78.79762200296545,
+                "pred_7": -6.573408094836974,
+                "pred_8": -0.2873814845286926,
+                "pred_9": -2.066554218995381
+              },
+              "std_betas": {
+                "r_tax": NaN,
+                "r_def": NaN,
+                "r_cfo": NaN,
+                "pred_1": NaN,
+                "pred_2": NaN,
+                "pred_3": NaN,
+                "pred_4": NaN,
+                "pred_5": NaN,
+                "pred_6": NaN,
+                "pred_7": NaN,
+                "pred_8": NaN,
+                "pred_9": NaN
+              },
+              "t_stats": {
+                "r_tax": NaN,
+                "r_def": NaN,
+                "r_cfo": NaN,
+                "pred_1": NaN,
+                "pred_2": NaN,
+                "pred_3": NaN,
+                "pred_4": NaN,
+                "pred_5": NaN,
+                "pred_6": NaN,
+                "pred_7": NaN,
+                "pred_8": NaN,
+                "pred_9": NaN
+              },
+              "mean_r2": 0.348771214837727,
+              "mean_n": 432,
+              "n_periods_used": 1,
+              "n_periods_skipped": 5,
+              "n_periods_total": 6,
+              "skip_reasons": [
+                "1987: too thin",
+                "1988: too thin",
+                "1989: too thin",
+                "1990: too thin",
+                "1991: too thin"
+              ]
+            },
+            "g3": {
+              "panel": "A",
+              "model": "4",
+              "g": "g3",
+              "mean_betas": {
+                "r_tax": 0.39714699039728896,
+                "r_def": -0.6134495106397626,
+                "r_cfo": 0.9329937150630694,
+                "pred_1": 24.055529160464346,
+                "pred_2": -36.08400246325196,
+                "pred_3": -80.76086239543146,
+                "pred_4": -9.791665614945291,
+                "pred_5": 25.229697578635662,
+                "pred_6": -56.36379124536562,
+                "pred_7": 37.02324177174588,
+                "pred_8": -0.2636077117374408,
+                "pred_9": -3.121573300112601
+              },
+              "std_betas": {
+                "r_tax": NaN,
+                "r_def": NaN,
+                "r_cfo": NaN,
+                "pred_1": NaN,
+                "pred_2": NaN,
+                "pred_3": NaN,
+                "pred_4": NaN,
+                "pred_5": NaN,
+                "pred_6": NaN,
+                "pred_7": NaN,
+                "pred_8": NaN,
+                "pred_9": NaN
+              },
+              "t_stats": {
+                "r_tax": NaN,
+                "r_def": NaN,
+                "r_cfo": NaN,
+                "pred_1": NaN,
+                "pred_2": NaN,
+                "pred_3": NaN,
+                "pred_4": NaN,
+                "pred_5": NaN,
+                "pred_6": NaN,
+                "pred_7": NaN,
+                "pred_8": NaN,
+                "pred_9": NaN
+              },
+              "mean_r2": 0.27484912239130244,
+              "mean_n": 350,
+              "n_periods_used": 1,
+              "n_periods_skipped": 5,
+              "n_periods_total": 6,
+              "skip_reasons": [
+                "1987: too thin",
+                "1988: too thin",
+                "1989: too thin",
+                "1990: too thin",
+                "1991: too thin"
+              ]
+            }
+          }
+        }
+      }
+    },
+    "B": {
+      "label": "Post-SFAS 109",
+      "years": [
+        1993,
+        1994,
+        1995,
+        1996,
+        1997,
+        1998,
+        1999,
+        2000
+      ],
+      "models": {
+        "1": {
+          "label": "Model 1 \u2014 R_TAX only",
+          "x_cols": [
+            "r_tax"
+          ],
+          "g_vars": {
+            "g1": {
+              "panel": "B",
+              "model": "1",
+              "g": "g1",
+              "mean_betas": {
+                "r_tax": 1.8621122323659542
+              },
+              "std_betas": {
+                "r_tax": 0.6926824789678124
+              },
+              "t_stats": {
+                "r_tax": 2.688262355272426
+              },
+              "mean_r2": 0.06445008561935205,
+              "mean_n": 1681,
+              "n_periods_used": 7,
+              "n_periods_skipped": 1,
+              "n_periods_total": 8,
+              "skip_reasons": [
+                "2000: too thin"
+              ]
+            },
+            "g3": {
+              "panel": "B",
+              "model": "1",
+              "g": "g3",
+              "mean_betas": {
+                "r_tax": 2.8738894817677783
+              },
+              "std_betas": {
+                "r_tax": 0.820749957813702
+              },
+              "t_stats": {
+                "r_tax": 3.501540821790829
+              },
+              "mean_r2": 0.05369236883888325,
+              "mean_n": 1100,
+              "n_periods_used": 3,
+              "n_periods_skipped": 5,
+              "n_periods_total": 8,
+              "skip_reasons": [
+                "1996: too thin",
+                "1997: too thin",
+                "1998: too thin",
+                "1999: too thin",
+                "2000: too thin"
+              ]
+            }
+          }
+        },
+        "2": {
+          "label": "Model 2 \u2014 R_DEF only",
+          "x_cols": [
+            "r_def"
+          ],
+          "g_vars": {
+            "g1": {
+              "panel": "B",
+              "model": "2",
+              "g": "g1",
+              "mean_betas": {
+                "r_def": 0.9178562644300382
+              },
+              "std_betas": {
+                "r_def": 1.6975880913161854
+              },
+              "t_stats": {
+                "r_def": 0.5406825537509513
+              },
+              "mean_r2": 0.043867372957952906,
+              "mean_n": 2481,
+              "n_periods_used": 7,
+              "n_periods_skipped": 1,
+              "n_periods_total": 8,
+              "skip_reasons": [
+                "2000: too thin"
+              ]
+            },
+            "g3": {
+              "panel": "B",
+              "model": "2",
+              "g": "g3",
+              "mean_betas": {
+                "r_def": -2.2482269379758115
+              },
+              "std_betas": {
+                "r_def": 1.6216461214905848
+              },
+              "t_stats": {
+                "r_def": -1.38638566588701
+              },
+              "mean_r2": 0.039912309838361394,
+              "mean_n": 1429,
+              "n_periods_used": 3,
+              "n_periods_skipped": 5,
+              "n_periods_total": 8,
+              "skip_reasons": [
+                "1996: too thin",
+                "1997: too thin",
+                "1998: too thin",
+                "1999: too thin",
+                "2000: too thin"
+              ]
+            }
+          }
+        },
+        "3": {
+          "label": "Model 3 \u2014 R_TAX + R_DEF",
+          "x_cols": [
+            "r_tax",
+            "r_def"
+          ],
+          "g_vars": {
+            "g1": {
+              "panel": "B",
+              "model": "3",
+              "g": "g1",
+              "mean_betas": {
+                "r_tax": 1.6501116373556302,
+                "r_def": -1.2458573725053828
+              },
+              "std_betas": {
+                "r_tax": 0.46271225042511793,
+                "r_def": 1.141517906230777
+              },
+              "t_stats": {
+                "r_tax": 3.5661723583924703,
+                "r_def": -1.0914041432947192
+              },
+              "mean_r2": 0.06832839642858325,
+              "mean_n": 1484,
+              "n_periods_used": 7,
+              "n_periods_skipped": 1,
+              "n_periods_total": 8,
+              "skip_reasons": [
+                "2000: too thin"
+              ]
+            },
+            "g3": {
+              "panel": "B",
+              "model": "3",
+              "g": "g3",
+              "mean_betas": {
+                "r_tax": 2.53380067754248,
+                "r_def": -1.1224704206526062
+              },
+              "std_betas": {
+                "r_tax": 0.291121741107766,
+                "r_def": 1.0643745315848132
+              },
+              "t_stats": {
+                "r_tax": 8.703577643843955,
+                "r_def": -1.0545821863862999
+              },
+              "mean_r2": 0.06090173608316851,
+              "mean_n": 962,
+              "n_periods_used": 3,
+              "n_periods_skipped": 5,
+              "n_periods_total": 8,
+              "skip_reasons": [
+                "1996: too thin",
+                "1997: too thin",
+                "1998: too thin",
+                "1999: too thin",
+                "2000: too thin"
+              ]
+            }
+          }
+        },
+        "4": {
+          "label": "Model 4 \u2014 Full model (R_TAX + R_DEF + R_CFO + PRED_1..9)",
+          "x_cols": [
+            "r_tax",
+            "r_def",
+            "r_cfo",
+            "pred_1",
+            "pred_2",
+            "pred_3",
+            "pred_4",
+            "pred_5",
+            "pred_6",
+            "pred_7",
+            "pred_8",
+            "pred_9"
+          ],
+          "g_vars": {
+            "g1": {
+              "panel": "B",
+              "model": "4",
+              "g": "g1",
+              "mean_betas": {
+                "r_tax": -0.6530970252693226,
+                "r_def": -0.4564325119634436,
+                "r_cfo": 0.8374114375235594,
+                "pred_1": 44.474426947311535,
+                "pred_2": -10.869888509050343,
+                "pred_3": -15.389786553460965,
+                "pred_4": -63.41228746110658,
+                "pred_5": -25.587665573704335,
+                "pred_6": -19.222034950937363,
+                "pred_7": -15.899607614521534,
+                "pred_8": -0.7642598407716922,
+                "pred_9": -3.05608738748233
+              },
+              "std_betas": {
+                "r_tax": 2.63895177812877,
+                "r_def": 0.6489424651829232,
+                "r_cfo": 0.7760253076996219,
+                "pred_1": 102.49457864810631,
+                "pred_2": 45.25047089373449,
+                "pred_3": 84.85584247799758,
+                "pred_4": 96.3584291372163,
+                "pred_5": 64.0260972993496,
+                "pred_6": 28.45229127890457,
+                "pred_7": 43.734881270963555,
+                "pred_8": 1.604933157125375,
+                "pred_9": 2.824452696644177
+              },
+              "t_stats": {
+                "r_tax": -0.24748350109391584,
+                "r_def": -0.7033481956444088,
+                "r_cfo": 1.0791032576062562,
+                "pred_1": 0.4339197988218008,
+                "pred_2": -0.24021603078069667,
+                "pred_3": -0.18136390028124946,
+                "pred_4": -0.658087600938432,
+                "pred_5": -0.3996443115073994,
+                "pred_6": -0.6755882948938171,
+                "pred_7": -0.3635452332890542,
+                "pred_8": -0.47619418751405934,
+                "pred_9": -1.0820104691834158
+              },
+              "mean_r2": 0.4524993737005235,
+              "mean_n": 479,
+              "n_periods_used": 7,
+              "n_periods_skipped": 1,
+              "n_periods_total": 8,
+              "skip_reasons": [
+                "2000: too thin"
+              ]
+            },
+            "g3": {
+              "panel": "B",
+              "model": "4",
+              "g": "g3",
+              "mean_betas": {
+                "r_tax": -0.7389518413224424,
+                "r_def": 0.686528050426258,
+                "r_cfo": 1.8176854881514208,
+                "pred_1": 43.30476958225472,
+                "pred_2": -5.4873415249842425,
+                "pred_3": -2.9843540138588236,
+                "pred_4": -1.8748445021412863,
+                "pred_5": -4.6169342780782285,
+                "pred_6": -27.483060622267473,
+                "pred_7": 20.711943523474147,
+                "pred_8": -1.6506759314596595,
+                "pred_9": 0.008875823093238347
+              },
+              "std_betas": {
+                "r_tax": 3.573549435414335,
+                "r_def": 3.152656329827574,
+                "r_cfo": 1.5034705738452012,
+                "pred_1": 41.44990558903195,
+                "pred_2": 32.320468850417285,
+                "pred_3": 12.524649699141067,
+                "pred_4": 86.99446436474346,
+                "pred_5": 24.4597722416439,
+                "pred_6": 62.37570649257362,
+                "pred_7": 2.019294265235579,
+                "pred_8": 2.02816452272666,
+                "pred_9": 1.5772587162908278
+              },
+              "t_stats": {
+                "r_tax": -0.20678371873055246,
+                "r_def": 0.2177617788310614,
+                "r_cfo": 1.2089930589746092,
+                "pred_1": 1.0447495348147087,
+                "pred_2": -0.1697791436869393,
+                "pred_3": -0.23827844175661766,
+                "pred_4": -0.02155130807266756,
+                "pred_5": -0.1887562252201876,
+                "pred_6": -0.4406051998070687,
+                "pred_7": 10.257020920652101,
+                "pred_8": -0.8138767407490662,
+                "pred_9": 0.005627372986792708
+              },
+              "mean_r2": 0.21706257597112125,
+              "mean_n": 341,
+              "n_periods_used": 3,
+              "n_periods_skipped": 5,
+              "n_periods_total": 8,
+              "skip_reasons": [
+                "1996: too thin",
+                "1997: too thin",
+                "1998: too thin",
+                "1999: too thin",
+                "2000: too thin"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

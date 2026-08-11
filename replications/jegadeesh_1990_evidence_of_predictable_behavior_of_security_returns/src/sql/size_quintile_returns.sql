@@ -1,0 +1,31 @@
+-- size_quintile_returns.sql
+-- Purpose: Document the SQL approach for building size-quintile series.
+--          In practice this aggregation is done in Python (src/main.py)
+--          from data/panel.parquet × data/size_quintile.parquet because
+--          the existing pipeline reads these parquets directly rather
+--          than routing through ClickHouse parquet.file().
+--
+-- See src/main.py:build_size_quintile_returns() for the implementation.
+-- The conceptual SQL is:
+--
+--   SELECT month, size_quintile, avg(ret) AS qret, count() AS n
+--   FROM (
+--     SELECT p.permno, p.month, p.ret, s.size_quintile
+--     FROM panel p
+--     INNER JOIN size_quintile s
+--       ON p.permno = s.permno AND p.month = s.month
+--     WHERE p.ret IS NOT NULL AND p.ret > -1.0
+--   )
+--   GROUP BY month, size_quintile;
+--
+-- Then in Python:
+--   R_St = (Q1 + Q2) / 2
+--   R_Mt =  Q3
+--   R_Lt = (Q4 + Q5) / 2
+--
+-- Note: The task spec called for CRSP "ermport1..9" (NYSE decile returns).
+-- In this CRSP instance only ermport1..5 exist (5 quintile tables, not
+-- 9 deciles) and erdport6..9 are sorted by beta, not size.  We therefore
+-- substitute panel × size_quintile.parquet (NYSE-only breakpoints,
+-- documented in Assumption 14) and aggregate into 3 groups of the 5
+-- NYSE quintiles.  Small/medium/large split is 2/1/2 quintiles.

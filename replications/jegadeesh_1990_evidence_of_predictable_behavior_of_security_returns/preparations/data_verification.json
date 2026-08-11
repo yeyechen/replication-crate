@@ -1,0 +1,69 @@
+{
+  "verdict": "ready",
+  "requirements": [
+    {
+      "id": "crsp_monthly_returns",
+      "description": "Monthly stock returns from CRSP, sample period 1929-1987 (cross-sectional regressions Table I) and 1934-1987 (predictive portfolios Table II-VI)",
+      "needed_columns": ["permno", "date", "ret", "retx", "prc", "shrout"],
+      "matched_table": "crsp_202601.msf",
+      "matched_columns": ["permno", "date", "ret", "retx", "prc", "shrout"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_daily_returns",
+      "description": "Daily stock returns from CRSP, sample period 1963-1987 (Panel II of Table VI bid-ask-spread correction, requires excluding the last trading day of month t-1)",
+      "needed_columns": ["permno", "date", "ret"],
+      "matched_table": "crsp_202601.dsf",
+      "matched_columns": ["permno", "date", "ret"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_exchange_share_codes",
+      "description": "Exchange codes (hexcd) and share codes (shrcd) for stock filtering and PIT joins",
+      "needed_columns": ["permno", "namedt", "nameendt", "shrcd", "hexcd", "siccd"],
+      "matched_table": "crsp_202601.msenames",
+      "matched_columns": ["permno", "namedt", "nameendt", "shrcd", "hexcd", "siccd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_equal_weighted_index",
+      "description": "CRSP equal-weighted index used as market proxy in the market model (eq. 3) and as the 1929-1982 sample-period market in Table I",
+      "needed_columns": ["date", "ewretd"],
+      "matched_table": "crsp_202601.msi",
+      "matched_columns": ["date", "ewretd", "ewretx", "vwretd", "vwretx"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "risk_free_rate",
+      "description": "1-month Treasury bill rate used as risk-free rate in the market model (eq. 3); paper says source is CRSP but FF rf is identical and available from 1926",
+      "needed_columns": ["dt", "rf"],
+      "matched_table": "ff.four_factor_monthly",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "mom", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "size_quintile_returns",
+      "description": "NYSE size quintile portfolio returns for the size-based 3-factor model in Table V (R_St, R_Mt, R_Lt). CRSP provides NYSE-only equal-weighted decile returns; we form 5 quintiles from the relevant decile groups",
+      "needed_columns": ["date", "ret"],
+      "matched_table": "crsp_202601.ermport1",
+      "matched_columns": ["permno", "date", "ret", "capn", "decret"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "size_decile_assignments",
+      "description": "Stock-level monthly assignment to size deciles for the size-quintile subsample regression in Table I (Q1, Q3, Q5)",
+      "needed_columns": ["permno", "date", "capn"],
+      "matched_table": "crsp_202601.mport1",
+      "matched_columns": ["permno", "capn", "capv", "date", "year", "file"],
+      "missing_columns": [],
+      "status": "full"
+    }
+  ],
+  "blocking_issues": []
+}

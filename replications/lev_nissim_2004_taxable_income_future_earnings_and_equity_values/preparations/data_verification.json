@@ -1,0 +1,104 @@
+{
+  "verdict": "partial",
+  "coverage_pct": 99,
+  "requirements": [
+    {
+      "id": "comp_funda_annual",
+      "description": "Compustat annual fundamentals — total assets, income before extraordinary items, common equity, shares outstanding, fiscal year-end, SIC code, sales, dividends",
+      "needed_columns": ["gvkey", "datadate", "fyear", "at", "ib", "ceq", "csho", "prcc_f", "sich", "sale", "dv"],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": ["gvkey", "datadate", "fyear", "at", "ib", "ceq", "csho", "prcc_f", "sich", "sale", "dv"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "comp_tax_variables",
+      "description": "Compustat annual tax variables — current federal/foreign taxes, total income taxes, deferred taxes (for TAX and DEF fundamentals, plus accruals computation)",
+      "needed_columns": ["txfed", "txfo", "txt", "txdb", "dlcch", "ca", "che", "lct", "dp", "dlc", "dltt"],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": ["txfed", "txfo", "txt", "txdb", "dlcch", "ca", "che", "lct", "dp", "dlc", "dltt"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "comp_cl_substitute",
+      "description": "Compustat current liabilities (#5) — not directly available; substitute lct (total current liabilities, equivalent field under newer Compustat schema)",
+      "needed_columns": ["cl"],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": ["lct"],
+      "missing_columns": ["cl"],
+      "status": "partial"
+    },
+    {
+      "id": "comp_capx_xrd",
+      "description": "Compustat R&D (#46), capital expenditures, EPS (#58), dividends paid (#317) for the nine PRED controls and Table 6 robustness checks",
+      "needed_columns": ["xrd", "capx", "epsfi", "dvp"],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": ["xrd", "capx", "epsfi", "dvp"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "comp_cfo_oancf",
+      "description": "Compustat cash flow from operations — direct measure (oancf, #308) used in robustness check of CFO; primary measure is IB - accruals from balance-sheet changes",
+      "needed_columns": ["oancf", "cfo", "ib"],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": ["oancf", "cfo", "ib"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_monthly_returns",
+      "description": "CRSP monthly stock file — permno, date, ret, prc, shrout for monthly returns and May–April holding-period returns",
+      "needed_columns": ["permno", "date", "ret", "prc", "shrout"],
+      "matched_table": "crsp_202601.msf",
+      "matched_columns": ["permno", "date", "ret", "prc", "shrout"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_monthly_share_code",
+      "description": "CRSP monthly header — hshrcd (share code 10/11), hexcd (exchange), hsiccd (SIC) for universe filter and industry-year grouping",
+      "needed_columns": ["permno", "hshrcd", "hexcd", "hsiccd"],
+      "matched_table": "crsp_202601.msfhdr",
+      "matched_columns": ["permno", "hshrcd", "hexcd", "hsiccd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_delisting_returns",
+      "description": "CRSP monthly delisting returns — dlret for the holding-period return reinvestment rule (delisted proceeds reinvested in NYSE/AMEX/NASDAQ VW index)",
+      "needed_columns": ["permno", "dlstdt", "dlstcd", "dlret"],
+      "matched_table": "crsp_202601.msedelist",
+      "matched_columns": ["permno", "dlstdt", "dlstcd", "dlret"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_compustat_link",
+      "description": "CRSP-Compustat CCM link table — lpermno → gvkey with linkdt / linkenddt PIT window for the gvkey ↔ permno join",
+      "needed_columns": ["lpermno", "gvkey", "linktype", "linkprim", "linkdt", "linkenddt"],
+      "matched_table": "crsp_202601.ccmxpf_linktable",
+      "matched_columns": ["lpermno", "gvkey", "linktype", "linkprim", "linkdt", "linkenddt"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ibes_long_term_growth_forecast",
+      "description": "I/B/E/S mean analyst long-term earnings growth forecast (GROW) in April of subsequent year — sample limited to 1982-2000",
+      "needed_columns": ["ticker", "statpers", "meanest", "fpi"],
+      "matched_table": "ibes_202601.ptgsum",
+      "matched_columns": ["ticker", "statpers", "meanest", "fpi"],
+      "missing_columns": [],
+      "status": "full"
+    }
+  ],
+  "blocking_issues": [
+    {
+      "requirement": "comp_cl_substitute",
+      "reason": "Compustat column 'cl' (#5, current liabilities) is not present in comp_202601.funda; the modern schema uses 'lct' (current liabilities total). The ΔCL term in the accruals formula (footnote 16) requires current liabilities.",
+      "affected_targets": ["T2", "T3", "T4", "T5"],
+      "recommendation": "Use 'lct' as a substitute for 'cl' — these are equivalent fields under the post-2003 Compustat schema (cl was renamed to lct, same data). Document the substitution in preparations/assumptions.md. (Substitution is exact, not approximate; no coverage loss.)"
+    }
+  ]
+}

@@ -1,0 +1,642 @@
+{
+  "schema_version": 2,
+  "slug": "soliman_2007_the_use_of_dupont_analysis_by_market_participants",
+  "metrics": {
+    "NOA_mean": {
+      "value": 1275.9917558283294,
+      "unit": "ratio_or_dollars"
+    },
+    "NOA_std": {
+      "value": 3492.593038769988,
+      "unit": "ratio_or_dollars"
+    },
+    "NOA_p25": {
+      "value": 59.953,
+      "unit": "ratio_or_dollars"
+    },
+    "NOA_median": {
+      "value": 188.798,
+      "unit": "ratio_or_dollars"
+    },
+    "NOA_p75": {
+      "value": 758.88425,
+      "unit": "ratio_or_dollars"
+    },
+    "RNOA_mean": {
+      "value": 0.23228957464626335,
+      "unit": "ratio_or_dollars"
+    },
+    "RNOA_std": {
+      "value": 0.24641913021800682,
+      "unit": "ratio_or_dollars"
+    },
+    "RNOA_p25": {
+      "value": 0.10080039522038575,
+      "unit": "ratio_or_dollars"
+    },
+    "RNOA_median": {
+      "value": 0.16171919053360584,
+      "unit": "ratio_or_dollars"
+    },
+    "RNOA_p75": {
+      "value": 0.26577637779268926,
+      "unit": "ratio_or_dollars"
+    },
+    "PM_mean": {
+      "value": 0.11215920116699789,
+      "unit": "ratio_or_dollars"
+    },
+    "PM_std": {
+      "value": 0.08299287144058687,
+      "unit": "ratio_or_dollars"
+    },
+    "PM_p25": {
+      "value": 0.0532474433058421,
+      "unit": "ratio_or_dollars"
+    },
+    "PM_median": {
+      "value": 0.091984996329834,
+      "unit": "ratio_or_dollars"
+    },
+    "PM_p75": {
+      "value": 0.14741938737695548,
+      "unit": "ratio_or_dollars"
+    },
+    "ATO_mean": {
+      "value": 2.580659384995177,
+      "unit": "ratio_or_dollars"
+    },
+    "ATO_std": {
+      "value": 2.267196817577359,
+      "unit": "ratio_or_dollars"
+    },
+    "ATO_p25": {
+      "value": 1.20843973971257,
+      "unit": "ratio_or_dollars"
+    },
+    "ATO_median": {
+      "value": 1.9823378703841215,
+      "unit": "ratio_or_dollars"
+    },
+    "ATO_p75": {
+      "value": 3.1089070765445213,
+      "unit": "ratio_or_dollars"
+    },
+    "deltaRNOA_mean": {
+      "value": -0.15744458025950545,
+      "unit": "ratio_or_dollars"
+    },
+    "deltaRNOA_std": {
+      "value": 0.34591743124662255,
+      "unit": "ratio_or_dollars"
+    },
+    "deltaRNOA_p25": {
+      "value": -0.1324462440446086,
+      "unit": "ratio_or_dollars"
+    },
+    "deltaRNOA_median": {
+      "value": -0.01961444624659576,
+      "unit": "ratio_or_dollars"
+    },
+    "deltaRNOA_p75": {
+      "value": 0.019339924925210788,
+      "unit": "ratio_or_dollars"
+    },
+    "deltaPM_mean": {
+      "value": -0.027614230789407467,
+      "unit": "ratio_or_dollars"
+    },
+    "deltaPM_std": {
+      "value": 0.06938818573866662,
+      "unit": "ratio_or_dollars"
+    },
+    "deltaPM_p25": {
+      "value": -0.044686944443417295,
+      "unit": "ratio_or_dollars"
+    },
+    "deltaPM_median": {
+      "value": -0.005088178630343422,
+      "unit": "ratio_or_dollars"
+    },
+    "deltaPM_p75": {
+      "value": 0.009875464101162206,
+      "unit": "ratio_or_dollars"
+    },
+    "deltaATO_mean": {
+      "value": -0.06470032478823878,
+      "unit": "ratio_or_dollars"
+    },
+    "deltaATO_std": {
+      "value": 0.1887380069852466,
+      "unit": "ratio_or_dollars"
+    },
+    "deltaATO_p25": {
+      "value": -0.25,
+      "unit": "ratio_or_dollars"
+    },
+    "deltaATO_median": {
+      "value": -0.09704119671239753,
+      "unit": "ratio_or_dollars"
+    },
+    "deltaATO_p75": {
+      "value": 0.08534023968393488,
+      "unit": "ratio_or_dollars"
+    },
+    "R_mean": {
+      "value": 0.019135398492108182,
+      "unit": "ratio_or_dollars"
+    },
+    "R_std": {
+      "value": 0.5688567477435141,
+      "unit": "ratio_or_dollars"
+    },
+    "R_p25": {
+      "value": -0.31160417390508377,
+      "unit": "ratio_or_dollars"
+    },
+    "R_median": {
+      "value": -0.051739562676840656,
+      "unit": "ratio_or_dollars"
+    },
+    "R_p75": {
+      "value": 0.2308954977288401,
+      "unit": "ratio_or_dollars"
+    },
+    "EARN_mean": {
+      "value": 0.04971464425569235,
+      "unit": "ratio_or_dollars"
+    },
+    "EARN_std": {
+      "value": 0.18548155352084794,
+      "unit": "ratio_or_dollars"
+    },
+    "EARN_p25": {
+      "value": 0.026826211277924776,
+      "unit": "ratio_or_dollars"
+    },
+    "EARN_median": {
+      "value": 0.05591248295622964,
+      "unit": "ratio_or_dollars"
+    },
+    "EARN_p75": {
+      "value": 0.08590716284174986,
+      "unit": "ratio_or_dollars"
+    },
+    "deltaEARN_mean": {
+      "value": 0.018147261960893654,
+      "unit": "ratio_or_dollars"
+    },
+    "deltaEARN_std": {
+      "value": 0.30103888900692416,
+      "unit": "ratio_or_dollars"
+    },
+    "deltaEARN_p25": {
+      "value": -0.019315777442008505,
+      "unit": "ratio_or_dollars"
+    },
+    "deltaEARN_median": {
+      "value": 0.003872125921855405,
+      "unit": "ratio_or_dollars"
+    },
+    "deltaEARN_p75": {
+      "value": 0.02473292547455698,
+      "unit": "ratio_or_dollars"
+    },
+    "T2_intercept_coef_M1": {
+      "value": -0.0667701039548526,
+      "unit": "coefficient"
+    },
+    "T2_intercept_tstat_M1": {
+      "value": -3.875437040806929,
+      "unit": "t_stat"
+    },
+    "T2_RNOA_coef_M1": {
+      "value": -0.11076494400660974,
+      "unit": "coefficient"
+    },
+    "T2_RNOA_tstat_M1": {
+      "value": -7.003876803749405,
+      "unit": "t_stat"
+    },
+    "T2_deltaPM_coef_M1": {
+      "value": 0.47336747756304703,
+      "unit": "coefficient"
+    },
+    "T2_deltaPM_tstat_M1": {
+      "value": 7.327281158911968,
+      "unit": "t_stat"
+    },
+    "T2_deltaATO_coef_M1": {
+      "value": 0.04778374970800957,
+      "unit": "coefficient"
+    },
+    "T2_deltaATO_tstat_M1": {
+      "value": 4.605025681317027,
+      "unit": "t_stat"
+    },
+    "T2_deltaRNOA_coef_M1": {
+      "value": -0.040323918022532906,
+      "unit": "coefficient"
+    },
+    "T2_deltaRNOA_tstat_M1": {
+      "value": -2.0723813225061893,
+      "unit": "t_stat"
+    },
+    "T2_deltaNOA_coef_M1": {
+      "value": -0.06806825581342807,
+      "unit": "coefficient"
+    },
+    "T2_deltaNOA_tstat_M1": {
+      "value": -17.096794045174008,
+      "unit": "t_stat"
+    },
+    "T2_deltaWC_coef_M3": {
+      "value": -0.25004802270803017,
+      "unit": "coefficient"
+    },
+    "T2_deltaWC_tstat_M3": {
+      "value": -6.676790765838632,
+      "unit": "t_stat"
+    },
+    "T2_deltaNCO_coef_M3": {
+      "value": -0.1046008024565022,
+      "unit": "coefficient"
+    },
+    "T2_deltaNCO_tstat_M3": {
+      "value": -2.5544503296582235,
+      "unit": "t_stat"
+    },
+    "T2_deltaFIN_coef_M3": {
+      "value": -0.015654360568707802,
+      "unit": "coefficient"
+    },
+    "T2_deltaFIN_tstat_M3": {
+      "value": -0.8786163411638596,
+      "unit": "t_stat"
+    },
+    "T2_deltaATO_coef_M4": {
+      "value": 0.03615507131668662,
+      "unit": "coefficient"
+    },
+    "T2_deltaATO_tstat_M4": {
+      "value": 4.219446710780327,
+      "unit": "t_stat"
+    },
+    "T2_adjR2_M1": {
+      "value": 0.05121656124472703,
+      "unit": "r_squared"
+    },
+    "T2_adjR2_M4": {
+      "value": 0.05701049633379444,
+      "unit": "r_squared"
+    },
+    "T3_EARN_coef_M1": {
+      "value": 0.175400003541194,
+      "unit": "coefficient"
+    },
+    "T3_EARN_tstat_M1": {
+      "value": 1.6204841887905312,
+      "unit": "t_stat"
+    },
+    "T3_deltaEARN_coef_M1": {
+      "value": 0.1512404878926315,
+      "unit": "coefficient"
+    },
+    "T3_deltaEARN_tstat_M1": {
+      "value": 2.2941092575669177,
+      "unit": "t_stat"
+    },
+    "T3_RNOA_coef_M2": {
+      "value": 0.030946712368050126,
+      "unit": "coefficient"
+    },
+    "T3_RNOA_tstat_M2": {
+      "value": 1.0684487871537707,
+      "unit": "t_stat"
+    },
+    "T3_deltaRNOA_coef_M2": {
+      "value": 0.08434065811261472,
+      "unit": "coefficient"
+    },
+    "T3_deltaRNOA_tstat_M2": {
+      "value": 5.403400365702625,
+      "unit": "t_stat"
+    },
+    "T3_PM_coef_M3": {
+      "value": 0.07531598403685254,
+      "unit": "coefficient"
+    },
+    "T3_PM_tstat_M3": {
+      "value": 0.9262670758549237,
+      "unit": "t_stat"
+    },
+    "T3_ATO_coef_M3": {
+      "value": 0.00928830340251534,
+      "unit": "coefficient"
+    },
+    "T3_ATO_tstat_M3": {
+      "value": 3.813167962222228,
+      "unit": "t_stat"
+    },
+    "T3_deltaPM_coef_M4": {
+      "value": 0.07381702004382952,
+      "unit": "coefficient"
+    },
+    "T3_deltaPM_tstat_M4": {
+      "value": 0.3556039197347331,
+      "unit": "t_stat"
+    },
+    "T3_deltaATO_coef_M4": {
+      "value": 0.12830453009789294,
+      "unit": "coefficient"
+    },
+    "T3_deltaATO_tstat_M4": {
+      "value": 5.672912211006169,
+      "unit": "t_stat"
+    },
+    "T3_intercept_coef_M1": {
+      "value": 0.005991759078520316,
+      "unit": "coefficient"
+    },
+    "T3_intercept_tstat_M1": {
+      "value": 0.1561521443304299,
+      "unit": "t_stat"
+    },
+    "T3_intercept_coef_M2": {
+      "value": 0.014663403990212575,
+      "unit": "coefficient"
+    },
+    "T3_intercept_tstat_M2": {
+      "value": 0.33678681367712626,
+      "unit": "t_stat"
+    },
+    "T3_adjR2_M1": {
+      "value": 0.008376411037351539,
+      "unit": "r_squared"
+    },
+    "T3_adjR2_M2": {
+      "value": 0.015817791488579702,
+      "unit": "r_squared"
+    },
+    "T3_adjR2_M3": {
+      "value": 0.02184757324689032,
+      "unit": "r_squared"
+    },
+    "T3_adjR2_M4": {
+      "value": 0.025327490467206108,
+      "unit": "r_squared"
+    },
+    "T4_intercept_coef_M1": {
+      "value": -0.026606391595666214,
+      "unit": "coefficient"
+    },
+    "T4_intercept_tstat_M1": {
+      "value": -0.4959271669578172,
+      "unit": "t_stat"
+    },
+    "T4_deltaRNOA_coef_M1": {
+      "value": -0.019955926381910762,
+      "unit": "coefficient"
+    },
+    "T4_deltaRNOA_tstat_M1": {
+      "value": -0.68278225648109,
+      "unit": "t_stat"
+    },
+    "T4_deltaPM_coef_M1": {
+      "value": 0.03382488961264191,
+      "unit": "coefficient"
+    },
+    "T4_deltaPM_tstat_M1": {
+      "value": 1.9862295472809903,
+      "unit": "t_stat"
+    },
+    "T4_deltaATO_coef_M1": {
+      "value": 0.05900326846014231,
+      "unit": "coefficient"
+    },
+    "T4_deltaATO_tstat_M1": {
+      "value": 3.5833586543467497,
+      "unit": "t_stat"
+    },
+    "T4_deltaWC_coef_M2": {
+      "value": -0.40806760296055683,
+      "unit": "coefficient"
+    },
+    "T4_deltaWC_tstat_M2": {
+      "value": -9.81677104103715,
+      "unit": "t_stat"
+    },
+    "T4_deltaNCO_coef_M2": {
+      "value": -0.07176720432343818,
+      "unit": "coefficient"
+    },
+    "T4_deltaNCO_tstat_M2": {
+      "value": -1.5439421143737835,
+      "unit": "t_stat"
+    },
+    "T4_deltaFIN_coef_M2": {
+      "value": -0.004037777551924683,
+      "unit": "coefficient"
+    },
+    "T4_deltaFIN_tstat_M2": {
+      "value": -0.07571899729701406,
+      "unit": "t_stat"
+    },
+    "T4_deltaATO_coef_M2": {
+      "value": 0.05244773080652513,
+      "unit": "coefficient"
+    },
+    "T4_deltaATO_tstat_M2": {
+      "value": 3.89210807074907,
+      "unit": "t_stat"
+    },
+    "T4_RNOA_coef_M3": {
+      "value": 7.77777142149587e-05,
+      "unit": "coefficient"
+    },
+    "T4_RNOA_tstat_M3": {
+      "value": 0.003732182392999479,
+      "unit": "t_stat"
+    },
+    "T4_PM_coef_M3": {
+      "value": 0.017777451788999376,
+      "unit": "coefficient"
+    },
+    "T4_PM_tstat_M3": {
+      "value": 0.9354603758753224,
+      "unit": "t_stat"
+    },
+    "T4_deltaATO_coef_M3": {
+      "value": 0.050135121407026306,
+      "unit": "coefficient"
+    },
+    "T4_deltaATO_tstat_M3": {
+      "value": 3.9046604097173216,
+      "unit": "t_stat"
+    },
+    "T4_adjR2_M1": {
+      "value": 0.015290908604490103,
+      "unit": "r_squared"
+    },
+    "T4_adjR2_M2": {
+      "value": 0.020547197468559264,
+      "unit": "r_squared"
+    },
+    "T4_adjR2_M3": {
+      "value": 0.026930896119638253,
+      "unit": "r_squared"
+    },
+    "Anal_REV_mean": {
+      "value": -0.0022545318407438514,
+      "unit": "ratio"
+    },
+    "Anal_REV_std": {
+      "value": 0.025441624067639064,
+      "unit": "ratio"
+    },
+    "SUR_mean": {
+      "value": -0.0066223815944804615,
+      "unit": "ratio"
+    },
+    "SUR_std": {
+      "value": 0.0666572514988722,
+      "unit": "ratio"
+    },
+    "T5_intercept_coef_M1": {
+      "value": -0.0015388607367550569,
+      "unit": "coefficient"
+    },
+    "T5_intercept_tstat_M1": {
+      "value": -7.833551849350845,
+      "unit": "t_stat"
+    },
+    "T5_SUR_coef_M1": {
+      "value": 0.25193606851193034,
+      "unit": "coefficient"
+    },
+    "T5_SUR_tstat_M1": {
+      "value": 6.496163518212201,
+      "unit": "t_stat"
+    },
+    "T5_deltaPM_coef_M2": {
+      "value": 0.002349759535989526,
+      "unit": "coefficient"
+    },
+    "T5_deltaPM_tstat_M2": {
+      "value": 0.7843743044635333,
+      "unit": "t_stat"
+    },
+    "T5_deltaATO_coef_M2": {
+      "value": 0.0018291273738209632,
+      "unit": "coefficient"
+    },
+    "T5_deltaATO_tstat_M2": {
+      "value": 2.287584078812272,
+      "unit": "t_stat"
+    },
+    "T5_deltaRNOA_coef_M3": {
+      "value": -0.0020075459147845974,
+      "unit": "coefficient"
+    },
+    "T5_deltaRNOA_tstat_M3": {
+      "value": -1.851057333790451,
+      "unit": "t_stat"
+    },
+    "T5_deltaATO_coef_M3": {
+      "value": 0.002690014066454313,
+      "unit": "coefficient"
+    },
+    "T5_deltaATO_tstat_M3": {
+      "value": 2.6780909706903544,
+      "unit": "t_stat"
+    },
+    "T5_adjR2_M1": {
+      "value": 0.05094447091480102,
+      "unit": "r_squared"
+    },
+    "T5_adjR2_M2": {
+      "value": 0.05299285878621428,
+      "unit": "r_squared"
+    },
+    "T5_adjR2_M3": {
+      "value": 0.05457687917610376,
+      "unit": "r_squared"
+    },
+    "T6_intercept_coef_M1": {
+      "value": -0.02498517930208078,
+      "unit": "coefficient"
+    },
+    "T6_intercept_tstat_M1": {
+      "value": -6.889541232430148,
+      "unit": "t_stat"
+    },
+    "T6_deltaRNOA_coef_M1": {
+      "value": 0.00947239178926892,
+      "unit": "coefficient"
+    },
+    "T6_deltaRNOA_tstat_M1": {
+      "value": 3.9999538667223713,
+      "unit": "t_stat"
+    },
+    "T6_PM_coef_M1": {
+      "value": 0.09173937540836193,
+      "unit": "coefficient"
+    },
+    "T6_PM_tstat_M1": {
+      "value": 6.9764577384320186,
+      "unit": "t_stat"
+    },
+    "T6_ATO_coef_M1": {
+      "value": 0.001545690890278112,
+      "unit": "coefficient"
+    },
+    "T6_ATO_tstat_M1": {
+      "value": 4.603344242691913,
+      "unit": "t_stat"
+    },
+    "T6_deltaPM_coef_M2": {
+      "value": 0.06904925061122084,
+      "unit": "coefficient"
+    },
+    "T6_deltaPM_tstat_M2": {
+      "value": 5.5643165025210495,
+      "unit": "t_stat"
+    },
+    "T6_deltaATO_coef_M2": {
+      "value": 0.002439690164290449,
+      "unit": "coefficient"
+    },
+    "T6_deltaATO_tstat_M2": {
+      "value": 1.2666130789009729,
+      "unit": "t_stat"
+    },
+    "T6_deltaPM_coef_M3": {
+      "value": 0.034710209372305,
+      "unit": "coefficient"
+    },
+    "T6_deltaPM_tstat_M3": {
+      "value": 2.7318962078294744,
+      "unit": "t_stat"
+    },
+    "T6_deltaATO_coef_M3": {
+      "value": 0.001176250852326747,
+      "unit": "coefficient"
+    },
+    "T6_deltaATO_tstat_M3": {
+      "value": 0.3043425878351626,
+      "unit": "t_stat"
+    },
+    "T6_adjR2_M1": {
+      "value": 0.014547933309170064,
+      "unit": "r_squared"
+    },
+    "T6_adjR2_M2": {
+      "value": 0.005252995650740673,
+      "unit": "r_squared"
+    },
+    "T6_adjR2_M3": {
+      "value": 0.016698045749669224,
+      "unit": "r_squared"
+    }
+  }
+}

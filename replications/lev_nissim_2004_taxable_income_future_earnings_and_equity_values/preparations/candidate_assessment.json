@@ -1,0 +1,6 @@
+{
+  "replicable": true,
+  "paper_type": "empirical_cross_sectional",
+  "rationale": "Empirical cross-sectional accounting paper using Compustat, CRSP, and I/B/E/S data over 1973-2000. Methodology is clearly operationalized: (1) compute three industry-ranked quintile fundamentals R_TAX (taxable-to-book income ratio), R_DEF (deferred tax), R_CFO (cash-flow-to-net-income); (2) estimate three sets of annual cross-sectional regressions — earnings growth (Eq. 4), earnings-price (Eq. 5), and one-year-ahead stock return (Eq. 6) — each with industry fixed effects (two-digit SIC); (3) average the annual coefficients and t-statistics over pre- and post-SFAS 109 subperiods. Tables 2-5 report mean coefficients, t-statistics, R², and n for every model. Sample selection, variable definitions (with explicit Compustat data item numbers), and data sources are all spelled out.",
+  "block_reasons": []
+}

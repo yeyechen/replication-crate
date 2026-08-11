@@ -1,0 +1,42 @@
+{
+  "iterations": [
+    {
+      "iteration": 1,
+      "loss": 1.2222222222222223,
+      "n_total_evaluated": 153,
+      "tier_counts": {
+        "tier1": 30,
+        "tier2": 59,
+        "fail": 22,
+        "missing": 42,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 2,
+      "loss": 0.9803921568627451,
+      "n_total_evaluated": 153,
+      "tier_counts": {
+        "tier1": 38,
+        "tier2": 80,
+        "fail": 35,
+        "missing": 0,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 4,
+      "loss": 0.738562091503268,
+      "n_committed": 153,
+      "status_counts": {
+        "match": 40,
+        "fail": 113,
+        "missing": 0,
+        "skip": 0,
+        "no_effect": 0
+      }
+    }
+  ]
+}

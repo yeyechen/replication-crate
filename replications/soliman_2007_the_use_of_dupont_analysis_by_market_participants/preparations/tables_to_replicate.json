@@ -1,0 +1,1269 @@
+{
+  "paper_claims": [
+    {
+      "id": "C1",
+      "claim": "\u0394ATO positively predicts future changes in RNOA after controlling for \u0394RNOA, AB controls, and RSST accruals (the central DuPont forecasting result).",
+      "paper_location": "L572",
+      "headline": true
+    },
+    {
+      "id": "C2",
+      "claim": "\u0394ATO is significantly positively associated with contemporaneous 12-month buy-hold market-adjusted returns, incremental to earnings and \u0394EARN.",
+      "paper_location": "L608",
+      "headline": true
+    },
+    {
+      "id": "C3",
+      "claim": "\u0394ATO is associated with future abnormal stock returns (annual abnormal return ~5%) even after controlling for Fama-French factors and RSST accruals, indicating incomplete processing.",
+      "paper_location": "L624",
+      "headline": true
+    },
+    {
+      "id": "C4",
+      "claim": "\u0394ATO is significantly positively associated with analyst forecast revisions of next-year earnings, incremental to earnings surprise and \u0394RNOA.",
+      "paper_location": "L638"
+    },
+    {
+      "id": "C5",
+      "claim": "Future forecast errors for year t+1 are predictable by \u0394ATO and \u0394PM, suggesting analysts do not fully incorporate DuPont information.",
+      "paper_location": "L640-642"
+    }
+  ],
+  "budget_flag": "Heavy cell counts because the paper reports ~70-90 coefficient+t-stat cells per regression table. Six tables committed for full claim coverage; total ~290 cells.",
+  "tables": [
+    {
+      "id": "T1",
+      "table_ref": "Table 1",
+      "description": "Descriptive statistics for the variables used in the analysis (sample of 38,716 firm-year observations from 1984-2002).",
+      "replication_meaning": "Validates sample construction: that the NOA/PM/ATO/RNOA variables are built correctly from Compustat, that the winsorization convention is applied at 1%/99%, and that the sample size is in the paper's reported ballpark. Downstream claims C1-C5 depend on these variables being constructed correctly.",
+      "covers_claims": [],
+      "paper_quote": "The sample size is 38,716 firm-year observations from 1984-2002. Variables are winsorized at the 1% and 99% levels.",
+      "exercises_preprocessing_rules": [
+        "sample_period",
+        "sample_size",
+        "winsorize_all_financial",
+        "var_noa",
+        "var_pm",
+        "var_ato",
+        "var_rnoa",
+        "var_earn",
+        "var_delta_earn",
+        "var_sur",
+        "var_anal_rev",
+        "var_long_window_return"
+      ],
+      "metrics": [
+        {
+          "name": "NOA_mean",
+          "value": 1122.0,
+          "unit": "millions_dollars",
+          "tolerance_pct": 10,
+          "paper_location": "L891"
+        },
+        {
+          "name": "NOA_std",
+          "value": 2997.0,
+          "unit": "millions_dollars",
+          "tolerance_pct": 15,
+          "paper_location": "L892"
+        },
+        {
+          "name": "NOA_p25",
+          "value": 44.4,
+          "unit": "millions_dollars",
+          "tolerance_pct": 15,
+          "paper_location": "L893"
+        },
+        {
+          "name": "NOA_median",
+          "value": 160.1,
+          "unit": "millions_dollars",
+          "tolerance_pct": 10,
+          "paper_location": "L894"
+        },
+        {
+          "name": "NOA_p75",
+          "value": 691.2,
+          "unit": "millions_dollars",
+          "tolerance_pct": 15,
+          "paper_location": "L895"
+        },
+        {
+          "name": "RNOA_mean",
+          "value": 0.279,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L899"
+        },
+        {
+          "name": "RNOA_std",
+          "value": 0.354,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L900"
+        },
+        {
+          "name": "RNOA_p25",
+          "value": 0.113,
+          "unit": "ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L901"
+        },
+        {
+          "name": "RNOA_median",
+          "value": 0.181,
+          "unit": "ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L902"
+        },
+        {
+          "name": "RNOA_p75",
+          "value": 0.3,
+          "unit": "ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L903"
+        },
+        {
+          "name": "PM_mean",
+          "value": 0.115,
+          "unit": "ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L907"
+        },
+        {
+          "name": "PM_std",
+          "value": 0.082,
+          "unit": "ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L908"
+        },
+        {
+          "name": "PM_p25",
+          "value": 0.056,
+          "unit": "ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L909"
+        },
+        {
+          "name": "PM_median",
+          "value": 0.096,
+          "unit": "ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L910"
+        },
+        {
+          "name": "PM_p75",
+          "value": 0.153,
+          "unit": "ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L911"
+        },
+        {
+          "name": "ATO_mean",
+          "value": 2.85,
+          "unit": "ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L915"
+        },
+        {
+          "name": "ATO_std",
+          "value": 2.81,
+          "unit": "ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L916"
+        },
+        {
+          "name": "ATO_p25",
+          "value": 1.34,
+          "unit": "ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L917"
+        },
+        {
+          "name": "ATO_median",
+          "value": 2.11,
+          "unit": "ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L918"
+        },
+        {
+          "name": "ATO_p75",
+          "value": 3.29,
+          "unit": "ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L919"
+        },
+        {
+          "name": "deltaRNOA_mean",
+          "value": 0.0,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L923",
+          "zero_band": 0.01
+        },
+        {
+          "name": "deltaRNOA_std",
+          "value": 0.431,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L924"
+        },
+        {
+          "name": "deltaRNOA_p25",
+          "value": -0.048,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L925"
+        },
+        {
+          "name": "deltaRNOA_median",
+          "value": -0.002,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L926",
+          "zero_band": 0.005
+        },
+        {
+          "name": "deltaRNOA_p75",
+          "value": 0.038,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L927"
+        },
+        {
+          "name": "deltaPM_mean",
+          "value": 0.0,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L931",
+          "zero_band": 0.005
+        },
+        {
+          "name": "deltaPM_std",
+          "value": 0.058,
+          "unit": "ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L932"
+        },
+        {
+          "name": "deltaPM_p25",
+          "value": -0.017,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L933"
+        },
+        {
+          "name": "deltaPM_median",
+          "value": 0.0,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L934",
+          "zero_band": 0.005
+        },
+        {
+          "name": "deltaPM_p75",
+          "value": 0.016,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L935"
+        },
+        {
+          "name": "deltaATO_mean",
+          "value": -0.009,
+          "unit": "ratio",
+          "tolerance_pct": 25,
+          "paper_location": "L939"
+        },
+        {
+          "name": "deltaATO_std",
+          "value": 0.15,
+          "unit": "ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L940"
+        },
+        {
+          "name": "deltaATO_p25",
+          "value": -0.154,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L941"
+        },
+        {
+          "name": "deltaATO_median",
+          "value": -0.022,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L942"
+        },
+        {
+          "name": "deltaATO_p75",
+          "value": 0.14,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L943"
+        },
+        {
+          "name": "Anal_REV_mean",
+          "value": -0.011,
+          "unit": "ratio",
+          "tolerance_pct": 25,
+          "paper_location": "L947"
+        },
+        {
+          "name": "Anal_REV_std",
+          "value": 0.024,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L948"
+        },
+        {
+          "name": "SUR_mean",
+          "value": -0.005,
+          "unit": "ratio",
+          "tolerance_pct": 25,
+          "paper_location": "L955"
+        },
+        {
+          "name": "SUR_std",
+          "value": 0.022,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L956"
+        },
+        {
+          "name": "R_mean",
+          "value": 0.066,
+          "unit": "ratio",
+          "tolerance_pct": 25,
+          "paper_location": "L963"
+        },
+        {
+          "name": "R_std",
+          "value": 0.608,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L964"
+        },
+        {
+          "name": "R_p25",
+          "value": -0.278,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L965"
+        },
+        {
+          "name": "R_median",
+          "value": -0.033,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L966"
+        },
+        {
+          "name": "R_p75",
+          "value": 0.244,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L967"
+        },
+        {
+          "name": "EARN_mean",
+          "value": 0.128,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L971"
+        },
+        {
+          "name": "EARN_std",
+          "value": 0.794,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L972"
+        },
+        {
+          "name": "deltaEARN_mean",
+          "value": 0.009,
+          "unit": "ratio",
+          "tolerance_pct": 25,
+          "paper_location": "L979"
+        },
+        {
+          "name": "deltaEARN_std",
+          "value": 0.213,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L980"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "T2",
+      "table_ref": "Table 3 Panel B",
+      "description": "Fama-MacBeth regressions of \u0394RNOA_{t+1} on changes in DuPont components (4 model specifications).",
+      "replication_meaning": "Validates the headline DuPont result (C1): that \u0394ATO is the only change component significantly predicting \u0394RNOA_{t+1} after controlling for \u0394RNOA and adding AB/RSST controls. Tests the change-form variable construction (\u0394PM, \u0394ATO, \u0394RNOA), the RSST accrual decomposition (\u0394WC, \u0394NCO, \u0394FIN), and the Fama-MacBeth 19-year annual regression methodology.",
+      "covers_claims": [
+        "C1"
+      ],
+      "paper_quote": "panel B of table 3 presents the changes specification used in prior studies. Consistent with prior literature (Fairfield and Yohn 2001; Penman and Zhang 2003), model 1 shows that only \u0394ATO is positive and significant in predicting future changes in RNOA.",
+      "exercises_preprocessing_rules": [
+        "fm_annual_cross_section",
+        "fm_newey_west",
+        "var_noa",
+        "var_rnoa",
+        "var_delta_pm",
+        "var_delta_ato",
+        "var_delta_rnoa",
+        "var_delta_wc",
+        "var_delta_nco",
+        "var_delta_fin",
+        "var_delta_noa"
+      ],
+      "metrics": [
+        {
+          "name": "T2_intercept_coef_M1",
+          "value": 0.044,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L1492"
+        },
+        {
+          "name": "T2_intercept_tstat_M1",
+          "value": 5.45,
+          "unit": "t_stat",
+          "tolerance_pct": 20,
+          "paper_location": "L1499"
+        },
+        {
+          "name": "T2_RNOA_coef_M1",
+          "value": -0.277,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L1506"
+        },
+        {
+          "name": "T2_RNOA_tstat_M1",
+          "value": -6.07,
+          "unit": "t_stat",
+          "tolerance_pct": 20,
+          "paper_location": "L1513"
+        },
+        {
+          "name": "T2_deltaPM_coef_M1",
+          "value": 0.074,
+          "unit": "coefficient",
+          "tolerance_pct": 50,
+          "paper_location": "L1520"
+        },
+        {
+          "name": "T2_deltaPM_tstat_M1",
+          "value": 1.78,
+          "unit": "t_stat",
+          "tolerance_pct": 30,
+          "paper_location": "L1527"
+        },
+        {
+          "name": "T2_deltaATO_coef_M1",
+          "value": 0.017,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L1534"
+        },
+        {
+          "name": "T2_deltaATO_tstat_M1",
+          "value": 4.29,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1541"
+        },
+        {
+          "name": "T2_deltaRNOA_coef_M1",
+          "value": -0.078,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L1548"
+        },
+        {
+          "name": "T2_deltaRNOA_tstat_M1",
+          "value": -2.85,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1555"
+        },
+        {
+          "name": "T2_deltaNOA_coef_M1",
+          "value": -0.062,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L1561"
+        },
+        {
+          "name": "T2_deltaNOA_tstat_M1",
+          "value": -9.92,
+          "unit": "t_stat",
+          "tolerance_pct": 20,
+          "paper_location": "L1568"
+        },
+        {
+          "name": "T2_deltaWC_coef_M3",
+          "value": -0.321,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L1578"
+        },
+        {
+          "name": "T2_deltaWC_tstat_M3",
+          "value": -4.57,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1585"
+        },
+        {
+          "name": "T2_deltaNCO_coef_M3",
+          "value": -0.176,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L1591"
+        },
+        {
+          "name": "T2_deltaNCO_tstat_M3",
+          "value": -8.29,
+          "unit": "t_stat",
+          "tolerance_pct": 20,
+          "paper_location": "L1598"
+        },
+        {
+          "name": "T2_deltaFIN_coef_M3",
+          "value": -0.098,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L1604"
+        },
+        {
+          "name": "T2_deltaFIN_tstat_M3",
+          "value": -3.42,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1611"
+        },
+        {
+          "name": "T2_deltaATO_coef_M4",
+          "value": 0.011,
+          "unit": "coefficient",
+          "tolerance_pct": 40,
+          "paper_location": "L1537"
+        },
+        {
+          "name": "T2_deltaATO_tstat_M4",
+          "value": 2.05,
+          "unit": "t_stat",
+          "tolerance_pct": 30,
+          "paper_location": "L1544"
+        },
+        {
+          "name": "T2_adjR2_M1",
+          "value": 0.169,
+          "unit": "r_squared",
+          "tolerance_pct": 20,
+          "paper_location": "L1625"
+        },
+        {
+          "name": "T2_adjR2_M4",
+          "value": 0.213,
+          "unit": "r_squared",
+          "tolerance_pct": 15,
+          "paper_location": "L1628"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "T3",
+      "table_ref": "Table 4",
+      "description": "Fama-MacBeth regressions of contemporaneous 12-month buy-hold market-adjusted returns on DuPont components (4 model specifications).",
+      "replication_meaning": "Validates the contemporaneous-return result (C2): that PM and ATO levels are positively associated with returns, and that \u0394ATO is significant in model 4. Tests long-window return construction (compounded buy-hold market-adjusted over 12 months beginning first month of fiscal year), the earnings variables (EARN, \u0394EARN, RNOA), and the FM regression methodology applied to a different LHS variable.",
+      "covers_claims": [
+        "C2"
+      ],
+      "paper_quote": "When PM and ATO are added to the regression in model 3, both components are significant and positive with t-statistics of 2.99 and 2.36, respectively.",
+      "exercises_preprocessing_rules": [
+        "fm_annual_cross_section",
+        "fm_newey_west",
+        "var_long_window_return",
+        "var_earn",
+        "var_delta_earn",
+        "var_rnoa",
+        "var_delta_rnoa",
+        "var_pm",
+        "var_ato",
+        "var_delta_pm",
+        "var_delta_ato"
+      ],
+      "metrics": [
+        {
+          "name": "T3_intercept_coef_M1",
+          "value": 0.0443,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L1712"
+        },
+        {
+          "name": "T3_intercept_tstat_M1",
+          "value": 1.85,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1713"
+        },
+        {
+          "name": "T3_EARN_coef_M1",
+          "value": 0.224,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L1714"
+        },
+        {
+          "name": "T3_EARN_tstat_M1",
+          "value": 1.43,
+          "unit": "t_stat",
+          "tolerance_pct": 30,
+          "paper_location": "L1715"
+        },
+        {
+          "name": "T3_deltaEARN_coef_M1",
+          "value": 2.795,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L1716"
+        },
+        {
+          "name": "T3_deltaEARN_tstat_M1",
+          "value": 2.44,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1717"
+        },
+        {
+          "name": "T3_adjR2_M1",
+          "value": 0.0482,
+          "unit": "r_squared",
+          "tolerance_pct": 20,
+          "paper_location": "L1721"
+        },
+        {
+          "name": "T3_intercept_coef_M2",
+          "value": -0.076,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L1725"
+        },
+        {
+          "name": "T3_intercept_tstat_M2",
+          "value": -3.27,
+          "unit": "t_stat",
+          "tolerance_pct": 20,
+          "paper_location": "L1726"
+        },
+        {
+          "name": "T3_RNOA_coef_M2",
+          "value": 0.381,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L1728"
+        },
+        {
+          "name": "T3_RNOA_tstat_M2",
+          "value": 9.96,
+          "unit": "t_stat",
+          "tolerance_pct": 15,
+          "paper_location": "L1729"
+        },
+        {
+          "name": "T3_deltaRNOA_coef_M2",
+          "value": 0.668,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L1730"
+        },
+        {
+          "name": "T3_deltaRNOA_tstat_M2",
+          "value": 6.7,
+          "unit": "t_stat",
+          "tolerance_pct": 20,
+          "paper_location": "L1731"
+        },
+        {
+          "name": "T3_adjR2_M2",
+          "value": 0.1146,
+          "unit": "r_squared",
+          "tolerance_pct": 15,
+          "paper_location": "L1734"
+        },
+        {
+          "name": "T3_PM_coef_M3",
+          "value": 0.496,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L1743"
+        },
+        {
+          "name": "T3_PM_tstat_M3",
+          "value": 2.99,
+          "unit": "t_stat",
+          "tolerance_pct": 20,
+          "paper_location": "L1744"
+        },
+        {
+          "name": "T3_ATO_coef_M3",
+          "value": 0.006,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L1745"
+        },
+        {
+          "name": "T3_ATO_tstat_M3",
+          "value": 2.36,
+          "unit": "t_stat",
+          "tolerance_pct": 20,
+          "paper_location": "L1746"
+        },
+        {
+          "name": "T3_adjR2_M3",
+          "value": 0.1248,
+          "unit": "r_squared",
+          "tolerance_pct": 15,
+          "paper_location": "L1747"
+        },
+        {
+          "name": "T3_deltaPM_coef_M4",
+          "value": 0.122,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L1758"
+        },
+        {
+          "name": "T3_deltaPM_tstat_M4",
+          "value": 1.93,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1759"
+        },
+        {
+          "name": "T3_deltaATO_coef_M4",
+          "value": 0.089,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L1760"
+        },
+        {
+          "name": "T3_deltaATO_tstat_M4",
+          "value": 6.45,
+          "unit": "t_stat",
+          "tolerance_pct": 15,
+          "paper_location": "L1761"
+        },
+        {
+          "name": "T3_adjR2_M4",
+          "value": 0.14,
+          "unit": "r_squared",
+          "tolerance_pct": 15,
+          "paper_location": "L1762"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "T4",
+      "table_ref": "Table 7",
+      "description": "Fama-MacBeth rank regressions of future abnormal returns on DuPont components (3 model specifications, decile-ranked independent variables).",
+      "replication_meaning": "Validates the future-return test (C3): that \u0394ATO predicts future abnormal stock returns even after controlling for RSST accruals and Fama-French risk factors. Tests the annual decile-ranking convention (vars ranked 0-9 divided by 9), the future-window return construction (begins 4 months after fiscal year-end, continues 12 months), the Shumway delisting-return substitution, and the FF risk-factor controls (BM, log MVE, Beta).",
+      "covers_claims": [
+        "C3"
+      ],
+      "paper_quote": "Model 1 indicates that there is a correspondence between \u0394ATO and future abnormal stock returns. ... The coefficient on \u0394ATO indicates that a trading strategy optimizing the information in \u0394ATO would result in a hedge return of about 7.8% after controlling for \u0394RNOA and the three Fama and French (1993) risk factors.",
+      "exercises_preprocessing_rules": [
+        "fm_annual_cross_section",
+        "fm_newey_west",
+        "var_ann_rank_decile",
+        "var_future_window_return",
+        "delist_substitution",
+        "delist_reinvest_market",
+        "var_delta_ato",
+        "var_delta_pm",
+        "var_delta_rnoa",
+        "var_delta_wc",
+        "var_delta_nco",
+        "var_delta_fin",
+        "var_rnoa",
+        "var_pm",
+        "var_ato",
+        "var_bm",
+        "var_log_mve",
+        "var_beta"
+      ],
+      "metrics": [
+        {
+          "name": "T4_intercept_coef_M1",
+          "value": -0.061,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L2018"
+        },
+        {
+          "name": "T4_intercept_tstat_M1",
+          "value": -2.15,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L2024"
+        },
+        {
+          "name": "T4_deltaRNOA_coef_M1",
+          "value": 0.001,
+          "unit": "coefficient",
+          "tolerance_pct": 50,
+          "paper_location": "L2030",
+          "zero_band": 0.005
+        },
+        {
+          "name": "T4_deltaRNOA_tstat_M1",
+          "value": 0.11,
+          "unit": "t_stat",
+          "tolerance_pct": 50,
+          "paper_location": "L2036"
+        },
+        {
+          "name": "T4_deltaPM_coef_M1",
+          "value": 0.006,
+          "unit": "coefficient",
+          "tolerance_pct": 50,
+          "paper_location": "L2042"
+        },
+        {
+          "name": "T4_deltaPM_tstat_M1",
+          "value": 0.33,
+          "unit": "t_stat",
+          "tolerance_pct": 50,
+          "paper_location": "L2048"
+        },
+        {
+          "name": "T4_deltaATO_coef_M1",
+          "value": 0.078,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L2054"
+        },
+        {
+          "name": "T4_deltaATO_tstat_M1",
+          "value": 5.12,
+          "unit": "t_stat",
+          "tolerance_pct": 20,
+          "paper_location": "L2060"
+        },
+        {
+          "name": "T4_deltaWC_coef_M2",
+          "value": -0.513,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L2067"
+        },
+        {
+          "name": "T4_deltaWC_tstat_M2",
+          "value": -4.61,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L2073"
+        },
+        {
+          "name": "T4_deltaNCO_coef_M2",
+          "value": -0.162,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L2079"
+        },
+        {
+          "name": "T4_deltaNCO_tstat_M2",
+          "value": -3.96,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L2085"
+        },
+        {
+          "name": "T4_deltaFIN_coef_M2",
+          "value": -0.041,
+          "unit": "coefficient",
+          "tolerance_pct": 50,
+          "paper_location": "L2091"
+        },
+        {
+          "name": "T4_deltaFIN_tstat_M2",
+          "value": -1.14,
+          "unit": "t_stat",
+          "tolerance_pct": 30,
+          "paper_location": "L2097"
+        },
+        {
+          "name": "T4_deltaATO_coef_M2",
+          "value": 0.054,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L2056"
+        },
+        {
+          "name": "T4_deltaATO_tstat_M2",
+          "value": 3.11,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L2062"
+        },
+        {
+          "name": "T4_RNOA_coef_M3",
+          "value": 0.07,
+          "unit": "coefficient",
+          "tolerance_pct": 50,
+          "paper_location": "L2104"
+        },
+        {
+          "name": "T4_RNOA_tstat_M3",
+          "value": 1.41,
+          "unit": "t_stat",
+          "tolerance_pct": 30,
+          "paper_location": "L2110"
+        },
+        {
+          "name": "T4_PM_coef_M3",
+          "value": 0.11,
+          "unit": "coefficient",
+          "tolerance_pct": 50,
+          "paper_location": "L2116"
+        },
+        {
+          "name": "T4_PM_tstat_M3",
+          "value": 1.04,
+          "unit": "t_stat",
+          "tolerance_pct": 30,
+          "paper_location": "L2122"
+        },
+        {
+          "name": "T4_deltaATO_coef_M3",
+          "value": 0.052,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L2057"
+        },
+        {
+          "name": "T4_deltaATO_tstat_M3",
+          "value": 2.52,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L2063"
+        },
+        {
+          "name": "T4_adjR2_M1",
+          "value": 0.016,
+          "unit": "r_squared",
+          "tolerance_pct": 30,
+          "paper_location": "L2144"
+        },
+        {
+          "name": "T4_adjR2_M2",
+          "value": 0.03,
+          "unit": "r_squared",
+          "tolerance_pct": 25,
+          "paper_location": "L2145"
+        },
+        {
+          "name": "T4_adjR2_M3",
+          "value": 0.038,
+          "unit": "r_squared",
+          "tolerance_pct": 25,
+          "paper_location": "L2146"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "T5",
+      "table_ref": "Table 8",
+      "description": "Fama-MacBeth regressions of analyst forecast revisions on DuPont change components (3 model specifications).",
+      "replication_meaning": "Validates the analyst forecast revision test (C4): that \u0394ATO is associated with analyst forecast revisions, incremental to the earnings surprise. Tests the IBES-based Anal_REV construction (first post-announcement median t+1 forecast minus last pre-announcement median t+1 forecast, scaled by lagged price), and the SUR construction (IBES annual EPS minus most recent pre-announcement median forecast).",
+      "covers_claims": [
+        "C4"
+      ],
+      "paper_quote": "Table 8 presents the first set of analyst tests ... Once again, \u0394ATO is the only DuPont component that is positive and significant.",
+      "exercises_preprocessing_rules": [
+        "fm_annual_cross_section",
+        "fm_newey_west",
+        "var_anal_rev",
+        "var_sur",
+        "var_delta_pm",
+        "var_delta_ato",
+        "var_delta_rnoa"
+      ],
+      "metrics": [
+        {
+          "name": "T5_intercept_coef_M1",
+          "value": -0.002,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L2210"
+        },
+        {
+          "name": "T5_intercept_tstat_M1",
+          "value": -5.4,
+          "unit": "t_stat",
+          "tolerance_pct": 20,
+          "paper_location": "L2218"
+        },
+        {
+          "name": "T5_SUR_coef_M1",
+          "value": 0.062,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L2211"
+        },
+        {
+          "name": "T5_SUR_tstat_M1",
+          "value": 3.06,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L2219"
+        },
+        {
+          "name": "T5_adjR2_M1",
+          "value": 0.0109,
+          "unit": "r_squared",
+          "tolerance_pct": 30,
+          "paper_location": "L2215"
+        },
+        {
+          "name": "T5_deltaPM_coef_M2",
+          "value": 0.001,
+          "unit": "coefficient",
+          "tolerance_pct": 50,
+          "paper_location": "L2230"
+        },
+        {
+          "name": "T5_deltaPM_tstat_M2",
+          "value": 1.09,
+          "unit": "t_stat",
+          "tolerance_pct": 30,
+          "paper_location": "L2238"
+        },
+        {
+          "name": "T5_deltaATO_coef_M2",
+          "value": 0.001,
+          "unit": "coefficient",
+          "tolerance_pct": 50,
+          "paper_location": "L2231"
+        },
+        {
+          "name": "T5_deltaATO_tstat_M2",
+          "value": 3.63,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L2239"
+        },
+        {
+          "name": "T5_adjR2_M2",
+          "value": 0.014,
+          "unit": "r_squared",
+          "tolerance_pct": 25,
+          "paper_location": "L2233"
+        },
+        {
+          "name": "T5_deltaRNOA_coef_M3",
+          "value": 0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 50,
+          "paper_location": "L2250",
+          "zero_band": 0.005
+        },
+        {
+          "name": "T5_deltaRNOA_tstat_M3",
+          "value": 0.01,
+          "unit": "t_stat",
+          "tolerance_pct": 50,
+          "paper_location": "L2258"
+        },
+        {
+          "name": "T5_deltaATO_coef_M3",
+          "value": 0.001,
+          "unit": "coefficient",
+          "tolerance_pct": 50,
+          "paper_location": "L2248"
+        },
+        {
+          "name": "T5_deltaATO_tstat_M3",
+          "value": 2.44,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L2256"
+        },
+        {
+          "name": "T5_adjR2_M3",
+          "value": 0.0132,
+          "unit": "r_squared",
+          "tolerance_pct": 30,
+          "paper_location": "L2251"
+        }
+      ],
+      "notes": "Tables 8/9 require IBES forecast detail (consensus median forecasts of t and t+1 EPS, before and after the earnings announcement). The IBES unadjusted details table (ibes_202601.detu_epsus) carries estimator-level forecasts with anndats/revdats. We will compute SUR and Anal_REV from this table; coverage may differ from the original paper due to IBES vintage. We mark these cells Tier 2 if no reproducing sample is found."
+    },
+    {
+      "id": "T6",
+      "table_ref": "Table 9",
+      "description": "Fama-MacBeth regressions of future forecast errors on DuPont components (3 model specifications).",
+      "replication_meaning": "Validates the future forecast error test (C5): that \u0394ATO and \u0394PM predict next-year forecast errors, indicating analysts do not fully incorporate DuPont information. Tests the FE_{t+1} construction (realized EPS_{t+1} minus median forecast in month before announcement of t+1, scaled by stock price).",
+      "covers_claims": [
+        "C5"
+      ],
+      "paper_quote": "Table 9 presents the analysis of explaining future forecast errors from equation (8). Model 1 presents the levels of the components. Both are insignificant ... Model 2 presents the changes specification. Surprisingly, both \u0394PM and \u0394ATO are statistically significant.",
+      "exercises_preprocessing_rules": [
+        "fm_annual_cross_section",
+        "fm_newey_west",
+        "var_fe",
+        "var_delta_rnoa",
+        "var_pm",
+        "var_ato",
+        "var_delta_pm",
+        "var_delta_ato"
+      ],
+      "metrics": [
+        {
+          "name": "T6_intercept_coef_M1",
+          "value": 0.013,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L2311"
+        },
+        {
+          "name": "T6_intercept_tstat_M1",
+          "value": 8.44,
+          "unit": "t_stat",
+          "tolerance_pct": 15,
+          "paper_location": "L2312"
+        },
+        {
+          "name": "T6_deltaRNOA_coef_M1",
+          "value": -0.001,
+          "unit": "coefficient",
+          "tolerance_pct": 50,
+          "paper_location": "L2313",
+          "zero_band": 0.005
+        },
+        {
+          "name": "T6_deltaRNOA_tstat_M1",
+          "value": -1.35,
+          "unit": "t_stat",
+          "tolerance_pct": 30,
+          "paper_location": "L2314"
+        },
+        {
+          "name": "T6_PM_coef_M1",
+          "value": -0.013,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L2315"
+        },
+        {
+          "name": "T6_PM_tstat_M1",
+          "value": -1.62,
+          "unit": "t_stat",
+          "tolerance_pct": 30,
+          "paper_location": "L2316"
+        },
+        {
+          "name": "T6_ATO_coef_M1",
+          "value": -0.0,
+          "unit": "coefficient",
+          "tolerance_pct": 50,
+          "paper_location": "L2317",
+          "zero_band": 0.005
+        },
+        {
+          "name": "T6_ATO_tstat_M1",
+          "value": -0.09,
+          "unit": "t_stat",
+          "tolerance_pct": 50,
+          "paper_location": "L2318"
+        },
+        {
+          "name": "T6_adjR2_M1",
+          "value": 0.0174,
+          "unit": "r_squared",
+          "tolerance_pct": 30,
+          "paper_location": "L2319"
+        },
+        {
+          "name": "T6_deltaPM_coef_M2",
+          "value": 0.002,
+          "unit": "coefficient",
+          "tolerance_pct": 50,
+          "paper_location": "L2325"
+        },
+        {
+          "name": "T6_deltaPM_tstat_M2",
+          "value": 3.29,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L2326"
+        },
+        {
+          "name": "T6_deltaATO_coef_M2",
+          "value": 0.002,
+          "unit": "coefficient",
+          "tolerance_pct": 50,
+          "paper_location": "L2327"
+        },
+        {
+          "name": "T6_deltaATO_tstat_M2",
+          "value": 2.56,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L2328"
+        },
+        {
+          "name": "T6_adjR2_M2",
+          "value": 0.0278,
+          "unit": "r_squared",
+          "tolerance_pct": 25,
+          "paper_location": "L2329"
+        },
+        {
+          "name": "T6_deltaPM_coef_M3",
+          "value": 0.002,
+          "unit": "coefficient",
+          "tolerance_pct": 50,
+          "paper_location": "L2335"
+        },
+        {
+          "name": "T6_deltaPM_tstat_M3",
+          "value": 3.27,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L2336"
+        },
+        {
+          "name": "T6_deltaATO_coef_M3",
+          "value": 0.002,
+          "unit": "coefficient",
+          "tolerance_pct": 50,
+          "paper_location": "L2337"
+        },
+        {
+          "name": "T6_deltaATO_tstat_M3",
+          "value": 2.54,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L2338"
+        },
+        {
+          "name": "T6_adjR2_M3",
+          "value": 0.0179,
+          "unit": "r_squared",
+          "tolerance_pct": 30,
+          "paper_location": "L2339"
+        }
+      ],
+      "notes": "Same IBES dependency caveat as Table 8. Cells may be Tier 2 if no reproducing sample is found."
+    }
+  ]
+}

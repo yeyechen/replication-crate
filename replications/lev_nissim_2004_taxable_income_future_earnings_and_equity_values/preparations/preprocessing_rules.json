@@ -1,0 +1,317 @@
+[
+  {
+    "rule_id": "var_taxable_income_estimate",
+    "category": "variable",
+    "section": "IV. Methodology \u2014 Estimating Taxable Income",
+    "paper_location": "L185",
+    "paper_quote": "We estimate taxable income by grossing up the current portion of the reported income tax expense: Taxable Income = current portion of the income tax expense / t."
+  },
+  {
+    "rule_id": "var_current_tax_expense",
+    "category": "variable",
+    "section": "IV. Methodology \u2014 Estimating Taxable Income, footnote 10",
+    "paper_location": "L195",
+    "paper_quote": "we measure the current portion of the income tax expense as the sum of current federal (Compustat #63) and foreign (#64) income taxes, or, when either of these amounts is missing, as the difference between total income tax expense (Compustat #16) and the deferred portion of the income tax expense (#50)."
+  },
+  {
+    "rule_id": "var_statutory_tax_rate",
+    "category": "variable",
+    "section": "IV. Methodology \u2014 Estimating Taxable Income, footnote 10",
+    "paper_location": "L195",
+    "paper_quote": "The top statutory corporate federal tax rate was 48 percent in 1973\u20131978, 46 percent in 1979\u20131986, 40 percent in 1987, 34 percent in 1988\u20131992, and 35 percent in 1993\u20132000."
+  },
+  {
+    "rule_id": "var_tax_fundamental",
+    "category": "variable",
+    "section": "IV. Methodology \u2014 The Tax-Based Fundamentals (Eq. 2)",
+    "paper_location": "L217",
+    "paper_quote": "TAX = (Taxable Income \u00d7 (1 \u2212 t)) / Net Income, where net income is measured as income before extraordinary items (Compustat #18)."
+  },
+  {
+    "rule_id": "sort_industry_year_quintile_tax",
+    "category": "sort",
+    "section": "IV. Methodology \u2014 The Tax-Based Fundamentals",
+    "paper_location": "L229",
+    "paper_quote": "for each year we rank the sample firms by the value of TAX within industries (two-digit SIC code), and define R_TAX as a multinomial variable with values between 1 (for firms in the lowest industry quintile of TAX) and 5 (highest quintile)."
+  },
+  {
+    "rule_id": "sort_two_digit_sic",
+    "category": "sort",
+    "section": "IV. Methodology \u2014 The Tax-Based Fundamentals",
+    "paper_location": "L229",
+    "paper_quote": "we rank the sample firms by the value of TAX within industries (two-digit SIC code)."
+  },
+  {
+    "rule_id": "sort_industry_year_quintile_def",
+    "category": "sort",
+    "section": "IV. Methodology \u2014 The Tax-Based Fundamentals",
+    "paper_location": "L231",
+    "paper_quote": "we define R_DEF as a multinomial variable that takes values between 1 (lowest quintile of DEF for the industry-year group) and 5 (highest quintile)."
+  },
+  {
+    "rule_id": "var_def_neg_ratio_to_avg_ta",
+    "category": "variable",
+    "section": "IV. Methodology \u2014 The Tax-Based Fundamentals",
+    "paper_location": "L231",
+    "paper_quote": "we measure the deferred tax fundamental (DEF) as the negative of the ratio of the deferred tax expense to average total assets."
+  },
+  {
+    "rule_id": "var_def_fundamental",
+    "category": "variable",
+    "section": "IV. Methodology \u2014 The Tax-Based Fundamentals, footnote 14",
+    "paper_location": "L235",
+    "paper_quote": "Following Hanlon (2005), we measure deferred taxes as the sum of deferred federal (Compustat #269) and foreign (#270) income taxes, or, when either of these amounts is missing, as total deferred taxes (#50)."
+  },
+  {
+    "rule_id": "sort_industry_year_quintile_cfo",
+    "category": "sort",
+    "section": "IV. Methodology \u2014 Cash Flow Fundamental",
+    "paper_location": "L251",
+    "paper_quote": "R_CFO is a multinomial variable that takes values between 1 (lowest quintile of the ratio of cash flow from operations to net income for the industry-year group) and 5 (highest quintile)."
+  },
+  {
+    "rule_id": "factor_industry_fixed_effect",
+    "category": "factor",
+    "section": "IV. Methodology \u2014 Specification of Our Tests (Eq. 4)",
+    "paper_location": "L263",
+    "paper_quote": "The intercept, \u03b1_indu, is an industry (two-digit SIC code) fixed effect."
+  },
+  {
+    "rule_id": "var_growth_g1_g2_g3",
+    "category": "variable",
+    "section": "IV. Methodology \u2014 Specification of Our Tests (Eq. 4)",
+    "paper_location": "L263",
+    "paper_quote": "G is a firm-specific indicator of subsequent earnings growth, measured alternatively as: next-year earnings minus current earnings (G_1), average earnings in the subsequent three years minus current earnings (G_2), and average earnings over the subsequent five years minus current earnings (G_3)."
+  },
+  {
+    "rule_id": "var_growth_deflated_by_ta",
+    "category": "variable",
+    "section": "IV. Methodology \u2014 Specification of Our Tests (Eq. 4)",
+    "paper_location": "L263",
+    "paper_quote": "All three measures are deflated by the current value of total assets and are expressed in percentage points."
+  },
+  {
+    "rule_id": "var_cfo_fundamental",
+    "category": "variable",
+    "section": "IV. Methodology \u2014 Cash Flow Fundamental, footnote 16",
+    "paper_location": "L267",
+    "paper_quote": "we measure cash from operations as the difference between income before extraordinary items (Compustat #18) and accruals, where accruals = (\u0394CA \u2212 \u0394Cash) \u2212 (\u0394CL \u2212 \u0394STD) \u2212 \u0394DTL \u2212 Dep."
+  },
+  {
+    "rule_id": "var_cfo_accrual_components",
+    "category": "variable",
+    "section": "IV. Methodology \u2014 Cash Flow Fundamental, footnote 16",
+    "paper_location": "L267",
+    "paper_quote": "\u0394CA = annual change in current assets (\u0394#4), \u0394Cash = change in cash and cash equivalents (\u0394#1), \u0394CL = change in current liabilities (\u0394#5), \u0394STD = change in debt included in current liabilities (\u0394#34), \u0394DTL = change in the deferred tax liability (\u0394#35), and Dep = depreciation and amortization expense (#14)."
+  },
+  {
+    "rule_id": "var_ep_definition",
+    "category": "variable",
+    "section": "IV. Methodology \u2014 Specification of Our Tests (Eq. 5)",
+    "paper_location": "L293",
+    "paper_quote": "E is the firm's reported current earnings (income before extraordinary items, Compustat #18), and P* is the market value of common equity at the end of the year (Compustat #199 \u00d7 #25), multiplied by 1 plus the cumulative stock return of the firm during the first four months of the subsequent year."
+  },
+  {
+    "rule_id": "avail_at_least_30_returns_for_beta",
+    "category": "sample",
+    "section": "IV. Methodology (Eq. 5 description)",
+    "paper_location": "L295",
+    "paper_quote": "BETA measures systematic risk, estimated from monthly stock returns and the CRSP value-weighted returns (including all distributions) during the five years that end in April of the subsequent year (at least 30 return observations are required)."
+  },
+  {
+    "rule_id": "var_grow_ibes",
+    "category": "variable",
+    "section": "IV. Methodology \u2014 Specification of Our Tests (Eq. 5)",
+    "paper_location": "L295",
+    "paper_quote": "GROW is the mean analysts' long-term earnings growth forecast, available in April of the subsequent year (as discussed below, the sample consists of firms with December fiscal year-end)."
+  },
+  {
+    "rule_id": "var_lnta",
+    "category": "variable",
+    "section": "IV. Methodology \u2014 Specification of Our Tests (Eq. 5)",
+    "paper_location": "L295",
+    "paper_quote": "LNTA is the logarithm of total assets\u2014a size measure."
+  },
+  {
+    "rule_id": "var_beta_5y_monthly",
+    "category": "variable",
+    "section": "IV. Methodology \u2014 Specification of Our Tests (Eq. 5)",
+    "paper_location": "L295",
+    "paper_quote": "BETA measures systematic risk, estimated from monthly stock returns and the CRSP value-weighted returns (including all distributions) during the five years that end in April of the subsequent year (at least 30 return observations are required)."
+  },
+  {
+    "rule_id": "var_vol_rmse",
+    "category": "variable",
+    "section": "IV. Methodology \u2014 Specification of Our Tests (Eq. 5)",
+    "paper_location": "L295",
+    "paper_quote": "Idiosyncratic volatility, VOL, is the root-mean-squared error from the BETA regression."
+  },
+  {
+    "rule_id": "var_lev",
+    "category": "variable",
+    "section": "IV. Methodology \u2014 Specification of Our Tests (Eq. 5)",
+    "paper_location": "L295",
+    "paper_quote": "Financial leverage, LEV, is the ratio of total liabilities to total assets."
+  },
+  {
+    "rule_id": "var_pay",
+    "category": "variable",
+    "section": "IV. Methodology \u2014 Specification of Our Tests (Eq. 5)",
+    "paper_location": "L295",
+    "paper_quote": "PAY\u2014dividend payout\u2014is the ratio of common dividends to earnings."
+  },
+  {
+    "rule_id": "delisting_invest_in_value_weighted_index",
+    "category": "delisting",
+    "section": "IV. Methodology (Eq. 6 description)",
+    "paper_location": "L325",
+    "paper_quote": "For securities that delisted during the one-year holding period, proceeds from the issue are invested in the NYSE, AMEX, and NASDAQ value-weighted index until the end of the holding period."
+  },
+  {
+    "rule_id": "var_size_april",
+    "category": "variable",
+    "section": "IV. Methodology \u2014 Specification of Our Tests (Eq. 6)",
+    "paper_location": "L325",
+    "paper_quote": "SIZE is the logarithm of the market value of equity at the end of April of the subsequent year."
+  },
+  {
+    "rule_id": "var_bp",
+    "category": "variable",
+    "section": "IV. Methodology \u2014 Specification of Our Tests (Eq. 6)",
+    "paper_location": "L325",
+    "paper_quote": "B/P is the book-to-market value of common equity at fiscal year-end."
+  },
+  {
+    "rule_id": "universe_us_incorporated",
+    "category": "universe",
+    "section": "V. Sample and Summary Statistics",
+    "paper_location": "L331",
+    "paper_quote": "(1) are incorporated in the U.S. (foreign firms face different tax and financial accounting rules)"
+  },
+  {
+    "rule_id": "universe_exclude_utilities_depository",
+    "category": "universe",
+    "section": "V. Sample and Summary Statistics",
+    "paper_location": "L331",
+    "paper_quote": "(2) are not a utility or a depository institution (regulated firms have different reporting requirements and earnings management incentives than nonregulated firms)"
+  },
+  {
+    "rule_id": "universe_exclude_flow_through",
+    "category": "universe",
+    "section": "V. Sample and Summary Statistics",
+    "paper_location": "L331",
+    "paper_quote": "(3) are not a mutual fund, trust, REIT, limited partnership, or other flow-through entities (these enterprises do not report income taxes)"
+  },
+  {
+    "rule_id": "universe_dec_fye",
+    "category": "universe",
+    "section": "V. Sample and Summary Statistics",
+    "paper_location": "L333",
+    "paper_quote": "we perform annual cross-sectional analyses, and focus on firms with December fiscal year-end."
+  },
+  {
+    "rule_id": "sample_period",
+    "category": "sample",
+    "section": "V. Sample and Summary Statistics",
+    "paper_location": "L333",
+    "paper_quote": "we start our sample period from [1973]. ... the last (base) sample year is 2000."
+  },
+  {
+    "rule_id": "avail_compustat_items",
+    "category": "sample",
+    "section": "V. Sample and Summary Statistics",
+    "paper_location": "L335",
+    "paper_quote": "Data items #6 (total assets), #18 (income before extraordinary items), #199 (price per share), #25 (number of shares outstanding), #60 (common equity), #16 (total income taxes), and #50 (deferred taxes) should be available in Compustat's industrial, full-coverage, or research files."
+  },
+  {
+    "rule_id": "var_annual_return_may_to_april",
+    "category": "variable",
+    "section": "IV. Methodology \u2014 Specification of Our Tests (Eq. 6), footnote 20",
+    "paper_location": "L337",
+    "paper_quote": "We measure stock returns from the beginning of May of the subsequent year to assure that investors had access to the annual reports."
+  },
+  {
+    "rule_id": "sample_positive_earnings",
+    "category": "sample",
+    "section": "V. Sample and Summary Statistics",
+    "paper_location": "L347",
+    "paper_quote": "we restrict the sample to firms with positive earnings in the current year (but, of course, we do not restrict future earnings to be positive)."
+  },
+  {
+    "rule_id": "winsorize_0p5_99p5",
+    "category": "winsorize",
+    "section": "V. Sample and Summary Statistics",
+    "paper_location": "L347",
+    "paper_quote": "we delete in each analysis observations for which any of the variables (excluding future stock returns) lies outside the 0.5\u201399.5 percent range of its sample distribution."
+  },
+  {
+    "rule_id": "sample_total_size",
+    "category": "sample",
+    "section": "V. Sample and Summary Statistics",
+    "paper_location": "L349",
+    "paper_quote": "a sample of 40,372 firm-year observations (5,384 different firms; 28 years, spanning 1973\u20132000)."
+  },
+  {
+    "rule_id": "avail_subsequent_earnings",
+    "category": "sample",
+    "section": "V. Sample and Summary Statistics",
+    "paper_location": "L349",
+    "paper_quote": "the requirement of availability of subsequent years' earnings reduces the sample to between 37,621 firm-year observations (one-year-ahead earnings, 1973\u20132000) and 24,055 (five-years-ahead earnings, 1973\u20131996)."
+  },
+  {
+    "rule_id": "avail_crsp_returns_beta_vol",
+    "category": "sample",
+    "section": "V. Sample and Summary Statistics",
+    "paper_location": "L349",
+    "paper_quote": "the requirement of data availability from CRSP to calculate SIZE, BETA, and VOL and the requirement of availability of GROW from I/B/E/S reduce the number of observations to 14,962 during the period 1982\u20132000 (long-term growth forecasts are available since 1982)."
+  },
+  {
+    "rule_id": "avail_ibes_grow_1982",
+    "category": "sample",
+    "section": "V. Sample and Summary Statistics",
+    "paper_location": "L349",
+    "paper_quote": "the requirement of availability of GROW from I/B/E/S ... reduce the number of observations to 14,962 during the period 1982\u20132000 (long-term growth forecasts are available since 1982)."
+  },
+  {
+    "rule_id": "winsorize_excludes_stock_returns",
+    "category": "winsorize",
+    "section": "V. Sample and Summary Statistics, footnote 21",
+    "paper_location": "L359",
+    "paper_quote": "we do not apply the outlier filter to stock returns, because they are typically 'well behaved.'"
+  },
+  {
+    "rule_id": "fm_subperiods_pre_post_sfas109",
+    "category": "fm",
+    "section": "VI. Test Results \u2014 Sample period",
+    "paper_location": "L1617",
+    "paper_quote": "SFAS No. 109 (effective since 1993) ... we conduct our analyses separately for the pre- and post-SFAS No. 109 periods."
+  },
+  {
+    "rule_id": "fm_annual_cross_sectional_regressions",
+    "category": "fm",
+    "section": "VI. Test Results \u2014 The Tax Fundamentals and Future Earnings",
+    "paper_location": "L1697",
+    "paper_quote": "Table 2 presents summary measures from annual cross-sectional regressions of several models nested in Equation (4) ... The statistics reported for each set of regressions are the time-series means of the annual estimated coefficients and the associated t-statistics (the ratio of the mean of the cross-sectional coefficients to its standard error)."
+  },
+  {
+    "rule_id": "fm_t_stat_time_series_mean_over_std",
+    "category": "fm",
+    "section": "Table 2 / Table 3 footnotes",
+    "paper_location": "L2029",
+    "paper_quote": "The t-statistics are calculated as the ratio of the mean cross-sectional coefficient to its standard error."
+  },
+  {
+    "rule_id": "var_pred_1_to_9",
+    "category": "variable",
+    "section": "Table 3 footnote",
+    "paper_location": "L2359",
+    "paper_quote": "PRED_1 through PRED_9 are the following predictors of earnings growth: The ratio of earnings to total assets; the current period earnings change divided by total assets; the average changes in earnings over the last three and five years deflated by total assets; the ratio of dividends to total assets; the ratios of R&D and capital expenditures to sales; the earnings-price ratio; and the book-to-market ratios."
+  },
+  {
+    "rule_id": "var_ep_in_percentage_points",
+    "category": "variable",
+    "section": "Table 4 footnote",
+    "paper_location": "L2673",
+    "paper_quote": "E/P* is measured in percentage points (E = 1 and P = 20, E/P is recorded as 5)."
+  }
+]

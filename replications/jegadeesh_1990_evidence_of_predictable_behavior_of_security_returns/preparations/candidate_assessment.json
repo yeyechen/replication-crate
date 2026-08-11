@@ -1,0 +1,6 @@
+{
+  "replicable": true,
+  "paper_type": "empirical_cross_sectional",
+  "rationale": "Cross-sectional equity paper using CRSP monthly returns (1929-1987). Methodology: (i) Fama-MacBeth cross-sectional regressions of monthly returns on lags 1-12, 24, 36 (Table I), (ii) decile portfolio sorts under three predictive strategies S0/S1/S12 with market-model alphas (Table II), (iii) proportion of positive abnormal returns (Table III), (iv) pair-wise overlap and rank-correlation between strategies (Table IV), (v) size-based returns model (Table V), (vi) bias-adjusted predictive portfolios using lagged returns minus last trading day (Table VI). All six tables report numerical coefficients, t-statistics, F-statistics, and proportions — fully operationalized for replication.",
+  "block_reasons": []
+}
