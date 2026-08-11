@@ -1,0 +1,6 @@
+{
+  "replicable": true,
+  "paper_type": "empirical_cross_sectional",
+  "rationale": "Empirical cross-sectional paper using CRSP and CRSP/Compustat Merged Annual Industrial Files (July 1965 - June 2010). Section 2.1 'Data' specifies the data sources, sample, and variables. Methodology in Sections 2.2-2.4: ten one-way hiring-rate sorted portfolios, nine two-way sorted portfolios (HN x IK), firm-level Fama-MacBeth and pooled-OLS predictability regressions, and CAPM / Fama-French three-factor asset pricing tests. Tables 1, 2, 3, 4 report numerical results with explicit t-statistics (Newey-West). All variables are operationalized (HN = H/(0.5*(N_{t-1}+N_t)), IK = (CAPX - SPPE)/(0.5*(K_{t-1}+K_t))). Caveat: Table 2's TFP column comes from Tuzel & Imrohoroglu (2013), a proprietary measure not available in standard Compustat/CRSP; that single column will be Tier-2-skipped or partial. The rest of the paper's empirical claims are fully reproducible from CRSP + Compustat + FF factors.",
+  "block_reasons": []
+}

@@ -1,0 +1,1364 @@
+{
+  "paper_claims": [
+    {
+      "id": "C1",
+      "claim": "Stocks with the highest maximum daily return over the prior month (MAX) earn significantly lower future returns than stocks with the lowest MAX; VW D10-D1 spread is -1.03% per month and the FF-Carhart 4-factor alpha difference is -1.18% per month, both statistically significant.",
+      "paper_location": "L84",
+      "headline": true
+    },
+    {
+      "id": "C2",
+      "claim": "The negative MAX-return relation is robust to controls for size (SIZE), book-to-market (BM), momentum (MOM), short-term reversal (REV), and illiquidity (ILLIQ) in bivariate sorts and in multivariate Fama-MacBeth regressions.",
+      "paper_location": "L92"
+    },
+    {
+      "id": "C3",
+      "claim": "Including MAX in the regression reverses the anomalous negative idiosyncratic-volatility (IVOL) effect: once MAX is controlled for, the IVOL slope becomes positive and statistically significant.",
+      "paper_location": "L94"
+    },
+    {
+      "id": "C4",
+      "claim": "MAX is persistent: lagged MAX is a strong cross-sectional predictor of current MAX even after including seven control variables (Table 3, R^2 ~35%).",
+      "paper_location": "L90"
+    }
+  ],
+  "budget_flag": null,
+  "tables": [
+    {
+      "id": "T1",
+      "table_ref": "Table 1",
+      "description": "Returns and FF-Carhart 4-factor alphas on MAX-sorted decile portfolios (VW + EW)",
+      "replication_meaning": "Demonstrates correct daily-to-monthly MAX signal construction from CRSP dsf, monthly decile portfolio formation with value-weighting and equal-weighting, and FF-Carhart 4-factor alpha regression with Newey-West t-stats. This is the headline result.",
+      "covers_claims": [
+        "C1"
+      ],
+      "paper_quote": "Decile portfolios are formed every month from July 1962 to December 2005 by sorting stocks based on the maximum daily return (MAX) over the past one month. (L142-144)",
+      "exercises_preprocessing_rules": [
+        "universe_exchanges",
+        "universe_includes_financials",
+        "sample_period_main",
+        "sort_frequency_monthly",
+        "sort_lag_one_month",
+        "sort_decile_univariate",
+        "var_max",
+        "factor_ff_carhart",
+        "factor_newey_west_tstat"
+      ],
+      "metrics": [
+        {
+          "name": "D1_vw_ret",
+          "value": 1.01,
+          "unit": "percent_per_month",
+          "tolerance_pct": 5,
+          "paper_location": "L162"
+        },
+        {
+          "name": "D2_vw_ret",
+          "value": 1.0,
+          "unit": "percent_per_month",
+          "tolerance_pct": 5,
+          "paper_location": "L163"
+        },
+        {
+          "name": "D3_vw_ret",
+          "value": 1.0,
+          "unit": "percent_per_month",
+          "tolerance_pct": 5,
+          "paper_location": "L164"
+        },
+        {
+          "name": "D4_vw_ret",
+          "value": 1.11,
+          "unit": "percent_per_month",
+          "tolerance_pct": 5,
+          "paper_location": "L165"
+        },
+        {
+          "name": "D5_vw_ret",
+          "value": 1.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 5,
+          "paper_location": "L166"
+        },
+        {
+          "name": "D6_vw_ret",
+          "value": 1.16,
+          "unit": "percent_per_month",
+          "tolerance_pct": 5,
+          "paper_location": "L167"
+        },
+        {
+          "name": "D7_vw_ret",
+          "value": 1.0,
+          "unit": "percent_per_month",
+          "tolerance_pct": 5,
+          "paper_location": "L168"
+        },
+        {
+          "name": "D8_vw_ret",
+          "value": 0.86,
+          "unit": "percent_per_month",
+          "tolerance_pct": 5,
+          "paper_location": "L169"
+        },
+        {
+          "name": "D9_vw_ret",
+          "value": 0.52,
+          "unit": "percent_per_month",
+          "tolerance_pct": 5,
+          "paper_location": "L170"
+        },
+        {
+          "name": "D10_vw_ret",
+          "value": -0.02,
+          "unit": "percent_per_month",
+          "tolerance_pct": 5,
+          "paper_location": "L171"
+        },
+        {
+          "name": "D1_vw_alpha",
+          "value": 0.05,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L162"
+        },
+        {
+          "name": "D2_vw_alpha",
+          "value": 0.0,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L163",
+          "zero_band": 0.05,
+          "notes": "paper prints 0.00; absolute band \u00b10.05"
+        },
+        {
+          "name": "D3_vw_alpha",
+          "value": 0.04,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L164"
+        },
+        {
+          "name": "D4_vw_alpha",
+          "value": 0.16,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L165"
+        },
+        {
+          "name": "D5_vw_alpha",
+          "value": 0.09,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L166"
+        },
+        {
+          "name": "D6_vw_alpha",
+          "value": 0.15,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L167"
+        },
+        {
+          "name": "D7_vw_alpha",
+          "value": 0.03,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L168"
+        },
+        {
+          "name": "D8_vw_alpha",
+          "value": -0.21,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L169"
+        },
+        {
+          "name": "D9_vw_alpha",
+          "value": -0.49,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L170"
+        },
+        {
+          "name": "D10_vw_alpha",
+          "value": -1.13,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L171"
+        },
+        {
+          "name": "D1_ew_ret",
+          "value": 1.29,
+          "unit": "percent_per_month",
+          "tolerance_pct": 5,
+          "paper_location": "L162"
+        },
+        {
+          "name": "D2_ew_ret",
+          "value": 1.45,
+          "unit": "percent_per_month",
+          "tolerance_pct": 5,
+          "paper_location": "L163"
+        },
+        {
+          "name": "D3_ew_ret",
+          "value": 1.55,
+          "unit": "percent_per_month",
+          "tolerance_pct": 5,
+          "paper_location": "L164"
+        },
+        {
+          "name": "D4_ew_ret",
+          "value": 1.55,
+          "unit": "percent_per_month",
+          "tolerance_pct": 5,
+          "paper_location": "L165"
+        },
+        {
+          "name": "D5_ew_ret",
+          "value": 1.49,
+          "unit": "percent_per_month",
+          "tolerance_pct": 5,
+          "paper_location": "L166"
+        },
+        {
+          "name": "D6_ew_ret",
+          "value": 1.49,
+          "unit": "percent_per_month",
+          "tolerance_pct": 5,
+          "paper_location": "L167"
+        },
+        {
+          "name": "D7_ew_ret",
+          "value": 1.37,
+          "unit": "percent_per_month",
+          "tolerance_pct": 5,
+          "paper_location": "L168"
+        },
+        {
+          "name": "D8_ew_ret",
+          "value": 1.32,
+          "unit": "percent_per_month",
+          "tolerance_pct": 5,
+          "paper_location": "L169"
+        },
+        {
+          "name": "D9_ew_ret",
+          "value": 1.04,
+          "unit": "percent_per_month",
+          "tolerance_pct": 5,
+          "paper_location": "L170"
+        },
+        {
+          "name": "D10_ew_ret",
+          "value": 0.64,
+          "unit": "percent_per_month",
+          "tolerance_pct": 5,
+          "paper_location": "L171"
+        },
+        {
+          "name": "D1_ew_alpha",
+          "value": 0.22,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L162"
+        },
+        {
+          "name": "D2_ew_alpha",
+          "value": 0.33,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L163"
+        },
+        {
+          "name": "D3_ew_alpha",
+          "value": 0.39,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L164"
+        },
+        {
+          "name": "D4_ew_alpha",
+          "value": 0.39,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L165"
+        },
+        {
+          "name": "D5_ew_alpha",
+          "value": 0.31,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L166"
+        },
+        {
+          "name": "D6_ew_alpha",
+          "value": 0.33,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L167"
+        },
+        {
+          "name": "D7_ew_alpha",
+          "value": 0.23,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L168"
+        },
+        {
+          "name": "D8_ew_alpha",
+          "value": 0.2,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L169"
+        },
+        {
+          "name": "D9_ew_alpha",
+          "value": -0.09,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L170"
+        },
+        {
+          "name": "D10_ew_alpha",
+          "value": -0.44,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L171"
+        },
+        {
+          "name": "D1_avg_max",
+          "value": 1.3,
+          "unit": "percent",
+          "tolerance_pct": 10,
+          "paper_location": "L162"
+        },
+        {
+          "name": "D2_avg_max",
+          "value": 2.47,
+          "unit": "percent",
+          "tolerance_pct": 10,
+          "paper_location": "L163"
+        },
+        {
+          "name": "D3_avg_max",
+          "value": 3.26,
+          "unit": "percent",
+          "tolerance_pct": 10,
+          "paper_location": "L164"
+        },
+        {
+          "name": "D4_avg_max",
+          "value": 4.06,
+          "unit": "percent",
+          "tolerance_pct": 10,
+          "paper_location": "L165"
+        },
+        {
+          "name": "D5_avg_max",
+          "value": 4.93,
+          "unit": "percent",
+          "tolerance_pct": 10,
+          "paper_location": "L166"
+        },
+        {
+          "name": "D6_avg_max",
+          "value": 5.97,
+          "unit": "percent",
+          "tolerance_pct": 10,
+          "paper_location": "L167"
+        },
+        {
+          "name": "D7_avg_max",
+          "value": 7.27,
+          "unit": "percent",
+          "tolerance_pct": 10,
+          "paper_location": "L168"
+        },
+        {
+          "name": "D8_avg_max",
+          "value": 9.07,
+          "unit": "percent",
+          "tolerance_pct": 10,
+          "paper_location": "L169"
+        },
+        {
+          "name": "D9_avg_max",
+          "value": 12.09,
+          "unit": "percent",
+          "tolerance_pct": 10,
+          "paper_location": "L170"
+        },
+        {
+          "name": "D10_avg_max",
+          "value": 23.6,
+          "unit": "percent",
+          "tolerance_pct": 10,
+          "paper_location": "L171"
+        },
+        {
+          "name": "vw_ret_diff",
+          "value": -1.03,
+          "unit": "percent_per_month",
+          "tolerance_pct": 10,
+          "paper_location": "L172",
+          "notes": "D10-D1 (high minus low MAX)"
+        },
+        {
+          "name": "vw_alpha_diff",
+          "value": -1.18,
+          "unit": "percent_per_month",
+          "tolerance_pct": 10,
+          "paper_location": "L172",
+          "notes": "D10-D1 (high minus low MAX)"
+        },
+        {
+          "name": "ew_ret_diff",
+          "value": -0.65,
+          "unit": "percent_per_month",
+          "tolerance_pct": 10,
+          "paper_location": "L172",
+          "notes": "D10-D1 (high minus low MAX)"
+        },
+        {
+          "name": "ew_alpha_diff",
+          "value": -0.66,
+          "unit": "percent_per_month",
+          "tolerance_pct": 10,
+          "paper_location": "L172",
+          "notes": "D10-D1 (high minus low MAX)"
+        },
+        {
+          "name": "vw_ret_tstat",
+          "value": -2.83,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L173"
+        },
+        {
+          "name": "vw_alpha_tstat",
+          "value": -4.71,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L173"
+        },
+        {
+          "name": "ew_ret_tstat",
+          "value": -1.83,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L173"
+        },
+        {
+          "name": "ew_alpha_tstat",
+          "value": -2.31,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L173"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "T6",
+      "table_ref": "Table 6, Panel A",
+      "description": "Bivariate sorts: VW MAX-sorted deciles after controlling for SIZE, BM, MOM, REV, ILLIQ",
+      "replication_meaning": "Demonstrates correct dependent bivariate-sort construction (first sort by control into deciles, then within each decile sort by MAX into MAX-deciles, average returns across control deciles) for five control variables. Proves the MAX effect is robust to controls.",
+      "covers_claims": [
+        "C2"
+      ],
+      "paper_quote": "Double-sorted, value-weighted (Panel A) and equal-weighted (Panel B) decile portfolios are formed every month from July 1962 to December 2005 by sorting stocks based on the maximum daily returns after controlling for size, book-to-market, intermediate-term momentum, short-term reversals, and illiquidity. (L970-972)",
+      "exercises_preprocessing_rules": [
+        "universe_exchanges",
+        "sample_period_main",
+        "sort_frequency_monthly",
+        "var_max",
+        "var_size",
+        "var_bm",
+        "var_mom",
+        "var_rev",
+        "var_illiq",
+        "factor_ff_carhart",
+        "factor_newey_west_tstat"
+      ],
+      "metrics": [
+        {
+          "name": "SIZE_D1_vw",
+          "value": 1.47,
+          "unit": "percent_per_month",
+          "tolerance_pct": 10,
+          "paper_location": "L989"
+        },
+        {
+          "name": "SIZE_D2_vw",
+          "value": 1.6,
+          "unit": "percent_per_month",
+          "tolerance_pct": 10,
+          "paper_location": "L990"
+        },
+        {
+          "name": "SIZE_D3_vw",
+          "value": 1.69,
+          "unit": "percent_per_month",
+          "tolerance_pct": 10,
+          "paper_location": "L991"
+        },
+        {
+          "name": "SIZE_D4_vw",
+          "value": 1.65,
+          "unit": "percent_per_month",
+          "tolerance_pct": 10,
+          "paper_location": "L992"
+        },
+        {
+          "name": "SIZE_D5_vw",
+          "value": 1.57,
+          "unit": "percent_per_month",
+          "tolerance_pct": 10,
+          "paper_location": "L993"
+        },
+        {
+          "name": "SIZE_D6_vw",
+          "value": 1.49,
+          "unit": "percent_per_month",
+          "tolerance_pct": 10,
+          "paper_location": "L994"
+        },
+        {
+          "name": "SIZE_D7_vw",
+          "value": 1.29,
+          "unit": "percent_per_month",
+          "tolerance_pct": 10,
+          "paper_location": "L995"
+        },
+        {
+          "name": "SIZE_D8_vw",
+          "value": 1.2,
+          "unit": "percent_per_month",
+          "tolerance_pct": 10,
+          "paper_location": "L996"
+        },
+        {
+          "name": "SIZE_D9_vw",
+          "value": 0.93,
+          "unit": "percent_per_month",
+          "tolerance_pct": 10,
+          "paper_location": "L997"
+        },
+        {
+          "name": "SIZE_D10_vw",
+          "value": 0.25,
+          "unit": "percent_per_month",
+          "tolerance_pct": 10,
+          "paper_location": "L998"
+        },
+        {
+          "name": "SIZE_vw_ret_diff",
+          "value": -1.22,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L999",
+          "notes": "D10-D1 controlling for SIZE"
+        },
+        {
+          "name": "SIZE_vw_alpha_diff",
+          "value": -1.19,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L1001",
+          "notes": "D10-D1 controlling for SIZE"
+        },
+        {
+          "name": "SIZE_vw_ret_tstat",
+          "value": -4.49,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1000"
+        },
+        {
+          "name": "SIZE_vw_alpha_tstat",
+          "value": -5.98,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1002"
+        },
+        {
+          "name": "BM_vw_ret_diff",
+          "value": -0.93,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L999",
+          "notes": "D10-D1 controlling for BM"
+        },
+        {
+          "name": "BM_vw_alpha_diff",
+          "value": -1.06,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L1001",
+          "notes": "D10-D1 controlling for BM"
+        },
+        {
+          "name": "BM_vw_ret_tstat",
+          "value": -3.23,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1000",
+          "notes": "paper prints (3.23); same paper convention as t-stat signs elsewhere"
+        },
+        {
+          "name": "BM_vw_alpha_tstat",
+          "value": -4.87,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1002"
+        },
+        {
+          "name": "MOM_vw_ret_diff",
+          "value": -0.65,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L999",
+          "notes": "D10-D1 controlling for MOM"
+        },
+        {
+          "name": "MOM_vw_alpha_diff",
+          "value": -0.7,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L1001",
+          "notes": "D10-D1 controlling for MOM"
+        },
+        {
+          "name": "MOM_vw_ret_tstat",
+          "value": -3.18,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1000"
+        },
+        {
+          "name": "MOM_vw_alpha_tstat",
+          "value": -5.3,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1002"
+        },
+        {
+          "name": "REV_vw_ret_diff",
+          "value": -0.81,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L999",
+          "notes": "D10-D1 controlling for REV"
+        },
+        {
+          "name": "REV_vw_alpha_diff",
+          "value": -0.98,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L1001",
+          "notes": "D10-D1 controlling for REV"
+        },
+        {
+          "name": "REV_vw_ret_tstat",
+          "value": -2.7,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1000"
+        },
+        {
+          "name": "REV_vw_alpha_tstat",
+          "value": -5.37,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1002"
+        },
+        {
+          "name": "ILLIQ_vw_ret_diff",
+          "value": -1.11,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L999",
+          "notes": "D10-D1 controlling for ILLIQ"
+        },
+        {
+          "name": "ILLIQ_vw_alpha_diff",
+          "value": -1.12,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L1001",
+          "notes": "D10-D1 controlling for ILLIQ"
+        },
+        {
+          "name": "ILLIQ_vw_ret_tstat",
+          "value": -4.07,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1000"
+        },
+        {
+          "name": "ILLIQ_vw_alpha_tstat",
+          "value": -5.74,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1002"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "T7",
+      "table_ref": "Table 7",
+      "description": "Fama-MacBeth regressions of monthly returns on lagged MAX + controls",
+      "replication_meaning": "Demonstrates correct Fama-MacBeth monthly cross-sectional regression methodology with Newey-West t-stats, log-transformed SIZE and BM, and 1-month lagged predictors. Proves the MAX effect is robust in a multivariate regression with six control variables.",
+      "covers_claims": [
+        "C2"
+      ],
+      "paper_quote": "Each month from July 1962 to December 2005 we run a firm-level cross-sectional regression of the return in that month on subsets of lagged predictor variables including MAX in the previous month and six control variables that are defined in the Appendix. (L1085-1087)",
+      "exercises_preprocessing_rules": [
+        "universe_exchanges",
+        "sample_period_main",
+        "fm_monthly_cross_sectional",
+        "fm_newey_west_avg",
+        "fm_specification",
+        "var_max",
+        "var_beta",
+        "var_size",
+        "var_bm",
+        "var_mom",
+        "var_rev",
+        "var_illiq",
+        "factor_newey_west_tstat"
+      ],
+      "metrics": [
+        {
+          "name": "fm_max_uni_coef",
+          "value": -0.0434,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L1100"
+        },
+        {
+          "name": "fm_max_uni_tstat",
+          "value": -2.92,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1100"
+        },
+        {
+          "name": "fm_beta_uni_coef",
+          "value": -0.0118,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L1110"
+        },
+        {
+          "name": "fm_beta_uni_tstat",
+          "value": -0.43,
+          "unit": "t_stat",
+          "tolerance_pct": 30,
+          "paper_location": "L1110"
+        },
+        {
+          "name": "fm_size_uni_coef",
+          "value": -0.1988,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L1120"
+        },
+        {
+          "name": "fm_size_uni_tstat",
+          "value": -4.08,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1120"
+        },
+        {
+          "name": "fm_bm_uni_coef",
+          "value": 0.4651,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L1130"
+        },
+        {
+          "name": "fm_bm_uni_tstat",
+          "value": 6.73,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1130"
+        },
+        {
+          "name": "fm_mom_uni_coef",
+          "value": 0.7317,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L1140"
+        },
+        {
+          "name": "fm_mom_uni_tstat",
+          "value": 4.67,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1140"
+        },
+        {
+          "name": "fm_rev_uni_coef",
+          "value": -0.0675,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L1150"
+        },
+        {
+          "name": "fm_rev_uni_tstat",
+          "value": -11.24,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1150"
+        },
+        {
+          "name": "fm_illiq_uni_coef",
+          "value": 0.0371,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L1160"
+        },
+        {
+          "name": "fm_illiq_uni_tstat",
+          "value": 3.87,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1160"
+        },
+        {
+          "name": "fm_full_max_coef",
+          "value": -0.0637,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L1172"
+        },
+        {
+          "name": "fm_full_max_tstat",
+          "value": -6.16,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1172"
+        },
+        {
+          "name": "fm_full_beta_coef",
+          "value": 0.0485,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L1173"
+        },
+        {
+          "name": "fm_full_beta_tstat",
+          "value": 2.18,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1173"
+        },
+        {
+          "name": "fm_full_size_coef",
+          "value": -0.1358,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L1174"
+        },
+        {
+          "name": "fm_full_size_tstat",
+          "value": -3.1,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1174"
+        },
+        {
+          "name": "fm_full_bm_coef",
+          "value": 0.3201,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L1175"
+        },
+        {
+          "name": "fm_full_bm_tstat",
+          "value": 4.69,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1175"
+        },
+        {
+          "name": "fm_full_mom_coef",
+          "value": 0.6866,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L1176"
+        },
+        {
+          "name": "fm_full_mom_tstat",
+          "value": 4.97,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1176"
+        },
+        {
+          "name": "fm_full_rev_coef",
+          "value": -0.0712,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L1177"
+        },
+        {
+          "name": "fm_full_rev_tstat",
+          "value": -13.53,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1177"
+        },
+        {
+          "name": "fm_full_illiq_coef",
+          "value": 0.0224,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L1178"
+        },
+        {
+          "name": "fm_full_illiq_tstat",
+          "value": 3.78,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1178"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "T9",
+      "table_ref": "Table 9",
+      "description": "Bivariate MAX\u00d7IVOL sorts and reverse IVOL\u00d7MAX sorts",
+      "replication_meaning": "Demonstrates that including MAX in the IVOL regression reverses the IVOL puzzle. Tests the paper's claim that IVOL is essentially capturing MAX.",
+      "covers_claims": [
+        "C3"
+      ],
+      "paper_quote": "In Table 9, Panel A we sort on both the maximum daily return (MAX) and the average of the five highest daily returns (MAX(5)), controlling for idiosyncratic volatility. (L1283-1285)",
+      "exercises_preprocessing_rules": [
+        "universe_exchanges",
+        "sample_period_main",
+        "var_max",
+        "var_ivol",
+        "factor_ff_carhart",
+        "factor_newey_west_tstat"
+      ],
+      "metrics": [
+        {
+          "name": "T9A_MAX_vw_ret_diff",
+          "value": -0.35,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L1383",
+          "notes": "Panel A N=1: D10-D1 MAX controlling for IVOL"
+        },
+        {
+          "name": "T9A_MAX_vw_alpha_diff",
+          "value": -0.34,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L1397",
+          "notes": "Panel A N=1: D10-D1 alpha controlling for IVOL"
+        },
+        {
+          "name": "T9A_MAX5_vw_ret_diff",
+          "value": -0.86,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L1385",
+          "notes": "Panel A N=5: D10-D1 MAX(5) controlling for IVOL"
+        },
+        {
+          "name": "T9A_MAX5_vw_alpha_diff",
+          "value": -0.84,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L1399",
+          "notes": "Panel A N=5: D10-D1 alpha controlling for IVOL"
+        },
+        {
+          "name": "T9A_MAX_ew_ret_diff",
+          "value": -0.91,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L1384",
+          "notes": "Panel A N=1: D10-D1 MAX EW"
+        },
+        {
+          "name": "T9A_MAX5_ew_ret_diff",
+          "value": -1.5,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L1386",
+          "notes": "Panel A N=5: D10-D1 MAX(5) EW"
+        },
+        {
+          "name": "T9A_MAX_vw_ret_tstat",
+          "value": -2.42,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1390"
+        },
+        {
+          "name": "T9A_MAX_vw_alpha_tstat",
+          "value": -2.48,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1404"
+        },
+        {
+          "name": "T9A_MAX5_vw_ret_tstat",
+          "value": -4.36,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1392"
+        },
+        {
+          "name": "T9A_MAX5_vw_alpha_tstat",
+          "value": -4.98,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1406"
+        },
+        {
+          "name": "T9B_IVOL_MAX_vw_ret_diff",
+          "value": -0.38,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L1505",
+          "notes": "Panel B: D10-D1 IVOL controlling for MAX"
+        },
+        {
+          "name": "T9B_IVOL_MAX_vw_alpha_diff",
+          "value": -0.44,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L1519",
+          "notes": "Panel B: D10-D1 IVOL alpha controlling for MAX"
+        },
+        {
+          "name": "T9B_IVOL_MAX_ew_ret_diff",
+          "value": 0.98,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L1506",
+          "notes": "Panel B EW: D10-D1 IVOL controlling for MAX (sign reversal)"
+        },
+        {
+          "name": "T9B_IVOL_MAX_ew_alpha_diff",
+          "value": 0.95,
+          "unit": "percent_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L1520",
+          "notes": "Panel B EW: D10-D1 IVOL alpha controlling for MAX"
+        },
+        {
+          "name": "T9B_IVOL_MAX_vw_ret_tstat",
+          "value": -1.98,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1512"
+        },
+        {
+          "name": "T9B_IVOL_MAX_vw_alpha_tstat",
+          "value": -3.12,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1524"
+        },
+        {
+          "name": "T9B_IVOL_MAX_ew_ret_tstat",
+          "value": 4.88,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1513"
+        },
+        {
+          "name": "T9B_IVOL_MAX_ew_alpha_tstat",
+          "value": 4.76,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1525"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "T3",
+      "table_ref": "Table 3",
+      "description": "Cross-sectional predictability of MAX (lagged MAX and 7 controls as predictors of current MAX)",
+      "replication_meaning": "Demonstrates the MAX signal is persistent in the cross-section: lagged MAX, SIZE, and IVOL explain ~35% of variation in current MAX. This validates that MAX is not pure noise and supports the lottery-preference interpretation.",
+      "covers_claims": [
+        "C4"
+      ],
+      "paper_quote": "Each month from July 1962 to December 2005 we run a firm-level cross-sectional regression of the maximum daily return in that month (MAX) on subsets of lagged predictor variables including MAX in the previous month and seven control variables that are defined in the Appendix. (L478-480)",
+      "exercises_preprocessing_rules": [
+        "universe_exchanges",
+        "sample_period_main",
+        "fm_monthly_cross_sectional",
+        "var_max",
+        "var_beta",
+        "var_size",
+        "var_bm",
+        "var_mom",
+        "var_rev",
+        "var_illiq",
+        "var_ivol",
+        "factor_newey_west_tstat"
+      ],
+      "metrics": [
+        {
+          "name": "max_uni_coef",
+          "value": 0.4054,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L497"
+        },
+        {
+          "name": "max_uni_tstat",
+          "value": 45.34,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L497"
+        },
+        {
+          "name": "max_uni_r2",
+          "value": 16.64,
+          "unit": "percent",
+          "tolerance_pct": 15,
+          "paper_location": "L505"
+        },
+        {
+          "name": "beta_uni_coef",
+          "value": 0.1116,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L509"
+        },
+        {
+          "name": "beta_uni_tstat",
+          "value": 4.47,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L509"
+        },
+        {
+          "name": "size_uni_coef",
+          "value": -1.3381,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L521"
+        },
+        {
+          "name": "size_uni_tstat",
+          "value": -22.42,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L521"
+        },
+        {
+          "name": "bm_uni_coef",
+          "value": 0.5334,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L533"
+        },
+        {
+          "name": "bm_uni_tstat",
+          "value": 6.41,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L533"
+        },
+        {
+          "name": "mom_uni_coef",
+          "value": -1.7264,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L545"
+        },
+        {
+          "name": "mom_uni_tstat",
+          "value": -6.87,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L545"
+        },
+        {
+          "name": "rev_uni_coef",
+          "value": -0.0655,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L557"
+        },
+        {
+          "name": "rev_uni_tstat",
+          "value": -11.19,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L557"
+        },
+        {
+          "name": "illiq_uni_coef",
+          "value": 0.1209,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L569"
+        },
+        {
+          "name": "illiq_uni_tstat",
+          "value": 8.13,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L569"
+        },
+        {
+          "name": "ivol_uni_coef",
+          "value": 0.1643,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L581"
+        },
+        {
+          "name": "ivol_uni_tstat",
+          "value": 86.41,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L581"
+        },
+        {
+          "name": "ivol_uni_r2",
+          "value": 27.36,
+          "unit": "percent",
+          "tolerance_pct": 15,
+          "paper_location": "L582"
+        },
+        {
+          "name": "full_max_coef",
+          "value": 0.3325,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L585"
+        },
+        {
+          "name": "full_max_tstat",
+          "value": 31.31,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L585"
+        },
+        {
+          "name": "full_beta_coef",
+          "value": 0.25,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L586"
+        },
+        {
+          "name": "full_beta_tstat",
+          "value": 12.14,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L586"
+        },
+        {
+          "name": "full_size_coef",
+          "value": -0.4737,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L587"
+        },
+        {
+          "name": "full_size_tstat",
+          "value": -30.45,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L587"
+        },
+        {
+          "name": "full_bm_coef",
+          "value": -0.1277,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L588"
+        },
+        {
+          "name": "full_bm_tstat",
+          "value": -5.86,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L588"
+        },
+        {
+          "name": "full_mom_coef",
+          "value": -0.3432,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L589"
+        },
+        {
+          "name": "full_mom_tstat",
+          "value": -4.47,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L589"
+        },
+        {
+          "name": "full_rev_coef",
+          "value": -0.0504,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L590"
+        },
+        {
+          "name": "full_rev_tstat",
+          "value": -22.25,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L590"
+        },
+        {
+          "name": "full_illiq_coef",
+          "value": 0.02,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L591"
+        },
+        {
+          "name": "full_illiq_tstat",
+          "value": 6.16,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L591"
+        },
+        {
+          "name": "full_ivol_coef",
+          "value": 0.193,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L592"
+        },
+        {
+          "name": "full_ivol_tstat",
+          "value": 41.6,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L592"
+        },
+        {
+          "name": "full_r2",
+          "value": 35.1,
+          "unit": "percent",
+          "tolerance_pct": 15,
+          "paper_location": "L593"
+        }
+      ],
+      "notes": null
+    }
+  ]
+}

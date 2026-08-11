@@ -1,0 +1,247 @@
+[
+  {
+    "rule_id": "universe_exchanges",
+    "category": "universe",
+    "section": "\u00a72.1 Data",
+    "paper_location": "L110",
+    "paper_quote": "The first data set includes all New York Stock Exchange (NYSE), American Stock Exchange (Amex), and Nasdaq financial and nonfinancial firms from the Center for Research in Security Prices (CRSP) for the period from January 1926 through December 2005."
+  },
+  {
+    "rule_id": "universe_includes_financials",
+    "category": "universe",
+    "section": "\u00a72.1 Data",
+    "paper_location": "L110",
+    "paper_quote": "all New York Stock Exchange (NYSE), American Stock Exchange (Amex), and Nasdaq financial and nonfinancial firms from the Center for Research in Security Prices (CRSP)"
+  },
+  {
+    "rule_id": "universe_data_source",
+    "category": "universe",
+    "section": "\u00a72.1 Data",
+    "paper_location": "L110",
+    "paper_quote": "The first data set includes all New York Stock Exchange (NYSE), American Stock Exchange (Amex), and Nasdaq financial and nonfinancial firms from the Center for Research in Security Prices (CRSP) for the period from January 1926 through December 2005."
+  },
+  {
+    "rule_id": "avail_compustat_for_book_equity",
+    "category": "sample",
+    "section": "\u00a72.1 Data",
+    "paper_location": "L110",
+    "paper_quote": "The second data set is Compustat, which is used to obtain the equity book values for calculating the book-to-market ratios of individual firms."
+  },
+  {
+    "rule_id": "avail_daily_returns_for_max",
+    "category": "sample",
+    "section": "\u00a72.1 Data",
+    "paper_location": "L110",
+    "paper_quote": "We use daily stock returns to calculate the maximum daily stock returns for each firm in each month as well as such variables as the market beta, idiosyncratic volatility, and various skewness measures"
+  },
+  {
+    "rule_id": "avail_monthly_returns_for_mom_rev",
+    "category": "sample",
+    "section": "\u00a72.1 Data",
+    "paper_location": "L110",
+    "paper_quote": "we use monthly returns to calculate proxies for intermediate-term momentum and short-term reversals"
+  },
+  {
+    "rule_id": "avail_volume_for_illiq",
+    "category": "sample",
+    "section": "\u00a72.1 Data",
+    "paper_location": "L110",
+    "paper_quote": "we use volume data to calculate a measure of illiquidity"
+  },
+  {
+    "rule_id": "sample_period_full",
+    "category": "sample",
+    "section": "\u00a72.1 Data",
+    "paper_location": "L110",
+    "paper_quote": "for the period from January 1926 through December 2005"
+  },
+  {
+    "rule_id": "delisting_silent",
+    "category": "delisting",
+    "section": "\u00a72.1 Data",
+    "paper_location": "L110",
+    "paper_quote": "The paper is silent on delisting return treatment; CRSP daily and monthly returns are used without explicit delisting-adjustment discussion."
+  },
+  {
+    "rule_id": "sample_period_main",
+    "category": "sample",
+    "section": "\u00a72.2 Univariate portfolio-level analysis",
+    "paper_location": "L114",
+    "paper_quote": "The results are reported for the sample period July 1962\u2013December 2005."
+  },
+  {
+    "rule_id": "sort_frequency_monthly",
+    "category": "sort",
+    "section": "\u00a72.2 Univariate portfolio-level analysis",
+    "paper_location": "L114",
+    "paper_quote": "Decile portfolios are formed every month from July 1962 to December 2005 by sorting stocks based on the maximum daily return (MAX) over the past one month."
+  },
+  {
+    "rule_id": "sort_lag_one_month",
+    "category": "sort",
+    "section": "\u00a72.2 Univariate portfolio-level analysis",
+    "paper_location": "L114",
+    "paper_quote": "sorting stocks based on the maximum daily return (MAX) over the past one month."
+  },
+  {
+    "rule_id": "sort_decile_univariate",
+    "category": "sort",
+    "section": "\u00a72.2 Univariate portfolio-level analysis",
+    "paper_location": "L114",
+    "paper_quote": "the value-weighted and equal-weighted average monthly returns of decile portfolios that are formed by sorting the NYSE/Amex/Nasdaq stocks based on the maximum daily return within the previous month (MAX)"
+  },
+  {
+    "rule_id": "factor_ff_carhart",
+    "category": "factor",
+    "section": "\u00a72.2 Univariate portfolio-level analysis",
+    "paper_location": "L116",
+    "paper_quote": "the intercepts (Fama-French-Carhart four-factor alphas) from the regression of the value-weighted portfolio returns on a constant, the excess market return, a size factor (SMB), a book-to-market factor (HML), and a momentum factor (MOM), following Fama and French (1993) and Carhart (1997)."
+  },
+  {
+    "rule_id": "factor_newey_west_tstat",
+    "category": "factor",
+    "section": "\u00a72.2 Univariate portfolio-level analysis",
+    "paper_location": "L116",
+    "paper_quote": "Newey-West (1987) t-statistic"
+  },
+  {
+    "rule_id": "winsorize_returns_trim",
+    "category": "winsorize",
+    "section": "Table 4 description",
+    "paper_location": "L602",
+    "paper_quote": "in the final two columns we report statistics for returns where the 0.5% most extreme returns in both tails have been eliminated"
+  },
+  {
+    "rule_id": "fm_specification",
+    "category": "fm",
+    "section": "\u00a72.4 Firm-level cross-sectional regressions",
+    "paper_location": "L1061-1064",
+    "paper_quote": "R_{i,t+1} = \u03bb_{0,t} + \u03bb_{1,t} MAX_{i,t} + \u03bb_{2,t} BETA_{i,t} + \u03bb_{3,t} SIZE_{i,t} + \u03bb_{4,t} BM_{i,t} + \u03bb_{5,t} MOM_{i,t} + \u03bb_{6,t} REV_{i,t} + \u03bb_{7,t} ILLIQ_{i,t} + \u03b5_{i,t+1}"
+  },
+  {
+    "rule_id": "sort_lag_specification",
+    "category": "sort",
+    "section": "\u00a72.4 Firm-level cross-sectional regressions",
+    "paper_location": "L1067",
+    "paper_quote": "The predictive cross-sectional regressions are run on the one-month lagged values of MAX, BETA, SIZE, BM, REV, and ILLIQ, and MOM is calculated over the 11-month period ending 2 months prior to the return of interest."
+  },
+  {
+    "rule_id": "fm_monthly_cross_sectional",
+    "category": "fm",
+    "section": "\u00a72.4 Firm-level cross-sectional regressions",
+    "paper_location": "L1067",
+    "paper_quote": "Monthly cross-sectional regressions are run for the following econometric specification"
+  },
+  {
+    "rule_id": "fm_newey_west_avg",
+    "category": "fm",
+    "section": "\u00a72.4 Firm-level cross-sectional regressions",
+    "paper_location": "L1068",
+    "paper_quote": "Table 7 reports the time-series averages of the slope coefficients \u03bb_{i,t} (i=1, 2, \u2026, 7) over the 522 months from July 1962 to December 2005"
+  },
+  {
+    "rule_id": "winsorize_max_robustness",
+    "category": "winsorize",
+    "section": "\u00a72.4 Firm-level cross-sectional regressions",
+    "paper_location": "L1190",
+    "paper_quote": "we re-run the cross-sectional regressions after winsorizing MAX at the 99th and 95th percentiles to eliminate outliers."
+  },
+  {
+    "rule_id": "var_max",
+    "category": "variable",
+    "section": "Appendix \u2014 MAXIMUM",
+    "paper_location": "L2067-2070",
+    "paper_quote": "MAX_{i,t} = max(R_{i,d}), d = 1, \u2026, D_t, where R_{i,d} is the return on stock i on day d and D_t is the number of trading days in month t."
+  },
+  {
+    "rule_id": "var_min",
+    "category": "variable",
+    "section": "Appendix \u2014 MINIMUM",
+    "paper_location": "L2076-2079",
+    "paper_quote": "MIN_{i,t} = \u2212min(R_{i,d}), d = 1, \u2026, D_t"
+  },
+  {
+    "rule_id": "var_tvol",
+    "category": "variable",
+    "section": "Appendix \u2014 TOTAL VOLATILITY",
+    "paper_location": "L2085-2087",
+    "paper_quote": "TVOL_{i,t} = sqrt(var(R_{i,d}))."
+  },
+  {
+    "rule_id": "var_beta",
+    "category": "variable",
+    "section": "Appendix \u2014 BETA",
+    "paper_location": "L2093-2097",
+    "paper_quote": "R_{i,d} \u2212 r_{f,d} = \u03b1_i + \u03b2_{1,i}(R_{m,d\u22121} \u2212 r_{f,d\u22121}) + \u03b2_{2,i}(R_{m,d} \u2212 r_{f,d}) + \u03b2_{3,i}(R_{m,d+1} \u2212 r_{f,d+1}) + \u03b5_{i,d}; we estimate Eq. (5) for each stock using daily returns within a month. The market beta of stock i in month t is defined as \u03b2_i = \u03b2_{1,i} + \u03b2_{2,i} + \u03b2_{3,i}."
+  },
+  {
+    "rule_id": "var_ivol",
+    "category": "variable",
+    "section": "Appendix \u2014 IDIOSYNCRATIC VOLATILITY",
+    "paper_location": "L2101-2110",
+    "paper_quote": "R_{i,d} \u2212 r_{f,d} = \u03b1_i + \u03b2_i(R_{m,d} \u2212 r_{f,d}) + \u03b5_{i,d}. The idiosyncratic volatility of stock i in month t is defined as the standard deviation of daily residuals in month t: IVOL_{i,t} = sqrt(var(\u03b5_{i,d}))."
+  },
+  {
+    "rule_id": "var_size",
+    "category": "variable",
+    "section": "Appendix \u2014 SIZE",
+    "paper_location": "L2113",
+    "paper_quote": "Following the existing literature, firm size is measured by the natural logarithm of the market value of equity (a stock's price times shares outstanding in millions of dollars) at the end of month t\u22121 for each stock."
+  },
+  {
+    "rule_id": "var_bm",
+    "category": "variable",
+    "section": "Appendix \u2014 BOOK-TO-MARKET",
+    "paper_location": "L2115",
+    "paper_quote": "Following Fama and French (1992), we compute a firm's book-to-market ratio in month t using the market value of its equity at the end of December of the previous year and the book value of common equity plus balance-sheet deferred taxes for the firm's latest fiscal year ending in the prior calendar year."
+  },
+  {
+    "rule_id": "var_mom",
+    "category": "variable",
+    "section": "Appendix \u2014 INTERMEDIATE-TERM MOMENTUM",
+    "paper_location": "L2117",
+    "paper_quote": "Following Jegadeesh and Titman (1993), the momentum variable for each stock in month t is defined as the cumulative return on the stock over the previous 11 months starting two months ago, i.e., the cumulative return from month t\u221212 to month t\u22122."
+  },
+  {
+    "rule_id": "var_rev",
+    "category": "variable",
+    "section": "Appendix \u2014 SHORT-TERM REVERSAL",
+    "paper_location": "L2119",
+    "paper_quote": "Following Jegadeesh (1990) and Lehmann (1990), the reversal variable for each stock in month t is defined as the return on the stock over the previous month, i.e., the return in month t\u22121."
+  },
+  {
+    "rule_id": "var_illiq",
+    "category": "variable",
+    "section": "Appendix \u2014 ILLIQUIDITY",
+    "paper_location": "L2123-2128",
+    "paper_quote": "Following Amihud (2002), we measure stock illiquidity for each stock in month t as the ratio of the absolute monthly stock return to its dollar trading volume: ILLIQ_{i,t} = |R_{i,t}| / VOLD_{i,t}, where R_{i,t} is the return on stock i in month t, and VOLD_{i,t} is the respective monthly trading volume in dollars."
+  },
+  {
+    "rule_id": "winsorize_bm_0p5_99p5",
+    "category": "winsorize",
+    "section": "Appendix (footnote 16)",
+    "paper_location": "L2136",
+    "paper_quote": "the book-to-market ratios are winsorized at the 0.5% and 99.5% levels, i.e., the smallest and largest 0.5% of the observations on the book-to-market ratio are set equal to the 0.5th and 99.5th percentiles, respectively."
+  },
+  {
+    "rule_id": "var_tskew",
+    "category": "variable",
+    "section": "Appendix \u2014 TOTAL SKEWNESS",
+    "paper_location": "L2148-2153",
+    "paper_quote": "TSKEW_{i,t} = (1/D_t) \u03a3_{d=1..D_t} ((R_{i,d} \u2212 \u03bc_i)/\u03c3_i)^3, where D_t is the number of trading days in year t, R_{i,d} is the return on stock i on day d, \u03bc_i is the mean of returns of stock i in year t, and \u03c3_i is the standard deviation of returns of stock i in year t."
+  },
+  {
+    "rule_id": "var_sskew",
+    "category": "variable",
+    "section": "Appendix \u2014 SYSTEMATIC and IDIOSYNCRATIC SKEWNESS",
+    "paper_location": "L2158-2162",
+    "paper_quote": "R_{i,d} \u2212 r_{f,d} = \u03b1_i + \u03b2_i(R_{m,d} \u2212 r_{f,d}) + \u03b3_i(R_{m,d} \u2212 r_{f,d})^2 + \u03b5_{i,d}; the systematic skewness (SSKEW) or co-skewness of stock i in year t is the estimated slope coefficient \u03b3_{i,t} in Eq. (10)."
+  },
+  {
+    "rule_id": "var_iskew",
+    "category": "variable",
+    "section": "Appendix \u2014 SYSTEMATIC and IDIOSYNCRATIC SKEWNESS",
+    "paper_location": "L2160-2162",
+    "paper_quote": "The idiosyncratic skewness (ISKEW) of stock i in year t is defined as the skewness of daily residuals \u03b5_{i,d} in year t."
+  }
+]

@@ -1,0 +1,116 @@
+{
+  "verdict": "partial",
+  "requirements": [
+    {
+      "id": "crsp_stock_returns",
+      "description": "Monthly stock returns, prices, shares outstanding, and exchange/share-code information for sample-period firms (1975-1993). Used for ME computation and BHAR/Ret12/Ret24/Ret36.",
+      "needed_columns": ["permno", "date", "ret", "prc", "shrout"],
+      "matched_table": "crsp_202601.msf",
+      "matched_columns": ["permno", "date", "ret", "prc", "shrout"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_share_class_and_exchange_pit",
+      "description": "Point-in-time share code (shrcd) and exchange code (exchcd) to filter ordinary common shares (10/11) and NYSE/AMEX/NASDAQ (1/2/3); also fiscal-year-end month from CRSP namelist.",
+      "needed_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "siccd"],
+      "matched_table": "crsp_202601.msenames",
+      "matched_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "siccd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "compustat_annual_fundamentals",
+      "description": "Compustat annual fundamentals for B_t (book equity), B_{t-1}, B_{t-2}, NI_t (income before extraordinary items, Item 237), DIV_t (Item 21 = dvc), AT (total assets for the negative-earnings k fallback), and SALE (for 5-year sales growth).",
+      "needed_columns": ["gvkey", "datadate", "fyear", "ceq", "ib", "dvc", "at", "sale"],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": ["gvkey", "datadate", "fyear", "ceq", "ib", "dvc", "at", "sale"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "compustat_company_static",
+      "description": "Compustat company (static) for fiscal-year-end month (fyr), SIC code (sic), incorporation date (ipodate) for filtering fiscal year ends between June and December, and for FF industry mapping.",
+      "needed_columns": ["gvkey", "sic", "fyr", "ipodate", "dldte"],
+      "matched_table": "comp_202601.company",
+      "matched_columns": ["gvkey", "sic", "fyr", "ipodate", "dldte"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "compustat_crsp_link",
+      "description": "Link table joining Compustat gvkey to CRSP permno (permno/gvkey crosswalk), needed to compute ME = prc * shrout and to deliver analyst forecasts to firm-years.",
+      "needed_columns": ["gvkey", "permno", "linkdt", "linkenddt"],
+      "matched_table": "comp_202601.ccmxpf_lnkhist",
+      "matched_columns": ["gvkey", "permno", "linkdt", "linkenddt"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ibes_consensus_eps",
+      "description": "I/B/E/S consensus EPS forecasts (meanest) by ticker/statistical-period/forecast-period for FY1 (fpi=1, fpedats ~ year t+1), FY2 (fpi=1, fpedats ~ year t+2), and the long-term growth forecast (Ltg) for May statistical periods of years 1976-1993.",
+      "needed_columns": ["ticker", "statpers", "fpi", "fpedats", "measure", "meanest"],
+      "matched_table": "ibes_202601.statsumu_epsus",
+      "matched_columns": ["ticker", "statpers", "fpi", "fpedats", "measure", "meanest"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ibes_long_term_growth",
+      "description": "I/B/E/S long-term (5-year) growth forecast (Ltg) used in Step 3 of the FROE construction. Typically carried in statsumu with measure='LTG' or similar; will require table search.",
+      "needed_columns": ["ticker", "statpers", "meanest", "measure"],
+      "matched_table": "ibes_202601.statsumu_epsus",
+      "matched_columns": ["ticker", "statpers", "meanest", "measure"],
+      "missing_columns": ["measure_LTG_code"],
+      "status": "partial"
+    },
+    {
+      "id": "ibes_id_link",
+      "description": "I/B/E/S identifier file linking ticker to cusip/oftic for join to Compustat gvkey via CRSP.",
+      "needed_columns": ["ticker", "cusip", "oftic"],
+      "matched_table": "ibes_202601.id",
+      "matched_columns": ["ticker", "cusip", "oftic"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_48_industry_classification",
+      "description": "Fama-French 48-industry classification (FF 1997, Table 7) used to assign each firm a three-factor industry cost-of-equity. Not directly available in ClickHouse; must be constructed from Compustat SIC codes via a manual SIC->FF48 mapping table.",
+      "needed_columns": ["ff48_industry_code", "sic_code", "year"],
+      "matched_table": null,
+      "matched_columns": [],
+      "missing_columns": ["ff48_industry_code", "sic_code", "year"],
+      "status": "missing"
+    },
+    {
+      "id": "ff_industry_cost_of_equity",
+      "description": "Three-factor industry cost-of-equity (FF 1997, Table 7) used to compute r_e for the EBO formula. Industry-specific risk premiums must be combined with a 6.46% risk-free rate. The premium table itself is not in ClickHouse; can be substituted with a published lookup table or with Compustat-derived industry indicators.",
+      "needed_columns": ["industry_code", "risk_premium", "riskfree_rate"],
+      "matched_table": null,
+      "matched_columns": [],
+      "missing_columns": ["industry_code", "risk_premium", "riskfree_rate"],
+      "status": "missing"
+    }
+  ],
+  "blocking_issues": [
+    {
+      "requirement": "ff_48_industry_classification",
+      "reason": "No FF 48-industry table in ClickHouse. Fama-French 48-industry classification (FF 1997) and industry cost-of-equity premiums are not pre-loaded.",
+      "affected_targets": ["T1_summary_stats", "T2_correlations"],
+      "recommendation": "Construct a hard-coded SIC-to-FF48 mapping (from the published FF 1997 Table 7 industry definitions) and apply it to comp_202601.company.sic for each firm-year. Cost-of-equity premiums will be loaded from a published lookup table (see assumptions.md)."
+    },
+    {
+      "requirement": "ff_industry_cost_of_equity",
+      "reason": "Industry-specific cost-of-equity premiums (FF 1997 Table 7) are not in ClickHouse. The paper uses these as r_e in Eqs. 3.1-3.3. Without them V_h and V_f cannot be computed exactly; correlation with price (Table 2) and the per-firm V/P ratios (Tables 3, 4, 8, 9) are affected.",
+      "affected_targets": ["T2_correlations", "T3_quintile_returns", "T4_bi_dimensional", "T8_regression_return_prediction", "T9_yearly_strategies"],
+      "recommendation": "Use a hard-coded FF 1997 Table 7 lookup (48 industry codes x industry-specific risk premium). Combine with the 6.46% constant riskless rate. Document this as a CONVENTION-APPLIED default in assumptions.md. If a constant cost of equity (e.g., 12%) is substituted, all V_h/V_f values shift in lockstep but cross-sectional correlations and quintile ranks remain directionally correct."
+    },
+    {
+      "requirement": "ibes_long_term_growth",
+      "reason": "I/B/E/S long-term growth (Ltg) is in statsumu_epsus with a 'measure' code that needs identification; the column is present but requires measure-value filtering (e.g., measure='LTG' or similar) which needs validation against the table.",
+      "affected_targets": ["T3_quintile_returns", "T4_bi_dimensional", "T8_regression_return_prediction", "T9_yearly_strategies"],
+      "recommendation": "Query ibes_202601.statsumu_epsus for distinct measure values during the sample window; use the long-term-growth measure. If unavailable, fall back to FROE_{t+1} = FROE_{t+2} per the paper's Appendix A Step 3 fallback (the paper explicitly documents this fallback)."
+    }
+  ],
+  "coverage_pct": 90
+}

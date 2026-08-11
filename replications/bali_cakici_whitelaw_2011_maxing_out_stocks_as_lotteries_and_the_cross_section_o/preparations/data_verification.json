@@ -1,0 +1,87 @@
+{
+  "verdict": "ready",
+  "requirements": [
+    {
+      "id": "crsp_daily_returns_for_max",
+      "description": "CRSP daily stock returns (dsf) to compute MAX = max daily return within a month, plus prc and shrout for market cap, vol for illiquidity. Required by var_max, var_size, var_illiq, var_beta (Scholes-Williams-Dimson lag/lead window).",
+      "needed_columns": ["permno", "date", "ret", "prc", "shrout", "vol", "cfacpr", "cfacshr"],
+      "matched_table": "crsp_202601.dsf",
+      "matched_columns": ["permno", "date", "ret", "prc", "shrout", "vol", "cfacpr", "cfacshr", "retx", "bidlo", "askhi", "bid", "ask", "openprc", "numtrd", "cusip", "permco", "issuno", "hexcd", "hsiccd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_monthly_returns_for_mom_rev",
+      "description": "CRSP monthly stock returns (msf) to compute MOM (cumulative return from t-12 to t-2) and REV (return in t-1). Also used to compute next-month realized returns for portfolio formation (R_{t+1}).",
+      "needed_columns": ["permno", "date", "ret", "prc", "shrout"],
+      "matched_table": "crsp_202601.msf",
+      "matched_columns": ["permno", "date", "ret", "prc", "shrout", "retx", "cfacpr", "cfacshr", "altprc", "spread", "altprcdt", "bidlo", "askhi", "bid", "ask", "vol", "cusip", "permco", "issuno", "hexcd", "hsiccd"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_universe_shrcd_hexcd",
+      "description": "CRSP universe-filter tables: shrcd (share code) and hexcd (exchange code) for point-in-time filter (common stocks on NYSE/Amex/Nasdaq). Required by universe_exchanges.",
+      "needed_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "hexcd", "hsiccd"],
+      "matched_table": "crsp_202601.dsenames",
+      "matched_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "hexcd", "hsiccd", "ncusip", "ticker", "comnam", "shrcls", "tsymbol", "naics", "primexch", "trdstat", "secstat", "permco", "compno", "issuno", "cusip"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_delisting_returns",
+      "description": "CRSP delisting returns and delisting codes (dsedelist) for handling stocks that delist. Required for delisting_silent substitution.",
+      "needed_columns": ["permno", "dlstdt", "dlstcd", "dlret"],
+      "matched_table": "crsp_202601.dsedelist",
+      "matched_columns": ["permno", "dlstdt", "dlstcd", "nwperm", "nwcomp", "nextdt", "dlamt", "dlretx", "dlprc", "dlpdt", "dlret", "permco", "compno", "issuno", "hexcd", "hsiccd", "cusip", "acperm", "accomp"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_daily_market_index",
+      "description": "CRSP daily value-weighted market return (vwretd) for market beta estimation (Scholes-Williams-Dimson regression, Appendix Eq. 5).",
+      "needed_columns": ["date", "vwretd", "vwretx", "ewretd", "ewretx"],
+      "matched_table": "crsp_202601.dsi",
+      "matched_columns": ["date", "vwretd", "vwretx", "ewretd", "ewretx", "sprtrn", "spindx", "totval", "totcnt", "usdval", "usdcnt"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_monthly_market_index",
+      "description": "CRSP monthly value-weighted market return (vwretd) and risk-free rate. Required for FF factor joins and portfolio timing.",
+      "needed_columns": ["date", "vwretd", "vwretx", "ewretd"],
+      "matched_table": "crsp_202601.msi",
+      "matched_columns": ["date", "vwretd", "vwretx", "ewretd", "ewretx", "sprtrn", "spindx", "totval", "totcnt", "usdval", "usdcnt"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "compustat_fundamentals_for_bm",
+      "description": "Compustat annual fundamentals (funda) for book equity (BE = ceq + txdb - pstkrv; fallback at - dlc - dltt - pstkrv), market equity (prcc_f * csho / 1000), and BM ratio. Required by avail_compustat_for_book_equity and var_bm.",
+      "needed_columns": ["gvkey", "datadate", "fyear", "ceq", "txdb", "pstkrv", "at", "dlc", "dltt", "csho", "prcc_f"],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": ["gvkey", "datadate", "fyear", "indfmt", "consol", "popsrc", "datafmt", "tic", "cusip", "conm", "ceq", "txdb", "pstkrv", "at", "dlc", "dltt", "csho", "prcc_f", "prch_f", "prcl_f", "adjex_f", "indfmt", "consol", "popsrc", "datafmt", "iid", "exchg", "cik", "costat", "fic", "naicsh", "sich", "cshtr_f", "dvpsp_f", "dvpsx_f", "mkvalt"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "compustat_crsp_link",
+      "description": "CRSP-Compustat link table (CCM) to join gvkey with permno for fundamentals signals. Required for the BM ratio construction.",
+      "needed_columns": ["gvkey", "lpermno", "linktype", "linkprim", "linkdt", "linkenddt"],
+      "matched_table": "crsp_202601.ccmxpf_linktable",
+      "matched_columns": ["gvkey", "linkprim", "liid", "linktype", "lpermno", "lpermco", "usedflag", "linkdt", "linkenddt"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_carhart_four_factor",
+      "description": "Fama-French-Carhart four-factor (Mkt-RF, SMB, HML, MOM, RF) for portfolio alphas. Required by factor_ff_carhart.",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "mom", "rf"],
+      "matched_table": "ff.four_factor_monthly",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "rf", "mom"],
+      "missing_columns": [],
+      "status": "full"
+    }
+  ],
+  "blocking_issues": []
+}

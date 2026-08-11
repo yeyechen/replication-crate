@@ -1,0 +1,6 @@
+{
+  "replicable": true,
+  "paper_type": "empirical_cross_sectional",
+  "rationale": "Frankel & Lee (1998, J. Acc. & Econ.) is an empirical cross-sectional asset-pricing paper. Section 4 ('Data and sample description') specifies the universe (NYSE/AMEX/NASDAQ nonfinancial firms intersect CRSP + Compustat annual + I/B/E/S, with fiscal-year-ends between June and December, and a six-month gap between fiscal-year-end and portfolio formation). Section 3 ('Model estimation procedures') operationalizes the Edwards-Bell-Ohlson (EBO) residual income model with three explicit V-equations (3.1, 3.2, 3.3). Tables 1-9 report annual summary statistics, cross-sectional Spearman correlations between price and B/V_h/V_f, quintile portfolio characteristics, bi-dimensional 5x5 sorts, accounting profitability of forecast-error quintiles, annual cross-sectional regressions of forecast errors, regression-based return predictions, and year-by-year strategy returns — all quantitative. The data dependencies (CRSP, Compustat, I/B/E/S) are all available in ClickHouse.",
+  "block_reasons": []
+}

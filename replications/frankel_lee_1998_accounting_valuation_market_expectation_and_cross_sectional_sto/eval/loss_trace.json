@@ -1,0 +1,264 @@
+{
+  "iterations": [
+    {
+      "iteration": 1,
+      "loss": 2.0,
+      "n_total_evaluated": 140,
+      "tier_counts": {
+        "tier1": 0,
+        "tier2": 0,
+        "fail": 0,
+        "missing": 140,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 2,
+      "loss": 1.6857142857142857,
+      "n_total_evaluated": 140,
+      "tier_counts": {
+        "tier1": 13,
+        "tier2": 18,
+        "fail": 5,
+        "missing": 104,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 2,
+      "loss": 1.2642857142857142,
+      "n_total_evaluated": 140,
+      "tier_counts": {
+        "tier1": 32,
+        "tier2": 39,
+        "fail": 5,
+        "missing": 64,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 2,
+      "loss": 1.1357142857142857,
+      "n_total_evaluated": 140,
+      "tier_counts": {
+        "tier1": 37,
+        "tier2": 47,
+        "fail": 21,
+        "missing": 35,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 2,
+      "loss": 1.1714285714285715,
+      "n_total_evaluated": 140,
+      "tier_counts": {
+        "tier1": 37,
+        "tier2": 42,
+        "fail": 5,
+        "missing": 56,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 2,
+      "loss": 1.042857142857143,
+      "n_total_evaluated": 140,
+      "tier_counts": {
+        "tier1": 42,
+        "tier2": 50,
+        "fail": 21,
+        "missing": 27,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 2,
+      "loss": 1.042857142857143,
+      "n_total_evaluated": 140,
+      "tier_counts": {
+        "tier1": 42,
+        "tier2": 50,
+        "fail": 21,
+        "missing": 27,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 3,
+      "loss": 1.042857142857143,
+      "n_total_evaluated": 140,
+      "tier_counts": {
+        "tier1": 42,
+        "tier2": 50,
+        "fail": 21,
+        "missing": 27,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 3,
+      "loss": 1.042857142857143,
+      "n_total_evaluated": 140,
+      "tier_counts": {
+        "tier1": 42,
+        "tier2": 50,
+        "fail": 21,
+        "missing": 27,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": null,
+      "loss": 0.9357142857142857,
+      "n_total_evaluated": 140,
+      "tier_counts": {
+        "tier1": 44,
+        "tier2": 61,
+        "fail": 25,
+        "missing": 10,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 3,
+      "loss": 0.9928571428571429,
+      "n_total_evaluated": 140,
+      "tier_counts": {
+        "tier1": 42,
+        "tier2": 57,
+        "fail": 21,
+        "missing": 20,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": null,
+      "loss": 0.9071428571428571,
+      "n_total_evaluated": 140,
+      "tier_counts": {
+        "tier1": 44,
+        "tier2": 65,
+        "fail": 29,
+        "missing": 2,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 3,
+      "loss": 0.9071428571428571,
+      "n_total_evaluated": 140,
+      "tier_counts": {
+        "tier1": 44,
+        "tier2": 65,
+        "fail": 29,
+        "missing": 2,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 3,
+      "loss": 0.95,
+      "n_total_evaluated": 140,
+      "tier_counts": {
+        "tier1": 42,
+        "tier2": 63,
+        "fail": 29,
+        "missing": 6,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 3,
+      "loss": 0.95,
+      "n_total_evaluated": 140,
+      "tier_counts": {
+        "tier1": 42,
+        "tier2": 63,
+        "fail": 29,
+        "missing": 6,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 3,
+      "loss": 0.95,
+      "n_total_evaluated": 140,
+      "tier_counts": {
+        "tier1": 42,
+        "tier2": 63,
+        "fail": 29,
+        "missing": 6,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 3,
+      "loss": 0.95,
+      "n_total_evaluated": 140,
+      "tier_counts": {
+        "tier1": 42,
+        "tier2": 63,
+        "fail": 29,
+        "missing": 6,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 4,
+      "loss": 0.9071428571428571,
+      "n_total_evaluated": 140,
+      "tier_counts": {
+        "tier1": 44,
+        "tier2": 65,
+        "fail": 29,
+        "missing": 2,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": 4,
+      "loss": 0.9071428571428571,
+      "n_total_evaluated": 140,
+      "tier_counts": {
+        "tier1": 44,
+        "tier2": 65,
+        "fail": 29,
+        "missing": 2,
+        "skip": 0,
+        "no_effect": 0
+      }
+    },
+    {
+      "iteration": null,
+      "loss": 0.9071428571428571,
+      "n_total_evaluated": 140,
+      "tier_counts": {
+        "tier1": 44,
+        "tier2": 65,
+        "fail": 29,
+        "missing": 2,
+        "skip": 0,
+        "no_effect": 0
+      }
+    }
+  ]
+}

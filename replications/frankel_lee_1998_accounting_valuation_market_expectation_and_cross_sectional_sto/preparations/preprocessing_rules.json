@@ -1,0 +1,415 @@
+[
+  {
+    "rule_id": "var_payout_ratio_bounds_0_100",
+    "category": "variable",
+    "section": "\u00a73 (Footnote 5)",
+    "paper_location": "L68",
+    "paper_quote": "we also constrain k to be between 0 and 100%."
+  },
+  {
+    "rule_id": "factor_ff_three_factor_discount",
+    "category": "factor",
+    "section": "\u00a73 (Cost of equity capital)",
+    "paper_location": "L145",
+    "paper_quote": "we use three different approaches \u2013 a constant discount rate, and two industry-based discount rates derived by FF (1997). The FF discount rates are based on a one-factor and a three-factor risk model."
+  },
+  {
+    "rule_id": "var_payout_ratio_k",
+    "category": "variable",
+    "section": "\u00a73 (Dividend payout ratio)",
+    "paper_location": "L147",
+    "paper_quote": "k by dividing the common stock dividends paid in the most recent year (Compustat Item 21) by net income before extraordinary items (Compustat Item 237)"
+  },
+  {
+    "rule_id": "var_payout_ratio_neg_earnings",
+    "category": "variable",
+    "section": "\u00a73 (Footnote 5)",
+    "paper_location": "L147",
+    "paper_quote": "For firms with negative earnings (approximately 11% of our sample), we divide dividends by six percent of total assets to derive an estimated payout ratio."
+  },
+  {
+    "rule_id": "var_vo_t1_eq31",
+    "category": "variable",
+    "section": "\u00a73 (Eq. 3.1)",
+    "paper_location": "L188",
+    "paper_quote": "V^1_t = B_t + (FROE_t - r_e)/(1+r_e) * B_t + (FROE_t - r_e)/((1+r_e) r_e) * B_t"
+  },
+  {
+    "rule_id": "var_vo_t2_eq32",
+    "category": "variable",
+    "section": "\u00a73 (Eq. 3.2)",
+    "paper_location": "L205",
+    "paper_quote": "V^2_t = B_t + (FROE_t - r_e)/(1+r_e) * B_t + (FROE_{t+1} - r_e)/((1+r_e) r_e) * B_{t+1}"
+  },
+  {
+    "rule_id": "var_vo_t3_eq33",
+    "category": "variable",
+    "section": "\u00a73 (Eq. 3.3)",
+    "paper_location": "L210",
+    "paper_quote": "V^3_t = B_t + (FROE_t - r_e)/(1+r_e) * B_t + (FROE_{t+1} - r_e)/(1+r_e)^2 * B_{t+1} + (FROE_{t+2} - r_e)/((1+r_e)^2 r_e) * B_{t+2}"
+  },
+  {
+    "rule_id": "var_re_ni",
+    "category": "variable",
+    "section": "\u00a73 (Footnote 8) / Table A1",
+    "paper_location": "L220",
+    "paper_quote": "NI_t is earnings to common shareholders in year t, net of extraordinary items, taxes, and preferred dividends (Compustat Item 237)"
+  },
+  {
+    "rule_id": "var_re_b",
+    "category": "variable",
+    "section": "\u00a73 (Footnote 8) / Table A1",
+    "paper_location": "L220",
+    "paper_quote": "B_t is total common shareholders' equity from year t (Compustat Item 60)"
+  },
+  {
+    "rule_id": "var_roe_definition",
+    "category": "variable",
+    "section": "\u00a73 (Footnote 8)",
+    "paper_location": "L220",
+    "paper_quote": "ROE_t = NI_t / [(B_t + B_{t-1})/2]"
+  },
+  {
+    "rule_id": "var_vh_proxy_with_roe",
+    "category": "variable",
+    "section": "\u00a73 (Eq. 3.1\u20133.3 discussion)",
+    "paper_location": "L220",
+    "paper_quote": "we use the return on average equity, ROE_t = NI_t / [(B_t + B_{t-1})/2], to proxy for all future ROEs \u2013 i.e., we substitute ROE_t for all the FROEs in the above equations."
+  },
+  {
+    "rule_id": "universe_exchanges",
+    "category": "universe",
+    "section": "\u00a74 Data and sample description",
+    "paper_location": "L224",
+    "paper_quote": "all domestic nonfinancial companies in the intersection of (a) the NYSE, AMEX, and NASDAQ return files from the Center for Research in Security Prices (CRSP)"
+  },
+  {
+    "rule_id": "universe_financial_exclusion",
+    "category": "universe",
+    "section": "\u00a74 Data and sample description",
+    "paper_location": "L224",
+    "paper_quote": "all domestic nonfinancial companies"
+  },
+  {
+    "rule_id": "universe_ordinary_common_share",
+    "category": "universe",
+    "section": "\u00a74 Data and sample description",
+    "paper_location": "L224",
+    "paper_quote": "all domestic nonfinancial companies in the intersection of (a) the NYSE, AMEX, and NASDAQ return files from the Center for Research in Security Prices (CRSP) and (b) a merged Compustat annual industrial file"
+  },
+  {
+    "rule_id": "sample_period",
+    "category": "sample",
+    "section": "\u00a74 Data and sample description",
+    "paper_location": "L224",
+    "paper_quote": "Because I/B/E/S began operations in 1975, this requirement limits our sample period to 1975\u201393."
+  },
+  {
+    "rule_id": "sample_fiscal_year_end_window",
+    "category": "sample",
+    "section": "\u00a74 Data and sample description",
+    "paper_location": "L224",
+    "paper_quote": "We further constrain our sample to firms with fiscal-year-ends between June and December, inclusively."
+  },
+  {
+    "rule_id": "avail_compustat_annual_data",
+    "category": "sample",
+    "section": "\u00a74 Data and sample description",
+    "paper_location": "L224",
+    "paper_quote": "We require firms to meet the Compustat data requirements (for B_{t-1}, B_{t-2}, NI_{t-1}, and DIV_{t-1})"
+  },
+  {
+    "rule_id": "avail_crsp_price_june_t",
+    "category": "sample",
+    "section": "\u00a74 Data and sample description",
+    "paper_location": "L224",
+    "paper_quote": "have the necessary CRSP stock prices and shares outstanding data (for fiscal year end t-1, and the end of June in year t)"
+  },
+  {
+    "rule_id": "avail_ibes_fy1_fy2",
+    "category": "sample",
+    "section": "\u00a74 Data and sample description",
+    "paper_location": "L224",
+    "paper_quote": "we require firms to have a one-year-ahead and a two-years-ahead earnings-per-share (EPS) forecast from I/B/E/S"
+  },
+  {
+    "rule_id": "sample_minimum_accounting_gap",
+    "category": "sample",
+    "section": "\u00a74 Data and sample description",
+    "paper_location": "L236",
+    "paper_quote": "we allow a minimum gap of six months between the fiscal-year-end and the portfolio formation date"
+  },
+  {
+    "rule_id": "sample_annual_match_convention",
+    "category": "sample",
+    "section": "\u00a74 Data and sample description",
+    "paper_location": "L236",
+    "paper_quote": "we match accounting data for all fiscal year ends in the calendar year t - 1 to returns on portfolios formed at the end of June of year t"
+  },
+  {
+    "rule_id": "avail_ibes_ltg_after_1980",
+    "category": "sample",
+    "section": "\u00a74 Data and sample description",
+    "paper_location": "L238",
+    "paper_quote": "Between 1975 and 1979, analysts reported just FY1 and FY2, but after 1980, most firms also had Ltg information."
+  },
+  {
+    "rule_id": "universe_price_floor_one_dollar",
+    "category": "universe",
+    "section": "\u00a74 Data and sample description",
+    "paper_location": "L240",
+    "paper_quote": "We also remove 51 firms with stock prices of under $1 as of the end of June in year t."
+  },
+  {
+    "rule_id": "sample_negative_book_value_drop",
+    "category": "sample",
+    "section": "\u00a74 Data and sample description",
+    "paper_location": "L240",
+    "paper_quote": "In estimating Eqs. (3.1), (3.2) and (3.3), we remove firms with negative book values, because ROEs for these firms cannot be interpreted in economic terms."
+  },
+  {
+    "rule_id": "sample_extreme_roe_k_drop",
+    "category": "sample",
+    "section": "\u00a74 Data and sample description",
+    "paper_location": "L240",
+    "paper_quote": "We eliminate such firms by considering only firms with ROEs or FROEs of less than 100% and dividend payout ratios of less than 100%."
+  },
+  {
+    "rule_id": "winsorize_none_implicit",
+    "category": "winsorize",
+    "section": "\u00a74 (implicit; not mentioned)",
+    "paper_location": "L240",
+    "paper_quote": "These procedures eliminate 1075 firm-years. We also remove 51 firms with stock prices of under $1 as of the end of June in year t."
+  },
+  {
+    "rule_id": "sample_final_size",
+    "category": "sample",
+    "section": "\u00a74 Data and sample description",
+    "paper_location": "L242",
+    "paper_quote": "Taken together, our filters eliminated 1,126 observations (approximately 5%), leaving a final sample of 18,162 firm-years."
+  },
+  {
+    "rule_id": "var_bp_definition",
+    "category": "variable",
+    "section": "\u00a74 / Table 3 description",
+    "paper_location": "L264",
+    "paper_quote": "Book value (B) is book equity per share in calendar year t - 1. Price (P) is the stock price at the end of June in year t."
+  },
+  {
+    "rule_id": "var_me_definition",
+    "category": "variable",
+    "section": "\u00a74 / Table 1 description",
+    "paper_location": "L264",
+    "paper_quote": "ME is the market value of equity as of June 30 of year t in millions of dollars."
+  },
+  {
+    "rule_id": "factor_ff_48_industry_classes",
+    "category": "factor",
+    "section": "\u00a75.1 (footnote 12)",
+    "paper_location": "L368",
+    "paper_quote": "In estimating these models, firms are grouped into 48 industry classes."
+  },
+  {
+    "rule_id": "factor_riskless_rate",
+    "category": "factor",
+    "section": "\u00a75.1 (footnote 12)",
+    "paper_location": "L368",
+    "paper_quote": "plus a constant riskless rate of 0.0646 per year \u2013 the average annualized 30-day t-bill rate over our sample period."
+  },
+  {
+    "rule_id": "sort_annual_june_rebalance",
+    "category": "sort",
+    "section": "\u00a75.2",
+    "paper_location": "L394",
+    "paper_quote": "This table is constructed by sorting all sample firms into quintiles at the end of June each year."
+  },
+  {
+    "rule_id": "sort_quintile_partition",
+    "category": "sort",
+    "section": "\u00a75.2",
+    "paper_location": "L394",
+    "paper_quote": "we construct uni-dimensional portfolios based on market value of equity (ME), B/P, and V_f/P"
+  },
+  {
+    "rule_id": "sort_nyse_size_breakpoints",
+    "category": "sort",
+    "section": "\u00a75.2",
+    "paper_location": "L394",
+    "paper_quote": "Firm size quintiles are formed in two ways. First, as in Fama and French (1992), the size decile cutoffs are based on June 30 prices for all NYSE firms."
+  },
+  {
+    "rule_id": "sort_insample_size_breakpoints",
+    "category": "sort",
+    "section": "\u00a75.2",
+    "paper_location": "L394",
+    "paper_quote": "Second, we use annual in-sample firm size cutoffs to form quintiles."
+  },
+  {
+    "rule_id": "sort_bet_estimation_36mo",
+    "category": "sort",
+    "section": "\u00a75.2",
+    "paper_location": "L394",
+    "paper_quote": "Market beta for each firm is estimated using an equal-weighted market index and each firm's monthly returns over the next 36 months."
+  },
+  {
+    "rule_id": "var_vfp_definition",
+    "category": "variable",
+    "section": "\u00a75.2 / Table 3 description",
+    "paper_location": "L394",
+    "paper_quote": "Analyst based EBO value (V_f) is a fundamental value measure derived using current I/B/E/S consensus analyst predictions of future earnings available prior to June 30 of year t."
+  },
+  {
+    "rule_id": "var_bet_ew_index_36mo",
+    "category": "variable",
+    "section": "\u00a75.2",
+    "paper_location": "L394",
+    "paper_quote": "Market beta for each firm is estimated using an equal-weighted market index and each firm's monthly returns over the next 36 months."
+  },
+  {
+    "rule_id": "var_ret12_24_36",
+    "category": "variable",
+    "section": "\u00a75.2",
+    "paper_location": "L394",
+    "paper_quote": "Ret12, Ret24, and Ret36 are the average one-year, two-year, three-year buy-and-hold return for the portfolio."
+  },
+  {
+    "rule_id": "delisting_treatment",
+    "category": "delisting",
+    "section": "\u00a75.3 (footnote 18)",
+    "paper_location": "L978",
+    "paper_quote": "When a firm drops out over our holding period, a terminating return to the delisting date is computed."
+  },
+  {
+    "rule_id": "delisting_proceeds_redistribution",
+    "category": "delisting",
+    "section": "\u00a75.3 (footnote 18)",
+    "paper_location": "L978",
+    "paper_quote": "The proceeds from termination, if any, are equally assigned to surviving firms in the same portfolio."
+  },
+  {
+    "rule_id": "delisting_exchange_switch_retain",
+    "category": "delisting",
+    "section": "\u00a75.3 (footnote 18)",
+    "paper_location": "L978",
+    "paper_quote": "Firms that switch exchanges are traced to their new exchange listings and retained in their original portfolios."
+  },
+  {
+    "rule_id": "avail_5_year_sales_history",
+    "category": "sample",
+    "section": "\u00a75.4 (Table 5 description)",
+    "paper_location": "L1316",
+    "paper_quote": "To be included, firms are required to have all of the above variables available."
+  },
+  {
+    "rule_id": "var_sg_definition",
+    "category": "variable",
+    "section": "\u00a75.4 / Table 5 description",
+    "paper_location": "L1316",
+    "paper_quote": "SG is the five-year growth rate in sales from period t - 6 to t - 1."
+  },
+  {
+    "rule_id": "var_ltg_definition",
+    "category": "variable",
+    "section": "\u00a75.4 / Table 5 description",
+    "paper_location": "L1316",
+    "paper_quote": "Ltg is the consensus long-term earnings growth forecast from I/B/E/S as of May in year t."
+  },
+  {
+    "rule_id": "fm_annual_cross_section_then_ts",
+    "category": "fm",
+    "section": "\u00a75.4",
+    "paper_location": "L1322",
+    "paper_quote": "Table 6 reports the result of 15 annual cross-sectional regressions of realized analyst forecast errors on each of these four firm characteristics"
+  },
+  {
+    "rule_id": "fm_newey_west_tstat",
+    "category": "fm",
+    "section": "\u00a75.4",
+    "paper_location": "L1322",
+    "paper_quote": "Newey-West (1987) t-statistics based on time-series variations in the annual estimates (bottom row) indicate statistical significance at the 1% level for all four models."
+  },
+  {
+    "rule_id": "fm_percentile_rank_iv",
+    "category": "fm",
+    "section": "\u00a75.4 (Table 6 description)",
+    "paper_location": "L1322",
+    "paper_quote": "To facilitate interpretation of these results and to reduce the effect of outliers, the independent variables are expressed in terms of their percentile ranks."
+  },
+  {
+    "rule_id": "var_op_definition",
+    "category": "variable",
+    "section": "\u00a75.4",
+    "paper_location": "L1325",
+    "paper_quote": "OP = (V_f - V_h)/|V_h|"
+  },
+  {
+    "rule_id": "fm_winsorize_top_bottom_1pct",
+    "category": "fm",
+    "section": "\u00a75.5 (Table 7 description)",
+    "paper_location": "L1408",
+    "paper_quote": "To reduce the effect of outliers, the top and bottom 1% forecasted error each year are omitted."
+  },
+  {
+    "rule_id": "var_ferr_definition",
+    "category": "variable",
+    "section": "\u00a75.4 (footnote 21)",
+    "paper_location": "L1442",
+    "paper_quote": "FErr_{t+i} is computed by subtracting each firm's predicted year t+i ROE (FROE_{t+i}) from the actual reported ROE in period t+i (ROE_{t+i}), and averaging across all firms."
+  },
+  {
+    "rule_id": "var_ferr_sign_convention",
+    "category": "variable",
+    "section": "\u00a75.4 (footnote 21)",
+    "paper_location": "L1442",
+    "paper_quote": "Analyst over-optimism (pessimism) relative to future reported earnings results in more positive (negative) FErr values."
+  },
+  {
+    "rule_id": "fm_predictor_perr_rolling_window",
+    "category": "fm",
+    "section": "\u00a75.6",
+    "paper_location": "L2379",
+    "paper_quote": "we regress forecast errors realized in year t - 1 on percentile ranks of SG, B/P, OP and Ltg from year t - 4."
+  },
+  {
+    "rule_id": "var_perr_definition",
+    "category": "variable",
+    "section": "\u00a75.6 (Eq. 4)",
+    "paper_location": "L2393",
+    "paper_quote": "PErr_it = \u03b1 + \u03b21 RK(SG_{it-1}) + \u03b22 RK(BP_{it-1}) + \u03b23 RK(OP_{it-1}) + \u03b24 RK(Ltg_{it-1})"
+  },
+  {
+    "rule_id": "var_vf_uses_ibes_froes",
+    "category": "variable",
+    "section": "Appendix A",
+    "paper_location": "L2631",
+    "paper_quote": "Forecasted ROE for year t is then computed as the year t consensus forecast, divided by the average book value per share during year t - 1."
+  },
+  {
+    "rule_id": "var_froes_step1",
+    "category": "variable",
+    "section": "Appendix A (Step 1)",
+    "paper_location": "L2634",
+    "paper_quote": "FROE_t = FY1 / [(B_{t-1} + B_{t-2})/2], B_t = B_{t-1}[1 + FROE_t(1 - k)]"
+  },
+  {
+    "rule_id": "var_froes_step2",
+    "category": "variable",
+    "section": "Appendix A (Step 2)",
+    "paper_location": "L2642",
+    "paper_quote": "FROE_{t+1} = FY2 / [(B_t + B_{t-1})/2], B_{t+1} = B_t[1 + FROE_{t+1}(1 - k)]"
+  },
+  {
+    "rule_id": "var_froes_step3",
+    "category": "variable",
+    "section": "Appendix A (Step 3)",
+    "paper_location": "L2650",
+    "paper_quote": "FROE_{t+2} = [FY2(1 + Ltg)] / [(B_{t+1} + B_t)/2], B_{t+2} = B_{t+1}[1 + FROE_{t+2}(1 - k)]"
+  },
+  {
+    "rule_id": "var_froes_step3_fallback",
+    "category": "variable",
+    "section": "Appendix A (Step 3 fallback)",
+    "paper_location": "L2654",
+    "paper_quote": "Where Ltg is not available, we use FROE_{t+1} to proxy for FROE_{t+2}."
+  }
+]

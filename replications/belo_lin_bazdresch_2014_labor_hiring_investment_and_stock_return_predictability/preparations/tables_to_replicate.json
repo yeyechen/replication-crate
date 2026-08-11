@@ -1,0 +1,1025 @@
+{
+  "paper_claims": [
+    {
+      "id": "C1",
+      "claim": "In firm-level regressions, a 10 percentage points increase in the firm's current hiring rate is associated with a 1.5 percentage points decrease in the firm's annual future stock return (i.e., hiring is negatively related to future returns).",
+      "paper_location": "L58",
+      "headline": true
+    },
+    {
+      "id": "C2",
+      "claim": "In portfolio sorts, a long low-hiring/short high-hiring portfolio earns an average annual excess return of 5.6% (VW) to 10.4% (EW) - the 'hiring return spread' is positive and statistically significant.",
+      "paper_location": "L78"
+    },
+    {
+      "id": "C3",
+      "claim": "Hiring contains information about future returns not fully contained in investment: a 10pp increase in hiring predicts 0.7-1.5pp lower annual return after controlling for investment, and vice-versa.",
+      "paper_location": "L264"
+    },
+    {
+      "id": "C4",
+      "claim": "CAPM cannot explain the hiring return spread (CAPM betas go the wrong way); Fama-French three-factor model explains more of the spread but still leaves a large abnormal return on the L-H portfolio (e.g., 8.59% per annum EW, all firms).",
+      "paper_location": "L282-286"
+    }
+  ],
+  "budget_flag": "Total committed cells exceed 350: Table 1 (10 one-way portfolios x {r^e, [t], SR, alpha, t, b, t, R^2, alpha^F, t, b, s, h, R^2} x 3 weighting panels = ~120 cells), Table 2 (12 characteristics x 6 columns = 72, minus TFP = 60), Table 3 (9 portfolio cells + L-H + [t] rows x 3 weighting panels for {r^e, alpha, alpha^F} = ~150), Table 4 (4 cols x 2 methods x ~7 rows = ~50). All four tables are required because each paper claim (C1-C4) is empirically tested in a different table; coverage is the priority over cell count.",
+  "tables": [
+    {
+      "id": "T1",
+      "table_ref": "Table 1",
+      "description": "Hiring portfolios: excess returns, t-stats, Sharpe ratios, CAPM and Fama-French alphas/betas, for 10 one-way-sorted on hiring-rate portfolios (reported portfolios: 1, 2, 5, 9, 10 + L-H).",
+      "replication_meaning": "Demonstrates correct one-way hiring-rate portfolio construction (annual June sort using year t-1 HN), the FF (2008) all-but-microcap breakpoint convention, EW and VW return computation, and CAPM/FF3 monthly time-series regression setup with Newey-West t-stats. The headline L-H spread cells validate the central paper claim (C2).",
+      "covers_claims": [
+        "C2",
+        "C4"
+      ],
+      "paper_quote": "This table reports the average equal- and value-weighted excess stock returns and abnormal returns of ten one-way-sorted on hiring rate portfolios. ... The sample is from July 1965 to June 2010. (L1043)",
+      "exercises_preprocessing_rules": [
+        "universe_share_codes",
+        "universe_exchanges",
+        "universe_sic_exclusions",
+        "sample_dec_fye",
+        "delisting_shumway",
+        "avail_missing_negative_kn",
+        "var_hn",
+        "var_ik",
+        "sort_one_way_hiring",
+        "sort_rebalance_june",
+        "sort_breakpoints_all_but_micro",
+        "microcap_definition",
+        "sort_hold_period",
+        "sort_reporting_ew_vw",
+        "factor_capm_regression",
+        "factor_ff3_regression"
+      ],
+      "metrics": [
+        {
+          "name": "T1.re_ew_all_low",
+          "value": 12.32,
+          "unit": "percent_per_year",
+          "tolerance_pct": 15,
+          "paper_location": "L1075"
+        },
+        {
+          "name": "T1.re_ew_all_2",
+          "value": 12.34,
+          "unit": "percent_per_year",
+          "tolerance_pct": 15,
+          "paper_location": "L1076"
+        },
+        {
+          "name": "T1.re_ew_all_5",
+          "value": 9.87,
+          "unit": "percent_per_year",
+          "tolerance_pct": 15,
+          "paper_location": "L1077"
+        },
+        {
+          "name": "T1.re_ew_all_9",
+          "value": 6.69,
+          "unit": "percent_per_year",
+          "tolerance_pct": 15,
+          "paper_location": "L1078"
+        },
+        {
+          "name": "T1.re_ew_all_high",
+          "value": 1.88,
+          "unit": "percent_per_year",
+          "tolerance_pct": 25,
+          "paper_location": "L1079"
+        },
+        {
+          "name": "T1.re_ew_all_LH",
+          "value": 10.44,
+          "unit": "percent_per_year",
+          "tolerance_pct": 20,
+          "paper_location": "L1080"
+        },
+        {
+          "name": "T1.re_ew_nomicro_low",
+          "value": 8.64,
+          "unit": "percent_per_year",
+          "tolerance_pct": 15,
+          "paper_location": "L1081"
+        },
+        {
+          "name": "T1.re_ew_nomicro_2",
+          "value": 9.2,
+          "unit": "percent_per_year",
+          "tolerance_pct": 15,
+          "paper_location": "L1082"
+        },
+        {
+          "name": "T1.re_ew_nomicro_5",
+          "value": 8.33,
+          "unit": "percent_per_year",
+          "tolerance_pct": 15,
+          "paper_location": "L1083"
+        },
+        {
+          "name": "T1.re_ew_nomicro_9",
+          "value": 5.81,
+          "unit": "percent_per_year",
+          "tolerance_pct": 15,
+          "paper_location": "L1084"
+        },
+        {
+          "name": "T1.re_ew_nomicro_high",
+          "value": 1.74,
+          "unit": "percent_per_year",
+          "tolerance_pct": 25,
+          "paper_location": "L1085"
+        },
+        {
+          "name": "T1.re_ew_nomicro_LH",
+          "value": 6.89,
+          "unit": "percent_per_year",
+          "tolerance_pct": 20,
+          "paper_location": "L1086"
+        },
+        {
+          "name": "T1.re_vw_all_low",
+          "value": 7.03,
+          "unit": "percent_per_year",
+          "tolerance_pct": 15,
+          "paper_location": "L1087"
+        },
+        {
+          "name": "T1.re_vw_all_2",
+          "value": 5.96,
+          "unit": "percent_per_year",
+          "tolerance_pct": 15,
+          "paper_location": "L1088"
+        },
+        {
+          "name": "T1.re_vw_all_5",
+          "value": 4.15,
+          "unit": "percent_per_year",
+          "tolerance_pct": 15,
+          "paper_location": "L1089"
+        },
+        {
+          "name": "T1.re_vw_all_9",
+          "value": 4.9,
+          "unit": "percent_per_year",
+          "tolerance_pct": 15,
+          "paper_location": "L1090"
+        },
+        {
+          "name": "T1.re_vw_all_high",
+          "value": 1.42,
+          "unit": "percent_per_year",
+          "tolerance_pct": 25,
+          "paper_location": "L1091"
+        },
+        {
+          "name": "T1.re_vw_all_LH",
+          "value": 5.61,
+          "unit": "percent_per_year",
+          "tolerance_pct": 20,
+          "paper_location": "L1092"
+        },
+        {
+          "name": "T1.t_ew_all_LH",
+          "value": 5.78,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1101"
+        },
+        {
+          "name": "T1.t_ew_nomicro_LH",
+          "value": 3.48,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1107"
+        },
+        {
+          "name": "T1.t_vw_all_LH",
+          "value": 2.26,
+          "unit": "t_stat",
+          "tolerance_pct": 30,
+          "paper_location": "L1113"
+        },
+        {
+          "name": "T1.SR_ew_all_LH",
+          "value": 0.92,
+          "unit": "sharpe_ratio",
+          "tolerance_pct": 25,
+          "paper_location": "L1122"
+        },
+        {
+          "name": "T1.SR_vw_all_LH",
+          "value": 0.34,
+          "unit": "sharpe_ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1134"
+        },
+        {
+          "name": "T1.capm_alpha_ew_all_low",
+          "value": 6.57,
+          "unit": "percent_per_year",
+          "tolerance_pct": 20,
+          "paper_location": "L1144"
+        },
+        {
+          "name": "T1.capm_alpha_ew_all_2",
+          "value": 7.06,
+          "unit": "percent_per_year",
+          "tolerance_pct": 20,
+          "paper_location": "L1145"
+        },
+        {
+          "name": "T1.capm_alpha_ew_all_5",
+          "value": 4.72,
+          "unit": "percent_per_year",
+          "tolerance_pct": 20,
+          "paper_location": "L1146"
+        },
+        {
+          "name": "T1.capm_alpha_ew_all_9",
+          "value": 0.58,
+          "unit": "percent_per_year",
+          "tolerance_pct": 50,
+          "paper_location": "L1147"
+        },
+        {
+          "name": "T1.capm_alpha_ew_all_high",
+          "value": -4.75,
+          "unit": "percent_per_year",
+          "tolerance_pct": 30,
+          "paper_location": "L1148"
+        },
+        {
+          "name": "T1.capm_alpha_ew_all_LH",
+          "value": 11.32,
+          "unit": "percent_per_year",
+          "tolerance_pct": 20,
+          "paper_location": "L1149"
+        },
+        {
+          "name": "T1.capm_alpha_ew_nomicro_LH",
+          "value": 8.17,
+          "unit": "percent_per_year",
+          "tolerance_pct": 25,
+          "paper_location": "L1155"
+        },
+        {
+          "name": "T1.capm_alpha_vw_all_LH",
+          "value": 7.03,
+          "unit": "percent_per_year",
+          "tolerance_pct": 25,
+          "paper_location": "L1161"
+        },
+        {
+          "name": "T1.capm_b_vw_all_low",
+          "value": 1.01,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L1198"
+        },
+        {
+          "name": "T1.capm_b_vw_all_high",
+          "value": 1.31,
+          "unit": "beta",
+          "tolerance_pct": 15,
+          "paper_location": "L1202"
+        },
+        {
+          "name": "T1.capm_b_vw_all_LH",
+          "value": -0.3,
+          "unit": "beta",
+          "tolerance_pct": 25,
+          "paper_location": "L1203"
+        },
+        {
+          "name": "T1.capm_mae_ew_all",
+          "value": 4.67,
+          "unit": "percent_per_year",
+          "tolerance_pct": 25,
+          "paper_location": "L1138"
+        },
+        {
+          "name": "T1.capm_mae_ew_nomicro",
+          "value": 2.98,
+          "unit": "percent_per_year",
+          "tolerance_pct": 25,
+          "paper_location": "L1139"
+        },
+        {
+          "name": "T1.capm_mae_vw_all",
+          "value": 1.38,
+          "unit": "percent_per_year",
+          "tolerance_pct": 30,
+          "paper_location": "L1140"
+        },
+        {
+          "name": "T1.ff3_alpha_ew_all_LH",
+          "value": 8.59,
+          "unit": "percent_per_year",
+          "tolerance_pct": 25,
+          "paper_location": "L1260"
+        },
+        {
+          "name": "T1.ff3_alpha_ew_nomicro_LH",
+          "value": 4.53,
+          "unit": "percent_per_year",
+          "tolerance_pct": 25,
+          "paper_location": "L1266"
+        },
+        {
+          "name": "T1.ff3_alpha_vw_all_LH",
+          "value": 3.26,
+          "unit": "percent_per_year",
+          "tolerance_pct": 30,
+          "paper_location": "L1272"
+        },
+        {
+          "name": "T1.ff3_mae_ew_all",
+          "value": 2.3,
+          "unit": "percent_per_year",
+          "tolerance_pct": 25,
+          "paper_location": "L1249"
+        },
+        {
+          "name": "T1.ff3_mae_ew_nomicro",
+          "value": 1.15,
+          "unit": "percent_per_year",
+          "tolerance_pct": 30,
+          "paper_location": "L1250"
+        },
+        {
+          "name": "T1.ff3_mae_vw_all",
+          "value": 1.06,
+          "unit": "percent_per_year",
+          "tolerance_pct": 30,
+          "paper_location": "L1251"
+        }
+      ],
+      "notes": "Table 1 reports only portfolios 1, 2, 5, 9, 10 + L-H spread (6 columns), not all 10 portfolios; we replicate only the printed columns. Excess returns are annualized x1200; t-stats are Newey-West HAC. CAPM/FF3 regressions are monthly time-series. m.a.e. is the mean absolute pricing error across the 10 portfolios (paper defines m.a.e. across the 10, even though the table only prints 5 columns)."
+    },
+    {
+      "id": "T2",
+      "table_ref": "Table 2 (Data panel only)",
+      "description": "Time-series averages of median portfolio-level accounting characteristics (HN, IK, TFP, ROA, Size, KM) for the 10 one-way hiring portfolios at portfolio formation (t) and one year after (t+1).",
+      "replication_meaning": "Demonstrates that the hiring portfolios are correctly constructed with monotonically increasing HN and IK, and that the cross-sectional pattern of accounting characteristics matches the paper: KM (B/M proxy) decreasing, ROA increasing, Size not monotone, t and t+1 values stable. TFP column is dropped (Tuzel & Imrohoroglu 2013 not in ClickHouse).",
+      "covers_claims": [],
+      "paper_quote": "This table reports the time-series averages of the following portfolio-level characteristics of ten one-way-sorted on hiring rate portfolios. ... The left panels under column \u201cData\u201d report the statistics in the data, using data from July 1965 to June 2010. (L1388)",
+      "exercises_preprocessing_rules": [
+        "universe_share_codes",
+        "universe_exchanges",
+        "universe_sic_exclusions",
+        "sample_dec_fye",
+        "avail_missing_negative_kn",
+        "var_hn",
+        "var_ik",
+        "var_market_equity",
+        "var_km",
+        "var_roa",
+        "var_size_log_me",
+        "sort_one_way_hiring",
+        "sort_rebalance_june",
+        "sort_breakpoints_all_but_micro"
+      ],
+      "metrics": [
+        {
+          "name": "T2.HN_t_low",
+          "value": -0.19,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L1418"
+        },
+        {
+          "name": "T2.HN_t_2",
+          "value": -0.06,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L1419"
+        },
+        {
+          "name": "T2.HN_t_5",
+          "value": 0.03,
+          "unit": "ratio",
+          "tolerance_pct": 25,
+          "paper_location": "L1420"
+        },
+        {
+          "name": "T2.HN_t_9",
+          "value": 0.21,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L1421"
+        },
+        {
+          "name": "T2.HN_t_high",
+          "value": 0.44,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L1422"
+        },
+        {
+          "name": "T2.HN_t_LH",
+          "value": -0.63,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L1423"
+        },
+        {
+          "name": "T2.HN_t1_low",
+          "value": -0.01,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L1433"
+        },
+        {
+          "name": "T2.HN_t1_2",
+          "value": -0.01,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L1434"
+        },
+        {
+          "name": "T2.HN_t1_5",
+          "value": 0.02,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L1435"
+        },
+        {
+          "name": "T2.HN_t1_9",
+          "value": 0.07,
+          "unit": "ratio",
+          "tolerance_pct": 25,
+          "paper_location": "L1436"
+        },
+        {
+          "name": "T2.HN_t1_high",
+          "value": 0.09,
+          "unit": "ratio",
+          "tolerance_pct": 25,
+          "paper_location": "L1437"
+        },
+        {
+          "name": "T2.HN_t1_LH",
+          "value": -0.1,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1438"
+        },
+        {
+          "name": "T2.IK_t_low",
+          "value": 0.14,
+          "unit": "ratio",
+          "tolerance_pct": 25,
+          "paper_location": "L1451"
+        },
+        {
+          "name": "T2.IK_t_2",
+          "value": 0.16,
+          "unit": "ratio",
+          "tolerance_pct": 25,
+          "paper_location": "L1452"
+        },
+        {
+          "name": "T2.IK_t_5",
+          "value": 0.19,
+          "unit": "ratio",
+          "tolerance_pct": 25,
+          "paper_location": "L1453"
+        },
+        {
+          "name": "T2.IK_t_9",
+          "value": 0.31,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L1454"
+        },
+        {
+          "name": "T2.IK_t_high",
+          "value": 0.37,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L1455"
+        },
+        {
+          "name": "T2.IK_t_LH",
+          "value": -0.23,
+          "unit": "ratio",
+          "tolerance_pct": 20,
+          "paper_location": "L1456"
+        },
+        {
+          "name": "T2.IK_t1_low",
+          "value": 0.15,
+          "unit": "ratio",
+          "tolerance_pct": 25,
+          "paper_location": "L1466"
+        },
+        {
+          "name": "T2.IK_t1_5",
+          "value": 0.19,
+          "unit": "ratio",
+          "tolerance_pct": 25,
+          "paper_location": "L1468"
+        },
+        {
+          "name": "T2.IK_t1_9",
+          "value": 0.27,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L1469"
+        },
+        {
+          "name": "T2.IK_t1_high",
+          "value": 0.29,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L1470"
+        },
+        {
+          "name": "T2.IK_t1_LH",
+          "value": -0.14,
+          "unit": "ratio",
+          "tolerance_pct": 25,
+          "paper_location": "L1471"
+        },
+        {
+          "name": "T2.ROA_t_low",
+          "value": -0.01,
+          "unit": "ratio",
+          "tolerance_pct": 50,
+          "paper_location": "L1514"
+        },
+        {
+          "name": "T2.ROA_t_5",
+          "value": 0.06,
+          "unit": "ratio",
+          "tolerance_pct": 25,
+          "paper_location": "L1516"
+        },
+        {
+          "name": "T2.ROA_t_high",
+          "value": 0.05,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1518"
+        },
+        {
+          "name": "T2.ROA_t_LH",
+          "value": -0.06,
+          "unit": "ratio",
+          "tolerance_pct": 30,
+          "paper_location": "L1519"
+        },
+        {
+          "name": "T2.KM_t_low",
+          "value": 0.49,
+          "unit": "ratio",
+          "tolerance_pct": 25,
+          "paper_location": "L1547"
+        },
+        {
+          "name": "T2.KM_t_2",
+          "value": 0.55,
+          "unit": "ratio",
+          "tolerance_pct": 25,
+          "paper_location": "L1548"
+        },
+        {
+          "name": "T2.KM_t_5",
+          "value": 0.41,
+          "unit": "ratio",
+          "tolerance_pct": 25,
+          "paper_location": "L1549"
+        },
+        {
+          "name": "T2.KM_t_9",
+          "value": 0.28,
+          "unit": "ratio",
+          "tolerance_pct": 25,
+          "paper_location": "L1550"
+        },
+        {
+          "name": "T2.KM_t_high",
+          "value": 0.25,
+          "unit": "ratio",
+          "tolerance_pct": 25,
+          "paper_location": "L1551"
+        },
+        {
+          "name": "T2.KM_t_LH",
+          "value": 0.24,
+          "unit": "ratio",
+          "tolerance_pct": 25,
+          "paper_location": "L1552"
+        },
+        {
+          "name": "T2.Size_t_low",
+          "value": 3.61,
+          "unit": "log_market_cap",
+          "tolerance_pct": 15,
+          "paper_location": "L1577"
+        },
+        {
+          "name": "T2.Size_t_2",
+          "value": 4.68,
+          "unit": "log_market_cap",
+          "tolerance_pct": 15,
+          "paper_location": "L1578"
+        },
+        {
+          "name": "T2.Size_t_5",
+          "value": 5.2,
+          "unit": "log_market_cap",
+          "tolerance_pct": 15,
+          "paper_location": "L1579"
+        },
+        {
+          "name": "T2.Size_t_9",
+          "value": 4.71,
+          "unit": "log_market_cap",
+          "tolerance_pct": 15,
+          "paper_location": "L1580"
+        },
+        {
+          "name": "T2.Size_t_high",
+          "value": 4.46,
+          "unit": "log_market_cap",
+          "tolerance_pct": 15,
+          "paper_location": "L1581"
+        },
+        {
+          "name": "T2.Size_t_LH",
+          "value": -0.85,
+          "unit": "log_market_cap",
+          "tolerance_pct": 30,
+          "paper_location": "L1582"
+        }
+      ],
+      "notes": "TFP rows (T2.TFP_t_*, T2.TFP_t1_*) are excluded: TFP comes from Tuzel & Imrohoroglu (2013) and is not available in ClickHouse Compustat. The Model panel is excluded (model simulation, not data replication). Portfolio-level characteristics are medians across firms in the portfolio in July of each year, time-series averaged; sign conventions follow the paper (HN_t, IK_t are ratios, KM is a ratio, Size is log market cap)."
+    },
+    {
+      "id": "T3",
+      "table_ref": "Table 3",
+      "description": "Nine two-way-sorted (HN x IK) portfolios: excess returns, CAPM alphas, FF3 alphas; both L-H (across rows, holding IK fixed) and L-H (across columns, holding HN fixed) spreads.",
+      "replication_meaning": "Demonstrates correct two-way sequential sort on investment then hiring, the 30/70 NYSE-style breakpoint convention, and that hiring is incrementally informative about returns beyond investment (claim C3).",
+      "covers_claims": [
+        "C2",
+        "C3"
+      ],
+      "paper_quote": "This table reports the average equal- and value-weighted excess stock returns and abnormal returns of nine two-way-sorted on hiring rate (HN) and investment rate (IK) portfolios. ... The sample is from July 1965 to June 2010. (L1622)",
+      "exercises_preprocessing_rules": [
+        "universe_share_codes",
+        "universe_exchanges",
+        "universe_sic_exclusions",
+        "sample_dec_fye",
+        "delisting_shumway",
+        "avail_missing_negative_kn",
+        "var_hn",
+        "var_ik",
+        "sort_two_way_hn_ik",
+        "sort_two_way_breakpoints",
+        "sort_rebalance_june",
+        "sort_hold_period",
+        "sort_breakpoints_all_but_micro",
+        "winsorize_ik_0_5",
+        "factor_capm_regression",
+        "factor_ff3_regression"
+      ],
+      "metrics": [
+        {
+          "name": "T3.re_ew_all_LL",
+          "value": 12.75,
+          "unit": "percent_per_year",
+          "tolerance_pct": 15,
+          "paper_location": "L1669"
+        },
+        {
+          "name": "T3.re_ew_all_LM",
+          "value": 11.2,
+          "unit": "percent_per_year",
+          "tolerance_pct": 15,
+          "paper_location": "L1670"
+        },
+        {
+          "name": "T3.re_ew_all_LH",
+          "value": 10.31,
+          "unit": "percent_per_year",
+          "tolerance_pct": 15,
+          "paper_location": "L1671"
+        },
+        {
+          "name": "T3.re_ew_all_ML",
+          "value": 11.97,
+          "unit": "percent_per_year",
+          "tolerance_pct": 15,
+          "paper_location": "L1687"
+        },
+        {
+          "name": "T3.re_ew_all_MM",
+          "value": 9.78,
+          "unit": "percent_per_year",
+          "tolerance_pct": 15,
+          "paper_location": "L1688"
+        },
+        {
+          "name": "T3.re_ew_all_MH",
+          "value": 8.34,
+          "unit": "percent_per_year",
+          "tolerance_pct": 15,
+          "paper_location": "L1689"
+        },
+        {
+          "name": "T3.re_ew_all_HL",
+          "value": 9.23,
+          "unit": "percent_per_year",
+          "tolerance_pct": 15,
+          "paper_location": "L1705"
+        },
+        {
+          "name": "T3.re_ew_all_HM",
+          "value": 7.27,
+          "unit": "percent_per_year",
+          "tolerance_pct": 20,
+          "paper_location": "L1706"
+        },
+        {
+          "name": "T3.re_ew_all_HH",
+          "value": 0.87,
+          "unit": "percent_per_year",
+          "tolerance_pct": 50,
+          "paper_location": "L1707"
+        },
+        {
+          "name": "T3.re_ew_all_HL_minus_LH_row",
+          "value": 8.35,
+          "unit": "percent_per_year",
+          "tolerance_pct": 25,
+          "paper_location": "L1708"
+        },
+        {
+          "name": "T3.re_ew_all_LH_col",
+          "value": 3.52,
+          "unit": "percent_per_year",
+          "tolerance_pct": 25,
+          "paper_location": "L1723"
+        },
+        {
+          "name": "T3.re_ew_nomicro_HL_minus_LH_row",
+          "value": 7.4,
+          "unit": "percent_per_year",
+          "tolerance_pct": 25,
+          "paper_location": "L1713"
+        },
+        {
+          "name": "T3.re_vw_all_HL_minus_LH_row",
+          "value": 8.55,
+          "unit": "percent_per_year",
+          "tolerance_pct": 25,
+          "paper_location": "L1718"
+        },
+        {
+          "name": "T3.capm_alpha_ew_all_HL_minus_LH_row",
+          "value": 9.84,
+          "unit": "percent_per_year",
+          "tolerance_pct": 25,
+          "paper_location": "L1804"
+        },
+        {
+          "name": "T3.capm_alpha_vw_all_HL_minus_LH_row",
+          "value": 10.68,
+          "unit": "percent_per_year",
+          "tolerance_pct": 30,
+          "paper_location": "L1814"
+        },
+        {
+          "name": "T3.capm_mae_ew_all",
+          "value": 4.79,
+          "unit": "percent_per_year",
+          "tolerance_pct": 25,
+          "paper_location": "L1759"
+        },
+        {
+          "name": "T3.capm_mae_vw_all",
+          "value": 2.31,
+          "unit": "percent_per_year",
+          "tolerance_pct": 30,
+          "paper_location": "L1761"
+        },
+        {
+          "name": "T3.ff3_alpha_ew_all_HH",
+          "value": -6.36,
+          "unit": "percent_per_year",
+          "tolerance_pct": 30,
+          "paper_location": "L1899"
+        },
+        {
+          "name": "T3.ff3_alpha_ew_all_HL_minus_LH_row",
+          "value": 6.32,
+          "unit": "percent_per_year",
+          "tolerance_pct": 30,
+          "paper_location": "L1900"
+        },
+        {
+          "name": "T3.ff3_alpha_vw_all_HL_minus_LH_row",
+          "value": 5.76,
+          "unit": "percent_per_year",
+          "tolerance_pct": 35,
+          "paper_location": "L1910"
+        },
+        {
+          "name": "T3.ff3_mae_ew_all",
+          "value": 2.14,
+          "unit": "percent_per_year",
+          "tolerance_pct": 25,
+          "paper_location": "L1855"
+        },
+        {
+          "name": "T3.ff3_mae_vw_all",
+          "value": 1.63,
+          "unit": "percent_per_year",
+          "tolerance_pct": 30,
+          "paper_location": "L1857"
+        }
+      ],
+      "notes": "Table 3 reports a 9x5 grid (3x3 portfolio grid + L-H diff + t-stat per row/column) replicated across 3 weighting panels (EW all, EW no-micro, VW all) and 3 metric panels (r^e, CAPM alpha, FF3 alpha). For tractability, we replicate the headline 3x3 grids, the L-H row (HL-LH = low-hiring minus high-hiring across IK bins) and L-H column (L-H within HN bin = low-IK minus high-IK), and the 6 m.a.e. cells. Sorting is sequential: first IK (3 bins), then HN (3 bins within each IK bin)."
+    },
+    {
+      "id": "T4",
+      "table_ref": "Table 4",
+      "description": "Firm-level stock return predictability regressions: 4 Fama-MacBeth monthly specifications and 4 pooled OLS annual specifications (with firm and year FE), regressing returns on lagged HN, IK, and Micro x (HN, IK) interactions.",
+      "replication_meaning": "Demonstrates correct Fama-MacBeth (monthly cross-section, time-series average) and pooled OLS (annual returns, firm + year fixed effects) estimation of the predictability regression r^s = a + b*HN + c*IK + d*Micro + e*Micro*HN + f*Micro*IK + e, with Newey-West t-stats for FM and clustered t-stats for pooled OLS. The headline HN and IK coefficients test the paper's main predictability claim (C1, C3).",
+      "covers_claims": [
+        "C1",
+        "C3"
+      ],
+      "paper_quote": "This table reports the estimation results from several variations of stock return predictability regressions of the form: $r_{it}^s = a + b \\times \\text{HN}_{it-1} + c \\times \\text{IK}_{it-1} + d \\times \\text{Micro} + e \\times \\text{Micro} \\times \\text{HN}_{it-1} + f \\times \\text{Micro} \\times \\text{IK}_{it-1} + e_{it}$ (L1958)",
+      "exercises_preprocessing_rules": [
+        "universe_share_codes",
+        "universe_exchanges",
+        "universe_sic_exclusions",
+        "sample_dec_fye",
+        "avail_missing_negative_kn",
+        "var_hn",
+        "var_ik",
+        "microcap_definition",
+        "winsorize_ik_0_5",
+        "fm_monthly_xsection",
+        "fm_predictor_lag",
+        "fm_pooled_ols_annual",
+        "fm_newey_west_t",
+        "fm_clustered_t",
+        "fm_micro_interactions"
+      ],
+      "metrics": [
+        {
+          "name": "T4.fm_HN_spec1",
+          "value": -0.89,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L1981"
+        },
+        {
+          "name": "T4.fm_tHN_spec1",
+          "value": -5.93,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1992"
+        },
+        {
+          "name": "T4.fm_HN_spec2",
+          "value": -0.75,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L1982"
+        },
+        {
+          "name": "T4.fm_IK_spec2",
+          "value": -0.52,
+          "unit": "coefficient",
+          "tolerance_pct": 35,
+          "paper_location": "L2004"
+        },
+        {
+          "name": "T4.fm_tIK_spec2",
+          "value": -2.4,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L2015"
+        },
+        {
+          "name": "T4.fm_HN_spec3",
+          "value": -0.71,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L1983"
+        },
+        {
+          "name": "T4.fm_HN_spec4",
+          "value": -0.48,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L1984"
+        },
+        {
+          "name": "T4.fm_IK_spec4",
+          "value": -0.54,
+          "unit": "coefficient",
+          "tolerance_pct": 35,
+          "paper_location": "L2006"
+        },
+        {
+          "name": "T4.fm_MicroHN_spec4",
+          "value": -0.24,
+          "unit": "coefficient",
+          "tolerance_pct": 50,
+          "paper_location": "L2028"
+        },
+        {
+          "name": "T4.N_fm",
+          "value": 1569,
+          "unit": "firms_per_month",
+          "tolerance_pct": 15,
+          "paper_location": "L2070"
+        },
+        {
+          "name": "T4.ols_HN_spec5",
+          "value": -0.18,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L1985"
+        },
+        {
+          "name": "T4.ols_tHN_spec5",
+          "value": -5.87,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L1996"
+        },
+        {
+          "name": "T4.ols_HN_spec6",
+          "value": -0.15,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L1986"
+        },
+        {
+          "name": "T4.ols_IK_spec6",
+          "value": -0.16,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L2008"
+        },
+        {
+          "name": "T4.ols_tIK_spec6",
+          "value": -3.39,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L2019"
+        },
+        {
+          "name": "T4.ols_HN_spec7",
+          "value": -0.13,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L1987"
+        },
+        {
+          "name": "T4.ols_HN_spec8",
+          "value": -0.07,
+          "unit": "coefficient",
+          "tolerance_pct": 35,
+          "paper_location": "L1988"
+        },
+        {
+          "name": "T4.ols_IK_spec8",
+          "value": -0.23,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L2010"
+        },
+        {
+          "name": "T4.ols_tIK_spec8",
+          "value": -3.63,
+          "unit": "t_stat",
+          "tolerance_pct": 25,
+          "paper_location": "L2021"
+        },
+        {
+          "name": "T4.ols_MicroIK_spec8",
+          "value": 0.13,
+          "unit": "coefficient",
+          "tolerance_pct": 35,
+          "paper_location": "L2054"
+        },
+        {
+          "name": "T4.N_ols",
+          "value": 65805,
+          "unit": "firm_year_obs",
+          "tolerance_pct": 15,
+          "paper_location": "L2073"
+        }
+      ],
+      "notes": "Specifications 1-4 are Fama-MacBeth (monthly cross-sections, Newey-West t-stats); specifications 5-8 are pooled OLS of compounded annual returns from July t to June t+1 with firm + year FE, t-stats clustered by firm and year. N in cols 1-4 is the average number of firms per monthly cross-section (~1569); N in cols 5-8 is total firm-year observations (~65,805). The investment rate is winsorized at top/bottom 0.5% per cross section. We do not replicate the t-stat for every (HN, IK) cell - just the headline 1-3 per spec. Micro interactions are for the Micro dummy (defined as < 20th NYSE mcap percentile)."
+    }
+  ]
+}

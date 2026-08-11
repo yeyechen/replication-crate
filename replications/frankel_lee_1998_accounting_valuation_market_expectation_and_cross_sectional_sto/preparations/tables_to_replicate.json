@@ -1,0 +1,1172 @@
+{
+  "paper_claims": [
+    {
+      "id": "C1",
+      "claim": "EBO analyst-based value (V_f) is highly correlated with contemporaneous stock price, and the V_f/P ratio predicts long-horizon cross-sectional stock returns.",
+      "paper_location": "L22-23",
+      "headline": true
+    },
+    {
+      "id": "C2",
+      "claim": "V_f/P predicts long-term returns even after controlling for B/P and firm size.",
+      "paper_location": "L23-24"
+    },
+    {
+      "id": "C3",
+      "claim": "Cross-sectional errors in the three-year-ahead I/B/E/S consensus forecast are predictable by B/P, SG, OP, and Ltg.",
+      "paper_location": "L24-25"
+    },
+    {
+      "id": "C4",
+      "claim": "A zero-investment strategy combining top-quintile V_f/P with bottom-quintile PErr yields positive 36-month buy-and-hold returns above either strategy alone.",
+      "paper_location": "L25-26"
+    }
+  ],
+  "budget_flag": "Eight tables is heavy (~360 cells). Each table validates a distinct methodological choice: Table 1 (sample construction), Table 2 (EBO V_h/V_f construction and price correlation), Table 3 Panel A & D (quintile sort + ME/BP/V_fP return patterns), Table 4 (bi-dimensional control), Table 5 (forecast-error variables), Table 6 (single-variable predictive regression), Table 7 (multi-variable predictive regression), Table 8 (decile-based return prediction regression), Table 9 (year-by-year strategy returns).",
+  "tables": [
+    {
+      "id": "T1_summary_stats",
+      "table_ref": "Table 1",
+      "description": "Annual summary statistics by year (N, Avg ME, k, ROE, B, P/B, ROA) over 1976-1993.",
+      "replication_meaning": "Demonstrates correct sample construction: number of firms per year (18162 firm-years total), equally-weighted averages of market equity, payout ratio, ROE, book value, P/B and ROA computed annually using Compustat annual data. Proves the data path (CRSP June price, Compustat annual fundamentals, fiscal-year-end alignment) is wired correctly.",
+      "covers_claims": [],
+      "paper_quote": "Table 1 reports annual summary statistics for the total sample. ... The average dividend payout ratio ranges from a high of 35% in 1976 and 1978 to a low of 19% in 1993. (L258, L264)",
+      "exercises_preprocessing_rules": [
+        "universe_exchanges",
+        "sample_period",
+        "sample_annual_match_convention",
+        "var_me_definition",
+        "var_payout_ratio_k",
+        "var_roe_definition"
+      ],
+      "metrics": [
+        {
+          "name": "t76_n_firm",
+          "value": 361,
+          "unit": "count",
+          "tolerance_pct": 5,
+          "paper_location": "L281"
+        },
+        {
+          "name": "t76_avg_me",
+          "value": 1168,
+          "unit": "millions_dollars",
+          "tolerance_pct": 10,
+          "paper_location": "L281"
+        },
+        {
+          "name": "t76_avg_k",
+          "value": 0.35,
+          "unit": "ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L281"
+        },
+        {
+          "name": "t76_avg_roe",
+          "value": 0.14,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L281"
+        },
+        {
+          "name": "t76_avg_b",
+          "value": 21.77,
+          "unit": "dollars_per_share",
+          "tolerance_pct": 15,
+          "paper_location": "L281"
+        },
+        {
+          "name": "t76_avg_pb",
+          "value": 2.02,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L281"
+        },
+        {
+          "name": "t76_inv_avg_bp",
+          "value": 1.4,
+          "unit": "ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L281"
+        },
+        {
+          "name": "t76_avg_roa",
+          "value": 0.07,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L281"
+        },
+        {
+          "name": "t80_n_firm",
+          "value": 718,
+          "unit": "count",
+          "tolerance_pct": 5,
+          "paper_location": "L286"
+        },
+        {
+          "name": "t80_avg_me",
+          "value": 875,
+          "unit": "millions_dollars",
+          "tolerance_pct": 10,
+          "paper_location": "L286"
+        },
+        {
+          "name": "t80_avg_k",
+          "value": 0.33,
+          "unit": "ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L286"
+        },
+        {
+          "name": "t85_n_firm",
+          "value": 1130,
+          "unit": "count",
+          "tolerance_pct": 5,
+          "paper_location": "L290"
+        },
+        {
+          "name": "t85_avg_me",
+          "value": 1002,
+          "unit": "millions_dollars",
+          "tolerance_pct": 10,
+          "paper_location": "L290"
+        },
+        {
+          "name": "t85_avg_k",
+          "value": 0.25,
+          "unit": "ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L290"
+        },
+        {
+          "name": "t90_n_firm",
+          "value": 1306,
+          "unit": "count",
+          "tolerance_pct": 5,
+          "paper_location": "L295"
+        },
+        {
+          "name": "t90_avg_me",
+          "value": 1506,
+          "unit": "millions_dollars",
+          "tolerance_pct": 10,
+          "paper_location": "L295"
+        },
+        {
+          "name": "t90_avg_k",
+          "value": 0.22,
+          "unit": "ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L295"
+        },
+        {
+          "name": "t93_n_firm",
+          "value": 1607,
+          "unit": "count",
+          "tolerance_pct": 5,
+          "paper_location": "L298"
+        },
+        {
+          "name": "t93_avg_me",
+          "value": 1605,
+          "unit": "millions_dollars",
+          "tolerance_pct": 10,
+          "paper_location": "L298"
+        },
+        {
+          "name": "t93_avg_k",
+          "value": 0.19,
+          "unit": "ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L298"
+        },
+        {
+          "name": "t93_avg_b",
+          "value": 10.17,
+          "unit": "dollars_per_share",
+          "tolerance_pct": 15,
+          "paper_location": "L298"
+        },
+        {
+          "name": "t93_avg_pb",
+          "value": 2.96,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L298"
+        },
+        {
+          "name": "t93_inv_avg_bp",
+          "value": 1.82,
+          "unit": "ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L298"
+        },
+        {
+          "name": "t93_avg_roa",
+          "value": 0.04,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L298"
+        },
+        {
+          "name": "all_n_firm",
+          "value": 18162,
+          "unit": "count",
+          "tolerance_pct": 3,
+          "paper_location": "L299"
+        },
+        {
+          "name": "all_avg_me",
+          "value": 1167,
+          "unit": "millions_dollars",
+          "tolerance_pct": 10,
+          "paper_location": "L299"
+        },
+        {
+          "name": "all_avg_k",
+          "value": 0.27,
+          "unit": "ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L299"
+        },
+        {
+          "name": "all_avg_roe",
+          "value": 0.13,
+          "unit": "ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L299"
+        },
+        {
+          "name": "all_avg_b",
+          "value": 16.87,
+          "unit": "dollars_per_share",
+          "tolerance_pct": 15,
+          "paper_location": "L299"
+        },
+        {
+          "name": "all_avg_pb",
+          "value": 2.18,
+          "unit": "ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L299"
+        },
+        {
+          "name": "all_inv_avg_bp",
+          "value": 1.43,
+          "unit": "ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L299"
+        },
+        {
+          "name": "all_avg_roa",
+          "value": 0.06,
+          "unit": "ratio",
+          "tolerance_pct": 10,
+          "paper_location": "L299"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "T2_correlations",
+      "table_ref": "Table 2",
+      "description": "Annual cross-sectional Spearman correlations of stock price with B and six EBO value measures (V_h and V_f with T=1,2,3).",
+      "replication_meaning": "Demonstrates correct EBO valuation construction: V_h (historical ROE, T=2 from Eq. 3.2) and V_f (analyst-based, T=3 from Eq. 3.3) are computed correctly across all three horizons; the FF three-factor industry discount rates are applied properly. Proves that the EBO model and analyst-derived ROE forecasts are wired into the same cross-section.",
+      "covers_claims": [
+        "C1"
+      ],
+      "paper_quote": "Table 2 reports cross-sectional Spearman correlation coefficients between stock prices and either book value (B) or one of six EBO value metrics. ... The discount rate used is a three-factor industry-specific cost-of-equity (Fama and French, 1997). (L315, L322)",
+      "exercises_preprocessing_rules": [
+        "factor_ff_three_factor_discount",
+        "factor_ff_48_industry_classes",
+        "var_vo_t1_eq31",
+        "var_vo_t2_eq32",
+        "var_vo_t3_eq33",
+        "var_vh_proxy_with_roe",
+        "var_vf_uses_ibes_froes"
+      ],
+      "metrics": [
+        {
+          "name": "t80_corr_B",
+          "value": 0.43,
+          "unit": "correlation",
+          "tolerance_pct": 15,
+          "paper_location": "L346"
+        },
+        {
+          "name": "t80_corr_Vh_T1",
+          "value": 0.65,
+          "unit": "correlation",
+          "tolerance_pct": 15,
+          "paper_location": "L346"
+        },
+        {
+          "name": "t80_corr_Vh_T2",
+          "value": 0.67,
+          "unit": "correlation",
+          "tolerance_pct": 15,
+          "paper_location": "L346"
+        },
+        {
+          "name": "t80_corr_Vh_T3",
+          "value": 0.68,
+          "unit": "correlation",
+          "tolerance_pct": 15,
+          "paper_location": "L346"
+        },
+        {
+          "name": "t80_corr_Vf_T1",
+          "value": 0.76,
+          "unit": "correlation",
+          "tolerance_pct": 15,
+          "paper_location": "L346"
+        },
+        {
+          "name": "t80_corr_Vf_T2",
+          "value": 0.79,
+          "unit": "correlation",
+          "tolerance_pct": 15,
+          "paper_location": "L346"
+        },
+        {
+          "name": "t80_corr_Vf_T3",
+          "value": 0.8,
+          "unit": "correlation",
+          "tolerance_pct": 15,
+          "paper_location": "L346"
+        },
+        {
+          "name": "t85_corr_B",
+          "value": 0.72,
+          "unit": "correlation",
+          "tolerance_pct": 15,
+          "paper_location": "L351"
+        },
+        {
+          "name": "t85_corr_Vh_T1",
+          "value": 0.83,
+          "unit": "correlation",
+          "tolerance_pct": 10,
+          "paper_location": "L351"
+        },
+        {
+          "name": "t85_corr_Vf_T3",
+          "value": 0.89,
+          "unit": "correlation",
+          "tolerance_pct": 8,
+          "paper_location": "L351"
+        },
+        {
+          "name": "t90_corr_B",
+          "value": 0.67,
+          "unit": "correlation",
+          "tolerance_pct": 15,
+          "paper_location": "L356"
+        },
+        {
+          "name": "t90_corr_Vh_T1",
+          "value": 0.74,
+          "unit": "correlation",
+          "tolerance_pct": 15,
+          "paper_location": "L356"
+        },
+        {
+          "name": "t90_corr_Vf_T3",
+          "value": 0.87,
+          "unit": "correlation",
+          "tolerance_pct": 8,
+          "paper_location": "L356"
+        },
+        {
+          "name": "t93_corr_B",
+          "value": 0.63,
+          "unit": "correlation",
+          "tolerance_pct": 15,
+          "paper_location": "L359"
+        },
+        {
+          "name": "t93_corr_Vh_T1",
+          "value": 0.64,
+          "unit": "correlation",
+          "tolerance_pct": 15,
+          "paper_location": "L359"
+        },
+        {
+          "name": "t93_corr_Vf_T3",
+          "value": 0.8,
+          "unit": "correlation",
+          "tolerance_pct": 10,
+          "paper_location": "L359"
+        },
+        {
+          "name": "all_corr_B",
+          "value": 0.6,
+          "unit": "correlation",
+          "tolerance_pct": 15,
+          "paper_location": "L360"
+        },
+        {
+          "name": "all_corr_Vh_T1",
+          "value": 0.7,
+          "unit": "correlation",
+          "tolerance_pct": 12,
+          "paper_location": "L360"
+        },
+        {
+          "name": "all_corr_Vh_T2",
+          "value": 0.69,
+          "unit": "correlation",
+          "tolerance_pct": 12,
+          "paper_location": "L360"
+        },
+        {
+          "name": "all_corr_Vh_T3",
+          "value": 0.69,
+          "unit": "correlation",
+          "tolerance_pct": 12,
+          "paper_location": "L360"
+        },
+        {
+          "name": "all_corr_Vf_T1",
+          "value": 0.8,
+          "unit": "correlation",
+          "tolerance_pct": 8,
+          "paper_location": "L360"
+        },
+        {
+          "name": "all_corr_Vf_T2",
+          "value": 0.81,
+          "unit": "correlation",
+          "tolerance_pct": 8,
+          "paper_location": "L360"
+        },
+        {
+          "name": "all_corr_Vf_T3",
+          "value": 0.82,
+          "unit": "correlation",
+          "tolerance_pct": 8,
+          "paper_location": "L360"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "T3_quintile_returns",
+      "table_ref": "Table 3",
+      "description": "Quintile portfolio characteristics: Panel A (ME, NYSE size breakpoints), Panel B (ME, in-sample size), Panel C (B/P), Panel D (V_f/P). Includes mean B/P, ME, V_f/P, beta, Ret12/Ret24/Ret36, and Obs.",
+      "replication_meaning": "Demonstrates correct quintile sort + buy-and-hold return construction (Ret12, Ret24, Ret36), both NYSE-breakpoint and in-sample size breakpoints, and the V_f/P quintile return pattern. This is the headline 'predictive power' table for V_f/P.",
+      "covers_claims": [
+        "C1"
+      ],
+      "paper_quote": "Table 3 reports characteristics of quintile portfolios formed at the end of June each year by market value of equity (ME), book-value-to-price (B/P), and analyst based EBO value-to-price (V_f/P). ... Ret12, Ret24, and Ret36 are the average one-year, two-year, three-year buy-and-hold return for the portfolio. (L462-463, L467)",
+      "exercises_preprocessing_rules": [
+        "sort_annual_june_rebalance",
+        "sort_quintile_partition",
+        "sort_nyse_size_breakpoints",
+        "sort_insample_size_breakpoints",
+        "var_ret12_24_36",
+        "var_vfp_definition"
+      ],
+      "metrics": [
+        {
+          "name": "A_Q1_ME",
+          "value": 9,
+          "unit": "millions_dollars",
+          "tolerance_pct": 25,
+          "paper_location": "L478"
+        },
+        {
+          "name": "A_Q5_ME",
+          "value": 2293,
+          "unit": "millions_dollars",
+          "tolerance_pct": 15,
+          "paper_location": "L478"
+        },
+        {
+          "name": "A_Q1_BP",
+          "value": 1.39,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L479"
+        },
+        {
+          "name": "A_Q5_BP",
+          "value": 0.62,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L479"
+        },
+        {
+          "name": "A_Q1_VfP",
+          "value": 1.33,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L480"
+        },
+        {
+          "name": "A_Q5_VfP",
+          "value": 0.91,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L480"
+        },
+        {
+          "name": "A_Q1_Ret12",
+          "value": 0.379,
+          "unit": "bhar_12m",
+          "tolerance_pct": 25,
+          "paper_location": "L482"
+        },
+        {
+          "name": "A_Q5_Ret12",
+          "value": 0.146,
+          "unit": "bhar_12m",
+          "tolerance_pct": 25,
+          "paper_location": "L482"
+        },
+        {
+          "name": "A_Q5_Q1_Ret12_diff",
+          "value": -0.233,
+          "unit": "bhar_12m_diff",
+          "tolerance_pct": 30,
+          "paper_location": "L482"
+        },
+        {
+          "name": "A_Q5_Q1_Ret36_diff",
+          "value": -0.338,
+          "unit": "bhar_36m_diff",
+          "tolerance_pct": 30,
+          "paper_location": "L484"
+        },
+        {
+          "name": "B_Q1_ME",
+          "value": 41,
+          "unit": "millions_dollars",
+          "tolerance_pct": 15,
+          "paper_location": "L498"
+        },
+        {
+          "name": "B_Q5_ME",
+          "value": 4983,
+          "unit": "millions_dollars",
+          "tolerance_pct": 15,
+          "paper_location": "L498"
+        },
+        {
+          "name": "B_Q5_Q1_Ret24_diff",
+          "value": 0.045,
+          "unit": "bhar_24m_diff",
+          "tolerance_pct": 50,
+          "paper_location": "L502"
+        },
+        {
+          "name": "B_Q5_Q1_Ret36_diff",
+          "value": 0.066,
+          "unit": "bhar_36m_diff",
+          "tolerance_pct": 50,
+          "paper_location": "L503"
+        },
+        {
+          "name": "C_Q1_BP",
+          "value": 0.24,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L515"
+        },
+        {
+          "name": "C_Q5_BP",
+          "value": 1.39,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L515"
+        },
+        {
+          "name": "C_Q1_Ret12",
+          "value": 0.137,
+          "unit": "bhar_12m",
+          "tolerance_pct": 25,
+          "paper_location": "L519"
+        },
+        {
+          "name": "C_Q5_Ret12",
+          "value": 0.186,
+          "unit": "bhar_12m",
+          "tolerance_pct": 25,
+          "paper_location": "L519"
+        },
+        {
+          "name": "C_Q5_Q1_Ret12_diff",
+          "value": 0.049,
+          "unit": "bhar_12m_diff",
+          "tolerance_pct": 30,
+          "paper_location": "L519"
+        },
+        {
+          "name": "C_Q5_Q1_Ret36_diff",
+          "value": 0.151,
+          "unit": "bhar_36m_diff",
+          "tolerance_pct": 30,
+          "paper_location": "L521"
+        },
+        {
+          "name": "D_Q1_VfP",
+          "value": 0.4,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L532"
+        },
+        {
+          "name": "D_Q5_VfP",
+          "value": 1.54,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L532"
+        },
+        {
+          "name": "D_Q1_BP",
+          "value": 0.6,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L533"
+        },
+        {
+          "name": "D_Q5_BP",
+          "value": 0.85,
+          "unit": "ratio",
+          "tolerance_pct": 15,
+          "paper_location": "L533"
+        },
+        {
+          "name": "D_Q1_Ret12",
+          "value": 0.138,
+          "unit": "bhar_12m",
+          "tolerance_pct": 25,
+          "paper_location": "L537"
+        },
+        {
+          "name": "D_Q5_Ret12",
+          "value": 0.169,
+          "unit": "bhar_12m",
+          "tolerance_pct": 25,
+          "paper_location": "L537"
+        },
+        {
+          "name": "D_Q5_Q1_Ret12_diff",
+          "value": 0.031,
+          "unit": "bhar_12m_diff",
+          "tolerance_pct": 50,
+          "paper_location": "L537"
+        },
+        {
+          "name": "D_Q5_Q1_Ret24_diff",
+          "value": 0.152,
+          "unit": "bhar_24m_diff",
+          "tolerance_pct": 30,
+          "paper_location": "L538"
+        },
+        {
+          "name": "D_Q5_Q1_Ret36_diff",
+          "value": 0.306,
+          "unit": "bhar_36m_diff",
+          "tolerance_pct": 25,
+          "paper_location": "L539"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "T4_bi_dimensional",
+      "table_ref": "Table 4",
+      "description": "Bi-dimensional quintile 36-month buy-and-hold returns: Panel A (V_f/P x in-sample ME) and Panel B (V_f/P x B/P).",
+      "replication_meaning": "Demonstrates that V_f/P quintile-5 minus quintile-1 spread is positive in every size row (Panel A) and in most B/P rows (Panel B), proving the V_f/P effect survives controls. The Monte Carlo p-value convention is encoded in significance stars only and is not numerically replicated.",
+      "covers_claims": [
+        "C2"
+      ],
+      "paper_quote": "Table 4 reports the average realized return to 36-month buy-and-hold strategies for bi-dimensional portfolios. (L880)",
+      "exercises_preprocessing_rules": [
+        "sort_annual_june_rebalance",
+        "sort_quintile_partition",
+        "var_ret12_24_36",
+        "var_vfp_definition",
+        "var_me_definition"
+      ],
+      "metrics": [
+        {
+          "name": "A_Q1size_Q1VfP_Ret36",
+          "value": 0.319,
+          "unit": "bhar_36m",
+          "tolerance_pct": 30,
+          "paper_location": "L929"
+        },
+        {
+          "name": "A_Q1size_Q5VfP_Ret36",
+          "value": 0.59,
+          "unit": "bhar_36m",
+          "tolerance_pct": 30,
+          "paper_location": "L929"
+        },
+        {
+          "name": "A_Q1size_Q5Q1_Ret36",
+          "value": 0.271,
+          "unit": "bhar_36m_diff",
+          "tolerance_pct": 30,
+          "paper_location": "L929"
+        },
+        {
+          "name": "A_Q5size_Q1VfP_Ret36",
+          "value": 0.35,
+          "unit": "bhar_36m",
+          "tolerance_pct": 30,
+          "paper_location": "L941"
+        },
+        {
+          "name": "A_Q5size_Q5VfP_Ret36",
+          "value": 0.679,
+          "unit": "bhar_36m",
+          "tolerance_pct": 30,
+          "paper_location": "L941"
+        },
+        {
+          "name": "A_Q5size_Q5Q1_Ret36",
+          "value": 0.329,
+          "unit": "bhar_36m_diff",
+          "tolerance_pct": 30,
+          "paper_location": "L941"
+        },
+        {
+          "name": "B_Q1BP_Q1VfP_Ret36",
+          "value": 0.316,
+          "unit": "bhar_36m",
+          "tolerance_pct": 30,
+          "paper_location": "L970"
+        },
+        {
+          "name": "B_Q1BP_Q5VfP_Ret36",
+          "value": 0.634,
+          "unit": "bhar_36m",
+          "tolerance_pct": 30,
+          "paper_location": "L970"
+        },
+        {
+          "name": "B_Q1BP_Q5Q1_Ret36",
+          "value": 0.318,
+          "unit": "bhar_36m_diff",
+          "tolerance_pct": 30,
+          "paper_location": "L970"
+        },
+        {
+          "name": "B_Q5BP_Q1VfP_Ret36",
+          "value": 0.263,
+          "unit": "bhar_36m",
+          "tolerance_pct": 30,
+          "paper_location": "L978"
+        },
+        {
+          "name": "B_Q5BP_Q5VfP_Ret36",
+          "value": 0.732,
+          "unit": "bhar_36m",
+          "tolerance_pct": 30,
+          "paper_location": "L978"
+        },
+        {
+          "name": "B_Q5BP_Q5Q1_Ret36",
+          "value": 0.469,
+          "unit": "bhar_36m_diff",
+          "tolerance_pct": 30,
+          "paper_location": "L978"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "T6_forecast_error_regressions",
+      "table_ref": "Table 6",
+      "description": "Annual cross-sectional regressions of FErr_{t+2} on RK(B/P), RK(SG), RK(OP), RK(Ltg) \u2014 one column per variable.",
+      "replication_meaning": "Demonstrates correct construction of the four predictor variables (B/P, SG, OP, Ltg) and the percentile-rank convention, plus the Newey-West t-stat aggregation across years. Validates that each individual variable is significantly related to forecast errors (the building block of PErr).",
+      "covers_claims": [
+        "C3"
+      ],
+      "paper_quote": "Table 6 reports the result of 15 annual cross-sectional regressions of realized analyst forecast errors on each of these four firm characteristics. (L1322)",
+      "exercises_preprocessing_rules": [
+        "fm_annual_cross_section_then_ts",
+        "fm_newey_west_tstat",
+        "fm_percentile_rank_iv",
+        "var_ferr_definition",
+        "var_sg_definition",
+        "var_op_definition"
+      ],
+      "metrics": [
+        {
+          "name": "M1_mean_coef_BP",
+          "value": -0.025,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L1903"
+        },
+        {
+          "name": "M1_tstat_BP",
+          "value": -2.69,
+          "unit": "t_statistic",
+          "tolerance_pct": 50,
+          "paper_location": "L1904"
+        },
+        {
+          "name": "M2_mean_coef_SG",
+          "value": 0.043,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L1903"
+        },
+        {
+          "name": "M2_tstat_SG",
+          "value": 7.0,
+          "unit": "t_statistic",
+          "tolerance_pct": 25,
+          "paper_location": "L1904"
+        },
+        {
+          "name": "M3_mean_coef_OP",
+          "value": 0.07,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L1903"
+        },
+        {
+          "name": "M3_tstat_OP",
+          "value": 5.01,
+          "unit": "t_statistic",
+          "tolerance_pct": 30,
+          "paper_location": "L1904"
+        },
+        {
+          "name": "M4_mean_coef_Ltg",
+          "value": 0.073,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L1903"
+        },
+        {
+          "name": "M4_tstat_Ltg",
+          "value": 6.57,
+          "unit": "t_statistic",
+          "tolerance_pct": 30,
+          "paper_location": "L1904"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "T7_multiple_forecast_error_regression",
+      "table_ref": "Table 7",
+      "description": "Multiple annual cross-sectional regressions of FErr_{t+2} on RK(SG), RK(B/P), RK(OP), RK(Ltg) plus R^2 and F-statistic.",
+      "replication_meaning": "Demonstrates that the joint regression specification with all four percentile-ranked variables has the expected sign and t-statistic pattern (Ltg and OP strongest), matching the paper's claim that OP/Ltg/SG carry most of the explanatory power.",
+      "covers_claims": [
+        "C3"
+      ],
+      "paper_quote": "Table 7 reports the results of annual multiple regressions of these forecast errors on ranked percentiles of B/P, SG, OP, and Ltg. (L1410)",
+      "exercises_preprocessing_rules": [
+        "fm_annual_cross_section_then_ts",
+        "fm_newey_west_tstat",
+        "fm_percentile_rank_iv",
+        "fm_winsorize_top_bottom_1pct",
+        "var_ferr_definition"
+      ],
+      "metrics": [
+        {
+          "name": "mean_coef_SG",
+          "value": 0.035,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L2034"
+        },
+        {
+          "name": "tstat_SG",
+          "value": 5.94,
+          "unit": "t_statistic",
+          "tolerance_pct": 25,
+          "paper_location": "L2035"
+        },
+        {
+          "name": "mean_coef_BP",
+          "value": 0.01,
+          "unit": "coefficient",
+          "tolerance_pct": 50,
+          "paper_location": "L2034"
+        },
+        {
+          "name": "tstat_BP",
+          "value": 1.16,
+          "unit": "t_statistic",
+          "tolerance_pct": 50,
+          "paper_location": "L2035"
+        },
+        {
+          "name": "mean_coef_OP",
+          "value": 0.051,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L2034"
+        },
+        {
+          "name": "tstat_OP",
+          "value": 3.55,
+          "unit": "t_statistic",
+          "tolerance_pct": 30,
+          "paper_location": "L2035"
+        },
+        {
+          "name": "mean_coef_Ltg",
+          "value": 0.05,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L2034"
+        },
+        {
+          "name": "tstat_Ltg",
+          "value": 4.26,
+          "unit": "t_statistic",
+          "tolerance_pct": 30,
+          "paper_location": "L2035"
+        },
+        {
+          "name": "mean_R2",
+          "value": 0.074,
+          "unit": "r_squared",
+          "tolerance_pct": 30,
+          "paper_location": "L2034"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "T8_regression_return_prediction",
+      "table_ref": "Table 8",
+      "description": "Decile-rank regression of 1-year (Panel A) and 3-year (Panel B) buy-and-hold returns on B/P, ME, V_f/P, PErr \u2014 six models each.",
+      "replication_meaning": "Demonstrates correct PErr construction (rolling cross-sectional regression, 4-year lag), decile-rank scaling convention, and that V_f/P and PErr are both significant in a multi-variate specification. Headline regression coefficients of the paper.",
+      "covers_claims": [
+        "C1",
+        "C2",
+        "C4"
+      ],
+      "paper_quote": "Table 8 ... estimated coefficients from regressions of one- and three-year-ahead stock returns on various ex ante firm characteristics. (L2383)",
+      "exercises_preprocessing_rules": [
+        "fm_annual_cross_section_then_ts",
+        "fm_predictor_perr_rolling_window",
+        "var_perr_definition",
+        "var_vfp_definition",
+        "var_ret12_24_36"
+      ],
+      "metrics": [
+        {
+          "name": "PanelA_M1_intercept",
+          "value": 0.151,
+          "unit": "coefficient",
+          "tolerance_pct": 15,
+          "paper_location": "L2442"
+        },
+        {
+          "name": "PanelA_M1_BP",
+          "value": 0.051,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L2442"
+        },
+        {
+          "name": "PanelA_M3_VfP",
+          "value": 0.042,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L2444"
+        },
+        {
+          "name": "PanelA_M4_PErr",
+          "value": -0.04,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L2445"
+        },
+        {
+          "name": "PanelA_M6_intercept",
+          "value": 0.176,
+          "unit": "coefficient",
+          "tolerance_pct": 15,
+          "paper_location": "L2447"
+        },
+        {
+          "name": "PanelA_M6_PErr",
+          "value": -0.035,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L2447"
+        },
+        {
+          "name": "PanelA_M6_R2",
+          "value": 0.19,
+          "unit": "r_squared_pct",
+          "tolerance_pct": 50,
+          "paper_location": "L2447"
+        },
+        {
+          "name": "PanelB_M1_intercept",
+          "value": 0.468,
+          "unit": "coefficient",
+          "tolerance_pct": 15,
+          "paper_location": "L2450"
+        },
+        {
+          "name": "PanelB_M1_BP",
+          "value": 0.168,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L2450"
+        },
+        {
+          "name": "PanelB_M3_VfP",
+          "value": 0.37,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L2452"
+        },
+        {
+          "name": "PanelB_M4_PErr",
+          "value": -0.277,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L2453"
+        },
+        {
+          "name": "PanelB_M5_VfP",
+          "value": 0.352,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L2454"
+        },
+        {
+          "name": "PanelB_M6_intercept",
+          "value": 0.539,
+          "unit": "coefficient",
+          "tolerance_pct": 15,
+          "paper_location": "L2455"
+        },
+        {
+          "name": "PanelB_M6_VfP",
+          "value": 0.343,
+          "unit": "coefficient",
+          "tolerance_pct": 25,
+          "paper_location": "L2455"
+        },
+        {
+          "name": "PanelB_M6_PErr",
+          "value": -0.241,
+          "unit": "coefficient",
+          "tolerance_pct": 30,
+          "paper_location": "L2455"
+        },
+        {
+          "name": "PanelB_M6_R2",
+          "value": 2.47,
+          "unit": "r_squared_pct",
+          "tolerance_pct": 50,
+          "paper_location": "L2455"
+        }
+      ],
+      "notes": null
+    },
+    {
+      "id": "T9_yearly_strategies",
+      "table_ref": "Table 9",
+      "description": "Year-by-year 1-year and 3-year cumulative buy-and-hold returns for B/P, PErr, V_f/P and combined strategies.",
+      "replication_meaning": "Demonstrates correct quintile-portfolio buy-and-hold construction, the combined-strategy intersection (top V_f/P quintile AND bottom PErr quintile), and that the combined strategy has positive mean 3-year return.",
+      "covers_claims": [
+        "C4"
+      ],
+      "paper_quote": "Table 9 reports the cumulative one-year and three-year buy-and-hold returns from alternative trading strategies. (L2579)",
+      "exercises_preprocessing_rules": [
+        "sort_annual_june_rebalance",
+        "sort_quintile_partition",
+        "var_ret12_24_36",
+        "var_vfp_definition"
+      ],
+      "metrics": [
+        {
+          "name": "PanelA_BP_3yr_1982",
+          "value": 0.67,
+          "unit": "bhar_36m",
+          "tolerance_pct": 30,
+          "paper_location": "L2684"
+        },
+        {
+          "name": "PanelC_VfP_3yr_1982",
+          "value": 1.127,
+          "unit": "bhar_36m",
+          "tolerance_pct": 30,
+          "paper_location": "L2684"
+        },
+        {
+          "name": "PanelD_Combined_3yr_1982",
+          "value": 1.204,
+          "unit": "bhar_36m",
+          "tolerance_pct": 30,
+          "paper_location": "L2684"
+        },
+        {
+          "name": "PanelA_BP_3yr_mean",
+          "value": 0.228,
+          "unit": "bhar_36m_mean",
+          "tolerance_pct": 30,
+          "paper_location": "L2693"
+        },
+        {
+          "name": "PanelA_BP_3yr_tstat",
+          "value": 3.32,
+          "unit": "t_statistic",
+          "tolerance_pct": 30,
+          "paper_location": "L2694"
+        },
+        {
+          "name": "PanelB_PErr_3yr_mean",
+          "value": 0.263,
+          "unit": "bhar_36m_mean",
+          "tolerance_pct": 30,
+          "paper_location": "L2693"
+        },
+        {
+          "name": "PanelB_PErr_3yr_tstat",
+          "value": 3.55,
+          "unit": "t_statistic",
+          "tolerance_pct": 30,
+          "paper_location": "L2694"
+        },
+        {
+          "name": "PanelC_VfP_3yr_mean",
+          "value": 0.349,
+          "unit": "bhar_36m_mean",
+          "tolerance_pct": 30,
+          "paper_location": "L2693"
+        },
+        {
+          "name": "PanelC_VfP_3yr_tstat",
+          "value": 4.06,
+          "unit": "t_statistic",
+          "tolerance_pct": 30,
+          "paper_location": "L2694"
+        },
+        {
+          "name": "PanelD_Combined_3yr_mean",
+          "value": 0.457,
+          "unit": "bhar_36m_mean",
+          "tolerance_pct": 30,
+          "paper_location": "L2693"
+        },
+        {
+          "name": "PanelD_Combined_3yr_tstat",
+          "value": 5.4,
+          "unit": "t_statistic",
+          "tolerance_pct": 30,
+          "paper_location": "L2694"
+        }
+      ],
+      "notes": null
+    }
+  ]
+}

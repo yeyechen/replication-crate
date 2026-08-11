@@ -1,0 +1,233 @@
+[
+  {
+    "rule_id": "universe_share_codes",
+    "category": "universe",
+    "section": "§2.1 Data",
+    "paper_location": "L144",
+    "paper_quote": "includes firms with common shares (shrcd=10 and 11) and firms traded on NYSE, AMEX, and NASDAQ (exchcd=1,2, and 3)"
+  },
+  {
+    "rule_id": "universe_exchanges",
+    "category": "universe",
+    "section": "§2.1 Data",
+    "paper_location": "L144",
+    "paper_quote": "firms traded on NYSE, AMEX, and NASDAQ (exchcd=1,2, and 3)"
+  },
+  {
+    "rule_id": "universe_sic_exclusions",
+    "category": "universe",
+    "section": "§2.1 Data",
+    "paper_location": "L144",
+    "paper_quote": "We omit firms whose primary standard industry classification (SIC) is between 4900 and 4999 (regulated firms) or between 6000 and 6999 (financial firms)"
+  },
+  {
+    "rule_id": "sample_dec_fye",
+    "category": "sample",
+    "section": "§2.1 Data",
+    "paper_location": "L144",
+    "paper_quote": "Following Cohen, Gompers and Vuoltenaho (2002), we require a firm to have a December fiscal year-end to align the accounting data across firms"
+  },
+  {
+    "rule_id": "sample_period",
+    "category": "sample",
+    "section": "§2.1 Data",
+    "paper_location": "L144",
+    "paper_quote": "The sample is from July 1965 to June 2010"
+  },
+  {
+    "rule_id": "delisting_shumway",
+    "category": "delisting",
+    "section": "§2.1 Data",
+    "paper_location": "L144",
+    "paper_quote": "we correct for the delisting bias following the approach in Shumway (1997)"
+  },
+  {
+    "rule_id": "var_hn",
+    "category": "variable",
+    "section": "§2.1 Data",
+    "paper_location": "L156",
+    "paper_quote": "The hiring rate is given by $HN_t = H_t / (0.5 \\times (N_{t-1} + N_t))$ , in which the number of employees ( $N_t$ ) is given by Compustat data item EMP, and net hiring ( $H_t$ ) is given by the change in the number of employees from year $t-1$ to year $t$ ( $H_t = N_t - N_{t-1}$ )"
+  },
+  {
+    "rule_id": "var_ik",
+    "category": "variable",
+    "section": "§2.1 Data",
+    "paper_location": "L156",
+    "paper_quote": "The investment rate is given by $IK_t = I_t / (0.5 \\times (K_{t-1} + K_t))$ , in which the physical capital stock ( $K_t$ ) is given by data item PPENT (net property plant and equipment), and physical capital investment ( $I_t$ ) is given by Compustat data item CAPX (capital expenditures) minus SPPE (sales of property, plant, and equipment). Missing values of SPPE are set to zero."
+  },
+  {
+    "rule_id": "avail_missing_negative_kn",
+    "category": "universe",
+    "section": "§2.1 Data",
+    "paper_location": "L160",
+    "paper_quote": "We exclude from the sample the firm-year observations with missing or negative capital stock data, missing number of employees and capital expenditures data, and missing investment and hiring rate data"
+  },
+  {
+    "rule_id": "var_market_equity",
+    "category": "variable",
+    "section": "§2.1 Data",
+    "paper_location": "L160",
+    "paper_quote": "Market equity (size) is price times shares outstanding at the end of December"
+  },
+  {
+    "rule_id": "var_km",
+    "category": "variable",
+    "section": "§2.1 Data",
+    "paper_location": "L160",
+    "paper_quote": "The physical capital-to-market equity ratio (KM) is the ratio of the firm's physical capital stock and market equity"
+  },
+  {
+    "rule_id": "var_roa",
+    "category": "variable",
+    "section": "§2.1 Data",
+    "paper_location": "L160",
+    "paper_quote": "Return-on-assets (ROA), a measure of profitability, is given by the ratio of Compustat data item NI (net income) to Compustat data item AT (book value of assets)"
+  },
+  {
+    "rule_id": "var_tfp",
+    "category": "variable",
+    "section": "§2.1 Data",
+    "paper_location": "L160",
+    "paper_quote": "Productivity (TFP) is firm-level total factor productivity from Tuzel and Imrohoroglu (2013)"
+  },
+  {
+    "rule_id": "factor_ff3",
+    "category": "factor",
+    "section": "§2.1 Data",
+    "paper_location": "L160",
+    "paper_quote": "The data for the three Fama-French factors (small-minus-big, SMB, high-minus-low, HML, and market, MKT) are from Kenneth French's Web page"
+  },
+  {
+    "rule_id": "sample_size",
+    "category": "sample",
+    "section": "§2.1 Data",
+    "paper_location": "L160",
+    "paper_quote": "The final sample includes a total of 75,381 firm-year observations"
+  },
+  {
+    "rule_id": "sort_one_way_hiring",
+    "category": "sort",
+    "section": "§2.2",
+    "paper_location": "L164",
+    "paper_quote": "we construct ten portfolios sorted on the firm's current hiring rate"
+  },
+  {
+    "rule_id": "sort_rebalance_june",
+    "category": "sort",
+    "section": "§2.2",
+    "paper_location": "L178",
+    "paper_quote": "At the end of June of year $t$ , we sort the universe of common stocks into ten portfolios based on the firm's hiring rate at the end of year $t - 1$"
+  },
+  {
+    "rule_id": "sort_breakpoints_all_but_micro",
+    "category": "sort",
+    "section": "§2.2",
+    "paper_location": "L178",
+    "paper_quote": "we follow Fama and French (2008) and compute the deciles of the hiring rate cross-sectional distribution of all but micro cap firms in NYSE-AMEX-NASDAQ"
+  },
+  {
+    "rule_id": "microcap_definition",
+    "category": "sample",
+    "section": "§2.2",
+    "paper_location": "L178",
+    "paper_quote": "The micro cap firms are defined as firms with a market capitalization that is lower than the bottom $20^{\\text{th}}$ percentile of the market capitalization cross-sectional distribution of NYSE firms"
+  },
+  {
+    "rule_id": "sort_hold_period",
+    "category": "sort",
+    "section": "§2.2",
+    "paper_location": "L178",
+    "paper_quote": "Once the portfolios are formed, their returns are tracked from July of year $t$ to June of year $t + 1$ . The procedure is repeated at the end of June of year $t + 1$"
+  },
+  {
+    "rule_id": "sort_reporting_ew_vw",
+    "category": "sort",
+    "section": "§2.2",
+    "paper_location": "L180",
+    "paper_quote": "We report both average equal- and value-weighted portfolio returns across all firms, as well as average equal-weighted portfolio returns across a sample of firms that excludes the micro cap firms"
+  },
+  {
+    "rule_id": "sort_two_way_hn_ik",
+    "category": "sort",
+    "section": "§2.3.1",
+    "paper_location": "L226",
+    "paper_quote": "At the end of June of year $t$ , we first sort the universe of common stocks into three portfolios based on the firm's investment rate. Then, the firms in each one of these three investment portfolios are further sorted into three portfolios based on the firm's hiring rate"
+  },
+  {
+    "rule_id": "sort_two_way_breakpoints",
+    "category": "sort",
+    "section": "§2.3.1",
+    "paper_location": "L226",
+    "paper_quote": "The investment rate and hiring rate breakpoints for year $t$ are the $30^{\\text{th}}$ and $70^{\\text{th}}$ percentiles of the cross-sectional distribution of the corresponding sorting variable at the end of year $t - 1$"
+  },
+  {
+    "rule_id": "fm_monthly_xsection",
+    "category": "fm",
+    "section": "§2.3.2",
+    "paper_location": "L248",
+    "paper_quote": "We run standard firm-level cross-sectional regressions (Fama and MacBeth, 1973) ... at a monthly frequency"
+  },
+  {
+    "rule_id": "fm_micro_interactions",
+    "category": "fm",
+    "section": "§2.3.2",
+    "paper_location": "L258",
+    "paper_quote": "we also consider specifications with interaction terms, in which the previous variables are interacted with a dummy variable (Micro), which is equal to one if the firm is a micro cap firm in year $t-1$, and zero otherwise"
+  },
+  {
+    "rule_id": "factor_capm_regression",
+    "category": "factor",
+    "section": "§2.4",
+    "paper_location": "L270",
+    "paper_quote": "we run monthly time-series regressions of the excess returns of each portfolio on a constant and the excess returns of the market portfolio (market)"
+  },
+  {
+    "rule_id": "factor_ff3_regression",
+    "category": "factor",
+    "section": "§2.4",
+    "paper_location": "L280",
+    "paper_quote": "we augment the previous CAPM regressions with the size factor (SMB, small minus big) and the value factor (HML, high minus low)"
+  },
+  {
+    "rule_id": "var_size_log_me",
+    "category": "variable",
+    "section": "Table 2 description",
+    "paper_location": "L1388",
+    "paper_quote": "Size is the log market capitalization"
+  },
+  {
+    "rule_id": "winsorize_ik_0_5",
+    "category": "winsorize",
+    "section": "Table 4 description",
+    "paper_location": "L1958",
+    "paper_quote": "The investment rate is winsorized at the top and bottom 0.5% in each cross section to decrease the influence of outliers"
+  },
+  {
+    "rule_id": "fm_predictor_lag",
+    "category": "fm",
+    "section": "Table 4 description",
+    "paper_location": "L1958",
+    "paper_quote": "the lagged values of the firm's hiring and investment rates"
+  },
+  {
+    "rule_id": "fm_pooled_ols_annual",
+    "category": "fm",
+    "section": "Table 4 description",
+    "paper_location": "L1958",
+    "paper_quote": "pooled OLS regressions in which $r_{it}^s$ is the firm's $i$ compounded annual stock return from July of year $t$ to June of year $t+1$ . The regression includes both year and firm fixed effects"
+  },
+  {
+    "rule_id": "fm_newey_west_t",
+    "category": "fm",
+    "section": "Table 4 description",
+    "paper_location": "L1958",
+    "paper_quote": "$[t]$ are heteroscedasticity and autocorrelation consistent $t$ -statistics (Newey-West)"
+  },
+  {
+    "rule_id": "fm_clustered_t",
+    "category": "fm",
+    "section": "Table 4 description",
+    "paper_location": "L1958",
+    "paper_quote": "$[t]$ are $t$ -statistics computed from standard errors clustered by firm and year"
+  }
+]

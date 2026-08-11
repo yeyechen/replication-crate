@@ -1,0 +1,77 @@
+{
+  "verdict": "partial",
+  "coverage_pct": 95,
+  "requirements": [
+    {
+      "id": "crsp_monthly_returns",
+      "description": "CRSP monthly stock returns, prices, and shares outstanding for the sample period (July 1965 to June 2010).",
+      "needed_columns": ["permno", "date", "ret", "prc", "shrout", "hexcd", "hsiccd"],
+      "matched_table": "crsp_202601.msf",
+      "matched_columns": ["cusip", "permno", "permco", "issuno", "hexcd", "hsiccd", "date", "bidlo", "askhi", "prc", "vol", "ret", "bid", "ask", "shrout", "cfacpr", "cfacshr", "altprc", "spread", "altprcdt", "retx"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_pit_names",
+      "description": "Point-in-time CRSP names history for shrcd, exchcd, and siccd filters (PIT-correct universe construction).",
+      "needed_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "siccd"],
+      "matched_table": "crsp_202601.dsenames",
+      "matched_columns": ["permno", "namedt", "nameendt", "shrcd", "exchcd", "siccd", "ncusip", "ticker", "comnam", "shrcls", "tsymbol", "naics", "primexch", "trdstat", "secstat", "permco", "compno", "issuno", "hexcd", "hsiccd", "cusip"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_delisting",
+      "description": "CRSP delisting returns for the Shumway (1997) delisting-bias correction (dlret, dlstcd, dlstdt).",
+      "needed_columns": ["permno", "dlstdt", "dlstcd", "dlret"],
+      "matched_table": "crsp_202601.dsedelist",
+      "matched_columns": ["permno", "dlstdt", "dlstcd", "nwperm", "nwcomp", "nextdt", "dlamt", "dlretx", "dlprc", "dlpdt", "dlret", "permco", "compno", "issuno", "hexcd", "hsiccd", "cusip", "acperm", "accomp"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "crsp_compustat_link",
+      "description": "CRSP-Compustat linking table (CCM) for joining stock returns to gvkey-level fundamentals.",
+      "needed_columns": ["gvkey", "lpermno", "linktype", "usedflag", "linkdt", "linkenddt"],
+      "matched_table": "crsp_202601.ccmxpf_linktable",
+      "matched_columns": ["gvkey", "linkprim", "liid", "linktype", "lpermno", "lpermco", "usedflag", "linkdt", "linkenddt"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "compustat_annual_fundamentals",
+      "description": "Compustat annual fundamentals for EMP (employees), CAPX (capex), SPPE (sale of PPE), PPENT (net PPE), NI (net income), AT (total assets), fyear, datadate, fyr, sich, and December fiscal year-end filter.",
+      "needed_columns": ["gvkey", "datadate", "fyear", "fyr", "emp", "capx", "sppe", "ppent", "ni", "at", "sich"],
+      "matched_table": "comp_202601.funda",
+      "matched_columns": ["gvkey", "datadate", "fyear", "indfmt", "consol", "popsrc", "datafmt", "tic", "cusip", "conm", "fyr", "emp", "capx", "sppe", "ppent", "ni", "at", "sich", "..."],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "ff_three_factor",
+      "description": "Fama-French three-factor model: Mkt-RF, SMB, HML, RF (monthly). The paper uses the three-factor model in the asset-pricing tests (Tables 1 and 3 alphas).",
+      "needed_columns": ["dt", "mkt_rf", "smb", "hml", "rf"],
+      "matched_table": "ff.three_factor",
+      "matched_columns": ["dt", "mkt_rf", "smb", "hml", "rf"],
+      "missing_columns": [],
+      "status": "full"
+    },
+    {
+      "id": "tfp_tuzel_imrohoroglu",
+      "description": "Firm-level total factor productivity (TFP) from Tuzel & Imrohoroglu (2013), used in Table 2 (TFP_t, TFP_{t+1} rows). This is a proprietary academic measure, not a standard Compustat field.",
+      "needed_columns": ["gvkey", "year", "tfp"],
+      "matched_table": null,
+      "matched_columns": [],
+      "missing_columns": ["gvkey", "year", "tfp"],
+      "status": "missing"
+    }
+  ],
+  "blocking_issues": [
+    {
+      "requirement": "tfp_tuzel_imrohoroglu",
+      "reason": "Firm-level TFP from Tuzel & Imrohoroglu (2013) is not in the ClickHouse Compustat catalog. TFP is not a Compustat data item; the Belo-Lin-Bazdresch paper sources it from an external academic paper (Tuzel & Imrohoroglu 2013) whose data is typically distributed only to subscribers of that paper's online appendix.",
+      "affected_targets": ["T2"],
+      "recommendation": "Drop the T2.TFP_t and T2.TFP_{t+1} rows from the T2 metric list (already documented in tables_to_replicate.json#T2.notes). The remaining T2 cells (HN, IK, ROA, KM, Size at t and t+1) replicate fully from the available catalog; this preserves T2's value as a portfolio-characteristics validation table."
+    }
+  ]
+}

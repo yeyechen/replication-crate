@@ -1,0 +1,6 @@
+{
+  "replicable": true,
+  "paper_type": "empirical_cross_sectional",
+  "rationale": "Bali, Cakici, Whitelaw (2011) 'Maxing Out' is a cross-sectional asset-pricing paper. §2.1 'Data' specifies CRSP daily+monthly (NYSE/Amex/Nasdaq, 1926-2005) and Compustat. The paper has clear methodology (decile sorts on MAX with FF-Carhart 4-factor alphas; Fama-MacBeth regressions; bivariate sorts), operationalized variables in an Appendix (MAX, MIN, BETA, SIZE, BM, MOM, REV, ILLIQ, IVOL, TSKEW, SSKEW, ISKEW), and 13 numbered tables of numerical results (Tables 1-13). It is a textbook empirical cross-sectional replication candidate.",
+  "block_reasons": []
+}
