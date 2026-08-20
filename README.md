@@ -3,7 +3,7 @@ This repo contains automated replications of 23 published finance papers from Je
 
 Each paper has a standalone folder with its implementation code (SQL + Python), a detailed report, and a scored summary benchmarking our results against the original findings. Data panels are excluded; the SQL documents every construction step so that results can be rebuilt from the source database.
 
-JKP have open-sourced their replication code and data for a superset of the papers covered here. We treat their published factor library as ground truth and compare our replications against theirs in the [Test](#test) section below.
+JKP have open-sourced their replication code and data for a superset of the papers covered here. We treat their published factor library as ground truth and compare our replications against theirs in the *Test* section below.
 
 ## Papers
 
@@ -37,15 +37,15 @@ JKP have open-sourced their replication code and data for a superset of the pape
 
 ## Test
 
-### Stock-Level Validation
+### Stock-Level Test
 
-We compare our replicated characteristics against JKP's published stock-level data at the stock level. For each (firm, period) where both our replication and JKP's published data are non-missing, we compute the pooled **Spearman rank correlation** across all observations. The comparison follows the JKP authors' own SAS-vs-Python translation benchmark (0.994), documented in their [release notes](https://github.com/bkelly-lab/jkp-data).
+We compare our replicated factors against JKP's published data at the stock level. For each (firm, period) where both our replication and JKP's published data are non-missing, we compute the pooled **Spearman rank correlation** across all observations. The comparison follows the JKP authors' own SAS-vs-Python translation benchmark (0.994), documented in their [release notes](https://jkpfactors.com/release-notes#comparison-of-characteristics-at-stock-level).
 
-![Stock-level validation of all 23 replications](assets/stock-level.png)
+![Stock-level test of all 23 replications](assets/stock-level.png)
 
 ### Portfolio-Level Test
 
-We also compare our replicated characteristics at the portfolio level. For each factor we compute the cumulative log H-L (high-minus-low) return of our replicated series and the JKP-published series under both equal-weighted (EW) and value-weighted (VW) portfolios, and report the **Pearson correlation** across the overlapping months.
+We also compare our replicated factors at the portfolio level. For each factor we compute the cumulative log high-minus-low return (tercile sorted) of our replicated series and the JKP-published series under both equal-weighted (EW) and value-weighted (VW) portfolios, and report the **Pearson correlation** across the overlapping months.
 
 ![JKP vs Agent replication H-L Portfolio Log-Return Correlation](assets/portfolio-level.png)
 
